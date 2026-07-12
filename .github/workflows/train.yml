@@ -4,80 +4,46 @@ on:
   push:
     branches: [main]
   workflow_dispatch:
-    inputs:
-      phase:
-        description: 'Pipeline phase'
-        required: true
-        default: 'full'
-        type: choice
-        options:
-          - scrape
-          - train
-          - evaluate
-          - evolve
-          - full
-  schedule:
-    - cron: '0 */6 * * *'  # Every 6 hours
 
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    timeout-minutes: 290  # 4h50m, safe under 6hr limit
+    timeout-minutes: 290
     
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
       
-    - name: Setup Python
-      uses: actions/setup-python@v5
+    - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        
-    - name: Cache dependencies
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/pip
-        key: pip-${{ runner.os }}-${{ hashFiles('requirements.txt') }}
-        
-    - name: Install dependencies
-      run: |
-        pip install --upgrade pip
-        pip install -r requirements.txt
         
     - name: Cache models
       uses: actions/cache@v4
       with:
-        path: |
-          models/
-          ~/.cache/huggingface/
-        key: model-${{ runner.os }}-${{ hashFiles('config.yaml') }}
+        path: ~/.cache/huggingface
+        key: hf-models-${{ runner.os }}-${{ hashFiles('config.yaml') }}
         
-    - name: 📊 Scrape data
-      if: ${{ github.event.inputs.phase == 'scrape' || github.event.inputs.phase == 'full' || github.event_name == 'schedule' }}
+    - name: Install dependencies
+      run: |
+        pip install --upgrade pip
+        pip install torch transformers peft accelerate requests beautifulsoup4 numpy pyyaml datasets
+        
+    - name: Scrape
       run: python src/scrape.py
       
-    - name: 🧠 Build knowledge store
-      if: ${{ github.event.inputs.phase == 'scrape' || github.event.inputs.phase == 'full' || github.event_name == 'schedule' }}
+    - name: Build knowledge
       run: python src/store.py build
       
-    - name: 🚀 Train model
-      if: ${{ github.event.inputs.phase == 'train' || github.event.inputs.phase == 'full' }}
-      run: python src/model.py train
-      
-    - name: 🧬 Self-improve
-      if: ${{ github.event.inputs.phase == 'evolve' || github.event.inputs.phase == 'full' }}
-      run: python src/bot.py evolve
-      
-    - name: 📝 Save and commit
-      if: always()
+    - name: Commit & push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add -A
         git diff --staged --quiet || git commit -m "🤖 Auto-update: $(date -u +'%Y-%m-%d %H:%M UTC')"
+        git pull --rebase
         git push
         
-    - name: 🌐 Deploy to GitHub Pages
+    - name: Deploy
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

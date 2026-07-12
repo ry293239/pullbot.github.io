@@ -944,3 +944,476 @@ This repository contains only Terraform core, which includes the command line in
 
 [Business Source License 1.1](https://github.com/hashicorp/terraform/blob/main/LICENSE)
 
+<a id="top"></a>
+![Catch2 logo](data/artwork/catch2-logo-full-with-background.svg)
+
+[![Github Releases](https://img.shields.io/github/release/catchorg/catch2.svg)](https://github.com/catchorg/catch2/releases)
+[![Linux build status](https://github.com/catchorg/Catch2/actions/workflows/linux-simple-builds.yml/badge.svg)](https://github.com/catchorg/Catch2/actions/workflows/linux-simple-builds.yml)
+[![Linux build status](https://github.com/catchorg/Catch2/actions/workflows/linux-other-builds.yml/badge.svg)](https://github.com/catchorg/Catch2/actions/workflows/linux-other-builds.yml)
+[![MacOS build status](https://github.com/catchorg/Catch2/actions/workflows/mac-builds.yml/badge.svg)](https://github.com/catchorg/Catch2/actions/workflows/mac-builds.yml)
+[![Build Status](https://ci.appveyor.com/api/projects/status/github/catchorg/Catch2?svg=true&branch=devel)](https://ci.appveyor.com/project/catchorg/catch2)
+[![Code Coverage](https://codecov.io/gh/catchorg/Catch2/branch/devel/graph/badge.svg)](https://codecov.io/gh/catchorg/Catch2)
+[![Try online](https://img.shields.io/badge/try-online-blue.svg)](https://godbolt.org/z/EdoY15q9G)
+[![Join the chat in Discord: https://discord.gg/4CWS9zD](https://img.shields.io/badge/Discord-Chat!-brightgreen.svg)](https://discord.gg/4CWS9zD)
+
+
+## What is Catch2?
+
+Catch2 is mainly a unit testing framework for C++, but it also
+provides basic micro-benchmarking features, and simple BDD macros.
+
+Catch2's main advantage is that using it is both simple and natural.
+Test names do not have to be valid identifiers, assertions look like
+normal C++ boolean expressions, and sections provide a nice and local way
+to share set-up and tear-down code in tests.
+
+**Example unit test**
+```cpp
+#include <catch2/catch_test_macros.hpp>
+
+#include <cstdint>
+
+uint32_t factorial( uint32_t number ) {
+    return number <= 1 ? number : factorial(number-1) * number;
+}
+
+TEST_CASE( "Factorials are computed", "[factorial]" ) {
+    REQUIRE( factorial( 1) == 1 );
+    REQUIRE( factorial( 2) == 2 );
+    REQUIRE( factorial( 3) == 6 );
+    REQUIRE( factorial(10) == 3'628'800 );
+}
+```
+
+**Example microbenchmark**
+```cpp
+#include <catch2/catch_test_macros.hpp>
+#include <catch2/benchmark/catch_benchmark.hpp>
+
+#include <cstdint>
+
+uint64_t fibonacci(uint64_t number) {
+    return number < 2 ? number : fibonacci(number - 1) + fibonacci(number - 2);
+}
+
+TEST_CASE("Benchmark Fibonacci", "[!benchmark]") {
+    REQUIRE(fibonacci(5) == 5);
+
+    REQUIRE(fibonacci(20) == 6'765);
+    BENCHMARK("fibonacci 20") {
+        return fibonacci(20);
+    };
+
+    REQUIRE(fibonacci(25) == 75'025);
+    BENCHMARK("fibonacci 25") {
+        return fibonacci(25);
+    };
+}
+```
+
+_Note that benchmarks are not run by default, so you need to run it explicitly
+with the `[!benchmark]` tag._
+
+
+## Catch2 v3 has been released!
+
+You are on the `devel` branch, where the v3 version is being developed.
+v3 brings a bunch of significant changes, the big one being that Catch2
+is no longer a single-header library. Catch2 now behaves as a normal
+library, with multiple headers and separately compiled implementation.
+
+The documentation is slowly being updated to take these changes into
+account, but this work is currently still ongoing.
+
+For migrating from the v2 releases to v3, you should look at [our
+documentation](docs/migrate-v2-to-v3.md#top). It provides a simple
+guidelines on getting started, and collects most common migration
+problems.
+
+For the previous major version of Catch2 [look into the `v2.x` branch
+here on GitHub](https://github.com/catchorg/Catch2/tree/v2.x).
+
+
+## How to use it
+This documentation comprises these three parts:
+
+* [Why do we need yet another C++ Test Framework?](docs/why-catch.md#top)
+* [Tutorial](docs/tutorial.md#top) - getting started
+* [Reference section](docs/Readme.md#top) - all the details
+
+
+## More
+* Issues and bugs can be raised on the [Issue tracker on GitHub](https://github.com/catchorg/Catch2/issues)
+* For discussion or questions please use [our Discord](https://discord.gg/4CWS9zD)
+* See who else is using Catch2 in [Open Source Software](docs/opensource-users.md#top)
+or [commercially](docs/commercial-users.md#top).
+
+
+---
+
+# Abseil - C++ Common Libraries
+
+The repository contains the Abseil C++ library code. Abseil is an open-source
+collection of C++ code (compliant to C++17) designed to augment the C++
+standard library.
+
+## Table of Contents
+
+- [About Abseil](#about)
+- [Quickstart](#quickstart)
+- [Building Abseil](#build)
+- [Support](#support)
+- [Codemap](#codemap)
+- [Releases](#releases)
+- [License](#license)
+- [Links](#links)
+
+<a name="about"></a>
+## About Abseil
+
+Abseil is an open-source collection of C++ library code designed to augment
+the C++ standard library. The Abseil library code is collected from Google's
+own C++ code base, has been extensively tested and used in production, and
+is the same code we depend on in our daily coding lives.
+
+In some cases, Abseil provides pieces missing from the C++ standard; in
+others, Abseil provides alternatives to the standard for special needs
+we've found through usage in the Google code base. We denote those cases
+clearly within the library code we provide you.
+
+Abseil is not meant to be a competitor to the standard library; we've
+just found that many of these utilities serve a purpose within our code
+base, and we now want to provide those resources to the C++ community as
+a whole.
+
+<a name="quickstart"></a>
+## Quickstart
+
+If you want to just get started, make sure you at least run through the
+[Abseil Quickstart](https://abseil.io/docs/cpp/quickstart). The Quickstart
+contains information about setting up your development environment, downloading
+the Abseil code, running tests, and getting a simple binary working.
+
+<a name="build"></a>
+## Building Abseil
+
+[Bazel](https://bazel.build) and [CMake](https://cmake.org/) are the official
+build systems for Abseil.
+See the [quickstart](https://abseil.io/docs/cpp/quickstart) for more information
+on building Abseil using the Bazel build system.
+If you require CMake support, please check the [CMake build
+instructions](CMake/README.md) and [CMake
+Quickstart](https://abseil.io/docs/cpp/quickstart-cmake).
+
+<a name="support"></a>
+## Support
+
+Abseil follows Google's [Foundational C++ Support
+Policy](https://opensource.google/documentation/policies/cplusplus-support). See
+[this
+table](https://github.com/google/oss-policies-info/blob/main/foundational-cxx-support-matrix.md)
+for a list of currently supported versions compilers, platforms, and build
+tools.
+
+<a name="codemap"></a>
+## Codemap
+
+Abseil contains the following C++ library components:
+
+* [`base`](absl/base/)
+  <br /> The `base` library contains initialization code and other code which
+  all other Abseil code depends on. Code within `base` may not depend on any
+  other code (other than the C++ standard library).
+* [`algorithm`](absl/algorithm/)
+  <br /> The `algorithm` library contains additions to the C++ `<algorithm>`
+  library and container-based versions of such algorithms.
+* [`cleanup`](absl/cleanup/)
+  <br /> The `cleanup` library contains the control-flow-construct-like type
+  `absl::Cleanup` which is used for executing a callback on scope exit.
+* [`container`](absl/container/)
+  <br /> The `container` library contains additional STL-style containers,
+  including Abseil's unordered "Swiss table" containers.
+* [`crc`](absl/crc/) The `crc` library contains code for
+  computing error-detecting cyclic redundancy checks on data.
+* [`debugging`](absl/debugging/)
+  <br /> The `debugging` library contains code useful for enabling leak
+  checks, and stacktrace and symbolization utilities.
+* [`flags`](absl/flags/)
+  <br /> The `flags` library contains code for handling command line flags for
+  libraries and binaries built with Abseil.
+* [`hash`](absl/hash/)
+  <br /> The `hash` library contains the hashing framework and default hash
+  functor implementations for hashable types in Abseil.
+* [`log`](absl/log/)
+  <br /> The `log` library contains `LOG` and `CHECK` macros and facilities
+  for writing logged messages out to disk, `stderr`, or user-extensible
+  destinations.
+* [`memory`](absl/memory/)
+  <br /> The `memory` library contains memory management facilities that augment
+  C++'s `<memory>` library.
+* [`meta`](absl/meta/)
+  <br /> The `meta` library contains type checks
+  similar to those available in the C++ `<type_traits>` library.
+* [`numeric`](absl/numeric/)
+  <br /> The `numeric` library contains 128-bit integer types as well as
+  implementations of C++20's bitwise math functions.
+* [`profiling`](absl/profiling/)
+  <br /> The `profiling` library contains utility code for profiling C++
+  entities.  It is currently a private dependency of other Abseil libraries.
+* [`random`](absl/random/)
+  <br /> The `random` library contains functions for generating pseudorandom
+  values.
+* [`status`](absl/status/)
+  <br /> The `status` library contains abstractions for error handling,
+  specifically `absl::Status` and `absl::StatusOr<T>`.
+* [`strings`](absl/strings/)
+  <br /> The `strings` library contains a variety of strings routines and
+  utilities.
+* [`synchronization`](absl/synchronization/)
+  <br />
+
+---
+
+[![npm version](https://img.shields.io/npm/v/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
+[![npm downloads](https://img.shields.io/npm/dt/claude-code-templates.svg)](https://www.npmjs.com/package/claude-code-templates)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Sponsored by Z.AI](https://img.shields.io/badge/Sponsored%20by-Z.AI-2563eb?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTEyIDJMMiAyMkgyMkwxMiAyWiIgZmlsbD0id2hpdGUiLz4KPC9zdmc+)](https://z.ai/subscribe?ic=8JVLJQFSKB&utm_source=github&utm_medium=badge&utm_campaign=readme)
+[![Claude for Open Source](https://img.shields.io/badge/Claude-Open%20Source%20Program-D97757?style=flat&logo=data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48Y2lyY2xlIGN4PSIxMiIgY3k9IjEyIiByPSIzIiBmaWxsPSJ3aGl0ZSIvPjwvc3ZnPg==)](https://claude.com/contact-sales/claude-for-oss)
+[![Neon Open Source Program](https://img.shields.io/badge/Neon-Open%20Source%20Program-00E599?style=flat)](https://get.neon.com/4eCjZDz)
+[![Buy Me A Coffee](https://img.shields.io/badge/Buy%20Me%20A%20Coffee-support-yellow?style=flat&logo=buy-me-a-coffee)](https://buymeacoffee.com/daniavila)
+[![GitHub stars](https://img.shields.io/github/stars/davila7/claude-code-templates.svg?style=social&label=Star)](https://github.com/davila7/claude-code-templates)
+
+<p align="center">
+  <a href="https://trendshift.io/repositories/15113" target="_blank">
+    <img src="https://trendshift.io/api/badge/repositories/15113" alt="davila7%2Fclaude-code-templates | Trendshift" style="width: 200px; height: 40px;" width="125" height="40"/>
+  </a>
+  <br />
+  <br />
+  <a href="https://vercel.com/oss">
+  <img alt="Vercel OSS Program" src="https://vercel.com/oss/program-badge.svg" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://get.neon.com/4eCjZDz">
+  <img alt="Neon Open Source Program" src="https://img.shields.io/badge/Neon-Open%20Source%20Program-00E599?style=for-the-badge" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://claude.com/contact-sales/claude-for-oss">
+  <img alt="Claude for Open Source" src="docs/claude-oss-badge.svg" height="48" />
+  </a>
+</p>
+
+---
+
+> **🧪 NEW: Dashboard** — Explore components, manage collections, and track installations at **[www.aitmpl.com](https://www.aitmpl.com)**. Currently in beta — feedback welcome!
+
+# Claude Code Templates ([aitmpl.com](https://aitmpl.com))
+
+**Ready-to-use configurations for Anthropic's Claude Code.** A comprehensive collection of AI agents, custom commands, settings, hooks, external integrations (MCPs), and project templates to enhance your development workflow.
+
+## Browse & Install Components and Templates
+
+**[Browse All Templates](https://aitmpl.com)** - Interactive web interface to explore and install 100+ agents, commands, settings, hooks, and MCPs.
+
+<img width="1787" height="958" alt="image" src="https://github.com/user-attachments/assets/d84feaa4-f871-4843-bbee-42d8f51b2f21" />
+
+
+## 🚀 Quick Installation
+
+```bash
+# Install a complete development stack
+npx claude-code-templates@latest --agent development-team/frontend-developer --command testing/generate-tests --mcp development/github-integration --yes
+
+# Browse and install interactively
+npx claude-code-templates@latest
+
+# Install specific components
+npx claude-code-templates@latest --agent development-tools/code-reviewer --yes
+npx claude-code-templates@latest --command performance/optimize-bundle --yes
+npx claude-code-templates@latest --setting performance/mcp-timeouts --yes
+npx claude-code-templates@latest --hook git/pre-commit-validation --yes
+npx claude-code-templates@latest --mcp database/postgresql-integration --yes
+```
+
+## What You Get
+
+| Component | Description | Examples |
+|-----------|-------------|----------|
+| **🤖 Agents** | AI specialists for specific domains | Security auditor, React performance optimizer, database architect |
+| **⚡ Commands** | Custom slash commands | `/generate-tests`, `/optimize-bundle`, `/check-security` |
+| **🔌 MCPs** | External service integrations | GitHub, PostgreSQL, Stripe, AWS, OpenAI |
+| **⚙️ Settings** | Claude Code configurations | Timeouts, memory settings, output styles |
+| **🪝 Hooks** | Automation triggers | Pre-commit validation, post-completion actions |
+| **🎨 Skills** | Reusable capabilities with progressive disclosure | PDF processing, Excel automation, custom workflows |
+
+## 🛠️ Additional Tools
+
+Beyond the template catalog, Claude Code Templates includes powerful development tools:
+
+### 📊 Claude Code Analytics
+Monitor your AI-powered development sessions in real-time with live state detection and performance metrics.
+
+```bash
+npx claude-code-templates@lat
+
+---
+
+# Stitch Design Skills
+
+A collection of agent skills and plugins for [Google Stitch](https://stitch.withgoogle.com), following the [Agent Skills](https://agentskills.io) open standard. Compatible with coding agents such as Codex, Antigravity, Gemini CLI, Claude Code, and Cursor.
+
+## Quick Start
+
+### 1. Install Plugins (Recommended)
+The fastest way to set up the full Stitch plugin suite globally.
+
+#### Codex
+
+Add the Stitch Skills marketplace, then install the plugins you need.
+
+<details open>
+<summary><strong>Via CLI</strong> (recommended)</summary>
+
+```bash
+codex plugin marketplace add google-labs-code/stitch-skills --ref main \
+  --sparse .agents/plugins \
+  --sparse plugins/stitch-design \
+  --sparse plugins/stitch-build \
+  --sparse plugins/stitch-utilities
+```
+
+> [!TIP]
+> The `--sparse` flags are optional — they limit the checkout to only the
+> listed paths for a faster clone. Omit them to pull the entire repository.
+
+</details>
+
+<details>
+<summary><strong>Via the Codex UI</strong></summary>
+
+Navigate to **Settings → Plugin Marketplaces → Add** and fill in:
+
+| Field | Value |
+|---|---|
+| **Source** | `https://github.com/google-labs-code/stitch-skills` |
+| **Git ref** | `main` |
+| **Sparse paths** | *(optional)* `.agents/plugins`, `plugins/stitch-design`, `plugins/stitch-build`, `plugins/stitch-utilities` |
+
+</details>
+
+Once the marketplace is registered, install any combination of:
+
+- **`stitch-design`** — design-focused skills
+- **`stitch-build`** — build and component skills
+- **`stitch-utilities`** — utility and helper skills
+
+#### Claude Code & Cursor
+
+```bash
+# Claude Code — installs into the current project
+npx plugins add google-labs-code/stitch-skills --scope project --target claude-code
+```
+
+```bash
+# Cursor — installs into the current workspace
+npx plugins add google-labs-code/stitch-skills --scope workspace --target cursor
+```
+
+### 2. Install Skills Selectively
+Choose only the specific skills you need.
+
+> [!IMPORTANT]
+> Stitch Design Skills often have inter-dependencies. If you choose to install skills selectively, ensure you include all required dependencies.
+
+```bash
+npx skills add google-labs-code/stitch-skills
+```
+
+You can run the following commands to see the help documentation for plugins and skills:
+
+```bash
+npx plugins --help
+
+npx skills --help
+```
+
+## Prerequisites
+
+These skills require the **Stitch MCP** server to be configured and running in your agent's environment. Make sure you have followed the [Stitch MCP Setup Instructions](https://stitch.withgoogle.com/docs/mcp/setup/) to register the server and set up appropriate environment variables and credentials.
+
+## Available Plugins
+
+### Design (`stitch-design`)
+
+Core design workflows for creating, managing, and optimizing designs within Stitch.
+
+| Skill | Description | Prompt Example |
+|---|---|---|
+| [stitch::code-to-design](plugins/stitch-design/skills/code-to-design/) | Convert frontend code (React, Vue, etc.) to a Stitch Design via HTML extraction + design system + upload | *"Upload the frontend code at `/path/to/dashboard` into a Stitch project named 'Dashboard-Migration-2026'."* |
+| [stitch::generate-design](plugins/stitch-design/skills/generate-design/) | Generate new screens from text or images, edit existing screens, and create design variants | · *"Make a browse tab for a mobile app for romance and date night ideas."*<br>· *"Edit the login screen to add a 'Remember Me' checkbox and change the button color to blue."*<br>· *"Generate 3 design variants of the home screen with dark mode and high-density layouts."* |
+| [stitch::manage-design-system](plugins/stitch-design/skills/manage-design-system/) | Manage design systems in Stitch — upload DESIGN.md and apply themes to screens | *"Upload our design system from `.stitch/DESIGN.md` and apply it to all screens."* |
+| [stitch::extract-design-md](plugins/stitch-design/skills/extract-design-md/) | Extract a comprehensive DESIGN.md directly from frontend source code | *"Scan `/src` and extract the design system into `.stitch/DESIGN.md`."* |
+| [stitch::extract-static-html](plugins/stitch-design/skills/extract-static-html/) | Extract self-contained static HTML from running web apps, inlining CSS and images | *"Extract a static HTML snapshot of `http://localhost:3000/profile`."* |
+| [stitch::upload-to-stitch](plugins/stitch-design/skills/upload-to-stitch/) | Upload local assets (images, mockups, HTML) to a Stitch project | *"Upload `.stitch/landing_page.html` to Stitch project `projects/987654321`."* |
+
+---
+
+### Build (`stitch-build`)
+
+Code generation, framework integration, and asset compilation from Stitch designs.
+
+| Skill | Description | Prompt Example |
+|---|---|---|
+| [stitch::react-components](plugins/stitch-build/skills/react-components/) | Convert Stitch screens to React component systems with automated validation and design token consistency | · *"Convert all screens in Stitch project `projects/123` to React components."*<br>· *"Sync the app to the last updates of the Stitc
+
+---
+
+# Terraform
+
+- Website: https://developer.hashicorp.com/terraform
+- Forums: [HashiCorp Discuss](https://discuss.hashicorp.com/c/terraform-core)
+- Documentation: [https://developer.hashicorp.com/terraform/docs](https://developer.hashicorp.com/terraform/docs)
+- Tutorials: [HashiCorp's Learn Platform](https://developer.hashicorp.com/terraform/tutorials)
+- Certification Exam: [HashiCorp Certified: Terraform Associate](https://www.hashicorp.com/certification/#hashicorp-certified-terraform-associate)
+
+<img alt="Terraform" src="https://www.datocms-assets.com/2885/1731373310-terraform_white.svg" width="600px">
+
+Terraform is a tool for building, changing, and versioning infrastructure safely and efficiently. Terraform can manage existing and popular service providers as well as custom in-house solutions.
+
+The key features of Terraform are:
+
+- **Infrastructure as Code**: Infrastructure is described using a high-level configuration syntax. This allows a blueprint of your datacenter to be versioned and treated as you would any other code. Additionally, infrastructure can be shared and re-used.
+
+- **Execution Plans**: Terraform has a "planning" step where it generates an execution plan. The execution plan shows what Terraform will do when you call apply. This lets you avoid any surprises when Terraform manipulates infrastructure.
+
+- **Resource Graph**: Terraform builds a graph of all your resources, and parallelizes the creation and modification of any non-dependent resources. Because of this, Terraform builds infrastructure as efficiently as possible, and operators get insight into dependencies in their infrastructure.
+
+- **Change Automation**: Complex changesets can be applied to your infrastructure with minimal human interaction. With the previously mentioned execution plan and resource graph, you know exactly what Terraform will change and in what order, avoiding many possible human errors.
+
+For more information, refer to the [What is Terraform?](https://www.terraform.io/intro) page on the Terraform website.
+
+## Getting Started & Documentation
+
+Documentation is available on the [Terraform website](https://developer.hashicorp.com/terraform):
+
+- [Introduction](https://developer.hashicorp.com/terraform/intro)
+- [Documentation](https://developer.hashicorp.com/terraform/docs)
+
+If you're new to Terraform and want to get started creating infrastructure, please check out our [Getting Started guides](https://learn.hashicorp.com/terraform#getting-started) on HashiCorp's learning platform. There are also [additional guides](https://learn.hashicorp.com/terraform#operations-and-development) to continue your learning.
+
+Show off your Terraform knowledge by passing a certification exam. Visit the [certification page](https://www.hashicorp.com/certification/) for information about exams and find [study materials](https://learn.hashicorp.com/terraform/certification/terraform-associate) on HashiCorp's learning platform.
+
+## Developing Terraform
+
+This repository contains only Terraform core, which includes the command line interface and the main graph engine. Providers are implemented as plugins, and Terraform can automatically download providers that are published on [the Terraform Registry](https://registry.terraform.io). HashiCorp develops some providers, and others are developed by other organizations. For more information, refer to [Plugin development](https://developer.hashicorp.com/terraform/plugin).
+
+- To learn more about compiling Terraform and contributing suggested changes, refer to [the contributing guide](.github/CONTRIBUTING.md).
+
+- To learn more about how we handle bug reports, refer to the [bug triage guide](./BUGPROCESS.md).
+
+- To learn how to contribute to the Terraform documentation, refer to the [Web Unified Docs repository](https://github.com/hashicorp/web-unified-docs).
+
+## License
+
+[Business Source License 1.1](https://github.com/hashicorp/terraform/blob/main/LICENSE)
+

@@ -1,0 +1,17 @@
+name: Ping Pullbot
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Train Pullbot"]
+    types: [completed]
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Wait then trigger training
+      run: |
+        echo "⏳ Pullbot resting for 30 seconds..."
+        sleep 30
+        echo "🏓 Ping! Triggering next training round."

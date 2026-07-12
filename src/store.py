@@ -1,10 +1,13 @@
 """
 Pullbot Knowledge Store
-Simple vector storage and retrieval.
+Loads embedding model from chunks — no internet needed.
 """
 
 import os
-os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 import torch
 import numpy as np
@@ -13,25 +16,29 @@ import yaml
 from transformers import AutoModel, AutoTokenizer
 import time
 
-with open('config.yaml', 'r') as f:
+config_path = os.path.join(REPO_ROOT, 'config.yaml')
+with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
 
 class KnowledgeStore:
     def __init__(self):
         print("🧠 Initializing knowledge store...")
         
-        self.model_name = config['model']['base']
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        # Load from chunks — same directory as the main model
+        chunks_dir = os.path.join(REPO_ROOT, "models", "chunks")
+        
+        self.tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
+        
         self.embedder = AutoModel.from_pretrained(
-            self.model_name,
+            chunks_dir,
             torch_dtype=torch.float32,
             low_cpu_mem_usage=True
         )
         self.embedder.eval()
         
         self.chunks = []
-        self.store_path = "knowledge/store.json"
+        self.store_path = os.path.join(REPO_ROOT, "knowledge", "store.json")
         self.load()
     
     def embed_text(self, text):
@@ -54,8 +61,9 @@ class KnowledgeStore:
                 'added': int(time.time())
             })
         
-        if len(self.chunks) > config['knowledge']['max_chunks']:
-            self.chunks = self.chunks[-config['knowledge']['max_chunks']:]
+        max_chunks = config['knowledge']['max_chunks']
+        if len(self.chunks) > max_chunks:
+            self.chunks = self.chunks[-max_chunks:]
         
         print(f"  📚 Knowledge store: {len(self.chunks)} chunks")
     
@@ -82,7 +90,7 @@ class KnowledgeStore:
         return "\n\n".join([r['text'] for r in results])
     
     def save(self):
-        os.makedirs('knowledge', exist_ok=True)
+        os.makedirs(os.path.dirname(self.store_path), exist_ok=True)
         save_data = [{'text': c['text'], 'source': c['source'], 'added': c['added']} for c in self.chunks]
         with open(self.store_path, 'w') as f:
             json.dump(save_data, f, indent=2)
@@ -100,30 +108,36 @@ class KnowledgeStore:
                     'source': item.get('source', 'unknown'),
                     'added': item.get('added', 0)
                 })
-            print(f"  ✅ Rebuilt {len(self.chunks)} chunks")
+            print(f"  ✅ Rebuilt {len(self.chunks)} chunks with embeddings")
         else:
             print("  🆕 Fresh knowledge store")
     
-    def build_from_corpus(self, corpus_path="data/processed/corpus.txt"):
+    def build_from_corpus(self):
+        corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
         if not os.path.exists(corpus_path):
             print("❌ No corpus found")
             return
+        
         with open(corpus_path, 'r') as f:
             text = f.read()
+        
         sections = text.split('\n\n---\n\n')
         for section in sections:
             if section.strip():
                 self.add_text(section.strip())
+        
         self.save()
         print(f"✅ Built knowledge store: {len(self.chunks)} chunks")
 
 if __name__ == '__main__':
     import sys
     store = KnowledgeStore()
-    if len(sys.argv) > 1 and sys.argv[1] == 'build':
-        store.build_from_corpus()
-    elif len(sys.argv) > 1 and sys.argv[1] == 'search':
-        query = sys.argv[2] if len(sys.argv) > 2 else "test"
-        results = store.search(query)
-        for r in results:
-            print(f"\n📄 {r['text'][:200]}...")
+    
+    if len(sys.argv) > 1:
+        if sys.argv[1] == 'build':
+            store.build_from_corpus()
+        elif sys.argv[1] == 'search':
+            query = sys.argv[2] if len(sys.argv) > 2 else "test"
+            results = store.search(query)
+            for r in results:
+                print(f"\n📄 {r['text'][:200]}...")

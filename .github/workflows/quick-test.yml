@@ -1,0 +1,37 @@
+name: Quick Test Train
+
+on:
+  workflow_dispatch:
+
+jobs:
+  quick-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: pip install torch transformers datasets accelerate
+        
+    - name: Quick train
+      run: python src/quick_train.py
+      
+    - name: Cleanup large files
+      run: |
+        rm -rf models/checkpoints/
+        rm -f models/chunks/model.safetensors
+        rm -f models/chunks/pytorch_model.bin
+        
+    - name: Commit and push
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git add models/chunks/ data/ knowledge/
+        git diff --staged --quiet || git commit -m "Quick test train"
+        git pull --rebase
+        git push

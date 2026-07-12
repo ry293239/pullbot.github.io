@@ -12,6 +12,6 @@ jobs:
     steps:
     - name: Wait then trigger training
       run: |
-        echo "⏳ Pullbot resting for 30 seconds..."
-        sleep 30
+        echo "⏳ Pullbot resting for 15 seconds..."
+        sleep 15
         echo "🏓 Ping! Triggering next training round."

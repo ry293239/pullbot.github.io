@@ -18,34 +18,87 @@ jobs:
       with:
         python-version: '3.10'
         
+    - name: Cache HuggingFace
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/huggingface
+        key: hf-cache-${{ runner.os }}
+        
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install torch transformers peft accelerate requests beautifulsoup4 numpy pyyaml datasets
         
-    - name: 📊 Scrape
+    - name: 📊 Scrape web
       run: python src/scrape.py
       
-    - name: 🧠 Build knowledge
+    - name: 🧠 Build knowledge store
       run: python src/store.py build
       
-    - name: 🚀 Train
-      run: python src/model.py train
+    - name: 🚀 Train model (if corpus exists)
+      run: |
+        if [ -f data/processed/corpus.txt ]; then
+          CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
+          echo "Corpus size: $CORPUS_SIZE chars"
+          if [ "$CORPUS_SIZE" -gt 1000 ]; then
+            python src/model.py train
+            echo "TRAINED=true" >> $GITHUB_ENV
+          else
+            echo "Corpus too small, skipping training"
+            echo "TRAINED=false" >> $GITHUB_ENV
+          fi
+        else
+          echo "No corpus found, skipping training"
+          echo "TRAINED=false" >> $GITHUB_ENV
+        fi
       
+    - name: 📝 Update version file
+      run: |
+        mkdir -p data/knowledge
+        
+        # Count knowledge chunks
+        if [ -f knowledge/store.json ]; then
+          CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))")
+        else
+          CHUNKS=0
+        fi
+        
+        # Get corpus size
+        if [ -f data/processed/corpus.txt ]; then
+          CORPUS_KB=$(( $(wc -c < data/processed/corpus.txt) / 1024 ))
+        else
+          CORPUS_KB=0
+        fi
+        
+        # Increment version
+        if [ -f data/knowledge/version.json ]; then
+          CURRENT=$(python -c "import json; print(json.load(open('data/knowledge/version.json'))['version'])")
+          MAJOR=$(echo $CURRENT | cut -d. -f1)
+          MINOR=$(echo $CURRENT | cut -d. -f2)
+          NEW_MINOR=$((MINOR + 1))
+          NEW_VERSION="${MAJOR}.${NEW_MINOR}"
+        else
+          NEW_VERSION="1.1"
+        fi
+        
+        cat > data/knowledge/version.json << EOF
+        {
+          "version": "${NEW_VERSION}",
+          "updated": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
+          "knowledge_chunks": ${CHUNKS},
+          "corpus_kb": ${CORPUS_KB},
+          "model_trained": $([ "$TRAINED" = "true" ] && echo "true" || echo "false")
+        }
+        EOF
+        
+        echo "Version updated to ${NEW_VERSION}"
+        echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
+        
     - name: 💾 Commit & push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add -A
-        git diff --staged --quiet || git commit -m "🤖 Trained: $(date -u +'%Y-%m-%d %H:%M UTC')"
+        git diff --staged --quiet || git commit -m "🤖 v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus"
         git pull --rebase
         git push
-        
-    - name: 🌐 Deploy to GitHub Pages
-      uses: peaceiris/actions-gh-pages@v3
-      with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./
-        publish_branch: gh-pages
-        force_orphan: true
-        enable_jekyll: false

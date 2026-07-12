@@ -86,20 +86,21 @@ jobs:
         echo "✅ Version: ${NEW_VERSION}"
         echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
         
-    - name: 🗑 Remove large checkpoint files before push
+    - name: 🗑 Remove large files before push
       run: |
-        echo "Removing large checkpoint files..."
+        echo "Removing large files..."
         rm -rf models/checkpoints/
         rm -rf models/temp_trained/
         rm -rf models/temp_quick/
-        echo "✅ Large files removed"
+        rm -f models/chunks/model.safetensors
+        rm -f models/chunks/pytorch_model.bin
+        echo "✅ Cleaned up"
         
     - name: 💾 Commit & push
       run: |
         git config user.name "Pullbot"
-        git config user.email "pullbot@bot.dev"
+        git config user.email "ry2012293239@gmail.com"
         
-        # Only add what we want (skip checkpoints)
         git add data/
         git add knowledge/
         git add models/chunks/

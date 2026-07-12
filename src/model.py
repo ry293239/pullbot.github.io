@@ -1,7 +1,7 @@
 """
 Pullbot Model - FULL FINE-TUNING
 Trains the entire DistilGPT2 model directly on scraped data.
-After training, re-chunks the model. Zero HuggingFace at runtime.
+After training, re-chunks the model. Loads from repo chunks.
 """
 
 import os
@@ -23,7 +23,6 @@ import yaml
 import json
 import time
 import glob
-import shutil
 
 config_path = os.path.join(REPO_ROOT, 'config.yaml')
 with open(config_path, 'r') as f:
@@ -42,12 +41,15 @@ class PullbotModel:
         print("🤖 PULLBOT FULL MODEL LOADER")
         print("=" * 50)
         
-        # Load tokenizer from chunks (no internet)
+        # Reassemble model from chunks if needed
+        self._reassemble_if_needed()
+        
+        # Load tokenizer from chunks
         print("\n📂 Loading tokenizer from chunks...")
         self.tokenizer = AutoTokenizer.from_pretrained(self.chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         
-        # Load model from chunks (no internet)
+        # Load model from chunks
         print(f"📂 Loading model from chunks...")
         self.model = AutoModelForCausalLM.from_pretrained(
             self.chunks_dir,
@@ -57,6 +59,43 @@ class PullbotModel:
         
         total_params = sum(p.numel() for p in self.model.parameters())
         print(f"✅ Model ready! {total_params:,} parameters")
+    
+    def _reassemble_if_needed(self):
+        """Reassemble model chunks into full file if needed"""
+        manifest_path = os.path.join(self.chunks_dir, "manifest.json")
+        
+        if not os.path.exists(manifest_path):
+            print("   ⚠️ No manifest found - model may be incomplete")
+            return
+        
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled_path = os.path.join(self.chunks_dir, weights_file)
+        
+        # Check if already reassembled and complete
+        if os.path.exists(reassembled_path):
+            expected_size = manifest.get('total_size', 0)
+            actual_size = os.path.getsize(reassembled_path)
+            if actual_size == expected_size:
+                print(f"   ✅ Model already reassembled ({actual_size//1024//1024}MB)")
+                return
+        
+        # Reassemble from chunks
+        print(f"   🧩 Reassembling model from {manifest.get('num_chunks', 0)} chunks...")
+        
+        with open(reassembled_path, 'wb') as outfile:
+            for chunk_rel_path in manifest.get('chunks', []):
+                chunk_path = os.path.join(REPO_ROOT, chunk_rel_path)
+                if os.path.exists(chunk_path):
+                    with open(chunk_path, 'rb') as infile:
+                        outfile.write(infile.read())
+                else:
+                    print(f"   ⚠️ Missing chunk: {chunk_path}")
+        
+        final_size = os.path.getsize(reassembled_path)
+        print(f"   ✅ Reassembled {final_size//1024//1024}MB")
     
     def prepare_training_data(self):
         corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
@@ -145,6 +184,7 @@ class PullbotModel:
         return True
     
     def save_and_chunk(self):
+        """Save trained model and split into chunks"""
         print("\n💾 Saving trained model...")
         
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
@@ -171,11 +211,11 @@ class PullbotModel:
         # Clear old chunks
         for old_file in glob.glob(os.path.join(self.chunks_dir, "model_chunk_*.bin")):
             os.remove(old_file)
-        # Also remove old reassembled file
-        for old_safe in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
-            os.remove(old_safe)
-        for old_bin in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
-            os.remove(old_bin)
+        # Remove old reassembled files
+        for old_file in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
+            os.remove(old_file)
+        for old_file in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
+            os.remove(old_file)
         
         # Split into chunks
         print(f"\n🔪 Splitting into {CHUNK_SIZE_MB}MB chunks...")
@@ -198,9 +238,8 @@ class PullbotModel:
             chunks.append(f"models/chunks/{chunk_name}")
             print(f"   ✅ {chunk_name} ({chunk_size_mb:.1f}MB)")
         
-        # Save reassembled file too
-        weights_filename = os.path.basename(weights_path)
-        shutil.copy(weights_path, os.path.join(self.chunks_dir, weights_filename))
+        # DO NOT copy the full file to chunks dir - too big for git push
+        # The chunks are enough to reassemble when needed
         
         # Copy config files
         config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
@@ -208,7 +247,10 @@ class PullbotModel:
         for fname in config_files:
             src = os.path.join(temp_dir, fname)
             if os.path.exists(src):
-                shutil.copy(src, os.path.join(self.chunks_dir, fname))
+                dst = os.path.join(self.chunks_dir, fname)
+                with open(src, 'rb') as fin:
+                    with open(dst, 'wb') as fout:
+                        fout.write(fin.read())
         
         # Update manifest
         manifest = {
@@ -217,7 +259,7 @@ class PullbotModel:
             "total_size_mb": round(total_size / (1024 * 1024), 1),
             "num_chunks": len(chunks),
             "chunks": chunks,
-            "weights_filename": weights_filename,
+            "weights_filename": os.path.basename(weights_path),
             "fully_trained": True,
             "training_date": time.time(),
             "corpus_chars": len(open(os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")).read()) if os.path.exists(os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")) else 0
@@ -226,11 +268,18 @@ class PullbotModel:
         with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
             json.dump(manifest, f, indent=2)
         
-        # Cleanup temp
+        # Cleanup temp (but keep the reassembled file locally for store.py)
+        reassembled_dest = os.path.join(self.chunks_dir, os.path.basename(weights_path))
+        with open(weights_path, 'rb') as fin:
+            with open(reassembled_dest, 'wb') as fout:
+                fout.write(fin.read())
+        
+        import shutil
         shutil.rmtree(temp_dir)
         
         print(f"\n✅ Chunked: {len(chunks)} files, {round(total_size/(1024*1024),1)}MB")
-        print(f"   This is YOUR trained model!")
+        print(f"   ⚠️ Full .safetensors NOT saved to chunks dir (too big for git)")
+        print(f"   Model will be reassembled from chunks when needed")
         return True
 
 if __name__ == '__main__':

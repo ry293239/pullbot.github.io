@@ -1,8 +1,7 @@
 """
 Pullbot Model - FULL FINE-TUNING
 Trains the entire DistilGPT2 model directly on scraped data.
-After training, re-chunks the model and saves to models/chunks/.
-The website downloads YOUR trained model - not generic DistilGPT2.
+After training, re-chunks the model. Zero HuggingFace at runtime.
 """
 
 import os
@@ -15,7 +14,6 @@ import torch
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
-    AutoConfig,
     TrainingArguments,
     Trainer,
     DataCollatorForLanguageModeling
@@ -44,44 +42,23 @@ class PullbotModel:
         print("🤖 PULLBOT FULL MODEL LOADER")
         print("=" * 50)
         
-        # Load tokenizer from chunks
-        print("\n📂 Loading tokenizer...")
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        # Load tokenizer from chunks (no internet)
+        print("\n📂 Loading tokenizer from chunks...")
+        self.tokenizer = AutoTokenizer.from_pretrained(self.chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         
-        # Load the full model (will use cached version from HuggingFace
-        # since we need the full weights for training)
-        print(f"📂 Loading {self.model_name} for training...")
+        # Load model from chunks (no internet)
+        print(f"📂 Loading model from chunks...")
         self.model = AutoModelForCausalLM.from_pretrained(
-            self.model_name,
+            self.chunks_dir,
             torch_dtype=torch.float32,
             low_cpu_mem_usage=True
         )
         
-        # Check if we have a previously trained model in chunks
-        manifest_path = os.path.join(self.chunks_dir, "manifest.json")
-        if os.path.exists(manifest_path):
-            with open(manifest_path, 'r') as f:
-                manifest = json.load(f)
-            if manifest.get('fully_trained'):
-                print("📂 Found previously trained model - loading state...")
-                self._load_trained_state()
-        
         total_params = sum(p.numel() for p in self.model.parameters())
-        trainable_params = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
-        print(f"✅ Model ready! Params: {total_params:,} total, {trainable_params:,} trainable")
-    
-    def _load_trained_state(self):
-        """Load previously trained weights from chunks"""
-        reassembled = os.path.join(self.chunks_dir, "model.safetensors")
-        if os.path.exists(reassembled):
-            print("  Loading trained weights...")
-            state_dict = torch.load(reassembled, map_location="cpu")
-            self.model.load_state_dict(state_dict, strict=False)
-            print("  ✅ Trained weights loaded")
+        print(f"✅ Model ready! {total_params:,} parameters")
     
     def prepare_training_data(self):
-        """Convert corpus to training dataset"""
         corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
         if not os.path.exists(corpus_path):
             print("❌ No corpus found! Run scrape first.")
@@ -91,7 +68,7 @@ class PullbotModel:
             text = f.read()
         
         if len(text) < 500:
-            print(f"❌ Corpus too small ({len(text)} chars). Need more data.")
+            print(f"❌ Corpus too small ({len(text)} chars). Need >500.")
             return None
         
         max_length = config['model']['max_length']
@@ -113,7 +90,6 @@ class PullbotModel:
         return tokenized
     
     def train(self):
-        """Full model training"""
         dataset = self.prepare_training_data()
         if dataset is None or len(dataset) == 0:
             print("❌ Cannot train - no data")
@@ -126,7 +102,7 @@ class PullbotModel:
         print(f"   Batch size: {config['training']['batch_size']}")
         print(f"   Epochs: {config['training']['epochs']}")
         print(f"   Learning rate: {config['training']['learning_rate']}")
-        print(f"   This modifies ALL {sum(p.numel() for p in self.model.parameters()):,} parameters")
+        print(f"   Modifying ALL {sum(p.numel() for p in self.model.parameters()):,} parameters")
         print("=" * 50 + "\n")
         
         training_args = TrainingArguments(
@@ -147,10 +123,7 @@ class PullbotModel:
             model=self.model,
             args=training_args,
             train_dataset=dataset,
-            data_collator=DataCollatorForLanguageModeling(
-                self.tokenizer, 
-                mlm=False
-            ),
+            data_collator=DataCollatorForLanguageModeling(self.tokenizer, mlm=False),
         )
         
         start = time.time()
@@ -159,7 +132,6 @@ class PullbotModel:
         
         print(f"\n✅ Training complete in {elapsed:.1f} minutes")
         
-        # Save metrics
         metrics_path = os.path.join(REPO_ROOT, "models", "last_train.json")
         with open(metrics_path, 'w') as f:
             json.dump({
@@ -173,17 +145,15 @@ class PullbotModel:
         return True
     
     def save_and_chunk(self):
-        """Save trained model and split into chunks for repo"""
         print("\n💾 Saving trained model...")
         
-        # Save full model to temp location
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
         os.makedirs(temp_dir, exist_ok=True)
         
         self.model.save_pretrained(temp_dir)
         self.tokenizer.save_pretrained(temp_dir)
         
-        # Find the saved weights file
+        # Find saved weights
         safetensors_path = os.path.join(temp_dir, "model.safetensors")
         pytorch_path = os.path.join(temp_dir, "pytorch_model.bin")
         
@@ -196,14 +166,18 @@ class PullbotModel:
             return False
         
         file_size_mb = os.path.getsize(weights_path) / (1024 * 1024)
-        print(f"   Trained model size: {file_size_mb:.1f}MB")
+        print(f"   Trained model: {file_size_mb:.1f}MB")
         
         # Clear old chunks
-        chunks_dir = self.chunks_dir
-        for old_file in glob.glob(os.path.join(chunks_dir, "model_chunk_*.bin")):
+        for old_file in glob.glob(os.path.join(self.chunks_dir, "model_chunk_*.bin")):
             os.remove(old_file)
+        # Also remove old reassembled file
+        for old_safe in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
+            os.remove(old_safe)
+        for old_bin in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
+            os.remove(old_bin)
         
-        # Split into new chunks
+        # Split into chunks
         print(f"\n🔪 Splitting into {CHUNK_SIZE_MB}MB chunks...")
         
         with open(weights_path, 'rb') as f:
@@ -215,7 +189,7 @@ class PullbotModel:
         for i in range(0, total_size, CHUNK_SIZE):
             chunk_data = data[i:i + CHUNK_SIZE]
             chunk_name = f"model_chunk_{i // CHUNK_SIZE:03d}.bin"
-            chunk_path = os.path.join(chunks_dir, chunk_name)
+            chunk_path = os.path.join(self.chunks_dir, chunk_name)
             
             with open(chunk_path, 'wb') as f:
                 f.write(chunk_data)
@@ -224,11 +198,19 @@ class PullbotModel:
             chunks.append(f"models/chunks/{chunk_name}")
             print(f"   ✅ {chunk_name} ({chunk_size_mb:.1f}MB)")
         
-        # Also save the full file for local loading
+        # Save reassembled file too
         weights_filename = os.path.basename(weights_path)
-        shutil.copy(weights_path, os.path.join(chunks_dir, weights_filename))
+        shutil.copy(weights_path, os.path.join(self.chunks_dir, weights_filename))
         
-        # Save updated manifest
+        # Copy config files
+        config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
+                        'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
+        for fname in config_files:
+            src = os.path.join(temp_dir, fname)
+            if os.path.exists(src):
+                shutil.copy(src, os.path.join(self.chunks_dir, fname))
+        
+        # Update manifest
         manifest = {
             "model_name": self.model_name,
             "total_size": total_size,
@@ -241,87 +223,30 @@ class PullbotModel:
             "corpus_chars": len(open(os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")).read()) if os.path.exists(os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")) else 0
         }
         
-        manifest_path = os.path.join(chunks_dir, "manifest.json")
-        with open(manifest_path, 'w') as f:
+        with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
             json.dump(manifest, f, indent=2)
-        
-        # Copy config files
-        config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
-                        'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
-        for fname in config_files:
-            src = os.path.join(temp_dir, fname)
-            if os.path.exists(src):
-                shutil.copy(src, os.path.join(chunks_dir, fname))
         
         # Cleanup temp
         shutil.rmtree(temp_dir)
         
-        print(f"\n✅ Model chunked: {len(chunks)} files, {round(total_size/(1024*1024),1)}MB total")
-        print(f"   This is now YOUR trained model, not generic DistilGPT2!")
+        print(f"\n✅ Chunked: {len(chunks)} files, {round(total_size/(1024*1024),1)}MB")
+        print(f"   This is YOUR trained model!")
         return True
-    
-    def generate(self, prompt, context=None, max_length=None):
-        """Generate text from the trained model"""
-        if max_length is None:
-            max_length = config['model']['max_length']
-        
-        if context:
-            full_prompt = f"Context: {context}\n\nQuestion: {prompt}\n\nAnswer:"
-        else:
-            full_prompt = f"User: {prompt}\n\nPullbot:"
-        
-        inputs = self.tokenizer(
-            full_prompt, 
-            return_tensors="pt", 
-            truncation=True, 
-            max_length=512
-        )
-        
-        self.model.eval()
-        with torch.no_grad():
-            outputs = self.model.generate(
-                input_ids=inputs['input_ids'],
-                attention_mask=inputs['attention_mask'],
-                max_new_tokens=max_length,
-                temperature=config['model']['temperature'],
-                do_sample=True,
-                top_p=0.9,
-                top_k=50,
-                pad_token_id=self.tokenizer.eos_token_id,
-                repetition_penalty=1.1
-            )
-        
-        response = self.tokenizer.decode(
-            outputs[0][inputs['input_ids'].shape[1]:],
-            skip_special_tokens=True
-        )
-        return response.strip()
 
 if __name__ == '__main__':
     import sys
-    
     bot = PullbotModel()
     
     if len(sys.argv) > 1:
         command = sys.argv[1]
-        
         if command == 'train':
             success = bot.train()
             if success:
                 bot.save_and_chunk()
-                print("\n🎉 PULLBOT HAS BEEN TRAINED!")
-                print("   The model in models/chunks/ is now YOUR AI.")
-                print("   Push to repo and the website will download YOUR brain.")
-        
-        elif command == 'generate':
-            prompt = sys.argv[2] if len(sys.argv) > 2 else "Hello"
-            response = bot.generate(prompt)
-            print(f"\n🤖 Pullbot: {response}")
-        
+                print("\n🎉 PULLBOT TRAINED & CHUNKED!")
         elif command == 'chunk':
             bot.save_and_chunk()
-        
         else:
-            print("Commands: train, generate 'prompt', chunk")
+            print("Commands: train, chunk")
     else:
-        print("Commands: train, generate 'prompt', chunk")
+        print("Commands: train, chunk")

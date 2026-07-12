@@ -1,0 +1,27 @@
+[
+    {
+        "text": "Python is a high-level, interpreted programming language known for its readability and versatility. It supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python is widely used in web development, data science, artificial intelligence, and automation.",
+        "source": "wiki:Python_(programming_language)",
+        "added": 1700000000
+    },
+    {
+        "text": "Git is a distributed version control system that tracks changes in source code during software development. It was created by Linus Torvalds in 2005 for development of the Linux kernel. GitHub is a platform that hosts Git repositories and adds collaboration features.",
+        "source": "wiki:Git",
+        "added": 1700000000
+    },
+    {
+        "text": "Machine learning is a subset of artificial intelligence that enables systems to learn and improve from experience without being explicitly programmed. Common approaches include supervised learning, unsupervised learning, and reinforcement learning.",
+        "source": "wiki:Machine_learning",
+        "added": 1700000000
+    },
+    {
+        "text": "JavaScript is a programming language that is one of the core technologies of the World Wide Web. It enables interactive web pages and is an essential part of web applications. JavaScript can run in browsers and on servers via Node.js.",
+        "source": "wiki:JavaScript",
+        "added": 1700000000
+    },
+    {
+        "text": "The Internet is a global network of interconnected computers that communicate using standardized protocols. It originated from ARPANET in 1969 and has grown to connect billions of devices worldwide. Key protocols include TCP/IP, HTTP, and DNS.",
+        "source": "wiki:Internet",
+        "added": 1700000000
+    }
+]

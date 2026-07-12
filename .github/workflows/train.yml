@@ -1,22 +1,13 @@
-name: Pullbot Pipeline
+name: Train Pullbot
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
-    inputs:
-      job:
-        description: 'What to run'
-        required: true
-        default: 'scrape'
-        type: choice
-        options:
-          - scrape
-          - chunk_model
-          - full
+  workflow_run:
+    workflows: ["Ping Pullbot"]
+    types: [completed]
 
 jobs:
-  pipeline:
+  train:
     runs-on: ubuntu-latest
     timeout-minutes: 290
     
@@ -27,35 +18,26 @@ jobs:
       with:
         python-version: '3.10'
         
-    - name: Cache HuggingFace models
-      uses: actions/cache@v4
-      with:
-        path: ~/.cache/huggingface
-        key: hf-cache-${{ runner.os }}
-        
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install torch transformers peft accelerate requests beautifulsoup4 numpy pyyaml datasets
         
-    - name: 📦 CHUNK MODEL (one-time)
-      if: ${{ github.event.inputs.job == 'chunk_model' }}
-      run: python src/chunk_model.py
-      
     - name: 📊 Scrape
-      if: ${{ github.event.inputs.job == 'scrape' || github.event.inputs.job == 'full' }}
       run: python src/scrape.py
       
     - name: 🧠 Build knowledge
-      if: ${{ github.event.inputs.job == 'scrape' || github.event.inputs.job == 'full' }}
       run: python src/store.py build
+      
+    - name: 🚀 Train
+      run: python src/model.py train
       
     - name: 💾 Commit & push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add -A
-        git diff --staged --quiet || git commit -m "🤖 Auto: $(date -u +'%Y-%m-%d %H:%M UTC')"
+        git diff --staged --quiet || git commit -m "🤖 Trained: $(date -u +'%Y-%m-%d %H:%M UTC')"
         git pull --rebase
         git push
         

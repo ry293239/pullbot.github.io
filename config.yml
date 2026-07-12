@@ -1,0 +1,49 @@
+# ============================================
+# PULLBOT CONFIGURATION
+# Edit this file to change bot behavior
+# ============================================
+
+# --- Model Settings ---
+model:
+  base: "distilgpt2"           # Pretrained base model
+  max_length: 256              # Max tokens to generate
+  temperature: 0.8             # Creativity (0=precise, 1=wild)
+  lora_rank: 8                 # LoRA adapter size (bigger=more learn)
+  save_every: 1000             # Steps between checkpoints
+
+# --- Training ---
+training:
+  chunk_minutes: 280           # Train this long (under 300 min limit)
+  learning_rate: 0.0002
+  batch_size: 2                # Small for CPU
+  max_examples: 5000           # Max training samples per run
+
+# --- Scraping Sources ---
+scrape:
+  github_trending: true        # Scrape trending repos
+  github_readmes: 5            # READMEs per trending repo
+  wikipedia_random: 10         # Random wiki articles
+  wikipedia_depth: 2           # Links to follow from each article
+  max_total_chars: 500000      # Stop scraping at this size
+
+# --- Knowledge Base ---
+knowledge:
+  chunk_size: 200              # Characters per chunk
+  top_k: 3                     # Retrieve top 3 chunks per query
+  max_stored_chunks: 10000     # Prune old chunks beyond this
+
+# --- Self-Improvement ---
+evolve:
+  enabled: false               # Turn on after base model works
+  variants_per_prompt: 20      # Generate 20 responses
+  keep_top_percent: 10         # Keep best 10% for retraining
+  min_response_length: 20      # Reject short garbage responses
+
+# --- Bot Personality ---
+personality:
+  system_prompt: |
+    You are Pullbot, a helpful AI that retrieves information from the web.
+    Answer based on the context provided. If you don't know, say so honestly.
+    Be concise but friendly.
+  
+  intro_message: "Hey! I'm Pullbot. Ask me anything — I pull from the web to help."

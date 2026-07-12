@@ -13,5 +13,7 @@
     "models/chunks/model_chunk_006.bin"
   ],
   "weights_filename": "model.safetensors",
-  "created": 1783842999.3841994
+  "fully_trained": true,
+  "quick_test": true,
+  "training_date": 1783896447.1045108
 }

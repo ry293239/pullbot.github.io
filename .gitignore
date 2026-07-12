@@ -1,13 +1,20 @@
 # Checkpoints (too large for GitHub)
 models/checkpoints/
 
+# Temp training files
+models/temp_*/
+models/temp_trained/
+
+# Full model files (use chunks instead)
+models/chunks/model.safetensors
+models/chunks/pytorch_model.bin
+
 # Python
 __pycache__/
 *.pyc
 *.pyo
 *.egg-info/
 
-# Temp files
-models/temp_*/
-models/temp_trained/
+# Misc
 *.tmp
+.DS_Store

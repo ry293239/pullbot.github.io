@@ -1,44 +1,52 @@
 """
 Pullbot Model
-Loads DistilGPT2, trains with LoRA, generates responses.
+Loads DistilGPT2 from repo chunks — no internet needed.
 """
 
 import os
-os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 import torch
-from transformers import (
-    AutoModelForCausalLM,
-    AutoTokenizer,
-    TrainingArguments,
-    Trainer,
-    DataCollatorForLanguageModeling
-)
+from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
 from peft import LoraConfig, get_peft_model, TaskType, PeftModel
 from datasets import Dataset
+from transformers import TrainingArguments, Trainer, DataCollatorForLanguageModeling
 import yaml
 import json
 import time
+import glob
 
-with open('config.yaml', 'r') as f:
+config_path = os.path.join(REPO_ROOT, 'config.yaml')
+with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
 
 class PullbotModel:
-    def __init__(self, model_name=None):
-        self.model_name = model_name or config['model']['base']
+    def __init__(self):
         self.device = "cpu"
+        self.chunks_dir = os.path.join(REPO_ROOT, "models", "chunks")
         
-        print(f"🤖 Loading model: {self.model_name}")
+        print("🤖 Loading Pullbot from repo chunks...")
         
-        self.tokenizer = AutoTokenizer.from_pretrained(self.model_name)
+        # Reassemble model if needed
+        self._reassemble_model()
+        
+        # Load tokenizer from chunks dir
+        print("📂 Loading tokenizer...")
+        self.tokenizer = AutoTokenizer.from_pretrained(self.chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         
+        # Load model from chunks dir (config files are there)
+        print("📂 Loading model...")
         self.base_model = AutoModelForCausalLM.from_pretrained(
-            self.model_name,
+            self.chunks_dir,
             torch_dtype=torch.float32,
             low_cpu_mem_usage=True
         )
         
+        # Apply LoRA for training
         self.lora_config = LoraConfig(
             task_type=TaskType.CAUSAL_LM,
             r=8,
@@ -48,21 +56,57 @@ class PullbotModel:
         )
         
         self.model = get_peft_model(self.base_model, self.lora_config)
-        self.model.print_trainable_parameters()
         
-        if os.path.exists("models/adapter/adapter_model.bin"):
+        # Load trained adapter if exists
+        adapter_path = os.path.join(REPO_ROOT, "models", "adapter")
+        if os.path.exists(os.path.join(adapter_path, "adapter_model.bin")):
             print("📂 Loading trained adapter...")
-            self.model = PeftModel.from_pretrained(self.base_model, "models/adapter")
+            self.model = PeftModel.from_pretrained(self.base_model, adapter_path)
         
-        print(f"✅ Model ready")
+        trainable = sum(p.numel() for p in self.model.parameters() if p.requires_grad)
+        total = sum(p.numel() for p in self.model.parameters())
+        print(f"✅ Model ready! Trainable: {trainable:,} / Total: {total:,}")
     
-    def save_adapter(self, path="models/adapter"):
-        os.makedirs(path, exist_ok=True)
-        self.model.save_pretrained(path)
-        print(f"💾 Adapter saved to {path}")
+    def _reassemble_model(self):
+        """Reassemble chunks into a single safetensors file"""
+        manifest_path = os.path.join(self.chunks_dir, "manifest.json")
+        
+        if not os.path.exists(manifest_path):
+            print("❌ No manifest found in models/chunks/")
+            return
+        
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        
+        # Check if already reassembled
+        weights_file = manifest['weights_filename']
+        reassembled_path = os.path.join(self.chunks_dir, weights_file)
+        
+        if os.path.exists(reassembled_path):
+            expected_size = manifest['total_size']
+            actual_size = os.path.getsize(reassembled_path)
+            if actual_size == expected_size:
+                print(f"  ✅ Model already reassembled ({actual_size//1024//1024}MB)")
+                return
+        
+        print(f"  🧩 Reassembling model from {manifest['num_chunks']} chunks...")
+        
+        with open(reassembled_path, 'wb') as outfile:
+            for chunk_rel_path in manifest['chunks']:
+                chunk_path = os.path.join(REPO_ROOT, chunk_rel_path)
+                with open(chunk_path, 'rb') as infile:
+                    outfile.write(infile.read())
+        
+        print(f"  ✅ Reassembled {manifest['total_size_mb']}MB model")
+    
+    def save_adapter(self):
+        adapter_path = os.path.join(REPO_ROOT, "models", "adapter")
+        os.makedirs(adapter_path, exist_ok=True)
+        self.model.save_pretrained(adapter_path)
+        print(f"💾 Adapter saved")
     
     def prepare_training_data(self):
-        corpus_path = "data/processed/corpus.txt"
+        corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
         if not os.path.exists(corpus_path):
             print("❌ No corpus found! Run scrape first.")
             return None
@@ -95,7 +139,7 @@ class PullbotModel:
             return
         
         training_args = TrainingArguments(
-            output_dir="models/checkpoints",
+            output_dir=os.path.join(REPO_ROOT, "models", "checkpoints"),
             num_train_epochs=config['training']['epochs'],
             per_device_train_batch_size=config['training']['batch_size'],
             gradient_accumulation_steps=4,
@@ -122,8 +166,13 @@ class PullbotModel:
         elapsed = (time.time() - start) / 60
         print(f"✅ Training complete in {elapsed:.1f} min")
         
-        with open('models/last_train.json', 'w') as f:
-            json.dump({'timestamp': time.time(), 'dataset_size': len(dataset), 'minutes': elapsed}, f)
+        metrics_path = os.path.join(REPO_ROOT, "models", "last_train.json")
+        with open(metrics_path, 'w') as f:
+            json.dump({
+                'timestamp': time.time(),
+                'dataset_size': len(dataset),
+                'minutes': elapsed
+            }, f)
     
     def generate(self, prompt, context=None):
         if context:

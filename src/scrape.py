@@ -1,22 +1,29 @@
 """
 Pullbot Scraper
 Grabs text from GitHub trending repos and Wikipedia.
-No API keys needed.
+Includes random sentence scraping for variety.
 """
 
 import os
-os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+import sys
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 import requests
 import json
 import yaml
 from bs4 import BeautifulSoup
 import time
+import random
+import re
 
-with open('config.yaml', 'r') as f:
+config_path = os.path.join(REPO_ROOT, 'config.yaml')
+with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
 
 def scrape_github_trending():
+    """Get trending repos and their READMEs"""
     print("📊 Scraping GitHub trending...")
     
     url = "https://github.com/trending"
@@ -58,7 +65,8 @@ def scrape_github_trending():
         return []
 
 def scrape_wikipedia():
-    print("📚 Scraping Wikipedia...")
+    """Get random Wikipedia article summaries"""
+    print("📚 Scraping Wikipedia summaries...")
     
     texts = []
     base_url = "https://en.wikipedia.org/api/rest_v1/page/random/summary"
@@ -70,11 +78,12 @@ def scrape_wikipedia():
                 data = r.json()
                 text = data.get('extract', '')
                 title = data.get('title', 'unknown')
-                texts.append({
-                    'source': f"wiki:{title}",
-                    'text': text,
-                    'type': 'wiki_article'
-                })
+                if len(text) > 50:
+                    texts.append({
+                        'source': f"wiki:{title}",
+                        'text': text,
+                        'type': 'wiki_article'
+                    })
             time.sleep(0.3)
         except:
             continue
@@ -82,21 +91,71 @@ def scrape_wikipedia():
     print(f"  ✅ Got {len(texts)} articles")
     return texts
 
+def scrape_wikipedia_random_sentences(num_sentences=50):
+    """Scrape random sentences from random Wikipedia articles.
+    This gives WAY more variety than just summaries."""
+    
+    print("🎲 Scraping random Wikipedia sentences...")
+    
+    all_sentences = []
+    articles_checked = 0
+    max_articles = num_sentences * 3
+    
+    base_url = "https://en.wikipedia.org/api/rest_v1/page/random/summary"
+    
+    while len(all_sentences) < num_sentences and articles_checked < max_articles:
+        try:
+            r = requests.get(base_url, timeout=15)
+            if r.status_code == 200:
+                data = r.json()
+                title = data.get('title', 'unknown')
+                extract = data.get('extract', '')
+                
+                # Split into sentences
+                sentences = re.split(r'(?<=[.!?])\s+', extract)
+                
+                # Pick 1-3 random sentences from this article
+                if len(sentences) > 2:
+                    num_to_take = min(random.randint(1, 3), len(sentences))
+                    selected = random.sample(sentences, num_to_take)
+                    
+                    for sent in selected:
+                        sent = sent.strip()
+                        if len(sent) > 30:
+                            all_sentences.append({
+                                'source': f"wiki_random:{title}",
+                                'text': sent,
+                                'type': 'wiki_random_sentence'
+                            })
+                
+            articles_checked += 1
+            time.sleep(0.3)
+            
+        except Exception as e:
+            articles_checked += 1
+            continue
+    
+    print(f"  ✅ Got {len(all_sentences)} random sentences from {articles_checked} articles")
+    return all_sentences
+
 def save_raw_data(texts):
-    os.makedirs('data/raw', exist_ok=True)
+    """Save scraped text to files"""
+    os.makedirs(os.path.join(REPO_ROOT, 'data', 'raw'), exist_ok=True)
     timestamp = int(time.time())
-    filepath = f"data/raw/scrape_{timestamp}.json"
+    filepath = os.path.join(REPO_ROOT, 'data', 'raw', f'scrape_{timestamp}.json')
     
     with open(filepath, 'w') as f:
         json.dump(texts, f, indent=2)
     
-    os.makedirs('data/processed', exist_ok=True)
+    # Append to corpus
+    os.makedirs(os.path.join(REPO_ROOT, 'data', 'processed'), exist_ok=True)
     clean_text = '\n\n---\n\n'.join([t['text'] for t in texts])
     
-    with open('data/processed/corpus.txt', 'a') as f:
+    corpus_path = os.path.join(REPO_ROOT, 'data', 'processed', 'corpus.txt')
+    with open(corpus_path, 'a') as f:
         f.write(clean_text + '\n')
     
-    corpus_path = 'data/processed/corpus.txt'
+    # Trim corpus if too large
     if os.path.exists(corpus_path):
         with open(corpus_path, 'r') as f:
             content = f.read()
@@ -106,7 +165,8 @@ def save_raw_data(texts):
             with open(corpus_path, 'w') as f:
                 f.write(content)
     
-    print(f"✅ Scrape complete! Corpus: {len(open(corpus_path).read()) if os.path.exists(corpus_path) else 0:,} chars")
+    corpus_size = len(open(corpus_path).read()) if os.path.exists(corpus_path) else 0
+    print(f"✅ Scrape complete! Corpus: {corpus_size:,} chars")
 
 def run_scrape():
     all_texts = []
@@ -116,7 +176,9 @@ def run_scrape():
     
     if 'wikipedia_random' in config['scrape']['sources']:
         all_texts.extend(scrape_wikipedia())
+        all_texts.extend(scrape_wikipedia_random_sentences(50))
     
+    # Deduplicate
     seen = set()
     unique = []
     for t in all_texts:

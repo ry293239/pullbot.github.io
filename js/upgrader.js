@@ -1,5 +1,6 @@
 // ============================================
 // PULLBOT UPGRADER - Real Update System
+// Downloads actual model chunks and knowledge from repo
 // ============================================
 
 const REPO_RAW_URL = 'https://raw.githubusercontent.com/pullbot-ai/pullbot-ai.github.io/main';
@@ -53,25 +54,25 @@ async function checkForUpdates() {
     localStorage.setItem('pullbot_last_check', now.toString());
 }
 
-// ========== REAL DOWNLOAD FUNCTIONS ==========
+// ============================================
+// REAL DOWNLOAD FUNCTIONS
+// ============================================
 
 async function downloadLatestKnowledge(progressCallback) {
     try {
-        // 1. Download knowledge store
-        const storeUrl = `${REPO_RAW_URL}/data/knowledge/store.json`;
-        console.log('📥 Downloading knowledge from:', storeUrl);
+        console.log('📥 Downloading knowledge base...');
         
+        const storeUrl = `${REPO_RAW_URL}/knowledge/store.json`;
         const response = await fetch(storeUrl);
+        
         if (!response.ok) {
             throw new Error(`HTTP ${response.status}: ${response.statusText}`);
         }
         
         const totalSize = parseInt(response.headers.get('content-length') || '0');
-        let loadedSize = 0;
-        
-        // Stream the download
         const reader = response.body.getReader();
         const chunks = [];
+        let loadedSize = 0;
         
         while (true) {
             const { done, value } = await reader.read();
@@ -85,7 +86,6 @@ async function downloadLatestKnowledge(progressCallback) {
             }
         }
         
-        // Combine and parse
         const blob = new Blob(chunks);
         const text = await blob.text();
         const data = JSON.parse(text);
@@ -94,16 +94,13 @@ async function downloadLatestKnowledge(progressCallback) {
             throw new Error('Invalid knowledge format: expected array');
         }
         
-        // 2. Also fetch corpus.txt for richer knowledge
-        let corpusText = '';
+        // Also try to fetch corpus.txt for richer knowledge
         try {
             const corpusResponse = await fetch(`${REPO_RAW_URL}/data/processed/corpus.txt`);
             if (corpusResponse.ok) {
-                corpusText = await corpusResponse.text();
-                
-                // Split corpus into chunks and add to knowledge
+                const corpusText = await corpusResponse.text();
                 const corpusChunks = splitIntoChunks(corpusText, 300);
-                corpusChunks.forEach((chunk, i) => {
+                corpusChunks.forEach(chunk => {
                     data.push({
                         text: chunk,
                         source: 'corpus',
@@ -115,7 +112,7 @@ async function downloadLatestKnowledge(progressCallback) {
             console.log('No corpus.txt found, using store.json only');
         }
         
-        // Save to IndexedDB
+        // Save to memory and IndexedDB
         knowledgeStore.chunks = data;
         knowledgeStore.loaded = true;
         await saveKnowledgeChunks(data);
@@ -142,40 +139,63 @@ function splitIntoChunks(text, chunkSize) {
 
 async function downloadLatestModel(progressCallback) {
     try {
-        console.log('📥 Downloading model adapter...');
+        console.log('📥 Downloading trained model...');
         
-        // Try to download the LoRA adapter files
-        const adapterFiles = [
-            'adapter_model.bin',
-            'adapter_config.json'
-        ];
+        // Get manifest to know what chunks to download
+        const manifestUrl = `${REPO_RAW_URL}/models/chunks/manifest.json`;
+        const manifestResp = await fetch(manifestUrl);
         
-        for (const file of adapterFiles) {
-            const url = `${REPO_RAW_URL}/models/adapter/${file}`;
+        if (!manifestResp.ok) {
+            throw new Error(`Cannot fetch manifest: HTTP ${manifestResp.status}`);
+        }
+        
+        const manifest = await manifestResp.json();
+        const chunks = manifest.chunks || [];
+        
+        if (chunks.length === 0) {
+            throw new Error('No model chunks found in manifest');
+        }
+        
+        console.log(`   Downloading ${chunks.length} chunks (${manifest.total_size_mb}MB total)...`);
+        
+        // Download each chunk
+        for (let i = 0; i < chunks.length; i++) {
+            const chunkUrl = `${REPO_RAW_URL}/${chunks[i]}`;
+            console.log(`   Chunk ${i + 1}/${chunks.length}...`);
+            
+            const response = await fetch(chunkUrl);
+            if (!response.ok) {
+                console.warn(`   ⚠️ Failed chunk ${i}: HTTP ${response.status}`);
+                continue;
+            }
+            
+            const data = await response.arrayBuffer();
+            await saveModelChunk(i, new Uint8Array(data));
             
             if (progressCallback) {
-                progressCallback(Math.round((adapterFiles.indexOf(file) / adapterFiles.length) * 100));
+                progressCallback(Math.round(((i + 1) / chunks.length) * 100));
             }
-            
+        }
+        
+        // Save manifest and config files
+        await saveConfig('model_manifest', manifest);
+        await saveConfig('model_downloaded_at', Date.now());
+        
+        // Also download config files
+        const configFiles = ['config.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt'];
+        for (const fname of configFiles) {
             try {
-                const response = await fetch(url);
-                if (response.ok) {
-                    const data = await response.arrayBuffer();
-                    await saveLoraAdapter({ filename: file, data: Array.from(new Uint8Array(data)) });
-                    console.log(`  ✅ Downloaded ${file}`);
-                } else {
-                    console.log(`  ⚠️ ${file} not found (status ${response.status})`);
+                const resp = await fetch(`${REPO_RAW_URL}/models/chunks/${fname}`);
+                if (resp.ok) {
+                    const text = await resp.text();
+                    await saveConfig(`model_${fname.replace('.json', '')}`, text);
                 }
             } catch (e) {
-                console.log(`  ⚠️ Could not download ${file}: ${e.message}`);
+                // Config files are optional
             }
         }
         
-        if (progressCallback) {
-            progressCallback(100);
-        }
-        
-        console.log('✅ Model adapter download complete');
+        console.log('✅ Model downloaded and stored locally');
         return true;
         
     } catch (error) {
@@ -184,32 +204,53 @@ async function downloadLatestModel(progressCallback) {
     }
 }
 
+async function saveModelChunk(index, data) {
+    return new Promise((resolve, reject) => {
+        const tx = db.transaction('model', 'readwrite');
+        const store = tx.objectStore('model');
+        store.put({
+            name: `chunk_${index}`,
+            data: Array.from(data),
+            savedAt: Date.now()
+        });
+        tx.oncomplete = resolve;
+        tx.onerror = reject;
+    });
+}
+
 async function downloadModel() {
-    // First-time setup: download initial knowledge
+    // First-time setup: download initial knowledge and model
     console.log('📥 First-time setup...');
     
     try {
         await downloadLatestKnowledge((pct) => {
-            updateLoader(`Downloading knowledge base... (${pct}%)`, 30 + (pct * 0.5));
+            updateLoader(`Downloading knowledge base... (${pct}%)`, 30 + (pct * 0.3));
         });
+        
+        await downloadLatestModel((pct) => {
+            updateLoader(`Downloading model... (${pct}%)`, 60 + (pct * 0.4));
+        });
+        
         return true;
     } catch (e) {
-        console.log('⚠️ Could not download knowledge, using seed data');
+        console.log('⚠️ First-time download incomplete, using seed data');
         return false;
     }
 }
 
-// ========== AUTO-UPDATE ==========
+// ============================================
+// AUTO-UPDATE
+// ============================================
 
 function scheduleDailyUpdate() {
     localStorage.setItem('pullbot_auto_update', 'daily');
-    setInterval(checkForUpdates, 3600000); // Check every hour
+    setInterval(checkForUpdates, 3600000);
     console.log('⏰ Auto-update: daily');
 }
 
 function scheduleWeeklyUpdate() {
     localStorage.setItem('pullbot_auto_update', 'weekly');
-    setInterval(checkForUpdates, 21600000); // Check every 6 hours
+    setInterval(checkForUpdates, 21600000);
     console.log('⏰ Auto-update: weekly');
 }
 

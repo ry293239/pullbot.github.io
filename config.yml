@@ -1,49 +1,56 @@
 # ============================================
 # PULLBOT CONFIGURATION
-# Edit this file to change bot behavior
 # ============================================
 
 # --- Model Settings ---
 model:
-  base: "distilgpt2"           # Pretrained base model
-  max_length: 256              # Max tokens to generate
-  temperature: 0.8             # Creativity (0=precise, 1=wild)
-  lora_rank: 8                 # LoRA adapter size (bigger=more learn)
-  save_every: 1000             # Steps between checkpoints
+  type: "tiny"                  # "tiny" = from scratch, "distilgpt2" = pretrained
+  base: "distilgpt2"           # Only used if type is distilgpt2
+  max_length: 256
+  temperature: 0.8
+  embed_dim: 128               # For tiny model
+  hidden_dim: 256              # For tiny model
+  num_layers: 4                # For tiny model
 
 # --- Training ---
 training:
-  chunk_minutes: 280           # Train this long (under 300 min limit)
-  learning_rate: 0.0002
-  batch_size: 2                # Small for CPU
-  max_examples: 5000           # Max training samples per run
+  chunk_minutes: 280
+  learning_rate: 0.001
+  batch_size: 8
+  max_examples: 5000
+  epochs: 3
 
-# --- Scraping Sources ---
+# --- Scraping ---
 scrape:
-  github_trending: true        # Scrape trending repos
-  github_readmes: 5            # READMEs per trending repo
-  wikipedia_random: 10         # Random wiki articles
-  wikipedia_depth: 2           # Links to follow from each article
-  max_total_chars: 500000      # Stop scraping at this size
+  sources:
+    - github_trending
+    - wikipedia_random
+  github_readmes: 5
+  wikipedia_articles: 10
+  max_chars: 500000
 
 # --- Knowledge Base ---
 knowledge:
-  chunk_size: 200              # Characters per chunk
-  top_k: 3                     # Retrieve top 3 chunks per query
-  max_stored_chunks: 10000     # Prune old chunks beyond this
+  chunk_size: 300
+  top_k: 3
+  max_chunks: 5000
+  embed_dim: 128
 
 # --- Self-Improvement ---
 evolve:
-  enabled: false               # Turn on after base model works
-  variants_per_prompt: 20      # Generate 20 responses
-  keep_top_percent: 10         # Keep best 10% for retraining
-  min_response_length: 20      # Reject short garbage responses
+  enabled: false
+  variants: 20
+  keep_percent: 10
+  min_length: 20
 
 # --- Bot Personality ---
 personality:
-  system_prompt: |
-    You are Pullbot, a helpful AI that retrieves information from the web.
-    Answer based on the context provided. If you don't know, say so honestly.
-    Be concise but friendly.
-  
-  intro_message: "Hey! I'm Pullbot. Ask me anything — I pull from the web to help."
+  intro: "Hey! I'm Pullbot. I scrape the web to learn. Ask me anything!"
+  style: "concise"
+  max_response_len: 200
+
+# --- Repo Settings ---
+repo:
+  data_dir: "data"
+  model_dir: "models"
+  knowledge_dir: "knowledge"

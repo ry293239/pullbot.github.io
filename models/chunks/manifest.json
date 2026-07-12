@@ -1,0 +1,17 @@
+{
+  "model_name": "distilgpt2",
+  "total_size": 327657928,
+  "total_size_mb": 312.5,
+  "num_chunks": 7,
+  "chunks": [
+    "models/chunks/model_chunk_000.bin",
+    "models/chunks/model_chunk_001.bin",
+    "models/chunks/model_chunk_002.bin",
+    "models/chunks/model_chunk_003.bin",
+    "models/chunks/model_chunk_004.bin",
+    "models/chunks/model_chunk_005.bin",
+    "models/chunks/model_chunk_006.bin"
+  ],
+  "weights_filename": "model.safetensors",
+  "created": 1783842999.3841994
+}

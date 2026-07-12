@@ -1,6 +1,6 @@
 """
 Pullbot Knowledge Store
-Loads embedding model from chunks — no internet needed.
+Loads embedding model from repo chunks - NO internet needed.
 """
 
 import os
@@ -13,8 +13,9 @@ import torch
 import numpy as np
 import json
 import yaml
-from transformers import AutoModel, AutoTokenizer
+from transformers import AutoModel, AutoTokenizer, AutoConfig
 import time
+import glob
 
 config_path = os.path.join(REPO_ROOT, 'config.yaml')
 with open(config_path, 'r') as f:
@@ -24,9 +25,13 @@ class KnowledgeStore:
     def __init__(self):
         print("🧠 Initializing knowledge store...")
         
-        # Load from chunks — same directory as the main model
         chunks_dir = os.path.join(REPO_ROOT, "models", "chunks")
         
+        # Reassemble model from chunks if needed
+        self._reassemble_if_needed(chunks_dir)
+        
+        # Load tokenizer and model FROM CHUNKS (no internet)
+        print(f"   Loading from repo chunks...")
         self.tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         
@@ -40,9 +45,53 @@ class KnowledgeStore:
         self.chunks = []
         self.store_path = os.path.join(REPO_ROOT, "knowledge", "store.json")
         self.load()
+        print(f"   ✅ Knowledge store ready")
+    
+    def _reassemble_if_needed(self, chunks_dir):
+        """Reassemble model chunks into full file if needed"""
+        manifest_path = os.path.join(chunks_dir, "manifest.json")
+        
+        if not os.path.exists(manifest_path):
+            print("   ⚠️ No manifest found - model chunks may be incomplete")
+            return
+        
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled_path = os.path.join(chunks_dir, weights_file)
+        
+        # Check if already reassembled and complete
+        if os.path.exists(reassembled_path):
+            expected_size = manifest.get('total_size', 0)
+            actual_size = os.path.getsize(reassembled_path)
+            if actual_size == expected_size:
+                print(f"   ✅ Model already reassembled ({actual_size//1024//1024}MB)")
+                return
+        
+        # Need to reassemble
+        print(f"   🧩 Reassembling model from {manifest.get('num_chunks', 0)} chunks...")
+        
+        with open(reassembled_path, 'wb') as outfile:
+            for chunk_rel_path in manifest.get('chunks', []):
+                chunk_path = os.path.join(REPO_ROOT, chunk_rel_path)
+                if os.path.exists(chunk_path):
+                    with open(chunk_path, 'rb') as infile:
+                        outfile.write(infile.read())
+                else:
+                    print(f"   ⚠️ Missing chunk: {chunk_path}")
+        
+        final_size = os.path.getsize(reassembled_path)
+        print(f"   ✅ Reassembled {final_size//1024//1024}MB")
     
     def embed_text(self, text):
-        inputs = self.tokenizer(text, return_tensors="pt", truncation=True, max_length=512, padding=True)
+        inputs = self.tokenizer(
+            text, 
+            return_tensors="pt", 
+            truncation=True, 
+            max_length=512, 
+            padding=True
+        )
         with torch.no_grad():
             outputs = self.embedder(**inputs)
             return outputs.last_hidden_state.mean(dim=1).squeeze().numpy()
@@ -77,7 +126,9 @@ class KnowledgeStore:
         scores = []
         for i, chunk in enumerate(self.chunks):
             chunk_emb = np.array(chunk['embedding'])
-            sim = np.dot(query_emb, chunk_emb) / (np.linalg.norm(query_emb) * np.linalg.norm(chunk_emb) + 1e-8)
+            sim = np.dot(query_emb, chunk_emb) / (
+                np.linalg.norm(query_emb) * np.linalg.norm(chunk_emb) + 1e-8
+            )
             scores.append((sim, i))
         
         scores.sort(reverse=True, key=lambda x: x[0])
@@ -91,15 +142,23 @@ class KnowledgeStore:
     
     def save(self):
         os.makedirs(os.path.dirname(self.store_path), exist_ok=True)
-        save_data = [{'text': c['text'], 'source': c['source'], 'added': c['added']} for c in self.chunks]
+        save_data = [
+            {
+                'text': c['text'], 
+                'source': c['source'], 
+                'added': c['added']
+            } 
+            for c in self.chunks
+        ]
         with open(self.store_path, 'w') as f:
             json.dump(save_data, f, indent=2)
+        print(f"  💾 Saved {len(self.chunks)} chunks")
     
     def load(self):
         if os.path.exists(self.store_path):
             with open(self.store_path, 'r') as f:
                 save_data = json.load(f)
-            print(f"📂 Loading {len(save_data)} stored chunks...")
+            print(f"  📂 Loading {len(save_data)} stored chunks...")
             for item in save_data:
                 embedding = self.embed_text(item['text'])
                 self.chunks.append({
@@ -115,11 +174,13 @@ class KnowledgeStore:
     def build_from_corpus(self):
         corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
         if not os.path.exists(corpus_path):
-            print("❌ No corpus found")
+            print("❌ No corpus found at", corpus_path)
             return
         
         with open(corpus_path, 'r') as f:
             text = f.read()
+        
+        print(f"  📄 Corpus: {len(text):,} chars")
         
         sections = text.split('\n\n---\n\n')
         for section in sections:
@@ -140,4 +201,4 @@ if __name__ == '__main__':
             query = sys.argv[2] if len(sys.argv) > 2 else "test"
             results = store.search(query)
             for r in results:
-                print(f"\n📄 {r['text'][:200]}...")
+                print(f"\n📄 Score: {r[0]:.3f}\n{r[1]['text'][:200]}...")

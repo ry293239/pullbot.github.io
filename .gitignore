@@ -1,0 +1,13 @@
+# Checkpoints (too large for GitHub)
+models/checkpoints/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+
+# Temp files
+models/temp_*/
+models/temp_trained/
+*.tmp

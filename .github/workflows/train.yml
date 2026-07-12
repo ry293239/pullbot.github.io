@@ -86,11 +86,31 @@ jobs:
         echo "✅ Version: ${NEW_VERSION}"
         echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
         
+    - name: 🗑 Remove large checkpoint files before push
+      run: |
+        echo "Removing large checkpoint files..."
+        rm -rf models/checkpoints/
+        rm -rf models/temp_trained/
+        rm -rf models/temp_quick/
+        echo "✅ Large files removed"
+        
     - name: 💾 Commit & push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        git add -A
+        
+        # Only add what we want (skip checkpoints)
+        git add data/
+        git add knowledge/
+        git add models/chunks/
+        git add models/last_train.json 2>/dev/null || true
+        git add src/
+        git add config.yaml requirements.txt
+        git add .github/
+        git add js/ index.html 2>/dev/null || true
+        git add .gitignore 2>/dev/null || true
+        git add data/knowledge/version.json 2>/dev/null || true
+        
         git diff --staged --quiet || git commit -m "🤖 v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus | full fine-tune"
         git pull --rebase
         git push

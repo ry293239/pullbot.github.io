@@ -1,6 +1,6 @@
 """
-Pullbot Model - FULL FINE-TUNING + PRUNING + QUANTIZATION + CHECKPOINTS
-Trains, saves checkpoints, prunes, quantizes. Handles quantized models.
+Pullbot Model - FULL FINE-TUNING + PRUNING + QUANTIZATION + ONNX EXPORT
+Trains, saves checkpoints, prunes, quantizes, exports to ONNX for deployment.
 """
 
 import os
@@ -232,6 +232,62 @@ class PullbotModel:
             print(f"   ⚠️ Failed: {e}")
             return None
     
+    def export_to_onnx(self, output_path=None):
+        """Export model to ONNX format for lightweight deployment"""
+        if output_path is None:
+            output_path = os.path.join(REPO_ROOT, "models", "pullbot.onnx")
+        
+        print("\n" + "=" * 50)
+        print("📤 EXPORTING TO ONNX")
+        print("=" * 50)
+        
+        try:
+            self.model.eval()
+            self.model.to('cpu')
+            
+            dummy_input = torch.randint(0, 50257, (1, 64))
+            dummy_mask = torch.ones(1, 64)
+            
+            torch.onnx.export(
+                self.model,
+                (dummy_input, dummy_mask),
+                output_path,
+                input_names=['input_ids', 'attention_mask'],
+                output_names=['logits'],
+                dynamic_axes={
+                    'input_ids': {0: 'batch', 1: 'sequence'},
+                    'attention_mask': {0: 'batch', 1: 'sequence'},
+                    'logits': {0: 'batch', 1: 'sequence'}
+                },
+                opset_version=14,
+                do_constant_folding=True
+            )
+            
+            size_mb = os.path.getsize(output_path) / (1024 * 1024)
+            print(f"   ✅ ONNX model: {size_mb:.1f}MB")
+            return output_path
+            
+        except Exception as e:
+            print(f"   ⚠️ Export with mask failed: {e}")
+            try:
+                dummy_input = torch.randint(0, 50257, (1, 64))
+                torch.onnx.export(
+                    self.model,
+                    dummy_input,
+                    output_path,
+                    input_names=['input_ids'],
+                    output_names=['logits'],
+                    dynamic_axes={'input_ids': {0: 'batch', 1: 'sequence'}},
+                    opset_version=14,
+                    do_constant_folding=True
+                )
+                size_mb = os.path.getsize(output_path) / (1024 * 1024)
+                print(f"   ✅ ONNX model (no mask): {size_mb:.1f}MB")
+                return output_path
+            except Exception as e2:
+                print(f"   ❌ ONNX export failed: {e2}")
+                return None
+    
     def get_model_size_estimate(self):
         non_zero = sum((p != 0).sum().item() for p in self.model.parameters() if p.dim() >= 2)
         total = sum(p.numel() for p in self.model.parameters())
@@ -366,7 +422,11 @@ if __name__ == '__main__':
                 final = bot.get_model_size_estimate()
                 print(f"\n📊 Final: {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
-                print("\n🎉 TRAINED, PRUNED & QUANTIZED!")
+                
+                # Export to ONNX
+                bot.export_to_onnx()
+                
+                print("\n🎉 TRAINED, PRUNED, QUANTIZED & EXPORTED!")
         
         elif command == 'prune':
             sparsity = float(sys.argv[2]) if len(sys.argv) > 2 else 0.7
@@ -386,6 +446,10 @@ if __name__ == '__main__':
             final = bot.get_model_size_estimate()
             print(f"📊 After: {final['estimated_ram_mb']:.0f}MB")
             bot.save_and_chunk()
+            bot.export_to_onnx()
+        
+        elif command == 'onnx':
+            bot.export_to_onnx()
         
         elif command == 'size':
             stats = bot.get_model_size_estimate()
@@ -399,6 +463,6 @@ if __name__ == '__main__':
             bot.save_and_chunk()
         
         else:
-            print("Commands: train [--resume path], prune [0.5-0.9], quantize, optimize [0.5-0.9], size, chunk")
+            print("Commands: train, prune [0.5-0.9], quantize, optimize [0.5-0.9], onnx, size, chunk")
     else:
-        print("Commands: train [--resume path], prune [0.5-0.9], quantize, optimize [0.5-0.9], size, chunk")
+        print("Commands: train, prune [0.5-0.9], quantize, optimize [0.5-0.9], onnx, size, chunk")

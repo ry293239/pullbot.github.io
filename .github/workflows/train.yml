@@ -29,13 +29,24 @@ jobs:
     - name: 🧠 Build knowledge store
       run: python src/store.py build
       
-    - name: 🚀 Train model (full fine-tune)
+    - name: 🚀 Train model (with checkpoint resume)
       run: |
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
           echo "Corpus size: $CORPUS_SIZE chars"
           if [ "$CORPUS_SIZE" -gt 2000 ]; then
-            python src/model.py train
+            
+            # Find latest checkpoint
+            LATEST_CHECKPOINT=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
+            
+            if [ -n "$LATEST_CHECKPOINT" ]; then
+              echo "📂 Resuming from: $LATEST_CHECKPOINT"
+              python src/model.py train --resume "$LATEST_CHECKPOINT"
+            else
+              echo "🆕 Starting fresh training..."
+              python src/model.py train
+            fi
+            
             echo "TRAINED=true" >> $GITHUB_ENV
           else
             echo "⚠️ Corpus too small (need >2000 chars, have $CORPUS_SIZE)"
@@ -99,7 +110,7 @@ jobs:
     - name: 💾 Commit & push
       run: |
         git config user.name "Pullbot"
-        git config user.email "ry2012293239@gmail.com"
+        git config user.email "pullbot@bot.dev"
         
         git add data/
         git add knowledge/

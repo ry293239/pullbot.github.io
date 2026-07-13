@@ -1,6 +1,8 @@
 {
-    "version": "1.0",
-    "updated": "2026-07-12T00:00:00Z",
-    "knowledge_chunks": 5,
-    "model_trained": false
+  "version": "1.1",
+  "updated": "2026-07-13T03:10:26Z",
+  "knowledge_chunks": 2246,
+  "corpus_kb": 491,
+  "model_trained": true,
+  "training_type": "full_fine_tune"
 }

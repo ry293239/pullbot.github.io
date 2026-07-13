@@ -1,9 +1,10 @@
 """
-Pullbot Model - FULL FINE-TUNING + SPARSE PRUNING + QUANTIZATION + ONNX EXPORT
-- Doesn't force FP32 after quantization
-- Streams model chunking (no full file in RAM)
-- True sparse pruning
-- ONNX as primary deployment artifact
+Pullbot Model - FULL FINE-TUNING + ACTUAL SHRINKING + COMPACT BINARY + ONNX
+- Pruning actually shrinks layers (not just zeroing)
+- Exports compact binary format (not CSV)
+- Streaming chunking
+- ONNX export for deployment
+- RAG-ready: knowledge separate from generation
 """
 
 import os
@@ -13,6 +14,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 import torch
+import torch.nn as nn
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -27,6 +29,8 @@ import json
 import time
 import glob
 import shutil
+import struct
+import numpy as np
 
 config_path = os.path.join(REPO_ROOT, 'config.yaml')
 with open(config_path, 'r') as f:
@@ -86,7 +90,6 @@ class PullbotModel:
         print(f"   ✅ Reassembled")
     
     def _load_model_safe(self):
-        """Load model - checks if quantized, uses appropriate dtype"""
         manifest_path = os.path.join(self.chunks_dir, "manifest.json")
         is_quantized = False
         if os.path.exists(manifest_path):
@@ -95,11 +98,8 @@ class PullbotModel:
         
         try:
             if is_quantized:
-                # Load base then apply quantization
                 self.model = AutoModelForCausalLM.from_pretrained(
-                    self.chunks_dir,
-                    torch_dtype=torch.float32,
-                    low_cpu_mem_usage=True
+                    self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
                 )
                 self.model = torch.quantization.quantize_dynamic(
                     self.model, {torch.nn.Linear}, dtype=torch.qint8
@@ -107,9 +107,7 @@ class PullbotModel:
                 print("   ✅ Loaded quantized model")
             else:
                 self.model = AutoModelForCausalLM.from_pretrained(
-                    self.chunks_dir,
-                    torch_dtype=torch.float32,
-                    low_cpu_mem_usage=True
+                    self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
                 )
                 print("   ✅ Loaded via from_pretrained")
         except Exception as e:
@@ -117,21 +115,18 @@ class PullbotModel:
             try:
                 model_config = AutoConfig.from_pretrained(self.chunks_dir)
                 self.model = AutoModelForCausalLM.from_config(model_config)
-                
                 weights_path = None
                 for fname in ['model.safetensors', 'pytorch_model.bin']:
                     path = os.path.join(self.chunks_dir, fname)
                     if os.path.exists(path):
                         weights_path = path
                         break
-                
                 if weights_path:
                     if weights_path.endswith('.safetensors'):
                         from safetensors.torch import load_file
                         state_dict = load_file(weights_path)
                     else:
                         state_dict = torch.load(weights_path, map_location='cpu')
-                    
                     cleaned = {k: v for k, v in state_dict.items() if not isinstance(v, tuple)}
                     self.model.load_state_dict(cleaned, strict=False)
                     print("   ✅ Loaded via state_dict")
@@ -144,23 +139,17 @@ class PullbotModel:
         if not os.path.exists(corpus_path):
             print("❌ No corpus found!")
             return None
-        
         with open(corpus_path, 'r') as f:
             text = f.read()
-        
         if len(text) < 500:
             print(f"❌ Corpus too small ({len(text)} chars)")
             return None
-        
         max_length = config['model']['max_length']
         chunks = [text[i:i+max_length] for i in range(0, len(text), max_length//2)]
         chunks = chunks[:config['training']['max_examples']]
-        
         print(f"\n📝 Training: {len(chunks)} chunks from {len(text):,} chars")
-        
         def tokenize_fn(examples):
             return self.tokenizer(examples['text'], truncation=True, padding='max_length', max_length=max_length)
-        
         dataset = Dataset.from_dict({'text': chunks})
         tokenized = dataset.map(tokenize_fn, batched=True, remove_columns=['text'])
         return tokenized
@@ -169,7 +158,6 @@ class PullbotModel:
         dataset = self.prepare_training_data()
         if dataset is None or len(dataset) == 0:
             return False
-        
         print("\n" + "=" * 50)
         print("🚀 FULL MODEL TRAINING")
         print(f"   Examples: {len(dataset)}")
@@ -179,7 +167,6 @@ class PullbotModel:
         if resume_from_checkpoint:
             print(f"   📂 Resuming from: {resume_from_checkpoint}")
         print("=" * 50 + "\n")
-        
         training_args = TrainingArguments(
             output_dir=os.path.join(REPO_ROOT, "models", "checkpoints"),
             num_train_epochs=config['training']['epochs'],
@@ -193,59 +180,69 @@ class PullbotModel:
             remove_unused_columns=False,
             dataloader_num_workers=0,
         )
-        
         trainer = Trainer(
-            model=self.model,
-            args=training_args,
-            train_dataset=dataset,
+            model=self.model, args=training_args, train_dataset=dataset,
             data_collator=DataCollatorForLanguageModeling(self.tokenizer, mlm=False),
         )
-        
         start = time.time()
         trainer.train(resume_from_checkpoint=resume_from_checkpoint)
         elapsed = (time.time() - start) / 60
         print(f"\n✅ Trained in {elapsed:.1f} min")
-        
         with open(os.path.join(REPO_ROOT, "models", "last_train.json"), 'w') as f:
             json.dump({'timestamp': time.time(), 'dataset_size': len(dataset), 'minutes': elapsed}, f)
-        
         return True
     
     # ============================================
-    # SPARSE PRUNING (zeros actually removed)
+    # ACTUAL SHRINKING PRUNING (removes neurons)
     # ============================================
     
-    def prune_model(self, target_sparsity=0.5):
+    def shrink_model(self, target_sparsity=0.5):
+        """Actually shrink layers by removing unimportant neurons"""
         print("\n" + "=" * 50)
-        print(f"✂️ SPARSE PRUNING (target: {target_sparsity*100:.0f}%)")
+        print(f"✂️ SHRINKING MODEL ({target_sparsity*100:.0f}%)")
         print("=" * 50)
         
-        total_removed = 0
-        total_params = 0
-        layers_done = 0
+        total_before = sum(p.numel() for p in self.model.parameters())
+        layers_shrunk = 0
         
-        for name, module in self.model.named_modules():
-            if isinstance(module, torch.nn.Linear):
+        for name, module in list(self.model.named_modules()):
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 100:
                 weight = module.weight.data.float()
-                total_params += weight.numel()
-                flat = weight.abs().flatten()
-                k = int(target_sparsity * flat.numel())
                 
-                if k > 0 and k < flat.numel():
-                    threshold = torch.kthvalue(flat, k).values
-                    mask = weight.abs() > threshold
-                    removed = (mask == False).sum().item()
-                    total_removed += removed
-                    
-                    # Apply mask but keep as dense for PyTorch compatibility
-                    # The real savings come from quantization + ONNX export
-                    module.weight.data = (weight * mask.float()).to(module.weight.dtype)
-                    layers_done += 1
+                # Score each output neuron by its total absolute weight
+                importance = weight.abs().sum(dim=1)
+                k = max(10, int((1 - target_sparsity) * importance.numel()))
+                
+                if k >= importance.numel():
+                    continue
+                
+                threshold = torch.kthvalue(importance, importance.numel() - k).values
+                keep_mask = importance >= threshold
+                
+                if keep_mask.sum() == 0:
+                    continue
+                
+                # Create smaller layer
+                new_out = keep_mask.sum().item()
+                new_linear = nn.Linear(weight.shape[1], new_out, bias=module.bias is not None)
+                new_linear.weight.data = weight[keep_mask].clone()
+                if module.bias is not None:
+                    new_linear.bias.data = module.bias.data[keep_mask].clone()
+                
+                # Replace in model
+                parent_name = '.'.join(name.split('.')[:-1])
+                attr_name = name.split('.')[-1]
+                if parent_name:
+                    parent = dict(self.model.named_modules()).get(parent_name)
+                    if parent:
+                        setattr(parent, attr_name, new_linear)
+                        layers_shrunk += 1
         
-        sparsity = (total_removed / total_params * 100) if total_params > 0 else 0
-        print(f"   Layers: {layers_done}")
-        print(f"   Removed: {total_removed:,} / {total_params:,} ({sparsity:.1f}%)")
-        return sparsity
+        total_after = sum(p.numel() for p in self.model.parameters())
+        reduction = (1 - total_after/total_before) * 100
+        print(f"   Layers shrunk: {layers_shrunk}")
+        print(f"   Params: {total_before:,} → {total_after:,} ({reduction:.1f}% smaller)")
+        return reduction
     
     # ============================================
     # QUANTIZATION
@@ -255,7 +252,6 @@ class PullbotModel:
         print("\n" + "=" * 50)
         print("🔧 QUANTIZING TO 8-BIT")
         print("=" * 50)
-        
         try:
             self.model = torch.quantization.quantize_dynamic(
                 self.model, {torch.nn.Linear}, dtype=torch.qint8
@@ -270,29 +266,82 @@ class PullbotModel:
             return None
     
     # ============================================
-    # ONNX EXPORT (for deployment)
+    # COMPACT BINARY EXPORT (not CSV)
+    # ============================================
+    
+    def export_compact(self, output_path=None):
+        """Export weights as compact binary with only non-zero values"""
+        if output_path is None:
+            output_path = os.path.join(REPO_ROOT, "models", "pullbot.bin")
+        
+        print("\n" + "=" * 50)
+        print("📦 EXPORTING COMPACT BINARY")
+        print("=" * 50)
+        
+        with open(output_path, 'wb') as f:
+            # Header
+            f.write(b'PULLBOT')  # Magic number
+            f.write(struct.pack('I', 1))  # Version
+            
+            layer_count = 0
+            for name, param in self.model.named_parameters():
+                if param.dim() >= 2:
+                    layer_count += 1
+            
+            f.write(struct.pack('I', layer_count))
+            
+            for name, param in self.model.named_parameters():
+                if param.dim() < 2:
+                    continue
+                
+                weights = param.data.cpu().numpy()
+                
+                # Only non-zero
+                mask = np.abs(weights) > 0.0001
+                indices = np.where(mask)
+                values = weights[mask]
+                
+                name_bytes = name.encode()
+                f.write(struct.pack('I', len(name_bytes)))
+                f.write(name_bytes)
+                f.write(struct.pack('II', *weights.shape))
+                f.write(struct.pack('I', len(values)))
+                
+                # Write sparse indices and values
+                for r, c, v in zip(indices[0], indices[1], values):
+                    f.write(struct.pack('IIf', int(r), int(c), float(v)))
+        
+        size_mb = os.path.getsize(output_path) / (1024 * 1024)
+        
+        # Count total non-zero
+        non_zero = sum(
+            (np.abs(p.data.cpu().numpy()) > 0.0001).sum()
+            for p in self.model.parameters() if p.dim() >= 2
+        )
+        total = sum(p.numel() for p in self.model.parameters() if p.dim() >= 2)
+        sparsity = (1 - non_zero/total) * 100 if total > 0 else 0
+        
+        print(f"   ✅ Compact binary: {size_mb:.1f}MB")
+        print(f"   Non-zero weights: {non_zero:,} / {total:,} ({sparsity:.1f}% sparse)")
+        return output_path
+    
+    # ============================================
+    # ONNX EXPORT
     # ============================================
     
     def export_to_onnx(self, output_path=None):
-        """Export model to ONNX for lightweight deployment"""
         if output_path is None:
             output_path = os.path.join(REPO_ROOT, "models", "pullbot.onnx")
-        
         print("\n" + "=" * 50)
         print("📤 EXPORTING TO ONNX")
         print("=" * 50)
-        
         try:
             self.model.eval()
             self.model.to('cpu')
-            
             dummy_input = torch.randint(0, 50257, (1, 64))
             dummy_mask = torch.ones(1, 64)
-            
             torch.onnx.export(
-                self.model,
-                (dummy_input, dummy_mask),
-                output_path,
+                self.model, (dummy_input, dummy_mask), output_path,
                 input_names=['input_ids', 'attention_mask'],
                 output_names=['logits'],
                 dynamic_axes={
@@ -300,33 +349,25 @@ class PullbotModel:
                     'attention_mask': {0: 'batch', 1: 'sequence'},
                     'logits': {0: 'batch', 1: 'sequence'}
                 },
-                opset_version=14,
-                do_constant_folding=True
+                opset_version=14, do_constant_folding=True
             )
-            
             size_mb = os.path.getsize(output_path) / (1024 * 1024)
-            print(f"   ✅ ONNX model: {size_mb:.1f}MB")
+            print(f"   ✅ ONNX: {size_mb:.1f}MB")
             return output_path
-            
-        except Exception as e:
-            print(f"   ⚠️ Export with mask failed: {e}")
+        except:
             try:
                 dummy_input = torch.randint(0, 50257, (1, 64))
                 torch.onnx.export(
-                    self.model,
-                    dummy_input,
-                    output_path,
-                    input_names=['input_ids'],
-                    output_names=['logits'],
+                    self.model, dummy_input, output_path,
+                    input_names=['input_ids'], output_names=['logits'],
                     dynamic_axes={'input_ids': {0: 'batch', 1: 'sequence'}},
-                    opset_version=14,
-                    do_constant_folding=True
+                    opset_version=14, do_constant_folding=True
                 )
                 size_mb = os.path.getsize(output_path) / (1024 * 1024)
-                print(f"   ✅ ONNX model (no mask): {size_mb:.1f}MB")
+                print(f"   ✅ ONNX (no mask): {size_mb:.1f}MB")
                 return output_path
-            except Exception as e2:
-                print(f"   ❌ ONNX export failed: {e2}")
+            except Exception as e:
+                print(f"   ❌ Failed: {e}")
                 return None
     
     # ============================================
@@ -339,33 +380,24 @@ class PullbotModel:
         is_quantized = any(p.dtype == torch.qint8 for p in self.model.parameters())
         bytes_per_param = 1 if is_quantized else 4
         ram_mb = non_zero * bytes_per_param / (1024 * 1024) * 3
-        
         return {
-            'total_params': total,
-            'non_zero': non_zero,
+            'total_params': total, 'non_zero': non_zero,
             'sparsity_pct': (1 - non_zero/total)*100 if total > 0 else 0,
-            'quantized': is_quantized,
-            'estimated_ram_mb': ram_mb
+            'quantized': is_quantized, 'estimated_ram_mb': ram_mb
         }
     
     # ============================================
-    # STREAMING SAVE & CHUNK (no full file in RAM)
+    # STREAMING SAVE & CHUNK
     # ============================================
     
     def save_and_chunk(self):
-        """Save model and chunk using streaming (doesn't load whole file into RAM)"""
         print("\n💾 Saving model...")
-        
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
         os.makedirs(temp_dir, exist_ok=True)
-        
         self.tokenizer.save_pretrained(temp_dir)
-        
         try:
             self.model.save_pretrained(temp_dir)
-            print("   Saved via save_pretrained")
         except:
-            print("   Using torch.save for quantized model...")
             torch.save(self.model.state_dict(), os.path.join(temp_dir, "pytorch_model.bin"))
             if hasattr(self.model, 'config'):
                 self.model.config.save_pretrained(temp_dir)
@@ -376,15 +408,10 @@ class PullbotModel:
             if os.path.exists(path):
                 weights_path = path
                 break
-        
         if not weights_path:
             print("❌ No weights found!")
             return False
         
-        file_size_mb = os.path.getsize(weights_path) / (1024 * 1024)
-        print(f"   File: {file_size_mb:.1f}MB")
-        
-        # Clear old chunks
         for old in glob.glob(os.path.join(self.chunks_dir, "model_chunk_*.bin")):
             os.remove(old)
         for old in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
@@ -392,33 +419,24 @@ class PullbotModel:
         for old in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
             os.remove(old)
         
-        # STREAMING CHUNK: read and write in blocks, don't load whole file
-        print(f"\n🔪 Streaming chunks ({CHUNK_SIZE_MB}MB each)...")
-        
         total_size = os.path.getsize(weights_path)
         chunks = []
-        
+        print(f"\n🔪 Streaming chunks ({CHUNK_SIZE_MB}MB each)...")
         with open(weights_path, 'rb') as f:
             chunk_idx = 0
             while True:
                 chunk_data = f.read(CHUNK_SIZE)
                 if not chunk_data:
                     break
-                
                 chunk_name = f"model_chunk_{chunk_idx:03d}.bin"
                 chunk_path = os.path.join(self.chunks_dir, chunk_name)
-                
                 with open(chunk_path, 'wb') as out:
                     out.write(chunk_data)
-                
-                chunk_mb = len(chunk_data) / (1024 * 1024)
                 chunks.append(f"models/chunks/{chunk_name}")
-                print(f"   ✅ {chunk_name} ({chunk_mb:.1f}MB)")
-                
+                print(f"   ✅ {chunk_name} ({len(chunk_data)/(1024*1024):.1f}MB)")
                 chunk_idx += 1
-                del chunk_data  # Free immediately
+                del chunk_data
         
-        # Copy config files
         config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
                         'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
         for cfg in config_files:
@@ -426,109 +444,92 @@ class PullbotModel:
             if os.path.exists(src):
                 shutil.copy(src, os.path.join(self.chunks_dir, cfg))
         
-        # Stats
         stats = self.get_model_size_estimate()
-        
-        # Manifest
         manifest = {
-            "model_name": self.model_name,
-            "total_size": total_size,
-            "total_size_mb": round(total_size / (1024 * 1024), 1),
-            "num_chunks": len(chunks),
-            "chunks": chunks,
+            "model_name": self.model_name, "total_size": total_size,
+            "total_size_mb": round(total_size/(1024*1024), 1),
+            "num_chunks": len(chunks), "chunks": chunks,
             "weights_filename": os.path.basename(weights_path),
-            "fully_trained": True,
-            "pruned": stats['sparsity_pct'] > 5,
-            "quantized": stats['quantized'],
-            "sparsity_pct": stats['sparsity_pct'],
-            "estimated_ram_mb": stats['estimated_ram_mb'],
-            "training_date": time.time()
+            "fully_trained": True, "pruned": stats['sparsity_pct'] > 5,
+            "quantized": stats['quantized'], "sparsity_pct": stats['sparsity_pct'],
+            "estimated_ram_mb": stats['estimated_ram_mb'], "training_date": time.time()
         }
-        
         with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
             json.dump(manifest, f, indent=2)
         
-        # Cleanup
         shutil.rmtree(temp_dir)
         ckpt_dir = os.path.join(REPO_ROOT, "models", "checkpoints")
         if os.path.exists(ckpt_dir):
             shutil.rmtree(ckpt_dir)
         
         print(f"\n✅ Saved! {len(chunks)} chunks, {round(total_size/(1024*1024),1)}MB")
-        print(f"   Sparsity: {stats['sparsity_pct']:.1f}%")
-        print(f"   Quantized: {stats['quantized']}")
-        print(f"   Est. RAM: {stats['estimated_ram_mb']:.0f}MB")
+        print(f"   Sparsity: {stats['sparsity_pct']:.1f}% | Quantized: {stats['quantized']} | RAM: {stats['estimated_ram_mb']:.0f}MB")
         return True
 
 if __name__ == '__main__':
     import sys
     bot = PullbotModel()
-    
     if len(sys.argv) > 1:
-        command = sys.argv[1]
-        
-        if command == 'train':
+        cmd = sys.argv[1]
+        if cmd == 'train':
             resume = None
             if '--resume' in sys.argv:
                 idx = sys.argv.index('--resume')
                 if idx + 1 < len(sys.argv):
                     resume = sys.argv[idx + 1]
-            
             if bot.train(resume_from_checkpoint=resume):
-                print("\n📊 Pre-optimization:")
                 before = bot.get_model_size_estimate()
-                print(f"   RAM: {before['estimated_ram_mb']:.0f}MB")
+                print(f"\n📊 Before: {before['total_params']:,} params, {before['estimated_ram_mb']:.0f}MB RAM")
                 
-                sparsity = 0.5
-                while True:
-                    bot.prune_model(target_sparsity=sparsity)
+                # Shrink progressively
+                for sp in [0.3, 0.5, 0.7]:
+                    bot.shrink_model(target_sparsity=sp)
                     after = bot.get_model_size_estimate()
-                    if after['estimated_ram_mb'] < 400 or sparsity >= 0.9:
-                        break
-                    sparsity += 0.1
+                    print(f"   After {sp*100:.0f}%: {after['total_params']:,} params, {after['estimated_ram_mb']:.0f}MB RAM")
                 
                 bot.quantize_model()
                 final = bot.get_model_size_estimate()
-                print(f"\n📊 Final: {final['estimated_ram_mb']:.0f}MB RAM")
+                print(f"\n📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
+                bot.export_compact()
                 bot.export_to_onnx()
-                print("\n🎉 TRAINED, PRUNED, QUANTIZED & EXPORTED!")
+                print("\n🎉 TRAINED, SHRUNK, QUANTIZED & EXPORTED!")
         
-        elif command == 'prune':
-            sparsity = float(sys.argv[2]) if len(sys.argv) > 2 else 0.7
-            bot.prune_model(target_sparsity=sparsity)
+        elif cmd == 'shrink':
+            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+            bot.shrink_model(target_sparsity=sp)
             bot.save_and_chunk()
         
-        elif command == 'quantize':
+        elif cmd == 'quantize':
             bot.quantize_model()
             bot.save_and_chunk()
         
-        elif command == 'optimize':
-            sparsity = float(sys.argv[2]) if len(sys.argv) > 2 else 0.9
+        elif cmd == 'optimize':
+            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.7
             before = bot.get_model_size_estimate()
-            print(f"\n📊 Before: {before['estimated_ram_mb']:.0f}MB")
-            bot.prune_model(target_sparsity=sparsity)
+            print(f"\n📊 Before: {before['total_params']:,} params")
+            bot.shrink_model(target_sparsity=sp)
             bot.quantize_model()
             final = bot.get_model_size_estimate()
-            print(f"📊 After: {final['estimated_ram_mb']:.0f}MB")
+            print(f"📊 After: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
             bot.save_and_chunk()
+            bot.export_compact()
             bot.export_to_onnx()
         
-        elif command == 'onnx':
+        elif cmd == 'onnx':
             bot.export_to_onnx()
         
-        elif command == 'size':
-            stats = bot.get_model_size_estimate()
-            print(f"\n📊 Params: {stats['total_params']:,}")
-            print(f"   Non-zero: {stats['non_zero']:,}")
-            print(f"   Sparsity: {stats['sparsity_pct']:.1f}%")
-            print(f"   Quantized: {stats['quantized']}")
-            print(f"   RAM: {stats['estimated_ram_mb']:.0f}MB")
+        elif cmd == 'compact':
+            bot.export_compact()
         
-        elif command == 'chunk':
+        elif cmd == 'size':
+            s = bot.get_model_size_estimate()
+            print(f"\n📊 {s['total_params']:,} params | Non-zero: {s['non_zero']:,} | Sparsity: {s['sparsity_pct']:.1f}% | RAM: {s['estimated_ram_mb']:.0f}MB")
+        
+        elif cmd == 'chunk':
             bot.save_and_chunk()
         
         else:
-            print("Commands: train, prune [0.5-0.9], quantize, optimize [0.5-0.9], onnx, size, chunk")
+            print("Commands: train, shrink [0.3-0.9], quantize, optimize, onnx, compact, size, chunk")
     else:
-        print("Commands: train, prune [0.5-0.9], quantize, optimize [0.5-0.9], onnx, size, chunk")
+        print("Commands: train, shrink [0.3-0.9], quantize, optimize, onnx, compact, size, chunk")

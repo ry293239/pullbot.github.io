@@ -1,0 +1,40 @@
+name: Optimize Model
+
+on:
+  workflow_dispatch:
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install dependencies
+      run: pip install torch transformers datasets accelerate safetensors
+        
+    - name: ✂️ Prune + Quantize
+      run: python src/model.py optimize 0.7
+      
+    - name: 📤 Export for Quadratic
+      run: python src/export_to_quadratic.py
+      
+    - name: 🗑 Remove large files
+      run: |
+        rm -rf models/checkpoints/
+        rm -f models/chunks/model.safetensors
+        rm -f models/chunks/pytorch_model.bin
+        
+    - name: 💾 Commit & push
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git add models/chunks/ data/quadratic/ data/knowledge/
+        git diff --staged --quiet || git commit -m "✂️ Optimized: pruned + quantized + exported"
+        git pull --rebase
+        git push

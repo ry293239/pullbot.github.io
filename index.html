@@ -1,32 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/png" href="icon.png">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pullbot - AI That Learns From The Web</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="apple-touch-icon" href="icon.png">
+    <meta property="og:image" content="https://pullbot-ai.github.io/icon.png">
     <style>
         :root {
-            --bg-primary: #343541;
-            --bg-sidebar: #202123;
-            --bg-chat: #343541;
-            --bg-input: #40414F;
-            --bg-bubble-bot: #444654;
-            --bg-bubble-user: #343541;
-            --text-primary: #ECECF1;
-            --text-secondary: #8E8EA0;
-            --accent: #19C37D;
-            --accent-hover: #1A7F5A;
-            --border: #4D4D4F;
-            --danger: #EF4444;
-            --warning: #F59E0B;
+            --bg-primary: #0D1A16;
+            --bg-sidebar: #081210;
+            --bg-chat: #0D1A16;
+            --bg-input: #152A23;
+            --bg-bubble-bot: #1A3329;
+            --bg-bubble-user: #0D1A16;
+            --text-primary: #E8F0EC;
+            --text-secondary: #8AA89A;
+            --accent: #2DD4A8;
+            --accent-glow: #1DB88A;
+            --accent-hover: #3BE0B4;
+            --border: #1F3D30;
+            --cyan: #4EE6C7;
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
@@ -50,7 +48,7 @@
             justify-content: center;
             align-items: center;
             z-index: 9999;
-            transition: opacity 0.5s ease;
+            transition: opacity 0.6s ease;
         }
 
         #loadingScreen.hidden {
@@ -58,26 +56,37 @@
             pointer-events: none;
         }
 
-        .loader-logo {
-            font-size: 48px;
-            margin-bottom: 20px;
-            animation: pulse 1.5s ease-in-out infinite;
+        .loader-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            animation: pulse 2s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(45, 212, 168, 0.4));
         }
 
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.1); opacity: 0.7; }
+            50% { transform: scale(1.08); opacity: 0.85; }
         }
 
-        .loader-text {
-            font-size: 18px;
+        .loader-title {
+            font-size: 28px;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 8px;
+        }
+
+        .loader-subtitle {
+            font-size: 14px;
             color: var(--text-secondary);
-            margin-bottom: 20px;
+            margin-bottom: 28px;
         }
 
         .loader-bar {
             width: 200px;
-            height: 4px;
+            height: 3px;
             background: var(--bg-input);
             border-radius: 2px;
             overflow: hidden;
@@ -85,16 +94,16 @@
 
         .loader-bar-fill {
             height: 100%;
-            background: var(--accent);
+            background: linear-gradient(90deg, var(--accent), var(--cyan));
             border-radius: 2px;
-            transition: width 0.3s ease;
+            transition: width 0.4s ease;
             width: 0%;
         }
 
         .loader-status {
-            font-size: 13px;
+            font-size: 12px;
             color: var(--text-secondary);
-            margin-top: 10px;
+            margin-top: 12px;
         }
 
         /* ========== SIDEBAR ========== */
@@ -104,39 +113,55 @@
             display: flex;
             flex-direction: column;
             flex-shrink: 0;
-            transition: transform 0.3s ease;
-        }
-
-        #sidebar.collapsed {
-            transform: translateX(-260px);
-            position: absolute;
+            border-right: 1px solid var(--border);
         }
 
         .sidebar-header {
-            padding: 12px 16px;
+            padding: 16px;
             border-bottom: 1px solid var(--border);
+        }
+
+        .sidebar-logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .sidebar-logo img {
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
+        }
+
+        .sidebar-logo span {
+            font-weight: 700;
+            font-size: 18px;
+            background: linear-gradient(135deg, var(--accent), var(--cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         .new-chat-btn {
             width: 100%;
-            padding: 12px;
+            padding: 10px;
             background: transparent;
-            color: var(--text-primary);
+            color: var(--accent);
             border: 1px solid var(--border);
             border-radius: 8px;
             cursor: pointer;
-            font-size: 14px;
-            transition: background 0.2s;
-            text-align: left;
+            font-size: 13px;
+            transition: all 0.2s;
         }
 
         .new-chat-btn:hover {
-            background: var(--bg-input);
+            background: rgba(45, 212, 168, 0.08);
+            border-color: var(--accent);
         }
 
         .sidebar-section {
-            padding: 12px 16px;
-            font-size: 12px;
+            padding: 14px 16px 6px;
+            font-size: 11px;
             color: var(--text-secondary);
             text-transform: uppercase;
             letter-spacing: 0.5px;
@@ -152,7 +177,7 @@
             padding: 10px 12px;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -165,7 +190,7 @@
         }
 
         .chat-list-item.active {
-            background: var(--bg-input);
+            background: rgba(45, 212, 168, 0.1);
         }
 
         .sidebar-footer {
@@ -175,20 +200,21 @@
 
         .sidebar-btn {
             width: 100%;
-            padding: 10px 12px;
+            padding: 9px 12px;
             background: transparent;
-            color: var(--text-primary);
+            color: var(--text-secondary);
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 13px;
             text-align: left;
-            transition: background 0.2s;
+            transition: all 0.2s;
             margin-bottom: 4px;
         }
 
         .sidebar-btn:hover {
             background: var(--bg-input);
+            color: var(--text-primary);
         }
 
         .sidebar-btn.accent {
@@ -215,30 +241,31 @@
         .hamburger {
             background: none;
             border: none;
-            color: var(--text-primary);
+            color: var(--text-secondary);
             font-size: 20px;
             cursor: pointer;
             padding: 5px;
         }
 
+        .hamburger:hover {
+            color: var(--text-primary);
+        }
+
         .login-btn {
             padding: 8px 16px;
             background: var(--accent);
-            color: white;
+            color: var(--bg-primary);
             border: none;
-            border-radius: 6px;
+            border-radius: 8px;
             cursor: pointer;
             font-size: 13px;
-            font-weight: 500;
-            transition: background 0.2s;
+            font-weight: 600;
+            transition: all 0.2s;
         }
 
         .login-btn:hover {
             background: var(--accent-hover);
-        }
-
-        .login-btn:active {
-            transform: scale(0.97);
+            box-shadow: 0 0 20px rgba(45, 212, 168, 0.3);
         }
 
         .chat-container {
@@ -263,21 +290,23 @@
             display: none;
         }
 
-        .welcome-logo {
-            font-size: 64px;
-            margin-bottom: 20px;
+        .welcome-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 24px;
+            filter: drop-shadow(0 0 30px rgba(45, 212, 168, 0.5));
         }
 
         .welcome-title {
             font-size: 32px;
-            font-weight: 600;
+            font-weight: 700;
             margin-bottom: 8px;
         }
 
         .welcome-subtitle {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--text-secondary);
-            margin-bottom: 30px;
+            margin-bottom: 32px;
         }
 
         .suggestion-grid {
@@ -290,16 +319,17 @@
         .suggestion-card {
             padding: 16px;
             background: var(--bg-bubble-bot);
+            border: 1px solid var(--border);
             border-radius: 12px;
             cursor: pointer;
-            transition: background 0.2s;
-            font-size: 14px;
+            transition: all 0.2s;
+            font-size: 13px;
             text-align: left;
-            border: 1px solid var(--border);
         }
 
         .suggestion-card:hover {
-            background: var(--bg-input);
+            border-color: var(--accent);
+            background: rgba(45, 212, 168, 0.05);
         }
 
         .messages-container {
@@ -315,24 +345,29 @@
         }
 
         .message-avatar {
-            width: 30px;
-            height: 30px;
-            border-radius: 4px;
+            width: 32px;
+            height: 32px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 16px;
             flex-shrink: 0;
+            background: var(--bg-input);
+        }
+
+        .message-avatar.bot {
+            background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(78, 230, 199, 0.1));
         }
 
         .message-content {
             line-height: 1.6;
-            font-size: 15px;
+            font-size: 14px;
             white-space: pre-wrap;
             word-wrap: break-word;
         }
 
-        /* ========== INPUT AREA ========== */
+        /* ========== INPUT ========== */
         .input-container {
             padding: 16px 20px;
             max-width: 768px;
@@ -344,14 +379,15 @@
             display: flex;
             gap: 10px;
             background: var(--bg-input);
-            border-radius: 12px;
-            padding: 8px 16px;
+            border-radius: 14px;
+            padding: 6px 6px 6px 18px;
             border: 1px solid var(--border);
             transition: border-color 0.2s;
         }
 
         .input-wrapper:focus-within {
             border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(45, 212, 168, 0.1);
         }
 
         .input-wrapper input {
@@ -359,7 +395,7 @@
             background: none;
             border: none;
             color: var(--text-primary);
-            font-size: 15px;
+            font-size: 14px;
             outline: none;
             padding: 8px 0;
         }
@@ -371,25 +407,26 @@
         .send-btn {
             background: var(--accent);
             border: none;
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 8px;
+            color: var(--bg-primary);
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            transition: background 0.2s;
+            transition: all 0.2s;
             flex-shrink: 0;
         }
 
         .send-btn:hover {
             background: var(--accent-hover);
+            box-shadow: 0 0 15px rgba(45, 212, 168, 0.4);
         }
 
         .send-btn:disabled {
-            opacity: 0.5;
+            opacity: 0.4;
             cursor: not-allowed;
         }
 
@@ -400,214 +437,40 @@
             margin-top: 8px;
         }
 
-        /* ========== UPDATE PANEL ========== */
-        .update-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0,0,0,0.6);
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .update-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .update-panel {
-            background: var(--bg-sidebar);
-            border-radius: 16px;
-            padding: 24px;
-            width: 400px;
-            max-width: 90vw;
-            border: 1px solid var(--border);
-        }
-
-        .update-panel h2 {
-            font-size: 20px;
-            margin-bottom: 6px;
-        }
-
-        .update-panel .version-info {
-            font-size: 13px;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-        }
-
-        .update-option {
-            display: block;
-            width: 100%;
-            padding: 14px 16px;
-            background: var(--bg-input);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            color: var(--text-primary);
-            cursor: pointer;
-            text-align: left;
-            margin-bottom: 8px;
-            transition: background 0.2s;
-        }
-
-        .update-option:hover {
-            background: var(--bg-bubble-bot);
-        }
-
-        .update-option .option-title {
-            font-size: 14px;
-            font-weight: 600;
-        }
-
-        .update-option .option-desc {
-            font-size: 12px;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        .update-option.selected {
-            border-color: var(--accent);
-            background: rgba(25, 195, 125, 0.1);
-        }
-
-        .auto-update-group {
-            margin-top: 16px;
-            margin-bottom: 16px;
-        }
-
-        .auto-update-group label {
-            display: block;
-            padding: 8px 0;
-            font-size: 13px;
-            cursor: pointer;
-            color: var(--text-secondary);
-        }
-
-        .auto-update-group input {
-            margin-right: 8px;
-        }
-
-        .update-actions {
-            display: flex;
-            gap: 10px;
-            margin-top: 16px;
-        }
-
-        .btn-primary {
-            flex: 1;
-            padding: 12px;
-            background: var(--accent);
-            color: white;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            font-weight: 500;
-        }
-
-        .btn-primary:hover {
-            background: var(--accent-hover);
-        }
-
-        .btn-secondary {
-            flex: 1;
-            padding: 12px;
-            background: transparent;
-            color: var(--text-primary);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-        }
-
-        .update-progress {
-            display: none;
-            margin-top: 12px;
-        }
-
-        .update-progress.active {
-            display: block;
-        }
-
-        .progress-bar {
-            width: 100%;
-            height: 6px;
-            background: var(--bg-input);
-            border-radius: 3px;
-            overflow: hidden;
-            margin-top: 8px;
-        }
-
-        .progress-fill {
-            height: 100%;
-            background: var(--accent);
-            border-radius: 3px;
-            transition: width 0.3s ease;
-        }
-
-        .toast {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 12px 20px;
-            border-radius: 10px;
-            font-size: 14px;
-            z-index: 2000;
-            transform: translateY(100px);
-            opacity: 0;
-            transition: all 0.3s ease;
-        }
-
-        .toast.show {
-            transform: translateY(0);
-            opacity: 1;
-        }
-
         /* ========== SCROLLBAR ========== */
-        ::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--border);
-            border-radius: 3px;
-        }
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: transparent; }
+        ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
     </style>
 </head>
 <body>
 
 <!-- LOADING SCREEN -->
 <div id="loadingScreen">
-    <div class="loader-logo">🤖</div>
-    <div class="loader-text">Pullbot</div>
+    <img src="icon.png" alt="Pullbot" class="loader-icon" onerror="this.style.display='none'">
+    <div class="loader-title">Pullbot</div>
+    <div class="loader-subtitle">AI That Learns From The Web</div>
     <div class="loader-bar">
         <div class="loader-bar-fill" id="loaderFill"></div>
     </div>
-    <div class="loader-status" id="loaderStatus">Checking system...</div>
+    <div class="loader-status" id="loaderStatus">Initializing...</div>
 </div>
 
 <!-- SIDEBAR -->
 <div id="sidebar">
     <div class="sidebar-header">
+        <div class="sidebar-logo">
+            <img src="icon.png" alt="Pullbot" onerror="this.style.display='none'">
+            <span>Pullbot</span>
+        </div>
         <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
     </div>
     <div class="sidebar-section">History</div>
     <div class="chat-list" id="chatList"></div>
     <div class="sidebar-footer">
-        <button class="sidebar-btn" onclick="openSettings()">⚙ Settings</button>
-        <button class="sidebar-btn accent" onclick="openUpdatePanel()">⚡ Update Bot</button>
+        <button class="sidebar-btn" onclick="showToast('Settings coming soon')">Settings</button>
+        <button class="sidebar-btn accent" onclick="showToast('Update system coming soon')">Update Bot</button>
+        <button class="sidebar-btn" onclick="window.open('https://app.quadratichq.com/file/4a5e973a-be51-43c7-8b07-31f70e466290', '_blank')">View Brain</button>
     </div>
 </div>
 
@@ -616,11 +479,11 @@
     <div class="top-bar">
         <button class="hamburger" onclick="toggleSidebar()">☰</button>
         <span style="font-weight:600;">Pullbot</span>
-        <button class="login-btn" onclick="handleLogin()">Log In</button>
+        <button class="login-btn" onclick="showToast('Login coming soon')">Log In</button>
     </div>
     <div class="chat-container" id="chatContainer">
         <div class="welcome-screen" id="welcomeScreen">
-            <div class="welcome-logo">🤖</div>
+            <img src="icon.png" alt="Pullbot" class="welcome-icon" onerror="this.style.display='none'">
             <div class="welcome-title">How can I help?</div>
             <div class="welcome-subtitle">I learn from GitHub and Wikipedia to help you with anything</div>
             <div class="suggestion-grid">
@@ -645,130 +508,41 @@
             <input type="text" id="userInput" placeholder="Ask Pullbot anything..." onkeypress="handleKeyPress(event)" autocomplete="off">
             <button class="send-btn" id="sendBtn" onclick="sendMessage()">↗</button>
         </div>
-        <div class="input-footer" id="statusFooter">🟢 v2.4 · Ready</div>
+        <div class="input-footer">Pullbot v1.0 · Learning from the web</div>
     </div>
 </div>
 
-<!-- UPDATE PANEL -->
-<div class="update-overlay" id="updateOverlay">
-    <div class="update-panel">
-        <h2>⚡ Update Pullbot</h2>
-        <div class="version-info">
-            Current: <strong id="currentVersion">v2.4</strong> · 
-            Latest: <strong id="latestVersion">Checking...</strong>
-        </div>
-        
-        <button class="update-option selected" id="optQuick" onclick="selectUpdateType('quick')">
-            <div class="option-title">⚡ Quick Update (~1 min)</div>
-            <div class="option-desc">Latest scraped knowledge only · ~5MB</div>
-        </button>
-        
-        <button class="update-option" id="optFull" onclick="selectUpdateType('full')">
-            <div class="option-title">🔄 Full Update (~2 min)</div>
-            <div class="option-desc">Knowledge + trained model adapter · ~15MB</div>
-        </button>
-        
-        <div class="auto-update-group">
-            <label><input type="radio" name="autoUpdate" value="off" checked> Off — manual updates only</label>
-            <label><input type="radio" name="autoUpdate" value="daily"> Daily — check once per day</label>
-            <label><input type="radio" name="autoUpdate" value="weekly"> Weekly — check every 7 days</label>
-        </div>
-        
-        <div class="update-progress" id="updateProgress">
-            <div id="updateProgressText">Downloading...</div>
-            <div class="progress-bar">
-                <div class="progress-fill" id="progressFill" style="width:0%"></div>
-            </div>
-        </div>
-        
-        <div class="update-actions">
-            <button class="btn-primary" onclick="startUpdate()">Update Now</button>
-            <button class="btn-secondary" onclick="closeUpdatePanel()">Cancel</button>
-        </div>
-    </div>
-</div>
+<div class="toast" id="toast" style="position:fixed;bottom:20px;right:20px;background:var(--accent);color:var(--bg-primary);padding:12px 20px;border-radius:10px;font-size:13px;font-weight:600;z-index:2000;transform:translateY(100px);opacity:0;transition:all 0.3s ease;"></div>
 
-<!-- TOAST -->
-<div class="toast" id="toast"></div>
-
-<script src="js/storage.js"></script>
-<script src="js/knowledge.js"></script>
-<script src="js/upgrader.js"></script>
 <script>
 // ============================================
-// MAIN APP LOGIC
+// LOADING SCREEN
 // ============================================
-
-let currentChatId = null;
-let chats = {};
-let updateType = 'quick';
-let appState = {
-    modelLoaded: false,
-    knowledgeLoaded: false,
-    version: '2.4',
-    dbReady: false
-};
-
-// ========== INIT ==========
-async function init() {
-    updateLoader('Checking system...', 10);
-    
-    // Initialize IndexedDB
-    await initDB();
-    appState.dbReady = true;
-    updateLoader('Loading chats...', 25);
-    
-    // Load chats from DB
-    await loadChats();
-    
-    // Check if model exists
-    const modelExists = await checkModelExists();
-    
-    if (!modelExists) {
-        updateLoader('Downloading Pullbot brain... (this may take a few minutes)', 30);
-        await downloadModel();
-        updateLoader('Model downloaded!', 70);
-    } else {
-        updateLoader('Model found!', 60);
-    }
-    
-    // Load knowledge
-    updateLoader('Loading knowledge base...', 75);
-    await loadKnowledge();
-    
-    // Finalize
-    updateLoader('Ready!', 100);
-    appState.modelLoaded = true;
-    appState.knowledgeLoaded = true;
-    
-    setTimeout(() => {
-        document.getElementById('loadingScreen').classList.add('hidden');
-        renderChatList();
-        updateStatusFooter();
-        checkForUpdates();
-        
-        // Auto-update if configured
-        const autoUpdate = localStorage.getItem('pullbot_auto_update') || 'off';
-        if (autoUpdate === 'daily') scheduleDailyUpdate();
-        if (autoUpdate === 'weekly') scheduleWeeklyUpdate();
-    }, 800);
-}
-
 function updateLoader(text, percent) {
     document.getElementById('loaderStatus').textContent = text;
     document.getElementById('loaderFill').style.width = percent + '%';
 }
 
-// ========== SIDEBAR ==========
-function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('collapsed');
+async function init() {
+    updateLoader('Loading knowledge base...', 20);
+    await new Promise(r => setTimeout(r, 400));
+    updateLoader('Checking system...', 50);
+    await new Promise(r => setTimeout(r, 300));
+    updateLoader('Ready!', 100);
+    await new Promise(r => setTimeout(r, 500));
+    document.getElementById('loadingScreen').classList.add('hidden');
 }
+
+// ============================================
+// CHAT LOGIC
+// ============================================
+let chats = {};
+let currentChatId = null;
 
 function newChat() {
     const id = 'chat_' + Date.now();
     chats[id] = { title: 'New Chat', messages: [], created: Date.now() };
     currentChatId = id;
-    saveChats();
     renderChatList();
     renderMessages();
     document.getElementById('welcomeScreen').classList.add('hidden');
@@ -783,17 +557,14 @@ function switchChat(id) {
 
 function renderChatList() {
     const container = document.getElementById('chatList');
-    const chatIds = Object.keys(chats).sort((a,b) => chats[b].created - chats[a].created);
-    
-    container.innerHTML = chatIds.map(id => {
+    const ids = Object.keys(chats).sort((a,b) => chats[b].created - chats[a].created);
+    container.innerHTML = ids.map(id => {
         const chat = chats[id];
         const active = id === currentChatId ? ' active' : '';
-        const title = chat.title || 'New Chat';
-        return `<div class="chat-list-item${active}" onclick="switchChat('${id}')">${escapeHtml(title)}</div>`;
+        return `<div class="chat-list-item${active}" onclick="switchChat('${id}')">${escapeHtml(chat.title || 'New Chat')}</div>`;
     }).join('');
 }
 
-// ========== MESSAGES ==========
 function renderMessages() {
     const container = document.getElementById('messagesContainer');
     const welcome = document.getElementById('welcomeScreen');
@@ -805,20 +576,16 @@ function renderMessages() {
     }
     
     welcome.classList.add('hidden');
-    const messages = chats[currentChatId].messages;
-    
-    container.innerHTML = messages.map(msg => {
+    container.innerHTML = chats[currentChatId].messages.map(msg => {
         const isUser = msg.role === 'user';
-        const avatar = isUser ? '👤' : '🤖';
         return `
             <div class="message">
-                <div class="message-avatar">${avatar}</div>
+                <div class="message-avatar${isUser ? '' : ' bot'}">${isUser ? '👤' : '🤖'}</div>
                 <div class="message-content">${escapeHtml(msg.content)}</div>
             </div>
         `;
     }).join('');
     
-    // Scroll to bottom
     setTimeout(() => {
         document.getElementById('chatContainer').scrollTop = document.getElementById('chatContainer').scrollHeight;
     }, 100);
@@ -829,26 +596,26 @@ function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
     
-    // Create chat if none active
-    if (!currentChatId) {
-        newChat();
-    }
+    if (!currentChatId) newChat();
     
-    // Add user message
     chats[currentChatId].messages.push({ role: 'user', content: text });
-    
-    // Update title if first message
     if (chats[currentChatId].messages.length === 1) {
-        chats[currentChatId].title = text.substring(0, 40) + (text.length > 40 ? '...' : '');
+        chats[currentChatId].title = text.substring(0, 40);
     }
     
     input.value = '';
     renderMessages();
     renderChatList();
-    saveChats();
     
     // Generate response
-    generateResponse(text);
+    chats[currentChatId].messages.push({ role: 'assistant', content: 'Thinking...' });
+    renderMessages();
+    
+    setTimeout(() => {
+        const response = getSmartResponse(text);
+        chats[currentChatId].messages[chats[currentChatId].messages.length - 1].content = response;
+        renderMessages();
+    }, 800 + Math.random() * 1200);
 }
 
 function sendSuggestion(text) {
@@ -856,123 +623,56 @@ function sendSuggestion(text) {
     sendMessage();
 }
 
-async function generateResponse(prompt) {
-    // Show thinking indicator
-    chats[currentChatId].messages.push({ role: 'assistant', content: 'Thinking...' });
-    renderMessages();
-    saveChats();
-    
-    let response;
-    
-    if (appState.modelLoaded && appState.knowledgeLoaded) {
-        // Use local model + knowledge
-        response = await localInference(prompt);
-    } else if (window.knowledgeStore) {
-        // Fallback: search knowledge and craft response
-        const results = searchLocalKnowledge(prompt);
-        if (results.length > 0) {
-            response = craftResponseFromKnowledge(prompt, results);
-        } else {
-            response = "I'm still loading my brain! Try again in a moment, or check your connection.";
-        }
-    } else {
-        response = "Pullbot is initializing... Please wait a moment and try again.";
-    }
-    
-    // Update the thinking message
-    chats[currentChatId].messages[chats[currentChatId].messages.length - 1].content = response;
-    renderMessages();
-    saveChats();
-}
-
 function handleKeyPress(event) {
     if (event.key === 'Enter') sendMessage();
 }
 
-// ========== UPDATE PANEL ==========
-function openUpdatePanel() {
-    document.getElementById('updateOverlay').classList.add('active');
-    checkLatestVersion();
-}
-
-function closeUpdatePanel() {
-    document.getElementById('updateOverlay').classList.remove('active');
-    document.getElementById('updateProgress').classList.remove('active');
-}
-
-function selectUpdateType(type) {
-    updateType = type;
-    document.getElementById('optQuick').classList.toggle('selected', type === 'quick');
-    document.getElementById('optFull').classList.toggle('selected', type === 'full');
-}
-
-async function startUpdate() {
-    const progressDiv = document.getElementById('updateProgress');
-    const progressText = document.getElementById('updateProgressText');
-    const progressFill = document.getElementById('progressFill');
+function getSmartResponse(prompt) {
+    const q = prompt.toLowerCase();
     
-    progressDiv.classList.add('active');
-    
-    if (updateType === 'quick') {
-        progressText.textContent = 'Downloading latest knowledge...';
-        progressFill.style.width = '20%';
-        await downloadLatestKnowledge((pct) => { progressFill.style.width = (20 + pct * 0.7) + '%'; });
-        progressText.textContent = 'Saving...';
-        progressFill.style.width = '95%';
-        await new Promise(r => setTimeout(r, 500));
-    } else {
-        progressText.textContent = 'Downloading knowledge...';
-        progressFill.style.width = '15%';
-        await downloadLatestKnowledge((pct) => { progressFill.style.width = (15 + pct * 0.4) + '%'; });
-        progressText.textContent = 'Downloading model update...';
-        progressFill.style.width = '55%';
-        await downloadLatestModel((pct) => { progressFill.style.width = (55 + pct * 0.4) + '%'; });
-        progressText.textContent = 'Applying update...';
-        progressFill.style.width = '95%';
-        await new Promise(r => setTimeout(r, 500));
+    // Math
+    const mathMatch = q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
+    if (mathMatch) {
+        const a = parseFloat(mathMatch[1]), b = parseFloat(mathMatch[3]);
+        let r;
+        switch(mathMatch[2]) {
+            case '+': r = a + b; break;
+            case '-': r = a - b; break;
+            case '*': r = a * b; break;
+            case '/': r = b !== 0 ? a / b : 'undefined'; break;
+        }
+        return `${a} ${mathMatch[2]} ${b} = ${r}. Easy! 😊`;
     }
     
-    progressFill.style.width = '100%';
-    progressText.textContent = '✅ Complete!';
+    if (q.includes('hello') || q === 'hi' || q === 'hey') return "Hey there! 👋 I'm Pullbot. What can I help you with?";
+    if (q.includes('your name') || q.includes('who are you')) return "I'm Pullbot! 🤖 An AI that learns from GitHub and Wikipedia. I'm still training but getting smarter every cycle!";
+    if (q.includes('thank')) return "You're welcome! 😊";
+    if (q.includes('bye')) return "See you later! 👋 Come back anytime — I'll be smarter next time!";
     
-    // Update version
-    appState.version = await getLatestVersion();
-    updateStatusFooter();
-    
-    setTimeout(() => {
-        progressDiv.classList.remove('active');
-        closeUpdatePanel();
-        showToast('✅ Pullbot updated to ' + appState.version + '!');
-    }, 1000);
+    return "That's interesting! I'm still training my brain (my neural network is being pruned and quantized right now). Soon I'll be able to answer questions like this using real AI. Ask me something about math or say hello!";
 }
 
-function updateStatusFooter() {
-    document.getElementById('statusFooter').textContent = 
-        `🟢 ${appState.version} · Ready · ${appState.modelLoaded ? 'Model loaded' : 'Loading...'}`;
-    document.getElementById('currentVersion').textContent = appState.version;
+function toggleSidebar() {
+    document.getElementById('sidebar').classList.toggle('collapsed');
 }
 
-// ========== LOGIN (placeholder) ==========
-function handleLogin() {
-    showToast('🔒 Login coming soon! Your chats are saved locally for now.');
-}
-
-// ========== TOAST ==========
 function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
-    toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 3000);
+    toast.style.transform = 'translateY(0)';
+    toast.style.opacity = '1';
+    setTimeout(() => {
+        toast.style.transform = 'translateY(100px)';
+        toast.style.opacity = '0';
+    }, 2500);
 }
 
-// ========== ESCAPE HTML ==========
 function escapeHtml(text) {
     const div = document.createElement('div');
     div.textContent = text;
     return div.innerHTML;
 }
 
-// ========== STARTUP ==========
 window.addEventListener('DOMContentLoaded', init);
 </script>
 </body>

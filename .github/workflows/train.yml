@@ -26,6 +26,27 @@ jobs:
     - name: 📊 Scrape web
       run: python src/scrape.py
       
+    - name: 🧹 Clean corpus
+      run: |
+        python -c "
+        import re
+        corpus_path = 'data/processed/corpus.txt'
+        if __import__('os').path.exists(corpus_path):
+            with open(corpus_path, 'r') as f:
+                text = f.read()
+            text = re.sub(r'<[^>]+>', '', text)
+            text = re.sub(r'https?://\S+', '', text)
+            text = re.sub(r'!\[.*?\]\(.*?\)', '', text)
+            text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+            text = re.sub(r'`[^`]+`', '', text)
+            text = re.sub(r'#[^\n]*', '', text)
+            text = re.sub(r'\n{3,}', '\n\n', text)
+            text = re.sub(r'[=\-*]{3,}', '', text)
+            with open(corpus_path, 'w') as f:
+                f.write(text)
+            print(f'Cleaned corpus: {len(text):,} chars')
+        "
+      
     - name: 🧠 Build knowledge store
       run: python src/store.py build
       
@@ -36,7 +57,6 @@ jobs:
           echo "Corpus size: $CORPUS_SIZE chars"
           if [ "$CORPUS_SIZE" -gt 2000 ]; then
             
-            # Find latest checkpoint
             LATEST_CHECKPOINT=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
             
             if [ -n "$LATEST_CHECKPOINT" ]; then
@@ -49,11 +69,11 @@ jobs:
             
             echo "TRAINED=true" >> $GITHUB_ENV
           else
-            echo "⚠️ Corpus too small (need >2000 chars, have $CORPUS_SIZE)"
+            echo "⚠️ Corpus too small"
             echo "TRAINED=false" >> $GITHUB_ENV
           fi
         else
-          echo "⚠️ No corpus found, skipping training"
+          echo "⚠️ No corpus found"
           echo "TRAINED=false" >> $GITHUB_ENV
         fi
       
@@ -99,7 +119,6 @@ jobs:
         
     - name: 🗑 Remove large files before push
       run: |
-        echo "Removing large files..."
         rm -rf models/checkpoints/
         rm -rf models/temp_trained/
         rm -rf models/temp_quick/
@@ -107,22 +126,24 @@ jobs:
         rm -f models/chunks/pytorch_model.bin
         echo "✅ Cleaned up"
         
-    - name: 💾 Commit & push
+    - name: 💾 Commit & push (with retry)
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         
-        git add data/
-        git add knowledge/
-        git add models/chunks/
-        git add models/last_train.json 2>/dev/null || true
-        git add src/
-        git add config.yaml requirements.txt
-        git add .github/
-        git add js/ index.html 2>/dev/null || true
-        git add .gitignore 2>/dev/null || true
+        git add data/ knowledge/ models/chunks/ models/last_train.json 2>/dev/null || true
+        git add src/ config.yaml requirements.txt .github/ js/ index.html .gitignore 2>/dev/null || true
         git add data/knowledge/version.json 2>/dev/null || true
         
-        git diff --staged --quiet || git commit -m "🤖 v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus | full fine-tune"
-        git pull --rebase
-        git push
+        if git diff --staged --quiet; then
+          echo "No changes to commit"
+        else
+          git commit -m "🤖 v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus"
+          
+          for i in 1 2 3; do
+            echo "Push attempt $i..."
+            git pull --rebase && git push && break
+            echo "Retrying in 5s..."
+            sleep 5
+          done
+        fi

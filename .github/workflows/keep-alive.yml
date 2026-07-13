@@ -1,0 +1,127 @@
+name: Keep Alive + Micro-Learn
+
+on:
+  schedule:
+    - cron: '*/12 8-23 * * *'
+  workflow_dispatch:
+
+jobs:
+  micro-learn:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install deps
+      run: pip install requests numpy pyyaml
+        
+    - name: 🏓 Ping Render
+      run: |
+        echo "🏓 Pinging Render..."
+        STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://pullbot-api.onrender.com/health)
+        if [ "$STATUS" = "200" ]; then
+          echo "✅ Render is awake"
+        else
+          echo "😴 Render sleeping (status: $STATUS)"
+        fi
+        
+    - name: 🎲 Micro-scrape
+      run: |
+        python -c "
+        import requests, random, re, os, time
+        
+        facts = []
+        
+        # 1 random Wikipedia sentence
+        try:
+            r = requests.get('https://en.wikipedia.org/api/rest_v1/page/random/summary', timeout=10)
+            data = r.json()
+            sentences = re.split(r'(?<=[.!?])\s+', data.get('extract', ''))
+            if sentences:
+                fact = random.choice(sentences).strip()
+                if len(fact) > 30:
+                    facts.append(f'wiki: {fact}')
+        except:
+            pass
+        
+        # 1 trending GitHub repo name
+        try:
+            r = requests.get('https://github.com/trending', headers={'User-Agent': 'Pullbot'}, timeout=10)
+            from bs4 import BeautifulSoup
+            soup = BeautifulSoup(r.text, 'html.parser')
+            repos = soup.find_all('h2')
+            if repos:
+                repo = random.choice(repos).get_text().strip()
+                facts.append(f'trending: {repo}')
+        except:
+            pass
+        
+        # Save
+        if facts:
+            os.makedirs('data/micro', exist_ok=True)
+            with open('data/micro/facts.txt', 'a') as f:
+                for fact in facts:
+                    f.write(fact + '\n')
+            print(f'📖 Saved {len(facts)} micro-facts')
+        else:
+            print('⚠️ No facts collected')
+        "
+        
+    - name: 🧪 Test Pullbot
+      run: |
+        python -c "
+        import requests, random
+        
+        questions = [
+            'What is Python?',
+            'How does the internet work?',
+            'Explain machine learning',
+            'What is the sun?',
+            'How do computers work?',
+            'What is DNA?',
+        ]
+        
+        q = random.choice(questions)
+        print(f'❓ Testing: {q}')
+        
+        try:
+            r = requests.get(f'https://pullbot-api.onrender.com/ask?q={q}', timeout=30)
+            if r.status_code == 200:
+                answer = r.json()
+                response = answer.get('response', '')[:200]
+                print(f'🤖 Pullbot: {response}')
+                print('✅ Pullbot working!')
+            else:
+                print(f'⚠️ Pullbot returned {r.status_code}')
+        except Exception as e:
+            print(f'❌ Pullbot unreachable: {e}')
+        "
+        
+    - name: 💾 Save micro-data
+      run: |
+        if [ -f data/micro/facts.txt ]; then
+          LINES=$(wc -l < data/micro/facts.txt)
+          echo "📊 $LINES total micro-facts accumulated"
+          
+          git config user.name "Pullbot-Micro"
+          git config user.email "pullbot@bot.dev"
+          git add data/micro/
+          git diff --staged --quiet || git commit -m "🎲 Micro: $(date -u +'%H:%M UTC') | ${LINES} facts"
+          git pull --rebase
+          git push
+        fi
+        
+    - name: 📈 Summary
+      run: |
+        echo ""
+        echo "═══════════════════════════════"
+        echo "  ✅ Micro-learn cycle complete"
+        echo "  🏓 Render pinged"
+        echo "  🎲 Facts collected"
+        echo "  🧪 Pullbot tested"
+        echo "═══════════════════════════════"

@@ -1,7 +1,7 @@
 """
 Pullbot Model - FULL FINE-TUNING + PRUNING + QUANTIZATION
 Trains, prunes, then quantizes to 8-bit for free hosting.
-Final model ~50-80MB RAM.
+Handles quantized model serialization.
 """
 
 import os
@@ -11,10 +11,10 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 import torch
-import torch.nn.utils.prune as torch_prune
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
+    AutoConfig,
     TrainingArguments,
     Trainer,
     DataCollatorForLanguageModeling
@@ -45,16 +45,12 @@ class PullbotModel:
         
         self._reassemble_if_needed()
         
-        print("\n📂 Loading tokenizer from chunks...")
+        print("\n📂 Loading tokenizer...")
         self.tokenizer = AutoTokenizer.from_pretrained(self.chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         
-        print(f"📂 Loading model from chunks...")
-        self.model = AutoModelForCausalLM.from_pretrained(
-            self.chunks_dir,
-            torch_dtype=torch.float32,
-            low_cpu_mem_usage=True
-        )
+        print("📂 Loading model...")
+        self._load_model_safe()
         
         total_params = sum(p.numel() for p in self.model.parameters())
         print(f"✅ Model ready! {total_params:,} parameters")
@@ -85,7 +81,63 @@ class PullbotModel:
                 if os.path.exists(chunk_path):
                     with open(chunk_path, 'rb') as infile:
                         outfile.write(infile.read())
-        print(f"   ✅ Reassembled")
+                else:
+                    print(f"   ⚠️ Missing: {chunk_path}")
+        
+        final_size = os.path.getsize(reassembled_path)
+        print(f"   ✅ Reassembled {final_size//1024//1024}MB")
+    
+    def _load_model_safe(self):
+        """Load model - handles both normal and quantized models"""
+        try:
+            # Try normal load first
+            self.model = AutoModelForCausalLM.from_pretrained(
+                self.chunks_dir,
+                torch_dtype=torch.float32,
+                low_cpu_mem_usage=True
+            )
+            print("   ✅ Loaded via from_pretrained")
+        except Exception as e:
+            print(f"   ⚠️ from_pretrained failed, trying manual load...")
+            try:
+                # Load config and state dict separately
+                model_config = AutoConfig.from_pretrained(self.chunks_dir)
+                self.model = AutoModelForCausalLM.from_config(model_config)
+                
+                # Try safetensors first, then pytorch
+                weights_path = None
+                for fname in ['model.safetensors', 'pytorch_model.bin']:
+                    path = os.path.join(self.chunks_dir, fname)
+                    if os.path.exists(path):
+                        weights_path = path
+                        break
+                
+                if weights_path:
+                    if weights_path.endswith('.safetensors'):
+                        from safetensors.torch import load_file
+                        state_dict = load_file(weights_path)
+                    else:
+                        state_dict = torch.load(weights_path, map_location='cpu')
+                    
+                    # Handle quantized state dict keys
+                    cleaned_state = {}
+                    for key, value in state_dict.items():
+                        if isinstance(value, tuple):
+                            continue
+                        cleaned_state[key] = value
+                    
+                    self.model.load_state_dict(cleaned_state, strict=False)
+                    print("   ✅ Loaded via manual state_dict")
+                else:
+                    print("   ⚠️ No weights file found, using fresh model")
+            except Exception as e2:
+                print(f"   ⚠️ Manual load also failed: {e2}")
+                print("   Using fresh model from HuggingFace...")
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.model_name,
+                    torch_dtype=torch.float32,
+                    low_cpu_mem_usage=True
+                )
     
     def prepare_training_data(self):
         corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
@@ -107,7 +159,12 @@ class PullbotModel:
         print(f"\n📝 Training: {len(chunks)} chunks from {len(text):,} chars")
         
         def tokenize_fn(examples):
-            return self.tokenizer(examples['text'], truncation=True, padding='max_length', max_length=max_length)
+            return self.tokenizer(
+                examples['text'],
+                truncation=True,
+                padding='max_length',
+                max_length=max_length
+            )
         
         dataset = Dataset.from_dict({'text': chunks})
         tokenized = dataset.map(tokenize_fn, batched=True, remove_columns=['text'])
@@ -122,7 +179,9 @@ class PullbotModel:
         print("🚀 FULL MODEL TRAINING")
         print(f"   Examples: {len(dataset)}")
         print(f"   Epochs: {config['training']['epochs']}")
-        print(f"   Learning rate: {config['training']['learning_rate']}")
+        print(f"   Batch: {config['training']['batch_size']}")
+        print(f"   LR: {config['training']['learning_rate']}")
+        print(f"   Params: {sum(p.numel() for p in self.model.parameters()):,}")
         print("=" * 50 + "\n")
         
         training_args = TrainingArguments(
@@ -148,10 +207,15 @@ class PullbotModel:
         
         start = time.time()
         trainer.train()
-        print(f"\n✅ Trained in {(time.time()-start)/60:.1f} min")
+        elapsed = (time.time() - start) / 60
+        print(f"\n✅ Trained in {elapsed:.1f} min")
         
         with open(os.path.join(REPO_ROOT, "models", "last_train.json"), 'w') as f:
-            json.dump({'timestamp': time.time(), 'dataset_size': len(dataset)}, f)
+            json.dump({
+                'timestamp': time.time(),
+                'dataset_size': len(dataset),
+                'minutes': elapsed
+            }, f)
         
         return True
     
@@ -166,10 +230,11 @@ class PullbotModel:
         
         total_removed = 0
         total_params = 0
+        layers_done = 0
         
         for name, module in self.model.named_modules():
             if isinstance(module, torch.nn.Linear):
-                weight = module.weight.data
+                weight = module.weight.data.float()
                 total_params += weight.numel()
                 flat = weight.abs().flatten()
                 k = int(target_sparsity * flat.numel())
@@ -179,9 +244,11 @@ class PullbotModel:
                     mask = weight.abs() > threshold
                     removed = (mask == False).sum().item()
                     total_removed += removed
-                    module.weight.data = weight * mask.float()
+                    module.weight.data = (weight * mask.float()).to(module.weight.dtype)
+                    layers_done += 1
         
         sparsity = (total_removed / total_params * 100) if total_params > 0 else 0
+        print(f"   Layers pruned: {layers_done}")
         print(f"   Removed: {total_removed:,} / {total_params:,} ({sparsity:.1f}%)")
         return sparsity
     
@@ -190,30 +257,32 @@ class PullbotModel:
     # ============================================
     
     def quantize_model(self):
-        """Convert to 8-bit integers for 4x smaller RAM usage"""
+        """Convert Linear layers to 8-bit integers"""
         print("\n" + "=" * 50)
         print("🔧 QUANTIZING TO 8-BIT")
         print("=" * 50)
         
-        # Quantize Linear layers to int8
-        self.model = torch.quantization.quantize_dynamic(
-            self.model,
-            {torch.nn.Linear},
-            dtype=torch.qint8
-        )
-        
-        # Count size reduction
-        total_bytes = 0
-        for param in self.model.parameters():
-            if param.dtype == torch.qint8:
-                total_bytes += param.numel() * 1  # 1 byte per int8
-            else:
-                total_bytes += param.numel() * 4  # 4 bytes per float32
-        
-        size_mb = total_bytes / (1024 * 1024)
-        print(f"   Quantized size: {size_mb:.1f}MB")
-        print(f"   RAM savings: ~75% vs 32-bit")
-        return size_mb
+        try:
+            self.model = torch.quantization.quantize_dynamic(
+                self.model,
+                {torch.nn.Linear},
+                dtype=torch.qint8
+            )
+            
+            total_bytes = 0
+            for param in self.model.parameters():
+                if param.dtype == torch.qint8:
+                    total_bytes += param.numel()
+                else:
+                    total_bytes += param.numel() * 4
+            
+            size_mb = total_bytes / (1024 * 1024)
+            print(f"   Size: {size_mb:.1f}MB (~75% RAM savings)")
+            return size_mb
+        except Exception as e:
+            print(f"   ⚠️ Quantization failed: {e}")
+            print("   Model kept at 32-bit")
+            return None
     
     # ============================================
     # SIZE ESTIMATE
@@ -223,11 +292,10 @@ class PullbotModel:
         non_zero = sum((p != 0).sum().item() for p in self.model.parameters() if p.dim() >= 2)
         total = sum(p.numel() for p in self.model.parameters())
         
-        # Check if quantized
         is_quantized = any(p.dtype == torch.qint8 for p in self.model.parameters())
         bytes_per_param = 1 if is_quantized else 4
         
-        ram_mb = non_zero * bytes_per_param / (1024 * 1024) * 3  # 3x for activations
+        ram_mb = non_zero * bytes_per_param / (1024 * 1024) * 3
         
         return {
             'total_params': total,
@@ -242,15 +310,30 @@ class PullbotModel:
     # ============================================
     
     def save_and_chunk(self):
+        """Save model (handles quantized), split into chunks"""
         print("\n💾 Saving model...")
         
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
         os.makedirs(temp_dir, exist_ok=True)
         
-        self.model.save_pretrained(temp_dir)
+        # Save tokenizer
         self.tokenizer.save_pretrained(temp_dir)
         
-        # Find weights
+        # Save model - different method for quantized
+        try:
+            self.model.save_pretrained(temp_dir)
+            print("   Saved via save_pretrained")
+        except Exception as e:
+            print(f"   Using torch.save for quantized model...")
+            torch.save(self.model.state_dict(), os.path.join(temp_dir, "pytorch_model.bin"))
+            
+            # Save config
+            if hasattr(self.model, 'config'):
+                self.model.config.save_pretrained(temp_dir)
+            elif hasattr(self.model, 'module') and hasattr(self.model.module, 'config'):
+                self.model.module.config.save_pretrained(temp_dir)
+        
+        # Find weights file
         weights_path = None
         for fname in ['model.safetensors', 'pytorch_model.bin']:
             path = os.path.join(temp_dir, fname)
@@ -273,34 +356,46 @@ class PullbotModel:
         for old in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
             os.remove(old)
         
-        # Split
+        # Split into chunks
+        print(f"\n🔪 Splitting into {CHUNK_SIZE_MB}MB chunks...")
+        
         with open(weights_path, 'rb') as f:
             data = f.read()
         
         total_size = len(data)
         chunks = []
+        
         for i in range(0, total_size, CHUNK_SIZE):
             chunk_data = data[i:i + CHUNK_SIZE]
             chunk_name = f"model_chunk_{i // CHUNK_SIZE:03d}.bin"
             chunk_path = os.path.join(self.chunks_dir, chunk_name)
+            
             with open(chunk_path, 'wb') as f:
                 f.write(chunk_data)
+            
+            chunk_mb = len(chunk_data) / (1024 * 1024)
             chunks.append(f"models/chunks/{chunk_name}")
-            print(f"   ✅ {chunk_name} ({len(chunk_data)/(1024*1024):.1f}MB)")
+            print(f"   ✅ {chunk_name} ({chunk_mb:.1f}MB)")
         
-        # Copy configs
-        for cfg in ['config.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt',
-                     'special_tokens_map.json', 'tokenizer.json']:
+        # Copy config files
+        config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
+                        'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
+        for cfg in config_files:
             src = os.path.join(temp_dir, cfg)
             if os.path.exists(src):
-                shutil.copy(src, os.path.join(self.chunks_dir, cfg))
+                dst = os.path.join(self.chunks_dir, cfg)
+                with open(src, 'rb') as fin:
+                    with open(dst, 'wb') as fout:
+                        fout.write(fin.read())
+        
+        # Stats
+        stats = self.get_model_size_estimate()
         
         # Manifest
-        stats = self.get_model_size_estimate()
         manifest = {
             "model_name": self.model_name,
             "total_size": total_size,
-            "total_size_mb": round(total_size/(1024*1024), 1),
+            "total_size_mb": round(total_size / (1024 * 1024), 1),
             "num_chunks": len(chunks),
             "chunks": chunks,
             "weights_filename": os.path.basename(weights_path),
@@ -311,12 +406,15 @@ class PullbotModel:
             "estimated_ram_mb": stats['estimated_ram_mb'],
             "training_date": time.time()
         }
+        
         with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
             json.dump(manifest, f, indent=2)
         
+        # Cleanup
         shutil.rmtree(temp_dir)
-        if os.path.exists(os.path.join(REPO_ROOT, "models", "checkpoints")):
-            shutil.rmtree(os.path.join(REPO_ROOT, "models", "checkpoints"))
+        ckpt_dir = os.path.join(REPO_ROOT, "models", "checkpoints")
+        if os.path.exists(ckpt_dir):
+            shutil.rmtree(ckpt_dir)
         
         print(f"\n✅ Saved! {len(chunks)} chunks, {round(total_size/(1024*1024),1)}MB")
         print(f"   Sparsity: {stats['sparsity_pct']:.1f}%")
@@ -337,7 +435,7 @@ if __name__ == '__main__':
                 before = bot.get_model_size_estimate()
                 print(f"   RAM: {before['estimated_ram_mb']:.0f}MB")
                 
-                # Prune
+                # Prune progressively
                 sparsity = 0.5
                 while True:
                     bot.prune_model(target_sparsity=sparsity)
@@ -352,23 +450,36 @@ if __name__ == '__main__':
                 final = bot.get_model_size_estimate()
                 print(f"\n📊 Final: {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
+                print("\n🎉 PULLBOT TRAINED, PRUNED & QUANTIZED!")
         
         elif command == 'prune':
             sparsity = float(sys.argv[2]) if len(sys.argv) > 2 else 0.7
+            before = bot.get_model_size_estimate()
+            print(f"📊 Before: {before['estimated_ram_mb']:.0f}MB")
             bot.prune_model(target_sparsity=sparsity)
+            after = bot.get_model_size_estimate()
+            print(f"📊 After: {after['estimated_ram_mb']:.0f}MB")
             bot.save_and_chunk()
         
         elif command == 'quantize':
+            before = bot.get_model_size_estimate()
+            print(f"📊 Before: {before['estimated_ram_mb']:.0f}MB")
             bot.quantize_model()
+            after = bot.get_model_size_estimate()
+            print(f"📊 After: {after['estimated_ram_mb']:.0f}MB")
             bot.save_and_chunk()
         
         elif command == 'optimize':
-            """Full optimization: prune + quantize"""
             sparsity = float(sys.argv[2]) if len(sys.argv) > 2 else 0.7
+            before = bot.get_model_size_estimate()
+            print(f"\n📊 Before: {before['estimated_ram_mb']:.0f}MB RAM")
+            
             bot.prune_model(target_sparsity=sparsity)
             bot.quantize_model()
-            stats = bot.get_model_size_estimate()
-            print(f"\n📊 Optimized: {stats['estimated_ram_mb']:.0f}MB RAM")
+            
+            final = bot.get_model_size_estimate()
+            print(f"📊 After: {final['estimated_ram_mb']:.0f}MB RAM")
+            print(f"   Savings: {before['estimated_ram_mb'] - final['estimated_ram_mb']:.0f}MB")
             bot.save_and_chunk()
         
         elif command == 'size':

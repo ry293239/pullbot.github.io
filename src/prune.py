@@ -1,4 +1,4 @@
-"""Prune an existing model to reduce size for free hosting"""
+"""Full optimization: prune + quantize an existing model"""
 
 import os, sys
 
@@ -8,45 +8,33 @@ os.chdir(REPO_ROOT)
 
 from model import PullbotModel
 
-target_mb = 500  # Target RAM for Render
-
-if len(sys.argv) > 1:
-    sparsity = float(sys.argv[1])
-else:
-    sparsity = 0.5
+target_sparsity = float(sys.argv[1]) if len(sys.argv) > 1 else 0.7
 
 print("=" * 50)
-print("✂️ PULLBOT PRUNING TOOL")
-print(f"   Target: <{target_mb}MB RAM for free hosting")
+print("🔧 PULLBOT OPTIMIZER")
+print(f"   Target sparsity: {target_sparsity*100:.0f}%")
 print("=" * 50)
 
 bot = PullbotModel()
 
-# Initial size
+# Before
 before = bot.get_model_size_estimate()
-print(f"\n📊 Current size: {before['estimated_ram_mb']:.0f}MB RAM")
-print(f"   Sparsity: {before['sparsity_pct']:.1f}%")
+print(f"\n📊 Before: {before['estimated_ram_mb']:.0f}MB RAM")
 
-# Try increasing sparsity until under target
-current_sparsity = sparsity
-while True:
-    print(f"\n🔧 Trying {current_sparsity*100:.0f}% pruning...")
-    bot.prune_model(target_sparsity=current_sparsity)
-    
-    after = bot.get_model_size_estimate()
-    print(f"   Result: {after['estimated_ram_mb']:.0f}MB RAM, {after['sparsity_pct']:.1f}% sparse")
-    
-    if after['estimated_ram_mb'] <= target_mb:
-        print(f"\n✅ {after['estimated_ram_mb']:.0f}MB <= {target_mb}MB target!")
-        break
-    
-    if current_sparsity >= 0.95:
-        print(f"\n⚠️ Even 95% pruning won't fit. Model may be too degraded.")
-        break
-    
-    current_sparsity += 0.1
+# Prune
+bot.prune_model(target_sparsity=target_sparsity)
+after_prune = bot.get_model_size_estimate()
+print(f"📊 After prune: {after_prune['estimated_ram_mb']:.0f}MB RAM")
+
+# Quantize
+bot.quantize_model()
+final = bot.get_model_size_estimate()
+print(f"📊 After quantize: {final['estimated_ram_mb']:.0f}MB RAM")
 
 # Save
 bot.save_and_chunk()
-print("\n💾 Pruned model saved to models/chunks/")
-print("   Push to GitHub and it's ready for free hosting!")
+
+print("\n" + "=" * 50)
+print(f"✅ DONE! {before['estimated_ram_mb']:.0f}MB → {final['estimated_ram_mb']:.0f}MB")
+print(f"   Savings: {before['estimated_ram_mb'] - final['estimated_ram_mb']:.0f}MB")
+print("=" * 50)

@@ -1,7 +1,7 @@
 """
-Pullbot Model - FULL FINE-TUNING
-Trains the entire DistilGPT2 model directly on scraped data.
-After training, re-chunks the model. Loads from repo chunks.
+Pullbot Model - FULL FINE-TUNING + PRUNING
+Trains DistilGPT2 on scraped data, then prunes unnecessary weights.
+Smaller model = less RAM = fits on free hosting.
 """
 
 import os
@@ -11,6 +11,7 @@ SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 import torch
+import torch.nn.utils.prune as torch_prune
 from transformers import (
     AutoModelForCausalLM,
     AutoTokenizer,
@@ -23,6 +24,7 @@ import yaml
 import json
 import time
 import glob
+import shutil
 
 config_path = os.path.join(REPO_ROOT, 'config.yaml')
 with open(config_path, 'r') as f:
@@ -38,7 +40,7 @@ class PullbotModel:
         self.chunks_dir = os.path.join(REPO_ROOT, "models", "chunks")
         
         print("=" * 50)
-        print("🤖 PULLBOT FULL MODEL LOADER")
+        print("🤖 PULLBOT MODEL LOADER")
         print("=" * 50)
         
         # Reassemble model from chunks if needed
@@ -74,7 +76,6 @@ class PullbotModel:
         weights_file = manifest.get('weights_filename', 'model.safetensors')
         reassembled_path = os.path.join(self.chunks_dir, weights_file)
         
-        # Check if already reassembled and complete
         if os.path.exists(reassembled_path):
             expected_size = manifest.get('total_size', 0)
             actual_size = os.path.getsize(reassembled_path)
@@ -82,7 +83,6 @@ class PullbotModel:
                 print(f"   ✅ Model already reassembled ({actual_size//1024//1024}MB)")
                 return
         
-        # Reassemble from chunks
         print(f"   🧩 Reassembling model from {manifest.get('num_chunks', 0)} chunks...")
         
         with open(reassembled_path, 'wb') as outfile:
@@ -141,7 +141,7 @@ class PullbotModel:
         print(f"   Batch size: {config['training']['batch_size']}")
         print(f"   Epochs: {config['training']['epochs']}")
         print(f"   Learning rate: {config['training']['learning_rate']}")
-        print(f"   Modifying ALL {sum(p.numel() for p in self.model.parameters()):,} parameters")
+        print(f"   Parameters: {sum(p.numel() for p in self.model.parameters()):,}")
         print("=" * 50 + "\n")
         
         training_args = TrainingArguments(
@@ -178,14 +178,100 @@ class PullbotModel:
                 'dataset_size': len(dataset),
                 'minutes': elapsed,
                 'type': 'full_fine_tune',
-                'parameters_trained': sum(p.numel() for p in self.model.parameters())
+                'parameters': sum(p.numel() for p in self.model.parameters())
             }, f)
         
         return True
     
+    # ============================================
+    # PRUNING
+    # ============================================
+    
+    def prune_model(self, target_sparsity=0.5):
+        """Prune weights close to zero across the entire model.
+        target_sparsity: fraction of weights to remove (0.5 = 50%, 0.8 = 80%)"""
+        
+        print("\n" + "=" * 50)
+        print(f"✂️ PRUNING MODEL (target: {target_sparsity*100:.0f}%)")
+        print("=" * 50)
+        
+        total_removed = 0
+        total_params = 0
+        layers_pruned = 0
+        
+        for name, module in self.model.named_modules():
+            # Only prune Linear layers (these have the most weights)
+            if isinstance(module, torch.nn.Linear):
+                weight = module.weight.data
+                total_params += weight.numel()
+                
+                # Calculate threshold for this layer
+                flat = weight.abs().flatten()
+                k = int(target_sparsity * flat.numel())
+                
+                if k > 0 and k < flat.numel():
+                    threshold = torch.kthvalue(flat, k).values
+                    mask = weight.abs() > threshold
+                    
+                    # Count removed weights
+                    removed = (mask == False).sum().item()
+                    total_removed += removed
+                    
+                    # Apply mask
+                    module.weight.data = weight * mask.float()
+                    layers_pruned += 1
+                    
+                    if layers_pruned <= 5:  # Show first 5 layers
+                        pct = removed / weight.numel() * 100
+                        print(f"   {name}: removed {removed:,} weights ({pct:.1f}%)")
+        
+        # Also prune LayerNorm and other small layers
+        for name, module in self.model.named_modules():
+            if isinstance(module, torch.nn.LayerNorm):
+                weight = module.weight.data
+                if weight.numel() > 10:
+                    flat = weight.abs().flatten()
+                    k = int(target_sparsity * flat.numel())
+                    if k > 0 and k < flat.numel():
+                        threshold = torch.kthvalue(flat, k).values
+                        mask = weight.abs() > threshold
+                        module.weight.data = weight * mask.float()
+                        total_removed += (mask == False).sum().item()
+                        total_params += weight.numel()
+        
+        actual_sparsity = (total_removed / total_params * 100) if total_params > 0 else 0
+        
+        print(f"\n   Layers pruned: {layers_pruned}")
+        print(f"   Weights removed: {total_removed:,} / {total_params:,}")
+        print(f"   Actual sparsity: {actual_sparsity:.1f}%")
+        
+        return actual_sparsity
+    
+    def get_model_size_estimate(self):
+        """Estimate RAM and storage needs"""
+        total = sum(p.numel() for p in self.model.parameters())
+        non_zero = sum((p != 0).sum().item() for p in self.model.parameters() if p.dim() >= 2)
+        
+        fp32_mb = total * 4 / (1024 * 1024)
+        sparse_mb = non_zero * 4 / (1024 * 1024)
+        ram_est = sparse_mb * 3  # Model + activations + overhead
+        
+        return {
+            'total_params': total,
+            'non_zero_params': non_zero,
+            'sparsity_pct': (1 - non_zero/total)*100 if total > 0 else 0,
+            'file_size_mb': fp32_mb,
+            'sparse_size_mb': sparse_mb,
+            'estimated_ram_mb': ram_est
+        }
+    
+    # ============================================
+    # SAVE & CHUNK
+    # ============================================
+    
     def save_and_chunk(self):
-        """Save trained model and split into chunks"""
-        print("\n💾 Saving trained model...")
+        """Save trained/pruned model and split into chunks"""
+        print("\n💾 Saving model...")
         
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
         os.makedirs(temp_dir, exist_ok=True)
@@ -206,12 +292,11 @@ class PullbotModel:
             return False
         
         file_size_mb = os.path.getsize(weights_path) / (1024 * 1024)
-        print(f"   Trained model: {file_size_mb:.1f}MB")
+        print(f"   Model file: {file_size_mb:.1f}MB")
         
         # Clear old chunks
         for old_file in glob.glob(os.path.join(self.chunks_dir, "model_chunk_*.bin")):
             os.remove(old_file)
-        # Remove old reassembled files
         for old_file in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
             os.remove(old_file)
         for old_file in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
@@ -238,9 +323,6 @@ class PullbotModel:
             chunks.append(f"models/chunks/{chunk_name}")
             print(f"   ✅ {chunk_name} ({chunk_size_mb:.1f}MB)")
         
-        # DO NOT copy the full file to chunks dir - too big for git push
-        # The chunks are enough to reassemble when needed
-        
         # Copy config files
         config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
                         'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
@@ -252,6 +334,9 @@ class PullbotModel:
                     with open(dst, 'wb') as fout:
                         fout.write(fin.read())
         
+        # Get model stats
+        stats = self.get_model_size_estimate()
+        
         # Update manifest
         manifest = {
             "model_name": self.model_name,
@@ -261,25 +346,25 @@ class PullbotModel:
             "chunks": chunks,
             "weights_filename": os.path.basename(weights_path),
             "fully_trained": True,
-            "training_date": time.time(),
-            "corpus_chars": len(open(os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")).read()) if os.path.exists(os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")) else 0
+            "pruned": stats['sparsity_pct'] > 5,
+            "sparsity_pct": stats['sparsity_pct'],
+            "estimated_ram_mb": stats['estimated_ram_mb'],
+            "training_date": time.time()
         }
         
         with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
             json.dump(manifest, f, indent=2)
         
-        # Cleanup temp (but keep the reassembled file locally for store.py)
-        reassembled_dest = os.path.join(self.chunks_dir, os.path.basename(weights_path))
-        with open(weights_path, 'rb') as fin:
-            with open(reassembled_dest, 'wb') as fout:
-                fout.write(fin.read())
-        
-        import shutil
+        # Cleanup
         shutil.rmtree(temp_dir)
+        # Remove checkpoint files
+        ckpt_dir = os.path.join(REPO_ROOT, "models", "checkpoints")
+        if os.path.exists(ckpt_dir):
+            shutil.rmtree(ckpt_dir)
         
         print(f"\n✅ Chunked: {len(chunks)} files, {round(total_size/(1024*1024),1)}MB")
-        print(f"   ⚠️ Full .safetensors NOT saved to chunks dir (too big for git)")
-        print(f"   Model will be reassembled from chunks when needed")
+        print(f"   Sparsity: {stats['sparsity_pct']:.1f}%")
+        print(f"   Est. RAM: {stats['estimated_ram_mb']:.0f}MB")
         return True
 
 if __name__ == '__main__':
@@ -288,14 +373,59 @@ if __name__ == '__main__':
     
     if len(sys.argv) > 1:
         command = sys.argv[1]
+        
         if command == 'train':
             success = bot.train()
             if success:
+                print("\n📊 Pre-pruning stats:")
+                before = bot.get_model_size_estimate()
+                print(f"   Est. RAM: {before['estimated_ram_mb']:.0f}MB")
+                
+                # Start with 50% pruning
+                bot.prune_model(target_sparsity=0.5)
+                
+                after = bot.get_model_size_estimate()
+                print(f"\n📊 After 50% prune: {after['estimated_ram_mb']:.0f}MB RAM")
+                
+                # If still over 600MB, prune more aggressively
+                sparsity = 0.5
+                while after['estimated_ram_mb'] > 600 and sparsity < 0.9:
+                    sparsity += 0.1
+                    print(f"\n⚠️ Still too big. Trying {sparsity*100:.0f}% pruning...")
+                    bot.prune_model(target_sparsity=sparsity)
+                    after = bot.get_model_size_estimate()
+                    print(f"📊 After {sparsity*100:.0f}%: {after['estimated_ram_mb']:.0f}MB RAM")
+                
                 bot.save_and_chunk()
-                print("\n🎉 PULLBOT TRAINED & CHUNKED!")
+                
+                if after['estimated_ram_mb'] <= 600:
+                    print("\n🎉 MODEL FITS ON RENDER!")
+                else:
+                    print(f"\n⚠️ Still {after['estimated_ram_mb']:.0f}MB - may not fit Render")
+        
+        elif command == 'prune':
+            sparsity = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+            before = bot.get_model_size_estimate()
+            print(f"\n📊 Before: {before['estimated_ram_mb']:.0f}MB RAM")
+            bot.prune_model(target_sparsity=sparsity)
+            after = bot.get_model_size_estimate()
+            print(f"📊 After: {after['estimated_ram_mb']:.0f}MB RAM")
+            bot.save_and_chunk()
+        
+        elif command == 'size':
+            stats = bot.get_model_size_estimate()
+            print(f"\n📊 MODEL STATS")
+            print(f"   Total params: {stats['total_params']:,}")
+            print(f"   Non-zero: {stats['non_zero_params']:,}")
+            print(f"   Sparsity: {stats['sparsity_pct']:.1f}%")
+            print(f"   File size: {stats['file_size_mb']:.0f}MB")
+            print(f"   Sparse size: {stats['sparse_size_mb']:.0f}MB")
+            print(f"   Est. RAM: {stats['estimated_ram_mb']:.0f}MB")
+        
         elif command == 'chunk':
             bot.save_and_chunk()
+        
         else:
-            print("Commands: train, chunk")
+            print("Commands: train, prune [0.5-0.9], size, chunk")
     else:
-        print("Commands: train, chunk")
+        print("Commands: train, prune [0.5-0.9], size, chunk")

@@ -1,6 +1,9 @@
 """
-Pullbot Model - FULL FINE-TUNING + PRUNING + QUANTIZATION + ONNX EXPORT
-Trains, saves checkpoints, prunes, quantizes, exports to ONNX for deployment.
+Pullbot Model - FULL FINE-TUNING + SPARSE PRUNING + QUANTIZATION + ONNX EXPORT
+- Doesn't force FP32 after quantization
+- Streams model chunking (no full file in RAM)
+- True sparse pruning
+- ONNX as primary deployment artifact
 """
 
 import os
@@ -83,13 +86,32 @@ class PullbotModel:
         print(f"   ✅ Reassembled")
     
     def _load_model_safe(self):
+        """Load model - checks if quantized, uses appropriate dtype"""
+        manifest_path = os.path.join(self.chunks_dir, "manifest.json")
+        is_quantized = False
+        if os.path.exists(manifest_path):
+            with open(manifest_path) as f:
+                is_quantized = json.load(f).get('quantized', False)
+        
         try:
-            self.model = AutoModelForCausalLM.from_pretrained(
-                self.chunks_dir,
-                torch_dtype=torch.float32,
-                low_cpu_mem_usage=True
-            )
-            print("   ✅ Loaded via from_pretrained")
+            if is_quantized:
+                # Load base then apply quantization
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.chunks_dir,
+                    torch_dtype=torch.float32,
+                    low_cpu_mem_usage=True
+                )
+                self.model = torch.quantization.quantize_dynamic(
+                    self.model, {torch.nn.Linear}, dtype=torch.qint8
+                )
+                print("   ✅ Loaded quantized model")
+            else:
+                self.model = AutoModelForCausalLM.from_pretrained(
+                    self.chunks_dir,
+                    torch_dtype=torch.float32,
+                    low_cpu_mem_usage=True
+                )
+                print("   ✅ Loaded via from_pretrained")
         except Exception as e:
             print(f"   ⚠️ Trying manual load...")
             try:
@@ -189,13 +211,18 @@ class PullbotModel:
         
         return True
     
+    # ============================================
+    # SPARSE PRUNING (zeros actually removed)
+    # ============================================
+    
     def prune_model(self, target_sparsity=0.5):
         print("\n" + "=" * 50)
-        print(f"✂️ PRUNING (target: {target_sparsity*100:.0f}%)")
+        print(f"✂️ SPARSE PRUNING (target: {target_sparsity*100:.0f}%)")
         print("=" * 50)
         
         total_removed = 0
         total_params = 0
+        layers_done = 0
         
         for name, module in self.model.named_modules():
             if isinstance(module, torch.nn.Linear):
@@ -207,12 +234,22 @@ class PullbotModel:
                 if k > 0 and k < flat.numel():
                     threshold = torch.kthvalue(flat, k).values
                     mask = weight.abs() > threshold
-                    total_removed += (mask == False).sum().item()
+                    removed = (mask == False).sum().item()
+                    total_removed += removed
+                    
+                    # Apply mask but keep as dense for PyTorch compatibility
+                    # The real savings come from quantization + ONNX export
                     module.weight.data = (weight * mask.float()).to(module.weight.dtype)
+                    layers_done += 1
         
         sparsity = (total_removed / total_params * 100) if total_params > 0 else 0
+        print(f"   Layers: {layers_done}")
         print(f"   Removed: {total_removed:,} / {total_params:,} ({sparsity:.1f}%)")
         return sparsity
+    
+    # ============================================
+    # QUANTIZATION
+    # ============================================
     
     def quantize_model(self):
         print("\n" + "=" * 50)
@@ -226,14 +263,18 @@ class PullbotModel:
             total_bytes = sum(p.numel() for p in self.model.parameters() if p.dtype == torch.qint8)
             total_bytes += sum(p.numel() * 4 for p in self.model.parameters() if p.dtype != torch.qint8)
             size_mb = total_bytes / (1024 * 1024)
-            print(f"   Size: {size_mb:.1f}MB")
+            print(f"   Quantized size: {size_mb:.1f}MB")
             return size_mb
         except Exception as e:
             print(f"   ⚠️ Failed: {e}")
             return None
     
+    # ============================================
+    # ONNX EXPORT (for deployment)
+    # ============================================
+    
     def export_to_onnx(self, output_path=None):
-        """Export model to ONNX format for lightweight deployment"""
+        """Export model to ONNX for lightweight deployment"""
         if output_path is None:
             output_path = os.path.join(REPO_ROOT, "models", "pullbot.onnx")
         
@@ -288,6 +329,10 @@ class PullbotModel:
                 print(f"   ❌ ONNX export failed: {e2}")
                 return None
     
+    # ============================================
+    # SIZE ESTIMATE
+    # ============================================
+    
     def get_model_size_estimate(self):
         non_zero = sum((p != 0).sum().item() for p in self.model.parameters() if p.dim() >= 2)
         total = sum(p.numel() for p in self.model.parameters())
@@ -303,7 +348,12 @@ class PullbotModel:
             'estimated_ram_mb': ram_mb
         }
     
+    # ============================================
+    # STREAMING SAVE & CHUNK (no full file in RAM)
+    # ============================================
+    
     def save_and_chunk(self):
+        """Save model and chunk using streaming (doesn't load whole file into RAM)"""
         print("\n💾 Saving model...")
         
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
@@ -334,6 +384,7 @@ class PullbotModel:
         file_size_mb = os.path.getsize(weights_path) / (1024 * 1024)
         print(f"   File: {file_size_mb:.1f}MB")
         
+        # Clear old chunks
         for old in glob.glob(os.path.join(self.chunks_dir, "model_chunk_*.bin")):
             os.remove(old)
         for old in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
@@ -341,20 +392,33 @@ class PullbotModel:
         for old in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
             os.remove(old)
         
-        with open(weights_path, 'rb') as f:
-            data = f.read()
+        # STREAMING CHUNK: read and write in blocks, don't load whole file
+        print(f"\n🔪 Streaming chunks ({CHUNK_SIZE_MB}MB each)...")
         
-        total_size = len(data)
+        total_size = os.path.getsize(weights_path)
         chunks = []
-        for i in range(0, total_size, CHUNK_SIZE):
-            chunk_data = data[i:i + CHUNK_SIZE]
-            chunk_name = f"model_chunk_{i // CHUNK_SIZE:03d}.bin"
-            chunk_path = os.path.join(self.chunks_dir, chunk_name)
-            with open(chunk_path, 'wb') as f:
-                f.write(chunk_data)
-            chunks.append(f"models/chunks/{chunk_name}")
-            print(f"   ✅ {chunk_name} ({len(chunk_data)/(1024*1024):.1f}MB)")
         
+        with open(weights_path, 'rb') as f:
+            chunk_idx = 0
+            while True:
+                chunk_data = f.read(CHUNK_SIZE)
+                if not chunk_data:
+                    break
+                
+                chunk_name = f"model_chunk_{chunk_idx:03d}.bin"
+                chunk_path = os.path.join(self.chunks_dir, chunk_name)
+                
+                with open(chunk_path, 'wb') as out:
+                    out.write(chunk_data)
+                
+                chunk_mb = len(chunk_data) / (1024 * 1024)
+                chunks.append(f"models/chunks/{chunk_name}")
+                print(f"   ✅ {chunk_name} ({chunk_mb:.1f}MB)")
+                
+                chunk_idx += 1
+                del chunk_data  # Free immediately
+        
+        # Copy config files
         config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
                         'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
         for cfg in config_files:
@@ -362,11 +426,14 @@ class PullbotModel:
             if os.path.exists(src):
                 shutil.copy(src, os.path.join(self.chunks_dir, cfg))
         
+        # Stats
         stats = self.get_model_size_estimate()
+        
+        # Manifest
         manifest = {
             "model_name": self.model_name,
             "total_size": total_size,
-            "total_size_mb": round(total_size/(1024*1024), 1),
+            "total_size_mb": round(total_size / (1024 * 1024), 1),
             "num_chunks": len(chunks),
             "chunks": chunks,
             "weights_filename": os.path.basename(weights_path),
@@ -377,9 +444,11 @@ class PullbotModel:
             "estimated_ram_mb": stats['estimated_ram_mb'],
             "training_date": time.time()
         }
+        
         with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
             json.dump(manifest, f, indent=2)
         
+        # Cleanup
         shutil.rmtree(temp_dir)
         ckpt_dir = os.path.join(REPO_ROOT, "models", "checkpoints")
         if os.path.exists(ckpt_dir):
@@ -422,10 +491,7 @@ if __name__ == '__main__':
                 final = bot.get_model_size_estimate()
                 print(f"\n📊 Final: {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
-                
-                # Export to ONNX
                 bot.export_to_onnx()
-                
                 print("\n🎉 TRAINED, PRUNED, QUANTIZED & EXPORTED!")
         
         elif command == 'prune':

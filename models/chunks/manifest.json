@@ -14,6 +14,6 @@
   ],
   "weights_filename": "model.safetensors",
   "fully_trained": true,
-  "training_date": 1783912225.3413281,
-  "corpus_chars": 500000
+  "quick_test": true,
+  "training_date": 1783933082.3080938
 }

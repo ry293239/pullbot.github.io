@@ -1,6 +1,6 @@
 """
 Pullbot API - GGUF Mode
-Uses llama.cpp to run model in ~300MB RAM.
+Downloads GGUF model from GitHub, runs with llama.cpp.
 """
 
 import os, json, requests, re, random
@@ -19,18 +19,42 @@ wordbank = None
 def download_model():
     url = f"{GITHUB}/models/pullbot.gguf"
     print(f"Downloading GGUF model...")
-    r = requests.get(url, stream=True)
-    if r.status_code == 200:
-        total = int(r.headers.get('content-length', 0))
-        downloaded = 0
-        with open(MODEL_PATH, 'wb') as f:
-            for chunk in r.iter_content(chunk_size=8192):
-                f.write(chunk)
-                downloaded += len(chunk)
-        print(f"Downloaded {downloaded/(1024*1024):.0f}MB")
-        return True
-    print(f"Failed: {r.status_code}")
-    return False
+    
+    # Delete old partial download
+    if os.path.exists(MODEL_PATH):
+        os.remove(MODEL_PATH)
+    
+    try:
+        r = requests.get(url, stream=True, timeout=120)
+        if r.status_code == 200:
+            total = int(r.headers.get('content-length', 0))
+            print(f"Expected size: {total/(1024*1024):.0f}MB")
+            
+            downloaded = 0
+            with open(MODEL_PATH, 'wb') as f:
+                for chunk in r.iter_content(chunk_size=65536):
+                    if chunk:
+                        f.write(chunk)
+                        downloaded += len(chunk)
+            
+            actual = os.path.getsize(MODEL_PATH)
+            print(f"Downloaded: {actual/(1024*1024):.0f}MB")
+            
+            if actual < 10 * 1024 * 1024:
+                print(f"ERROR: File too small ({actual} bytes)")
+                return False
+            
+            if total > 0 and actual < total * 0.9:
+                print(f"ERROR: Incomplete download ({actual} < {total})")
+                return False
+            
+            return True
+        
+        print(f"Failed: HTTP {r.status_code}")
+        return False
+    except Exception as e:
+        print(f"Download error: {e}")
+        return False
 
 def load_wordbank():
     global wordbank
@@ -38,8 +62,10 @@ def load_wordbank():
         r = requests.get(f"{GITHUB}/data/wordbank.json", timeout=30)
         if r.status_code == 200:
             wordbank = r.json()
-            print(f"Loaded {wordbank.get('total_words', 0)} words")
-    except:
+            defined = sum(1 for w in wordbank.get('words', {}).values() if isinstance(w, dict) and w.get('has_definition'))
+            print(f"Loaded {wordbank.get('total_words', 0)} words, {defined} defined")
+    except Exception as e:
+        print(f"Wordbank failed: {e}")
         wordbank = None
 
 def setup():
@@ -51,9 +77,14 @@ def setup():
     load_wordbank()
     
     if download_model():
-        print(f"Loading GGUF model ({os.path.getsize(MODEL_PATH)/(1024*1024):.0f}MB)...")
-        llm = Llama(model_path=MODEL_PATH, n_ctx=256, n_threads=2, verbose=False)
-        print("Ready!")
+        size_mb = os.path.getsize(MODEL_PATH) / (1024*1024)
+        print(f"Loading GGUF model ({size_mb:.0f}MB)...")
+        try:
+            llm = Llama(model_path=MODEL_PATH, n_ctx=256, n_threads=2, verbose=False)
+            print("Ready!")
+        except Exception as e:
+            print(f"Failed to load model: {e}")
+            llm = None
     else:
         print("No GGUF model. Vocab-only mode.")
 
@@ -99,11 +130,15 @@ def generate_response(question):
 
 @app.route('/')
 def home():
+    defined = 0
+    if wordbank:
+        defined = sum(1 for w in wordbank.get('words', {}).values() if isinstance(w, dict) and w.get('has_definition'))
     return jsonify({
         'name': 'Pullbot API',
         'status': 'online',
         'model': 'gguf' if llm else 'vocab',
-        'words': wordbank.get('total_words', 0) if wordbank else 0
+        'words': wordbank.get('total_words', 0) if wordbank else 0,
+        'defined': defined
     })
 
 @app.route('/health')

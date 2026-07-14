@@ -14,15 +14,30 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers datasets onnx numpy accelerate safetensors pyyaml
-    - name: Export ONNX
+      run: pip install torch transformers onnx numpy safetensors
+    - name: Reassemble and Export ONNX
       run: |
         python -c "
-        import os, sys, json, torch
+        import os, json, torch, glob
         from transformers import AutoModelForCausalLM, AutoTokenizer
         
-        # Load from chunks
         chunks_dir = 'models/chunks'
+        
+        # Reassemble from chunks
+        with open(f'{chunks_dir}/manifest.json') as f:
+            manifest = json.load(f)
+        
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled = f'{chunks_dir}/{weights_file}'
+        
+        if not os.path.exists(reassembled) or os.path.getsize(reassembled) != manifest['total_size']:
+            print(f'Reassembling from {manifest[\"num_chunks\"]} chunks...')
+            with open(reassembled, 'wb') as out:
+                for chunk_path in manifest['chunks']:
+                    with open(chunk_path, 'rb') as inc:
+                        out.write(inc.read())
+            print('Reassembled')
+        
         print('Loading model...')
         tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
         tokenizer.pad_token = tokenizer.eos_token
@@ -35,8 +50,7 @@ jobs:
         dummy_mask = torch.ones(1, 64, dtype=torch.int64)
         
         torch.onnx.export(
-            model,
-            (dummy_input, dummy_mask),
+            model, (dummy_input, dummy_mask),
             'models/pullbot.onnx',
             input_names=['input_ids', 'attention_mask'],
             output_names=['logits'],
@@ -45,13 +59,11 @@ jobs:
                 'attention_mask': {0: 'batch', 1: 'sequence'},
                 'logits': {0: 'batch', 1: 'sequence'}
             },
-            opset_version=14,
-            do_constant_folding=True
+            opset_version=14, do_constant_folding=True
         )
         
-        import os
         size_mb = os.path.getsize('models/pullbot.onnx') / (1024*1024)
-        print(f'ONNX model created: {size_mb:.1f}MB')
+        print(f'ONNX model: {size_mb:.1f}MB')
         "
     - name: Push ONNX model
       run: |

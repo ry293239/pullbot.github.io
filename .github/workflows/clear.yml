@@ -1,0 +1,22 @@
+name: Nuke Quadratic
+
+on:
+  workflow_dispatch:
+
+jobs:
+  nuke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    steps:
+    - uses: actions/checkout@v4
+    - name: Delete quadratic forever
+      run: |
+        rm -rf data/quadratic/
+        rm -f src/export_to_quadratic.py
+    - name: Push deletion
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git add -A
+        git commit -m "Nuke quadratic files forever" || echo "Nothing to commit"
+        git push

@@ -2,25 +2,22 @@
 # PULLBOT CONFIGURATION
 # ============================================
 
-# --- Model Settings ---
 model:
-  type: "tiny"                  # "tiny" = from scratch, "distilgpt2" = pretrained
-  base: "distilgpt2"           # Only used if type is distilgpt2
+  type: "tiny"
+  base: "distilgpt2"
   max_length: 256
   temperature: 0.8
-  embed_dim: 128               # For tiny model
-  hidden_dim: 256              # For tiny model
-  num_layers: 4                # For tiny model
+  embed_dim: 128
+  hidden_dim: 256
+  num_layers: 4
 
-# --- Training ---
 training:
   chunk_minutes: 280
   learning_rate: 0.001
   batch_size: 8
   max_examples: 5000
-  epochs: 3
+  epochs: 1
 
-# --- Scraping ---
 scrape:
   sources:
     - github_trending
@@ -29,27 +26,23 @@ scrape:
   wikipedia_articles: 10
   max_chars: 500000
 
-# --- Knowledge Base ---
 knowledge:
   chunk_size: 300
   top_k: 3
   max_chunks: 5000
   embed_dim: 128
 
-# --- Self-Improvement ---
 evolve:
   enabled: false
   variants: 20
   keep_percent: 10
   min_length: 20
 
-# --- Bot Personality ---
 personality:
   intro: "Hey! I'm Pullbot. I scrape the web to learn. Ask me anything!"
   style: "concise"
   max_response_len: 200
 
-# --- Repo Settings ---
 repo:
   data_dir: "data"
   model_dir: "models"

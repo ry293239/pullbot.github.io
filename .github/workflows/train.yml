@@ -28,6 +28,9 @@ jobs:
       
     - name: Clean corpus
       run: python src/clean_corpus.py
+        
+    - name: Generate training examples
+      run: python src/generate_training_examples.py
       
     - name: Build knowledge store
       run: python src/store.py build

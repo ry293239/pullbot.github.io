@@ -27,13 +27,11 @@ jobs:
       run: python src/scrape.py
       
     - name: 🧹 Clean corpus
-      run: |
-        python -c "
-        import re
-        corpus_path = 'data/processed/corpus.txt'
-        if __import__('os').path.exists(corpus_path):
-            with open(corpus_path, 'r') as f:
-                text = f.read()
+      run: python src/clean_corpus.py 2>/dev/null || python -c "
+        import re, os
+        path = 'data/processed/corpus.txt'
+        if os.path.exists(path):
+            with open(path, 'r') as f: text = f.read()
             text = re.sub(r'<[^>]+>', '', text)
             text = re.sub(r'https?://\S+', '', text)
             text = re.sub(r'!\[.*?\]\(.*?\)', '', text)
@@ -42,23 +40,20 @@ jobs:
             text = re.sub(r'#[^\n]*', '', text)
             text = re.sub(r'\n{3,}', '\n\n', text)
             text = re.sub(r'[=\-*]{3,}', '', text)
-            with open(corpus_path, 'w') as f:
-                f.write(text)
-            print(f'Cleaned corpus: {len(text):,} chars')
-        "
+            with open(path, 'w') as f: f.write(text)
+            print(f'Cleaned: {len(text):,} chars')
+      "
       
     - name: 🧠 Build knowledge store
       run: python src/store.py build
       
-    - name: 🚀 Train model (with checkpoint resume)
+    - name: 🚀 Train model
       run: |
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
           echo "Corpus size: $CORPUS_SIZE chars"
           if [ "$CORPUS_SIZE" -gt 2000 ]; then
-            
             LATEST_CHECKPOINT=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
-            
             if [ -n "$LATEST_CHECKPOINT" ]; then
               echo "📂 Resuming from: $LATEST_CHECKPOINT"
               python src/model.py train --resume "$LATEST_CHECKPOINT"
@@ -66,7 +61,6 @@ jobs:
               echo "🆕 Starting fresh training..."
               python src/model.py train
             fi
-            
             echo "TRAINED=true" >> $GITHUB_ENV
           else
             echo "⚠️ Corpus too small"
@@ -80,19 +74,16 @@ jobs:
     - name: 📝 Update version file
       run: |
         mkdir -p data/knowledge
-        
         if [ -f knowledge/store.json ]; then
           CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))")
         else
           CHUNKS=0
         fi
-        
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_KB=$(( $(wc -c < data/processed/corpus.txt) / 1024 ))
         else
           CORPUS_KB=0
         fi
-        
         if [ -f data/knowledge/version.json ]; then
           CURRENT=$(python -c "import json; print(json.load(open('data/knowledge/version.json'))['version'])")
           MAJOR=$(echo $CURRENT | cut -d. -f1)
@@ -102,7 +93,6 @@ jobs:
         else
           NEW_VERSION="1.1"
         fi
-        
         cat > data/knowledge/version.json << EOF
         {
           "version": "${NEW_VERSION}",
@@ -113,7 +103,6 @@ jobs:
           "training_type": "full_fine_tune"
         }
         EOF
-        
         echo "✅ Version: ${NEW_VERSION}"
         echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
         
@@ -124,26 +113,20 @@ jobs:
         rm -rf models/temp_quick/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
-        echo "✅ Cleaned up"
         
-    - name: 💾 Commit & push (with retry)
+    - name: 💾 Commit & push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        
         git add data/ knowledge/ models/chunks/ models/last_train.json 2>/dev/null || true
         git add src/ config.yaml requirements.txt .github/ js/ index.html .gitignore 2>/dev/null || true
         git add data/knowledge/version.json 2>/dev/null || true
-        
         if git diff --staged --quiet; then
-          echo "No changes to commit"
+          echo "No changes"
         else
           git commit -m "🤖 v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus"
-          
           for i in 1 2 3; do
-            echo "Push attempt $i..."
             git pull --rebase && git push && break
-            echo "Retrying in 5s..."
             sleep 5
           done
         fi

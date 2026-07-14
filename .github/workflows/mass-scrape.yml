@@ -1,9 +1,13 @@
+
 name: Mass Scrape Wikipedia
 
 on:
   workflow_dispatch:
   schedule:
     - cron: '0 */6 * * *'
+  workflow_run:
+    workflows: ["Mass Scrape Ping"]
+    types: [completed]
 
 jobs:
   mass-scrape:
@@ -34,5 +38,5 @@ jobs:
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add data/wordbank.json data/definitions.json data/processed/corpus.txt
-        git diff --staged --quiet || git commit -m "Mass scrape: words + definitions + training examples"
+        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +definitions +examples"
         git pull --rebase && git push

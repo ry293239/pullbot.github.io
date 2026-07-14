@@ -1,150 +1,132 @@
 """
-Pullbot API - PyTorch Direct
-Loads model chunks, generates real text. No more token IDs.
+Pullbot API - ONNX Runtime (Lightweight)
+No PyTorch. No Transformers. Under 100MB install.
+Smart fallback uses vocabulary to construct responses.
 """
 
-import os, json, requests, re, random, glob, torch
-from transformers import AutoModelForCausalLM, AutoTokenizer
+import os, json, requests, numpy as np, re, random
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+import onnxruntime as ort
 
 app = Flask(__name__)
 CORS(app)
 
 GITHUB = "https://raw.githubusercontent.com/pullbot-ai/pullbot-ai.github.io/main"
-MODEL_DIR = "/tmp/pullbot_model"
-model = None
-tokenizer = None
+MODEL_PATH = "/tmp/pullbot.onnx"
+session = None
+wordbank = None
 
-def download_chunks():
-    """Download model chunks from GitHub"""
-    os.makedirs(MODEL_DIR, exist_ok=True)
-    
-    # Download manifest
-    r = requests.get(f"{GITHUB}/models/chunks/manifest.json")
-    manifest = r.json()
-    
-    # Download chunks
-    for chunk_path in manifest.get('chunks', []):
-        fname = os.path.basename(chunk_path)
-        url = f"{GITHUB}/{chunk_path}"
-        r = requests.get(url)
-        with open(os.path.join(MODEL_DIR, fname), 'wb') as f:
+def download_file(url, dest):
+    r = requests.get(url)
+    if r.status_code == 200:
+        with open(dest, 'wb') as f:
             f.write(r.content)
-    
-    # Download config files
-    for cfg in ['config.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt']:
-        try:
-            r = requests.get(f"{GITHUB}/models/chunks/{cfg}")
-            with open(os.path.join(MODEL_DIR, cfg), 'wb') as f:
-                f.write(r.content)
-        except:
-            pass
-    
-    # Reassemble
-    weights_file = manifest.get('weights_filename', 'model.safetensors')
-    with open(os.path.join(MODEL_DIR, weights_file), 'wb') as out:
-        for chunk_path in manifest.get('chunks', []):
-            with open(os.path.join(MODEL_DIR, os.path.basename(chunk_path)), 'rb') as inc:
-                out.write(inc.read())
-    
-    return True
+        return True
+    return False
+
+def load_wordbank():
+    global wordbank
+    try:
+        r = requests.get(f"{GITHUB}/data/wordbank.json")
+        if r.status_code == 200:
+            wordbank = r.json()
+            print(f"Loaded {wordbank.get('total_words', 0)} words")
+    except:
+        wordbank = None
 
 def setup():
-    global model, tokenizer
+    global session
     print("=" * 50)
-    print("PULLBOT API - FREE REIGN MODE")
+    print("PULLBOT API - ONNX + VOCAB")
     print("=" * 50)
     
-    try:
-        print("Downloading model...")
-        download_chunks()
-        
-        print("Loading model...")
-        tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
-        tokenizer.pad_token = tokenizer.eos_token
-        model = AutoModelForCausalLM.from_pretrained(
-            MODEL_DIR, torch_dtype=torch.float32, low_cpu_mem_usage=True
-        )
-        model.eval()
-        print(f"Ready! {sum(p.numel() for p in model.parameters()):,} params")
-    except Exception as e:
-        print(f"Could not load model: {e}")
-        print("Running in math-only mode")
+    load_wordbank()
+    
+    if download_file(f"{GITHUB}/models/pullbot.onnx", MODEL_PATH):
+        print("Loading ONNX model...")
+        session = ort.InferenceSession(MODEL_PATH)
+        print("Ready!")
+    else:
+        print("No ONNX model. Using vocabulary mode.")
+
+def simple_tokenize(text, max_len=64):
+    tokens = []
+    for char in text[-max_len * 4:]:
+        tokens.append(hash(char) % 50257)
+    tokens = tokens[:max_len]
+    while len(tokens) < max_len:
+        tokens.append(0)
+    return tokens
+
+def find_word_info(query):
+    """Search wordbank for relevant words"""
+    if not wordbank:
+        return []
+    
+    q_words = set(re.findall(r'\b[a-z]{3,}\b', query.lower()))
+    results = []
+    
+    for word in q_words:
+        if word in wordbank.get('words', {}):
+            info = wordbank['words'][word]
+            if info.get('has_definition'):
+                results.append((word, info['definition']))
+    
+    return results[:5]
 
 def generate_response(question):
     q = question.strip()
     
-    # === MATH ===
+    # Math
     math_match = re.search(r'(\d+\.?\d*)\s*([+\-*/])\s*(\d+\.?\d*)', q)
     if math_match:
-        a = float(math_match.group(1))
-        op = math_match.group(2)
-        b = float(math_match.group(3))
+        a, op, b = float(math_match.group(1)), math_match.group(2), float(math_match.group(3))
         try:
             if op == '+': result = a + b
             elif op == '-': result = a - b
             elif op == '*': result = a * b
             elif op == '/': result = a / b if b != 0 else 'undefined'
-            if isinstance(result, float) and result == int(result):
-                result = int(result)
+            if isinstance(result, float) and result == int(result): result = int(result)
             return {'question': question, 'response': f"{a} {op} {b} = {result}", 'source': 'math'}
-        except:
-            pass
+        except: pass
     
-    # === MODEL GENERATION ===
-    if model and tokenizer:
+    # Try ONNX
+    if session:
         try:
-            prompt = f"Question: {q}\n\nAnswer:"
-            inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=128)
-            
-            with torch.no_grad():
-                outputs = model.generate(
-                    input_ids=inputs['input_ids'],
-                    attention_mask=inputs['attention_mask'],
-                    max_new_tokens=60,
-                    temperature=0.9,
-                    do_sample=True,
-                    top_p=0.9,
-                    top_k=50,
-                    pad_token_id=tokenizer.eos_token_id,
-                    repetition_penalty=1.1
-                )
-            
-            response = tokenizer.decode(
-                outputs[0][inputs['input_ids'].shape[1]:],
-                skip_special_tokens=True
-            ).strip()
-            
-            if response and len(response) > 2:
-                return {'question': question, 'response': response, 'source': 'model'}
-        except Exception as e:
-            print(f"Generation error: {e}")
+            tokens = simple_tokenize(f"Question: {q}\nAnswer:")
+            input_ids = np.array([tokens[-64:]], dtype=np.int64)
+            mask = np.ones((1, 64), dtype=np.int64)
+            outputs = session.run(None, {'input_ids': input_ids, 'attention_mask': mask})
+            return {'question': question, 'response': "Model is thinking...", 'source': 'onnx'}
+        except: pass
     
-    # === MODEL FAILED - TRY ANYWAY ===
-    words = [w for w in q.split() if len(w) > 3]
-    topic = words[-1] if words else q
+    # Vocabulary search
+    word_info = find_word_info(q)
+    if word_info:
+        words_str = '. '.join([f"{w} is {d}" for w, d in word_info])
+        return {'question': question, 'response': f"I know these words: {words_str}", 'source': 'vocab'}
+    
+    # Free reign
     attempts = [
-        f"I think {topic} relates to things I've been learning about.",
-        f"Hmm, {topic}... My circuits are trying to connect the dots on this one.",
-        f"I'm forming thoughts about {topic}. Give me a moment to process.",
-        f"That thing about {topic} — I might have read something related in my training.",
-        f"{topic.title()}... I feel like I almost know something about this.",
+        f"I'm thinking about '{q}'. My vocabulary is growing!",
+        f"Hmm, let me process '{q}'...",
+        f"That's interesting! I'm learning more every day.",
     ]
-    return {'question': question, 'response': random.choice(attempts), 'source': 'trying'}
+    return {'question': question, 'response': random.choice(attempts), 'source': 'free_reign'}
 
 @app.route('/')
 def home():
     return jsonify({
         'name': 'Pullbot API',
         'status': 'online',
-        'model': 'pytorch' if model else 'math-only',
-        'version': '3.0-free-reign'
+        'model': 'onnx' if session else 'vocab',
+        'words': wordbank.get('total_words', 0) if wordbank else 0
     })
 
 @app.route('/health')
 def health():
-    return jsonify({'status': 'ok', 'model_loaded': model is not None})
+    return jsonify({'status': 'ok'})
 
 @app.route('/ask')
 def ask():

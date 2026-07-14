@@ -7,9 +7,9 @@ on:
     types: [completed]
 
 jobs:
-  mass-scrape:
+  scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 10
     
     steps:
     - uses: actions/checkout@v4
@@ -18,11 +18,11 @@ jobs:
         python-version: '3.10'
     - name: Install deps
       run: pip install requests
-    - name: Mass scrape Wikipedia
+    - name: Mass scrape
       run: python src/mass_scrape_wikipedia.py 50
-    - name: Define new words
+    - name: Define words
       run: python src/define_words.py 100
-    - name: Generate training examples
+    - name: Training examples
       run: python src/generate_training_examples.py
     - name: Smart training
       run: python src/smart_train.py
@@ -31,5 +31,5 @@ jobs:
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add data/wordbank.json data/definitions.json data/processed/corpus.txt
-        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +phrases +training"
+        git diff --staged --quiet || git commit -m "📚 Mass scrape"
         git pull --rebase && git push

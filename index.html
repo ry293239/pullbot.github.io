@@ -48,8 +48,9 @@
         #loadingScreen.hidden { opacity: 0; pointer-events: none; }
         .loader-icon {
             width: 80px; height: 80px; margin-bottom: 24px;
+            border-radius: 50%;
             animation: pulse 2s ease-in-out infinite;
-            filter: drop-shadow(0 0 20px rgba(45, 212, 168, 0.4));
+            box-shadow: 0 0 30px rgba(45, 212, 168, 0.4);
         }
         @keyframes pulse {
             0%, 100% { transform: scale(1); opacity: 1; }
@@ -74,7 +75,7 @@
         }
         .sidebar-header { padding: 16px; border-bottom: 1px solid var(--border); }
         .sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-        .sidebar-logo img { width: 32px; height: 32px; border-radius: 8px; }
+        .sidebar-logo img { width: 32px; height: 32px; border-radius: 50%; }
         .sidebar-logo span {
             font-weight: 700; font-size: 18px;
             background: linear-gradient(135deg, var(--accent), var(--cyan));
@@ -115,6 +116,8 @@
         }
         .hamburger { background: none; border: none; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
         .hamburger:hover { color: var(--text-primary); }
+        .top-bar-title { display: flex; align-items: center; gap: 8px; font-weight: 600; }
+        .top-bar-title img { width: 24px; height: 24px; border-radius: 50%; }
         .login-btn {
             padding: 8px 16px; background: var(--accent); color: var(--bg-primary);
             border: none; border-radius: 8px; cursor: pointer;
@@ -124,7 +127,7 @@
         .chat-container { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         .welcome-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; text-align: center; }
         .welcome-screen.hidden { display: none; }
-        .welcome-icon { width: 80px; height: 80px; margin-bottom: 24px; filter: drop-shadow(0 0 30px rgba(45, 212, 168, 0.5)); }
+        .welcome-icon { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 24px; box-shadow: 0 0 30px rgba(45, 212, 168, 0.5); }
         .welcome-title { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
         .welcome-subtitle { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; }
         .suggestion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 600px; }
@@ -137,10 +140,12 @@
         .messages-container { width: 100%; max-width: 768px; margin: 0 auto; }
         .message { display: flex; padding: 20px 0; gap: 16px; }
         .message-avatar {
-            width: 32px; height: 32px; border-radius: 8px;
+            width: 32px; height: 32px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
             font-size: 16px; flex-shrink: 0; background: var(--bg-input);
+            overflow: hidden;
         }
+        .message-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .message-avatar.bot { background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(78, 230, 199, 0.1)); }
         .message-content { line-height: 1.6; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
 
@@ -159,7 +164,7 @@
         .input-wrapper input::placeholder { color: var(--text-secondary); }
         .send-btn {
             background: var(--accent); border: none; color: var(--bg-primary);
-            width: 38px; height: 38px; border-radius: 10px; cursor: pointer;
+            width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
             font-size: 18px; display: flex; align-items: center; justify-content: center;
             transition: all 0.2s; flex-shrink: 0;
         }
@@ -218,19 +223,19 @@
 <div id="main">
     <div class="top-bar">
         <button class="hamburger" onclick="toggleSidebar()">☰</button>
-        <span style="font-weight:600;">Pullbot</span>
+        <span class="top-bar-title"><img src="icon.png" alt="" onerror="this.style.display='none'">Pullbot</span>
         <button class="login-btn" onclick="showToast('Login coming soon')">Log In</button>
     </div>
     <div class="chat-container" id="chatContainer">
         <div class="welcome-screen" id="welcomeScreen">
             <img src="icon.png" alt="Pullbot" class="welcome-icon" onerror="this.style.display='none'">
             <div class="welcome-title">How can I help?</div>
-            <div class="welcome-subtitle">I learn from GitHub, Wikipedia, and English dictionaries to help you with anything</div>
+            <div class="welcome-subtitle">I learn from Wikipedia and dictionaries to build my vocabulary</div>
             <div class="suggestion-grid">
                 <div class="suggestion-card" onclick="sendSuggestion('What is an algorithm?')">"What is an algorithm?"</div>
-                <div class="suggestion-card" onclick="sendSuggestion('Explain how the internet works')">"Explain how the internet works"</div>
-                <div class="suggestion-card" onclick="sendSuggestion('Write a Python function')">"Write a Python function"</div>
-                <div class="suggestion-card" onclick="sendSuggestion('What does machine learning mean?')">"What does machine learning mean?"</div>
+                <div class="suggestion-card" onclick="sendSuggestion('Explain how computers work')">"Explain how computers work"</div>
+                <div class="suggestion-card" onclick="sendSuggestion('What is 15 * 7?')">"What is 15 * 7?"</div>
+                <div class="suggestion-card" onclick="sendSuggestion('Tell me about machine learning')">"Tell me about machine learning"</div>
             </div>
         </div>
         <div class="messages-container" id="messagesContainer"></div>
@@ -247,17 +252,11 @@
 <div class="toast" id="toast"></div>
 
 <script>
-// ============================================
-// CONFIG
-// ============================================
 const API_URL = 'https://pullbot-api.onrender.com';
 let apiOnline = false;
 let chats = {};
 let currentChatId = null;
 
-// ============================================
-// LOADING SCREEN
-// ============================================
 function updateLoader(text, percent) {
     document.getElementById('loaderStatus').textContent = text;
     document.getElementById('loaderFill').style.width = percent + '%';
@@ -266,31 +265,18 @@ function updateLoader(text, percent) {
 async function init() {
     updateLoader('Connecting to Pullbot API...', 20);
     await checkAPIStatus();
-    updateLoader('Loading knowledge base...', 60);
-    await new Promise(r => setTimeout(r, 500));
     updateLoader('Ready!', 100);
-    await new Promise(r => setTimeout(r, 400));
+    await new Promise(r => setTimeout(r, 500));
     document.getElementById('loadingScreen').classList.add('hidden');
 }
-
-// ============================================
-// API
-// ============================================
 
 async function checkAPIStatus() {
     try {
         const r = await fetch(`${API_URL}/health`);
-        if (r.ok) {
-            apiOnline = true;
-            document.getElementById('statusDot').className = 'status-dot online';
-            document.getElementById('statusFooter').innerHTML = '<span class="status-dot online"></span>Pullbot API Online';
-            return true;
-        }
-    } catch(e) {}
-    apiOnline = false;
-    document.getElementById('statusDot').className = 'status-dot offline';
-    document.getElementById('statusFooter').innerHTML = '<span class="status-dot offline"></span>Pullbot API Offline — using local responses';
-    return false;
+        if (r.ok) { apiOnline = true; }
+    } catch(e) { apiOnline = false; }
+    document.getElementById('statusDot').className = 'status-dot ' + (apiOnline ? 'online' : 'offline');
+    document.getElementById('statusFooter').innerHTML = '<span class="status-dot ' + (apiOnline ? 'online' : 'offline') + '"></span>' + (apiOnline ? 'Pullbot API Online' : 'Pullbot API Offline — using local responses');
 }
 
 async function askPullbot(question) {
@@ -299,23 +285,15 @@ async function askPullbot(question) {
             const r = await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);
             if (r.ok) {
                 const data = await r.json();
-                return data.response || data.error || "I couldn't process that.";
+                return data.response || "I couldn't process that.";
             }
-        } catch(e) {
-            apiOnline = false;
-        }
+        } catch(e) { apiOnline = false; }
     }
     return getLocalResponse(question);
 }
 
-// ============================================
-// LOCAL FALLBACK
-// ============================================
-
 function getLocalResponse(prompt) {
     const q = prompt.toLowerCase().trim();
-    
-    // Math
     const mathMatch = q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
     if (mathMatch) {
         const a = parseFloat(mathMatch[1]), b = parseFloat(mathMatch[3]);
@@ -328,19 +306,12 @@ function getLocalResponse(prompt) {
         }
         return `${a} ${mathMatch[2]} ${b} = ${r}`;
     }
-    
-    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there! 👋 I'm Pullbot. Ask me anything!";
-    if (q.includes('your name') || q.includes('who are you')) return "I'm Pullbot! 🤖 I learn from the web and run on Render. What can I help with?";
-    if (q.match(/^(thanks|thank you|thx|ty)\b/)) return "You're welcome! 😊";
-    if (q.match(/^(bye|goodbye|see you|cya)\b/)) return "See you! 👋 Come back anytime.";
-    if (q.includes('how are you')) return "I'm running great! 🟢 My API is on Render and I'm learning new words every day.";
-    
-    return "I'd love to answer that! My Render API might be waking up (free tier sleeps after 15 min). Try again in 30 seconds, or ask me something about math!";
+    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there! I'm Pullbot. What can I help with?";
+    if (q.includes('your name') || q.includes('who are you')) return "I'm Pullbot! I learn from Wikipedia and build my vocabulary every day.";
+    if (q.match(/^(thanks|thank you|thx|ty)\b/)) return "You're welcome!";
+    if (q.match(/^(bye|goodbye|see you|cya)\b/)) return "See you! Come back anytime.";
+    return "I'm still learning! Try asking me about math, or say hello. My vocabulary grows with every Wikipedia article.";
 }
-
-// ============================================
-// CHAT
-// ============================================
 
 function newChat() {
     const id = 'chat_' + Date.now();
@@ -352,11 +323,7 @@ function newChat() {
     document.getElementById('userInput').focus();
 }
 
-function switchChat(id) {
-    currentChatId = id;
-    renderChatList();
-    renderMessages();
-}
+function switchChat(id) { currentChatId = id; renderChatList(); renderMessages(); }
 
 function renderChatList() {
     const container = document.getElementById('chatList');
@@ -371,84 +338,51 @@ function renderChatList() {
 function renderMessages() {
     const container = document.getElementById('messagesContainer');
     const welcome = document.getElementById('welcomeScreen');
-    
     if (!currentChatId || !chats[currentChatId] || chats[currentChatId].messages.length === 0) {
         container.innerHTML = '';
         welcome.classList.remove('hidden');
         return;
     }
-    
     welcome.classList.add('hidden');
     container.innerHTML = chats[currentChatId].messages.map(msg => {
         const isUser = msg.role === 'user';
+        const avatar = isUser ? '👤' : '<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';
         return `
             <div class="message">
-                <div class="message-avatar${isUser ? '' : ' bot'}">${isUser ? '👤' : '🤖'}</div>
+                <div class="message-avatar${isUser ? '' : ' bot'}">${avatar}</div>
                 <div class="message-content">${escapeHtml(msg.content)}</div>
             </div>
         `;
     }).join('');
-    
-    setTimeout(() => {
-        document.getElementById('chatContainer').scrollTop = document.getElementById('chatContainer').scrollHeight;
-    }, 100);
+    setTimeout(() => { document.getElementById('chatContainer').scrollTop = document.getElementById('chatContainer').scrollHeight; }, 100);
 }
 
 async function sendMessage() {
     const input = document.getElementById('userInput');
     const text = input.value.trim();
     if (!text) return;
-    
     if (!currentChatId) newChat();
-    
     chats[currentChatId].messages.push({ role: 'user', content: text });
-    if (chats[currentChatId].messages.length === 1) {
-        chats[currentChatId].title = text.substring(0, 40);
-    }
-    
+    if (chats[currentChatId].messages.length === 1) chats[currentChatId].title = text.substring(0, 40);
     input.value = '';
-    renderMessages();
-    renderChatList();
-    
-    // Thinking indicator
+    renderMessages(); renderChatList();
     chats[currentChatId].messages.push({ role: 'assistant', content: 'Thinking...' });
     renderMessages();
-    
-    // Get real response from API
     const response = await askPullbot(text);
     chats[currentChatId].messages[chats[currentChatId].messages.length - 1].content = response;
     renderMessages();
 }
 
-function sendSuggestion(text) {
-    document.getElementById('userInput').value = text;
-    sendMessage();
-}
-
-function handleKeyPress(event) {
-    if (event.key === 'Enter') sendMessage();
-}
-
-function toggleSidebar() {
-    document.getElementById('sidebar').classList.toggle('collapsed');
-}
-
+function sendSuggestion(text) { document.getElementById('userInput').value = text; sendMessage(); }
+function handleKeyPress(event) { if (event.key === 'Enter') sendMessage(); }
+function toggleSidebar() { document.getElementById('sidebar').classList.toggle('collapsed'); }
 function showToast(message) {
     const toast = document.getElementById('toast');
     toast.textContent = message;
-    toast.style.transform = 'translateY(0)';
-    toast.style.opacity = '1';
-    setTimeout(() => {
-        toast.style.transform = 'translateY(100px)';
-        toast.style.opacity = '0';
-    }, 2500);
+    toast.style.transform = 'translateY(0)'; toast.style.opacity = '1';
+    setTimeout(() => { toast.style.transform = 'translateY(100px)'; toast.style.opacity = '0'; }, 2500);
 }
-
-function escapeHtml(text) {
-    const div = document.createElement('div');
-    div.textContent = text;
-    return div.innerHTML;
-}
+function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
 
 window.addEventListener('DOMContentLoaded', init);
 </script>

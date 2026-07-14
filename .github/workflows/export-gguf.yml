@@ -1,0 +1,64 @@
+name: Export GGUF Model
+
+on:
+  workflow_dispatch:
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install deps
+      run: pip install torch transformers numpy safetensors
+    - name: Convert to GGUF
+      run: |
+        pip install gguf
+        python -c "
+        import os, json, torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        
+        chunks_dir = 'models/chunks'
+        
+        with open(f'{chunks_dir}/manifest.json') as f:
+            manifest = json.load(f)
+        
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled = f'{chunks_dir}/{weights_file}'
+        
+        if not os.path.exists(reassembled):
+            print('Reassembling...')
+            with open(reassembled, 'wb') as out:
+                for chunk_path in manifest['chunks']:
+                    with open(chunk_path, 'rb') as inc:
+                        out.write(inc.read())
+        
+        print('Loading model...')
+        model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
+        
+        print('Converting to GGUF...')
+        from gguf import GGUFWriter
+        writer = GGUFWriter('models/pullbot.gguf', 'gpt2')
+        state_dict = model.state_dict()
+        for name, param in state_dict.items():
+            writer.add_tensor(name, param.numpy())
+        writer.write()
+        
+        size_mb = os.path.getsize('models/pullbot.gguf') / (1024*1024)
+        print(f'GGUF model: {size_mb:.1f}MB')
+        "
+    - name: Push GGUF model
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        if [ -f models/pullbot.gguf ]; then
+          git add models/pullbot.gguf
+          git commit -m "📤 Exported GGUF model" && git push || echo "No changes"
+        else
+          echo "GGUF file not found!"
+          exit 1
+        fi

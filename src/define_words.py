@@ -1,16 +1,13 @@
 """
-Definition Lookup for Wordbank
-Takes words from wordbank, looks up definitions.
-Stores word + definition pairs for training.
+Definition Lookup - writes directly to wordbank.json
+No more separate definitions.json file.
 """
 
 import os, sys, json, time, requests
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
-
 WORD_BANK_PATH = os.path.join(REPO_ROOT, 'data', 'wordbank.json')
-DEFINITIONS_PATH = os.path.join(REPO_ROOT, 'data', 'definitions.json')
 
 def load_wordbank():
     with open(WORD_BANK_PATH, 'r') as f:
@@ -20,19 +17,7 @@ def save_wordbank(bank):
     with open(WORD_BANK_PATH, 'w') as f:
         json.dump(bank, f, indent=2)
 
-def load_definitions():
-    if os.path.exists(DEFINITIONS_PATH):
-        with open(DEFINITIONS_PATH, 'r') as f:
-            return json.load(f)
-    return []
-
-def save_definitions(defs):
-    os.makedirs(os.path.dirname(DEFINITIONS_PATH), exist_ok=True)
-    with open(DEFINITIONS_PATH, 'w') as f:
-        json.dump(defs, f, indent=2)
-
 def lookup_word(word):
-    """Look up definition for a single word"""
     try:
         url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
         r = requests.get(url, timeout=10)
@@ -47,50 +32,37 @@ def lookup_word(word):
     return None
 
 def run_define_words(limit=100):
-    """Look up definitions for words that don't have them yet"""
     print("=" * 50)
-    print(f"📖 DEFINITION LOOKUP")
-    print(f"   Limit: {limit} words")
+    print(f"📖 DEFINITION LOOKUP (limit: {limit})")
     print("=" * 50)
     
     bank = load_wordbank()
-    definitions = load_definitions()
     defined_count = 0
     
     # Find words without definitions
     undefined = [
-        (word, info) for word, info in bank['words'].items()
+        word for word, info in bank['words'].items()
         if not info.get('has_definition', False)
     ][:limit]
     
-    print(f"   Undefined words: {len(undefined):,}")
+    print(f"   Undefined words: {len(undefined)}")
     
-    for i, (word, info) in enumerate(undefined):
+    for word in undefined:
         definition = lookup_word(word)
-        
         if definition:
             bank['words'][word]['has_definition'] = True
             bank['words'][word]['definition'] = definition
-            
-            definitions.append({
-                'word': word,
-                'definition': definition,
-                'first_seen': info.get('first_seen', 'unknown')
-            })
-            
             defined_count += 1
-            
             if defined_count % 20 == 0:
                 print(f"   {defined_count}/{len(undefined)} defined")
-        
         time.sleep(0.2)
     
+    bank['total_defined'] = sum(1 for w in bank['words'].values() if w.get('has_definition'))
     save_wordbank(bank)
-    save_definitions(definitions)
     
     print(f"\n✅ Defined {defined_count} words")
-    print(f"   Total definitions: {len(definitions):,}")
-    return definitions
+    print(f"   Total definitions: {bank['total_defined']}")
+    return defined_count
 
 if __name__ == '__main__':
     limit = int(sys.argv[1]) if len(sys.argv) > 1 else 100

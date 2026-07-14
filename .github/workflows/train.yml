@@ -23,66 +23,49 @@ jobs:
         pip install --upgrade pip
         pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml
         
-    - name: 📊 Scrape web
+    - name: Scrape web
       run: python src/scrape.py
       
-    - name: 🧹 Clean corpus
-      run: python src/clean_corpus.py 2>/dev/null || python -c "
-        import re, os
-        path = 'data/processed/corpus.txt'
-        if os.path.exists(path):
-            with open(path, 'r') as f: text = f.read()
-            text = re.sub(r'<[^>]+>', '', text)
-            text = re.sub(r'https?://\S+', '', text)
-            text = re.sub(r'!\[.*?\]\(.*?\)', '', text)
-            text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
-            text = re.sub(r'`[^`]+`', '', text)
-            text = re.sub(r'#[^\n]*', '', text)
-            text = re.sub(r'\n{3,}', '\n\n', text)
-            text = re.sub(r'[=\-*]{3,}', '', text)
-            with open(path, 'w') as f: f.write(text)
-            print(f'Cleaned: {len(text):,} chars')
-      "
+    - name: Clean corpus
+      run: python src/clean_corpus.py
       
-    - name: 🧠 Build knowledge store
+    - name: Build knowledge store
       run: python src/store.py build
       
-    - name: 🚀 Train model
+    - name: Train model
       run: |
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
           echo "Corpus size: $CORPUS_SIZE chars"
           if [ "$CORPUS_SIZE" -gt 2000 ]; then
-            LATEST_CHECKPOINT=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
-            if [ -n "$LATEST_CHECKPOINT" ]; then
-              echo "📂 Resuming from: $LATEST_CHECKPOINT"
-              python src/model.py train --resume "$LATEST_CHECKPOINT"
+            LATEST=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
+            if [ -n "$LATEST" ]; then
+              echo "Resuming from: $LATEST"
+              python src/model.py train --resume "$LATEST"
             else
-              echo "🆕 Starting fresh training..."
+              echo "Starting fresh training..."
               python src/model.py train
             fi
             echo "TRAINED=true" >> $GITHUB_ENV
           else
-            echo "⚠️ Corpus too small"
+            echo "Corpus too small"
             echo "TRAINED=false" >> $GITHUB_ENV
           fi
         else
-          echo "⚠️ No corpus found"
+          echo "No corpus found"
           echo "TRAINED=false" >> $GITHUB_ENV
         fi
       
-    - name: 📝 Update version file
+    - name: Update version file
       run: |
         mkdir -p data/knowledge
+        CHUNKS=0
+        CORPUS_KB=0
         if [ -f knowledge/store.json ]; then
           CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))")
-        else
-          CHUNKS=0
         fi
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_KB=$(( $(wc -c < data/processed/corpus.txt) / 1024 ))
-        else
-          CORPUS_KB=0
         fi
         if [ -f data/knowledge/version.json ]; then
           CURRENT=$(python -c "import json; print(json.load(open('data/knowledge/version.json'))['version'])")
@@ -93,20 +76,20 @@ jobs:
         else
           NEW_VERSION="1.1"
         fi
-        cat > data/knowledge/version.json << EOF
+        cat > data/knowledge/version.json << ENDJSON
         {
           "version": "${NEW_VERSION}",
           "updated": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
           "knowledge_chunks": ${CHUNKS},
           "corpus_kb": ${CORPUS_KB},
-          "model_trained": $([ "$TRAINED" = "true" ] && echo "true" || echo "false"),
+          "model_trained": $( [ "$TRAINED" = "true" ] && echo "true" || echo "false" ),
           "training_type": "full_fine_tune"
         }
-        EOF
-        echo "✅ Version: ${NEW_VERSION}"
+        ENDJSON
+        echo "Version: ${NEW_VERSION}"
         echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
         
-    - name: 🗑 Remove large files before push
+    - name: Remove large files before push
       run: |
         rm -rf models/checkpoints/
         rm -rf models/temp_trained/
@@ -114,7 +97,7 @@ jobs:
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
         
-    - name: 💾 Commit & push
+    - name: Commit and push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
@@ -124,7 +107,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes"
         else
-          git commit -m "🤖 v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus"
+          git commit -m "v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus"
           for i in 1 2 3; do
             git pull --rebase && git push && break
             sleep 5

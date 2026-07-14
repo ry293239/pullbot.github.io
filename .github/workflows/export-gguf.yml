@@ -18,54 +18,54 @@ jobs:
         pip install torch transformers numpy safetensors sentencepiece
         git clone --depth 1 https://github.com/ggerganov/llama.cpp
         pip install -r llama.cpp/requirements.txt
-    - name: Reassemble model
+    - name: Reassemble and prepare
       run: |
         python -c "
-        import os, json
+        import os, json, shutil
         
         chunks_dir = 'models/chunks'
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
         
-        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        # Reassemble the weights file
+        weights_file = manifest.get('weights_filename', 'pytorch_model.bin')
         reassembled = f'{chunks_dir}/{weights_file}'
         
-        if not os.path.exists(reassembled):
-            print(f'Reassembling {weights_file} from {manifest[\"num_chunks\"]} chunks...')
-            with open(reassembled, 'wb') as out:
-                for chunk_path in manifest['chunks']:
-                    with open(chunk_path, 'rb') as inc:
-                        out.write(inc.read())
-            print(f'Done: {os.path.getsize(reassembled)/(1024*1024):.1f}MB')
-        else:
-            print(f'Already reassembled: {os.path.getsize(reassembled)/(1024*1024):.1f}MB')
+        print(f'Reassembling {weights_file} from {manifest[\"num_chunks\"]} chunks...')
+        with open(reassembled, 'wb') as out:
+            for chunk_path in manifest['chunks']:
+                with open(chunk_path, 'rb') as inc:
+                    out.write(inc.read())
         
-        # Copy config files
-        import shutil
-        for cfg in ['config.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt', 'tokenizer.json']:
-            src = f'{chunks_dir}/{cfg}'
-            if os.path.exists(src):
-                shutil.copy(src, f'models/{cfg}')
+        size_mb = os.path.getsize(reassembled) / (1024*1024)
+        print(f'Reassembled: {size_mb:.1f}MB')
+        
+        # Copy all non-chunk files to models/
+        os.makedirs('models', exist_ok=True)
+        for f in os.listdir(chunks_dir):
+            if not f.startswith('model_chunk_') and f != weights_file:
+                src = os.path.join(chunks_dir, f)
+                dst = os.path.join('models', f)
+                if os.path.isfile(src):
+                    shutil.copy(src, dst)
+                    print(f'Copied {f}')
+        
+        # Copy the reassembled weights
+        shutil.copy(reassembled, f'models/{weights_file}')
+        print(f'Copied {weights_file} to models/')
         "
     - name: Convert to GGUF
       run: |
-        python llama.cpp/convert_hf_to_gguf.py models/ \
-          --outfile models/pullbot.gguf \
-          --outtype q4_k_m 2>&1 || echo "Trying alternative..."
-        
-        if [ ! -f models/pullbot.gguf ]; then
-          echo "First attempt failed, trying with model name..."
-          python llama.cpp/convert_hf_to_gguf.py models/ \
-            --outfile models/pullbot.gguf \
-            --outtype f16 2>&1 || true
-        fi
+        echo "Files in models/:"
+        ls -la models/
+        echo ""
+        echo "Converting..."
+        python llama.cpp/convert_hf_to_gguf.py models/ --outfile models/pullbot.gguf --outtype q4_k_m 2>&1
         
         if [ -f models/pullbot.gguf ]; then
-          echo "✅ GGUF created: $(du -h models/pullbot.gguf | cut -f1)"
+          echo "GGUF: $(du -h models/pullbot.gguf | cut -f1)"
         else
-          echo "❌ Conversion failed"
-          echo "Files in models/:"
-          ls -la models/
+          echo "Conversion failed"
         fi
         
     - name: Push GGUF model
@@ -76,5 +76,5 @@ jobs:
           git add models/pullbot.gguf
           git commit -m "📤 Exported GGUF model" && git push || echo "No changes"
         else
-          echo "No GGUF file to push"
+          echo "No GGUF file"
         fi

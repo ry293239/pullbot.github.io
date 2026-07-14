@@ -10,42 +10,35 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
-      
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        
     - name: Install dependencies
-      run: pip install torch transformers datasets accelerate safetensors numpy onnx
-        
+      run: pip install torch transformers datasets accelerate safetensors numpy onnx onnxscript
     - name: Clean corpus
       run: python src/clean_corpus.py
-      
     - name: Build clean knowledge
       run: python src/store.py build
-      
     - name: Prune + Quantize + Export
       run: python src/model.py optimize 0.7
-      
     - name: Remove large files
       run: |
         rm -rf models/checkpoints/
         rm -rf models/temp_trained/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
-        
     - name: Commit and push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
+        git stash
+        git pull --rebase origin main
+        git stash pop || true
         git add models/chunks/ models/pullbot.onnx models/pullbot.bin models/last_train.json 2>/dev/null || true
         git add knowledge/ data/processed/
         if git diff --staged --quiet; then
           echo "No changes"
         else
-          git commit -m "Optimized: clean knowledge + shrunk model + ONNX"
-          for i in 1 2 3; do
-            git pull --rebase && git push && break
-            sleep 5
-          done
+          git commit -m "Optimized: clean knowledge + shrunk model"
+          git push origin main
         fi

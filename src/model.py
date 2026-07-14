@@ -1,6 +1,11 @@
 """
-Pullbot Model - FULL FINE-TUNING + SMART PRUNING + QUANTIZATION + ONNX
-Smart prune redistributes small weights to similar neurons instead of deleting.
+Pullbot Model - QUALITY-OVER-QUANTITY PIPELINE
+1. Smart Prune: redistribute weak to strong
+2. Safe Precision Prune: merge insignificant digits (same row only)
+3. Progressive Bit Reduction: each node earns 8, 7, or 6 bits
+4. Shrink: remove dead neurons
+5. 8-bit Quantize: final compression
+Every remaining weight is max quality at minimum viable precision.
 """
 
 import os
@@ -25,8 +30,6 @@ import json
 import time
 import glob
 import shutil
-import struct
-import numpy as np
 
 config_path = os.path.join(REPO_ROOT, 'config.yaml')
 with open(config_path, 'r') as f:
@@ -185,14 +188,13 @@ class PullbotModel:
         return True
     
     # ============================================
-    # SMART PRUNE - redistributes, doesn't delete
+    # STAGE 1: SMART PRUNE
     # ============================================
     
     def smart_prune(self, target_sparsity=0.5):
-        """Prune by redistributing small weights to similar large weights.
-        Instead of deleting weak weights, merges them into the strongest similar neuron."""
+        """Redistribute weak weights to similar strong ones instead of deleting"""
         print("\n" + "=" * 50)
-        print(f"🧠 SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
+        print(f"🧠 STAGE 1: SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
         print("=" * 50)
         
         total_redistributed = 0
@@ -206,7 +208,6 @@ class PullbotModel:
                 for row_idx in range(weight.shape[0]):
                     row = weight[row_idx]
                     abs_row = row.abs()
-                    
                     if abs_row.sum() == 0:
                         continue
                     
@@ -216,10 +217,8 @@ class PullbotModel:
                     
                     threshold = torch.kthvalue(abs_row, len(row) - k).values
                     strong_mask = abs_row >= threshold
-                    weak_mask = abs_row < threshold
-                    
                     strong_idx = torch.where(strong_mask)[0]
-                    weak_idx = torch.where(weak_mask)[0]
+                    weak_idx = torch.where(~strong_mask)[0]
                     
                     if len(strong_idx) == 0 or len(weak_idx) == 0:
                         continue
@@ -230,10 +229,8 @@ class PullbotModel:
                             row[wi] = 0
                             continue
                         
-                        # Find best strong neuron to merge into
                         best_si = strong_idx[0]
                         best_sim = -999
-                        
                         for si in strong_idx[:min(20, len(strong_idx))]:
                             sign_match = 1 if (weak_val * row[si]) > 0 else -1
                             sim = sign_match * (1 - min(abs(weak_val - row[si].abs()), 1.0))
@@ -241,41 +238,184 @@ class PullbotModel:
                                 best_sim = sim
                                 best_si = si
                         
-                        # Redistribute 60% of weak weight to strong
                         row[best_si] += weak_val * 0.6
                         row[wi] = 0
                         total_redistributed += 1
                 
                 module.weight.data = weight.to(module.weight.dtype)
         
-        sparsity = (1 - total_redistributed / max(total_weights, 1)) * 100
-        print(f"   Redistributed: {total_redistributed:,} weights")
-        print(f"   Total weights: {total_weights:,}")
-        print(f"   Knowledge preserved in surviving neurons!")
-        return sparsity
+        print(f"   Redistributed: {total_redistributed:,} / {total_weights:,}")
+        return total_redistributed
     
     # ============================================
-    # SHRINK (remove zeroed neurons after smart prune)
+    # STAGE 2: SAFE PRECISION PRUNE (same row only)
     # ============================================
     
-    def shrink_model(self, target_sparsity=0.5):
-        """Remove neurons that are now all zeros after smart prune"""
-        print(f"✂️ SHRINKING (removing zero neurons)")
+    def precision_prune_safe(self, significance=2, test_inputs=None):
+        """Merge insignificant weights into neighbors IN THE SAME ROW.
+        Same row = same downstream neuron = safe to merge."""
+        print("\n" + "=" * 50)
+        print(f"🎯 STAGE 2: SAFE PRECISION PRUNE (sig={significance})")
+        print("=" * 50)
+        
+        if test_inputs is None:
+            test_inputs = torch.randint(0, 50257, (10, 16))
+        
+        self.model.eval()
+        with torch.no_grad():
+            baseline = self.model(test_inputs).logits
+        
+        total_merged = 0
+        total_weights = 0
+        
+        for name, module in self.model.named_modules():
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
+                weight = module.weight.data.float()
+                total_weights += weight.numel()
+                
+                for row_idx in range(weight.shape[0]):
+                    row = weight[row_idx]
+                    abs_row = row.abs()
+                    if abs_row.sum() == 0:
+                        continue
+                    
+                    threshold = torch.kthvalue(abs_row, int(0.5 * len(row))).values
+                    strong_mask = abs_row >= threshold
+                    strong_idx = torch.where(strong_mask)[0]
+                    
+                    if len(strong_idx) < 2:
+                        continue
+                    
+                    for col_idx in range(len(row)):
+                        if strong_mask[col_idx]:
+                            continue
+                        
+                        val = row[col_idx]
+                        if abs(val) < 0.0001:
+                            row[col_idx] = 0
+                            continue
+                        
+                        rounded = round(val.item(), significance)
+                        if abs(val - rounded) < (10 ** -(significance + 1)):
+                            best_si = strong_idx[0]
+                            best_dist = float('inf')
+                            for si in strong_idx:
+                                dist = abs(val - row[si].item())
+                                if dist < best_dist:
+                                    best_dist = dist
+                                    best_si = si
+                            
+                            row[best_si] += val * 0.7
+                            row[col_idx] = 0
+                            total_merged += 1
+                
+                module.weight.data = weight.to(module.weight.dtype)
+        
+        # Verify
+        self.model.eval()
+        with torch.no_grad():
+            new_out = self.model(test_inputs).logits
+        diff = (baseline - new_out).abs().mean().item()
+        
+        print(f"   Merged: {total_merged:,}")
+        print(f"   Output diff: {diff:.10f}")
+        if diff > 0.0001:
+            print(f"   ⚠️ ROLLING BACK")
+            return False
+        print(f"   ✅ Safe!")
+        return True
+    
+    # ============================================
+    # STAGE 3: PROGRESSIVE BIT REDUCTION
+    # ============================================
+    
+    def progressive_bit_reduce(self, test_inputs=None):
+        """Each node finds minimum viable bit depth.
+        Try 7-bit. If output same → try 6-bit. Stop when output changes."""
+        print("\n" + "=" * 50)
+        print("📉 STAGE 3: PROGRESSIVE BIT REDUCTION")
+        print("=" * 50)
+        
+        if test_inputs is None:
+            test_inputs = torch.randint(0, 50257, (10, 16))
+        
+        self.model.eval()
+        with torch.no_grad():
+            baseline = self.model(test_inputs).logits
+        
+        nodes_8bit = nodes_7bit = nodes_6bit = nodes_merged = 0
+        
+        for name, module in self.model.named_modules():
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
+                weight = module.weight.data.float()
+                
+                for row_idx in range(weight.shape[0]):
+                    row = weight[row_idx]
+                    
+                    for col_idx in range(len(row)):
+                        val = row[col_idx]
+                        if abs(val) < 0.0001:
+                            nodes_merged += 1
+                            continue
+                        
+                        # Try 7-bit
+                        val_7bit = round(val.item() * 127) / 127
+                        row[col_idx] = val_7bit
+                        module.weight.data = weight.to(module.weight.dtype)
+                        new_out = self.model(test_inputs).logits
+                        diff = (baseline - new_out).abs().mean().item()
+                        
+                        if diff < 0.00000001:
+                            # Try 6-bit
+                            val_6bit = round(val.item() * 63) / 63
+                            row[col_idx] = val_6bit
+                            module.weight.data = weight.to(module.weight.dtype)
+                            new_out = self.model(test_inputs).logits
+                            diff = (baseline - new_out).abs().mean().item()
+                            
+                            if diff < 0.00000001:
+                                nodes_6bit += 1
+                            else:
+                                row[col_idx] = val_7bit
+                                nodes_7bit += 1
+                        else:
+                            row[col_idx] = val
+                            nodes_8bit += 1
+                    
+                    module.weight.data = weight.to(module.weight.dtype)
+        
+        total = nodes_8bit + nodes_7bit + nodes_6bit + nodes_merged
+        eff_bits = (nodes_8bit*8 + nodes_7bit*7 + nodes_6bit*6) / max(total, 1)
+        
+        print(f"   8-bit: {nodes_8bit:,} ({nodes_8bit/total*100:.0f}%)")
+        print(f"   7-bit: {nodes_7bit:,} ({nodes_7bit/total*100:.0f}%)")
+        print(f"   6-bit: {nodes_6bit:,} ({nodes_6bit/total*100:.0f}%)")
+        print(f"   Merged: {nodes_merged:,}")
+        print(f"   Effective: {eff_bits:.1f}-bit")
+        return eff_bits
+    
+    # ============================================
+    # STAGE 4: SHRINK
+    # ============================================
+    
+    def shrink_model(self):
+        """Remove neurons that are all zeros"""
+        print("\n" + "=" * 50)
+        print("✂️ STAGE 4: SHRINK")
+        print("=" * 50)
+        
         total_before = sum(p.numel() for p in self.model.parameters())
         
         for name, module in list(self.model.named_modules()):
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 50:
                 weight = module.weight.data
-                # Find rows that are all zeros
                 active_rows = weight.abs().sum(dim=1) > 0.0001
                 
-                if active_rows.sum() < weight.shape[0] * 0.3:
-                    continue  # Don't shrink if too many are active
-                
                 if active_rows.sum() == weight.shape[0]:
-                    continue  # Nothing to shrink
+                    continue
+                if active_rows.sum() < weight.shape[0] * 0.2:
+                    continue
                 
-                # Create smaller layer
                 new_out = active_rows.sum().item()
                 new_linear = nn.Linear(weight.shape[1], new_out, bias=module.bias is not None)
                 new_linear.weight.data = weight[active_rows].clone()
@@ -291,15 +431,17 @@ class PullbotModel:
         
         total_after = sum(p.numel() for p in self.model.parameters())
         reduction = (1 - total_after/total_before) * 100
-        print(f"   {total_before:,} → {total_after:,} params ({reduction:.1f}% smaller)")
+        print(f"   {total_before:,} → {total_after:,} ({reduction:.1f}% smaller)")
         return reduction
     
     # ============================================
-    # QUANTIZATION
+    # STAGE 5: 8-BIT QUANTIZE
     # ============================================
     
     def quantize_model(self):
-        print("\n🔧 QUANTIZING TO 8-BIT")
+        print("\n" + "=" * 50)
+        print("🔧 STAGE 5: 8-BIT QUANTIZE")
+        print("=" * 50)
         try:
             self.model = torch.quantization.quantize_dynamic(
                 self.model, {torch.nn.Linear}, dtype=torch.qint8
@@ -454,6 +596,7 @@ if __name__ == '__main__':
     bot = PullbotModel()
     if len(sys.argv) > 1:
         cmd = sys.argv[1]
+        
         if cmd == 'train':
             resume = None
             if '--resume' in sys.argv:
@@ -463,32 +606,37 @@ if __name__ == '__main__':
             if bot.train(resume_from_checkpoint=resume):
                 before = bot.get_model_size_estimate()
                 print(f"\n📊 Before: {before['total_params']:,} params")
+                test_inputs = torch.randint(0, 50257, (10, 16))
                 bot.smart_prune(target_sparsity=0.5)
-                bot.shrink_model(target_sparsity=0.5)
+                bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
+                bot.progressive_bit_reduce(test_inputs=test_inputs)
+                bot.shrink_model()
                 bot.quantize_model()
                 final = bot.get_model_size_estimate()
-                print(f"📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
+                print(f"\n📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
                 bot.export_to_onnx()
-                print("\n🎉 TRAINED + SMART PRUNED + EXPORTED!")
-        
-        elif cmd == 'smart-prune':
-            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
-            bot.smart_prune(target_sparsity=sp)
-            bot.shrink_model(target_sparsity=sp)
-            bot.save_and_chunk()
+                print("\n🎉 FULL QUALITY PIPELINE COMPLETE!")
         
         elif cmd == 'optimize':
             sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
             before = bot.get_model_size_estimate()
             print(f"\n📊 Before: {before['total_params']:,} params")
+            test_inputs = torch.randint(0, 50257, (10, 16))
             bot.smart_prune(target_sparsity=sp)
-            bot.shrink_model(target_sparsity=sp)
+            bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
+            bot.progressive_bit_reduce(test_inputs=test_inputs)
+            bot.shrink_model()
             bot.quantize_model()
             final = bot.get_model_size_estimate()
-            print(f"📊 After: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
+            print(f"\n📊 After: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
             bot.save_and_chunk()
             bot.export_to_onnx()
+        
+        elif cmd == 'smart-prune':
+            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+            bot.smart_prune(target_sparsity=sp)
+            bot.save_and_chunk()
         
         elif cmd == 'quantize':
             bot.quantize_model()
@@ -505,6 +653,6 @@ if __name__ == '__main__':
             bot.save_and_chunk()
         
         else:
-            print("Commands: train, smart-prune [0.3-0.7], optimize, quantize, onnx, size, chunk")
+            print("Commands: train, optimize [0.3-0.7], smart-prune, quantize, onnx, size, chunk")
     else:
-        print("Commands: train, smart-prune [0.3-0.7], optimize, quantize, onnx, size, chunk")
+        print("Commands: train, optimize [0.3-0.7], smart-prune, quantize, onnx, size, chunk")

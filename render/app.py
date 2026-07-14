@@ -1,7 +1,7 @@
 """
 Pullbot API - ONNX + Vocab Injection
-Find matching words, inject into prompt, let model figure it out.
-No fancy formatting. No grammar rules. Just AI + vocab.
+Finds matching words, injects into prompt, generates real text token by token.
+No fancy formatting. Just AI + vocab + actual generation.
 """
 
 import os, json, requests, numpy as np, re, random
@@ -38,7 +38,7 @@ def load_wordbank():
 def setup():
     global session
     print("=" * 50)
-    print("PULLBOT API - SIMPLE VOCAB MODE")
+    print("PULLBOT API - REAL GENERATION MODE")
     print("=" * 50)
     
     load_wordbank()
@@ -92,33 +92,67 @@ def generate_response(question):
         if found:
             vocab_hints = " | ".join(found[:5])
     
-    # === TRY ONNX WITH VOCAB HINTS ===
-    if session:
+    # === ACTUAL MODEL GENERATION ===
+    if session and vocab_hints:
         try:
-            if vocab_hints:
-                prompt = f"Words: {vocab_hints}\nQuestion: {q}\nAnswer:"
-            else:
-                prompt = f"Question: {q}\nAnswer:"
+            prompt = f"Words: {vocab_hints}\nQuestion: {q}\nAnswer:"
+            tokens = simple_tokenize(prompt, max_len=64)
+            generated = list(tokens)
             
-            tokens = simple_tokenize(prompt)
-            input_ids = np.array([tokens[-64:]], dtype=np.int64)
-            mask = np.ones((1, 64), dtype=np.int64)
-            session.run(None, {'input_ids': input_ids, 'attention_mask': mask})
-        except:
-            pass
+            # Generate token by token
+            for _ in range(30):
+                ids = generated[-64:]
+                while len(ids) < 64:
+                    ids = [0] + ids
+                
+                input_arr = np.array([ids[-64:]], dtype=np.int64)
+                mask = np.ones((1, 64), dtype=np.int64)
+                
+                outputs = session.run(None, {
+                    'input_ids': input_arr,
+                    'attention_mask': mask
+                })
+                
+                logits = outputs[0][0, -1, :]
+                
+                top_k = 40
+                top_indices = np.argpartition(logits, -top_k)[-top_k:]
+                top_logits = logits[top_indices]
+                probs = np.exp(top_logits - np.max(top_logits))
+                probs = probs / np.sum(probs)
+                
+                next_token = int(np.random.choice(top_indices, p=probs))
+                generated.append(next_token)
+            
+            # Decode new tokens
+            new_tokens = generated[len(tokens):]
+            chars = []
+            for t in new_tokens:
+                c = t % 256
+                if 32 <= c < 127:
+                    chars.append(chr(c))
+                elif c == 10:
+                    chars.append('\n')
+            
+            response = ''.join(chars).strip()
+            
+            if len(response) > 5:
+                return {'question': question, 'response': response, 'source': 'model'}
+        except Exception as e:
+            print(f"Model error: {e}")
     
-    # === RESPOND WITH WHAT WE HAVE ===
+    # === VOCAB FALLBACK ===
     if vocab_hints:
         return {'question': question, 'response': vocab_hints, 'source': 'vocab'}
     
+    # === HONEST THINKING ===
     return {
         'question': question,
         'response': random.choice([
-            "I'm thinking...",
-            "Let me process that...",
-            "Hmm, interesting...",
-            "I'm learning about that...",
-            "Give me a moment...",
+            "Hmm, let me think... I don't have enough words yet to answer properly.",
+            "I'm searching my vocabulary... I know some words but can't connect them yet.",
+            "That's a good question. My wordbank is growing every few minutes!",
+            "I need more words to answer that. Try asking about something simpler.",
         ]),
         'source': 'thinking'
     }

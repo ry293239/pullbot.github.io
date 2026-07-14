@@ -44,7 +44,6 @@ def find_phrases(text, min_occurrences=2, min_length=2, max_length=4):
     for length in range(min_length, max_length + 1):
         for i in range(len(words) - length):
             phrase = ' '.join(words[i:i+length])
-            # Skip phrases with only common words
             if all(w in SKIP_WORDS for w in phrase.split()):
                 continue
             phrases[phrase] = phrases.get(phrase, 0) + 1
@@ -67,7 +66,6 @@ def get_tiny_definition(word):
                 for meaning in entry.get('meanings', [])[:1]:
                     for d in meaning.get('definitions', [])[:1]:
                         full_def = d.get('definition', '')
-                        # Shorten to first 8 words
                         words_list = full_def.split()
                         short_def = ' '.join(words_list[:8])
                         if len(words_list) > 8:
@@ -83,7 +81,6 @@ def build_string_training_examples(wordbank_path, corpus_path, output_path):
     print("🧠 SMART TRAINING GENERATOR")
     print("=" * 50)
     
-    # Load wordbank
     if not os.path.exists(wordbank_path):
         print("No wordbank found")
         return
@@ -91,7 +88,6 @@ def build_string_training_examples(wordbank_path, corpus_path, output_path):
     with open(wordbank_path) as f:
         bank = json.load(f)
     
-    # Load corpus
     corpus = ""
     if os.path.exists(corpus_path):
         with open(corpus_path) as f:
@@ -107,23 +103,33 @@ def build_string_training_examples(wordbank_path, corpus_path, output_path):
     
     # Get definitions for complex undefined words
     print("Getting short definitions for complex words...")
-    complex_undefined = [
-        word for word, info in bank['words'].items()
-        if is_complex_word(word) and not info.get('has_definition', False)
-    ][:30]
+    complex_undefined = []
+    for word, info in bank['words'].items():
+        if isinstance(info, dict):
+            if is_complex_word(word) and not info.get('has_definition', False):
+                complex_undefined.append(word)
+        else:
+            # Old format - string instead of dict
+            if is_complex_word(word):
+                complex_undefined.append(word)
+    complex_undefined = complex_undefined[:30]
     
     defined_count = 0
     for word in complex_undefined:
         definition = get_tiny_definition(word)
         if definition:
+            if word not in bank['words'] or not isinstance(bank['words'].get(word), dict):
+                bank['words'][word] = {}
             bank['words'][word]['has_definition'] = True
             bank['words'][word]['definition'] = definition
             defined_count += 1
         time.sleep(0.2)
     
-    bank['total_defined'] = sum(1 for w in bank['words'].values() if w.get('has_definition'))
+    bank['total_defined'] = sum(
+        1 for w in bank['words'].values()
+        if isinstance(w, dict) and w.get('has_definition')
+    )
     
-    # Save updated wordbank
     with open(wordbank_path, 'w') as f:
         json.dump(bank, f, indent=2)
     
@@ -134,13 +140,15 @@ def build_string_training_examples(wordbank_path, corpus_path, output_path):
     print("Building string-together examples...")
     examples = []
     
-    # Type 1: "Use these words to answer"
-    defined_words = [
-        (word, info['definition']) 
-        for word, info in bank['words'].items()
-        if info.get('has_definition') and is_complex_word(word)
-    ]
+    # Collect defined words safely
+    defined_words = []
+    for word, info in bank['words'].items():
+        if isinstance(info, dict) and info.get('has_definition'):
+            definition = info.get('definition', '')
+            if definition and is_complex_word(word):
+                defined_words.append((word, definition))
     
+    # Type 1: "Use these words to answer"
     for _ in range(50):
         if len(defined_words) < 3:
             break
@@ -159,32 +167,33 @@ def build_string_training_examples(wordbank_path, corpus_path, output_path):
     for phrase, count in top_phrases[:30]:
         words_in_phrase = phrase.split()
         if len(words_in_phrase) >= 2:
-            prompt = ' '.join(words_in_phrase[:-1])
-            completion = words_in_phrase[-1]
-            examples.append(f"Complete the phrase: {prompt}... → {phrase}")
+            examples.append(f"Complete the phrase: {' '.join(words_in_phrase[:-1])}... → {phrase}")
     
-    # Type 3: Definition-based Q&A
-    for word, info in defined_words[:50]:
-        definition = info['definition']
-        examples.append(f"Q: What does {word} mean?\nA: {word} is {definition}.")
+    # Type 3: Definition Q&A
+    for word, info in bank['words'].items():
+        if isinstance(info, dict) and info.get('has_definition'):
+            definition = info.get('definition', '')
+            if definition and is_complex_word(word):
+                examples.append(f"Q: What does {word} mean?\nA: {word} is {definition}.")
+        if len([e for e in examples if e.startswith('Q:')]) >= 100:
+            break
     
-    # Type 4: Word grouping (teaches categories)
+    # Type 4: Word grouping
     if len(defined_words) >= 5:
         for _ in range(20):
             group = random.sample(defined_words, min(5, len(defined_words)))
             words_only = [w for w, d in group]
             examples.append(f"Group these words: {', '.join(words_only)}")
     
-    # Save to corpus
+    # Save
     training_text = '\n\n---\n\n'.join(examples)
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
     with open(output_path, 'a') as f:
         f.write('\n\n---\n\n' + training_text)
     
     print(f"\n✅ Generated {len(examples)} smart training examples")
-    print(f"   Defined: {defined_count} | Phrases: {len(top_phrases)} | Q&A: {len(defined_words[:50])}")
+    print(f"   Defined: {defined_count} | Phrases: {len(top_phrases)} | Q&A: {min(100, len(defined_words))}")
     
-    # Show samples
     print("\n--- Sample ---")
     for ex in examples[:3]:
         preview = ex[:120].replace('\n', ' | ')

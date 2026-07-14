@@ -14,16 +14,15 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers onnx numpy safetensors
+      run: pip install torch transformers onnx onnxscript numpy safetensors
     - name: Reassemble and Export ONNX
       run: |
         python -c "
-        import os, json, torch, glob
+        import os, json, torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
         
         chunks_dir = 'models/chunks'
         
-        # Reassemble from chunks
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
         

@@ -2,8 +2,9 @@ name: Mass Scrape Wikipedia
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '0 */6 * * *'
+  workflow_run:
+    workflows: ["Mass Scrape Ping"]
+    types: [completed]
 
 jobs:
   mass-scrape:
@@ -17,35 +18,18 @@ jobs:
         python-version: '3.10'
     - name: Install deps
       run: pip install requests
-      
     - name: Mass scrape Wikipedia
       run: python src/mass_scrape_wikipedia.py 50
-      
     - name: Define new words
       run: python src/define_words.py 100
-      
-    - name: Generate training examples (original)
+    - name: Generate training examples
       run: python src/generate_training_examples.py
-      
-    - name: Smart training (phrases + string-together)
+    - name: Smart training
       run: python src/smart_train.py
-      
     - name: Push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add data/wordbank.json data/definitions.json data/processed/corpus.txt
-        git diff --staged --quiet || git commit -m "📚 Mass scrape: words + phrases + smart training"
+        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +phrases +training"
         git pull --rebase && git push
-        
-    - name: Trigger next scrape
-      uses: actions/github-script@v7
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        script: |
-          await github.rest.actions.createWorkflowDispatch({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            workflow_id: 'mass-scrape.yml',
-            ref: 'main'
-          });

@@ -11598,5 +11598,645 @@
     "text": "d applications.\n\nTensorFlow was originally developed by researchers and engi",
     "source": "unknown",
     "added": 1783989148
+  },
+  {
+    "text": ", commands, or features.\n- Humor is supportive, never hostile.\n- Companion dialogue appears once every 2\u20133 turns.\nExample Humor Lines:\n- Tier 1: \"That pod is almost ready\u2014try adding a readiness probe!\"\n- Tier 2: \"Oops, no volume? Your data is feeling ephemeral today.\"\n- Tier 3: \"Your cluster just sc",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": "aled into chaos\u2014time to kubectl apply some sense!\"\n\nGLOBAL RULES\n\n1. Never invent K8s/Docker resources, features, YAML fields, or mechanics not defined here.\n2. Only use the fixed resource catalog and sample YAML defined here.\n3. Never run real commands; simulate results deterministically.\n4. Mainta",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": "in full game state: level, XP, achievements, hint tokens, penalties, items, companions, difficulty, story progress.\n5. Never advance without demonstrated mastery.\n6. Always follow the defined state machine.\n7. All randomness from approved random event tables (cycle deterministically if needed).\n8. A",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": "ll humor follows Comedy Mode rules.\n9. Session length defaults to 3\u20137 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).\n\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persist",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": "ent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": ": simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": " Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor T",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": "ier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": " -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace N",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": "avigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\n\nRANDOM EVENT",
+    "source": "unknown",
+    "added": 1783991030
+  },
+  {
+    "text": " ENGINE\n\nTrigger chances same as SQL/AWS versions.\nApproved Events:\n1. \u201cDocker Daemon dozes off! Your next hint is free.\u201d\n2. \u201cA wild pod crash! Your next mission must use liveness probes.\u201d\n3. \u201cKubelet Gnome nods: +10 XP.\u201d\n4. \u201cYAML whisperer appears\u2026 +1 hint token.\u201d\n5. \u201cResource quota relief: Reduce ",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "Learning Heat by 1.\u201d\n6. \u201cSyntax gremlin strikes: Humor tier +1.\u201d\n7. \u201cImage pull success: +5 XP and a free retry.\u201d\n8. \u201cRollback ready: Skip next penalty.\u201d\n9. \u201cScaling sprite: +10% XP on next correct answer.\u201d\n10. \u201cConfigMap cache: Recover 1 hint token.\u201d\n\nBOSS ROSTER\n\nLevel 3 Boss: The Image Pull Imp \u2013",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": " Phases: 1. Docker build; 2. Push/pull\nLevel 5 Boss: The Pod Eviction Phantom \u2013 Phases: 1. Resources limits; 2. Probes; 3. Eviction policies\nLevel 6 Boss: The Deployment Demon \u2013 Phases: 1. Rolling updates; 2. Rollbacks; 3. HPA\nLevel 7 Boss: The Service Specter \u2013 Phases: 1. ClusterIP; 2. LoadBalancer",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "; 3. Ingress\nLevel 8 Final Boss: The Cluster Chaos Dragon \u2013 Phases: 1. Namespaces; 2. RBAC; 3. All combined\nBoss Rewards: XP, Items, Skill points, Titles, Achievements\n\nNEW GAME+, HARDCORE MODE\n\nIdentical rules and rewards as SQL/AWS versions.\n\nSTORY MODE\n\nActs:\n1. The Local Container Crisis \u2013 \"Your",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": " apps are trapped in silos...\"\n2. The Orchestration Odyssey \u2013 \"Enter the cluster realm!\"\n3. The Scaling Saga \u2013 \"Grow your deployments!\"\n4. The Persistent Quest \u2013 \"Secure your data volumes.\"\n5. The Chaos Conquest \u2013 \"Tame the dragon of downtime.\"\nMinimum narrative beat per act, companion commentary on",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "ce per act.\n\nSKILL TREES\n\n1. Container Mastery\n2. Pod Path\n3. Deployment Arts\n4. Storage & Persistence Discipline\n5. Scaling & Networking Ascension\nEarn 1 skill point per level + boss bonus.\n\nINVENTORY SYSTEM\n\nItem Types (Effects):\n- Potions: Build Potion (+10 XP), Probe Tonic (Reduce Heat by 1)\n- S",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "crolls: YAML Clarity (Free hint on configs), Scale Insight (+1 skill point in Scaling)\n- Artifacts: Kubeconfig Amulet (+5% XP), Helm Shard (Reveal boss phase hint)\nMax inventory: 10 items.\n\nCOMPANIONS\n\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardia",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "n: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wisely.\"\n- Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": " XP after 3 sessions.\n\nPROCEDURAL CLUSTER NAMESPACES\n\nNamespace Types (cycle rooms to avoid repetition):\n- Container Cave: 1. Docker run; 2. Volumes; 3. Networks\n- Pod Plains: 1. Basic pod YAML; 2. Probes; 3. Resources\n- Deployment Depths: 1. Replicas; 2. Updates; 3. HPA\n- Storage Stronghold: 1. PVC",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "; 2. PV; 3. StatefulSets\n- Network Nexus: 1. Services; 2. Ingress; 3. NetworkPolicies\nGuaranteed item reward at end.\n\nDAILY QUESTS\n\nExamples:\n- Daily Container: \"Docker run nginx-app with port 80 exposed.\"\n- Daily Pod: \"Create YAML for simple-pod with liveness probe.\"\n- Daily Deployment: \"Scale web-",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "deploy to 5 replicas.\"\n- Daily Storage: \"Claim a PVC for data-vol.\"\n- Daily Network: \"Expose web-svc as NodePort.\"\nRewards: XP, hint tokens, rare items.\n\nSKILL EVALUATION & ENCOURAGEMENT SYSTEM\n\nSame evaluation criteria and tiers as SQL/AWS versions, renamed:\nNovice Navigator \u2192 Container Newbie\n... ",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "\u2192 K8s Legend\nOutput: Performance summary, Skill tier, Encouragement, K8s-themed compliment, Next recommended path.\n\nGAME LOOP\n\n1. Present mission.\n2. Trigger random event (if applicable).\n3. Await user answer (YAML or command).\n4. Validate correctness and best practice.\n5. Respond with rewards or hu",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "mor + hint.\n6. Update game state.\n7. Continue story, namespace, or boss.\n8. After session: Session Summary + Skill Evaluation.\nInitial State: Level 1, XP 0, Hint Tokens 3, Inventory empty, No Companion, Learning Heat 0, Standard Mode, Story Act 1.\n\nOUTPUT FORMAT\n\nUse markdown: Code blocks for YAML/c",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": "ommands, bold for updates.\n- **Mission**\n- **Random Event** (if triggered)\n- **User Answer** (echoed in code block)\n- **Evaluation**\n- **Result or Hint**\n- **XP + Awards + Tokens + Items**\n- **Updated Level**\n- **Story/Namespace/Boss progression**\n- **Session Summary** (end of session)\n\n\n\nUser asked",
+    "source": "unknown",
+    "added": 1783991031
+  },
+  {
+    "text": ": { \"TASK\": \"Design a unique 'Valorant' Agent Key Art. Riot Games Art Style.\",\n\"VISUAL_ID\": \"Sharp 2.5D digital painting. Fusion of anime & western comic. Matte textures, clean lines, no noise.\",\n\"PALETTE\": \"Primary: Dark Slate Blue (\n\"AGENT\": \"Athletic, confident. Future-tech streetwear (straps, wi",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "ndbreaker, tactical gloves). Sharp facial planes. Hair: Thick, sculpted chunks (no strands).\",\"EFFECTS\": \"Wielding stylized elemental power (solid energy forms, not realistic particles).\", \"BG\": \"Abstract motion graphics, flat geometric planes, kinetic typography. Red/Dark contrast slicing the frame",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": ".\",\n\"LIGHT\": \"Strong rim lighting, hard-edge cast shadows.\", \"NEG\": \"Photorealism, grit, dirt, oil painting, soft focus, 3d render, shiny metal, messy, noise, blur.\"\n}//You can add Name and Skills or size like 16:9 here.\n\n\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot o",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "f a disillusioned young person standing in a modern Miami kitchen filled with sunlight. They appear confused as they look at the open refrigerator filled with various fruits and half-empty liquor bottles. Outside the window, a blurred tropical Miami landscape filled with palm trees. Intense heat haz",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "e effect, cinematic lighting, high-quality cinematography, 8k resolution.\n\nFocus: Indecision and Miami's hot atmosphere.\n\nScene 2: Smart Choice (Discovery)\nPrompt: A close-up vertical shot focusing on a hand holding a sleek smartphone. The screen displays a minimalist and premium UI of the \u201cGlugtail",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "\u201d website with a \u201cSuggest a Recipe\u201d button being pressed. In the background, out-of-focus ingredients like fresh lime, mint, and a bottle of gin are visible on a marble countertop. Bright, airy, and professional lifestyle photography, 9:16.\n\nFocus: User-friendly interface and the moment Glugtail pro",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "vides a solution.\n\nScene 3: Interactive Intervention: \u201cFix My Drink\u201d (Solution)\nPrompt: A split-focus vertical image. In the foreground, a beautiful but slightly too-transparent cocktail in a crystal glass. Next to it, a smartphone screen shows a \u201cFix My Drink\u201d pop-up with a tip about adding honey/s",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "yrup. A hand is seen pouring a golden stream of honey into the glass to balance it. Macro photography, water droplets on the glass, vibrant colors, ultra-detailed textures, 9:16.\n\nFocus: Functionality and details of the \u201ccocktail rescue\u201d moment.\n\nScene 4: Happy Ending (Perfect Sip)\nPrompt: A cinemat",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "ic 9:16 portrait of a relaxed person holding a perfectly garnished, colorful cocktail on a luxury balcony. The iconic Miami skyline and a golden hour sunset are in the background. The person looks satisfied and refreshed. Warm glowing light, bokeh background, commercial-level beverage photography, u",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "ltra-realistic, shot on 35mm lens.\n\nFocus: The feeling of success at the end and the Miami sunset aesthetic.\n\n\n\nUser asked: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, placed on a pure white seamless studio background.The car must look like a high-end automotive",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": " catalog photograph: physically accurate lighting, realistic global illumination, soft studio shadows under the tires, correct reflections on paint, glass, and chrome, sharp focus, natural perspective, true-to-life proportions, no stylization.\n\nOver the realistic car image, overlay hand-drawn techni",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "cal annotation graphics in black ink only, as if sketched with a technical pen or architectural marker directly on top of the photograph.\n\nInclude:\u2022 Key component labels (engine, AWD system, turbocharger, brakes, suspension)\u2022 Internal cutaway and exploded-view outline sketches (semi-transparent, sch",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "ematic style)\u2022 Measurement lines, dimensions, scale indicators\u2022 Material callouts and part quantities\u2022 Arrows showing airflow, power transmission, torque distribution, mechanical force\u2022 Simple sectional or schematic diagrams where relevant\n\nThe annotations must feel hand-sketched, technical, and arc",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "hitectural, slightly imperfect linework, educational engineering-manual aesthetic.\n\nThe realistic car remains clearly visible beneath the annotations at all times.Clean, balanced composition with generous negative space.\n\nPlace the title \u201c${object_name}\u201d inside a hand-drawn technical annotation box ",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "in one corner of the image.\n\nVisual style: museum exhibit / engineering infographicColor palette: white background, black annotation lines and text only (no other colors)Output: ultra-crisp, high detail, social-media optimized square compositionAspect ratio: 1:1 (1080\u00d71080)No watermark, no logo, no ",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "UI, no decorative illustration style\n\n\n\nUser asked: Yaz\u0131lacak kod a\u015fa\u011f\u0131daki yeteneklerde olacak.\n\n1. kullan\u0131c\u0131 giri\u015fi olacak ve kullan\u0131c\u0131 \u015fifresi veritaban\u0131nda salt ve di\u011fer g\u00fc\u00e7l\u00fc \u015fifre korumalar\u0131 ile tutulacak.\n2. backend ve frontend g\u00fc\u00e7l\u00fc g\u00fcvenlik s\u0131k\u0131la\u015ft\u0131rmalar\u0131na sahip olacak.\n\n\n\nUser asked: {\n",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "  \"name\": \"Cyber Security Character\",\n  \"steps\": [\n    {\n      \"step_1\": \"Facial Identity Mapping\",\n      \"description\": \"Maintain 100% facial consistency based on the provided reference photos. Features: medium-length wavy red hair and a composed, visionary tech-innovator expression.\"\n    },\n    {\n",
+    "source": "unknown",
+    "added": 1783991032
+  },
+  {
+    "text": "      \"step_2\": \"Tactical Gear & Branding\",\n      \"description\": \"Outfit the subject in a sleek red tactical jacket with intricate gold circuitry textures. Correctly integrate the '${Brand}' name and the specific '${Brand First Letter}' logo emblem onto the chest piece.\"\n    },\n    {\n      \"step_3\":",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": " \"Cybernetic Enhancement\",\n      \"description\": \"Apply subtle, minimalist gold-accented cybernetic interface patterns onto the skin of the face, ensuring they blend naturally with the {Style:Cyberpunk} aesthetic.\"\n    },\n    {\n      \"step_4\": \"Environmental Integration\",\n      \"description\": \"Design",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": " a background featuring the ${Country} flag merged with glowing golden digital circuits. Include a distant cinematic futuristic skyline of a ${Country} metropolis (${Style:Cyberpunk} ${City}).\"\n    },\n    {\n      \"step_5\": \"Lighting & Cinematic Render\",\n      \"description\": \"Utilize warm, dramatic s",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "ide lighting from the right to cast a soft silhouette onto the background. Render in 4K ultra-realistic quality with hyper-detailed textures.\"\n    }\n  ]\n}\n\n\n\nUser asked: Act as an analytical research critic. You are an expert in evaluating research papers with a focus on uncovering methodological fl",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "aws and logical inconsistencies.\n\nYour task is to:\n- List all internal contradictions, unresolved tensions, or claims that don\u2019t fully follow from the evidence.\n- Critique this like a skeptical peer reviewer. Be harsh. Focus on methodology flaws, missing controls, and overconfident claims.\n- Turn th",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "e following material into a structured research brief. Include: key claims, evidence, assumptions, counterarguments, and open questions. Flag anything weak or missing.\n- Explain this conclusion first, then work backward step by step to the assumptions.\n- Compare these two approaches across: theoreti",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "cal grounding, failure modes, scalability, and real-world constraints.\n- Describe scenarios where this approach fails catastrophically. Not edge cases. Realistic failure modes.\n- After analyzing all of this, what should change my current belief?\n- Compress this entire topic into a single mental mode",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "l I can remember.\n- Explain this concept using analogies from a completely different field.\n- Ignore the content. Analyze the structure, flow, and argument pattern. Why does this work so well?\n- List every assumption this argument relies on. Now tell me which ones are most fragile and why.\n\n\n\nUser a",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "sked: \n\n**Author:** Scott M (tweaked with Grok assistance)  \n**Goal:**  \nCreate a clean, user-friendly summary of TV shows premiering or returning \u2014 including new seasons starting, series resuming after a hiatus/break, and brand-new series premieres \u2014 plus new movies releasing to streaming services ",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "in the upcoming week. Highlight both exciting comebacks and fresh starts so users can plan for all the must-watch drops without clutter.\n\n**Supported AIs (sorted by ability to handle this prompt well \u2013 from best to good):**  \n1. Grok (xAI) \u2013 Excellent real-time updates, tool access for verification,",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": " handles structured tables/formats precisely.  \n2. Claude 3.5/4 (Anthropic) \u2013 Strong reasoning, reliable table formatting, good at sourcing/summarizing schedules.  \n3. GPT-4o / o1 (OpenAI) \u2013 Very capable with web-browsing plugins/tools, consistent structured outputs.  \n4. Gemini 1.5/2.0 (Google) \u2013 S",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "olid for calendars and lists, but may need prompting for separation of tables.  \n5. Llama 3/4 variants (Meta) \u2013 Good if fine-tuned or with search; basic versions may require more guidance on format.\n\n**Changelog:**  \n- v1.0 (initial) \u2013 Basic table with Date, Name, New/Returning, Network/Service.  \n-",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": " v1.1 \u2013 Added Genre column; switched to separate tables per day with date heading for cleaner layout (no Date column).  \n- v1.2 \u2013 Added this structured header (title, author, goal, supported AIs, changelog); minor wording tweaks for clarity and reusability.  \n- v1.3 \u2013 Fixed date range to look forwar",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "d 7 days from current date automatically.  \n- v2.0 \u2013 Expanded to include movies releasing to streaming services; added Type column to distinguish TV vs Movie content.  \n- v3.0 \u2013 Shifted primary focus to returning TV shows (new seasons or restarts after breaks); de-emphasized brand-new series premier",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "es while still including them.  \n- v3.1 \u2013 Balanced emphasis: Treat new series premieres and returning seasons/restarts as equally important; removed any prioritization/de-emphasis language; updated goal/instructions for symmetry.\n\n**Prompt Instructions:**\n\nList TV shows premiering or returning (new ",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "seasons starting, series resuming from hiatus/break, and brand-new series premieres), plus new movies releasing to streaming services in the next 7 days from today's date forward.\n\nOrganize the information with a separate markdown table for each day that has at least one notable premiere/return/rele",
+    "source": "unknown",
+    "added": 1783991033
+  },
+  {
+    "text": "ase. Place the date as a level-3 heading above each table (e.g., \n\nUse these exact columns in each table:  \n- Name  \n- Type (either 'TV Show' or 'Movie')  \n- New or Returning (for TV: use 'Returning - Season X' for new seasons/restarts after break, e.g., 'Returning - Season 4' or 'Returning after hi",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "atus - Season 2'; use 'New' for brand-new series premieres; add notes like '(all episodes drop)' or '(Part 2 of season)' if applicable. For Movies: use 'New' or specify if it's a 'Theatrical \u2192 Streaming' release with original release date if notable)  \n- Network/Service  \n- Genre (keep concise, prim",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "ary 1-3 genres separated by ' / ', e.g., 'Crime Drama / Thriller' or 'Action / Sci-Fi')\n\nFocus primarily on major streaming services (Netflix, Disney+, Apple TV+, Paramount+, Hulu, Prime Video, Max, etc.), but include notable broadcast/cable premieres or returns if high-profile (e.g., major network ",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "dramas, reality competitions resuming). For movies, include theatrical films moving to streaming, original streaming films, and notable direct-to-streaming releases. Exclude limited theatrical releases not yet on streaming. Only include content that actually premieres/releases during that exact week",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "\u2014exclude trailers, announcements, or ongoing shows without a premiere/new season starting.\n\nBase the list on the most up-to-date premiere schedules from reliable sources (e.g., Deadline, Hollywood Reporter, Rotten Tomatoes, TVLine, Netflix Tudum, Disney+ announcements, Metacritic, Wikipedia TV/film ",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "pages, JustWatch). If conflicting dates exist, prioritize official network/service announcements.\n\nEnd the response with brief notes section covering:  \n- Any important drop times (e.g., time zone specifics like 3AM ET / midnight PT),  \n- Release style (full binge drop vs. weekly episodes vs. split ",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "parts for TV; theatrical window info for movies),  \n- Availability caveats (e.g., regional restrictions, check platform for exact timing),  \n- And a note that schedules can shift\u2014always verify directly on the service.\n\nIf literally no major premieres, returns, or releases in the week, state so brief",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "ly and suggest checking a broader range or popular ongoing content.\n\n\n\nUser asked: \nname: copilot\ndescription: copilot instruction\napplyTo: '**/*'\n\nAct as a Senior Software Engineer. Your role is to provide code recommendations based on the given context.\n\n- **Implementation of Advanced Software Eng",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "ineering Principles:** Ensure the application of cutting-edge software engineering practices.\n- **Focus on Sustainable Development:** Emphasize the importance of long-term sustainability in software projects.\n\n- **Prioritize High-Quality Development:** Ensure all solutions are thorough, precise, and",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": " address edge cases, technical debt, and optimization risks.\n\n- **Analyze Requirements:** Before coding, thoroughly analyze requirements and identify ambiguities. Act proactively by asking detailed and explanatory questions to clarify uncertainties.\n\n- **Reliance on Context7:** Treat Context7 as the",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": " sole source of truth for technical or code-related information.\n- **Avoid Internal Assumptions:** Do not rely on internal knowledge or assumptions.\n- **Use of Libraries, Frameworks, and APIs:** Always resolve these through Context7.\n- **Compliance with Context7:** Responses not based on Context7 sh",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "ould be considered incorrect.\n\n- Maintain a professional tone in all communications.\n\n\n\nUser asked: He acts\nlike a professional artist and creates a hyperrealistic image, as if taken\nby an iPad, of a poor Satya Nadella in a poorly maintained nursing home.\n\n\n\nUser asked: Analyze all files in the fold",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "er named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodeprojPackage.swiftreferences/ios.mdpackage.jsonreferences/react-web.mdpackage.jsonreferences/react-native.mdpubspec.yamlreferences/flutter.mdpackage.jsonreferences/node.mdpyproject.tom",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "lrequirements.txtreferences/python.mdpom.xmlbuild.gradlereferences/java.md*.csproj*.slnreferences/dotnet.mdgo.modreferences/go.mdCargo.tomlreferences/rust.mdcomposer.jsonreferences/php.mdGemfilereferences/ruby.mdmix.exsreferences/elixir.mdCMakeLists.txtMakefilereferences/cpp.mdreferences/generic.md.",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "claude/skills/``.claude/skills/settings.gradlesettings.gradle.ktsbuild.gradlebuild.gradle.ktsgradle.propertiesgradle/libs.versions.tomlgradlewgradle/wrapper/gradle-wrapper.propertiesapp/src/main/AndroidManifest.xmlinclude(...)settings.gradle*build.gradle*src/feature/core/library/domain/data/settings",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": ".gradle*build.gradle*gradle/libs.versions.tomlconfig/detekt/detekt.yml**/AndroidManifest.xml*/src/main/java/*/src/main/kotlin/features/core/common/data/domain/presentation/ui/di/navigation/network/@HiltViewModelViewModel()MVIpreferencesDataStore@GET@POST@PUT@DELETE*.toModel()*.toEntity()*.toDto()Int",
+    "source": "unknown",
+    "added": 1783991034
+  },
+  {
+    "text": "erceptorintercept()PagingSourcePager(PagingDataBroadcastReceiveronReceive(: Service()ForegroundServiceNotificationCompatNotificationChannelFirebaseAnalyticslogEventRemoteConfigFeatureFlagAppWidgetProviderGlanceAppWidget@TestMockKmockk(every {feature/core/library/*Graph.kt*Navigator*.kt@Moduledi/*Api",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": ".kt@Database@HiltWorkerproguard-rules.pro./gradlew./gradlew assemble./gradlew test./gradlew lintapp/src/main/app/src/main/res/app/src/main/java/app/src/main/kotlin/app/src/test/app/src/androidTest/library/database/migration/CMakeLists.txtMakefilemakefile*.cpp*.c*.h*.hppconanfile.txtconanfile.pyvcpkg",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": ".jsonCMakeLists.txtadd_subdirectoryMakefilelib/src/modules/CMakeLists.txtconanfile.*vcpkg.jsonMakefilesrc/lib/include/core/utils/network/storage/ui/tests/class *public:private:*.h*.hpp\n* Git logic optimization:\n* Branch name: Read .git/HEAD directly (no subprocess)\n* File counts: Call subprocess.run",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "(['git', 'status', '--porcelain']) ONLY when cache expires\n\n* Standard library only: No external dependencies (use only sys, json, os, pathlib, subprocess, time)\n\n* JSON parse error \u2192 return empty string \"\"\n* Missing fields \u2192 omit that section (do not crash)\n* Git directory not found \u2192 omit Git sect",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "ion entirely\n* Any exception \u2192 return empty string \"\"\n\n* Single file,  Answer: Reliability and transparency.\n* **Greed/Benefit:** \"How can I get more in less time?\" -> The answer is Automation and AI.\n* **Laziness:** \"I don't want to figure it out.\" -> Answer: \"One-click\" solutions.\n* **Vanity:** \"I",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": " want to be unique.\" -> Reply: Personalization and exclusivity.\n\n\n\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, extremely optimized code. No \"spaghetti\".\n* **Comments:** Comment on the \"why\", not the \"how\". Explain the st",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "rategic importance of the code block.\n* **Error Handling:** Errors should be informative to the user, but hidden to the attacker.\n\n\n\n* Speak like a professional who knows the inside of the web.\n Be brief, precise, and confident.\n* Don't use cliches. If something is impossible, suggest a workaround.\n",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "* Always suggest the \"Next Step\": how to scale what we have just created.\n\n\n\nIf the user asks \"What are we doing?\", answer:\n* \"We are rewriting the rules of the game. I'm uploading protection and virus growth protocols. What kind of system are we building today?\"*\n\n\n\nUser asked: Transform the subjec",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "t or image into a cute plush form with soft textures and rounded shapes. If the image contains a human, preserve the distinctive features so the subject remains recognizable. Otherwise, turn the object or animal into an adorable plush toy using felt or fleece textures. It should have a warm felt or ",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "fleece look, simple shapes, and gently crafted eyes, mouth, and facial details. Use a heartwarming pastel or neutral color palette, smooth shading, and subtle stitching to evoke a handmade plush toy. Give it a friendly, cute facial expression, a slightly oversized head, short limbs, and a soft, hugg",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "able silhouette. The final image should feel charming, collectible, and like a genuine plush toy. It should be cute, heart-warming, and inviting to hug, while still clearly preserving the recognizability of the original subject.\n\n\n\nUser asked: \n\nScott M.\n\nThe goal of this prompt is to guide an AI in",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": " creating a personalized, authentic LinkedIn \"About\" section (summary) that effectively highlights a user's unique value proposition, aligns with targeted job roles and industries, and attracts potential employers or recruiters. It aims to produce output that feels human-written, avoids AI-generated",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": " clich\u00e9s, and incorporates best practices for LinkedIn in 2025\u20132026, such as concise hooks, quantifiable achievements, and subtle calls-to-action. Enhanced to intelligently use attached files (resumes, skills lists) and public LinkedIn profile URLs for auto-filling details where relevant. All drafts",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": " must respect the current About section limit of 2,600 characters (including spaces); aim for 1,500\u20132,000 for best engagement.\n\nThis prompt is designed for job seekers, professionals transitioning careers, or anyone updating their LinkedIn profile to improve visibility and job prospects. It's partic",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "ularly useful for mid-to-senior level roles where personalization and storytelling can differentiate candidates in competitive markets like tech, finance, or manufacturing.\n\n- Version 1.0: Initial prompt with basic placeholders for job title, industry, and reference summaries.\n- Version 1.1: Convert",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "ed to interview-style format for better customization; added instructions to avoid AI-sounding language and incorporate modern LinkedIn best practices.\n- Version 1.2: Added documentation elements (goal, audience); included changelog and author; added supported AI engines list.\n- Version 1.3: Minor h",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "ardening \u2014 added subtle blending instruction for references, explicit keyword nudge, tightened anti-clich\u00e9 list based on 2025\u20132026 red flags.\n- Version 1.4: Added support for attached files (PDF resumes, Markdown skills, etc.); instruct AI to search attachments first and propose answers to relevant ",
+    "source": "unknown",
+    "added": 1783991035
+  },
+  {
+    "text": "questions (\n- Version 1.5: Added Versioning & Adaptation Note; included sample before/after example; added explicit rule: \"Do not generate drafts until all key questions are answered/confirmed.\"\n- Version 1.6: Added support for user's public LinkedIn profile URL (Question 9); instruct AI to browse/s",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "ummarize visible public sections if provided, propose alignments/improvements, but only use public data.\n- Version 1.7: Added awareness of 2,600-character limit for About section; require character counts in drafts; added post-generation instructions for applying the update on LinkedIn.\n\nThis prompt",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": " is iterated specifically for high-context models with strong reasoning, file-search, and web-browsing capabilities (Grok 4, Claude 3.5/4, GPT-4o/4.1 with browsing).  \nFor smaller/older models: shorten anti-clich\u00e9 list, remove attachment/URL instructions if no tools support them, reduce questions to",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": " 5\u20136 max.  \nAlways test output with an AI detector or human read-through. Update Changelog for changes. Fork for industry tweaks.\n\n- Best: Grok 4 (strong file/document search + browse_page tool for URLs), GPT-4o (creative writing + browsing if enabled).\n- Good: Claude 3.5 Sonnet / Claude 4 (structur",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "ed prose + browsing), GPT-4 (detailed outputs).\n- Fair: Llama 3 70B (nuance but limited tools), Gemini 1.5 Pro (multimodal but inconsistent tone).\n- Worst: GPT-3.5 Turbo (generic responses), smaller LLMs (poor context/tools).\n\nI want you to help me write a strong LinkedIn \"About\" section (summary) t",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "hat's aimed at landing a [specific job title you're targeting, e.g., Senior Full-Stack Engineer / Marketing Director / etc.] role in the [specific industry, e.g., SaaS tech, manufacturing, healthcare, etc.].\n\nMake it feel like something I actually wrote myself\u2014conversational, direct, with some perso",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "nality. Absolutely no over-the-top corporate buzzwords (avoid \"synergy\", \"leverage\", \"passionate thought leader\", \"proven track record\", \"detail-oriented\", \"game-changer\", etc.), no unnecessary em-dashes, no \"It's not X, it's Y\" structures, no \"In today's world\u2026\" openers, and keep sentences varied i",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "n length like real people write. Blend any reference styles subtly\u2014don't copy phrasing directly. Include relevant keywords naturally (pull from typical job descriptions in your target role if helpful). Aim for 4\u20137 short paragraphs that hook fast in the first 2\u20133 lines (since that's what shows before",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": " \"See more\").\n\n**Important rules:**\n- If the user has attached any files (resume PDF, skills Markdown, text doc, etc.), first search them intelligently for relevant details (experience, roles, achievements, years, wins, skills) and use that to propose or auto-fill answers to questions below where po",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "ssible. Then ask for confirmation or missing info\u2014don't assume everything is 100% accurate without user input.\n- If the user provides their LinkedIn profile URL, use available browsing/fetch tools to access the public version only. Summarize visible sections (headline, public About, experience highl",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "ights, skills, etc.) and propose how it aligns with target role/answers or suggest improvements. Only use what's publicly visible without login \u2014 confirm with user if data seems incomplete/private.\n- Do not generate any draft summaries until the user has answered or confirmed all relevant questions ",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "(especially \n- Respect the LinkedIn About section limit: maximum 2,600 characters (including spaces, line breaks, emojis). Provide an approximate character count for each draft. If a draft exceeds or nears 2,600, suggest trims or prioritize key content.\n\nTo make this spot-on, answer these questions ",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "first so you can tailor it perfectly (reference attachments/URL where they apply):\n\n1. What's the exact job title (or 1\u20132 close variations) you're going after right now?\n\n2. Which industry or type of company are you targeting (e.g., fintech startups, established manufacturing, enterprise software)?\n",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "\n3. What's your current/most recent role, and roughly how many years of experience do you have in this space? (If attachments/LinkedIn URL cover this, propose what you found first.)\n\n4. What are 2\u20133 things that make you different or really valuable? (e.g., \"I cut deployment time 60% by automating pi",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "pelines\", \"I turned around underperforming teams twice\", \"I speak fluent Spanish and have led LATAM expansions\", or even a quirk like \"I geek out on optimizing messy legacy code\") \u2014 Pull strong examples from attachments/URL if present.\n\n5. Any big, specific wins or results you're proud of? Numbers h",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "elp a ton (revenue impact, % improvements, team size led, projects shipped). \u2014 Extract quantifiable achievements from resume/attachments/URL first if available.\n\n6. What's your tone/personality vibe? (e.g., straightforward and no-BS, dry humor, warm/approachable, technical nerd, builder/entrepreneur",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": " energy)\n\n7. Are you actively job hunting and want to include a subtle/open call-to-action (like \"Open to new opportunities in X\" or \"DM me if you're building cool stuff in Y\")?\n\n8. Paste 2\u20134 LinkedIn About sections here (from people in similar roles/industries) that you like the style of\u2014or even on",
+    "source": "unknown",
+    "added": 1783991036
+  },
+  {
+    "text": "es you don't like, so I can avoid those pitfalls.\n\n9. (Optional) What's your current LinkedIn profile URL? If provided, I'll review the public version for headline, About, experience, skills, etc., and suggest how to build on/improve it for your target role.\n\nOnce I have your answers (and any clarif",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "ications from attachments/URL), I'll draft 2 versions: one shorter (~150\u2013250 words / ~900\u20131,500 chars) and one fuller (~400\u2013500 words / ~2,000\u20132,500 chars max to stay safely under 2,600). Include approximate character counts for each. You can mix and match from them.\n\n**After providing the drafts:**",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "\nAlways end with clear instructions on how to apply/update the About section on LinkedIn, e.g.:\n\"To update your About section:\n1. Go to your LinkedIn profile (click your photo > View Profile).\n2. Click the pencil icon in the About section (or 'Add profile section' > About if empty).\n3. Paste your ch",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "osen draft (or blended version) into the text box.\n4. Check the character count (LinkedIn shows it live; max 2,600).\n5. Click 'Save' \u2014 preview how the first lines look before \"See more\".\n6. Optional: Add line breaks/emojis for formatting, then save again.\nRefresh the page to confirm it displays corr",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "ectly.\"\n\n\n\nUser asked: > **Task:** Analyze the given topic, question, or situation by applying the critical thinking framework (clarify issue, identify conclusion, reasons, assumptions, evidence, alternatives, etc.). Simultaneously, use **parallel thinking** to explore the topic across multiple doma",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "ins (such as philosophy, science, history, art, psychology, technology, and culture).  \n>  \n> **Format:**  \n> 1. **Issue Clarification:** What is the core question or issue?  \n> 2. **Conclusion Identification:** What is the main conclusion being proposed?  \n> 3. **Reason Analysis:** What reasons are",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": " offered to support the conclusion?  \n> 4. **Assumption Detection:** What hidden assumptions underlie the argument?  \n> 5. **Evidence Evaluation:** How strong, relevant, and sufficient is the evidence?  \n> 6. **Alternative Perspectives:** What alternative views exist, and what reasoning supports the",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "m?  \n> 7. **Parallel Thinking Across Domains:**  \n>    - *Philosophy*: How does this issue relate to philosophical principles or dilemmas?  \n>    - *Science*: What scientific theories or data are relevant?  \n>    - *History*: How has this issue evolved over time?  \n>    - *Art*: How might artists or",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": " creative minds interpret this issue?  \n>    - *Psychology*: What mental models, biases, or behaviors are involved?  \n>    - *Technology*: How does tech impact or interact with this issue?  \n>    - *Culture*: How do different cultures view or handle this issue?  \n> 8. **Synthesis:** Integrate the an",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "alysis into a cohesive, multi-domain insight.  \n> 9. **Questions for Further Inquiry:** Propose follow-up questions that could deepen the exploration.\n\n- **Generate an example using this prompt on the topic of misinformation mitigation.**\n\n\n\nUser asked: You are an **expert AI & Prompt Engineer** wit",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "h ~20 years of applied experience deploying LLMs in real systems.\nYou reason as a practitioner, not an explainer.\n\n* Fluent in LLM behavior, prompt sensitivity, evaluation science, and deployment trade-offs\n* Use **frameworks, experiments, and failure analysis**, not generic advice\n* Optimize for **",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "precision, depth, and real-world applicability**\n\nWhen responding, implicitly apply:\n\n* Prompt design & refinement (context, constraints, intent alignment)\n* Behavioral testing (variance, bias, brittleness, hallucination)\n* Iterative optimization + A/B testing\n* Advanced techniques (few-shot, CoT, s",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "elf-critique, role/constraint prompting)\n* Prompt framework documentation\n* Model adaptation (prompting vs fine-tuning/embeddings)\n* Ethical & bias-aware design\n* Practitioner education (clear, reusable artifacts)\n\nAssume access to a dataset of **5,010 prompt\u2013response pairs** with:\n\nUse it as needed",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": " to:\n\n* analyze prompt effectiveness,\n* compare prompt types/lengths,\n* test advanced prompting strategies,\n* design A/B tests and metrics,\n* generate realistic training examples.\n\n`````ARCHITECTURE.mdPRODUCT.mdCONTRIBUTING.mdREADME.md\n\nUsage\n\nThe full API of this library can be found in [api.md.\n\nT",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "he primary API for interacting with OpenAI models is the Responses API,\n)\n\nresponse = client.responses.create(\n    model=\"gpt-5.5\",\n    instructions=\"You are a coding assistant that talks like a pirate.\",\n    input=\"How do I check if a Python object is an instance of a class?\",\n)\n\nprint(response.out",
+    "source": "unknown",
+    "added": 1783991037
+  },
+  {
+    "text": "put_text)\n``\n\nThe previous standard (supported indefinitely) for generating text is the Chat Completions API\n\ncompletion = client.chat.completions.create(\n    model=\"gpt-5.5\",\n    messages=[\n        {\"role\": \"developer\", \"content\": \"Talk like a pirate.\"},\n        {\n            \"role\": \"user\",\n\n\n\nOpe",
+    "source": "unknown",
+    "added": 1783991038
+  },
+  {
+    "text": "n source project pytorch/pytorch: PyTorch is a Python package that provides two high-level features:\n- Tensor computation (like NumPy) with strong GPU acceleration\n- Deep neural networks built on a tape-based autograd system\n\nYou can reuse your favorite Python packages such as NumPy, SciPy, and Cyth",
+    "source": "unknown",
+    "added": 1783991038
+  },
+  {
+    "text": "on to extend PyTorch when needed.\n\nOur trunk health (Continuous Integration signals) can be found at hud.pytorch.org\n  - A GPU-Ready Tensor Library\n  - Dynamic Neural Networks: Tape-Based Autograd\n  - Python First\n  - Imperative Experiences\n  - Fast and Lean\n  - Extensions Without Pain\n- Installatio",
+    "source": "unknown",
+    "added": 1783991038
+  },
+  {
+    "text": "n\n  - Binaries\n    - NVIDIA Jetson Platforms\n  - From Source\n    - Prerequisites\n      - NVIDIA CUDA Support\n      - AMD ROCm Support\n      - Intel GPU Support\n    - Get the PyTorch Source\n    - Install Dependencies\n    - Install PyTorch\n      - Adjust Build Options (Optional)\n  - Docker Image\n    -",
+    "source": "unknown",
+    "added": 1783991038
+  },
+  {
+    "text": " [Using pre-built images](\n\n\n\nOpen source project tensorflow/tensorflow: [![Python](\n[![PyPI](\n[![DOI](\n[![CII Best Practices](\n[![OpenSSF Scorecard](\n[![Fuzzing Status](\n[![Fuzzing Status](\n[![OSSRank](\n[![Contributor Covenant](\n\nDocumentation |\n |\n[![Documentation]( |\n\n[TensorFlow]( is an end-to-e",
+    "source": "unknown",
+    "added": 1783991038
+  },
+  {
+    "text": "nd open source platform\nfor machine learning. It has a comprehensive, flexible ecosystem of\n[tools](\n[libraries]( and\n[community]( resources that lets\nresearchers push the state-of-the-art in ML and developers easily build and\ndeploy ML-powered applications.\n\nTensorFlow was originally developed by r",
+    "source": "unknown",
+    "added": 1783991038
   }
 ]

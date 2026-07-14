@@ -1,6 +1,8 @@
 """
 Pullbot Scraper
-Grabs text from GitHub trending, Wikipedia, open source AI datasets, and chess engines.
+Grabs text from GitHub trending, Wikipedia, open source datasets, 
+English dictionary, and vocabulary builders.
+Cleans all text before saving.
 """
 
 import os
@@ -22,6 +24,36 @@ import io
 config_path = os.path.join(REPO_ROOT, 'config.yaml')
 with open(config_path, 'r') as f:
     config = yaml.safe_load(f)
+
+# ============================================
+# TEXT CLEANING
+# ============================================
+
+def clean_text(text):
+    """Remove markdown, HTML, URLs, badges, and code blocks"""
+    if not text:
+        return ""
+    
+    text = re.sub(r'<[^>]+>', '', text)
+    text = re.sub(r'https?://\S+', '', text)
+    text = re.sub(r'!\[([^\]]*)\]\([^)]+\)', '', text)
+    text = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', text)
+    text = re.sub(r'\[!\[.*?\]\(.*?\)\]\(.*?\)', '', text)
+    text = re.sub(r'#{1,6}\s', '', text)
+    text = re.sub(r'\*\*([^*]+)\*\*', r'\1', text)
+    text = re.sub(r'\*([^*]+)\*', r'\1', text)
+    text = re.sub(r'`([^`]+)`', r'\1', text)
+    text = re.sub(r'^>\s', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^[=\-*#]{3,}$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'^\|.+\|$', '', text, flags=re.MULTILINE)
+    text = re.sub(r'\n{3,}', '\n\n', text)
+    text = text.strip()
+    
+    return text
+
+# ============================================
+# SCRAPERS
+# ============================================
 
 def scrape_github_trending():
     print("📊 Scraping GitHub trending...")
@@ -47,11 +79,13 @@ def scrape_github_trending():
                 try:
                     r = requests.get(readme_url, headers=headers, timeout=15)
                     if r.status_code == 200:
-                        texts.append({
-                            'source': repo,
-                            'text': r.text[:5000],
-                            'type': 'code_readme'
-                        })
+                        cleaned = clean_text(r.text[:3000])
+                        if len(cleaned) > 50:
+                            texts.append({
+                                'source': repo,
+                                'text': cleaned,
+                                'type': 'code_readme'
+                            })
                         break
                 except:
                     continue
@@ -73,7 +107,7 @@ def scrape_wikipedia():
             r = requests.get(base_url, timeout=15)
             if r.status_code == 200:
                 data = r.json()
-                text = data.get('extract', '')
+                text = clean_text(data.get('extract', ''))
                 title = data.get('title', 'unknown')
                 if len(text) > 50:
                     texts.append({
@@ -101,7 +135,7 @@ def scrape_wikipedia_random_sentences(num_sentences=50):
             if r.status_code == 200:
                 data = r.json()
                 title = data.get('title', 'unknown')
-                extract = data.get('extract', '')
+                extract = clean_text(data.get('extract', ''))
                 sentences = re.split(r'(?<=[.!?])\s+', extract)
                 
                 if len(sentences) > 2:
@@ -143,7 +177,7 @@ def scrape_chatgpt_prompts():
                     if len(prompt) > 30:
                         texts.append({
                             'source': 'chatgpt_prompts',
-                            'text': f"User asked: {prompt}\nThis is a helpful prompt template for answering questions about {row[0] if len(row) > 0 else 'various topics'}.",
+                            'text': f"User asked: {prompt}",
                             'type': 'conversation_template'
                         })
             
@@ -162,7 +196,7 @@ def scrape_tiny_shakespeare():
         r = requests.get(url, timeout=30)
         
         if r.status_code == 200:
-            full_text = r.text
+            full_text = clean_text(r.text)
             chunk_size = 500
             num_chunks = min(10, len(full_text) // chunk_size)
             
@@ -193,29 +227,25 @@ def scrape_github_ai_repos():
         "scikit-learn/scikit-learn",
         "openai/openai-python",
         "langchain-ai/langchain",
-        "gpt-engineer-org/gpt-engineer",
-        "AUTOMATIC1111/stable-diffusion-webui",
-        "microsoft/autogen",
-        "mindsdb/mindsdb",
         "thomasahle/sunfish",
         "official-stockfish/Stockfish",
-        "lichess-org/lila"
     ]
     
     headers = {'User-Agent': 'Pullbot/1.0'}
     
-    for repo in random.sample(ai_repos, min(5, len(ai_repos))):
+    for repo in random.sample(ai_repos, min(4, len(ai_repos))):
         for branch in ['main', 'master']:
             url = f"https://raw.githubusercontent.com/{repo}/{branch}/README.md"
             try:
                 r = requests.get(url, headers=headers, timeout=15)
                 if r.status_code == 200:
-                    text = r.text[:2000]
-                    texts.append({
-                        'source': f"ai_repo:{repo}",
-                        'text': f"Open source AI project {repo}: {text}",
-                        'type': 'ai_readme'
-                    })
+                    cleaned = clean_text(r.text[:2000])
+                    if len(cleaned) > 50:
+                        texts.append({
+                            'source': f"ai_repo:{repo}",
+                            'text': f"Open source project {repo}: {cleaned}",
+                            'type': 'ai_readme'
+                        })
                     break
             except:
                 continue
@@ -224,7 +254,86 @@ def scrape_github_ai_repos():
     print(f"  ✅ Got {len(texts)} AI READMEs")
     return texts
 
-def scrape_wikipedia_full_articles(num_articles=3):
+def scrape_full_dictionary():
+    """Download English dictionary for vocabulary building"""
+    print("📚 Downloading English dictionary...")
+    texts = []
+    
+    # Try multiple dictionary sources
+    dict_urls = [
+        "https://raw.githubusercontent.com/adambom/dictionary/master/dictionary.json",
+        "https://raw.githubusercontent.com/matthewreagan/WebstersEnglishDictionary/master/dictionary.json"
+    ]
+    
+    for url in dict_urls:
+        try:
+            r = requests.get(url, timeout=60)
+            if r.status_code == 200:
+                data = r.json()
+                words = list(data.items())[:2000]  # Take 2000 words
+                
+                for word, definition in words:
+                    if isinstance(definition, str) and len(definition) > 15:
+                        clean_def = clean_text(definition[:250])
+                        texts.append({
+                            'source': f'dict:{word}',
+                            'text': f'{word}: {clean_def}',
+                            'type': 'vocabulary'
+                        })
+                
+                print(f"  ✅ Got {len(texts)} dictionary entries")
+                return texts
+        except:
+            continue
+    
+    # Fallback: common word definitions via API
+    print("  ⚠️ Full dictionary failed, trying word-by-word...")
+    return scrape_word_definitions()
+
+def scrape_word_definitions():
+    """Scrape individual word definitions"""
+    texts = []
+    
+    # Common English words across categories
+    words = [
+        # Tech
+        "algorithm", "function", "variable", "data", "network", "system",
+        "process", "method", "object", "class", "code", "program",
+        # Science
+        "energy", "matter", "force", "cell", "atom", "species",
+        "theory", "experiment", "observe", "calculate", "measure",
+        # General
+        "create", "develop", "design", "implement", "analyze",
+        "understand", "explain", "describe", "compare", "evaluate",
+        "learn", "teach", "write", "read", "think", "know",
+        "language", "communication", "information", "knowledge"
+    ]
+    
+    for word in words:
+        try:
+            url = f"https://api.dictionaryapi.dev/api/v2/entries/en/{word}"
+            r = requests.get(url, timeout=10)
+            if r.status_code == 200:
+                data = r.json()
+                for entry in data[:1]:
+                    for meaning in entry.get('meanings', [])[:1]:
+                        part_of_speech = meaning.get('partOfSpeech', '')
+                        for definition in meaning.get('definitions', [])[:1]:
+                            def_text = definition.get('definition', '')
+                            if def_text:
+                                texts.append({
+                                    'source': f'dict:{word}',
+                                    'text': f'{word} ({part_of_speech}): {def_text}',
+                                    'type': 'vocabulary'
+                                })
+            time.sleep(0.2)
+        except:
+            continue
+    
+    print(f"  ✅ Got {len(texts)} word definitions")
+    return texts
+
+def scrape_wikipedia_full_articles(num_articles=2):
     print("📖 Scraping full Wikipedia articles...")
     texts = []
     
@@ -242,11 +351,11 @@ def scrape_wikipedia_full_articles(num_articles=3):
                     if fr.status_code == 200:
                         pages = fr.json().get('query', {}).get('pages', {})
                         for page in pages.values():
-                            extract = page.get('extract', '')
+                            extract = clean_text(page.get('extract', ''))
                             if len(extract) > 500:
                                 texts.append({
                                     'source': f"wiki_full:{title}",
-                                    'text': extract[:5000],
+                                    'text': extract[:3000],
                                     'type': 'wiki_full_article'
                                 })
                                 break
@@ -259,6 +368,10 @@ def scrape_wikipedia_full_articles(num_articles=3):
     
     print(f"  ✅ Got {len(texts)} full articles")
     return texts
+
+# ============================================
+# SAVE
+# ============================================
 
 def save_raw_data(texts):
     os.makedirs(os.path.join(REPO_ROOT, 'data', 'raw'), exist_ok=True)
@@ -290,18 +403,28 @@ def save_raw_data(texts):
 def run_scrape():
     all_texts = []
     
+    # GitHub and Wikipedia
     if 'github_trending' in config['scrape']['sources']:
         all_texts.extend(scrape_github_trending())
     
     if 'wikipedia_random' in config['scrape']['sources']:
         all_texts.extend(scrape_wikipedia())
-        all_texts.extend(scrape_wikipedia_random_sentences(50))
+        all_texts.extend(scrape_wikipedia_random_sentences(30))
     
+    # Vocabulary building (NEW - makes Pullbot understand words)
+    all_texts.extend(scrape_full_dictionary())
+    
+    # Language and conversation
     all_texts.extend(scrape_chatgpt_prompts())
     all_texts.extend(scrape_tiny_shakespeare())
-    all_texts.extend(scrape_github_ai_repos())
-    all_texts.extend(scrape_wikipedia_full_articles(3))
     
+    # Tech knowledge
+    all_texts.extend(scrape_github_ai_repos())
+    
+    # Deep knowledge
+    all_texts.extend(scrape_wikipedia_full_articles(2))
+    
+    # Deduplicate
     seen = set()
     unique = []
     for t in all_texts:

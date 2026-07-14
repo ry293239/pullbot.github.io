@@ -6,52 +6,53 @@
 
 ## ⚠️ IMPORTANT NOTICE
 
-**This project is currently in active development and testing. It is NOT complete.**
-
-- **Owner**: [r293239](https://github.com/r293239)
-- **Contact**: reubenyee2012@gmail.com
-- **Status**: 🚧 Pre-release / Testing Phase
-- **License**: All Rights Reserved
+**Status**: 🚧 Active Development / Testing Phase  
+**Owner**: [r293239](https://github.com/r293239)  
+**Contact**: reubenyee2012@gmail.com  
+**License**: [View License](LICENSE) — All Rights Reserved
 
 ---
 
-## 🚫 DO NOT COPY OR DISTRIBUTE
+## 🚫 DO NOT COPY OR REDISTRIBUTE
 
-This repository contains proprietary work in progress. No part of this project may be:
+This project is proprietary work in progress. No part of this project may be:
 
 - Copied, reproduced, or redistributed
-- Used as a basis for derivative works
-- Incorporated into other projects
-- Published or shared without explicit permission
+- Used for commercial purposes without explicit written permission
+- Deployed, hosted, or served independently
+- Modified, reverse engineered, or used to create derivative works
+- Used to train other AI models
+- Claimed as your own work
 
-This restriction applies until an official license is added and the project reaches a stable release.
-
----
-
-## 📝 About
-
-Pullbot is an AI assistant that scrapes knowledge from GitHub and Wikipedia, trains on that data, and continuously improves through automated learning cycles.
-
-**Current features (in testing):**
-- Automated web scraping (GitHub trending, Wikipedia, open source datasets)
-- Full model fine-tuning with pruning and quantization
-- Knowledge base with vector search
-- Continuous training pipeline via GitHub Actions
-- Quadratic spreadsheet integration for weight storage
-
-**Coming soon:**
-- Live chat via API
-- Self-improvement loops
-- Public release
+See [LICENSE](LICENSE) for complete terms and conditions.
 
 ---
 
-## 🛠️ Tech Stack
+## 📝 About Pullbot
 
-- Python (PyTorch, Transformers, HuggingFace)
-- GitHub Actions (CI/CD)
-- Quadratic (weight storage)
-- Render (API hosting - planned)
+Pullbot is an AI assistant that builds its knowledge from **Wikipedia articles**, **English dictionaries**, and **structured vocabulary training**.
+
+Instead of memorizing text, Pullbot learns **word meanings** and **sentence completion**, allowing it to construct original responses from a clean knowledge base.
+
+---
+
+## ✨ Features
+
+- 📚 **Wikipedia Vocabulary Extractor** — Builds a wordbank from real articles
+- 📖 **Definition Lookup** — Learns what words actually mean
+- 🧠 **Sentence Completion Training** — Trained to complete prompts naturally
+- 🔄 **Continuous Learning** — Scrapes and trains automatically
+- 🌐 **Live API** — Deployed on Render for real-time chat
+- 🎨 **Dark Emerald UI** — Modern ChatGPT-style interface
+
+---
+
+## ⚠️ Disclaimer
+
+**Responses are AI-generated and may not be accurate.**  
+Verify important information from authoritative sources.  
+Pullbot may produce incorrect or misleading content.  
+Use at your own discretion.
 
 ---
 
@@ -62,4 +63,5 @@ Pullbot is an AI assistant that scrapes knowledge from GitHub and Wikipedia, tra
 
 ---
 
-*© 2026 Reuben Yee. All rights reserved.*
+*© 2026 Reuben Yee. All rights reserved.*  
+*Built with DistilGPT2 by HuggingFace.*

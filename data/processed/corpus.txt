@@ -6882,3 +6882,3602 @@ Examples:
 HINT TOKEN, RETRY PENALTY, COMEDY MODE
 
 Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+
+---
+
+Eviction policies
+Level 7 Boss: The Service Specter – Phases: 1.
+brumby is A wild or feral horse.
+neighborhood is The quality of being a neighbor, of living nearby, next to each-other; proximity.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+stronghold is A place built to withstand attack; a fortress.
+accompanied is Having accompaniment; being part of a group of at least two.
+withdrew is To pull (something) back, aside, or away.
+“Resource quota relief: Reduce Learning Heat by 1.”
+6.
+alkaloid is Any of many organic heterocyclic bases that occur in nature and often have medicinal properties.
+apparently is Plainly; clearly; manifestly; evidently.
+despot is A ruler with absolute power; a tyrant.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+royally is In a royal manner; in a manner having to do with royalty.
+All humor follows Comedy Mode rules.
+massacre is The killing of a considerable number (usually limited to people) where little or no resistance can be made, with indiscriminate violence, without necessity, and contrary to civilized norms.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+argyle is A pattern of diamond-shaped areas on a solid background; used especially of knitwear
+All randomness from approved random event tables (cycle deterministically if needed).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All humor follows Comedy Mode rules.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+dioceses is Administrative division of the later Roman Empire, starting with the tetrarchy.
+tobacco is Any plant of the genus Nicotiana.
+winter is Traditionally the fourth of the four seasons, typically regarded as being from December 23 to March 20 in continental regions of the Northern Hemisphere or the months of June, July and August in the Southern Hemisphere. It is the time when the sun is lowest in the sky, resulting in short days, and the time of year with the lowest atmospheric temperatures for the region.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+protective is Something that protects.
+pizza is A baked Italian dish of a thinly rolled bread dough crust typically topped before baking with tomato sauce, cheese and other ingredients such as meat, vegetables or fruit
+architecture is The art and science of designing and managing the construction of buildings and other structures, particularly if they are well proportioned and decorated.
+encoded is To convert (plain text) into code.
+unsuccessful is Failed, not successful.
+indole is An organic compound, C8H7N, found in coal tar, and produced in the gut by the bacterial decomposition of tryptophan; it is an aromatic bicyclic heterocycle having a benzene ring fused with a pyrrole ring; indole and its derivatives occur widely in nature and have many industrial applications.
+RANDOM EVENT ENGINE
+
+Trigger chances same as SQL/AWS versions.
+DAILY QUESTS
+
+Examples:
+- Daily Storage: "Claim a PVC for data-vol."
+- Daily Network: "Expose web-svc as NodePort."
+Rewards: XP, hint tokens, rare items.
+lodge is A building for recreational use such as a hunting lodge or a summer cabin.
+catholic is Of the Western Christian church, as differentiated from e.g. the Orthodox church.
+DAILY QUESTS
+
+Examples:
+- Daily Storage: "Claim a PVC for data-vol."
+- Daily Network: "Expose web-svc as NodePort."
+Rewards: XP, hint tokens, rare items.
+nationalist is An advocate of nationalism.
+All randomness from approved random event tables (cycle deterministically if needed).
+foreign is A foreign person, particularly:
+physically is In a physical manner.
+ram is A male sheep, typically uncastrated
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Eviction policies
+Level 7 Boss: The Service Specter – Phases: 1.
+All randomness from approved random event tables (cycle deterministically if needed).
+INVENTORY SYSTEM
+
+Item Types (Effects):
+- Potions: Build Potion (+10 XP), Probe Tonic (Reduce Heat by 1)
+- Artifacts: Kubeconfig Amulet (+5% XP), Helm Shard (Reveal boss phase hint)
+Max inventory: 10 items.
+All humor follows Comedy Mode rules.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+congregation is The act of congregating or collecting together.
+isolated is To set apart or cut off from others.
+chamber is A room or set of rooms, particularly:
+none is A person without religious affiliation.
+formula is Any mathematical rule expressed symbolically.
+reynard is A male fox.
+homolog is Something homologous; a homologous organ or part, chemical compound or chromosome.
+reported is To relate details of (an event or incident); to recount, describe (something).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+footballers is One who plays association football.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+control is Influence or authority over something.
+elections is A process of choosing a leader, members of parliament, councillors or other representatives by popular vote.
+The Persistent Quest – "Secure your data volumes."
+5.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Ingress
+Boss Rewards: XP, Items, Skill points, Titles, Achievements
+
+NEW GAME+, HARDCORE MODE
+
+Identical rules and rewards as SQL/AWS versions.
+involved is To roll or fold up; to wind round; to entwine.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+differentiation is The act of differentiating.
+golfer is Someone who plays golf.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+synthesis is The formation of something complex or coherent by combining simpler things.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+districts is An administrative division of an area.
+patriarch is The highest form of bishop, in the ancient world having authority over other bishops in the province but now generally as an honorary title; in Roman Catholicism, considered a bishop second only to the Pope in rank.
+medals is A stamped metal disc used as a personal ornament, a charm, or a religious object.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+protest is A formal objection, especially one by a group.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+manages is To direct or be in charge of.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All randomness from approved random event tables (cycle deterministically if needed).
+Respond with rewards or humor + hint.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+titular is One who holds a title.
+came is Used to indicate that the following event, period, or change in state occurred in the past, after a time of waiting, enduring, or anticipation
+All humor follows Comedy Mode rules.
+gathering is A meeting or get-together; a party or social function.
+imperial is A bottle of wine (usually Bordeaux) containing 6 liters of fluid, eight times the volume of a standard bottle.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Initial State: Level 1, XP 0, Hint Tokens 3, Inventory empty, No Companion, Learning Heat 0, Standard Mode, Story Act 1.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+although is Though, even though, in spite of or despite the fact that: introducing a clause that expresses a concession.
+All humor follows Comedy Mode rules.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+present is The current moment or period of time.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+antiferromagnetic is Exhibiting antiferromagnetism
+Ingress
+Boss Rewards: XP, Items, Skill points, Titles, Achievements
+
+NEW GAME+, HARDCORE MODE
+
+Identical rules and rewards as SQL/AWS versions.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+All randomness from approved random event tables (cycle deterministically if needed).
+election is A process of choosing a leader, members of parliament, councillors or other representatives by popular vote.
+patriots is A person who loves and zealously supports and defends their country.
+COMPANIONS
+
+- Kubelet the Node Guardian: Reduces pod penalties; "Nodes are my domain!"
+- Servy the Service Scout: Hints on networking; "Expose with care!"
+- Volmy the Volume Keeper: Handles storage events; "Persist or perish!"
+Rules: One active, Loyalty Bonus +5 XP after 3 sessions.
+Ingress
+Boss Rewards: XP, Items, Skill points, Titles, Achievements
+
+NEW GAME+, HARDCORE MODE
+
+Identical rules and rewards as SQL/AWS versions.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+arguably is As can be supported or proven by sound logical deduction, evidence, and precedent.
+All randomness from approved random event tables (cycle deterministically if needed).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+interaction is The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence.
+sedan is An enclosed windowed chair suitable for a single occupant, carried by at least two porters, in equal numbers in front and behind, using wooden rails that passed through metal brackets on the sides of the chair.
+independent is A candidate or voter not affiliated with any political party, a freethinker, free of a party platform.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+race is A contest between people, animals, vehicles, etc. where the goal is to be the first to reach some objective. Example: Several horses run in a horse race, and the first one to reach the finishing post wins
+occupation is An activity or task with which one occupies oneself; usually specifically the productive activity, service, trade, or craft for which one is regularly paid; a job.
+laboratory is A room, building or institution equipped for scientific research, experimentation or analysis.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+relations is The manner in which two things may be associated.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+digitally is In a digital manner.
+“Resource quota relief: Reduce Learning Heat by 1.”
+6.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+boxer is A participant (fighter) in a boxing match.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+purchased is To buy, obtain by payment of a price in money or its equivalent.
+electrons is The subatomic particle having a negative charge and orbiting the nucleus; the flow of electrons in a conductor constitutes electricity.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+User asked: 
+
+**Author:** Scott M (tweaked with Grok assistance)  
+**Goal:**  
+Create a clean, user-friendly summary of TV shows premiering or returning — including new seasons starting, series resuming after a hiatus/break, and brand-new series premieres — plus new movies releasing to streaming services in the upcoming week.
+hockey is Ice hockey, a game on ice in which two teams of six players skate and try to score by shooting a puck into the opposing team's net, using their sticks.
+elks is Any of various large species of deer such as the red deer, moose or wapiti (see usage notes).
+unofficially is In a way that is not official.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+committed is To give in trust; to put into charge or keeping; to entrust; to consign; used with to or formerly unto.
+priest is A religious clergyman (clergywoman, clergyperson) who is trained to perform services or sacrifices at a church or temple
+SKILL EVALUATION & ENCOURAGEMENT SYSTEM
+
+Same evaluation criteria and tiers as SQL/AWS versions, renamed:
+Novice Navigator → Container Newbie
+...
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+OUTPUT FORMAT
+
+- **Mission**
+- **Random Event** (if triggered)
+- **User Answer** (echoed in code block)
+- **Evaluation**
+- **Result or Hint**
+- **XP + Awards + Tokens + Items**
+- **Updated Level**
+- **Session Summary** (end of session)
+
+
+
+User asked: { "TASK": "Design a unique 'Valorant' Agent Key Art.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+aria is A musical piece written typically for a solo voice with orchestral accompaniment in an opera or cantata.
+human is A human being, whether man, woman or child.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+deputies is One appointed as the substitute of another, and empowered to act for them, in their name or their behalf; a substitute in office
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+communion is A joining together of minds or spirits.
+flies is The open area above a stage where scenery and equipment may be hung.
+predecessors is One who precedes; one who has preceded another in any state, position, office, etc.; one whom another follows or comes after, in any office or position.
+symmetric is Symmetrical.
+powerful is Having, or capable of exerting power, potency or influence.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+wife is A married woman, especially in relation to her spouse.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+featherweight is A weight class in many combat sports; e.g. in professional boxing of a maximum of 126 pounds or 57.2 kilograms.
+subspecies is A rank in the classification of organisms, below species.
+“Resource quota relief: Reduce Learning Heat by 1.”
+6.
+Trigger random event (if applicable).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+federal is A law-enforcement official of the FBI; a federal agent.
+“Image pull success: +5 XP and a free retry.”
+8.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+“Kubelet Gnome nods: +10 XP.”
+5.
+scheduled is To create a time-schedule.
+sporting is To amuse oneself, to play.
+car is A wheeled vehicle that moves independently, with at least three wheels, powered mechanically, steered by a driver and mostly for personal transportation.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+residence is The place where one lives; one's home.
+apostolic is Pertaining to apostles or their practice of teaching; pertaining to the apostles (of early Christianity) or their teachings.
+cluster is A group or bunch of several discrete items that are close to each other.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All randomness from approved random event tables (cycle deterministically if needed).
+“Resource quota relief: Reduce Learning Heat by 1.”
+6.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+dish is A vessel such as a plate for holding or serving food, often flat with a depressed region in the middle.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+nominal is (grammar) A noun or word group that functions as part of a noun phrase.
+“Syntax gremlin strikes: Humor tier +1.”
+7.
+All randomness from approved random event tables (cycle deterministically if needed).
+enlarged is To make larger.
+“Syntax gremlin strikes: Humor tier +1.”
+7.
+All randomness from approved random event tables (cycle deterministically if needed).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+spin is Rapid circular motion.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+electoral is Relating to or composed of electors.
+robber is A person who robs.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+welsh is To swindle someone by not paying a debt, especially a gambling debt.
+“Scaling sprite: +10% XP on next correct answer.”
+
+BOSS ROSTER
+
+Level 5 Boss: The Pod Eviction Phantom – Phases: 1.
+protein is Any of numerous large, complex naturally-produced molecules composed of one or more long chains of amino acids, in which the amino acid groups are held together by peptide bonds.
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+
+
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- Hint Hoarder – Reach 10 hint tokens
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+benevolent is Having a disposition to do good.
+DAILY QUESTS
+
+Examples:
+- Daily Storage: "Claim a PVC for data-vol."
+- Daily Network: "Expose web-svc as NodePort."
+Rewards: XP, hint tokens, rare items.
+midfielder is A player who operates behind the attackers and in front of the defence.
+
+---
+
+Using these words: isolated (To set apart or cut off from others.), beastie (Beast, animal.), although (Though, even though, in spite of or despite the fact that: introducing a clause that expresses a concession.)
+Question: Explain how isolated relates to although
+Answer: isolated is To set apart or cut off from others.. This relates to although which means Though, even though, in spite of or despite the fact that: introducing a clause that expresses a concession..
+
+---
+
+Using these words: contested (To contend.), excited (To stir the emotions of.), later (Near the end of a period of time.)
+Question: Explain how contested relates to later
+Answer: contested is To contend.. This relates to later which means Near the end of a period of time..
+
+---
+
+Using these words: building (The act or process by which something is built; construction.), laboratory (A room, building or institution equipped for scientific research, experimentation or analysis.), withdrew (To pull (something) back, aside, or away.)
+Question: What is the connection between building and laboratory?
+Answer: building is The act or process by which something is built; construction.. This relates to withdrew which means To pull (something) back, aside, or away..
+
+---
+
+Using these words: population (The people living within a political or geographical boundary.), society (A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms.), geologic (Of, or relating to geology or a geologic time scale.)
+Question: What is the connection between population and society?
+Answer: population is The people living within a political or geographical boundary.. This relates to geologic which means Of, or relating to geology or a geologic time scale..
+
+---
+
+Using these words: associations (The act of associating.), midfielder (A player who operates behind the attackers and in front of the defence.), fantasy (That which comes from one's imagination.)
+Question: Explain how associations relates to fantasy
+Answer: associations is The act of associating.. This relates to fantasy which means That which comes from one's imagination..
+
+---
+
+Using these words: interaction (The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence.), confederations (A union or alliance of states or political organizations.), class (A group, collection, category or set sharing characteristics or attributes.)
+Question: Explain how interaction relates to class
+Answer: interaction is The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence.. This relates to class which means A group, collection, category or set sharing characteristics or attributes..
+
+---
+
+Using these words: making (The act of forming, causing, or constituting; workmanship; construction.), twenty (A banknote with a denomination of 20.), later (Near the end of a period of time.)
+Question: Explain how making relates to later
+Answer: making is The act of forming, causing, or constituting; workmanship; construction.. This relates to later which means Near the end of a period of time..
+
+---
+
+Using these words: emitted (To send out or give off), spin (Rapid circular motion.), hockey (Ice hockey, a game on ice in which two teams of six players skate and try to score by shooting a puck into the opposing team's net, using their sticks.)
+Question: What is the connection between emitted and spin?
+Answer: emitted is To send out or give off. This relates to hockey which means Ice hockey, a game on ice in which two teams of six players skate and try to score by shooting a puck into the opposing team's net, using their sticks..
+
+---
+
+Using these words: ranks (A row of people or things organized in a grid pattern, often soldiers [the corresponding term for the perpendicular columns in such a pattern is "file"].), boxing (To place inside a box; to pack in one or more boxes.), unofficially (In a way that is not official.)
+Question: Explain how ranks relates to unofficially
+Answer: ranks is A row of people or things organized in a grid pattern, often soldiers [the corresponding term for the perpendicular columns in such a pattern is "file"].. This relates to unofficially which means In a way that is not official..
+
+---
+
+Using these words: annually (Once every year without fail, yearly), published (To issue (something, such as printed work) for distribution and/or sale.), flies (The open area above a stage where scenery and equipment may be hung.)
+Question: Explain how annually relates to flies
+Answer: annually is Once every year without fail, yearly. This relates to flies which means The open area above a stage where scenery and equipment may be hung..
+
+---
+
+Using these words: introduced ((of people) To cause (someone) to be acquainted (with someone else).), antiferromagnetic (Exhibiting antiferromagnetism), elks (Any of various large species of deer such as the red deer, moose or wapiti (see usage notes).)
+Question: Describe introduced and elks
+Answer: introduced is (of people) To cause (someone) to be acquainted (with someone else).. This relates to elks which means Any of various large species of deer such as the red deer, moose or wapiti (see usage notes)..
+
+---
+
+Using these words: encoded (To convert (plain text) into code.), physically (In a physical manner.), spectrum (A range; a continuous, infinite, one-dimensional set, possibly bounded by extremes.)
+Question: What is the connection between encoded and physically?
+Answer: encoded is To convert (plain text) into code.. This relates to spectrum which means A range; a continuous, infinite, one-dimensional set, possibly bounded by extremes..
+
+---
+
+Using these words: game (A playful or competitive activity.), lighthouses (A tower or other structure exhibiting a light or lights to warn or guide sailors.), awaited (To wait for.)
+Question: Describe game and awaited
+Answer: game is A playful or competitive activity.. This relates to awaited which means To wait for..
+
+---
+
+Using these words: brumby (A wild or feral horse.), important (Having relevant and crucial value.), source (The person, place or thing from which something (information, goods, etc.) comes or is acquired.)
+Question: What is the connection between brumby and important?
+Answer: brumby is A wild or feral horse.. This relates to source which means The person, place or thing from which something (information, goods, etc.) comes or is acquired..
+
+---
+
+Using these words: earliest (At a time in advance of the usual or expected event.), foreign (A foreign person, particularly:), upcoming (The act of coming up.)
+Question: Describe earliest and upcoming
+Answer: earliest is At a time in advance of the usual or expected event.. This relates to upcoming which means The act of coming up..
+
+---
+
+Using these words: environment (The surroundings of, and influences on, a particular item of interest.), voices (Sound uttered by the mouth, especially by human beings in speech or song; sound thus uttered considered as possessing some special quality or character), capital (Already-produced durable goods available for use as a factor of production, such as steam shovels (equipment) and office buildings (structures).)
+Question: Describe environment and capital
+Answer: environment is The surroundings of, and influences on, a particular item of interest.. This relates to capital which means Already-produced durable goods available for use as a factor of production, such as steam shovels (equipment) and office buildings (structures)..
+
+---
+
+Using these words: apparently (Plainly; clearly; manifestly; evidently.), metro (An underground railway.), germanic (Of or containing germanium.)
+Question: Explain how apparently relates to germanic
+Answer: apparently is Plainly; clearly; manifestly; evidently.. This relates to germanic which means Of or containing germanium..
+
+---
+
+Using these words: human (A human being, whether man, woman or child.), developed (To change with a specific direction, progress.), docu (A film, TV program, publication etc. which presents a social, political, scientific or historical subject in a factual or informative manner.)
+Question: Describe human and docu
+Answer: human is A human being, whether man, woman or child.. This relates to docu which means A film, TV program, publication etc. which presents a social, political, scientific or historical subject in a factual or informative manner..
+
+---
+
+Using these words: mission (A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself.), brumby (A wild or feral horse.), royally (In a royal manner; in a manner having to do with royalty.)
+Question: Describe mission and royally
+Answer: mission is A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself.. This relates to royally which means In a royal manner; in a manner having to do with royalty..
+
+---
+
+Using these words: timeline (A graphical representation of a chronological sequence of events (past or future); a chronology.), coincided (To occupy exactly the same space.), because (For the reason (that).)
+Question: What is the connection between timeline and coincided?
+Answer: timeline is A graphical representation of a chronological sequence of events (past or future); a chronology.. This relates to because which means For the reason (that)..
+
+---
+
+Using these words: hosted (To perform the role of a host.), fooled (To trick; to deceive), rappers (One who, or that which, raps or knocks.)
+Question: What is the connection between hosted and fooled?
+Answer: hosted is To perform the role of a host.. This relates to rappers which means One who, or that which, raps or knocks..
+
+---
+
+Using these words: metro (An underground railway.), striped (To mark with stripes.), mature (Fully developed; grown up in terms of physical appearance, behaviour or thinking; ripe.)
+Question: Describe metro and mature
+Answer: metro is An underground railway.. This relates to mature which means Fully developed; grown up in terms of physical appearance, behaviour or thinking; ripe..
+
+---
+
+Using these words: committed (To give in trust; to put into charge or keeping; to entrust; to consign; used with to or formerly unto.), rift (A chasm or fissure.), communion (A joining together of minds or spirits.)
+Question: What is the connection between committed and rift?
+Answer: committed is To give in trust; to put into charge or keeping; to entrust; to consign; used with to or formerly unto.. This relates to communion which means A joining together of minds or spirits..
+
+---
+
+Using these words: media (The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.), bird (A member of the class of animals Aves in the phylum Chordata, characterized by being warm-blooded, having feathers and wings usually capable of flight, and laying eggs.), generally (Popularly or widely.)
+Question: What is the connection between media and bird?
+Answer: media is The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.. This relates to generally which means Popularly or widely..
+
+---
+
+Using these words: lynch (To execute (somebody) without a proper legal trial or procedure, especially by hanging and backed by a mob.), communion (A joining together of minds or spirits.), emitted (To send out or give off)
+Question: Explain how lynch relates to emitted
+Answer: lynch is To execute (somebody) without a proper legal trial or procedure, especially by hanging and backed by a mob.. This relates to emitted which means To send out or give off.
+
+---
+
+Using these words: fooled (To trick; to deceive), angel (An incorporeal and sometimes divine messenger from a deity, or other divine entity, often depicted in art as a youthful winged figure in flowing robes.), destroyer (That which destroys something.)
+Question: Explain how fooled relates to destroyer
+Answer: fooled is To trick; to deceive. This relates to destroyer which means That which destroys something..
+
+---
+
+Using these words: independent (A candidate or voter not affiliated with any political party, a freethinker, free of a party platform.), medals (A stamped metal disc used as a personal ornament, a charm, or a religious object.), symmetric (Symmetrical.)
+Question: Explain how independent relates to symmetric
+Answer: independent is A candidate or voter not affiliated with any political party, a freethinker, free of a party platform.. This relates to symmetric which means Symmetrical..
+
+---
+
+Using these words: synthesis (The formation of something complex or coherent by combining simpler things.), zebrawood (Any wood with a figure (grain pattern) like the striping of a zebra, most often wood of the genus Microberlinia.), human (A human being, whether man, woman or child.)
+Question: What is the connection between synthesis and zebrawood?
+Answer: synthesis is The formation of something complex or coherent by combining simpler things.. This relates to human which means A human being, whether man, woman or child..
+
+---
+
+Using these words: chewing (To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed.), imperial (A bottle of wine (usually Bordeaux) containing 6 liters of fluid, eight times the volume of a standard bottle.), unions (The act of uniting or joining two or more things into one.)
+Question: What is the connection between chewing and imperial?
+Answer: chewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed.. This relates to unions which means The act of uniting or joining two or more things into one..
+
+---
+
+Using these words: both (Each of the two, or of the two kinds.), alkaloid (Any of many organic heterocyclic bases that occur in nature and often have medicinal properties.), protein (Any of numerous large, complex naturally-produced molecules composed of one or more long chains of amino acids, in which the amino acid groups are held together by peptide bonds.)
+Question: What is the connection between both and alkaloid?
+Answer: both is Each of the two, or of the two kinds.. This relates to protein which means Any of numerous large, complex naturally-produced molecules composed of one or more long chains of amino acids, in which the amino acid groups are held together by peptide bonds..
+
+---
+
+Using these words: upper (A stimulant, such as amphetamine, that increases energy and decreases appetite.), regiment (A unit of armed troops under the command of an officer, and consisting of several smaller units; now specifically, usually composed of two or more battalions.), indole (An organic compound, C8H7N, found in coal tar, and produced in the gut by the bacterial decomposition of tryptophan; it is an aromatic bicyclic heterocycle having a benzene ring fused with a pyrrole ring; indole and its derivatives occur widely in nature and have many industrial applications.)
+Question: Explain how upper relates to indole
+Answer: upper is A stimulant, such as amphetamine, that increases energy and decreases appetite.. This relates to indole which means An organic compound, C8H7N, found in coal tar, and produced in the gut by the bacterial decomposition of tryptophan; it is an aromatic bicyclic heterocycle having a benzene ring fused with a pyrrole ring; indole and its derivatives occur widely in nature and have many industrial applications..
+
+---
+
+Using these words: formula (Any mathematical rule expressed symbolically.), voices (Sound uttered by the mouth, especially by human beings in speech or song; sound thus uttered considered as possessing some special quality or character), featherweight (A weight class in many combat sports; e.g. in professional boxing of a maximum of 126 pounds or 57.2 kilograms.)
+Question: Explain how formula relates to featherweight
+Answer: formula is Any mathematical rule expressed symbolically.. This relates to featherweight which means A weight class in many combat sports; e.g. in professional boxing of a maximum of 126 pounds or 57.2 kilograms..
+
+---
+
+Using these words: concept (An abstract and general idea; an abstraction.), photosynthesis (Any process by which plants and other photoautotrophs convert light energy into chemical energy,), rose (A shrub of the genus Rosa, with red, pink, white or yellow flowers.)
+Question: What is the connection between concept and photosynthesis?
+Answer: concept is An abstract and general idea; an abstraction.. This relates to rose which means A shrub of the genus Rosa, with red, pink, white or yellow flowers..
+
+---
+
+Using these words: raiders (One who engages in a raid; a plunderer.), riff (A repeated instrumental melody line in a song.), trail (The track or indication marking the route followed by something that has passed, such as the footprints of animal on land or the contrail of an airplane in the sky.)
+Question: Explain how raiders relates to trail
+Answer: raiders is One who engages in a raid; a plunderer.. This relates to trail which means The track or indication marking the route followed by something that has passed, such as the footprints of animal on land or the contrail of an airplane in the sky..
+
+---
+
+Using these words: surreal (Surreal number), tool (A mechanical device intended to make a task easier.), high (A high point or position, literally or figuratively; an elevated place; a superior region; a height; the sky; heaven.)
+Question: Describe surreal and high
+Answer: surreal is Surreal number. This relates to high which means A high point or position, literally or figuratively; an elevated place; a superior region; a height; the sky; heaven..
+
+---
+
+Using these words: footballers (One who plays association football.), important (Having relevant and crucial value.), chamber (A room or set of rooms, particularly:)
+Question: What is the connection between footballers and important?
+Answer: footballers is One who plays association football.. This relates to chamber which means A room or set of rooms, particularly:.
+
+---
+
+Using these words: crustal (Of, pertaining to, or forming a crust, especially the crust of the Earth or other planet.), processes (A series of events which produce a result (the product).), destroyer (That which destroys something.)
+Question: Describe crustal and destroyer
+Answer: crustal is Of, pertaining to, or forming a crust, especially the crust of the Earth or other planet.. This relates to destroyer which means That which destroys something..
+
+---
+
+Using these words: occupation (An activity or task with which one occupies oneself; usually specifically the productive activity, service, trade, or craft for which one is regularly paid; a job.), special (A reduction in consumer cost (usually for a limited time) for items or services rendered.), physically (In a physical manner.)
+Question: What is the connection between occupation and special?
+Answer: occupation is An activity or task with which one occupies oneself; usually specifically the productive activity, service, trade, or craft for which one is regularly paid; a job.. This relates to physically which means In a physical manner..
+
+---
+
+Using these words: striped (To mark with stripes.), derived (To obtain or receive (something) from something else.), winter (Traditionally the fourth of the four seasons, typically regarded as being from December 23 to March 20 in continental regions of the Northern Hemisphere or the months of June, July and August in the Southern Hemisphere. It is the time when the sun is lowest in the sky, resulting in short days, and the time of year with the lowest atmospheric temperatures for the region.)
+Question: What is the connection between striped and derived?
+Answer: striped is To mark with stripes.. This relates to winter which means Traditionally the fourth of the four seasons, typically regarded as being from December 23 to March 20 in continental regions of the Northern Hemisphere or the months of June, July and August in the Southern Hemisphere. It is the time when the sun is lowest in the sky, resulting in short days, and the time of year with the lowest atmospheric temperatures for the region..
+
+---
+
+Using these words: human (A human being, whether man, woman or child.), benevolent (Having a disposition to do good.), perceptive (Having or showing keenness of perception, insight, understanding, or intuition.)
+Question: What is the connection between human and benevolent?
+Answer: human is A human being, whether man, woman or child.. This relates to perceptive which means Having or showing keenness of perception, insight, understanding, or intuition..
+
+---
+
+Using these words: futuristic (Of technology, a concept, etc, so far advanced as to appear to be from the future.), appearing (To come or be in sight; to be in view; to become visible.), flavored (To add flavoring to something.)
+Question: What is the connection between futuristic and appearing?
+Answer: futuristic is Of technology, a concept, etc, so far advanced as to appear to be from the future.. This relates to flavored which means To add flavoring to something..
+
+---
+
+Using these words: media (The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.), worth (Value.), baronet (A hereditary title, below a peerage and senior to most knighthoods, entitling the bearer to the titular prefix "Sir" (for men) or "Dame" (for women) which is used in conjunction with the holder's Christian name. It is inheritable, usually by the eldest son, although a few baronetcies can also pass through the female line.)
+Question: Describe media and baronet
+Answer: media is The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.. This relates to baronet which means A hereditary title, below a peerage and senior to most knighthoods, entitling the bearer to the titular prefix "Sir" (for men) or "Dame" (for women) which is used in conjunction with the holder's Christian name. It is inheritable, usually by the eldest son, although a few baronetcies can also pass through the female line..
+
+---
+
+Using these words: axis (An imaginary line around which an object spins (an axis of rotation) or is symmetrically arranged (an axis of symmetry).), dish (A vessel such as a plate for holding or serving food, often flat with a depressed region in the middle.), benevolent (Having a disposition to do good.)
+Question: Explain how axis relates to benevolent
+Answer: axis is An imaginary line around which an object spins (an axis of rotation) or is symmetrically arranged (an axis of symmetry).. This relates to benevolent which means Having a disposition to do good..
+
+---
+
+Using these words: cages (An enclosure made of bars, normally to hold animals.), alkaloid (Any of many organic heterocyclic bases that occur in nature and often have medicinal properties.), bird (A member of the class of animals Aves in the phylum Chordata, characterized by being warm-blooded, having feathers and wings usually capable of flight, and laying eggs.)
+Question: Explain how cages relates to bird
+Answer: cages is An enclosure made of bars, normally to hold animals.. This relates to bird which means A member of the class of animals Aves in the phylum Chordata, characterized by being warm-blooded, having feathers and wings usually capable of flight, and laying eggs..
+
+---
+
+Using these words: none (A person without religious affiliation.), fellow (A colleague or partner.), emission (Something which is emitted or sent out; issue.)
+Question: Explain how none relates to emission
+Answer: none is A person without religious affiliation.. This relates to emission which means Something which is emitted or sent out; issue..
+
+---
+
+Using these words: riff (A repeated instrumental melody line in a song.), legislative (That branch of government which is responsible for making, or having the power to make, a law or laws.), juicy (Having lots of juice.)
+Question: Describe riff and juicy
+Answer: riff is A repeated instrumental melody line in a song.. This relates to juicy which means Having lots of juice..
+
+---
+
+Using these words: yuan (The basic unit of money in China.), medals (A stamped metal disc used as a personal ornament, a charm, or a religious object.), supersonic (An aircraft that can travel at the speed of sound.)
+Question: What is the connection between yuan and medals?
+Answer: yuan is The basic unit of money in China.. This relates to supersonic which means An aircraft that can travel at the speed of sound..
+
+---
+
+Using these words: containing (To hold inside.), started (To begin, commence, initiate.), conversion (The act of converting something or someone.)
+Question: Explain how containing relates to conversion
+Answer: containing is To hold inside.. This relates to conversion which means The act of converting something or someone..
+
+---
+
+Using these words: linear (Having the form of a line; straight or roughly straight; following a direct course.), rapper (One who, or that which, raps or knocks.), tobacco (Any plant of the genus Nicotiana.)
+Question: Explain how linear relates to tobacco
+Answer: linear is Having the form of a line; straight or roughly straight; following a direct course.. This relates to tobacco which means Any plant of the genus Nicotiana..
+
+---
+
+Using these words: emission (Something which is emitted or sent out; issue.), deputies (One appointed as the substitute of another, and empowered to act for them, in their name or their behalf; a substitute in office), chief (A leader or head of a group of people, organisation, etc.)
+Question: Explain how emission relates to chief
+Answer: emission is Something which is emitted or sent out; issue.. This relates to chief which means A leader or head of a group of people, organisation, etc..
+
+---
+
+Complete the phrase: level... → level xp
+
+---
+
+Complete the phrase: xp... → xp level
+
+---
+
+Complete the phrase: level xp... → level xp level
+
+---
+
+Complete the phrase: xp level... → xp level xp
+
+---
+
+Complete the phrase: level xp level... → level xp level xp
+
+---
+
+Complete the phrase: xp level xp... → xp level xp level
+
+---
+
+Complete the phrase: mode... → mode xp
+
+---
+
+Complete the phrase: xp... → xp hints
+
+---
+
+Complete the phrase: mode xp... → mode xp hints
+
+---
+
+Complete the phrase: complete... → complete level
+
+---
+
+Complete the phrase: sql... → sql aws
+
+---
+
+Complete the phrase: aws... → aws versions
+
+---
+
+Complete the phrase: sql aws... → sql aws versions
+
+---
+
+Complete the phrase: humor... → humor tier
+
+---
+
+Complete the phrase: no... → no penalties
+
+---
+
+Complete the phrase: hints... → hints cost
+
+---
+
+Complete the phrase: defeat... → defeat the
+
+---
+
+Complete the phrase: xp hints... → xp hints cost
+
+---
+
+Complete the phrase: mode xp hints... → mode xp hints cost
+
+---
+
+Complete the phrase: nginx... → nginx app
+
+---
+
+Complete the phrase: sample... → sample yaml
+
+---
+
+Complete the phrase: nginx... → nginx latest
+
+---
+
+Complete the phrase: learning... → learning heat
+
+---
+
+Complete the phrase: random... → random event
+
+---
+
+Complete the phrase: as... → as sql
+
+---
+
+Complete the phrase: as sql... → as sql aws
+
+---
+
+Complete the phrase: as sql aws... → as sql aws versions
+
+---
+
+Complete the phrase: comedy... → comedy mode
+
+---
+
+Complete the phrase: hint... → hint tokens
+
+---
+
+Complete the phrase: mode... → mode identical
+
+---
+
+Q: What does flavors mean?
+A: flavors is To add flavoring to something..
+
+---
+
+Q: What does production mean?
+A: production is The act of producing, making or creating something..
+
+---
+
+Q: What does incorporated mean?
+A: incorporated is To include (something) as a part..
+
+---
+
+Q: What does since mean?
+A: since is From a specified time in the past..
+
+---
+
+Q: What does subsidiary mean?
+A: subsidiary is A company owned by a parent company or a holding company, also called daughter company or sister company..
+
+---
+
+Q: What does company mean?
+A: company is A team; a group of people who work together professionally..
+
+---
+
+Q: What does earliest mean?
+A: earliest is At a time in advance of the usual or expected event..
+
+---
+
+Q: What does juicy mean?
+A: juicy is Having lots of juice..
+
+---
+
+Q: What does brand mean?
+A: brand is A conflagration; a flame..
+
+---
+
+Q: What does chewing mean?
+A: chewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed..
+
+---
+
+Q: What does mars mean?
+A: mars is A blemish..
+
+---
+
+Q: What does introduced mean?
+A: introduced is (of people) To cause (someone) to be acquainted (with someone else)..
+
+---
+
+Q: What does fruit mean?
+A: fruit is (often in the plural) In general, a product of plant growth useful to man or animals..
+
+---
+
+Q: What does developed mean?
+A: developed is To change with a specific direction, progress..
+
+---
+
+Q: What does environment mean?
+A: environment is The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Q: What does mission mean?
+A: mission is A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself..
+
+---
+
+Q: What does graphics mean?
+A: graphics is The making of architectural or design drawings..
+
+---
+
+Q: What does playing mean?
+A: playing is To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Q: What does much mean?
+A: much is Large, great..
+
+---
+
+Q: What does fully mean?
+A: fully is In a full manner; without lack or defect..
+
+---
+
+Q: What does contains mean?
+A: contains is To hold inside..
+
+---
+
+Q: What does fantasy mean?
+A: fantasy is That which comes from one's imagination..
+
+---
+
+Q: What does surreal mean?
+A: surreal is Surreal number.
+
+---
+
+Q: What does released mean?
+A: released is To let go (of); to cease to hold or contain..
+
+---
+
+Q: What does japan mean?
+A: japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Q: What does both mean?
+A: both is Each of the two, or of the two kinds..
+
+---
+
+Q: What does futuristic mean?
+A: futuristic is Of technology, a concept, etc, so far advanced as to appear to be from the future..
+
+---
+
+Q: What does tactical mean?
+A: tactical is A combinator of proof tactics..
+
+---
+
+Q: What does well mean?
+A: well is In good health..
+
+---
+
+Q: What does role mean?
+A: role is A character or part played by a performer or actor..
+
+---
+
+Q: What does elements mean?
+A: elements is One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based..
+
+---
+
+Q: What does ones mean?
+A: ones is The digit or figure 1..
+
+---
+
+Q: What does game mean?
+A: game is A playful or competitive activity..
+
+---
+
+Q: What does published mean?
+A: published is To issue (something, such as printed work) for distribution and/or sale..
+
+---
+
+Q: What does front mean?
+A: front is The foremost side of something or the end that faces the direction it normally moves..
+
+---
+
+Q: What does united mean?
+A: united is To bring together as one..
+
+---
+
+Q: What does population mean?
+A: population is The people living within a political or geographical boundary..
+
+---
+
+Q: What does time mean?
+A: time is The inevitable progression into the future with the passing of present and past events..
+
+---
+
+Q: What does borough mean?
+A: borough is A fortified town..
+
+---
+
+Q: What does county mean?
+A: county is The land ruled by a count or a countess..
+
+---
+
+Q: What does advisory mean?
+A: advisory is A warning..
+
+---
+
+Q: What does established mean?
+A: established is To make stable or firm; to confirm..
+
+---
+
+Q: What does building mean?
+A: building is The act or process by which something is built; construction..
+
+---
+
+Q: What does seat mean?
+A: seat is Something to be sat upon..
+
+---
+
+Q: What does unions mean?
+A: unions is The act of uniting or joining two or more things into one..
+
+---
+
+Q: What does committee mean?
+A: committee is A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols..
+
+---
+
+Q: What does composed mean?
+A: composed is To make something by merging parts..
+
+---
+
+Q: What does representatives mean?
+A: representatives is A delegate..
+
+---
+
+Q: What does associations mean?
+A: associations is The act of associating..
+
+---
+
+Q: What does union mean?
+A: union is The act of uniting or joining two or more things into one..
+
+---
+
+Q: What does society mean?
+A: society is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms..
+
+---
+
+Q: What does social mean?
+A: social is A festive gathering to foster introductions..
+
+---
+
+Q: What does consultative mean?
+A: consultative is That gives advice or consultation; advisory..
+
+---
+
+Q: What does economic mean?
+A: economic is Pertaining to an economy..
+
+---
+
+Q: What does employers mean?
+A: employers is A person, firm or other entity which pays for or hires the services of another person..
+
+---
+
+Q: What does assembly mean?
+A: assembly is A set of pieces that work together in unison as a mechanism or device..
+
+---
+
+Q: What does regions mean?
+A: regions is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Q: What does body mean?
+A: body is Physical frame..
+
+---
+
+Q: What does workers mean?
+A: workers is A person who performs labor for a living, especially manual labor..
+
+---
+
+Q: What does shares mean?
+A: shares is A portion of something, especially a portion given or allotted to someone..
+
+---
+
+Q: What does organisations mean?
+A: organisations is The quality of being organized..
+
+---
+
+Q: What does civil mean?
+A: civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Q: What does editor mean?
+A: editor is A person who edits or makes changes to documents..
+
+---
+
+Q: What does sociological mean?
+A: sociological is Of or pertaining to sociology..
+
+---
+
+Q: What does association mean?
+A: association is The act of associating..
+
+---
+
+Q: What does academic mean?
+A: academic is (usually capitalized) A follower of Plato, a Platonist..
+
+---
+
+Q: What does sage mean?
+A: sage is A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher..
+
+---
+
+Q: What does medicine mean?
+A: medicine is A substance which specifically promotes healing when ingested or consumed in some way..
+
+---
+
+Q: What does care mean?
+A: care is Grief, sorrow..
+
+---
+
+Q: What does chief mean?
+A: chief is A leader or head of a group of people, organisation, etc..
+
+---
+
+Q: What does health mean?
+A: health is The state of being free from physical or psychological disease, illness, or malfunction; wellness..
+
+---
+
+Q: What does covers mean?
+A: covers is A lid..
+
+---
+
+Q: What does illness mean?
+A: illness is An instance of a disease or poor health..
+
+---
+
+Q: What does concepts mean?
+A: concepts is An abstract and general idea; an abstraction..
+
+---
+
+Q: What does carr mean?
+A: carr is A bog or marsh; marshy ground, swampland..
+
+---
+
+Q: What does quarterly mean?
+A: quarterly is A periodical publication that appears four times per year..
+
+---
+
+Q: What does peer mean?
+A: peer is A look; a glance..
+
+---
+
+Q: What does previous mean?
+A: previous is An existing criminal record (short for "previous convictions").
+
+---
+
+Q: What does editors mean?
+A: editors is A person who edits or makes changes to documents..
+
+---
+
+Q: What does debut mean?
+A: debut is A performer's first performance to the public, in sport, the arts or some other area..
+
+---
+
+Q: What does awaited mean?
+A: awaited is To wait for..
+
+---
+
+Q: What does professionally mean?
+A: professionally is As a professional; for one's paid career..
+
+---
+
+Q: What does singer mean?
+A: singer is A person who sings, often professionally..
+
+---
+
+Q: What does billboard mean?
+A: billboard is A very large outdoor sign, generally used for advertising..
+
+---
+
+Q: What does artists mean?
+A: artists is A person who creates art..
+
+---
+
+Q: What does titled mean?
+A: titled is To assign a title to; to entitle..
+
+---
+
+Q: What does collaborated mean?
+A: collaborated is To work together with others to achieve a common goal..
+
+---
+
+Q: What does known mean?
+A: known is To perceive the truth or factuality of; to be certain of or that..
+
+---
+
+Q: What does peaked mean?
+A: peaked is Having a peak or peaks..
+
+---
+
+Q: What does park mean?
+A: park is An area of land set aside for environment preservation or recreation..
+
+---
+
+Q: What does later mean?
+A: later is Near the end of a period of time..
+
+---
+
+Q: What does march mean?
+A: march is A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies..
+
+---
+
+Q: What does southeast mean?
+A: southeast is The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE..
+
+---
+
+Q: What does making mean?
+A: making is The act of forming, causing, or constituting; workmanship; construction..
+
+---
+
+Q: What does certified mean?
+A: certified is To attest to (a fact) as the truth..
+
+---
+
+Q: What does rapper mean?
+A: rapper is One who, or that which, raps or knocks..
+
+---
+
+Q: What does tick mean?
+A: tick is A tiny woodland arachnid of the suborder Ixodida..
+
+---
+
+Q: What does august mean?
+A: august is Awe-inspiring, majestic, noble, venerable..
+
+---
+
+Q: What does another mean?
+A: another is An additional one of the same kind..
+
+---
+
+Q: What does studio mean?
+A: studio is An artist’s or photographer’s workshop or the room in which an artist works..
+
+---
+
+Group these words: germanic, sedan, titled, environment, estimated
+
+---
+
+Group these words: cube, cannon, described, came, striped
+
+---
+
+Group these words: academic, contains, committed, first, aria
+
+---
+
+Group these words: control, withdrew, allowed, scenes, synthesis
+
+---
+
+Group these words: sage, regiment, well, society, purchased
+
+---
+
+Group these words: featured, classic, physically, cube, titled
+
+---
+
+Group these words: scenes, plague, flavored, involved, providence
+
+---
+
+Group these words: covered, health, titled, turn, social
+
+---
+
+Group these words: amidst, regions, flavors, seat, time
+
+---
+
+Group these words: green, economic, collaborated, arcana, singer
+
+---
+
+Group these words: arcana, editor, chart, communion, came
+
+---
+
+Group these words: flies, timeline, academic, published, appearing
+
+---
+
+Group these words: circle, digitally, marriage, axis, lodge
+
+---
+
+Group these words: damn, communion, illness, released, chief
+
+---
+
+Group these words: cage, winter, because, continental, predecessors
+
+---
+
+Group these words: size, academic, appearing, euphorbia, actress
+
+---
+
+Group these words: powerful, fooled, park, annually, network
+
+---
+
+Group these words: unsuccessful, isolated, consists, health, wire
+
+---
+
+Group these words: protest, slower, metro, spanning, genres
+
+---
+
+Group these words: piper, started, amen, foreign, titular

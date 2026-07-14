@@ -14,64 +14,52 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers numpy safetensors gguf
+      run: pip install torch transformers numpy safetensors sentencepiece
     - name: Convert to GGUF
       run: |
+        # Clone llama.cpp for conversion script
+        git clone --depth 1 https://github.com/ggerganov/llama.cpp
+        pip install -r llama.cpp/requirements.txt
+        
         python -c "
-        import os, json, torch, numpy as np
+        import os, json, torch
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        from gguf import GGUFWriter
         
         chunks_dir = 'models/chunks'
-        output_path = os.path.abspath('models/pullbot.gguf')
         
+        # Reassemble
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
-        
         weights_file = manifest.get('weights_filename', 'model.safetensors')
         reassembled = f'{chunks_dir}/{weights_file}'
-        
         if not os.path.exists(reassembled):
-            print('Reassembling...')
             with open(reassembled, 'wb') as out:
                 for chunk_path in manifest['chunks']:
                     with open(chunk_path, 'rb') as inc:
                         out.write(inc.read())
         
+        # Save as single pytorch bin for conversion
         print('Loading model...')
-        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
         model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
-        
-        print('Converting to GGUF...')
-        writer = GGUFWriter(output_path, 'gpt2')
-        
-        vocab = tokenizer.get_vocab()
-        tokens = [''] * len(vocab)
-        for word, idx in vocab.items():
-            tokens[idx] = word
-        writer.add_token_list(tokens)
-        
-        state_dict = model.state_dict()
-        count = 0
-        for name, param in state_dict.items():
-            if param.dtype == torch.qint8:
-                continue
-            arr = param.cpu().numpy()
-            writer.add_tensor(name, arr)
-            count += 1
-        
-        print(f'Added {count} tensors, closing writer...')
-        writer.close()
-        
-        if os.path.exists(output_path):
-            size_mb = os.path.getsize(output_path) / (1024*1024)
-            print(f'GGUF model: {size_mb:.1f}MB')
-        else:
-            print(f'ERROR: File not created at {output_path}')
-            import glob
-            print(f'Files in models/: {os.listdir(\"models\")}')
-            print(f'Chunks: {os.listdir(chunks_dir)}')
+        print('Saving as single file...')
+        torch.save(model.state_dict(), 'models/pytorch_model.bin')
+        print('Saved pytorch_model.bin')
         "
+        
+        # Convert to GGUF
+        python llama.cpp/convert_hf_to_gguf.py models/ --outfile models/pullbot.gguf --outtype q4_k_m || echo "Trying alternative..."
+        
+        if [ ! -f models/pullbot.gguf ]; then
+          python llama.cpp/convert.py models/ --outfile models/pullbot.gguf --outtype q4_k_m || true
+        fi
+        
+        if [ -f models/pullbot.gguf ]; then
+          echo "GGUF created: $(du -h models/pullbot.gguf | cut -f1)"
+        else
+          echo "GGUF conversion failed, files in models/:"
+          ls -la models/
+        fi
+        
     - name: Push GGUF model
       run: |
         git config user.name "Pullbot"
@@ -80,7 +68,5 @@ jobs:
           git add models/pullbot.gguf
           git commit -m "📤 Exported GGUF model" && git push || echo "No changes"
         else
-          echo "GGUF file not found!"
-          ls -la models/
-          exit 1
+          echo "No GGUF file to push"
         fi

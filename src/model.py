@@ -1,10 +1,6 @@
 """
-Pullbot Model - FULL FINE-TUNING + ACTUAL SHRINKING + COMPACT BINARY + ONNX
-- Pruning actually shrinks layers (not just zeroing)
-- Exports compact binary format (not CSV)
-- Streaming chunking
-- ONNX export for deployment
-- RAG-ready: knowledge separate from generation
+Pullbot Model - FULL FINE-TUNING + SMART PRUNING + QUANTIZATION + ONNX
+Smart prune redistributes small weights to similar neurons instead of deleting.
 """
 
 import os
@@ -172,13 +168,9 @@ class PullbotModel:
             num_train_epochs=config['training']['epochs'],
             per_device_train_batch_size=config['training']['batch_size'],
             gradient_accumulation_steps=4,
-            save_steps=500,
-            save_total_limit=3,
-            logging_steps=50,
+            save_steps=500, save_total_limit=3, logging_steps=50,
             learning_rate=config['training']['learning_rate'],
-            warmup_steps=50,
-            remove_unused_columns=False,
-            dataloader_num_workers=0,
+            warmup_steps=50, remove_unused_columns=False, dataloader_num_workers=0,
         )
         trainer = Trainer(
             model=self.model, args=training_args, train_dataset=dataset,
@@ -193,55 +185,113 @@ class PullbotModel:
         return True
     
     # ============================================
-    # ACTUAL SHRINKING PRUNING (removes neurons)
+    # SMART PRUNE - redistributes, doesn't delete
+    # ============================================
+    
+    def smart_prune(self, target_sparsity=0.5):
+        """Prune by redistributing small weights to similar large weights.
+        Instead of deleting weak weights, merges them into the strongest similar neuron."""
+        print("\n" + "=" * 50)
+        print(f"🧠 SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
+        print("=" * 50)
+        
+        total_redistributed = 0
+        total_weights = 0
+        
+        for name, module in self.model.named_modules():
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
+                weight = module.weight.data.float()
+                total_weights += weight.numel()
+                
+                for row_idx in range(weight.shape[0]):
+                    row = weight[row_idx]
+                    abs_row = row.abs()
+                    
+                    if abs_row.sum() == 0:
+                        continue
+                    
+                    k = max(1, int((1 - target_sparsity) * len(row)))
+                    if k >= len(row):
+                        continue
+                    
+                    threshold = torch.kthvalue(abs_row, len(row) - k).values
+                    strong_mask = abs_row >= threshold
+                    weak_mask = abs_row < threshold
+                    
+                    strong_idx = torch.where(strong_mask)[0]
+                    weak_idx = torch.where(weak_mask)[0]
+                    
+                    if len(strong_idx) == 0 or len(weak_idx) == 0:
+                        continue
+                    
+                    for wi in weak_idx:
+                        weak_val = row[wi]
+                        if abs(weak_val) < 0.00001:
+                            row[wi] = 0
+                            continue
+                        
+                        # Find best strong neuron to merge into
+                        best_si = strong_idx[0]
+                        best_sim = -999
+                        
+                        for si in strong_idx[:min(20, len(strong_idx))]:
+                            sign_match = 1 if (weak_val * row[si]) > 0 else -1
+                            sim = sign_match * (1 - min(abs(weak_val - row[si].abs()), 1.0))
+                            if sim > best_sim:
+                                best_sim = sim
+                                best_si = si
+                        
+                        # Redistribute 60% of weak weight to strong
+                        row[best_si] += weak_val * 0.6
+                        row[wi] = 0
+                        total_redistributed += 1
+                
+                module.weight.data = weight.to(module.weight.dtype)
+        
+        sparsity = (1 - total_redistributed / max(total_weights, 1)) * 100
+        print(f"   Redistributed: {total_redistributed:,} weights")
+        print(f"   Total weights: {total_weights:,}")
+        print(f"   Knowledge preserved in surviving neurons!")
+        return sparsity
+    
+    # ============================================
+    # SHRINK (remove zeroed neurons after smart prune)
     # ============================================
     
     def shrink_model(self, target_sparsity=0.5):
-        """Actually shrink layers by removing unimportant neurons"""
-        print("\n" + "=" * 50)
-        print(f"✂️ SHRINKING MODEL ({target_sparsity*100:.0f}%)")
-        print("=" * 50)
-        
+        """Remove neurons that are now all zeros after smart prune"""
+        print(f"✂️ SHRINKING (removing zero neurons)")
         total_before = sum(p.numel() for p in self.model.parameters())
-        layers_shrunk = 0
         
         for name, module in list(self.model.named_modules()):
-            if isinstance(module, nn.Linear) and module.weight.shape[0] > 100:
-                weight = module.weight.data.float()
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 50:
+                weight = module.weight.data
+                # Find rows that are all zeros
+                active_rows = weight.abs().sum(dim=1) > 0.0001
                 
-                # Score each output neuron by its total absolute weight
-                importance = weight.abs().sum(dim=1)
-                k = max(10, int((1 - target_sparsity) * importance.numel()))
+                if active_rows.sum() < weight.shape[0] * 0.3:
+                    continue  # Don't shrink if too many are active
                 
-                if k >= importance.numel():
-                    continue
-                
-                threshold = torch.kthvalue(importance, importance.numel() - k).values
-                keep_mask = importance >= threshold
-                
-                if keep_mask.sum() == 0:
-                    continue
+                if active_rows.sum() == weight.shape[0]:
+                    continue  # Nothing to shrink
                 
                 # Create smaller layer
-                new_out = keep_mask.sum().item()
+                new_out = active_rows.sum().item()
                 new_linear = nn.Linear(weight.shape[1], new_out, bias=module.bias is not None)
-                new_linear.weight.data = weight[keep_mask].clone()
+                new_linear.weight.data = weight[active_rows].clone()
                 if module.bias is not None:
-                    new_linear.bias.data = module.bias.data[keep_mask].clone()
+                    new_linear.bias.data = module.bias.data[active_rows].clone()
                 
-                # Replace in model
                 parent_name = '.'.join(name.split('.')[:-1])
                 attr_name = name.split('.')[-1]
                 if parent_name:
                     parent = dict(self.model.named_modules()).get(parent_name)
                     if parent:
                         setattr(parent, attr_name, new_linear)
-                        layers_shrunk += 1
         
         total_after = sum(p.numel() for p in self.model.parameters())
         reduction = (1 - total_after/total_before) * 100
-        print(f"   Layers shrunk: {layers_shrunk}")
-        print(f"   Params: {total_before:,} → {total_after:,} ({reduction:.1f}% smaller)")
+        print(f"   {total_before:,} → {total_after:,} params ({reduction:.1f}% smaller)")
         return reduction
     
     # ============================================
@@ -249,81 +299,18 @@ class PullbotModel:
     # ============================================
     
     def quantize_model(self):
-        print("\n" + "=" * 50)
-        print("🔧 QUANTIZING TO 8-BIT")
-        print("=" * 50)
+        print("\n🔧 QUANTIZING TO 8-BIT")
         try:
             self.model = torch.quantization.quantize_dynamic(
                 self.model, {torch.nn.Linear}, dtype=torch.qint8
             )
             total_bytes = sum(p.numel() for p in self.model.parameters() if p.dtype == torch.qint8)
             total_bytes += sum(p.numel() * 4 for p in self.model.parameters() if p.dtype != torch.qint8)
-            size_mb = total_bytes / (1024 * 1024)
-            print(f"   Quantized size: {size_mb:.1f}MB")
-            return size_mb
+            print(f"   Size: {total_bytes/(1024*1024):.1f}MB")
+            return total_bytes/(1024*1024)
         except Exception as e:
             print(f"   ⚠️ Failed: {e}")
             return None
-    
-    # ============================================
-    # COMPACT BINARY EXPORT (not CSV)
-    # ============================================
-    
-    def export_compact(self, output_path=None):
-        """Export weights as compact binary with only non-zero values"""
-        if output_path is None:
-            output_path = os.path.join(REPO_ROOT, "models", "pullbot.bin")
-        
-        print("\n" + "=" * 50)
-        print("📦 EXPORTING COMPACT BINARY")
-        print("=" * 50)
-        
-        with open(output_path, 'wb') as f:
-            # Header
-            f.write(b'PULLBOT')  # Magic number
-            f.write(struct.pack('I', 1))  # Version
-            
-            layer_count = 0
-            for name, param in self.model.named_parameters():
-                if param.dim() >= 2:
-                    layer_count += 1
-            
-            f.write(struct.pack('I', layer_count))
-            
-            for name, param in self.model.named_parameters():
-                if param.dim() < 2:
-                    continue
-                
-                weights = param.data.cpu().numpy()
-                
-                # Only non-zero
-                mask = np.abs(weights) > 0.0001
-                indices = np.where(mask)
-                values = weights[mask]
-                
-                name_bytes = name.encode()
-                f.write(struct.pack('I', len(name_bytes)))
-                f.write(name_bytes)
-                f.write(struct.pack('II', *weights.shape))
-                f.write(struct.pack('I', len(values)))
-                
-                # Write sparse indices and values
-                for r, c, v in zip(indices[0], indices[1], values):
-                    f.write(struct.pack('IIf', int(r), int(c), float(v)))
-        
-        size_mb = os.path.getsize(output_path) / (1024 * 1024)
-        
-        # Count total non-zero
-        non_zero = sum(
-            (np.abs(p.data.cpu().numpy()) > 0.0001).sum()
-            for p in self.model.parameters() if p.dim() >= 2
-        )
-        total = sum(p.numel() for p in self.model.parameters() if p.dim() >= 2)
-        sparsity = (1 - non_zero/total) * 100 if total > 0 else 0
-        
-        print(f"   ✅ Compact binary: {size_mb:.1f}MB")
-        print(f"   Non-zero weights: {non_zero:,} / {total:,} ({sparsity:.1f}% sparse)")
-        return output_path
     
     # ============================================
     # ONNX EXPORT
@@ -332,9 +319,7 @@ class PullbotModel:
     def export_to_onnx(self, output_path=None):
         if output_path is None:
             output_path = os.path.join(REPO_ROOT, "models", "pullbot.onnx")
-        print("\n" + "=" * 50)
-        print("📤 EXPORTING TO ONNX")
-        print("=" * 50)
+        print("\n📤 EXPORTING TO ONNX")
         try:
             self.model.eval()
             self.model.to('cpu')
@@ -351,8 +336,7 @@ class PullbotModel:
                 },
                 opset_version=14, do_constant_folding=True
             )
-            size_mb = os.path.getsize(output_path) / (1024 * 1024)
-            print(f"   ✅ ONNX: {size_mb:.1f}MB")
+            print(f"   ✅ ONNX: {os.path.getsize(output_path)/(1024*1024):.1f}MB")
             return output_path
         except:
             try:
@@ -363,8 +347,7 @@ class PullbotModel:
                     dynamic_axes={'input_ids': {0: 'batch', 1: 'sequence'}},
                     opset_version=14, do_constant_folding=True
                 )
-                size_mb = os.path.getsize(output_path) / (1024 * 1024)
-                print(f"   ✅ ONNX (no mask): {size_mb:.1f}MB")
+                print(f"   ✅ ONNX: {os.path.getsize(output_path)/(1024*1024):.1f}MB")
                 return output_path
             except Exception as e:
                 print(f"   ❌ Failed: {e}")
@@ -421,7 +404,7 @@ class PullbotModel:
         
         total_size = os.path.getsize(weights_path)
         chunks = []
-        print(f"\n🔪 Streaming chunks ({CHUNK_SIZE_MB}MB each)...")
+        print(f"\n🔪 Streaming chunks...")
         with open(weights_path, 'rb') as f:
             chunk_idx = 0
             while True:
@@ -479,48 +462,40 @@ if __name__ == '__main__':
                     resume = sys.argv[idx + 1]
             if bot.train(resume_from_checkpoint=resume):
                 before = bot.get_model_size_estimate()
-                print(f"\n📊 Before: {before['total_params']:,} params, {before['estimated_ram_mb']:.0f}MB RAM")
-                
-                # Shrink progressively
-                for sp in [0.3, 0.5, 0.7]:
-                    bot.shrink_model(target_sparsity=sp)
-                    after = bot.get_model_size_estimate()
-                    print(f"   After {sp*100:.0f}%: {after['total_params']:,} params, {after['estimated_ram_mb']:.0f}MB RAM")
-                
+                print(f"\n📊 Before: {before['total_params']:,} params")
+                bot.smart_prune(target_sparsity=0.5)
+                bot.shrink_model(target_sparsity=0.5)
                 bot.quantize_model()
                 final = bot.get_model_size_estimate()
-                print(f"\n📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
+                print(f"📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
-                bot.export_compact()
                 bot.export_to_onnx()
-                print("\n🎉 TRAINED, SHRUNK, QUANTIZED & EXPORTED!")
+                print("\n🎉 TRAINED + SMART PRUNED + EXPORTED!")
         
-        elif cmd == 'shrink':
+        elif cmd == 'smart-prune':
             sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
+            bot.smart_prune(target_sparsity=sp)
             bot.shrink_model(target_sparsity=sp)
             bot.save_and_chunk()
         
-        elif cmd == 'quantize':
-            bot.quantize_model()
-            bot.save_and_chunk()
-        
         elif cmd == 'optimize':
-            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.7
+            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
             before = bot.get_model_size_estimate()
             print(f"\n📊 Before: {before['total_params']:,} params")
+            bot.smart_prune(target_sparsity=sp)
             bot.shrink_model(target_sparsity=sp)
             bot.quantize_model()
             final = bot.get_model_size_estimate()
             print(f"📊 After: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
             bot.save_and_chunk()
-            bot.export_compact()
             bot.export_to_onnx()
+        
+        elif cmd == 'quantize':
+            bot.quantize_model()
+            bot.save_and_chunk()
         
         elif cmd == 'onnx':
             bot.export_to_onnx()
-        
-        elif cmd == 'compact':
-            bot.export_compact()
         
         elif cmd == 'size':
             s = bot.get_model_size_estimate()
@@ -530,6 +505,6 @@ if __name__ == '__main__':
             bot.save_and_chunk()
         
         else:
-            print("Commands: train, shrink [0.3-0.9], quantize, optimize, onnx, compact, size, chunk")
+            print("Commands: train, smart-prune [0.3-0.7], optimize, quantize, onnx, size, chunk")
     else:
-        print("Commands: train, shrink [0.3-0.9], quantize, optimize, onnx, compact, size, chunk")
+        print("Commands: train, smart-prune [0.3-0.7], optimize, quantize, onnx, size, chunk")

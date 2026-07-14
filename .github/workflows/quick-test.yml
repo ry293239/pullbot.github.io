@@ -1,12 +1,13 @@
-name: Quick Test Train
+
+name: Quick Train
 
 on:
   workflow_dispatch:
 
 jobs:
-  quick-test:
+  quick-train:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     
     steps:
     - uses: actions/checkout@v4
@@ -16,14 +17,68 @@ jobs:
         python-version: '3.10'
         
     - name: Install dependencies
-      run: pip install torch transformers datasets accelerate
+      run: pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml
         
-    - name: Quick train
-      run: python src/quick_train.py
+    - name: Scrape fresh data
+      run: python src/scrape.py
       
-    - name: Cleanup large files
+    - name: Clean corpus
+      run: python src/clean_corpus.py
+      
+    - name: Nuke old knowledge store
+      run: |
+        echo "Deleting old knowledge store..."
+        rm -f knowledge/store.json
+        echo "[]" > knowledge/store.json
+        echo "Knowledge store reset to empty"
+      
+    - name: Build clean knowledge
+      run: python src/store.py build
+      
+    - name: Quick train
+      run: |
+        if [ -f data/processed/corpus.txt ]; then
+          CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
+          echo "Corpus size: $CORPUS_SIZE chars"
+          if [ "$CORPUS_SIZE" -gt 500 ]; then
+            python src/model.py optimize 0.7
+            echo "TRAINED=true" >> $GITHUB_ENV
+          else
+            echo "Corpus too small, skipping training"
+            echo "TRAINED=false" >> $GITHUB_ENV
+          fi
+        else
+          echo "No corpus found"
+          echo "TRAINED=false" >> $GITHUB_ENV
+        fi
+      
+    - name: Update version
+      run: |
+        mkdir -p data/knowledge
+        CHUNKS=0
+        CORPUS_KB=0
+        if [ -f knowledge/store.json ]; then
+          CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))")
+        fi
+        if [ -f data/processed/corpus.txt ]; then
+          CORPUS_KB=$(( $(wc -c < data/processed/corpus.txt) / 1024 ))
+        fi
+        cat > data/knowledge/version.json << ENDJSON
+        {
+          "version": "2.0-vocab",
+          "updated": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
+          "knowledge_chunks": ${CHUNKS},
+          "corpus_kb": ${CORPUS_KB},
+          "model_trained": $( [ "$TRAINED" = "true" ] && echo "true" || echo "false" ),
+          "training_type": "vocabulary_optimized"
+        }
+        ENDJSON
+        echo "Version: 2.0-vocab"
+        
+    - name: Remove large files
       run: |
         rm -rf models/checkpoints/
+        rm -rf models/temp_trained/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
         
@@ -31,7 +86,14 @@ jobs:
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        git add models/chunks/ data/ knowledge/
-        git diff --staged --quiet || git commit -m "Quick test train"
-        git pull --rebase
-        git push
+        git add data/ knowledge/ models/chunks/ models/pullbot.onnx models/pullbot.bin models/last_train.json 2>/dev/null || true
+        git add src/ config.yaml requirements.txt .github/ 2>/dev/null || true
+        if git diff --staged --quiet; then
+          echo "No changes"
+        else
+          git commit -m "Quick train: vocabulary corpus + clean knowledge + optimized model"
+          for i in 1 2 3; do
+            git pull --rebase && git push && break
+            sleep 5
+          done
+        fi

@@ -1,57 +1,81 @@
 """
-Pullbot API - ONNX Runtime
-Math is deterministic. Everything else: let the model cook.
+Pullbot API - PyTorch Direct
+Loads model chunks, generates real text. No more token IDs.
 """
 
-import os, json, requests, numpy as np, re, random
+import os, json, requests, re, random, glob, torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-import onnxruntime as ort
 
 app = Flask(__name__)
 CORS(app)
 
 GITHUB = "https://raw.githubusercontent.com/pullbot-ai/pullbot-ai.github.io/main"
-MODEL_PATH = "/tmp/pullbot.onnx"
-session = None
+MODEL_DIR = "/tmp/pullbot_model"
+model = None
+tokenizer = None
 
-def download_model():
-    url = f"{GITHUB}/models/pullbot.onnx"
-    print(f"Downloading ONNX model...")
-    r = requests.get(url)
-    if r.status_code == 200:
-        with open(MODEL_PATH, 'wb') as f:
+def download_chunks():
+    """Download model chunks from GitHub"""
+    os.makedirs(MODEL_DIR, exist_ok=True)
+    
+    # Download manifest
+    r = requests.get(f"{GITHUB}/models/chunks/manifest.json")
+    manifest = r.json()
+    
+    # Download chunks
+    for chunk_path in manifest.get('chunks', []):
+        fname = os.path.basename(chunk_path)
+        url = f"{GITHUB}/{chunk_path}"
+        r = requests.get(url)
+        with open(os.path.join(MODEL_DIR, fname), 'wb') as f:
             f.write(r.content)
-        print(f"   {len(r.content)/(1024*1024):.1f}MB")
-        return True
-    print(f"   Model not found (status {r.status_code})")
-    return False
+    
+    # Download config files
+    for cfg in ['config.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt']:
+        try:
+            r = requests.get(f"{GITHUB}/models/chunks/{cfg}")
+            with open(os.path.join(MODEL_DIR, cfg), 'wb') as f:
+                f.write(r.content)
+        except:
+            pass
+    
+    # Reassemble
+    weights_file = manifest.get('weights_filename', 'model.safetensors')
+    with open(os.path.join(MODEL_DIR, weights_file), 'wb') as out:
+        for chunk_path in manifest.get('chunks', []):
+            with open(os.path.join(MODEL_DIR, os.path.basename(chunk_path)), 'rb') as inc:
+                out.write(inc.read())
+    
+    return True
 
 def setup():
-    global session
+    global model, tokenizer
     print("=" * 50)
     print("PULLBOT API - FREE REIGN MODE")
     print("=" * 50)
-    if download_model():
-        print("Loading ONNX model...")
-        session = ort.InferenceSession(MODEL_PATH)
-        print("Ready! Model is free to say whatever it wants.")
-    else:
-        print("Running without model.")
-
-def simple_tokenize(text, max_len=128):
-    tokens = []
-    for char in text[-max_len * 4:]:
-        tokens.append(hash(char) % 50257)
-    tokens = tokens[:max_len]
-    while len(tokens) < max_len:
-        tokens.append(0)
-    return tokens
+    
+    try:
+        print("Downloading model...")
+        download_chunks()
+        
+        print("Loading model...")
+        tokenizer = AutoTokenizer.from_pretrained(MODEL_DIR)
+        tokenizer.pad_token = tokenizer.eos_token
+        model = AutoModelForCausalLM.from_pretrained(
+            MODEL_DIR, torch_dtype=torch.float32, low_cpu_mem_usage=True
+        )
+        model.eval()
+        print(f"Ready! {sum(p.numel() for p in model.parameters()):,} params")
+    except Exception as e:
+        print(f"Could not load model: {e}")
+        print("Running in math-only mode")
 
 def generate_response(question):
     q = question.strip()
     
-    # === MATH (deterministic - not AI) ===
+    # === MATH ===
     math_match = re.search(r'(\d+\.?\d*)\s*([+\-*/])\s*(\d+\.?\d*)', q)
     if math_match:
         a = float(math_match.group(1))
@@ -62,76 +86,71 @@ def generate_response(question):
             elif op == '-': result = a - b
             elif op == '*': result = a * b
             elif op == '/': result = a / b if b != 0 else 'undefined'
-            else: result = '?'
             if isinstance(result, float) and result == int(result):
                 result = int(result)
             return {'question': question, 'response': f"{a} {op} {b} = {result}", 'source': 'math'}
         except:
             pass
     
-    # === ONNX MODEL (free reign) ===
-    if session:
+    # === MODEL GENERATION ===
+    if model and tokenizer:
         try:
             prompt = f"Question: {q}\n\nAnswer:"
-            tokens = simple_tokenize(prompt, max_len=128)
-            input_ids = np.array([tokens], dtype=np.int64)
-            mask = np.ones((1, len(tokens)), dtype=np.int64)
+            inputs = tokenizer(prompt, return_tensors="pt", truncation=True, max_length=128)
             
-            outputs = session.run(None, {
-                'input_ids': input_ids,
-                'attention_mask': mask
-            })
+            with torch.no_grad():
+                outputs = model.generate(
+                    input_ids=inputs['input_ids'],
+                    attention_mask=inputs['attention_mask'],
+                    max_new_tokens=60,
+                    temperature=0.9,
+                    do_sample=True,
+                    top_p=0.9,
+                    top_k=50,
+                    pad_token_id=tokenizer.eos_token_id,
+                    repetition_penalty=1.1
+                )
             
-            logits = outputs[0][0, -1, :]
-            top_k = 50
-            top_indices = np.argpartition(logits, -top_k)[-top_k:]
-            top_logits = logits[top_indices]
-            probs = np.exp(top_logits - np.max(top_logits))
-            probs = probs / np.sum(probs)
-            chosen = int(np.random.choice(top_indices, p=probs))
+            response = tokenizer.decode(
+                outputs[0][inputs['input_ids'].shape[1]:],
+                skip_special_tokens=True
+            ).strip()
             
-            return {
-                'question': question,
-                'response': f"[Model says: token {chosen}]",
-                'source': 'model_raw'
-            }
+            if response and len(response) > 2:
+                return {'question': question, 'response': response, 'source': 'model'}
         except Exception as e:
-            print(f"Model error: {e}")
+            print(f"Generation error: {e}")
     
-    # === NO MODEL - FREE REIGN GUESS ===
-    responses = [
-        f"I'm thinking about '{q}'. My neural network is processing this...",
-        f"Hmm, '{q}' is something I'm still forming thoughts about.",
-        f"I don't have a definite answer for '{q}' yet. My brain is still wiring itself!",
-        f"That's a question that makes my circuits buzz. I'm learning every day.",
-        f"I'd need more training data to answer '{q}' properly. But I'm curious!",
-        f"Interesting question! My vocabulary is growing from Wikipedia. Soon I'll connect the dots on '{q}'.",
-        f"I wish I could give you a perfect answer about '{q}'. My knowledge is still emerging.",
+    # === MODEL FAILED - TRY ANYWAY ===
+    words = [w for w in q.split() if len(w) > 3]
+    topic = words[-1] if words else q
+    attempts = [
+        f"I think {topic} relates to things I've been learning about.",
+        f"Hmm, {topic}... My circuits are trying to connect the dots on this one.",
+        f"I'm forming thoughts about {topic}. Give me a moment to process.",
+        f"That thing about {topic} — I might have read something related in my training.",
+        f"{topic.title()}... I feel like I almost know something about this.",
     ]
-    return {
-        'question': question,
-        'response': random.choice(responses),
-        'source': 'free_reign'
-    }
+    return {'question': question, 'response': random.choice(attempts), 'source': 'trying'}
 
 @app.route('/')
 def home():
     return jsonify({
         'name': 'Pullbot API',
         'status': 'online',
-        'model': 'onnx' if session else 'free_reign',
-        'version': '2.1-free-reign'
+        'model': 'pytorch' if model else 'math-only',
+        'version': '3.0-free-reign'
     })
 
 @app.route('/health')
 def health():
-    return jsonify({'status': 'ok'})
+    return jsonify({'status': 'ok', 'model_loaded': model is not None})
 
 @app.route('/ask')
 def ask():
     q = request.args.get('q', '')
     if not q:
-        return jsonify({'error': 'No question. Use ?q=your+question'}), 400
+        return jsonify({'error': 'No question'}), 400
     return jsonify(generate_response(q))
 
 setup()

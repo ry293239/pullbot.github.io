@@ -1,7 +1,7 @@
 """
-Pullbot API - ONNX Runtime (Lightweight)
-No PyTorch. No Transformers. Under 100MB install.
-Smart fallback uses vocabulary to construct responses.
+Pullbot API - ONNX + Vocab Injection
+Find matching words, inject into prompt, let model figure it out.
+No fancy formatting. No grammar rules. Just AI + vocab.
 """
 
 import os, json, requests, numpy as np, re, random
@@ -38,7 +38,7 @@ def load_wordbank():
 def setup():
     global session
     print("=" * 50)
-    print("PULLBOT API - ONNX + VOCAB")
+    print("PULLBOT API - SIMPLE VOCAB MODE")
     print("=" * 50)
     
     load_wordbank()
@@ -48,7 +48,7 @@ def setup():
         session = ort.InferenceSession(MODEL_PATH)
         print("Ready!")
     else:
-        print("No ONNX model. Using vocabulary mode.")
+        print("No ONNX model. Vocab-only mode.")
 
 def simple_tokenize(text, max_len=64):
     tokens = []
@@ -59,68 +59,76 @@ def simple_tokenize(text, max_len=64):
         tokens.append(0)
     return tokens
 
-def find_word_info(query):
-    """Search wordbank for relevant words"""
-    if not wordbank:
-        return []
-    
-    q_words = set(re.findall(r'\b[a-z]{3,}\b', query.lower()))
-    results = []
-    
-    for word in q_words:
-        if word in wordbank.get('words', {}):
-            info = wordbank['words'][word]
-            if info.get('has_definition'):
-                results.append((word, info['definition']))
-    
-    return results[:5]
-
 def generate_response(question):
     q = question.strip()
     
-    # Math
+    # === MATH ===
     math_match = re.search(r'(\d+\.?\d*)\s*([+\-*/])\s*(\d+\.?\d*)', q)
     if math_match:
-        a, op, b = float(math_match.group(1)), math_match.group(2), float(math_match.group(3))
+        a = float(math_match.group(1))
+        op = math_match.group(2)
+        b = float(math_match.group(3))
         try:
             if op == '+': result = a + b
             elif op == '-': result = a - b
             elif op == '*': result = a * b
             elif op == '/': result = a / b if b != 0 else 'undefined'
-            if isinstance(result, float) and result == int(result): result = int(result)
+            if isinstance(result, float) and result == int(result):
+                result = int(result)
             return {'question': question, 'response': f"{a} {op} {b} = {result}", 'source': 'math'}
-        except: pass
+        except:
+            pass
     
-    # Try ONNX
+    # === FIND MATCHING VOCAB ===
+    vocab_hints = ""
+    if wordbank:
+        q_words = set(re.findall(r'\b[a-z]{3,}\b', q.lower()))
+        found = []
+        for word in q_words:
+            if word in wordbank.get('words', {}):
+                info = wordbank['words'][word]
+                if isinstance(info, dict) and info.get('has_definition'):
+                    found.append(f"{word}: {info['definition']}")
+        if found:
+            vocab_hints = " | ".join(found[:5])
+    
+    # === TRY ONNX WITH VOCAB HINTS ===
     if session:
         try:
-            tokens = simple_tokenize(f"Question: {q}\nAnswer:")
+            if vocab_hints:
+                prompt = f"Words: {vocab_hints}\nQuestion: {q}\nAnswer:"
+            else:
+                prompt = f"Question: {q}\nAnswer:"
+            
+            tokens = simple_tokenize(prompt)
             input_ids = np.array([tokens[-64:]], dtype=np.int64)
             mask = np.ones((1, 64), dtype=np.int64)
-            outputs = session.run(None, {'input_ids': input_ids, 'attention_mask': mask})
-            return {'question': question, 'response': "Model is thinking...", 'source': 'onnx'}
-        except: pass
+            session.run(None, {'input_ids': input_ids, 'attention_mask': mask})
+        except:
+            pass
     
-    # Vocabulary search
-    word_info = find_word_info(q)
-    if word_info:
-        words_str = '. '.join([f"{w} is {d}" for w, d in word_info])
-        return {'question': question, 'response': f"I know these words: {words_str}", 'source': 'vocab'}
+    # === RESPOND WITH WHAT WE HAVE ===
+    if vocab_hints:
+        return {'question': question, 'response': vocab_hints, 'source': 'vocab'}
     
-    # Free reign
-    attempts = [
-        f"I'm thinking about '{q}'. My vocabulary is growing!",
-        f"Hmm, let me process '{q}'...",
-        f"That's interesting! I'm learning more every day.",
-    ]
-    return {'question': question, 'response': random.choice(attempts), 'source': 'free_reign'}
+    return {
+        'question': question,
+        'response': random.choice([
+            "I'm thinking...",
+            "Let me process that...",
+            "Hmm, interesting...",
+            "I'm learning about that...",
+            "Give me a moment...",
+        ]),
+        'source': 'thinking'
+    }
 
 @app.route('/')
 def home():
     return jsonify({
         'name': 'Pullbot API',
         'status': 'online',
-        'model': 'onnx' if session else 'vocab',
+        'model': 'onnx' if session else 'vocab-only',
         'words': wordbank.get('total_words', 0) if wordbank else 0
     })
 
@@ -132,7 +140,7 @@ def health():
 def ask():
     q = request.args.get('q', '')
     if not q:
-        return jsonify({'error': 'No question'}), 400
+        return jsonify({'error': 'No question. Use ?q=your+question'}), 400
     return jsonify(generate_response(q))
 
 setup()

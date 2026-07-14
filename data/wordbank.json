@@ -1,5 +1,6091 @@
 {
-  "words": {},
-  "total_articles": 0,
-  "total_words": 0
+  "words": {
+    "flavors": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "To add flavoring to something."
+    },
+    "production": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "The act of producing, making or creating something."
+    },
+    "gum": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "(often in the plural) The flesh around the teeth."
+    },
+    "incorporated": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "To include (something) as a part."
+    },
+    "american": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": false,
+      "definition": ""
+    },
+    "the": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives."
+    },
+    "since": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "From a specified time in the past."
+    },
+    "was": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": false,
+      "definition": ""
+    },
+    "subsidiary": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A company owned by a parent company or a holding company, also called daughter company or sister company."
+    },
+    "company": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A team; a group of people who work together professionally."
+    },
+    "earliest": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "At a time in advance of the usual or expected event."
+    },
+    "been": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey."
+    },
+    "juicy": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "Having lots of juice."
+    },
+    "brand": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A conflagration; a flame."
+    },
+    "chewing": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed."
+    },
+    "has": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "To possess, own."
+    },
+    "mars": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A blemish."
+    },
+    "still": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A period of calm or silence."
+    },
+    "made": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "A grub or maggot."
+    },
+    "introduced": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "(of people) To cause (someone) to be acquainted (with someone else)."
+    },
+    "that": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "Something being indicated that is there; one of those."
+    },
+    "fruit": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "(often in the plural) In general, a product of plant growth useful to man or animals."
+    },
+    "and": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": true,
+      "definition": "In rhythm, the second half of a divided beat."
+    },
+    "wrigley": {
+      "first_seen": "Juicy Fruit",
+      "has_definition": false,
+      "definition": ""
+    },
+    "developed": {
+      "first_seen": "Volfoss",
+      "has_definition": true,
+      "definition": "To change with a specific direction, progress."
+    },
+    "environment": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mission": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "february": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "graphics": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "namco": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "playing": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "much": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fully": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "contains": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fantasy": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "surreal": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "for": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "released": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "japan": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "both": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "playstation": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "futuristic": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tactical": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "like": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "well": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "its": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "role": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "elements": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ones": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "game": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "published": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "volfoss": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "front": {
+      "first_seen": "Volfoss",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bethany": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "united": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "states": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "census": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wayne": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "population": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "time": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pennsylvania": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "borough": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "county": {
+      "first_seen": "Bethany, Pennsylvania",
+      "has_definition": false,
+      "definition": ""
+    },
+    "advisory": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "delors": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "with": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "established": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "building": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seat": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "Something to be sat upon."
+    },
+    "unions": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "from": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "committee": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols."
+    },
+    "eesc": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "composed": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "To make something by merging parts."
+    },
+    "representatives": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A delegate."
+    },
+    "associations": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "The act of associating."
+    },
+    "union": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "The act of uniting or joining two or more things into one."
+    },
+    "society": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms."
+    },
+    "belliardstraat": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "social": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A festive gathering to foster introductions."
+    },
+    "consultative": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "That gives advice or consultation; advisory."
+    },
+    "european": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "economic": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "Pertaining to an economy."
+    },
+    "employers": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A person, firm or other entity which pays for or hires the services of another person."
+    },
+    "assembly": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A set of pieces that work together in unison as a mechanism or device."
+    },
+    "which": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "(interrogative) What one or ones (of those mentioned or implied)."
+    },
+    "regions": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons."
+    },
+    "rue": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "Sorrow; repentance; regret."
+    },
+    "brussels": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "body": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "Physical frame."
+    },
+    "workers": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A person who performs labor for a living, especially manual labor."
+    },
+    "shares": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "A portion of something, especially a portion given or allotted to someone."
+    },
+    "organisations": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "The quality of being organized."
+    },
+    "jacques": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "belliard": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": false,
+      "definition": ""
+    },
+    "civil": {
+      "first_seen": "European Economic and Social Committee",
+      "has_definition": true,
+      "definition": "Having to do with people and government office as opposed to the military or religion."
+    },
+    "deborah": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brian": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eliza": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carpiano": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gilbert": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pavalko": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "include": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "understanding": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "organization": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "behavior": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reviewed": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "methods": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "michael": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "publishing": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "application": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "burdette": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "editor": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hughes": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sociological": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "debra": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "association": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "academic": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sage": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "umberson": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "behalf": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "amy": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "medicine": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "care": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chief": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "health": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "covers": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "illness": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kelly": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "concepts": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carr": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "quarterly": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gee": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peer": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "previous": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "richard": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "editors": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "journal": {
+      "first_seen": "Journal of Health and Social Behavior",
+      "has_definition": false,
+      "definition": ""
+    },
+    "god": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "debut": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "awaited": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "such": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "professionally": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ski": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "via": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "singer": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "after": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "billboard": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ape": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kream": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "artists": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "titled": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jae": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "where": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "collaborated": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jackson": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "zyrus": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "known": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peaked": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wang": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "park": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "moi": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "later": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "march": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "many": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "southeast": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chungha": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "making": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "long": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "china": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "top": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "release": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "formerly": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mask": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "south": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "featuring": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "soewarno": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "imanuel": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "filipino": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "single": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brightside": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sailor": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rising": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "third": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "january": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "would": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "viral": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "slump": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "indonesian": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "korea": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dat": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "certified": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "riaa": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rapper": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tick": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "august": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "another": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "his": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "studio": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "first": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chigga": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "amen": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "keith": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "asian": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "album": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "toro": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jake": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "head": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "second": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gold": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "artist": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rich": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maxo": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "number": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "soundcloud": {
+      "first_seen": "Rich Brian",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arunachal": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "politician": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crores": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chowna": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "distance": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tripi": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "opened": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "railway": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "assam": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "spent": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "developing": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plot": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pradesh": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kongmu": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "namsai": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "golden": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "international": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "foundation": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "center": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tinsukia": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "style": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aka": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "provided": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "temple": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "world": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mla": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "language": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "local": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "complex": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mein": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "station": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "also": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pagoda": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "state": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "government": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "district": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nearest": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "india": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tai": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "currently": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "buddhist": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sum": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hectares": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "located": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "khamti": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "burmese": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kham": {
+      "first_seen": "Golden Pagoda, Namsai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "branch": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "statistics": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hamlet": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "four": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "village": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "when": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "community": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "june": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saskatchewan": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "within": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pacific": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ten": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "founded": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unincorporated": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "border": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rural": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "canadian": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "canada": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "place": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "orkney": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "val": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "designated": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "listed": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "had": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "marie": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "municipality": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "line": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "constructed": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "miles": {
+      "first_seen": "Orkney, Saskatchewan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "promotion": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "girl": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "members": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "japanese": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saki": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maasa": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "associated": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "yurina": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "natsuyaki": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "berryz": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ishimura": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maiha": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "consisted": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kids": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "project": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chinami": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "left": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "group": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tokunaga": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "miyabi": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "idol": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hello": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kumai": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sugaya": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sudo": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tsugunaga": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "risako": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shimizu": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "formed": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kobo": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "momoko": {
+      "first_seen": "Berryz Kobo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "these": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "combined": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "duo": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nominated": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sing": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "james": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "are": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "folk": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "songs": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rucker": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "albums": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "slave": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "their": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "have": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "performing": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "were": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "traditional": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "they": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "travel": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "storytelling": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "music": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "awards": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "blues": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rhonda": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "treasures": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tears": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "including": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "etc": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "places": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "award": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "together": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "musical": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "various": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "running": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sparky": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vast": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "appalachian": {
+      "first_seen": "Sparky and Rhonda Rucker",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carolus": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "book": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "botanists": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sextae": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carl": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "supplement": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "latin": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tertiae": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "editionis": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "commonly": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plantarum": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "editiones": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "generum": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "father": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "genera": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "systematis": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "author": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "species": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "linnaeus": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "abbreviated": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "entirely": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "secundae": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suppl": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "supplementum": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "just": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "specierum": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "written": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "decimae": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "further": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "taxonomy": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "intended": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "modern": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vegetabilium": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "younger": {
+      "first_seen": "Supplementum Plantarum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "events": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sports": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "handball": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bing": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "indoor": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "spectators": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "danish": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "related": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arena": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "can": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ndbold": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kulturcenter": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "denmark": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ringk": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "league": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "games": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bank": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "used": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "home": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "team": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "other": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hosts": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "skjern": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "often": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "primarily": {
+      "first_seen": "Skjern Bank Arena",
+      "has_definition": false,
+      "definition": ""
+    },
+    "genus": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "molluscs": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "colloniinae": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "turbans": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "colloniidae": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "name": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "operculum": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mostly": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "subfamily": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "snails": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "homalopoma": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "marine": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "common": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gastropoda": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "family": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "calcareous": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "very": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dwarf": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sea": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "small": {
+      "first_seen": "Homalopoma",
+      "has_definition": false,
+      "definition": ""
+    },
+    "treason": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sided": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "switched": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "night": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "side": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "capture": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "operation": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "henrietta": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "era": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "executed": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "naval": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "war": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "force": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "harbour": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "portsmouth": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cutting": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "out": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bushell": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "parliamentary": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "english": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "initially": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "officer": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "roundheads": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "browne": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "led": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "royalist": {
+      "first_seen": "Browne Bushell",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mamluk": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "near": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aleppo": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "syria": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ancient": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "site": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bab": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dating": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "qasileh": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "heritage": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tawashi": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "period": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nairab": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mosque": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "city": {
+      "first_seen": "Al-Tawashi Mosque",
+      "has_definition": false,
+      "definition": ""
+    },
+    "always": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "than": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "elsewhere": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "france": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "competition": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nation": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "olympics": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "summer": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paris": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rather": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "participated": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "great": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "having": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "britain": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ireland": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "olympic": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "competed": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kingdom": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "official": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "inaugural": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "appearance": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seen": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shortened": {
+      "first_seen": "Great Britain at the 1900 Summer Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "player": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sachiyo": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "yamamoto": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "she": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tournament": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "basketball": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "women": {
+      "first_seen": "Sachiyo Yamamoto",
+      "has_definition": false,
+      "definition": ""
+    },
+    "england": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eurosport": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eighth": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "europe": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wst": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "championship": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nanjing": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sncnfc": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ponds": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "season": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "total": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "october": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "asia": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tnt": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "following": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "new": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mainland": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "all": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "prize": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "centre": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fitness": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "professional": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "edition": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "staged": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fund": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "forge": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "event": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "november": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "received": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "channels": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "territories": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "qualifiers": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sheffield": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ranking": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "snooker": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "play": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "winner": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "national": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "september": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "open": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "took": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "northern": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "broadcast": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "preceding": {
+      "first_seen": "2025 International Championship",
+      "has_definition": false,
+      "definition": ""
+    },
+    "career": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "yaron": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "former": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "footballer": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "israel": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "israeli": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tel": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aviv": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maccabi": {
+      "first_seen": "Yaron Oz (footballer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "television": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kim": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kst": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mondays": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "starring": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jtbc": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sung": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "series": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cheol": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "blows": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aired": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tuesdays": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "may": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "woo": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "neul": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eun": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kam": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "korean": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wind": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "july": {
+      "first_seen": "The Wind Blows (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "architects": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lago": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "activities": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "key": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "position": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "organized": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "three": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trump": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "not": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "veterans": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "donald": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "administration": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crowd": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "club": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "department": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "council": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "holding": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "president": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "oversaw": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "despite": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "policy": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "informal": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "any": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mar": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "affairs": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "during": {
+      "first_seen": "Mar-a-Lago Crowd",
+      "has_definition": false,
+      "definition": ""
+    },
+    "however": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "survival": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "changes": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plants": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "exhibit": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "environments": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "examples": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aquatic": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "onset": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sleeping": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nastic": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nyctinastic": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "range": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mesic": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "diurnal": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "light": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "movement": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dusk": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "circadian": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "xeric": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "response": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "petals": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "higher": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "foliar": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "closing": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "based": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "biology": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "leaves": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "this": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "controlled": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "darkness": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "temperature": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "clock": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "across": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "display": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "most": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crucial": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plant": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "found": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "serve": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flower": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "benefits": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "variety": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "legumes": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suggesting": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nyctinasty": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "movements": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "singular": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mechanism": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sleep": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "argued": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "evolutionary": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rhythm": {
+      "first_seen": "Nyctinasty",
+      "has_definition": false,
+      "definition": ""
+    },
+    "congressional": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sole": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "represented": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "house": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "philippines": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "batasang": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "province": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "quirino": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pambansa": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "earlier": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "large": {
+      "first_seen": "Quirino's at-large congressional district",
+      "has_definition": false,
+      "definition": ""
+    },
+    "title": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "consecutive": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "won": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "copa": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "champions": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "uefa": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "royal": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "enter": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "catalunya": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "part": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "femen": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "barcelona": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "qualified": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "doing": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "football": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "spanish": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "federation": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flight": {
+      "first_seen": "2011\u201312 FC Barcelona Femen\u00ed season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "algerian": {
+      "first_seen": "Hocine Ziani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "painter": {
+      "first_seen": "Hocine Ziani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hocine": {
+      "first_seen": "Hocine Ziani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arts": {
+      "first_seen": "Hocine Ziani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ziani": {
+      "first_seen": "Hocine Ziani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plastic": {
+      "first_seen": "Hocine Ziani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "became": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "parliament": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "szwajnoch": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suicide": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "member": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "political": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "page": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maria": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "whose": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "poland": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sejm": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stint": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "figure": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "around": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "who": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "investigation": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "midst": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "served": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "corruption": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "news": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "outlets": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "years": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "barbara": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "polish": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "blida": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cabinet": {
+      "first_seen": "Barbara Blida",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kurodai": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shell": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "historically": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "discovered": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "depths": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "among": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "difficulty": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "snail": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "callipara": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "volutidae": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "feet": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trawling": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "samples": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "demand": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "collectors": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "volute": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mollusk": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "volutes": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "acquiring": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "before": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "proliferation": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kuroda": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gastropod": {
+      "first_seen": "Callipara kurodai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gua": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gerais": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "people": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "microregion": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "minas": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mesoregion": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bocai": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "living": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "area": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "north": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "belongs": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "olhos": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brazilian": {
+      "first_seen": "Olhos-d'\u00c1gua",
+      "has_definition": false,
+      "definition": ""
+    },
+    "leader": {
+      "first_seen": "Ahmad Mazlum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "minister": {
+      "first_seen": "Ahmad Mazlum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ahmad": {
+      "first_seen": "Ahmad Mazlum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mazlum": {
+      "first_seen": "Ahmad Mazlum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "egyptian": {
+      "first_seen": "Ahmad Mazlum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "judge": {
+      "first_seen": "Ahmad Mazlum",
+      "has_definition": false,
+      "definition": ""
+    },
+    "syracuse": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chip": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "clay": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "buildings": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "technology": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "york": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "constructing": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thousands": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tens": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "will": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "consisting": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "region": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "megafab": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manufacturing": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "core": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "onondaga": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "memory": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suburb": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "create": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "billion": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "central": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jobs": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "metropolitan": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "statistical": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "micron": {
+      "first_seen": "Onondaga County, New York",
+      "has_definition": false,
+      "definition": ""
+    },
+    "domowina": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dom": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bautzen": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "postplatz": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "germany": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sorbian": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "serbski": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "administrative": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saxony": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "built": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "between": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cultural": {
+      "first_seen": "Serbski dom",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unveiled": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fitzwilliam": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cambridgeshire": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reopening": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brief": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "galleries": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "different": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "but": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paint": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "idea": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "catherine": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "presence": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "william": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "loaned": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unveiling": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kept": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "displayed": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "duchess": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "held": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "duke": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jamie": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mark": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "painting": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "museum": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "couple": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "marshall": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gift": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "portrait": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gallery": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "called": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "london": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cambridge": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "commissioned": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sir": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "prince": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "coreth": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ceremony": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "joint": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "princess": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wales": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "amazing": {
+      "first_seen": "Portrait of the Duke and Duchess of Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sanctorum": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "santorium": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shiva": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "palakkad": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vallappuzha": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shape": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "parashurama": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "presiding": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "deity": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "styled": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "according": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "square": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "installed": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kukkudakruthi": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kerala": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vaniyamkulam": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "road": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "east": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "temples": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "folklore": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "route": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "main": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "away": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "panayur": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "facing": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sanctum": {
+      "first_seen": "Panayur Palur Shiva Temple",
+      "has_definition": false,
+      "definition": ""
+    },
+    "neighbourhood": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lodgings": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unearthed": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "work": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "age": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tools": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "heads": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dugout": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "neolithic": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stone": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "along": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "artifacts": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "construction": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bercy": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "southeastern": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pottery": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "base": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "one": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dugouts": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arrow": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "late": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bronze": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "canoes": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "two": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pirogues": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "middle": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "early": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bone": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "excavations": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arrondissement": {
+      "first_seen": "Pirogues de Bercy (Dugouts of Bercy)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dry": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "temperate": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "loss": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "areas": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "natural": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brazil": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "forests": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "endemic": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "threatened": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "habitat": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cactaceae": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "subtropical": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "habitats": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tropical": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saxatilis": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rocky": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tacinga": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shrubland": {
+      "first_seen": "Tacinga saxatilis",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arthur": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "warren": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "projects": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "whom": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "decide": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trustees": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "service": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "educational": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maintaining": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "massachusetts": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "funds": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "venues": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hill": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "architect": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "estate": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trustee": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "facilities": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "famous": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carried": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "philanthropist": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hospitals": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "model": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shurleff": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bequeathed": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "assigned": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "waltham": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maine": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "farm": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brothers": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "denison": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wanted": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "improvement": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "land": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "farmer": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "college": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "live": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "how": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "over": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "there": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trust": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wishes": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "investment": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "westbrook": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "widely": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "location": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boston": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wellesley": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "establish": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "acres": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cedar": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bought": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ran": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "landscape": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "her": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cornelia": {
+      "first_seen": "Cornelia Warren",
+      "has_definition": false,
+      "definition": ""
+    },
+    "british": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "describes": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "comes": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "columbia": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rivers": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tru": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "itself": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sector": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kamloops": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "research": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thompson": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dual": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "education": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "converge": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "public": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "offers": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "university": {
+      "first_seen": "Thompson Rivers University",
+      "has_definition": false,
+      "definition": ""
+    },
+    "enters": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "romsdal": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kristiansund": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "norway": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "under": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aver": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "langfjorden": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bridge": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fannefjorden": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "atlantic": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "through": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bols": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crosses": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lane": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tussen": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tunnel": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "branches": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "then": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "farnes": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lsnes": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eide": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "island": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rauma": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kilometre": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "towns": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "runs": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ferry": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ndalsnes": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "intersects": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "highway": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peninsula": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ocean": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fannefjord": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "molde": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "continues": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "town": {
+      "first_seen": "Norwegian County Road 64",
+      "has_definition": false,
+      "definition": ""
+    },
+    "studies": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jeffries": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "albina": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "oregon": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "black": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "african": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "historian": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "history": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "judson": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "washington": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "professor": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "press": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "remaking": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ohio": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "portland": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "panthers": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lucas": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "burke": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "empowering": {
+      "first_seen": "The Portland Black Panthers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "taylor": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plays": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "corey": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "blackett": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paul": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "derby": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "josiah": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "efl": {
+      "first_seen": "Corey Blackett-Taylor",
+      "has_definition": false,
+      "definition": ""
+    },
+    "resort": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "northeast": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "churches": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "amphitheatrically": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "about": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "church": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "storey": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "momchilovtsi": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bulgarian": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chapels": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rhodopes": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "smolyan": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "set": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ethnographic": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "houses": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "level": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "constantine": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "helen": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "above": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "art": {
+      "first_seen": "Momchilovtsi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "racing": {
+      "first_seen": "Hughie Hughes",
+      "has_definition": false,
+      "definition": ""
+    },
+    "driver": {
+      "first_seen": "Hughie Hughes",
+      "has_definition": false,
+      "definition": ""
+    },
+    "indianapolis": {
+      "first_seen": "Hughie Hughes",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hugh": {
+      "first_seen": "Hughie Hughes",
+      "has_definition": false,
+      "definition": ""
+    },
+    "latter": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stages": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pro": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "behind": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "irreconcilable": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "engineer": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adviser": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tactician": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "filipescu": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "averescu": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "labor": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "conservative": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "epoca": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nicolae": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "differences": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "party": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "grigore": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "son": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "scion": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dissident": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wing": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "descendant": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "journalist": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "into": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "romanian": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lines": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "campaigner": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "daily": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ghica": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "statesman": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "collateral": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "alexandru": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "merged": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "own": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aristocratic": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "allied": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "serving": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aide": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "general": {
+      "first_seen": "Grigore Filipescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cities": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hamm": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brewing": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "san": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "largest": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "additional": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "angeles": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "houston": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saint": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "becoming": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "theodore": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brewery": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "expanded": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "francisco": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "acquired": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "los": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "minnesota": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "breweries": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "baltimore": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fifth": {
+      "first_seen": "Hamm's Brewery",
+      "has_definition": false,
+      "definition": ""
+    },
+    "court": {
+      "first_seen": "Luther Youngdahl",
+      "has_definition": false,
+      "definition": ""
+    },
+    "youngdahl": {
+      "first_seen": "Luther Youngdahl",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wallace": {
+      "first_seen": "Luther Youngdahl",
+      "has_definition": false,
+      "definition": ""
+    },
+    "governor": {
+      "first_seen": "Luther Youngdahl",
+      "has_definition": false,
+      "definition": ""
+    },
+    "luther": {
+      "first_seen": "Luther Youngdahl",
+      "has_definition": false,
+      "definition": ""
+    },
+    "year": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "band": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "touring": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "use": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pulley": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "them": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "swellers": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "everest": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "alongside": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "downsizing": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "recorded": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "michalik": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sessions": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mid": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "end": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "producing": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "punk": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fueled": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "studios": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ups": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ramen": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "illinois": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "foot": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "michigan": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rock": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "next": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "compared": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "short": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "support": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hardcore": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tour": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "melodic": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "went": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pole": {
+      "first_seen": "Ups and Downsizing",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brigadier": {
+      "first_seen": "Edwin B. Howard",
+      "has_definition": false,
+      "definition": ""
+    },
+    "howard": {
+      "first_seen": "Edwin B. Howard",
+      "has_definition": false,
+      "definition": ""
+    },
+    "army": {
+      "first_seen": "Edwin B. Howard",
+      "has_definition": false,
+      "definition": ""
+    },
+    "edwin": {
+      "first_seen": "Edwin B. Howard",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cassette": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "solo": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "compact": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peters": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "disc": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "double": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mike": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vinyl": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "breathe": {
+      "first_seen": "Breathe (Mike Peters album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maryland": {
+      "first_seen": "Baltimore Arena station",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cfg": {
+      "first_seen": "Baltimore Arena station",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adjacent": {
+      "first_seen": "Baltimore Arena station",
+      "has_definition": false,
+      "definition": ""
+    },
+    "raillink": {
+      "first_seen": "Baltimore Arena station",
+      "has_definition": false,
+      "definition": ""
+    },
+    "phosphate": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "enzyme": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "discussing": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "coded": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "term": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hexokinase": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vertebrates": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "refer": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gck": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "glucokinase": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "specified": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gene": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "facilitates": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "phosphorylation": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "more": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "glucose": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unless": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vertebrate": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "invertebrates": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "humans": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "even": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "article": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "microorganisms": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "instead": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "refers": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "otherwise": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    },
+    "specific": {
+      "first_seen": "Glucokinase",
+      "has_definition": false,
+      "definition": ""
+    }
+  },
+  "total_articles": 50,
+  "total_words": 1217
 }

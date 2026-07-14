@@ -1,30 +1,64 @@
-name: Force Clean Knowledge
+name: Merge Definitions Into Wordbank
 
 on:
   workflow_dispatch:
 
 jobs:
-  clean:
+  merge:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 3
     
     steps:
     - uses: actions/checkout@v4
       
-    - uses: actions/setup-python@v5
-      with:
-        python-version: '3.10'
+    - name: Merge definitions.json into wordbank.json
+      run: |
+        python -c "
+        import json, os
         
-    - name: Install deps
-      run: pip install torch transformers numpy pyyaml
-      
-    - name: Nuclear clean and rebuild
-      run: python src/nuke_knowledge.py
-      
+        bank_path = 'data/wordbank.json'
+        defs_path = 'data/definitions.json'
+        
+        # Load wordbank
+        with open(bank_path) as f:
+            bank = json.load(f)
+        
+        print(f'Wordbank: {len(bank[\"words\"])} words')
+        
+        # Merge definitions if exists
+        if os.path.exists(defs_path):
+            with open(defs_path) as f:
+                definitions = json.load(f)
+            
+            merged = 0
+            for d in definitions:
+                word = d['word']
+                if word in bank['words']:
+                    bank['words'][word]['has_definition'] = True
+                    bank['words'][word]['definition'] = d['definition']
+                    merged += 1
+            
+            bank['total_defined'] = sum(1 for w in bank['words'].values() if w.get('has_definition'))
+            
+            with open(bank_path, 'w') as f:
+                json.dump(bank, f, indent=2)
+            
+            print(f'Merged {merged} definitions into wordbank')
+            print(f'Total defined: {bank[\"total_defined\"]}')
+        else:
+            print('No definitions.json found')
+        "
+        
+    - name: Delete definitions.json
+      run: |
+        rm -f data/definitions.json
+        echo "Deleted definitions.json"
+        
     - name: Push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        git add knowledge/ data/processed/
-        git commit -m "Nuclear clean: rebuilt knowledge from scratch" || echo "No changes"
+        git add data/wordbank.json
+        git rm data/definitions.json 2>/dev/null || true
+        git diff --staged --quiet || git commit -m "🗂 Merged definitions into wordbank, deleted duplicates"
         git push

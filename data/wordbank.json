@@ -237,23 +237,23 @@
     },
     "elements": {
       "first_seen": "Volfoss",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based."
     },
     "ones": {
       "first_seen": "Volfoss",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The digit or figure 1."
     },
     "game": {
       "first_seen": "Volfoss",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A playful or competitive activity."
     },
     "published": {
       "first_seen": "Volfoss",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To issue (something, such as printed work) for distribution and/or sale."
     },
     "volfoss": {
       "first_seen": "Volfoss",
@@ -262,8 +262,8 @@
     },
     "front": {
       "first_seen": "Volfoss",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The foremost side of something or the end that faces the direction it normally moves."
     },
     "bethany": {
       "first_seen": "Bethany, Pennsylvania",
@@ -272,8 +272,8 @@
     },
     "united": {
       "first_seen": "Bethany, Pennsylvania",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To bring together as one."
     },
     "states": {
       "first_seen": "Bethany, Pennsylvania",
@@ -692,58 +692,58 @@
     },
     "god": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A being such as a monotheistic God: a single divine creator and ruler of the universe."
     },
     "debut": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A performer's first performance to the public, in sport, the arts or some other area."
     },
     "awaited": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To wait for."
     },
     "such": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Something being indicated that is similar to something else."
     },
     "professionally": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "As a professional; for one's paid career."
     },
     "ski": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "One of a pair of long flat runners designed for gliding over snow or water"
     },
     "via": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A main road or highway, especially in ancient Rome. (Mainly used in set phrases, below.)"
     },
     "singer": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A person who sings, often professionally."
     },
     "after": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Later; second (of two); next, following, subsequent"
     },
     "billboard": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A very large outdoor sign, generally used for advertising."
     },
     "ape": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A primate of the clade Hominoidea, generally larger than monkeys and distinguished from them by having no tail."
     },
     "kream": {
       "first_seen": "Rich Brian",
@@ -752,13 +752,13 @@
     },
     "artists": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A person who creates art."
     },
     "titled": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To assign a title to; to entitle."
     },
     "jae": {
       "first_seen": "Rich Brian",
@@ -767,13 +767,13 @@
     },
     "where": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The place in which something happens."
     },
     "collaborated": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To work together with others to achieve a common goal."
     },
     "jackson": {
       "first_seen": "Rich Brian",
@@ -787,13 +787,13 @@
     },
     "known": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To perceive the truth or factuality of; to be certain of or that."
     },
     "peaked": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Having a peak or peaks."
     },
     "wang": {
       "first_seen": "Rich Brian",
@@ -802,33 +802,33 @@
     },
     "park": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "An area of land set aside for environment preservation or recreation."
     },
     "moi": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "(often used questioningly to express mock surprise) Me."
     },
     "later": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Near the end of a period of time."
     },
     "march": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies."
     },
     "many": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A multitude; a great aggregate; a mass of people; the generality; the common herd."
     },
     "southeast": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The direction of the cardinal compass point halfway between south and east, specifically 135\u00b0, abbreviated as SE."
     },
     "chungha": {
       "first_seen": "Rich Brian",
@@ -837,8 +837,8 @@
     },
     "making": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The act of forming, causing, or constituting; workmanship; construction."
     },
     "long": {
       "first_seen": "Rich Brian",
@@ -9729,8 +9729,3458 @@
       "first_seen": "Moussa Sene Absa",
       "has_definition": false,
       "definition": ""
+    },
+    "slightly": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "Slenderly; delicately."
+    },
+    "cheap": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "Trade; traffic; chaffer; chaffering."
+    },
+    "stiff": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "An average person, usually male, of no particular distinction, skill, or education, often a working stiff or lucky stiff."
+    },
+    "success": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "The achievement of one's aim or goal."
+    },
+    "turn": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "(heading) to make a non-linear physical movement."
+    },
+    "krush": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "netherlands": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boys": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "A young male."
+    },
+    "singles": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "A 45 RPM vinyl record with one song on side A and one on side B."
+    },
+    "initial": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "The first letter of a word or a name."
+    },
+    "slower": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "Taking a long time to move or go a short distance, or to perform an action; not quick in motion; proceeding at a low speed."
+    },
+    "beastie": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "Beast, animal."
+    },
+    "chart": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "A map."
+    },
+    "attract": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "To pull toward without touching."
+    },
+    "riff": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "A repeated instrumental melody line in a song."
+    },
+    "again": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "Another time; once more."
+    },
+    "hit": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "A blow; a punch; a striking against; the collision of one body against another; the stroke that touches anything."
+    },
+    "rap": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "A sharp blow with something hard."
+    },
+    "failing": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "To be unsuccessful."
+    },
+    "fooled": {
+      "first_seen": "She's on It",
+      "has_definition": true,
+      "definition": "To trick; to deceive"
+    },
+    "commercial": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reaching": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "get": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "guitar": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "successful": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "soundtrack": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "groove": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trick": {
+      "first_seen": "She's on It",
+      "has_definition": false,
+      "definition": ""
+    },
+    "clifton": {
+      "first_seen": "Sir Robert Clifton, 7th Baronet",
+      "has_definition": false,
+      "definition": ""
+    },
+    "high": {
+      "first_seen": "Sir Robert Clifton, 7th Baronet",
+      "has_definition": true,
+      "definition": "A high point or position, literally or figuratively; an elevated place; a superior region; a height; the sky; heaven."
+    },
+    "robert": {
+      "first_seen": "Sir Robert Clifton, 7th Baronet",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nottinghamshire": {
+      "first_seen": "Sir Robert Clifton, 7th Baronet",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sheriff": {
+      "first_seen": "Sir Robert Clifton, 7th Baronet",
+      "has_definition": true,
+      "definition": "(except Scotland) (High Sheriff) An official of a shire or county office, responsible for carrying out court orders, law enforcement and other duties."
+    },
+    "baronet": {
+      "first_seen": "Sir Robert Clifton, 7th Baronet",
+      "has_definition": true,
+      "definition": "A hereditary title, below a peerage and senior to most knighthoods, entitling the bearer to the titular prefix \"Sir\" (for men) or \"Dame\" (for women) which is used in conjunction with the holder's Christian name. It is inheritable, usually by the eldest son, although a few baronetcies can also pass through the female line."
+    },
+    "arcana": {
+      "first_seen": "Queen of Cups",
+      "has_definition": true,
+      "definition": "Specialized knowledge that is mysterious to the uninitiated."
+    },
+    "cards": {
+      "first_seen": "Queen of Cups",
+      "has_definition": true,
+      "definition": "A playing card."
+    },
+    "what": {
+      "first_seen": "Queen of Cups",
+      "has_definition": true,
+      "definition": "(Singlish) Used to contradict an underlying assumption held by the interlocutor."
+    },
+    "mature": {
+      "first_seen": "Queen of Cups",
+      "has_definition": true,
+      "definition": "Fully developed; grown up in terms of physical appearance, behaviour or thinking; ripe."
+    },
+    "perceptive": {
+      "first_seen": "Queen of Cups",
+      "has_definition": true,
+      "definition": "Having or showing keenness of perception, insight, understanding, or intuition."
+    },
+    "emotionally": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "element": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tarot": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "represents": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "queen": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suit": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "expression": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cups": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "minor": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nurturing": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "feminine": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "intuitive": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suited": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "readers": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "qualities": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "card": {
+      "first_seen": "Queen of Cups",
+      "has_definition": false,
+      "definition": ""
+    },
+    "don": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "moon": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "know": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "acting": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seasons": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sisters": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "supporting": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "leap": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stars": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cast": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crazy": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sitcom": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "roles": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "you": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "onscreen": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "theatre": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "miss": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cinderella": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "appeared": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cable": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "love": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "melodrama": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stepsister": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rude": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dramas": {
+      "first_seen": "Go Se-won",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tirailleurs": {
+      "first_seen": "24th Senegalese Tirailleurs Regiment",
+      "has_definition": false,
+      "definition": ""
+    },
+    "combat": {
+      "first_seen": "24th Senegalese Tirailleurs Regiment",
+      "has_definition": false,
+      "definition": ""
+    },
+    "battle": {
+      "first_seen": "24th Senegalese Tirailleurs Regiment",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saw": {
+      "first_seen": "24th Senegalese Tirailleurs Regiment",
+      "has_definition": false,
+      "definition": ""
+    },
+    "regiment": {
+      "first_seen": "24th Senegalese Tirailleurs Regiment",
+      "has_definition": true,
+      "definition": "A unit of armed troops under the command of an officer, and consisting of several smaller units; now specifically, usually composed of two or more battalions."
+    },
+    "analog": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "Something that bears an analogy to something else"
+    },
+    "gma": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manila": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "Fiber made from abaca (Manila hemp), used to make ropes and manila paper."
+    },
+    "culiat": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "network": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "A fabric or structure of fibrous elements attached to each other at regular intervals."
+    },
+    "productions": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "The act of producing, making or creating something."
+    },
+    "stations": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "A stopping place."
+    },
+    "dwdb": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "facility": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "The fact of being easy, or easily done; absence of difficulty, simplicity."
+    },
+    "share": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "A portion of something, especially a portion given or allotted to someone."
+    },
+    "timog": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hybrid": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "Offspring resulting from cross-breeding different entities, e.g. two different species or two purebred parent strains."
+    },
+    "corner": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "The point where two converging lines meet; an angle, either external or internal."
+    },
+    "transmitting": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "To send or convey something from one person, place or thing to another."
+    },
+    "cnmpi": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "metro": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "An underground railway."
+    },
+    "street": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "A paved part of road, usually in a village or a town."
+    },
+    "conrad": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "diliman": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flagships": {
+      "first_seen": "DWDB-TV",
+      "has_definition": true,
+      "definition": "(maritime) The ship occupied by the fleet's commander (usually an admiral); it denotes this by flying his flag."
+    },
+    "radio": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "barangay": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "radyo": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "digital": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "licensee": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gtv": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "marketing": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dzbb": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "edsa": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "super": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tower": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "citynet": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "quezon": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "power": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flagship": {
+      "first_seen": "DWDB-TV",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mexico": {
+      "first_seen": "1999 FIFA Confederations Cup",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hosted": {
+      "first_seen": "1999 FIFA Confederations Cup",
+      "has_definition": true,
+      "definition": "To perform the role of a host."
+    },
+    "fourth": {
+      "first_seen": "1999 FIFA Confederations Cup",
+      "has_definition": true,
+      "definition": "(not used in the plural) The person or thing in the fourth position."
+    },
+    "fifa": {
+      "first_seen": "1999 FIFA Confederations Cup",
+      "has_definition": false,
+      "definition": ""
+    },
+    "organised": {
+      "first_seen": "1999 FIFA Confederations Cup",
+      "has_definition": true,
+      "definition": "To arrange in working order."
+    },
+    "confederations": {
+      "first_seen": "1999 FIFA Confederations Cup",
+      "has_definition": true,
+      "definition": "A union or alliance of states or political organizations."
+    },
+    "ruzhou": {
+      "first_seen": "Yu Ruzhou",
+      "has_definition": false,
+      "definition": ""
+    },
+    "legislative": {
+      "first_seen": "Yu Ruzhou",
+      "has_definition": true,
+      "definition": "That branch of government which is responsible for making, or having the power to make, a law or laws."
+    },
+    "chinese": {
+      "first_seen": "Yu Ruzhou",
+      "has_definition": false,
+      "definition": ""
+    },
+    "yuan": {
+      "first_seen": "Yu Ruzhou",
+      "has_definition": true,
+      "definition": "The basic unit of money in China."
+    },
+    "elected": {
+      "first_seen": "Yu Ruzhou",
+      "has_definition": true,
+      "definition": "To choose or make a decision (to do something)"
+    },
+    "leger": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crown": {
+      "first_seen": "Encke (horse)",
+      "has_definition": true,
+      "definition": "A royal, imperial or princely headdress; a diadem."
+    },
+    "classic": {
+      "first_seen": "Encke (horse)",
+      "has_definition": true,
+      "definition": "A perfect and/or early example of a particular style."
+    },
+    "sustained": {
+      "first_seen": "Encke (horse)",
+      "has_definition": true,
+      "definition": "To maintain, or keep in existence."
+    },
+    "training": {
+      "first_seen": "Encke (horse)",
+      "has_definition": true,
+      "definition": "To practice an ability."
+    },
+    "bid": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "races": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bred": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "triple": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fatal": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "returned": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "irish": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "winning": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stakes": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "test": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "encke": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "spring": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "placed": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "doncaster": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "injury": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "camelot": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "racecourse": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thoroughbred": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trained": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "banned": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "racehorse": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "drug": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "defeated": {
+      "first_seen": "Encke (horse)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gerrit": {
+      "first_seen": "Gerrit Willemsz Horst",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dutch": {
+      "first_seen": "Gerrit Willemsz Horst",
+      "has_definition": false,
+      "definition": ""
+    },
+    "willemsz": {
+      "first_seen": "Gerrit Willemsz Horst",
+      "has_definition": false,
+      "definition": ""
+    },
+    "horst": {
+      "first_seen": "Gerrit Willemsz Horst",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kaiser": {
+      "first_seen": "Schleicher Ka 3",
+      "has_definition": false,
+      "definition": ""
+    },
+    "glider": {
+      "first_seen": "Schleicher Ka 3",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kit": {
+      "first_seen": "Schleicher Ka 3",
+      "has_definition": false,
+      "definition": ""
+    },
+    "schleicher": {
+      "first_seen": "Schleicher Ka 3",
+      "has_definition": false,
+      "definition": ""
+    },
+    "danny": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "delayed": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "date": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "originally": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kicked": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bootlegging": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "finally": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "slated": {
+      "first_seen": "The College Kicked-Out",
+      "has_definition": false,
+      "definition": ""
+    },
+    "horror": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kin": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "williams": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tony": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jackie": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jarratt": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kerin": {
+      "first_seen": "Next of Kin (1982 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "subsidence": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "The process of becoming less active or severe."
+    },
+    "gas": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "Matter in a state intermediate between liquid and plasma that can be contained only if it is fully surrounded by a solid (or in a bubble of liquid) (or held together by gravitational pull); it can condense into a liquid, or can (rarely) become a solid directly."
+    },
+    "saucer": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "A small shallow dish to hold a cup and catch drips."
+    },
+    "allowed": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "To grant, give, admit, accord, afford, or yield; to let one have."
+    },
+    "mesozoic": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "geology": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "The science that studies the structure of the earth (or other planets), together with its origin and development, especially by examination of its rocks."
+    },
+    "cambrian": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "opening": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "To make something accessible or allow for passage by moving from a shut position."
+    },
+    "crustal": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "Of, pertaining to, or forming a crust, especially the crust of the Earth or other planet."
+    },
+    "continental": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "Someone from the continent."
+    },
+    "rift": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "A chasm or fissure."
+    },
+    "indicates": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "To point out; to discover; to direct to a knowledge of; to show; to make known."
+    },
+    "actively": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "In an active manner."
+    },
+    "distribution": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "An act of distributing or state of being distributed."
+    },
+    "shelf": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "A flat, rigid structure, fixed at right angles to a wall or forming a part of a cabinet, desk etc., and used to support, store or display objects."
+    },
+    "affecting": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "To influence or alter."
+    },
+    "upper": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "A stimulant, such as amphetamine, that increases energy and decreases appetite."
+    },
+    "folded": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "To bend (any thin material, such as paper) over so that it comes in contact with itself."
+    },
+    "timeline": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "A graphical representation of a chronological sequence of events (past or future); a chronology."
+    },
+    "geologic": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": true,
+      "definition": "Of, or relating to geology or a geologic time scale."
+    },
+    "basins": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "permian": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sandstones": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cenozoic": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sealed": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "occurred": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paleogene": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peneplain": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "neogene": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paleozoic": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "northwestern": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "halokinesis": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sediment": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tectonic": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "controlling": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "become": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "faulted": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "differential": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "faults": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "inversion": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "followed": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "creation": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "overall": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "northeastern": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "geometry": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "basinal": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "uplift": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "orogeny": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "phase": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "occur": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "silurian": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rocks": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "phases": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lower": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "zechstein": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "salt": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "multiple": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "basin": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "coming": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "evolution": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "extension": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "caledonian": {
+      "first_seen": "Geology of the southern North Sea",
+      "has_definition": false,
+      "definition": ""
+    },
+    "heavyweight": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": true,
+      "definition": "A very large, heavy, or impressive person."
+    },
+    "joshua": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "franklin": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": true,
+      "definition": "A freeholder, especially as belonging to a class of landowners in the 14th and 15th century ranking below the gentry."
+    },
+    "greenwich": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "anthony": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "contested": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": true,
+      "definition": "To contend."
+    },
+    "boxing": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": true,
+      "definition": "To place inside a box; to pack in one or more boxes."
+    },
+    "jermaine": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dawn": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unified": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "billed": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bout": {
+      "first_seen": "Anthony Joshua vs. Jermaine Franklin",
+      "has_definition": false,
+      "definition": ""
+    },
+    "circuit": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "did": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stolen": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crimmins": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "conspiracy": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "practicing": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "appeals": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "convicted": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "commerce": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lawyer": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bonds": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "interstate": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "transported": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "appealed": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "case": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "securities": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "grounds": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "accomplice": {
+      "first_seen": "United States v. Crimmins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "krai": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dvurechenskoye": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "settlement": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "permsky": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "streets": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "perm": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "russia": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dubrovo": {
+      "first_seen": "Dubrovo, Perm Krai",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plains": {
+      "first_seen": "South Plains",
+      "has_definition": false,
+      "definition": ""
+    },
+    "counties": {
+      "first_seen": "South Plains",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pistacia": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "zebra": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fraxinifolium": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reminiscent": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "integerrima": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wood": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "The substance making up the central part of the trunk and branches of a tree. Used as a material for construction, to manufacture various items, etc. or as fuel."
+    },
+    "brazzavillensis": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "characterized": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "To depict someone or something a particular way (often negative)."
+    },
+    "source": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "The person, place or thing from which something (information, goods, etc.) comes or is acquired."
+    },
+    "america": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "important": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "Having relevant and crucial value."
+    },
+    "derived": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "To obtain or receive (something) from something else."
+    },
+    "microberlinia": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "guettarda": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "astronium": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "striped": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "To mark with stripes."
+    },
+    "speciosa": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "spiciformis": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "zebrawood": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "Any wood with a figure (grain pattern) like the striping of a zebra, most often wood of the genus Microberlinia."
+    },
+    "describe": {
+      "first_seen": "Zebrawood",
+      "has_definition": true,
+      "definition": "To represent in words."
+    },
+    "graveolens": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "zebrano": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sources": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brachystegia": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "applied": {
+      "first_seen": "Zebrawood",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thirty": {
+      "first_seen": "Herbj\u00f8rn S\u00f8reb\u00f8",
+      "has_definition": true,
+      "definition": "A rack of thirty beers."
+    },
+    "herbj": {
+      "first_seen": "Herbj\u00f8rn S\u00f8reb\u00f8",
+      "has_definition": false,
+      "definition": ""
+    },
+    "broadcasting": {
+      "first_seen": "Herbj\u00f8rn S\u00f8reb\u00f8",
+      "has_definition": true,
+      "definition": "To transmit a message or signal through radio waves or electronic means."
+    },
+    "reb": {
+      "first_seen": "Herbj\u00f8rn S\u00f8reb\u00f8",
+      "has_definition": true,
+      "definition": "A Confederate soldier."
+    },
+    "personality": {
+      "first_seen": "Herbj\u00f8rn S\u00f8reb\u00f8",
+      "has_definition": true,
+      "definition": "A set of non-physical psychological and social qualities that make a person (or thing) distinct from another."
+    },
+    "norwegian": {
+      "first_seen": "Herbj\u00f8rn S\u00f8reb\u00f8",
+      "has_definition": false,
+      "definition": ""
+    },
+    "oakland": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crawford": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lions": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": true,
+      "definition": "A big cat, Panthera leo, native to Africa, India and formerly much of Europe."
+    },
+    "nfl": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "falcons": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": true,
+      "definition": "Any bird of the genus Falco, all of which are birds of prey."
+    },
+    "raiders": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": true,
+      "definition": "One who engages in a raid; a plunderer."
+    },
+    "atlanta": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arizona": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "justin": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tennessee": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nittany": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "defensive": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "titans": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cardinals": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "draft": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "penn": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cowboys": {
+      "first_seen": "Jack Crawford (American football)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hobson": {
+      "first_seen": "Sussex Street, Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sussex": {
+      "first_seen": "Sussex Street, Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shopping": {
+      "first_seen": "Sussex Street, Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "junction": {
+      "first_seen": "Sussex Street, Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sidney": {
+      "first_seen": "Sussex Street, Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pedestranised": {
+      "first_seen": "Sussex Street, Cambridge",
+      "has_definition": false,
+      "definition": ""
+    },
+    "matches": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "estadi": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "futbol": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "autonomous": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "catalonia": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "capacity": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "terrassa": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "segunda": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mpic": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "federaci": {
+      "first_seen": "Terrassa FC",
+      "has_definition": false,
+      "definition": ""
+    },
+    "visual": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "graphic": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "criticism": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "communication": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "berkeley": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dedicated": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "until": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "emigre": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "typography": {
+      "first_seen": "Emigre (magazine)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cemetery": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "francesco": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "original": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pianto": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "del": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": true,
+      "definition": "The symbol \u2207 used to denote the gradient operator."
+    },
+    "italy": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "poggioreale": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nearby": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": true,
+      "definition": "Adjacent, near, close by"
+    },
+    "naples": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "buried": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": true,
+      "definition": "Placed in a grave at a burial."
+    },
+    "grotta": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "victims": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": true,
+      "definition": "One that is harmed\u2014killed, injured, subjected to oppression, deceived, or otherwise adversely affected\u2014by someone or something, especially another person or event, force, or condition; in particular:"
+    },
+    "commemorate": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": true,
+      "definition": "To honour the memory of someone or something with a ceremony or object."
+    },
+    "vicinale": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "degli": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "antonio": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "picchiatti": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plague": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": true,
+      "definition": "(often used with the, sometimes capitalized: the Plague) The bubonic plague, the pestilent disease caused by the virulent bacterium Yersinia pestis."
+    },
+    "santa": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sportiglioni": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "designed": {
+      "first_seen": "Santa Maria del Pianto, Naples",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jingo": {
+      "first_seen": "Jingo (novel)",
+      "has_definition": true,
+      "definition": "One who supports policy favouring war."
+    },
+    "terry": {
+      "first_seen": "Jingo (novel)",
+      "has_definition": true,
+      "definition": "A type of coarse cotton fabric covered in many small raised loops that is used to make towels, bathrobes and some types of nappy/diaper."
+    },
+    "pratchett": {
+      "first_seen": "Jingo (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "concept": {
+      "first_seen": "Jingo (novel)",
+      "has_definition": true,
+      "definition": "An abstract and general idea; an abstraction."
+    },
+    "jingoism": {
+      "first_seen": "Jingo (novel)",
+      "has_definition": true,
+      "definition": "Excessive patriotism or aggressive nationalism, especially with regards to foreign policy."
+    },
+    "discworld": {
+      "first_seen": "Jingo (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "green": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "Having green as its color."
+    },
+    "sectors": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "Section"
+    },
+    "ideal": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "A perfect standard of beauty, intellect etc., or a standard of excellence to aim at."
+    },
+    "type": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "A grouping based on shared characteristics; a class."
+    },
+    "converted": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "To transform or change (something) into another form, substance, state, or product."
+    },
+    "categorized": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "To assign a category; to divide into classes."
+    },
+    "private": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "A soldier of the lowest rank in the army."
+    },
+    "everything": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "All the things under discussion."
+    },
+    "linear": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "Having the form of a line; straight or roughly straight; following a direct course."
+    },
+    "greenery": {
+      "first_seen": "Linear park",
+      "has_definition": true,
+      "definition": "Green foliage or verdure."
+    },
+    "walls": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "planned": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "need": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stretch": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lack": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "canals": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "broadest": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "space": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "affect": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "word": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "electrical": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "appear": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "longer": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rail": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "railroad": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "capturing": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "solution": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "greenways": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dense": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "foreshoreway": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "riverways": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "corridors": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sense": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "highways": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "significantly": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "neighborhoods": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "beds": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "parks": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jogging": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wildlife": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "effectively": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "removing": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "walking": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "urban": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shorelines": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "streams": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "connect": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "existing": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "strips": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "recreational": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "disused": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "result": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unique": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trails": {
+      "first_seen": "Linear park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "edmund": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "parish": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "diocese": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wight": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "isle": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wootton": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "falls": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "grade": {
+      "first_seen": "St Edmund's Church, Wootton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lamar": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "functions": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "greyhound": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mississippi": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "freedom": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rights": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "deco": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bus": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rides": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arrests": {
+      "first_seen": "Old Greyhound Bus Station (Jackson, Mississippi)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mcdougal": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "meredith": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "died": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "navy": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "uss": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "class": {
+      "first_seen": "USS Atherton",
+      "has_definition": true,
+      "definition": "A group, collection, category or set sharing characteristics or attributes."
+    },
+    "ship": {
+      "first_seen": "USS Atherton",
+      "has_definition": true,
+      "definition": "A water-borne vessel generally larger than a boat."
+    },
+    "sank": {
+      "first_seen": "USS Atherton",
+      "has_definition": true,
+      "definition": "(heading, physical) To move or be moved into something."
+    },
+    "cannon": {
+      "first_seen": "USS Atherton",
+      "has_definition": true,
+      "definition": "A complete assembly, consisting of an artillery tube and a breech mechanism, firing mechanism or base cap, which is a component of a gun, howitzer or mortar. It may include muzzle appendages."
+    },
+    "escort": {
+      "first_seen": "USS Atherton",
+      "has_definition": true,
+      "definition": "A group of people or vehicles, generally armed, who go with a person or people of importance to safeguard them on a journey or mission."
+    },
+    "destroyer": {
+      "first_seen": "USS Atherton",
+      "has_definition": true,
+      "definition": "That which destroys something."
+    },
+    "atherton": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "guadalcanal": {
+      "first_seen": "USS Atherton",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nitting": {
+      "first_seen": "Nitting",
+      "has_definition": false,
+      "definition": ""
+    },
+    "moselle": {
+      "first_seen": "Nitting",
+      "has_definition": false,
+      "definition": ""
+    },
+    "est": {
+      "first_seen": "Nitting",
+      "has_definition": true,
+      "definition": "Grace; favour."
+    },
+    "ball": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "A solid or hollow sphere, or roughly spherical mass."
+    },
+    "media": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue."
+    },
+    "mexican": {
+      "first_seen": "Yovska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boulet": {
+      "first_seen": "Yovska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "drag": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "Resistance of the air (or some other fluid) to something moving through it."
+    },
+    "dragula": {
+      "first_seen": "Yovska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "yovska": {
+      "first_seen": "Yovska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "docu": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "A film, TV program, publication etc. which presents a social, political, scientific or historical subject in a factual or informative manner."
+    },
+    "martinez": {
+      "first_seen": "Yovska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "moreno": {
+      "first_seen": "Yovska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "performer": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "One who performs for, or entertains, an audience."
+    },
+    "featured": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "To ascribe the greatest importance to something within a certain context."
+    },
+    "gem": {
+      "first_seen": "Yovska",
+      "has_definition": true,
+      "definition": "A precious stone, usually of substantial monetary value or prized for its beauty or shine."
+    },
+    "inn": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": true,
+      "definition": "Any establishment where travellers can procure lodging, food, and drink."
+    },
+    "merseyside": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": false,
+      "definition": ""
+    },
+    "piper": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": true,
+      "definition": "A musician who plays a pipe."
+    },
+    "lydiate": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lancashire": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pub": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": true,
+      "definition": "A public house where beverages, primarily alcoholic, may be bought and consumed, also providing food and sometimes entertainment such as live music or television."
+    },
+    "scotch": {
+      "first_seen": "Scotch Piper Inn",
+      "has_definition": false,
+      "definition": ""
+    },
+    "action": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "steele": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mary": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bradbury": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mayberry": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "barney": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "furey": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bob": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "speed": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lightning": {
+      "first_seen": "Lightning Speed",
+      "has_definition": false,
+      "definition": ""
+    },
+    "plus": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "musician": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "emanem": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "records": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bassist": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "birmingham": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rogers": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rogues": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "duets": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rutherford": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cannonball": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trombonist": {
+      "first_seen": "Rogues (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "guitarist": {
+      "first_seen": "Carmine Rojas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "styles": {
+      "first_seen": "Carmine Rojas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bass": {
+      "first_seen": "Carmine Rojas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carmine": {
+      "first_seen": "Carmine Rojas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rojas": {
+      "first_seen": "Carmine Rojas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "episode": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "look": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "highly": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "In a high or esteemed manner."
+    },
+    "footage": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "actress": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A female who performs on the stage or in films."
+    },
+    "containing": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "To hold inside."
+    },
+    "ballads": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A kind of narrative poem, adapted for recitation or singing; especially, a sentimental or romantic poem in short stanzas."
+    },
+    "joon": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "scenes": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "The location of an event that attracts attention."
+    },
+    "aoi": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "special": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A reduction in consumer cost (usually for a limited time) for items or services rendered."
+    },
+    "dvd": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "upcoming": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "The act of coming up."
+    },
+    "virgin": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A person who has never had sexual intercourse, or sometimes, one who has never engaged in any sexual activity at all."
+    },
+    "snow": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "The frozen, crystalline state of water that falls as precipitation."
+    },
+    "jun": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A monetary unit of North Korea and formerly of South Korea, equal to one hundredth of a won."
+    },
+    "fan": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A hand-held device consisting of concertinaed material, or slats of material, gathered together at one end, that may be opened out into the shape of a sector of a circle and waved back and forth in order to move air towards oneself and cool oneself."
+    },
+    "wrote": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "To form letters, words or symbols on a surface in order to communicate."
+    },
+    "photo": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": true,
+      "definition": "A photograph."
+    },
+    "miyazaki": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "anticipated": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lee": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "visits": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fans": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mini": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "addition": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "meeting": {
+      "first_seen": "My Jun, My Style",
+      "has_definition": false,
+      "definition": ""
+    },
+    "regional": {
+      "first_seen": "Eastern Health Alliance",
+      "has_definition": true,
+      "definition": "An entity or event with scope limited to a single region."
+    },
+    "singapore": {
+      "first_seen": "Eastern Health Alliance",
+      "has_definition": false,
+      "definition": ""
+    },
+    "alliance": {
+      "first_seen": "Eastern Health Alliance",
+      "has_definition": true,
+      "definition": "The state of being allied."
+    },
+    "system": {
+      "first_seen": "Eastern Health Alliance",
+      "has_definition": true,
+      "definition": "A collection of organized things; a whole composed of relationships among its members."
+    },
+    "nineteenth": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "The person or thing in the nineteenth position."
+    },
+    "lantern": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "A case of translucent or transparent material made to protect a flame, or light, used to illuminate its surroundings."
+    },
+    "because": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "For the reason (that)."
+    },
+    "cages": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "An enclosure made of bars, normally to hold animals."
+    },
+    "lighthouses": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "A tower or other structure exhibiting a light or lights to warn or guide sailors."
+    },
+    "bird": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "A member of the class of animals Aves in the phylum Chordata, characterized by being warm-blooded, having feathers and wings usually capable of flight, and laying eggs."
+    },
+    "cage": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "An enclosure made of bars, normally to hold animals."
+    },
+    "lanterns": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "A case of translucent or transparent material made to protect a flame, or light, used to illuminate its surroundings."
+    },
+    "wire": {
+      "first_seen": "Bird-cage lantern",
+      "has_definition": true,
+      "definition": "Metal formed into a thin, even thread, now usually by being drawn through a hole in a steel die."
+    },
+    "industry": {
+      "first_seen": "Tolga, Queensland",
+      "has_definition": true,
+      "definition": "The tendency to work persistently. Diligence."
+    },
+    "peanut": {
+      "first_seen": "Tolga, Queensland",
+      "has_definition": true,
+      "definition": "A legume resembling a nut, the fruit of the plant Arachis hypogaea."
+    },
+    "tolga": {
+      "first_seen": "Tolga, Queensland",
+      "has_definition": false,
+      "definition": ""
+    },
+    "big": {
+      "first_seen": "Tolga, Queensland",
+      "has_definition": false,
+      "definition": ""
+    },
+    "harper": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "anne": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chimney": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bond": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "meathouse": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flemish": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "room": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "deep": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flush": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dairy": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bays": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "centreville": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stories": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "content": {
+      "first_seen": "Content (Centreville, Maryland)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "instructed": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seniors": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "students": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "grades": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "enrollment": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "canarsie": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "morning": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "accommodated": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "student": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "accommodate": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "freshmen": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "schools": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brooklyn": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "periods": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "defunct": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "evening": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "juniors": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sophomores": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "comprehensive": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peak": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adult": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shore": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "afternoon": {
+      "first_seen": "South Shore High School (Brooklyn)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maad": {
+      "first_seen": "WC (rapper)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "supergroup": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "Any group composed of other groups."
+    },
+    "connection": {
+      "first_seen": "WC (rapper)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ice": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "Water in frozen (solid) form."
+    },
+    "rappers": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "One who, or that which, raps or knocks."
+    },
+    "fellow": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "A colleague or partner."
+    },
+    "calhoun": {
+      "first_seen": "WC (rapper)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ain": {
+      "first_seen": "WC (rapper)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thang": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "That which is considered to exist as a separate entity, object, quality or concept."
+    },
+    "lashawn": {
+      "first_seen": "WC (rapper)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mack": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "An individual skilled in the art of seduction using verbal skills."
+    },
+    "cube": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "A regular polyhedron having six identical square faces."
+    },
+    "started": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "To begin, commence, initiate."
+    },
+    "low": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "Something that is low; a low point."
+    },
+    "succeeded": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "To follow in order; to come next after; hence, to take the place of."
+    },
+    "profile": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "The outermost shape, view, or edge of an object."
+    },
+    "circle": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "A two-dimensional geometric figure, a line, consisting of the set of all those points in a plane that are equally distant from a given point (center)."
+    },
+    "westside": {
+      "first_seen": "WC (rapper)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "damn": {
+      "first_seen": "WC (rapper)",
+      "has_definition": true,
+      "definition": "The use of \"damn\" as a curse."
+    },
+    "georgia": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": false,
+      "definition": ""
+    },
+    "iran": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": false,
+      "definition": ""
+    },
+    "armenia": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": false,
+      "definition": ""
+    },
+    "squamosa": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": false,
+      "definition": ""
+    },
+    "azerbaijan": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": false,
+      "definition": ""
+    },
+    "euphorbia": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": true,
+      "definition": "Any plant of the genus Euphorbia, the spurges."
+    },
+    "euphorbiaceae": {
+      "first_seen": "Euphorbia squamosa",
+      "has_definition": false,
+      "definition": ""
+    },
+    "praszka": {
+      "first_seen": "Wierzbie, Olesno County",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wierzbie": {
+      "first_seen": "Wierzbie, Olesno County",
+      "has_definition": false,
+      "definition": ""
+    },
+    "olesno": {
+      "first_seen": "Wierzbie, Olesno County",
+      "has_definition": false,
+      "definition": ""
+    },
+    "opole": {
+      "first_seen": "Wierzbie, Olesno County",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gmina": {
+      "first_seen": "Wierzbie, Olesno County",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reached": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mistaken": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dissolving": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "worldwide": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "want": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "order": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "monaco": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hook": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "self": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pleasure": {
+      "first_seen": "Music for Pleasure (Monaco album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "junko": {
+      "first_seen": "Cruisin' (Junko Onishi album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "onishi": {
+      "first_seen": "Cruisin' (Junko Onishi album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cruisin": {
+      "first_seen": "Cruisin' (Junko Onishi album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "blue": {
+      "first_seen": "Cruisin' (Junko Onishi album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "note": {
+      "first_seen": "Cruisin' (Junko Onishi album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "airs": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ontario": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "redondo": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "beach": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "issues": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "simulcast": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "greater": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adding": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "inland": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "format": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "burbank": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "licensed": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "extends": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "full": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hills": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "problems": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "transmitter": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gaping": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "overlapping": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "signal": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "baldwin": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "coverage": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fill": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kdey": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "meruelo": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kday": {
+      "first_seen": "KDAY",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rear": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pontiac": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wheel": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": false,
+      "definition": ""
+    },
+    "drive": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cars": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manufactured": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": true,
+      "definition": "To make things, usually on a large scale, with tools and either physical labor or machinery."
+    },
+    "marketed": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": true,
+      "definition": "To make (products or services) available for sale and promote them."
+    },
+    "size": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": true,
+      "definition": "(obsolete outside dialectal) An assize."
+    },
+    "bonneville": {
+      "first_seen": "Pontiac Bonneville",
+      "has_definition": false,
+      "definition": ""
+    },
+    "colombian": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unesco": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "axis": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": true,
+      "definition": "An imaginary line around which an object spins (an axis of rotation) or is symmetrically arranged (an axis of symmetry)."
+    },
+    "colombia": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "departmental": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": true,
+      "definition": "Of or pertaining to a department."
+    },
+    "pijao": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "coffee": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": true,
+      "definition": "A beverage made by infusing the beans of the coffee plant in hot water."
+    },
+    "capital": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": true,
+      "definition": "Already-produced durable goods available for use as a factor of production, such as steam shovels (equipment) and office buildings (structures)."
+    },
+    "quind": {
+      "first_seen": "Pijao, Quind\u00edo",
+      "has_definition": false,
+      "definition": ""
     }
   },
-  "total_articles": 100,
-  "total_words": 1946
+  "total_articles": 150,
+  "total_words": 2636
 }

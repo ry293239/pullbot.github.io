@@ -2408,3 +2408,4477 @@ Level 3 Boss: The Image Pull Imp – Phases: 1.
 regions is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons.
 employers is A person, firm or other entity which pays for or hires the services of another person.
 society is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms.
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+virgin is A person who has never had sexual intercourse, or sometimes, one who has never engaged in any sexual activity at all.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+moi is (often used questioningly to express mock surprise) Me.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+such is Something being indicated that is similar to something else.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+DAILY QUESTS
+
+Examples:
+- Daily Container: "Docker run nginx-app with port 80 exposed."
+- Daily Pod: "Create YAML for simple-pod with liveness probe."
+- Daily Deployment: "Scale web-deploy to 5 replicas."
+- Daily Storage: "Claim a PVC for data-vol."
+- Daily Network: "Expose web-svc as NodePort."
+Rewards: XP, hint tokens, rare items.
+inn is Any establishment where travellers can procure lodging, food, and drink.
+ape is A primate of the clade Hominoidea, generally larger than monkeys and distinguished from them by having no tail.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+rappers is One who, or that which, raps or knocks.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+featured is To ascribe the greatest importance to something within a certain context.
+gem is A precious stone, usually of substantial monetary value or prized for its beauty or shine.
+park is An area of land set aside for environment preservation or recreation.
+collaborated is To work together with others to achieve a common goal.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+est is Grace; favour.
+lighthouses is A tower or other structure exhibiting a light or lights to warn or guide sailors.
+greenery is Green foliage or verdure.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+fellow is A colleague or partner.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+size is (obsolete outside dialectal) An assize.
+User asked: {
+  "name": "Cyber Security Character",
+  "steps": [
+    {
+      "step_1": "Facial Identity Mapping",
+      "description": "Maintain 100% facial consistency based on the provided reference photos.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- Version 1.4: Added support for attached files (PDF resumes, Markdown skills, etc.); instruct AI to search attachments first and propose answers to relevant questions (
+- Version 1.5: Added Versioning & Adaptation Note; included sample before/after example; added explicit rule: "Do not generate drafts until all key questions are answered/confirmed."
+- Version 1.6: Added support for user's public LinkedIn profile URL (Question 9); instruct AI to browse/summarize visible public sections if provided, propose alignments/improvements, but only use public data.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+upcoming is The act of coming up.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+scenes is The location of an event that attracts attention.
+ball is A solid or hollow sphere, or roughly spherical mass.
+docu is A film, TV program, publication etc. which presents a social, political, scientific or historical subject in a factual or informative manner.
+cube is A regular polyhedron having six identical square faces.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All humor follows Comedy Mode rules.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+All randomness from approved random event tables (cycle deterministically if needed).
+special is A reduction in consumer cost (usually for a limited time) for items or services rendered.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+capital is Already-produced durable goods available for use as a factor of production, such as steam shovels (equipment) and office buildings (structures).
+All randomness from approved random event tables (cycle deterministically if needed).
+everything is All the things under discussion.
+“Resource quota relief: Reduce Learning Heat by 1.”
+6.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+ski is One of a pair of long flat runners designed for gliding over snow or water
+The Persistent Quest – "Secure your data volumes."
+5.
+departmental is Of or pertaining to a department.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The Scaling Saga – "Grow your deployments!"
+4.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+debut is A performer's first performance to the public, in sport, the arts or some other area.
+because is For the reason (that).
+peanut is A legume resembling a nut, the fruit of the plant Arachis hypogaea.
+All humor follows Comedy Mode rules.
+where is The place in which something happens.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- **Mission**
+- **Random Event** (if triggered)
+- **User Answer** (echoed in code block)
+- **Evaluation**
+- **Result or Hint**
+- **XP + Awards + Tokens + Items**
+- **Updated Level**
+- **Story/Namespace/Boss progression**
+- **Session Summary** (end of session)
+
+
+
+User asked: { "TASK": "Design a unique 'Valorant' Agent Key Art.
+fan is A hand-held device consisting of concertinaed material, or slats of material, gathered together at one end, that may be opened out into the shape of a sector of a circle and waved back and forth in order to move air towards oneself and cool oneself.
+regional is An entity or event with scope limited to a single region.
+professionally is As a professional; for one's paid career.
+published is To issue (something, such as printed work) for distribution and/or sale.
+after is Later; second (of two); next, following, subsequent
+highly is In a high or esteemed manner.
+billboard is A very large outdoor sign, generally used for advertising.
+started is To begin, commence, initiate.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+damn is The use of "damn" as a curse.
+User asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md${topic:
+``build.gradlesettings.gradlereferences/android.md*.xcodeprojPackage.swiftreferences/ios.mdpackage.jsonreferences/react-web.mdpackage.jsonreferences/react-native.mdpubspec.yamlreferences/flutter.mdpackage.jsonreferences/node.mdpyproject.tomlrequirements.txtreferences/python.mdpom.xmlbuild.gradlereferences/java.md*.csproj*.slnreferences/dotnet.mdgo.modreferences/go.mdCargo.tomlreferences/rust.mdcomposer.jsonreferences/php.mdGemfilereferences/ruby.mdmix.exsreferences/elixir.mdCMakeLists.txtMakefilereferences/cpp.mdreferences/generic.md.claude/skills/``.claude/skills/settings.gradlesettings.gradle.ktsbuild.gradlebuild.gradle.ktsgradle.propertiesgradle/libs.versions.tomlgradlewgradle/wrapper/gradle-wrapper.propertiesapp/src/main/AndroidManifest.xmlinclude(...)settings.gradle*build.gradle*src/feature/core/library/domain/data/settings.gradle*build.gradle*gradle/libs.versions.tomlconfig/detekt/detekt.yml**/AndroidManifest.xml*/src/main/java/*/src/main/kotlin/features/core/common/data/domain/presentation/ui/di/navigation/network/@HiltViewModelViewModel()MVIpreferencesDataStore@GET@POST@PUT@DELETE*.toModel()*.toEntity()*.toDto()Interceptorintercept()PagingSourcePager(PagingDataBroadcastReceiveronReceive(: Service()ForegroundServiceNotificationCompatNotificationChannelFirebaseAnalyticslogEventRemoteConfigFeatureFlagAppWidgetProviderGlanceAppWidget@TestMockKmockk(every {feature/core/library/*Graph.kt*Navigator*.kt@Moduledi/*Api.kt@Database@HiltWorkerproguard-rules.pro./gradlew./gradlew assemble./gradlew test./gradlew lintapp/src/main/app/src/main/res/app/src/main/java/app/src/main/kotlin/app/src/test/app/src/androidTest/library/database/migration/CMakeLists.txtMakefilemakefile*.cpp*.c*.h*.hppconanfile.txtconanfile.pyvcpkg.jsonCMakeLists.txtadd_subdirectoryMakefilelib/src/modules/CMakeLists.txtconanfile.*vcpkg.jsonMakefilesrc/lib/include/core/utils/network/storage/ui/tests/class *public:private:*.h*.hpp
+* Git logic optimization:
+* Branch name: Read .git/HEAD directly (no subprocess)
+* File counts: Call subprocess.run(['git', 'status', '--porcelain']) ONLY when cache expires
+
+* Standard library only: No external dependencies (use only sys, json, os, pathlib, subprocess, time)
+
+* JSON parse error → return empty string ""
+* Missing fields → omit that section (do not crash)
+* Git directory not found → omit Git section entirely
+* Any exception → return empty string ""
+
+* Single file,  Answer: Reliability and transparency.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+southeast is The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE.
+succeeded is To follow in order; to come next after; hence, to take the place of.
+axis is An imaginary line around which an object spins (an axis of rotation) or is symmetrically arranged (an axis of symmetry).
+thang is That which is considered to exist as a separate entity, object, quality or concept.
+categorized is To assign a category; to divide into classes.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+artists is A person who creates art.
+cage is An enclosure made of bars, normally to hold animals.
+All randomness from approved random event tables (cycle deterministically if needed).
+system is A collection of organized things; a whole composed of relationships among its members.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+sank is (heading, physical) To move or be moved into something.
+awaited is To wait for.
+All randomness from approved random event tables (cycle deterministically if needed).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+private is A soldier of the lowest rank in the army.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All randomness from approved random event tables (cycle deterministically if needed).
+cannon is A complete assembly, consisting of an artillery tube and a breech mechanism, firing mechanism or base cap, which is a component of a gun, howitzer or mortar. It may include muzzle appendages.
+singer is A person who sings, often professionally.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+front is The foremost side of something or the end that faces the direction it normally moves.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+ship is A water-borne vessel generally larger than a boat.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+media is The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+actress is A female who performs on the stage or in films.
+pub is A public house where beverages, primarily alcoholic, may be bought and consumed, also providing food and sometimes entertainment such as live music or television.
+manufactured is To make things, usually on a large scale, with tools and either physical labor or machinery.
+wrote is To form letters, words or symbols on a surface in order to communicate.
+mack is An individual skilled in the art of seduction using verbal skills.
+titled is To assign a title to; to entitle.
+ice is Water in frozen (solid) form.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+destroyer is That which destroys something.
+escort is A group of people or vehicles, generally armed, who go with a person or people of importance to safeguard them on a journey or mission.
+many is A multitude; a great aggregate; a mass of people; the generality; the common herd.
+After session: Session Summary + Skill Evaluation.
+snow is The frozen, crystalline state of water that falls as precipitation.
+All combined
+Boss Rewards: XP, Items, Skill points, Titles, Achievements
+
+NEW GAME+, HARDCORE MODE
+
+Identical rules and rewards as SQL/AWS versions.
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+profile is The outermost shape, view, or edge of an object.
+marketed is To make (products or services) available for sale and promote them.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Trigger random event (if applicable).
+containing is To hold inside.
+The Persistent Quest – "Secure your data volumes."
+5.
+later is Near the end of a period of time.
+industry is The tendency to work persistently. Diligence.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+- v2.0 – Expanded to include movies releasing to streaming services; added Type column to distinguish TV vs Movie content.
+lantern is A case of translucent or transparent material made to protect a flame, or light, used to illuminate its surroundings.
+peaked is Having a peak or peaks.
+ballads is A kind of narrative poem, adapted for recitation or singing; especially, a sentimental or romantic poem in short stanzas.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+ones is The digit or figure 1.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+jun is A monetary unit of North Korea and formerly of South Korea, equal to one hundredth of a won.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+cages is An enclosure made of bars, normally to hold animals.
+All randomness from approved random event tables (cycle deterministically if needed).
+lanterns is A case of translucent or transparent material made to protect a flame, or light, used to illuminate its surroundings.
+linear is Having the form of a line; straight or roughly straight; following a direct course.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Eviction policies
+Level 6 Boss: The Deployment Demon – Phases: 1.
+low is Something that is low; a low point.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+nineteenth is The person or thing in the nineteenth position.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All randomness from approved random event tables (cycle deterministically if needed).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+game is A playful or competitive activity.
+supergroup is Any group composed of other groups.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All randomness from approved random event tables (cycle deterministically if needed).
+known is To perceive the truth or factuality of; to be certain of or that.
+COMPANIONS
+
+- Docky the Image Builder: +5 XP on Docker missions; "Build it strong!"
+- Kubelet the Node Guardian: Reduces pod penalties; "Nodes are my domain!"
+- Deply the Deployment Duke: Boosts deployment rewards; "Replicate wisely."
+- Servy the Service Scout: Hints on networking; "Expose with care!"
+- Volmy the Volume Keeper: Handles storage events; "Persist or perish!"
+Rules: One active, Loyalty Bonus +5 XP after 3 sessions.
+euphorbia is Any plant of the genus Euphorbia, the spurges.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+march is A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies.
+drag is Resistance of the air (or some other fluid) to something moving through it.
+piper is A musician who plays a pipe.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+All randomness from approved random event tables (cycle deterministically if needed).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+“ConfigMap cache: Recover 1 hint token.”
+
+BOSS ROSTER
+
+Level 3 Boss: The Image Pull Imp – Phases: 1.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+coffee is A beverage made by infusing the beans of the coffee plant in hot water.
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+The primary API for interacting with OpenAI models is the Responses API,
+)
+
+response = client.responses.create(
+    model="gpt-5.5",
+    instructions="You are a coding assistant that talks like a pirate.",
+    input="How do I check if a Python object is an instance of a class?",
+)
+
+print(response.output_text)
+```
+
+If you're looking for more advanced customization or agent orchestration, check out [LangGraph](
+
+
+---
+
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.
+god is A being such as a monotheistic God: a single divine creator and ruler of the universe.
+User asked: 
+
+**Author:** Scott M (tweaked with Grok assistance)  
+**Goal:**  
+Create a clean, user-friendly summary of TV shows premiering or returning — including new seasons starting, series resuming after a hiatus/break, and brand-new series premieres — plus new movies releasing to streaming services in the upcoming week.
+united is To bring together as one.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+alliance is The state of being allied.
+Push/pull
+Level 5 Boss: The Pod Eviction Phantom – Phases: 1.
+All humor follows Comedy Mode rules.
+class is A group, collection, category or set sharing characteristics or attributes.
+circle is A two-dimensional geometric figure, a line, consisting of the set of all those points in a plane that are equally distant from a given point (center).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+After session: Session Summary + Skill Evaluation.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+Session length defaults to 3–7 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).
+bird is A member of the class of animals Aves in the phylum Chordata, characterized by being warm-blooded, having feathers and wings usually capable of flight, and laying eggs.
+via is A main road or highway, especially in ancient Rome. (Mainly used in set phrases, below.)
+photo is A photograph.
+wire is Metal formed into a thin, even thread, now usually by being drawn through a hole in a steel die.
+* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+“Resource quota relief: Reduce Learning Heat by 1.”
+6.
+All humor follows Comedy Mode rules.
+All randomness from approved random event tables (cycle deterministically if needed).
+elements is One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+performer is One who performs for, or entertains, an audience.
+Initial State: Level 1, XP 0, Hint Tokens 3, Inventory empty, No Companion, Learning Heat 0, Standard Mode, Story Act 1.
+making is The act of forming, causing, or constituting; workmanship; construction.
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).
+FIXED RESOURCE CATALOG & SAMPLE YAML
+
+Core Resources (never add others):
+- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)
+- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)
+
+Sample YAML/Resources (fixed, for deterministic simulation):
+- Image: nginx-app (based on nginx:latest)
+- Pod: simple-pod (containers: nginx-app, ports: 80)
+- Deployment: web-deploy (replicas: 3, selector: app=web)
+- Service: web-svc (type: ClusterIP, ports: 80)
+- Volume: data-vol (hostPath: /data)
+
+DIFFICULTY MODIFIERS
+
+Tutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions
+Casual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1
+Standard Mode (default): Normal everything
+Hard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster
+Nightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases
+Chaos Mode: Random event every turn, Humor Tier 3, steeper XP curve
+
+XP & LEVELING SYSTEM
+
+XP Thresholds:
+- Level 1 → 0 XP
+- Level 2 → 100 XP
+- Level 3 → 250 XP
+- Level 4 → 450 XP
+- Level 5 → 700 XP
+- Level 6 → 1000 XP
+- Level 7 → 1400 XP
+- Level 8 → 2000 XP (Boss Battles)
+XP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)
+
+ACHIEVEMENTS SYSTEM
+
+Examples:
+- Container Creator – Complete Level 1
+- Pod Pioneer – Complete Level 2
+- Deployment Duke – Complete Level 5
+- Certified Kube Admiral – Defeat the Cluster Chaos Dragon
+- YAML Yogi – Trigger 5 humor events
+- Hint Hoarder – Reach 10 hint tokens
+- Namespace Navigator – Complete a procedural namespace
+- Eviction Exorcist – Defeat the Pod Eviction Phantom
+
+HINT TOKEN, RETRY PENALTY, COMEDY MODE
+
+Identical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).

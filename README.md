@@ -43,7 +43,7 @@ Instead of memorizing text, Pullbot learns **word meanings** and **sentence comp
 - 🧠 **Sentence Completion Training** — Trained to complete prompts naturally
 - 🔄 **Continuous Learning** — Scrapes and trains automatically
 - 🌐 **Live API** — Deployed on Render for real-time chat
-- 🎨 **Dark Emerald UI** — Modern ChatGPT-style interface
+- 🎨 **Dark Emerald UI** — Modern interface
 
 ---
 

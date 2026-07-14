@@ -1,0 +1,30 @@
+name: Force Clean Knowledge
+
+on:
+  workflow_dispatch:
+
+jobs:
+  clean:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install deps
+      run: pip install torch transformers numpy pyyaml
+      
+    - name: Nuclear clean and rebuild
+      run: python src/nuke_knowledge.py
+      
+    - name: Push
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git add knowledge/ data/processed/
+        git commit -m "Nuclear clean: rebuilt knowledge from scratch" || echo "No changes"
+        git push

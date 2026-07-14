@@ -23,6 +23,7 @@ jobs:
         from gguf import GGUFWriter
         
         chunks_dir = 'models/chunks'
+        output_path = os.path.abspath('models/pullbot.gguf')
         
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
@@ -42,16 +43,14 @@ jobs:
         model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
         
         print('Converting to GGUF...')
-        writer = GGUFWriter('models/pullbot.gguf', 'gpt2')
+        writer = GGUFWriter(output_path, 'gpt2')
         
-        # Add vocab
         vocab = tokenizer.get_vocab()
         tokens = [''] * len(vocab)
         for word, idx in vocab.items():
             tokens[idx] = word
         writer.add_token_list(tokens)
         
-        # Add weights - skip quantized ones
         state_dict = model.state_dict()
         count = 0
         for name, param in state_dict.items():
@@ -61,11 +60,17 @@ jobs:
             writer.add_tensor(name, arr)
             count += 1
         
+        print(f'Added {count} tensors, closing writer...')
         writer.close()
-        print(f'Added {count} tensors')
         
-        size_mb = os.path.getsize('models/pullbot.gguf') / (1024*1024)
-        print(f'GGUF model: {size_mb:.1f}MB')
+        if os.path.exists(output_path):
+            size_mb = os.path.getsize(output_path) / (1024*1024)
+            print(f'GGUF model: {size_mb:.1f}MB')
+        else:
+            print(f'ERROR: File not created at {output_path}')
+            import glob
+            print(f'Files in models/: {os.listdir(\"models\")}')
+            print(f'Chunks: {os.listdir(chunks_dir)}')
         "
     - name: Push GGUF model
       run: |
@@ -76,5 +81,6 @@ jobs:
           git commit -m "📤 Exported GGUF model" && git push || echo "No changes"
         else
           echo "GGUF file not found!"
+          ls -la models/
           exit 1
         fi

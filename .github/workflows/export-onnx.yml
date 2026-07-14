@@ -14,7 +14,7 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers onnx numpy
+      run: pip install torch transformers datasets onnx numpy accelerate safetensors pyyaml
     - name: Export ONNX
       run: python src/model.py onnx
     - name: Push ONNX model

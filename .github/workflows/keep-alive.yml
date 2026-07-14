@@ -1,0 +1,26 @@
+name: Keep Render Alive
+
+on:
+  schedule:
+    - cron: '*/12 8-23 * * *'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    
+    steps:
+    - name: Ping Render
+      run: |
+        STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://pullbot-api.onrender.com/health)
+        if [ "$STATUS" = "200" ]; then
+          echo "Render is awake"
+        else
+          echo "Render sleeping (status: $STATUS)"
+        fi
+        
+    - name: Ping Pullbot site
+      run: |
+        STATUS=$(curl -s -o /dev/null -w "%{http_code}" https://pullbot-ai.github.io)
+        echo "Site status: $STATUS"

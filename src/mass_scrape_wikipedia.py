@@ -1,7 +1,7 @@
 """
 Mass Wikipedia Word Extractor
-Scrapes full articles, extracts every unique word.
-Builds a clean English wordbank.
+Scrapes full articles, extracts every unique English word.
+Builds a clean vocabulary wordbank.
 """
 
 import os, sys, json, time, re, requests
@@ -24,24 +24,31 @@ def save_wordbank(bank):
 
 def extract_words(text):
     """Extract clean English words from text"""
-    # Remove non-alphabetic characters
+    # Remove non-alphabetic characters (keep spaces)
     text = re.sub(r'[^a-zA-Z\s]', ' ', text)
-    # Split into words, lowercase, filter short words
-    words = [w.lower() for w in text.split() if len(w) > 2 and w.isalpha()]
-    return list(set(words))  # Unique only
+    # Split, lowercase, filter
+    words = []
+    for w in text.split():
+        w = w.lower().strip()
+        if len(w) > 2 and w.isalpha():
+            words.append(w)
+    return list(set(words))
 
 def scrape_article():
-    """Scrape one random Wikipedia article"""
+    """Scrape one random Wikipedia article with proper headers"""
     try:
         r = requests.get(
             "https://en.wikipedia.org/api/rest_v1/page/random/summary",
-            timeout=15
+            timeout=15,
+            headers={'User-Agent': 'Pullbot/1.0 (https://pullbot-ai.github.io)'}
         )
         if r.status_code == 200:
             data = r.json()
             return data.get('extract', ''), data.get('title', 'unknown')
-    except:
-        pass
+        else:
+            print(f"   HTTP {r.status_code}")
+    except Exception as e:
+        print(f"   Error: {e}")
     return "", ""
 
 def run_mass_scrape(num_articles=50):
@@ -54,14 +61,30 @@ def run_mass_scrape(num_articles=50):
     bank = load_wordbank()
     starting_words = len(bank['words'])
     new_words = 0
+    errors = 0
+    empty = 0
     
     for i in range(num_articles):
         text, title = scrape_article()
+        
         if not text:
+            empty += 1
             continue
+        
+        # Debug first successful article
+        if i == 0 or (starting_words == 0 and new_words == 0 and i == 0):
+            print(f"   First article: {title}")
+            print(f"   Text length: {len(text)} chars")
+            print(f"   Preview: {text[:100]}...")
         
         words = extract_words(text)
         
+        # Debug first extraction
+        if i == 0 and words:
+            print(f"   Words extracted: {len(words)}")
+            print(f"   Sample: {words[:10]}")
+        
+        added_this_article = 0
         for word in words:
             if word not in bank['words']:
                 bank['words'][word] = {
@@ -70,15 +93,17 @@ def run_mass_scrape(num_articles=50):
                     'definition': ''
                 }
                 new_words += 1
+                added_this_article += 1
         
         bank['total_articles'] += 1
-        bank['total_words'] = len(bank['words'])
         
         if (i + 1) % 10 == 0:
-            print(f"   {i+1}/{num_articles} articles | {len(bank['words']):,} total words | +{new_words} new")
+            total = len(bank['words'])
+            print(f"   {i+1}/{num_articles} articles | {total:,} total words | +{new_words} new ({added_this_article} this batch) | {errors} err | {empty} empty")
         
         time.sleep(0.3)
     
+    bank['total_words'] = len(bank['words'])
     save_wordbank(bank)
     
     print(f"\n✅ Done!")
@@ -86,6 +111,14 @@ def run_mass_scrape(num_articles=50):
     print(f"   Words before: {starting_words:,}")
     print(f"   Words after: {len(bank['words']):,}")
     print(f"   New words added: {new_words:,}")
+    print(f"   Errors: {errors}")
+    print(f"   Empty articles: {empty}")
+    
+    # Show some words
+    all_words = list(bank['words'].keys())
+    if all_words:
+        print(f"\n   Sample words: {all_words[:20]}")
+    
     return bank
 
 if __name__ == '__main__':

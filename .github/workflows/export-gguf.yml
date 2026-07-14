@@ -14,13 +14,13 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers numpy safetensors
+      run: pip install torch transformers numpy safetensors gguf sentencepiece
     - name: Convert to GGUF
       run: |
-        pip install gguf
         python -c "
-        import os, json, torch
+        import os, json, torch, numpy as np
         from transformers import AutoModelForCausalLM, AutoTokenizer
+        from gguf import GGUFWriter, GGUFValueType
         
         chunks_dir = 'models/chunks'
         
@@ -38,15 +38,39 @@ jobs:
                         out.write(inc.read())
         
         print('Loading model...')
+        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
         model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
         
         print('Converting to GGUF...')
-        from gguf import GGUFWriter
+        
+        # Create GGUF writer
         writer = GGUFWriter('models/pullbot.gguf', 'gpt2')
+        
+        # Add model architecture metadata
+        writer.add_architecture()
+        writer.add_context_length(1024)
+        writer.add_embedding_length(768)
+        writer.add_feed_forward_length(3072)
+        writer.add_head_count(12)
+        writer.add_layer_count(6)
+        writer.add_vocab_size(50257)
+        
+        # Add tokenizer
+        vocab = tokenizer.get_vocab()
+        tokens = [''] * len(vocab)
+        for word, idx in vocab.items():
+            tokens[idx] = word
+        writer.add_token_list(tokens)
+        
+        # Add weights
         state_dict = model.state_dict()
         for name, param in state_dict.items():
-            writer.add_tensor(name, param.numpy())
-        writer.write()
+            if param.dtype == torch.qint8:
+                continue  # Skip quantized params
+            arr = param.cpu().numpy()
+            writer.add_tensor(name, arr)
+        
+        writer.close()
         
         size_mb = os.path.getsize('models/pullbot.gguf') / (1024*1024)
         print(f'GGUF model: {size_mb:.1f}MB')

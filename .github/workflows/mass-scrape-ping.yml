@@ -10,8 +10,8 @@ jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Wait and ping
+      - name: Wait and trigger
         run: |
-          echo "Mass scrape complete. Resting 15s..."
+          echo "Mass scrape done. Resting 15s..."
           sleep 15
           echo "Ping! Next scrape ready."

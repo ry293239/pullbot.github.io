@@ -277,13 +277,13 @@
     },
     "states": {
       "first_seen": "Bethany, Pennsylvania",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A condition; a set of circumstances applying at any given time."
     },
     "census": {
       "first_seen": "Bethany, Pennsylvania",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals."
     },
     "wayne": {
       "first_seen": "Bethany, Pennsylvania",
@@ -512,33 +512,33 @@
     },
     "include": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A piece of source code or other content..."
     },
     "understanding": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To grasp a concept fully and thoroughly, especially..."
     },
     "organization": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The quality of being organized."
     },
     "behavior": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Human conduct relative to social norms."
     },
     "reviewed": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To survey; to look broadly over."
     },
     "methods": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A process by which a task is completed;..."
     },
     "michael": {
       "first_seen": "Journal of Health and Social Behavior",
@@ -547,8 +547,8 @@
     },
     "publishing": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To issue (something, such as printed work) for..."
     },
     "application": {
       "first_seen": "Journal of Health and Social Behavior",
@@ -877,8 +877,8 @@
     },
     "featuring": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To ascribe the greatest importance to something within a certain context."
     },
     "soewarno": {
       "first_seen": "Rich Brian",
@@ -897,8 +897,8 @@
     },
     "single": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A 45 RPM vinyl record with one song on side A and one on side B."
     },
     "brightside": {
       "first_seen": "Rich Brian",
@@ -907,18 +907,18 @@
     },
     "sailor": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A person in the business of navigating ships or other vessels"
     },
     "rising": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To move, or appear to move, physically upwards relative to the ground."
     },
     "third": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The person or thing in the third position."
     },
     "january": {
       "first_seen": "Rich Brian",
@@ -927,18 +927,18 @@
     },
     "would": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Something that would happen, or would be the case, under different circumstances; a potentiality."
     },
     "viral": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A video, image or text spread by \"word of mouth\" on the internet or by e-mail for humorous, political or marketing purposes."
     },
     "slump": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A heavy or helpless collapse; a slouching or drooping posture; a period of poor activity or performance, especially an extended period."
     },
     "indonesian": {
       "first_seen": "Rich Brian",
@@ -1042,23 +1042,23 @@
     },
     "second": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "Something that is number two in a series."
     },
     "gold": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A heavy yellow elemental metal of great value, with atomic number 79 and symbol Au."
     },
     "artist": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A person who creates art."
     },
     "rich": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "To enrich."
     },
     "maxo": {
       "first_seen": "Rich Brian",
@@ -1067,8 +1067,8 @@
     },
     "number": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "An abstract entity used to describe quantity."
     },
     "soundcloud": {
       "first_seen": "Rich Brian",
@@ -16109,9 +16109,2509 @@
       "first_seen": "Edwin Milton Abbott",
       "has_definition": false,
       "definition": ""
+    },
+    "trono": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "therapy": {
+      "first_seen": "Didier Trono",
+      "has_definition": true,
+      "definition": "Attempted remediation of a health problem following a diagnosis, usually synonymous with treatment."
+    },
+    "lausanne": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cole": {
+      "first_seen": "Didier Trono",
+      "has_definition": true,
+      "definition": "Cabbage."
+    },
+    "interactions": {
+      "first_seen": "Didier Trono",
+      "has_definition": true,
+      "definition": "The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence."
+    },
+    "rale": {
+      "first_seen": "Didier Trono",
+      "has_definition": true,
+      "definition": "(now chiefly in plural) An abnormal clicking, rattling or crackling sound, made by one or both lungs and heard with a stethoscope, caused by the popping open of airways collapsed by fluid or exudate, or sometimes by pulmonary edema."
+    },
+    "epfl": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "swiss": {
+      "first_seen": "Didier Trono",
+      "has_definition": true,
+      "definition": "To prepare (meat, fabric, etc.) by rolling or pounding in order to soften it."
+    },
+    "polytechnique": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "virologist": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "didier": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lentiviral": {
+      "first_seen": "Didier Trono",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vectors": {
+      "first_seen": "Didier Trono",
+      "has_definition": true,
+      "definition": "A directed quantity, one with both magnitude and direction; the signed difference between two points."
+    },
+    "valide": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dila": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ube": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": true,
+      "definition": "The purple yam, Dioscorea alata."
+    },
+    "ottoman": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": true,
+      "definition": "An upholstered sofa, without arms or a back, sometimes with a compartment for storing linen, etc."
+    },
+    "ibrahim": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suleiman": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "consort": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": true,
+      "definition": "The spouse of a monarch."
+    },
+    "saliha": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sultan": {
+      "first_seen": "Saliha Dila\u015fub Sultan",
+      "has_definition": true,
+      "definition": "The holder of a secular office, formally subordinate to, but de facto the power behind the throne of, the caliph."
+    },
+    "earth": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": true,
+      "definition": "The third planet of the Solar System; the world upon which humans live."
+    },
+    "strategy": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": true,
+      "definition": "The science and art of military command as applied to the overall planning and conduct of warfare."
+    },
+    "maelstrom": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": true,
+      "definition": "A large and violent whirlpool."
+    },
+    "vision": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": true,
+      "definition": "The sense or ability of sight."
+    },
+    "begins": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": true,
+      "definition": "To start, to initiate or take the first step into something."
+    },
+    "real": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": true,
+      "definition": "A commodity; see realty."
+    },
+    "codemasters": {
+      "first_seen": "Maelstrom: The Battle for Earth Begins",
+      "has_definition": false,
+      "definition": ""
+    },
+    "start": {
+      "first_seen": "FC Lahti",
+      "has_definition": true,
+      "definition": "The beginning of an activity."
+    },
+    "toolpoint": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "litmanen": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ykk": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "veikkausliiga": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reipas": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jari": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stints": {
+      "first_seen": "FC Lahti",
+      "has_definition": true,
+      "definition": "A period of time spent doing or being something; a spell."
+    },
+    "sliiga": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tier": {
+      "first_seen": "FC Lahti",
+      "has_definition": true,
+      "definition": "One who ties (knots, etc)."
+    },
+    "lahti": {
+      "first_seen": "FC Lahti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "promoted": {
+      "first_seen": "FC Lahti",
+      "has_definition": true,
+      "definition": "To raise (someone) to a more important, responsible, or remunerative job or rank."
+    },
+    "anchorage": {
+      "first_seen": "Mudanya",
+      "has_definition": true,
+      "definition": "A harbor, river, or offshore area that can accommodate a ship at anchor, either for quarantine, queuing, or discharge.."
+    },
+    "produces": {
+      "first_seen": "Mudanya",
+      "has_definition": true,
+      "definition": "To yield, make or manufacture; to generate."
+    },
+    "usable": {
+      "first_seen": "Mudanya",
+      "has_definition": true,
+      "definition": "Capable of being used."
+    },
+    "cargo": {
+      "first_seen": "Mudanya",
+      "has_definition": true,
+      "definition": "Freight carried by a ship, aircraft, or motor vehicle."
+    },
+    "bursa": {
+      "first_seen": "Mudanya",
+      "has_definition": true,
+      "definition": "Any of the many small fluid-filled sacs located at the point where a muscle or tendon slides across bone. These sacs serve to reduce friction between the two moving surfaces."
+    },
+    "marmara": {
+      "first_seen": "Mudanya",
+      "has_definition": false,
+      "definition": ""
+    },
+    "olive": {
+      "first_seen": "Mudanya",
+      "has_definition": true,
+      "definition": "A tree, Olea europaea, cultivated since ancient times in the Mediterranean for its fruit and the oil obtained from it."
+    },
+    "fishing": {
+      "first_seen": "Mudanya",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mudanya": {
+      "first_seen": "Mudanya",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boats": {
+      "first_seen": "Mudanya",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gemlik": {
+      "first_seen": "Mudanya",
+      "has_definition": false,
+      "definition": ""
+    },
+    "calm": {
+      "first_seen": "Mudanya",
+      "has_definition": false,
+      "definition": ""
+    },
+    "table": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "josefin": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "para": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tennis": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paralympics": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "medal": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "medaled": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paralympic": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "abrahamsson": {
+      "first_seen": "Josefin Abrahamsson",
+      "has_definition": false,
+      "definition": ""
+    },
+    "connecticut": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "meriden": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "craig": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "democrat": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "representing": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "prior": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "senate": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bartolomeo": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dant": {
+      "first_seen": "Dant\u00e9 Bartolomeo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "redesigned": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "produce": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eviation": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jet": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "revived": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "failed": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": true,
+      "definition": "To be unsuccessful."
+    },
+    "engined": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vantage": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jets": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": true,
+      "definition": "A collimated stream, spurt or flow of liquid or gas from a pressurized container, an engine, etc."
+    },
+    "business": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": true,
+      "definition": "A specific commercial enterprise or establishment."
+    },
+    "visionaire": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": false,
+      "definition": ""
+    },
+    "prototype": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": true,
+      "definition": "An original form or object which is a basis for other forms or objects (particularly manufactured items), or for its generalizations and models."
+    },
+    "corporation": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": true,
+      "definition": "A body corporate, created by law or under authority of law, having a continuous existence independent of the existences of its members, and powers and liabilities distinct from those of its members."
+    },
+    "relaunched": {
+      "first_seen": "VisionAire Vantage",
+      "has_definition": true,
+      "definition": "To launch again."
+    },
+    "towards": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "In the direction of."
+    },
+    "write": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "The act or style of writing."
+    },
+    "humbug": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "A hoax, jest, or prank."
+    },
+    "domino": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "A tile divided into two squares, each having 0 to 6 (or sometimes more) dots or pips (as in dice), used in the game of dominoes."
+    },
+    "monkeys": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "Any member of the clade Simiiformes not also of the clade Hominoidea containing humans and apes, from which they are usually, but not universally, distinguished by smaller size, a tail, and cheek pouches."
+    },
+    "recording": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "To make a record of information."
+    },
+    "material": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "Matter which may be shaped or manipulated, particularly in making something."
+    },
+    "arctic": {
+      "first_seen": "Humbug (album)",
+      "has_definition": true,
+      "definition": "A warm waterproof overshoe."
+    },
+    "bidding": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "To issue a command; to tell."
+    },
+    "passenger": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "One who rides or travels in a vehicle, but who does not operate it and is not a member of the crew."
+    },
+    "folds": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "An act of folding."
+    },
+    "spawned": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "To produce or deposit (eggs) in water."
+    },
+    "versions": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A specific form or variation of something."
+    },
+    "guitars": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A stringed musical instrument, of European origin, usually with a fretted fingerboard and six strings, played with the fingers or a plectrum (guitar pick)."
+    },
+    "alternative": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A situation which allows a mutually exclusive choice between two or more possibilities; a choice between two or more possibilities."
+    },
+    "completely": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "(manner) In a complete manner"
+    },
+    "compilations": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "The act or process of compiling or gathering together from various sources."
+    },
+    "emi": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reappeared": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "To appear again."
+    },
+    "reviews": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A second or subsequent reading of a text or artifact in an attempt to gain new insights."
+    },
+    "ben": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A prayer; a petition."
+    },
+    "excluded": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "To bar (someone) from entering; to keep out."
+    },
+    "sides": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A bounding straight edge of a two-dimensional shape."
+    },
+    "positive": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "A thing capable of being affirmed; something real or actual."
+    },
+    "sony": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sparked": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": true,
+      "definition": "To trigger, kindle into activity (an argument, etc)."
+    },
+    "lead": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "label": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eventually": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "caroline": {
+      "first_seen": "Ben Folds Five (album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "celebration": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "multicultural": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "every": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jacksonville": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nations": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "exhibitions": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "features": {
+      "first_seen": "World of Nations Celebration",
+      "has_definition": false,
+      "definition": ""
+    },
+    "esporte": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mato": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cacerense": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "simply": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ceres": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "grosso": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "clube": {
+      "first_seen": "Cacerense Esporte Clube",
+      "has_definition": false,
+      "definition": ""
+    },
+    "huntar": {
+      "first_seen": "Lewis Mokler",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lewis": {
+      "first_seen": "Lewis Mokler",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mokler": {
+      "first_seen": "Lewis Mokler",
+      "has_definition": false,
+      "definition": ""
+    },
+    "indie": {
+      "first_seen": "Lewis Mokler",
+      "has_definition": false,
+      "definition": ""
+    },
+    "off": {
+      "first_seen": "Bernard's Ferry",
+      "has_definition": false,
+      "definition": ""
+    },
+    "owyhee": {
+      "first_seen": "Bernard's Ferry",
+      "has_definition": false,
+      "definition": ""
+    },
+    "snake": {
+      "first_seen": "Bernard's Ferry",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bernard": {
+      "first_seen": "Bernard's Ferry",
+      "has_definition": false,
+      "definition": ""
+    },
+    "murphy": {
+      "first_seen": "Bernard's Ferry",
+      "has_definition": false,
+      "definition": ""
+    },
+    "idaho": {
+      "first_seen": "Bernard's Ferry",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mast": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "anand": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shilpa": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mumbai": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "byaman": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mihani": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tarun": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "indian": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rajesh": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vivek": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shukla": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kallander": {
+      "first_seen": "Mumbai Mast Kallander",
+      "has_definition": false,
+      "definition": ""
+    },
+    "berne": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": false,
+      "definition": ""
+    },
+    "copyright": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "The right by law to be the entity which determines who may publish, copy and distribute a piece of writing, music, picture or other work of authorship."
+    },
+    "limitations": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "The act of limiting or the state of being limited."
+    },
+    "provisions": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "An item of goods or supplies, especially food, obtained for future use."
+    },
+    "license": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "A legal document giving official permission to do something; a permit."
+    },
+    "exceptions": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "The act of excepting or excluding; exclusion; restriction by taking out something which would otherwise be included, as in a class, statement, rule."
+    },
+    "copyrighted": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "To obtain or secure a copyright for some literary or other artistic work."
+    },
+    "allow": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "To grant, give, admit, accord, afford, or yield; to let one have."
+    },
+    "convention": {
+      "first_seen": "Limitations and exceptions to copyright",
+      "has_definition": true,
+      "definition": "A meeting or gathering."
+    },
+    "tusa": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "latino": {
+      "first_seen": "Tusa (song)",
+      "has_definition": true,
+      "definition": "(chiefly US) A person, especially and usually (interpreted as) a male, from Latin America, a Hispanic person. (Compare Latina.)"
+    },
+    "minaj": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "universal": {
+      "first_seen": "Tusa (song)",
+      "has_definition": true,
+      "definition": "A characteristic or property that particular things have in common."
+    },
+    "nicki": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "trinidadian": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "karol": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ovy": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "drums": {
+      "first_seen": "Tusa (song)",
+      "has_definition": true,
+      "definition": "A percussive musical instrument spanned with a thin covering on at least one end for striking, forming an acoustic chamber, affecting what materials are used to make it; a membranophone."
+    },
+    "keityn": {
+      "first_seen": "Tusa (song)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "contention": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "Argument, contest, debate, strife, struggle."
+    },
+    "broncos": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "A horse of western North America that is wild or not fully broken."
+    },
+    "giants": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "A mythical human of very great size."
+    },
+    "drought": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "A period of unusually low rainfall, longer and more severe than a dry spell."
+    },
+    "playoff": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "A final game in a series needed to break a tie."
+    },
+    "colts": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "A young male horse."
+    },
+    "blowout": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "A sudden puncturing of a pneumatic tyre/tire."
+    },
+    "week": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "Any period of seven consecutive days."
+    },
+    "upset": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": true,
+      "definition": "Disturbance or disruption."
+    },
+    "worst": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "improve": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "afc": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manager": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shane": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "record": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "denver": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eliminated": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chris": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ballard": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "steichen": {
+      "first_seen": "2024 Indianapolis Colts season",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vargas": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tank": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "institution": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "janeiro": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "funda": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rio": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "think": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "getulio": {
+      "first_seen": "Funda\u00e7\u00e3o Getulio Vargas",
+      "has_definition": false,
+      "definition": ""
+    },
+    "albeit": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seventh": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "laps": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "scored": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "down": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "michel": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sparken": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "poberejsky": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pseudonym": {
+      "first_seen": "Mike Sparken",
+      "has_definition": false,
+      "definition": ""
+    },
+    "block": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "barn": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chicken": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tioga": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gabled": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "entrance": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "The action of entering, or going in."
+    },
+    "coop": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "A basket, pen or enclosure for birds or small animals."
+    },
+    "newark": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "woodshed": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "An enclosed, roofed structure, often an outbuilding, used primarily to store firewood."
+    },
+    "granary": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "A storage facility for grain or sometimes animal feed."
+    },
+    "belcher": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carving": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "To cut."
+    },
+    "holden": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": false,
+      "definition": ""
+    },
+    "delicate": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "A delicate item of clothing, especially underwear or lingerie."
+    },
+    "silo": {
+      "first_seen": "Belcher-Holden Farm",
+      "has_definition": true,
+      "definition": "A vertical building, usually cylindrical, used for the production of silage."
+    },
+    "tangsir": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "valorous": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": true,
+      "definition": "Having or displaying valour."
+    },
+    "tangestan": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sadeq": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "iranian": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "recounts": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": true,
+      "definition": "Narration, account, description, rendering"
+    },
+    "fighters": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": true,
+      "definition": "A person who fights; a combatant."
+    },
+    "chubak": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "persian": {
+      "first_seen": "Tangsir (novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ross": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "companion": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": true,
+      "definition": "A friend, acquaintance, or partner; someone with whom one spends time or keeps company"
+    },
+    "fleur": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "restaurateur": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": true,
+      "definition": "The owner of a restaurant."
+    },
+    "lyse": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": true,
+      "definition": "To burst or cut a cell or cell structure; to induce lysis."
+    },
+    "sullivan": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": false,
+      "definition": ""
+    },
+    "merit": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": true,
+      "definition": "A claim to commendation or a reward."
+    },
+    "food": {
+      "first_seen": "Fleur Sullivan",
+      "has_definition": true,
+      "definition": "Any solid substance that can be consumed by living organisms, especially by eating, in order to sustain life."
+    },
+    "beautiful": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "Someone who is beautiful. Can be used as a term of address."
+    },
+    "larry": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "decades": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "A group, set, or series of ten , particularly:"
+    },
+    "chainz": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "alc": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "alchemist": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "One who practices alchemy."
+    },
+    "handled": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "To touch; to feel or hold with the hand(s)."
+    },
+    "escape": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "The act of leaving a dangerous or unpleasant situation."
+    },
+    "def": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "Deficiency in amount or quality; a falling short; lack."
+    },
+    "departing": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "To leave."
+    },
+    "collaborative": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "An organized group of people or entities who collaborate towards a particular goal"
+    },
+    "marks": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": true,
+      "definition": "(heading) Boundary, land within a boundary."
+    },
+    "jam": {
+      "first_seen": "Life Is Beautiful (Larry June, 2 Chainz and the Alchemist album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mihai": {
+      "first_seen": "Petre Mihai B\u0103n\u0103rescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rescu": {
+      "first_seen": "Petre Mihai B\u0103n\u0103rescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ichthyologist": {
+      "first_seen": "Petre Mihai B\u0103n\u0103rescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "petre": {
+      "first_seen": "Petre Mihai B\u0103n\u0103rescu",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ministry": {
+      "first_seen": "Ministry of Housing and Residential Area",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reports": {
+      "first_seen": "Ministry of Housing and Residential Area",
+      "has_definition": false,
+      "definition": ""
+    },
+    "maruarar": {
+      "first_seen": "Ministry of Housing and Residential Area",
+      "has_definition": false,
+      "definition": ""
+    },
+    "residential": {
+      "first_seen": "Ministry of Housing and Residential Area",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sirait": {
+      "first_seen": "Ministry of Housing and Residential Area",
+      "has_definition": false,
+      "definition": ""
+    },
+    "australasian": {
+      "first_seen": "Edith Lyttleton (New Zealand writer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "edith": {
+      "first_seen": "Edith Lyttleton (New Zealand writer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "joan": {
+      "first_seen": "Edith Lyttleton (New Zealand writer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lyttleton": {
+      "first_seen": "Edith Lyttleton (New Zealand writer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lancaster": {
+      "first_seen": "Edith Lyttleton (New Zealand writer)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boarding": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shooting": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pupils": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rifle": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "swimming": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sometimes": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "skating": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "course": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "track": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rink": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "craigleith": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "outdoor": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "edinburgh": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hole": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "forested": {
+      "first_seen": "Fettes College",
+      "has_definition": true,
+      "definition": "To cover an area with trees."
+    },
+    "golf": {
+      "first_seen": "Fettes College",
+      "has_definition": true,
+      "definition": "A ball game played by individuals competing against one another in which the object is to hit a ball into each of a series of (usually 18 or nine) holes in the minimum number of strokes."
+    },
+    "pool": {
+      "first_seen": "Fettes College",
+      "has_definition": true,
+      "definition": "A small and rather deep collection of (usually) fresh water, as one supplied by a spring, or occurring in the course of a stream; a reservoir for water."
+    },
+    "hectare": {
+      "first_seen": "Fettes College",
+      "has_definition": true,
+      "definition": "A unit of surface area (symbol ha) equal to 100 ares (that is, 10,000 square metres, one hundredth of a square kilometre, or approximately 2.5 acres), used for measuring the areas of geographical features such as land and bodies of water."
+    },
+    "scotland": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cross": {
+      "first_seen": "Fettes College",
+      "has_definition": true,
+      "definition": "A geometrical figure consisting of two straight lines or bars intersecting each other such that at least one of them is bisected by the other."
+    },
+    "thirds": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fettes": {
+      "first_seen": "Fettes College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nunavut": {
+      "first_seen": "Churchill Airport",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kivalliq": {
+      "first_seen": "Churchill Airport",
+      "has_definition": false,
+      "definition": ""
+    },
+    "churchill": {
+      "first_seen": "Churchill Airport",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nautical": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "Relating to or involving ships or shipping or navigation or seamen."
+    },
+    "airport": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "An airfield (an area designated for the takeoff and landing of aircraft), including one or more runways and (for commercial airports) one or more passenger terminals."
+    },
+    "ecotourism": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "Responsible travel to natural areas supporting the fauna, flora, and local economy"
+    },
+    "winnipeg": {
+      "first_seen": "Churchill Airport",
+      "has_definition": false,
+      "definition": ""
+    },
+    "surrounding": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "To encircle something or simultaneously extend in all directions."
+    },
+    "passengers": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "One who rides or travels in a vehicle, but who does not operate it and is not a member of the crew."
+    },
+    "transfer": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "The act of conveying or removing something from one place, person or thing to another."
+    },
+    "communities": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "A group sharing a common understanding, and often the same language, law, manners, and/or tradition."
+    },
+    "handles": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "The part of an object which is (designed to be) held in the hand when used or moved."
+    },
+    "remote": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "An element of broadcast programming originating away from the station's or show's control room."
+    },
+    "destination": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "The act of destining or appointing."
+    },
+    "domestic": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "A house servant; a maid; a household worker."
+    },
+    "relatively": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "Proportionally, in relation to some larger scale thing."
+    },
+    "manitoba": {
+      "first_seen": "Churchill Airport",
+      "has_definition": false,
+      "definition": ""
+    },
+    "travelling": {
+      "first_seen": "Churchill Airport",
+      "has_definition": true,
+      "definition": "To be on a journey, often for pleasure or business and with luggage; to go from one place to another."
+    },
+    "regarded": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": true,
+      "definition": "To look at; to observe."
+    },
+    "alfred": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "illustrations": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": true,
+      "definition": "The act of illustrating; the act of making clear and distinct; education; also, the state of being illustrated, or of being made clear and distinct."
+    },
+    "old": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": true,
+      "definition": "(with the, invariable plural only) People who are old; old beings; the older generation, taken as a group."
+    },
+    "invited": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": true,
+      "definition": "To ask for the presence or participation of someone or something."
+    },
+    "draughtsman": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": true,
+      "definition": "A person skilled at drawing engineering or architectural plans."
+    },
+    "man": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": true,
+      "definition": "An adult male human."
+    },
+    "precursor": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "meyrink": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kubin": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "magical": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gustav": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "golem": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "inspired": {
+      "first_seen": "The Other Side (Kubin novel)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hasandlar": {
+      "first_seen": "Johanan HaSandlar",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rabbi": {
+      "first_seen": "Johanan HaSandlar",
+      "has_definition": false,
+      "definition": ""
+    },
+    "johanan": {
+      "first_seen": "Johanan HaSandlar",
+      "has_definition": false,
+      "definition": ""
+    },
+    "imaan": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hindi": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ramasamy": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manohar": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ganesan": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "balaji": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sivaji": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sundarrajan": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "magan": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manjula": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "raghavan": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "manorama": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "commercially": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rajendran": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tamil": {
+      "first_seen": "En Magan (1974 film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "months": {
+      "first_seen": "Frank T. Fitzgerald",
+      "has_definition": false,
+      "definition": ""
+    },
+    "representative": {
+      "first_seen": "Frank T. Fitzgerald",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fitzgerald": {
+      "first_seen": "Frank T. Fitzgerald",
+      "has_definition": false,
+      "definition": ""
+    },
+    "frank": {
+      "first_seen": "Frank T. Fitzgerald",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nelson": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "drummer": {
+      "first_seen": "Harvey Danger",
+      "has_definition": true,
+      "definition": "One who plays the drums."
+    },
+    "solidifying": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "danger": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "harvey": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "remainder": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "journalism": {
+      "first_seen": "Harvey Danger",
+      "has_definition": true,
+      "definition": "The activity or profession of being a journalist."
+    },
+    "seattle": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brought": {
+      "first_seen": "Harvey Danger",
+      "has_definition": true,
+      "definition": "(ditransitive) To transport toward somebody/somewhere."
+    },
+    "huffman": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "evan": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lineup": {
+      "first_seen": "Harvey Danger",
+      "has_definition": true,
+      "definition": "A physical or photographic queue of people allegedly involved in a crime, allowing a witness to identify them"
+    },
+    "aaron": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sean": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jeff": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "existence": {
+      "first_seen": "Harvey Danger",
+      "has_definition": true,
+      "definition": "The state of being, existing, or occurring; beinghood."
+    },
+    "lin": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sult": {
+      "first_seen": "Harvey Danger",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shenzhen": {
+      "first_seen": "Heshuikou station",
+      "has_definition": false,
+      "definition": ""
+    },
+    "heshuikou": {
+      "first_seen": "Heshuikou station",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lyrics": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": true,
+      "definition": "A lyric poem."
+    },
+    "unexpected": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": true,
+      "definition": "Not expected, anticipated or foreseen."
+    },
+    "elusive": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": true,
+      "definition": "Evading capture, comprehension or remembrance."
+    },
+    "denny": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": false,
+      "definition": ""
+    },
+    "harmonies": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": true,
+      "definition": "Agreement or accord."
+    },
+    "ravens": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": true,
+      "definition": "Any of several, generally large and lustrous black species of birds in the genus Corvus, especially the common raven, Corvus corax."
+    },
+    "sandy": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": true,
+      "definition": "Covered with sand."
+    },
+    "grassman": {
+      "first_seen": "The North Star Grassman and the Ravens",
+      "has_definition": false,
+      "definition": ""
+    },
+    "passerine": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "Any bird of the order Passeriformes, which comprises more than half of all bird species."
+    },
+    "antbird": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "Any of various drab-colored South American birds of the family Thamnophilidae that feed on ants."
+    },
+    "costa": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "A rib."
+    },
+    "honduras": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chestnut": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "A tree or shrub of the genus Castanea."
+    },
+    "backed": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "To go in the reverse direction."
+    },
+    "nicaragua": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thamnophilinae": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "typical": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "Anything that is typical, normal, or standard."
+    },
+    "panama": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thamnophilidae": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ecuador": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rica": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": false,
+      "definition": ""
+    },
+    "antbirds": {
+      "first_seen": "Chestnut-backed antbird",
+      "has_definition": true,
+      "definition": "Any of various drab-colored South American birds of the family Thamnophilidae that feed on ants."
+    },
+    "fairuz": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "philosopher": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": true,
+      "definition": "A lover of wisdom."
+    },
+    "lebanese": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thinker": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": true,
+      "definition": "One who spends time thinking, contemplating or meditating."
+    },
+    "brother": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": true,
+      "definition": "Son of the same parents as another person."
+    },
+    "rahbani": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mansour": {
+      "first_seen": "Mansour Rahbani",
+      "has_definition": false,
+      "definition": ""
+    },
+    "completed": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "To finish; to make done; to reach the end."
+    },
+    "extended": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "To increase in extent."
+    },
+    "numbered": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "To label (items) with numbers; to assign numbers to (items)."
+    },
+    "wallis": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": false,
+      "definition": ""
+    },
+    "section": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "A cutting; a part cut out from the rest of something."
+    },
+    "resurfacing": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "To come once again to the surface"
+    },
+    "wharton": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": false,
+      "definition": ""
+    },
+    "matagorda": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": false,
+      "definition": ""
+    },
+    "restored": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "To reestablish, or bring back into existence."
+    },
+    "done": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "(auxiliary) A syntactic marker."
+    },
+    "cancelled": {
+      "first_seen": "Texas State Highway 60",
+      "has_definition": true,
+      "definition": "To cross out something with lines etc."
+    },
+    "filley": {
+      "first_seen": "Filley, Nebraska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nebraska": {
+      "first_seen": "Filley, Nebraska",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gage": {
+      "first_seen": "Filley, Nebraska",
+      "has_definition": true,
+      "definition": "Something, such as a glove or other pledge, thrown down as a challenge to combat (now usually figurative)."
+    },
+    "organist": {
+      "first_seen": "Funk You!",
+      "has_definition": true,
+      "definition": "A musician who plays the organ."
+    },
+    "prestige": {
+      "first_seen": "Funk You!",
+      "has_definition": true,
+      "definition": "The quality of how good the reputation of something or someone is, how favourably something or someone is regarded."
+    },
+    "patterson": {
+      "first_seen": "Funk You!",
+      "has_definition": false,
+      "definition": ""
+    },
+    "recounted": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": true,
+      "definition": "To tell; narrate; to relate in detail"
+    },
+    "protagonist": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": true,
+      "definition": "(authorship) The main character, or one of the main characters, in any story, such as a literary work or drama."
+    },
+    "thames": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fox": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": true,
+      "definition": "A red fox, small carnivore (Vulpes vulpes), related to dogs and wolves, with red or silver fur and a bushy tail."
+    },
+    "itv": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gangland": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": true,
+      "definition": "The underworld of organized crime."
+    },
+    "euston": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "thirteen": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": true,
+      "definition": "The cardinal number occurring after twelve and before fourteen, represented in Roman numerals as XIII and in Arabic numerals as 13."
+    },
+    "lives": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "episodes": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": true,
+      "definition": "An incident, action, or time period standing out by itself, but more or less connected with a complete series of events."
+    },
+    "clapham": {
+      "first_seen": "Fox (TV series)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "westphalia": {
+      "first_seen": "Trams in Duisburg",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tramway": {
+      "first_seen": "Trams in Duisburg",
+      "has_definition": true,
+      "definition": "The track on which a tram (streetcar) runs."
+    },
+    "duisburg": {
+      "first_seen": "Trams in Duisburg",
+      "has_definition": false,
+      "definition": ""
+    },
+    "forming": {
+      "first_seen": "Trams in Duisburg",
+      "has_definition": true,
+      "definition": "To assume (a certain shape or visible structure)."
+    },
+    "tramways": {
+      "first_seen": "Trams in Duisburg",
+      "has_definition": true,
+      "definition": "The track on which a tram (streetcar) runs."
+    },
+    "rhine": {
+      "first_seen": "Trams in Duisburg",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jos": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": false,
+      "definition": ""
+    },
+    "oakridge": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": false,
+      "definition": ""
+    },
+    "roat": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bustillo": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": false,
+      "definition": ""
+    },
+    "guardiola": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": false,
+      "definition": ""
+    },
+    "honor": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": true,
+      "definition": "Recognition of importance or value; respect; veneration (of someone, usually for being morally upright or successful)"
+    },
+    "santos": {
+      "first_seen": "Jos\u00e9 Santos Guardiola, Bay Islands",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sequel": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": true,
+      "definition": "The events, collectively, which follow a previously mentioned event; the aftermath."
+    },
+    "ast": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "obelix": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "magnier": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ren": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": true,
+      "definition": "A kidney."
+    },
+    "alexandre": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "asterix": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rix": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "goscinny": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "forestier": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "langmann": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "installment": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": true,
+      "definition": "One of a series of parts, whether equal or unequal to the other parts of the series, of a given entity or a given process, which part presents or is presented at a particular scheduled interval."
+    },
+    "uderzo": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cleopatra": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": true,
+      "definition": "The butterfly Gonepteryx cleopatra of the family Pieridae."
+    },
+    "charlot": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "characters": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": true,
+      "definition": "A being involved in the action of a story."
+    },
+    "ric": {
+      "first_seen": "Asterix at the Olympic Games (film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bottom": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": true,
+      "definition": "The lowest part of anything."
+    },
+    "standings": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": true,
+      "definition": "Position or reputation in society or a profession."
+    },
+    "usa": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fcs": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dana": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": false,
+      "definition": ""
+    },
+    "miners": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": true,
+      "definition": "A person who works in a mine."
+    },
+    "tying": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": true,
+      "definition": "To twist (a string, rope, or the like) around itself securely."
+    },
+    "bowl": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": true,
+      "definition": "A roughly hemispherical container used to hold, mix or present food, such as salad, fruit or soup, or other items."
+    },
+    "sun": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": true,
+      "definition": "A star, especially when seen as the centre of any single solar system."
+    },
+    "paso": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dimel": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": false,
+      "definition": ""
+    },
+    "utep": {
+      "first_seen": "2018 UTEP Miners football team",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lithuania": {
+      "first_seen": "Lithuania at the European Games",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sculptor": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hospital": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nursery": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "child": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ann": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "delafield": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dubois": {
+      "first_seen": "Mary Ann Delafield DuBois",
+      "has_definition": false,
+      "definition": ""
+    },
+    "beginning": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "solos": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "opposed": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wake": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "normal": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "paige": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "struggle": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "unlike": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hitt": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cancer": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ishine": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "armstrong": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hard": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "profound": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vocals": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "occasional": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boasts": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "omartian": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "whiplash": {
+      "first_seen": "Wake Up (Paige Armstrong album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "spurrier": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "A maker of spurs."
+    },
+    "unexpectedly": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vin": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "expert": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "A person with extensive knowledge or ability in a given subject."
+    },
+    "merchant": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "A person who traffics in commodities for profit."
+    },
+    "tasting": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "A small amount of food or drink."
+    },
+    "elevated": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "To raise (something) to a higher position."
+    },
+    "christie": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "A high-speed ski turn in which the skis are kept parallel."
+    },
+    "academie": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wine": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "An alcoholic beverage made by fermenting the juice of grapes."
+    },
+    "expansion": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "The act or process of expanding."
+    },
+    "authoring": {
+      "first_seen": "Steven Spurrier (wine merchant)",
+      "has_definition": true,
+      "definition": "(sometimes proscribed) To create a work as its author."
     }
   },
-  "total_articles": 200,
-  "total_words": 3222,
-  "total_defined": 498
+  "total_articles": 250,
+  "total_words": 3722,
+  "total_defined": 706
 }

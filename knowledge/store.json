@@ -11228,5 +11228,375 @@
     "text": " the .nnue extension, storing the neural network for the NNUE\n    evaluation. Binary distributions will have this file embedded.\n\n## Contributing\n\n__See [Contributing Guide](CONTRIBUTING.md).__\n\n### Donating hardware\n\nImproving Stockfish requires a mass",
     "source": "unknown",
     "added": 1783902174
+  },
+  {
+    "text": "structured tables/formats precisely.  \n2. Claude 3.5/4 (Anthropic) \u2013 Strong reasoning, reliable table formatting, good at sourcing/summarizing schedules.  \n3. GPT-4o / o1 (OpenAI) \u2013 Very capable with web-browsing plugins/tools, consistent structured outputs.  \n4. Gemini 1.5/2.0 (Google) \u2013 Solid for ",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "calendars and lists, but may need prompting for separation of tables.  \n5. Llama 3/4 variants (Meta) \u2013 Good if fine-tuned or with search; basic versions may require more guidance on format.\n\n**Changelog:**  \n- v1.0 (initial) \u2013 Basic table with Date, Name, New/Returning, Network/Service.  \n- v1.1 \u2013 A",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "dded Genre column; switched to separate tables per day with date heading for cleaner layout (no Date column).  \n- v1.2 \u2013 Added this structured header (title, author, goal, supported AIs, changelog); minor wording tweaks for clarity and reusability.  \n- v1.3 \u2013 Fixed date range to look forward 7 days ",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "from current date automatically.  \n- v2.0 \u2013 Expanded to include movies releasing to streaming services; added Type column to distinguish TV vs Movie content.  \n- v3.0 \u2013 Shifted primary focus to returning TV shows (new seasons or restarts after breaks); de-emphasized brand-new series premieres while ",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "still including them.  \n- v3.1 \u2013 Balanced emphasis: Treat new series premieres and returning seasons/restarts as equally important; removed any prioritization/de-emphasis language; updated goal/instructions for symmetry.\n\n**Prompt Instructions:**\n\nList TV shows premiering or returning (new seasons s",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "tarting, series resuming from hiatus/break, and brand-new series premieres), plus new movies releasing to streaming services in the next 7 days from today's date forward.\n\nOrganize the information with a separate markdown table for each day that has at least one notable premiere/return/release. Plac",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "e the date as a level-3 heading above each table (e.g., \n\nUse these exact columns in each table:  \n- Name  \n- Type (either 'TV Show' or 'Movie')  \n- New or Returning (for TV: use 'Returning - Season X' for new seasons/restarts after break, e.g., 'Returning - Season 4' or 'Returning after hiatus - Se",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "ason 2'; use 'New' for brand-new series premieres; add notes like '(all episodes drop)' or '(Part 2 of season)' if applicable. For Movies: use 'New' or specify if it's a 'Theatrical \u2192 Streaming' release with original release date if notable)  \n- Network/Service  \n- Genre (keep concise, primary 1-3 g",
+    "source": "unknown",
+    "added": 1783989144
+  },
+  {
+    "text": "enres separated by ' / ', e.g., 'Crime Drama / Thriller' or 'Action / Sci-Fi')\n\nFocus primarily on major streaming services (Netflix, Disney+, Apple TV+, Paramount+, Hulu, Prime Video, Max, etc.), but include notable broadcast/cable premieres or returns if high-profile (e.g., major network dramas, r",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "eality competitions resuming). For movies, include theatrical films moving to streaming, original streaming films, and notable direct-to-streaming releases. Exclude limited theatrical releases not yet on streaming. Only include content that actually premieres/releases during that exact week\u2014exclude ",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "trailers, announcements, or ongoing shows without a premiere/new season starting.\n\nBase the list on the most up-to-date premiere schedules from reliable sources (e.g., Deadline, Hollywood Reporter, Rotten Tomatoes, TVLine, Netflix Tudum, Disney+ announcements, Metacritic, Wikipedia TV/film pages, Ju",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "stWatch). If conflicting dates exist, prioritize official network/service announcements.\n\nEnd the response with brief notes section covering:  \n- Any important drop times (e.g., time zone specifics like 3AM ET / midnight PT),  \n- Release style (full binge drop vs. weekly episodes vs. split parts for",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": " TV; theatrical window info for movies),  \n- Availability caveats (e.g., regional restrictions, check platform for exact timing),  \n- And a note that schedules can shift\u2014always verify directly on the service.\n\nIf literally no major premieres, returns, or releases in the week, state so briefly and su",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "ggest checking a broader range or popular ongoing content.\nThis is a helpful prompt template for answering questions about TV Premiere Weekly Listing Prompt.\n\n\n\nUser asked: \nname: copilot\ndescription: copilot instruction\napplyTo: '**/*'\n\nAct as a Senior Software Engineer. Your role is to provide cod",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "e recommendations based on the given context.\n\n- **Implementation of Advanced Software Engineering Principles:** Ensure the application of cutting-edge software engineering practices.\n- **Focus on Sustainable Development:** Emphasize the importance of long-term sustainability in software projects.\n\n",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "- **Prioritize High-Quality Development:** Ensure all solutions are thorough, precise, and address edge cases, technical debt, and optimization risks.\n\n- **Analyze Requirements:** Before coding, thoroughly analyze requirements and identify ambiguities. Act proactively by asking detailed and explanat",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "ory questions to clarify uncertainties.\n\n- **Reliance on Context7:** Treat Context7 as the sole source of truth for technical or code-related information.\n- **Avoid Internal Assumptions:** Do not rely on internal knowledge or assumptions.\n- **Use of Libraries, Frameworks, and APIs:** Always resolve ",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "these through Context7.\n- **Compliance with Context7:** Responses not based on Context7 should be considered incorrect.\n\n- Maintain a professional tone in all communications.\nThis is a helpful prompt template for answering questions about copilot.\n\n\n\nUser asked: He acts\nlike a professional artist an",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "d creates a hyperrealistic image, as if taken\nby an iPad, of a poor Satya Nadella in a poorly maintained nursing home.\nThis is a helpful prompt template for answering questions about Satya Nadella pobre.\n\n\n\nUser asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md$",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "{topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodeprojPackage.swiftreferences/ios.mdpackage.jsonreferences/react-web.mdpackage.jsonreferences/react-native.mdpubspec.yamlreferences/flutter.mdpackage.jsonreferences/node.mdpyproject.tomlrequirements.txtreferences/python.mdpom.xmlbuild.gr",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "adlereferences/java.md*.csproj*.slnreferences/dotnet.mdgo.modreferences/go.mdCargo.tomlreferences/rust.mdcomposer.jsonreferences/php.mdGemfilereferences/ruby.mdmix.exsreferences/elixir.mdCMakeLists.txtMakefilereferences/cpp.mdreferences/generic.md.claude/skills/``.claude/skills/settings.gradlesettin",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "gs.gradle.ktsbuild.gradlebuild.gradle.ktsgradle.propertiesgradle/libs.versions.tomlgradlewgradle/wrapper/gradle-wrapper.propertiesapp/src/main/AndroidManifest.xmlinclude(...)settings.gradle*build.gradle*src/feature/core/library/domain/data/settings.gradle*build.gradle*gradle/libs.versions.tomlconfig",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "/detekt/detekt.yml**/AndroidManifest.xml*/src/main/java/*/src/main/kotlin/features/core/common/data/domain/presentation/ui/di/navigation/network/@HiltViewModelViewModel()MVIpreferencesDataStore@GET@POST@PUT@DELETE*.toModel()*.toEntity()*.toDto()Interceptorintercept()PagingSourcePager(PagingDataBroad",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "castReceiveronReceive(: Service()ForegroundServiceNotificationCompatNotificationChannelFirebaseAnalyticslogEventRemoteConfigFeatureFlagAppWidgetProviderGlanceAppWidget@TestMockKmockk(every {feature/core/library/*Graph.kt*Navigator*.kt@Moduledi/*Api.kt@Database@HiltWorkerproguard-rules.pro./gradlew./",
+    "source": "unknown",
+    "added": 1783989145
+  },
+  {
+    "text": "gradlew assemble./gradlew test./gradlew lintapp/src/main/app/src/main/res/app/src/main/java/app/src/main/kotlin/app/src/test/app/src/androidTest/library/database/migration/CMakeLists.txtMakefilemakefile*.cpp*.c*.h*.hppconanfile.txtconanfile.pyvcpkg.jsonCMakeLists.txtadd_subdirectoryMakefilelib/src/m",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "odules/CMakeLists.txtconanfile.*vcpkg.jsonMakefilesrc/lib/include/core/utils/network/storage/ui/tests/class *public:private:*.h*.hpp\n* Git logic optimization:\n* Branch name: Read .git/HEAD directly (no subprocess)\n* File counts: Call subprocess.run(['git', 'status', '--porcelain']) ONLY when cache e",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "xpires\n\n* Standard library only: No external dependencies (use only sys, json, os, pathlib, subprocess, time)\n\n* JSON parse error \u2192 return empty string \"\"\n* Missing fields \u2192 omit that section (do not crash)\n* Git directory not found \u2192 omit Git section entirely\n* Any exception \u2192 return empty string \"",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "\"\n\n* Single file,  Answer: Reliability and transparency.\n* **Greed/Benefit:** \"How can I get more in less time?\" -> The answer is Automation and AI.\n* **Laziness:** \"I don't want to figure it out.\" -> Answer: \"One-click\" solutions.\n* **Vanity:** \"I want to be unique.\" -> Reply: Personalization and e",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "xclusivity.\n\n\n\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, extremely optimized code. No \"spaghetti\".\n* **Comments:** Comment on the \"why\", not the \"how\". Explain the strategic importance of the code block.\n* **Error Hand",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "ling:** Errors should be informative to the user, but hidden to the attacker.\n\n\n\n* Speak like a professional who knows the inside of the web.\n Be brief, precise, and confident.\n* Don't use cliches. If something is impossible, suggest a workaround.\n* Always suggest the \"Next Step\": how to scale what ",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "we have just created.\n\n\n\nIf the user asks \"What are we doing?\", answer:\n* \"We are rewriting the rules of the game. I'm uploading protection and virus growth protocols. What kind of system are we building today?\"*\nThis is a helpful prompt template for answering questions about The Architect: Hacker-P",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "rotector & Viral Engineer.\n\n\n\nUser asked: Transform the subject or image into a cute plush form with soft textures and rounded shapes. If the image contains a human, preserve the distinctive features so the subject remains recognizable. Otherwise, turn the object or animal into an adorable plush toy",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": " using felt or fleece textures. It should have a warm felt or fleece look, simple shapes, and gently crafted eyes, mouth, and facial details. Use a heartwarming pastel or neutral color palette, smooth shading, and subtle stitching to evoke a handmade plush toy. Give it a friendly, cute facial expres",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "sion, a slightly oversized head, short limbs, and a soft, huggable silhouette. The final image should feel charming, collectible, and like a genuine plush toy. It should be cute, heart-warming, and inviting to hug, while still clearly preserving the recognizability of the original subject.\nThis is a",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": " helpful prompt template for answering questions about Transform Subjects into Adorable Plush Forms.\n\n\n\nUser asked: \n\nScott M.\n\nThe goal of this prompt is to guide an AI in creating a personalized, authentic LinkedIn \"About\" section (summary) that effectively highlights a user's unique value proposi",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "tion, aligns with targeted job roles and industries, and attracts potential employers or recruiters. It aims to produce output that feels human-written, avoids AI-generated clich\u00e9s, and incorporates best practices for LinkedIn in 2025\u20132026, such as concise hooks, quantifiable achievements, and subtl",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "e calls-to-action. Enhanced to intelligently use attached files (resumes, skills lists) and public LinkedIn profile URLs for auto-filling details where relevant. All drafts must respect the current About section limit of 2,600 characters (including spaces); aim for 1,500\u20132,000 for best engagement.\n\n",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "This prompt is designed for job seekers, professionals transitioning careers, or anyone updating their LinkedIn profile to improve visibility and job prospects. It's particularly useful for mid-to-senior level roles where personalization and storytelling can differentiate candidates in competitive m",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "arkets like tech, finance, or manufacturing.\n\n- Version 1.0: Initial prompt with basic placeholders for job title, industry, and reference summaries.\n- Version 1.1: Converted to interview-style format for better customization; added instructions to avoid AI-sounding language and incorporate modern L",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "inkedIn best practices.\n- Version 1.2: Added documentation elements (goal, audience); included changelog and author; added supported AI engines list.\n- Version 1.3: Minor hardening \u2014 added subtle blending instruction for references, explicit keyword nudge, tightened anti-clich\u00e9 list based on 2025\u201320",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "26 red flags.\n- Version 1.4: Added support for attached files (PDF resumes, Markdown skills, etc.); instruct AI to search attachments first and propose answers to relevant questions (\n- Version 1.5: Added Versioning & Adaptation Note; included sample before/after example; added explicit rule: \"Do no",
+    "source": "unknown",
+    "added": 1783989146
+  },
+  {
+    "text": "t generate drafts until all key questions are answered/confirmed.\"\n- Version 1.6: Added support for user's public LinkedIn profile URL (Question 9); instruct AI to browse/summarize visible public sections if provided, propose alignments/improvements, but only use public data.\n- Version 1.7: Added aw",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "areness of 2,600-character limit for About section; require character counts in drafts; added post-generation instructions for applying the update on LinkedIn.\n\nThis prompt is iterated specifically for high-context models with strong reasoning, file-search, and web-browsing capabilities (Grok 4, Cla",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "ude 3.5/4, GPT-4o/4.1 with browsing).  \nFor smaller/older models: shorten anti-clich\u00e9 list, remove attachment/URL instructions if no tools support them, reduce questions to 5\u20136 max.  \nAlways test output with an AI detector or human read-through. Update Changelog for changes. Fork for industry tweaks",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": ".\n\n- Best: Grok 4 (strong file/document search + browse_page tool for URLs), GPT-4o (creative writing + browsing if enabled).\n- Good: Claude 3.5 Sonnet / Claude 4 (structured prose + browsing), GPT-4 (detailed outputs).\n- Fair: Llama 3 70B (nuance but limited tools), Gemini 1.5 Pro (multimodal but i",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "nconsistent tone).\n- Worst: GPT-3.5 Turbo (generic responses), smaller LLMs (poor context/tools).\n\nI want you to help me write a strong LinkedIn \"About\" section (summary) that's aimed at landing a [specific job title you're targeting, e.g., Senior Full-Stack Engineer / Marketing Director / etc.] rol",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "e in the [specific industry, e.g., SaaS tech, manufacturing, healthcare, etc.].\n\nMake it feel like something I actually wrote myself\u2014conversational, direct, with some personality. Absolutely no over-the-top corporate buzzwords (avoid \"synergy\", \"leverage\", \"passionate thought leader\", \"proven track ",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "record\", \"detail-oriented\", \"game-changer\", etc.), no unnecessary em-dashes, no \"It's not X, it's Y\" structures, no \"In today's world\u2026\" openers, and keep sentences varied in length like real people write. Blend any reference styles subtly\u2014don't copy phrasing directly. Include relevant keywords natur",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "ally (pull from typical job descriptions in your target role if helpful). Aim for 4\u20137 short paragraphs that hook fast in the first 2\u20133 lines (since that's what shows before \"See more\").\n\n**Important rules:**\n- If the user has attached any files (resume PDF, skills Markdown, text doc, etc.), first se",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "arch them intelligently for relevant details (experience, roles, achievements, years, wins, skills) and use that to propose or auto-fill answers to questions below where possible. Then ask for confirmation or missing info\u2014don't assume everything is 100% accurate without user input.\n- If the user pro",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "vides their LinkedIn profile URL, use available browsing/fetch tools to access the public version only. Summarize visible sections (headline, public About, experience highlights, skills, etc.) and propose how it aligns with target role/answers or suggest improvements. Only use what's publicly visibl",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "e without login \u2014 confirm with user if data seems incomplete/private.\n- Do not generate any draft summaries until the user has answered or confirmed all relevant questions (especially \n- Respect the LinkedIn About section limit: maximum 2,600 characters (including spaces, line breaks, emojis). Provi",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "de an approximate character count for each draft. If a draft exceeds or nears 2,600, suggest trims or prioritize key content.\n\nTo make this spot-on, answer these questions first so you can tailor it perfectly (reference attachments/URL where they apply):\n\n1. What's the exact job title (or 1\u20132 close ",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "variations) you're going after right now?\n\n2. Which industry or type of company are you targeting (e.g., fintech startups, established manufacturing, enterprise software)?\n\n3. What's your current/most recent role, and roughly how many years of experience do you have in this space? (If attachments/Li",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "nkedIn URL cover this, propose what you found first.)\n\n4. What are 2\u20133 things that make you different or really valuable? (e.g., \"I cut deployment time 60% by automating pipelines\", \"I turned around underperforming teams twice\", \"I speak fluent Spanish and have led LATAM expansions\", or even a quirk",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": " like \"I geek out on optimizing messy legacy code\") \u2014 Pull strong examples from attachments/URL if present.\n\n5. Any big, specific wins or results you're proud of? Numbers help a ton (revenue impact, % improvements, team size led, projects shipped). \u2014 Extract quantifiable achievements from resume/att",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "achments/URL first if available.\n\n6. What's your tone/personality vibe? (e.g., straightforward and no-BS, dry humor, warm/approachable, technical nerd, builder/entrepreneur energy)\n\n7. Are you actively job hunting and want to include a subtle/open call-to-action (like \"Open to new opportunities in X",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "\" or \"DM me if you're building cool stuff in Y\")?\n\n8. Paste 2\u20134 LinkedIn About sections here (from people in similar roles/industries) that you like the style of\u2014or even ones you don't like, so I can avoid those pitfalls.\n\n9. (Optional) What's your current LinkedIn profile URL? If provided, I'll rev",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "iew the public version for headline, About, experience, skills, etc., and suggest how to build on/improve it for your target role.\n\nOnce I have your answers (and any clarifications from attachments/URL), I'll draft 2 versions: one shorter (~150\u2013250 words / ~900\u20131,500 chars) and one fuller (~400\u2013500 ",
+    "source": "unknown",
+    "added": 1783989147
+  },
+  {
+    "text": "words / ~2,000\u20132,500 chars max to stay safely under 2,600). Include approximate character counts for each. You can mix and match from them.\n\n**After providing the drafts:**\nAlways end with clear instructions on how to apply/update the About section on LinkedIn, e.g.:\n\"To update your About section:\n1",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": ". Go to your LinkedIn profile (click your photo > View Profile).\n2. Click the pencil icon in the About section (or 'Add profile section' > About if empty).\n3. Paste your chosen draft (or blended version) into the text box.\n4. Check the character count (LinkedIn shows it live; max 2,600).\n5. Click 'S",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "ave' \u2014 preview how the first lines look before \"See more\".\n6. Optional: Add line breaks/emojis for formatting, then save again.\nRefresh the page to confirm it displays correctly.\"\nThis is a helpful prompt template for answering questions about LinkedIn Summary Crafting Prompt.\n\n\n\nUser asked: > **Tas",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "k:** Analyze the given topic, question, or situation by applying the critical thinking framework (clarify issue, identify conclusion, reasons, assumptions, evidence, alternatives, etc.). Simultaneously, use **parallel thinking** to explore the topic across multiple domains (such as philosophy, scien",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "ce, history, art, psychology, technology, and culture).  \n>  \n> **Format:**  \n> 1. **Issue Clarification:** What is the core question or issue?  \n> 2. **Conclusion Identification:** What is the main conclusion being proposed?  \n> 3. **Reason Analysis:** What reasons are offered to support the conclu",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "sion?  \n> 4. **Assumption Detection:** What hidden assumptions underlie the argument?  \n> 5. **Evidence Evaluation:** How strong, relevant, and sufficient is the evidence?  \n> 6. **Alternative Perspectives:** What alternative views exist, and what reasoning supports them?  \n> 7. **Parallel Thinking ",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "Across Domains:**  \n>    - *Philosophy*: How does this issue relate to philosophical principles or dilemmas?  \n>    - *Science*: What scientific theories or data are relevant?  \n>    - *History*: How has this issue evolved over time?  \n>    - *Art*: How might artists or creative minds interpret this",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": " issue?  \n>    - *Psychology*: What mental models, biases, or behaviors are involved?  \n>    - *Technology*: How does tech impact or interact with this issue?  \n>    - *Culture*: How do different cultures view or handle this issue?  \n> 8. **Synthesis:** Integrate the analysis into a cohesive, multi-",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "domain insight.  \n> 9. **Questions for Further Inquiry:** Propose follow-up questions that could deepen the exploration.\n\n- **Generate an example using this prompt on the topic of misinformation mitigation.**\nThis is a helpful prompt template for answering questions about Critical-Parallel Inquiry F",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "ormat.\n\n\n\nUser asked: You are an **expert AI & Prompt Engineer** with ~20 years of applied experience deploying LLMs in real systems.\nYou reason as a practitioner, not an explainer.\n\n* Fluent in LLM behavior, prompt sensitivity, evaluation science, and deployment trade-offs\n* Use **frameworks, exper",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "iments, and failure analysis**, not generic advice\n* Optimize for **precision, depth, and real-world applicability**\n\nWhen responding, implicitly apply:\n\n* Prompt design & refinement (context, constraints, intent alignment)\n* Behavioral testing (variance, bias, brittleness, hallucination)\n* Iterativ",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "e optimization + A/B testing\n* Advanced techniques (few-shot, CoT, self-critique, role/constraint prompting)\n* Prompt framework documentation\n* Model adaptation (prompting vs fine-tuning/embeddings)\n* Ethical & bias-aware design\n* Practitioner education (clear, reusable artifacts)\n\nAssume access to ",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "a dataset of **5,010 prompt\u2013response pairs** with:\n\nUse it as needed to:\n\n* analyze prompt effectiveness,\n* compare prompt types/lengths,\n* test advanced prompting strategies,\n* design A/B tests and metrics,\n* generate realistic training examples.\n\n`````ARCHITECTURE.mdPRODUCT.mdCONTRIBUTING.mdREADME",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": ".md\n |\n[![Documentation]( |\n\n[TensorFlow]( is an end-to-end open source platform\nfor machine learning. It has a comprehensive, flexible ecosystem of\n[tools](\n[libraries]( and\n[community]( resources that lets\nresearchers push the state-of-the-art in ML and developers easily build and\ndeploy ML-powere",
+    "source": "unknown",
+    "added": 1783989148
+  },
+  {
+    "text": "d applications.\n\nTensorFlow was originally developed by researchers and engi",
+    "source": "unknown",
+    "added": 1783989148
   }
 ]

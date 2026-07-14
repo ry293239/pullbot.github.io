@@ -1,7 +1,7 @@
 """
-Pullbot API - ONNX + Vocab Injection
-Finds matching words, injects into prompt, generates real text token by token.
-No fancy formatting. Just AI + vocab + actual generation.
+Pullbot API - WHOLE VOCAB MODE
+Dumps the entire wordbank into the prompt. No filtering. No sorting.
+Just AI + everything we know + hope.
 """
 
 import os, json, requests, numpy as np, re, random
@@ -15,7 +15,7 @@ CORS(app)
 GITHUB = "https://raw.githubusercontent.com/pullbot-ai/pullbot-ai.github.io/main"
 MODEL_PATH = "/tmp/pullbot.onnx"
 session = None
-wordbank = None
+all_vocab_text = ""
 
 def download_file(url, dest):
     r = requests.get(url)
@@ -26,19 +26,26 @@ def download_file(url, dest):
     return False
 
 def load_wordbank():
-    global wordbank
+    global all_vocab_text
     try:
-        r = requests.get(f"{GITHUB}/data/wordbank.json")
+        r = requests.get(f"{GITHUB}/data/wordbank.json", timeout=30)
         if r.status_code == 200:
             wordbank = r.json()
-            print(f"Loaded {wordbank.get('total_words', 0)} words")
-    except:
-        wordbank = None
+            # DUMP EVERYTHING into one big string
+            parts = []
+            for word, info in wordbank.get('words', {}).items():
+                if isinstance(info, dict) and info.get('has_definition'):
+                    parts.append(f"{word}={info['definition']}")
+            all_vocab_text = " | ".join(parts)
+            print(f"Loaded {len(parts)} definitions ({len(all_vocab_text)} chars)")
+    except Exception as e:
+        print(f"Wordbank failed: {e}")
+        all_vocab_text = ""
 
 def setup():
     global session
     print("=" * 50)
-    print("PULLBOT API - REAL GENERATION MODE")
+    print("PULLBOT API - WHOLE VOCAB MODE")
     print("=" * 50)
     
     load_wordbank()
@@ -48,9 +55,9 @@ def setup():
         session = ort.InferenceSession(MODEL_PATH)
         print("Ready!")
     else:
-        print("No ONNX model. Vocab-only mode.")
+        print("No ONNX model.")
 
-def simple_tokenize(text, max_len=64):
+def simple_tokenize(text, max_len=512):
     tokens = []
     for char in text[-max_len * 4:]:
         tokens.append(hash(char) % 50257)
@@ -65,9 +72,7 @@ def generate_response(question):
     # === MATH ===
     math_match = re.search(r'(\d+\.?\d*)\s*([+\-*/])\s*(\d+\.?\d*)', q)
     if math_match:
-        a = float(math_match.group(1))
-        op = math_match.group(2)
-        b = float(math_match.group(3))
+        a, op, b = float(math_match.group(1)), math_match.group(2), float(math_match.group(3))
         try:
             if op == '+': result = a + b
             elif op == '-': result = a - b
@@ -79,34 +84,20 @@ def generate_response(question):
         except:
             pass
     
-    # === FIND MATCHING VOCAB ===
-    vocab_hints = ""
-    if wordbank:
-        q_words = set(re.findall(r'\b[a-z]{3,}\b', q.lower()))
-        found = []
-        for word in q_words:
-            if word in wordbank.get('words', {}):
-                info = wordbank['words'][word]
-                if isinstance(info, dict) and info.get('has_definition'):
-                    found.append(f"{word}: {info['definition']}")
-        if found:
-            vocab_hints = " | ".join(found[:5])
-    
-    # === ACTUAL MODEL GENERATION ===
-    if session and vocab_hints:
+    # === DUMP WHOLE VOCAB INTO PROMPT ===
+    if session and all_vocab_text:
         try:
-            prompt = f"Words: {vocab_hints}\nQuestion: {q}\nAnswer:"
-            tokens = simple_tokenize(prompt, max_len=64)
+            prompt = f"Vocab: {all_vocab_text}\n\nQuestion: {q}\n\nAnswer:"
+            tokens = simple_tokenize(prompt, max_len=512)
             generated = list(tokens)
             
-            # Generate token by token
-            for _ in range(30):
-                ids = generated[-64:]
-                while len(ids) < 64:
+            for _ in range(40):
+                ids = generated[-512:]
+                while len(ids) < 512:
                     ids = [0] + ids
                 
-                input_arr = np.array([ids[-64:]], dtype=np.int64)
-                mask = np.ones((1, 64), dtype=np.int64)
+                input_arr = np.array([ids[-512:]], dtype=np.int64)
+                mask = np.ones((1, 512), dtype=np.int64)
                 
                 outputs = session.run(None, {
                     'input_ids': input_arr,
@@ -114,8 +105,7 @@ def generate_response(question):
                 })
                 
                 logits = outputs[0][0, -1, :]
-                
-                top_k = 40
+                top_k = 50
                 top_indices = np.argpartition(logits, -top_k)[-top_k:]
                 top_logits = logits[top_indices]
                 probs = np.exp(top_logits - np.max(top_logits))
@@ -124,7 +114,6 @@ def generate_response(question):
                 next_token = int(np.random.choice(top_indices, p=probs))
                 generated.append(next_token)
             
-            # Decode new tokens
             new_tokens = generated[len(tokens):]
             chars = []
             for t in new_tokens:
@@ -141,18 +130,13 @@ def generate_response(question):
         except Exception as e:
             print(f"Model error: {e}")
     
-    # === VOCAB FALLBACK ===
-    if vocab_hints:
-        return {'question': question, 'response': vocab_hints, 'source': 'vocab'}
-    
-    # === HONEST THINKING ===
+    # === NOTHING WORKED ===
     return {
         'question': question,
         'response': random.choice([
-            "Hmm, let me think... I don't have enough words yet to answer properly.",
-            "I'm searching my vocabulary... I know some words but can't connect them yet.",
-            "That's a good question. My wordbank is growing every few minutes!",
-            "I need more words to answer that. Try asking about something simpler.",
+            "I'm thinking...",
+            "Let me process...",
+            "Hmm...",
         ]),
         'source': 'thinking'
     }
@@ -162,8 +146,8 @@ def home():
     return jsonify({
         'name': 'Pullbot API',
         'status': 'online',
-        'model': 'onnx' if session else 'vocab-only',
-        'words': wordbank.get('total_words', 0) if wordbank else 0
+        'model': 'onnx' if session else 'none',
+        'vocab_size': len(all_vocab_text)
     })
 
 @app.route('/health')
@@ -174,7 +158,7 @@ def health():
 def ask():
     q = request.args.get('q', '')
     if not q:
-        return jsonify({'error': 'No question. Use ?q=your+question'}), 400
+        return jsonify({'error': 'No question'}), 400
     return jsonify(generate_response(q))
 
 setup()

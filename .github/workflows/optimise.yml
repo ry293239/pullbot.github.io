@@ -16,39 +16,36 @@ jobs:
         python-version: '3.10'
         
     - name: Install dependencies
-      run: pip install torch transformers datasets accelerate safetensors numpy
+      run: pip install torch transformers datasets accelerate safetensors numpy onnx
         
-    - name: ✂️ Prune + Quantize
-      run: python src/model.py optimize 0.9
+    - name: Clean corpus
+      run: python src/clean_corpus.py
       
-    - name: 📤 Export for Quadratic
-      run: python src/export_to_quadratic.py
+    - name: Build clean knowledge
+      run: python src/store.py build
       
-    - name: 🗑 Remove large files
+    - name: Prune + Quantize + Export
+      run: python src/model.py optimize 0.7
+      
+    - name: Remove large files
       run: |
         rm -rf models/checkpoints/
         rm -rf models/temp_trained/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
         
-    - name: 💾 Commit & push (with retry)
+    - name: Commit and push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        
-        git add models/chunks/
-        git add data/quadratic/
-        git add data/knowledge/
-        
+        git add models/chunks/ models/pullbot.onnx models/pullbot.bin models/last_train.json 2>/dev/null || true
+        git add knowledge/ data/processed/
         if git diff --staged --quiet; then
-          echo "No changes to commit"
+          echo "No changes"
         else
-          git commit -m "✂️ Optimized: pruned + quantized + exported to Quadratic"
-          
+          git commit -m "Optimized: clean knowledge + shrunk model + ONNX"
           for i in 1 2 3; do
-            echo "Push attempt $i..."
             git pull --rebase && git push && break
-            echo "Retrying in 5s..."
             sleep 5
           done
         fi

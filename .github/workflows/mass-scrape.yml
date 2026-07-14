@@ -17,19 +17,27 @@ jobs:
         python-version: '3.10'
     - name: Install deps
       run: pip install requests
+      
     - name: Mass scrape Wikipedia
       run: python src/mass_scrape_wikipedia.py 50
+      
     - name: Define new words
       run: python src/define_words.py 100
-    - name: Build training examples
+      
+    - name: Generate training examples (original)
       run: python src/generate_training_examples.py
+      
+    - name: Smart training (phrases + string-together)
+      run: python src/smart_train.py
+      
     - name: Push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add data/wordbank.json data/definitions.json data/processed/corpus.txt
-        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +definitions"
+        git diff --staged --quiet || git commit -m "📚 Mass scrape: words + phrases + smart training"
         git pull --rebase && git push
+        
     - name: Trigger next scrape
       uses: actions/github-script@v7
       with:

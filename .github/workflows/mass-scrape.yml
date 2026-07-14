@@ -1,0 +1,58 @@
+name: Mass Scrape Wikipedia
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '0 */6 * * *'  # Every 6 hours
+
+jobs:
+  mass-scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    
+    steps:
+    - uses: actions/checkout@v4
+      
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Install deps
+      run: pip install requests
+      
+    - name: Mass scrape Wikipedia
+      run: python src/mass_scrape_wikipedia.py 50
+      
+    - name: Define new words
+      run: python src/define_words.py 100
+      
+    - name: Build training corpus from definitions
+      run: |
+        python -c "
+        import json, os
+        path = 'data/definitions.json'
+        if os.path.exists(path):
+            with open(path) as f:
+                defs = json.load(f)
+            
+            # Create training text from definitions
+            lines = []
+            for d in defs[-500:]:  # Last 500 definitions
+                lines.append(f'{d[\"word\"]}: {d[\"definition\"]}')
+            
+            corpus = '\n'.join(lines)
+            
+            os.makedirs('data/processed', exist_ok=True)
+            with open('data/processed/corpus.txt', 'a') as f:
+                f.write('\n\n---\n\n' + corpus)
+            
+            print(f'Added {len(lines)} definitions to corpus')
+        "
+      
+    - name: Push
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git add data/wordbank.json data/definitions.json data/processed/corpus.txt
+        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +definitions"
+        git pull --rebase && git push

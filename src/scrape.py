@@ -1,8 +1,7 @@
 """
 Pullbot Scraper
 Grabs text from GitHub trending, Wikipedia, open source datasets, 
-English dictionary, and vocabulary builders.
-Cleans all text before saving.
+English dictionary, vocabulary builders, and pure word lists.
 """
 
 import os
@@ -122,7 +121,7 @@ def scrape_wikipedia():
     print(f"  ✅ Got {len(texts)} articles")
     return texts
 
-def scrape_wikipedia_random_sentences(num_sentences=50):
+def scrape_wikipedia_random_sentences(num_sentences=30):
     print("🎲 Scraping random Wikipedia sentences...")
     all_sentences = []
     articles_checked = 0
@@ -225,15 +224,11 @@ def scrape_github_ai_repos():
         "pytorch/pytorch",
         "tensorflow/tensorflow",
         "scikit-learn/scikit-learn",
-        "openai/openai-python",
-        "langchain-ai/langchain",
-        "thomasahle/sunfish",
-        "official-stockfish/Stockfish",
     ]
     
     headers = {'User-Agent': 'Pullbot/1.0'}
     
-    for repo in random.sample(ai_repos, min(4, len(ai_repos))):
+    for repo in random.sample(ai_repos, min(3, len(ai_repos))):
         for branch in ['main', 'master']:
             url = f"https://raw.githubusercontent.com/{repo}/{branch}/README.md"
             try:
@@ -259,10 +254,8 @@ def scrape_full_dictionary():
     print("📚 Downloading English dictionary...")
     texts = []
     
-    # Try multiple dictionary sources
     dict_urls = [
         "https://raw.githubusercontent.com/adambom/dictionary/master/dictionary.json",
-        "https://raw.githubusercontent.com/matthewreagan/WebstersEnglishDictionary/master/dictionary.json"
     ]
     
     for url in dict_urls:
@@ -270,7 +263,7 @@ def scrape_full_dictionary():
             r = requests.get(url, timeout=60)
             if r.status_code == 200:
                 data = r.json()
-                words = list(data.items())[:2000]  # Take 2000 words
+                words = list(data.items())[:2000]
                 
                 for word, definition in words:
                     if isinstance(definition, str) and len(definition) > 15:
@@ -286,23 +279,17 @@ def scrape_full_dictionary():
         except:
             continue
     
-    # Fallback: common word definitions via API
-    print("  ⚠️ Full dictionary failed, trying word-by-word...")
     return scrape_word_definitions()
 
 def scrape_word_definitions():
     """Scrape individual word definitions"""
     texts = []
     
-    # Common English words across categories
     words = [
-        # Tech
         "algorithm", "function", "variable", "data", "network", "system",
         "process", "method", "object", "class", "code", "program",
-        # Science
         "energy", "matter", "force", "cell", "atom", "species",
         "theory", "experiment", "observe", "calculate", "measure",
-        # General
         "create", "develop", "design", "implement", "analyze",
         "understand", "explain", "describe", "compare", "evaluate",
         "learn", "teach", "write", "read", "think", "know",
@@ -317,13 +304,12 @@ def scrape_word_definitions():
                 data = r.json()
                 for entry in data[:1]:
                     for meaning in entry.get('meanings', [])[:1]:
-                        part_of_speech = meaning.get('partOfSpeech', '')
                         for definition in meaning.get('definitions', [])[:1]:
                             def_text = definition.get('definition', '')
                             if def_text:
                                 texts.append({
                                     'source': f'dict:{word}',
-                                    'text': f'{word} ({part_of_speech}): {def_text}',
+                                    'text': f'{word}: {def_text}',
                                     'type': 'vocabulary'
                                 })
             time.sleep(0.2)
@@ -331,6 +317,46 @@ def scrape_word_definitions():
             continue
     
     print(f"  ✅ Got {len(texts)} word definitions")
+    return texts
+
+def scrape_pure_wordlist():
+    """Download simple English word lists - no definitions, just words"""
+    print("📝 Scraping pure word lists...")
+    texts = []
+    
+    urls = [
+        "https://raw.githubusercontent.com/first20hours/google-10000-english/master/google-10000-english.txt",
+        "https://raw.githubusercontent.com/dwyl/english-words/master/words_alpha.txt",
+    ]
+    
+    for url in urls:
+        try:
+            r = requests.get(url, timeout=30)
+            if r.status_code == 200:
+                words = r.text.strip().split('\n')
+                batch = []
+                for word in words:
+                    word = word.strip().lower()
+                    if len(word) > 2 and word.isalpha():
+                        batch.append(word)
+                        if len(batch) >= 20:
+                            texts.append({
+                                'source': 'wordlist',
+                                'text': ' '.join(batch),
+                                'type': 'vocabulary'
+                            })
+                            batch = []
+                if batch:
+                    texts.append({
+                        'source': 'wordlist',
+                        'text': ' '.join(batch),
+                        'type': 'vocabulary'
+                    })
+                break
+        except:
+            continue
+    
+    print(f"  ✅ Got {len(texts)} word batches")
     return texts
 
 def scrape_wikipedia_full_articles(num_articles=2):
@@ -403,7 +429,6 @@ def save_raw_data(texts):
 def run_scrape():
     all_texts = []
     
-    # GitHub and Wikipedia
     if 'github_trending' in config['scrape']['sources']:
         all_texts.extend(scrape_github_trending())
     
@@ -411,17 +436,16 @@ def run_scrape():
         all_texts.extend(scrape_wikipedia())
         all_texts.extend(scrape_wikipedia_random_sentences(30))
     
-    # Vocabulary building (NEW - makes Pullbot understand words)
+    # Vocabulary
     all_texts.extend(scrape_full_dictionary())
+    all_texts.extend(scrape_pure_wordlist())
     
-    # Language and conversation
+    # Language
     all_texts.extend(scrape_chatgpt_prompts())
     all_texts.extend(scrape_tiny_shakespeare())
     
-    # Tech knowledge
+    # Tech
     all_texts.extend(scrape_github_ai_repos())
-    
-    # Deep knowledge
     all_texts.extend(scrape_wikipedia_full_articles(2))
     
     # Deduplicate

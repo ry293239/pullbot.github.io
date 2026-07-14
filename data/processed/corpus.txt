@@ -14689,3 +14689,1003 @@ Group these words: rapper, excited, committee, beautiful, installment
 ---
 
 Group these words: playing, ranks, flavors, expert, purchased
+
+---
+
+Using these words: allowed (To grant, give, admit, accord, afford, or yield; to let one have.), versions (A specific form or variation of something.), carr (A bog or marsh; marshy ground, swampland.)
+Question: Explain how allowed relates to carr
+Answer: allowed is To grant, give, admit, accord, afford, or yield; to let one have.. This relates to carr which means A bog or marsh; marshy ground, swampland..
+
+---
+
+Using these words: population (The people living within a political or geographical boundary.), flagships ((maritime) The ship occupied by the fleet's commander (usually an admiral); it denotes this by flying his flag.), sage (A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher.)
+Question: Describe population and sage
+Answer: population is The people living within a political or geographical boundary.. This relates to sage which means A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher..
+
+---
+
+Using these words: boxer (A participant (fighter) in a boxing match.), provide (To make a living; earn money for necessities.), multiplayer ((games) The feature of a video game where multiple human players play simultaneously.)
+Question: Describe boxer and multiplayer
+Answer: boxer is A participant (fighter) in a boxing match.. This relates to multiplayer which means (games) The feature of a video game where multiple human players play simultaneously..
+
+---
+
+Using these words: carving (To cut.), legend (An unrealistic story depicting past events.), ottoman (An upholstered sofa, without arms or a back, sometimes with a compartment for storing linen, etc.)
+Question: What is the connection between carving and legend?
+Answer: carving is To cut.. This relates to ottoman which means An upholstered sofa, without arms or a back, sometimes with a compartment for storing linen, etc..
+
+---
+
+Using these words: fort (A fortified defensive structure stationed with troops.), tier (One who ties (knots, etc).), released (To let go (of); to cease to hold or contain.)
+Question: Describe fort and released
+Answer: fort is A fortified defensive structure stationed with troops.. This relates to released which means To let go (of); to cease to hold or contain..
+
+---
+
+Using these words: wonderful (Tending to excite wonder; surprising, extraordinary.), mack (An individual skilled in the art of seduction using verbal skills.), transformation (The act of transforming or the state of being transformed.)
+Question: Describe wonderful and transformation
+Answer: wonderful is Tending to excite wonder; surprising, extraordinary.. This relates to transformation which means The act of transforming or the state of being transformed..
+
+---
+
+Using these words: worth (Value.), bursa (Any of the many small fluid-filled sacs located at the point where a muscle or tendon slides across bone. These sacs serve to reduce friction between the two moving surfaces.), environment (The surroundings of, and influences on, a particular item of interest.)
+Question: Explain how worth relates to environment
+Answer: worth is Value.. This relates to environment which means The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Using these words: shares (A portion of something, especially a portion given or allotted to someone.), euphorbia (Any plant of the genus Euphorbia, the spurges.), roundabout ((Australia and sometimes United States) A road junction at which traffic streams circularly around a central island.)
+Question: Describe shares and roundabout
+Answer: shares is A portion of something, especially a portion given or allotted to someone.. This relates to roundabout which means (Australia and sometimes United States) A road junction at which traffic streams circularly around a central island..
+
+---
+
+Using these words: ones (The digit or figure 1.), legend (An unrealistic story depicting past events.), spectrum (A range; a continuous, infinite, one-dimensional set, possibly bounded by extremes.)
+Question: What is the connection between ones and legend?
+Answer: ones is The digit or figure 1.. This relates to spectrum which means A range; a continuous, infinite, one-dimensional set, possibly bounded by extremes..
+
+---
+
+Using these words: isolated (To set apart or cut off from others.), drummer (One who plays the drums.), both (Each of the two, or of the two kinds.)
+Question: Explain how isolated relates to both
+Answer: isolated is To set apart or cut off from others.. This relates to both which means Each of the two, or of the two kinds..
+
+---
+
+Using these words: preceded (To go before, go in front of.), bursa (Any of the many small fluid-filled sacs located at the point where a muscle or tendon slides across bone. These sacs serve to reduce friction between the two moving surfaces.), because (For the reason (that).)
+Question: Describe preceded and because
+Answer: preceded is To go before, go in front of.. This relates to because which means For the reason (that)..
+
+---
+
+Using these words: lighthouses (A tower or other structure exhibiting a light or lights to warn or guide sailors.), standings (Position or reputation in society or a profession.), spurrier (A maker of spurs.)
+Question: Describe lighthouses and spurrier
+Answer: lighthouses is A tower or other structure exhibiting a light or lights to warn or guide sailors.. This relates to spurrier which means A maker of spurs..
+
+---
+
+Using these words: temperatures (A measure of cold or heat, often measurable with a thermometer.), photo (A photograph.), adaptation (The process of adapting something or becoming adapted to a situation; adjustment, modification.)
+Question: What is the connection between temperatures and photo?
+Answer: temperatures is A measure of cold or heat, often measurable with a thermometer.. This relates to adaptation which means The process of adapting something or becoming adapted to a situation; adjustment, modification..
+
+---
+
+Using these words: data ((plural: data) A measurement of something on a scale understood by both the recorder (a person or device) and the reader (another person or device). The scale is arbitrarily defined, such as from 1 to 10 by ones, 1 to 100 by 0.1, or simply true or false, on or off, yes, no, or maybe, etc.), journal (A diary or daily record of a person, organization, vessel etc.; daybook.), navigation (The theory, practice and technology of charting a course for a ship, aircraft or spaceship or (colloquially) road vehicle.)
+Question: Explain how data relates to navigation
+Answer: data is (plural: data) A measurement of something on a scale understood by both the recorder (a person or device) and the reader (another person or device). The scale is arbitrarily defined, such as from 1 to 10 by ones, 1 to 100 by 0.1, or simply true or false, on or off, yes, no, or maybe, etc.. This relates to navigation which means The theory, practice and technology of charting a course for a ship, aircraft or spaceship or (colloquially) road vehicle..
+
+---
+
+Using these words: forested (To cover an area with trees.), conducted (To lead, or guide; to escort.), decades (A group, set, or series of ten , particularly:)
+Question: What is the connection between forested and conducted?
+Answer: forested is To cover an area with trees.. This relates to decades which means A group, set, or series of ten , particularly:.
+
+---
+
+Using these words: drummer (One who plays the drums.), airport (An airfield (an area designated for the takeoff and landing of aircraft), including one or more runways and (for commercial airports) one or more passenger terminals.), environment (The surroundings of, and influences on, a particular item of interest.)
+Question: Describe drummer and environment
+Answer: drummer is One who plays the drums.. This relates to environment which means The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Using these words: panchayat (A village council or local government.), energy (The impetus behind all motion and all activity.), reviews (A second or subsequent reading of a text or artifact in an attempt to gain new insights.)
+Question: What is the connection between panchayat and energy?
+Answer: panchayat is A village council or local government.. This relates to reviews which means A second or subsequent reading of a text or artifact in an attempt to gain new insights..
+
+---
+
+Using these words: prototype (An original form or object which is a basis for other forms or objects (particularly manufactured items), or for its generalizations and models.), amidst (In the midst or middle of; surrounded or encompassed by; among.), agricultural (A product or commodity from agriculture.)
+Question: Describe prototype and agricultural
+Answer: prototype is An original form or object which is a basis for other forms or objects (particularly manufactured items), or for its generalizations and models.. This relates to agricultural which means A product or commodity from agriculture..
+
+---
+
+Using these words: unexpected (Not expected, anticipated or foreseen.), congregation (The act of congregating or collecting together.), tory ((UK politics) A member or supporter of the Conservative Party, which evolved from Royalist politicians; historically associated with upholding the rights of the monarchy and the privileges of the established Church.)
+Question: Explain how unexpected relates to tory
+Answer: unexpected is Not expected, anticipated or foreseen.. This relates to tory which means (UK politics) A member or supporter of the Conservative Party, which evolved from Royalist politicians; historically associated with upholding the rights of the monarchy and the privileges of the established Church..
+
+---
+
+Using these words: known (To perceive the truth or factuality of; to be certain of or that.), smooth (Something that is smooth, or that goes smoothly and easily.), draughtsman (A person skilled at drawing engineering or architectural plans.)
+Question: What is the connection between known and smooth?
+Answer: known is To perceive the truth or factuality of; to be certain of or that.. This relates to draughtsman which means A person skilled at drawing engineering or architectural plans..
+
+---
+
+Using these words: upper (A stimulant, such as amphetamine, that increases energy and decreases appetite.), united (To bring together as one.), granary (A storage facility for grain or sometimes animal feed.)
+Question: Describe upper and granary
+Answer: upper is A stimulant, such as amphetamine, that increases energy and decreases appetite.. This relates to granary which means A storage facility for grain or sometimes animal feed..
+
+---
+
+Using these words: private (A soldier of the lowest rank in the army.), restored (To reestablish, or bring back into existence.), present (The current moment or period of time.)
+Question: Explain how private relates to present
+Answer: private is A soldier of the lowest rank in the army.. This relates to present which means The current moment or period of time..
+
+---
+
+Using these words: global (A globally scoped identifier.), produces (To yield, make or manufacture; to generate.), sovereign (A monarch; the ruler of a country.)
+Question: Describe global and sovereign
+Answer: global is A globally scoped identifier.. This relates to sovereign which means A monarch; the ruler of a country..
+
+---
+
+Using these words: withdrew (To pull (something) back, aside, or away.), docu (A film, TV program, publication etc. which presents a social, political, scientific or historical subject in a factual or informative manner.), powerful (Having, or capable of exerting power, potency or influence.)
+Question: Explain how withdrew relates to powerful
+Answer: withdrew is To pull (something) back, aside, or away.. This relates to powerful which means Having, or capable of exerting power, potency or influence..
+
+---
+
+Using these words: tactical (A combinator of proof tactics.), energy (The impetus behind all motion and all activity.), foreign (A foreign person, particularly:)
+Question: What is the connection between tactical and energy?
+Answer: tactical is A combinator of proof tactics.. This relates to foreign which means A foreign person, particularly:.
+
+---
+
+Using these words: drums (A percussive musical instrument spanned with a thin covering on at least one end for striking, forming an acoustic chamber, affecting what materials are used to make it; a membranophone.), reforms (The change of something that is defective, broken, inefficient or otherwise negative, in order to correct or improve it), travelling (To be on a journey, often for pleasure or business and with luggage; to go from one place to another.)
+Question: Describe drums and travelling
+Answer: drums is A percussive musical instrument spanned with a thin covering on at least one end for striking, forming an acoustic chamber, affecting what materials are used to make it; a membranophone.. This relates to travelling which means To be on a journey, often for pleasure or business and with luggage; to go from one place to another..
+
+---
+
+Using these words: elections (A process of choosing a leader, members of parliament, councillors or other representatives by popular vote.), naiad (A female deity (nymph) associated with water, especially a spring, stream, or other fresh water.), analog (Something that bears an analogy to something else)
+Question: Explain how elections relates to analog
+Answer: elections is A process of choosing a leader, members of parliament, councillors or other representatives by popular vote.. This relates to analog which means Something that bears an analogy to something else.
+
+---
+
+Using these words: boys (A young male.), awaited (To wait for.), manages (To direct or be in charge of.)
+Question: Explain how boys relates to manages
+Answer: boys is A young male.. This relates to manages which means To direct or be in charge of..
+
+---
+
+Using these words: cages (An enclosure made of bars, normally to hold animals.), cube (A regular polyhedron having six identical square faces.), miners (A person who works in a mine.)
+Question: Explain how cages relates to miners
+Answer: cages is An enclosure made of bars, normally to hold animals.. This relates to miners which means A person who works in a mine..
+
+---
+
+Using these words: married (A married person.), forming (To assume (a certain shape or visible structure).), restored (To reestablish, or bring back into existence.)
+Question: Explain how married relates to restored
+Answer: married is A married person.. This relates to restored which means To reestablish, or bring back into existence..
+
+---
+
+Using these words: gate (A doorlike structure outside a house.), organist (A musician who plays the organ.), interface (The point of interconnection or contact between entities.)
+Question: What is the connection between gate and organist?
+Answer: gate is A doorlike structure outside a house.. This relates to interface which means The point of interconnection or contact between entities..
+
+---
+
+Using these words: passerine (Any bird of the order Passeriformes, which comprises more than half of all bird species.), interactions (The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence.), playing (To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment.)
+Question: Describe passerine and playing
+Answer: passerine is Any bird of the order Passeriformes, which comprises more than half of all bird species.. This relates to playing which means To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Using these words: states (A condition; a set of circumstances applying at any given time.), arcana (Specialized knowledge that is mysterious to the uninitiated.), euphorbia (Any plant of the genus Euphorbia, the spurges.)
+Question: Explain how states relates to euphorbia
+Answer: states is A condition; a set of circumstances applying at any given time.. This relates to euphorbia which means Any plant of the genus Euphorbia, the spurges..
+
+---
+
+Using these words: sequel (The events, collectively, which follow a previously mentioned event; the aftermath.), stations (A stopping place.), monkeys (Any member of the clade Simiiformes not also of the clade Hominoidea containing humans and apes, from which they are usually, but not universally, distinguished by smaller size, a tail, and cheek pouches.)
+Question: Explain how sequel relates to monkeys
+Answer: sequel is The events, collectively, which follow a previously mentioned event; the aftermath.. This relates to monkeys which means Any member of the clade Simiiformes not also of the clade Hominoidea containing humans and apes, from which they are usually, but not universally, distinguished by smaller size, a tail, and cheek pouches..
+
+---
+
+Using these words: lions (A big cat, Panthera leo, native to Africa, India and formerly much of Europe.), type (A grouping based on shared characteristics; a class.), peer (A look; a glance.)
+Question: Describe lions and peer
+Answer: lions is A big cat, Panthera leo, native to Africa, India and formerly much of Europe.. This relates to peer which means A look; a glance..
+
+---
+
+Using these words: fighters (A person who fights; a combatant.), album (A book specially designed to keep photographs, stamps, or autographs.), material (Matter which may be shaped or manipulated, particularly in making something.)
+Question: Explain how fighters relates to material
+Answer: fighters is A person who fights; a combatant.. This relates to material which means Matter which may be shaped or manipulated, particularly in making something..
+
+---
+
+Using these words: snow (The frozen, crystalline state of water that falls as precipitation.), editors (A person who edits or makes changes to documents.), tactical (A combinator of proof tactics.)
+Question: Explain how snow relates to tactical
+Answer: snow is The frozen, crystalline state of water that falls as precipitation.. This relates to tactical which means A combinator of proof tactics..
+
+---
+
+Using these words: commons (Mutual good, shared by more than one.), include (A piece of source code or other content...), snow (The frozen, crystalline state of water that falls as precipitation.)
+Question: Describe commons and snow
+Answer: commons is Mutual good, shared by more than one.. This relates to snow which means The frozen, crystalline state of water that falls as precipitation..
+
+---
+
+Using these words: agricultural (A product or commodity from agriculture.), scheduled (To create a time-schedule.), failing (To be unsuccessful.)
+Question: What is the connection between agricultural and scheduled?
+Answer: agricultural is A product or commodity from agriculture.. This relates to failing which means To be unsuccessful..
+
+---
+
+Using these words: antiferromagnetic (Exhibiting antiferromagnetism), airport (An airfield (an area designated for the takeoff and landing of aircraft), including one or more runways and (for commercial airports) one or more passenger terminals.), indicates (To point out; to discover; to direct to a knowledge of; to show; to make known.)
+Question: Explain how antiferromagnetic relates to indicates
+Answer: antiferromagnetic is Exhibiting antiferromagnetism. This relates to indicates which means To point out; to discover; to direct to a knowledge of; to show; to make known..
+
+---
+
+Using these words: present (The current moment or period of time.), exchanges (An act of exchanging or trading.), pamphlets (A small booklet of printed informational matter, often unbound, having only a paper cover.)
+Question: What is the connection between present and exchanges?
+Answer: present is The current moment or period of time.. This relates to pamphlets which means A small booklet of printed informational matter, often unbound, having only a paper cover..
+
+---
+
+Using these words: wine (An alcoholic beverage made by fermenting the juice of grapes.), unlimited (Limitless or without bounds; unrestricted), interactions (The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence.)
+Question: Describe wine and interactions
+Answer: wine is An alcoholic beverage made by fermenting the juice of grapes.. This relates to interactions which means The situation or occurrence in which two or more objects or events act upon one another to produce a new effect; the effect resulting from such a situation or occurrence..
+
+---
+
+Using these words: labels (A small ticket or sign giving information about something to which it is attached or intended to be attached.), franklin (A freeholder, especially as belonging to a class of landowners in the 14th and 15th century ranking below the gentry.), actively (In an active manner.)
+Question: Explain how labels relates to actively
+Answer: labels is A small ticket or sign giving information about something to which it is attached or intended to be attached.. This relates to actively which means In an active manner..
+
+---
+
+Using these words: care (Grief, sorrow.), established (To make stable or firm; to confirm.), energy (The impetus behind all motion and all activity.)
+Question: Explain how care relates to energy
+Answer: care is Grief, sorrow.. This relates to energy which means The impetus behind all motion and all activity..
+
+---
+
+Using these words: silo (A vertical building, usually cylindrical, used for the production of silage.), ecotourism (Responsible travel to natural areas supporting the fauna, flora, and local economy), portion (An allocated amount.)
+Question: Explain how silo relates to portion
+Answer: silo is A vertical building, usually cylindrical, used for the production of silage.. This relates to portion which means An allocated amount..
+
+---
+
+Using these words: recording (To make a record of information.), machine (A device that directs and controls energy, often in the form of movement or electricity, to produce a certain effect.), playing (To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment.)
+Question: Explain how recording relates to playing
+Answer: recording is To make a record of information.. This relates to playing which means To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Using these words: billionaire (Somebody whose wealth is greater than one billion (109) dollars, or other currency.), striped (To mark with stripes.), third (The person or thing in the third position.)
+Question: What is the connection between billionaire and striped?
+Answer: billionaire is Somebody whose wealth is greater than one billion (109) dollars, or other currency.. This relates to third which means The person or thing in the third position..
+
+---
+
+Using these words: census (An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals.), pizza (A baked Italian dish of a thinly rolled bread dough crust typically topped before baking with tomato sauce, cheese and other ingredients such as meat, vegetables or fruit), body (Physical frame.)
+Question: Describe census and body
+Answer: census is An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals.. This relates to body which means Physical frame..
+
+---
+
+Using these words: upcoming (The act of coming up.), publishing (To issue (something, such as printed work) for...), boxing (To place inside a box; to pack in one or more boxes.)
+Question: Explain how upcoming relates to boxing
+Answer: upcoming is The act of coming up.. This relates to boxing which means To place inside a box; to pack in one or more boxes..
+
+---
+
+Using these words: media (The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.), primary (A primary election; a preliminary election to select a political candidate of a political party.), fully (In a full manner; without lack or defect.)
+Question: What is the connection between media and primary?
+Answer: media is The middle layer of the wall of a blood vessel or lymph vessel which is composed of connective and muscular tissue.. This relates to fully which means In a full manner; without lack or defect..
+
+---
+
+Complete the phrase: level... → level xp
+
+---
+
+Complete the phrase: xp... → xp level
+
+---
+
+Complete the phrase: level xp... → level xp level
+
+---
+
+Complete the phrase: xp level... → xp level xp
+
+---
+
+Complete the phrase: level xp level... → level xp level xp
+
+---
+
+Complete the phrase: xp level xp... → xp level xp level
+
+---
+
+Complete the phrase: mode... → mode xp
+
+---
+
+Complete the phrase: xp... → xp hints
+
+---
+
+Complete the phrase: mode xp... → mode xp hints
+
+---
+
+Complete the phrase: complete... → complete level
+
+---
+
+Complete the phrase: sql... → sql aws
+
+---
+
+Complete the phrase: aws... → aws versions
+
+---
+
+Complete the phrase: sql aws... → sql aws versions
+
+---
+
+Complete the phrase: hints... → hints cost
+
+---
+
+Complete the phrase: humor... → humor tier
+
+---
+
+Complete the phrase: xp hints... → xp hints cost
+
+---
+
+Complete the phrase: no... → no penalties
+
+---
+
+Complete the phrase: defeat... → defeat the
+
+---
+
+Complete the phrase: mode xp hints... → mode xp hints cost
+
+---
+
+Complete the phrase: learning... → learning heat
+
+---
+
+Complete the phrase: random... → random event
+
+---
+
+Complete the phrase: as... → as sql
+
+---
+
+Complete the phrase: as sql... → as sql aws
+
+---
+
+Complete the phrase: comedy... → comedy mode
+
+---
+
+Complete the phrase: as sql aws... → as sql aws versions
+
+---
+
+Complete the phrase: hint... → hint tokens
+
+---
+
+Complete the phrase: mode... → mode identical
+
+---
+
+Complete the phrase: web... → web svc
+
+---
+
+Complete the phrase: data... → data vol
+
+---
+
+Complete the phrase: standard... → standard mode
+
+---
+
+Q: What does flavors mean?
+A: flavors is To add flavoring to something..
+
+---
+
+Q: What does production mean?
+A: production is The act of producing, making or creating something..
+
+---
+
+Q: What does incorporated mean?
+A: incorporated is To include (something) as a part..
+
+---
+
+Q: What does since mean?
+A: since is From a specified time in the past..
+
+---
+
+Q: What does subsidiary mean?
+A: subsidiary is A company owned by a parent company or a holding company, also called daughter company or sister company..
+
+---
+
+Q: What does company mean?
+A: company is A team; a group of people who work together professionally..
+
+---
+
+Q: What does earliest mean?
+A: earliest is At a time in advance of the usual or expected event..
+
+---
+
+Q: What does juicy mean?
+A: juicy is Having lots of juice..
+
+---
+
+Q: What does brand mean?
+A: brand is A conflagration; a flame..
+
+---
+
+Q: What does chewing mean?
+A: chewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed..
+
+---
+
+Q: What does mars mean?
+A: mars is A blemish..
+
+---
+
+Q: What does introduced mean?
+A: introduced is (of people) To cause (someone) to be acquainted (with someone else)..
+
+---
+
+Q: What does fruit mean?
+A: fruit is (often in the plural) In general, a product of plant growth useful to man or animals..
+
+---
+
+Q: What does developed mean?
+A: developed is To change with a specific direction, progress..
+
+---
+
+Q: What does environment mean?
+A: environment is The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Q: What does mission mean?
+A: mission is A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself..
+
+---
+
+Q: What does graphics mean?
+A: graphics is The making of architectural or design drawings..
+
+---
+
+Q: What does playing mean?
+A: playing is To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Q: What does much mean?
+A: much is Large, great..
+
+---
+
+Q: What does fully mean?
+A: fully is In a full manner; without lack or defect..
+
+---
+
+Q: What does contains mean?
+A: contains is To hold inside..
+
+---
+
+Q: What does fantasy mean?
+A: fantasy is That which comes from one's imagination..
+
+---
+
+Q: What does surreal mean?
+A: surreal is Surreal number.
+
+---
+
+Q: What does released mean?
+A: released is To let go (of); to cease to hold or contain..
+
+---
+
+Q: What does japan mean?
+A: japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Q: What does both mean?
+A: both is Each of the two, or of the two kinds..
+
+---
+
+Q: What does futuristic mean?
+A: futuristic is Of technology, a concept, etc, so far advanced as to appear to be from the future..
+
+---
+
+Q: What does tactical mean?
+A: tactical is A combinator of proof tactics..
+
+---
+
+Q: What does well mean?
+A: well is In good health..
+
+---
+
+Q: What does role mean?
+A: role is A character or part played by a performer or actor..
+
+---
+
+Q: What does elements mean?
+A: elements is One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based..
+
+---
+
+Q: What does ones mean?
+A: ones is The digit or figure 1..
+
+---
+
+Q: What does game mean?
+A: game is A playful or competitive activity..
+
+---
+
+Q: What does published mean?
+A: published is To issue (something, such as printed work) for distribution and/or sale..
+
+---
+
+Q: What does front mean?
+A: front is The foremost side of something or the end that faces the direction it normally moves..
+
+---
+
+Q: What does united mean?
+A: united is To bring together as one..
+
+---
+
+Q: What does states mean?
+A: states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Q: What does census mean?
+A: census is An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals..
+
+---
+
+Q: What does population mean?
+A: population is The people living within a political or geographical boundary..
+
+---
+
+Q: What does time mean?
+A: time is The inevitable progression into the future with the passing of present and past events..
+
+---
+
+Q: What does borough mean?
+A: borough is A fortified town..
+
+---
+
+Q: What does county mean?
+A: county is The land ruled by a count or a countess..
+
+---
+
+Q: What does advisory mean?
+A: advisory is A warning..
+
+---
+
+Q: What does established mean?
+A: established is To make stable or firm; to confirm..
+
+---
+
+Q: What does building mean?
+A: building is The act or process by which something is built; construction..
+
+---
+
+Q: What does seat mean?
+A: seat is Something to be sat upon..
+
+---
+
+Q: What does unions mean?
+A: unions is The act of uniting or joining two or more things into one..
+
+---
+
+Q: What does committee mean?
+A: committee is A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols..
+
+---
+
+Q: What does composed mean?
+A: composed is To make something by merging parts..
+
+---
+
+Q: What does representatives mean?
+A: representatives is A delegate..
+
+---
+
+Q: What does associations mean?
+A: associations is The act of associating..
+
+---
+
+Q: What does union mean?
+A: union is The act of uniting or joining two or more things into one..
+
+---
+
+Q: What does society mean?
+A: society is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms..
+
+---
+
+Q: What does social mean?
+A: social is A festive gathering to foster introductions..
+
+---
+
+Q: What does consultative mean?
+A: consultative is That gives advice or consultation; advisory..
+
+---
+
+Q: What does economic mean?
+A: economic is Pertaining to an economy..
+
+---
+
+Q: What does employers mean?
+A: employers is A person, firm or other entity which pays for or hires the services of another person..
+
+---
+
+Q: What does assembly mean?
+A: assembly is A set of pieces that work together in unison as a mechanism or device..
+
+---
+
+Q: What does regions mean?
+A: regions is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Q: What does body mean?
+A: body is Physical frame..
+
+---
+
+Q: What does workers mean?
+A: workers is A person who performs labor for a living, especially manual labor..
+
+---
+
+Q: What does shares mean?
+A: shares is A portion of something, especially a portion given or allotted to someone..
+
+---
+
+Q: What does organisations mean?
+A: organisations is The quality of being organized..
+
+---
+
+Q: What does civil mean?
+A: civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Q: What does include mean?
+A: include is A piece of source code or other content....
+
+---
+
+Q: What does understanding mean?
+A: understanding is To grasp a concept fully and thoroughly, especially....
+
+---
+
+Q: What does organization mean?
+A: organization is The quality of being organized..
+
+---
+
+Q: What does behavior mean?
+A: behavior is Human conduct relative to social norms..
+
+---
+
+Q: What does reviewed mean?
+A: reviewed is To survey; to look broadly over..
+
+---
+
+Q: What does methods mean?
+A: methods is A process by which a task is completed;....
+
+---
+
+Q: What does publishing mean?
+A: publishing is To issue (something, such as printed work) for....
+
+---
+
+Q: What does application mean?
+A: application is The act of applying or laying on, in a literal sense.
+
+---
+
+Q: What does editor mean?
+A: editor is A person who edits or makes changes to documents..
+
+---
+
+Q: What does sociological mean?
+A: sociological is Of or pertaining to sociology..
+
+---
+
+Q: What does association mean?
+A: association is The act of associating..
+
+---
+
+Q: What does academic mean?
+A: academic is (usually capitalized) A follower of Plato, a Platonist..
+
+---
+
+Q: What does sage mean?
+A: sage is A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher..
+
+---
+
+Q: What does medicine mean?
+A: medicine is A substance which specifically promotes healing when ingested or consumed in some way..
+
+---
+
+Q: What does care mean?
+A: care is Grief, sorrow..
+
+---
+
+Q: What does chief mean?
+A: chief is A leader or head of a group of people, organisation, etc..
+
+---
+
+Q: What does health mean?
+A: health is The state of being free from physical or psychological disease, illness, or malfunction; wellness..
+
+---
+
+Q: What does covers mean?
+A: covers is A lid..
+
+---
+
+Q: What does illness mean?
+A: illness is An instance of a disease or poor health..
+
+---
+
+Q: What does concepts mean?
+A: concepts is An abstract and general idea; an abstraction..
+
+---
+
+Q: What does carr mean?
+A: carr is A bog or marsh; marshy ground, swampland..
+
+---
+
+Q: What does quarterly mean?
+A: quarterly is A periodical publication that appears four times per year..
+
+---
+
+Q: What does peer mean?
+A: peer is A look; a glance..
+
+---
+
+Q: What does previous mean?
+A: previous is An existing criminal record (short for "previous convictions").
+
+---
+
+Q: What does editors mean?
+A: editors is A person who edits or makes changes to documents..
+
+---
+
+Q: What does journal mean?
+A: journal is A diary or daily record of a person, organization, vessel etc.; daybook..
+
+---
+
+Q: What does debut mean?
+A: debut is A performer's first performance to the public, in sport, the arts or some other area..
+
+---
+
+Q: What does awaited mean?
+A: awaited is To wait for..
+
+---
+
+Q: What does professionally mean?
+A: professionally is As a professional; for one's paid career..
+
+---
+
+Q: What does singer mean?
+A: singer is A person who sings, often professionally..
+
+---
+
+Q: What does billboard mean?
+A: billboard is A very large outdoor sign, generally used for advertising..
+
+---
+
+Q: What does artists mean?
+A: artists is A person who creates art..
+
+---
+
+Q: What does titled mean?
+A: titled is To assign a title to; to entitle..
+
+---
+
+Q: What does collaborated mean?
+A: collaborated is To work together with others to achieve a common goal..
+
+---
+
+Q: What does known mean?
+A: known is To perceive the truth or factuality of; to be certain of or that..
+
+---
+
+Q: What does peaked mean?
+A: peaked is Having a peak or peaks..
+
+---
+
+Group these words: mask, consultative, merit, colonel, begins
+
+---
+
+Group these words: apparently, invited, postponed, perceptive, martin
+
+---
+
+Group these words: failing, awaited, billionaire, scarab, dioceses
+
+---
+
+Group these words: hectare, commemorate, fort, topped, arguably
+
+---
+
+Group these words: exceptions, copyrighted, versions, composed, surreal
+
+---
+
+Group these words: representatives, processes, heavyweight, departmental, silo
+
+---
+
+Group these words: domino, crustal, ravens, carving, remains
+
+---
+
+Group these words: flagships, multiplayer, opening, movie, cages
+
+---
+
+Group these words: elevated, human, lyrics, phoebe, centered
+
+---
+
+Group these words: latino, predominantly, seat, emperor, destination
+
+---
+
+Group these words: playoff, beautiful, started, christie, cancelled
+
+---
+
+Group these words: antiferromagnetic, magazines, exceptions, sage, section
+
+---
+
+Group these words: naiad, convention, organist, greatest, terms
+
+---
+
+Group these words: hosted, tier, network, previous, private
+
+---
+
+Group these words: source, prototype, exist, homolog, massively
+
+---
+
+Group these words: commemorate, both, roundabout, chef, benevolent
+
+---
+
+Group these words: character, regions, android, residence, scheduled
+
+---
+
+Group these words: earth, contested, geologic, democratic, system
+
+---
+
+Group these words: comics, actress, illustrations, pool, china
+
+---
+
+Group these words: treaty, linear, ship, protein, roman

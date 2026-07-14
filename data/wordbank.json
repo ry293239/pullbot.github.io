@@ -552,8 +552,8 @@
     },
     "application": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The act of applying or laying on, in a literal sense"
     },
     "burdette": {
       "first_seen": "Journal of Health and Social Behavior",
@@ -687,8 +687,8 @@
     },
     "journal": {
       "first_seen": "Journal of Health and Social Behavior",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A diary or daily record of a person, organization, vessel etc.; daybook."
     },
     "god": {
       "first_seen": "Rich Brian",
@@ -842,38 +842,38 @@
     },
     "long": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A long vowel."
     },
     "china": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The plant Smilax china, a liana of much of eastern Asia."
     },
     "top": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The highest or uppermost part of something."
     },
     "release": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "The event of setting (someone or something) free (e.g. hostages, slaves, prisoners, caged animals, hooked or stuck mechanisms)."
     },
     "formerly": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "At some time in the past"
     },
     "mask": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "A cover, or partial cover, for the face, used for disguise or protection."
     },
     "south": {
       "first_seen": "Rich Brian",
-      "has_definition": false,
-      "definition": ""
+      "has_definition": true,
+      "definition": "One of the four major compass points, specifically 180\u00b0, directed toward the South Pole, and conventionally downwards on a map, abbreviated as S."
     },
     "featuring": {
       "first_seen": "Rich Brian",
@@ -18609,9 +18609,2419 @@
       "first_seen": "Steven Spurrier (wine merchant)",
       "has_definition": true,
       "definition": "(sometimes proscribed) To create a work as its author."
+    },
+    "giuseppe": {
+      "first_seen": "Peppino De Filippo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "peppino": {
+      "first_seen": "Peppino De Filippo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "filippo": {
+      "first_seen": "Peppino De Filippo",
+      "has_definition": false,
+      "definition": ""
+    },
+    "limehouse": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "navigation": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "The theory, practice and technology of charting a course for a ship, aircraft or spaceship or (colloquially) road vehicle."
+    },
+    "wars": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "Organized, large-scale, armed conflict between countries or between national, ethnic, or other sizeable groups, usually involving the engagement of military forces."
+    },
+    "broken": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "To separate into two or more pieces, to fracture or crack, by a process that cannot easily be reversed for reassembly."
+    },
+    "launching": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "To throw (a projectile such as a lance, dart or ball); to hurl; to propel with force."
+    },
+    "napoleonic": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rate": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "The worth of something; value."
+    },
+    "naiad": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "A female deity (nymph) associated with water, especially a spring, stream, or other fresh water."
+    },
+    "frigate": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "An obsolete type of sailing warship with a single continuous gun deck, typically used for patrolling, blockading, etc, but not in line of battle."
+    },
+    "coal": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "A black rock formed from prehistoric plant remains, composed largely of carbon and burned as a fuel."
+    },
+    "hms": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "depot": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "A storage facility, in particular, a warehouse."
+    },
+    "steam": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "The vapor formed when water changes from liquid phase to gas phase."
+    },
+    "paid": {
+      "first_seen": "HMS Naiad (1797)",
+      "has_definition": true,
+      "definition": "To give money or other compensation to in exchange for goods or services."
+    },
+    "savings": {
+      "first_seen": "Faraday Building",
+      "has_definition": true,
+      "definition": "A reduction in cost or expenditure."
+    },
+    "close": {
+      "first_seen": "Faraday Building",
+      "has_definition": true,
+      "definition": "An end or conclusion."
+    },
+    "faraday": {
+      "first_seen": "Faraday Building",
+      "has_definition": true,
+      "definition": "The quantity of electricity required to deposit or liberate 1 gram equivalent weight of a substance during electrolysis; approximately \u221296,487 coulombs."
+    },
+    "cathedral": {
+      "first_seen": "Faraday Building",
+      "has_definition": true,
+      "definition": "Relating to the throne or the see of a bishop."
+    },
+    "post": {
+      "first_seen": "Faraday Building",
+      "has_definition": true,
+      "definition": "A long dowel or plank protruding from the ground; a fencepost; a lightpost."
+    },
+    "climate": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "An area of the earth's surface between two parallels of latitude."
+    },
+    "exempt": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "One who has been released from something."
+    },
+    "warming": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "To make or keep warm."
+    },
+    "air": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "The substance constituting earth's atmosphere, particularly:"
+    },
+    "product": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "A commodity offered for sale."
+    },
+    "profit": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "Total income or cash flow minus expenditures. The money or other benefit a non-governmental organization or individual receives in exchange for products and services sold at an advertised price."
+    },
+    "temperatures": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "A measure of cold or heat, often measurable with a thermometer."
+    },
+    "tax": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "Money paid to the government other than for transaction-specific goods and services."
+    },
+    "global": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "A globally scoped identifier."
+    },
+    "data": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "(plural: data) A measurement of something on a scale understood by both the recorder (a person or device) and the reader (another person or device). The scale is arbitrarily defined, such as from 1 to 10 by ones, 1 to 100 by 0.1, or simply true or false, on or off, yes, no, or maybe, etc."
+    },
+    "dataset": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "A file of related records on a computer-readable medium such as disk, especially one on a mainframe computer; a dataset."
+    },
+    "primary": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "A primary election; a preliminary election to select a political candidate of a political party."
+    },
+    "concerns": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": true,
+      "definition": "That which affects one\u2019s welfare or happiness. A matter of interest to someone. The adposition before the matter of interest is usually over, about or for."
+    },
+    "hadsst": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "merge": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "approach": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "transparent": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "granted": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "regarding": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "stated": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "focused": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "instrumental": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aim": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "resulting": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "address": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "outside": {
+      "first_seen": "Berkeley Earth",
+      "has_definition": false,
+      "definition": ""
+    },
+    "harry": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "retaining": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "porches": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bricks": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "venetian": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wall": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "outbuildings": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "villa": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tiles": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "guilford": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "red": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sculpted": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "limestone": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "renaissance": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "barton": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arcades": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gray": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "greensboro": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carolina": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sigmund": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "arched": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sternberger": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "contributing": {
+      "first_seen": "Sigmund Sternberger House",
+      "has_definition": false,
+      "definition": ""
+    },
+    "charted": {
+      "first_seen": "One Day at a Time (Cristy Lane album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hymns": {
+      "first_seen": "One Day at a Time (Cristy Lane album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cristy": {
+      "first_seen": "One Day at a Time (Cristy Lane album)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "theology": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "segregated": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "affiliated": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "episcopal": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "Of or relating to the affairs of a bishop in various Christian churches."
+    },
+    "literary": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "teachers": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "predominantly": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "In a predominant manner. Most commonly or frequently by a large margin."
+    },
+    "industrial": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cme": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "provide": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "To make a living; earn money for necessities."
+    },
+    "ministers": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "A person who is trained to preach, to perform religious ceremonies, and to afford pastoral care at a Protestant church."
+    },
+    "agricultural": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "A product or commodity from agriculture."
+    },
+    "tyler": {
+      "first_seen": "Texas College",
+      "has_definition": false,
+      "definition": ""
+    },
+    "negro": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "A black person; a person of sub-Saharan African descent."
+    },
+    "denomination": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "The act of naming or designating."
+    },
+    "colored": {
+      "first_seen": "Texas College",
+      "has_definition": true,
+      "definition": "To give something color."
+    },
+    "cdp": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bare": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": true,
+      "definition": "(\u2018the bare\u2019) The surface, the (bare) skin."
+    },
+    "said": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": true,
+      "definition": "Mentioned earlier; aforesaid."
+    },
+    "smooth": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": true,
+      "definition": "Something that is smooth, or that goes smoothly and easily."
+    },
+    "navajo": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dilkon": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": false,
+      "definition": ""
+    },
+    "phrase": {
+      "first_seen": "Dilkon, Arizona",
+      "has_definition": true,
+      "definition": "A short written or spoken expression."
+    },
+    "fukushima": {
+      "first_seen": "Kawahigashi Station (Fukushima)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kawahigashi": {
+      "first_seen": "Kawahigashi Station (Fukushima)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sukagawa": {
+      "first_seen": "Kawahigashi Station (Fukushima)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "saviour": {
+      "first_seen": "St Saviour's in the Meadows",
+      "has_definition": true,
+      "definition": "A person who saves someone, rescues another from harm."
+    },
+    "meadows": {
+      "first_seen": "St Saviour's in the Meadows",
+      "has_definition": true,
+      "definition": "A field or pasture; a piece of land covered or cultivated with grass, usually intended to be mown for hay."
+    },
+    "nottingham": {
+      "first_seen": "St Saviour's in the Meadows",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rodolphe": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": false,
+      "definition": ""
+    },
+    "offices": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "A ceremonial duty or service, particularly:"
+    },
+    "blavy": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mandate": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "An official or authoritative command; an order or injunction; a commission; a judicial precept."
+    },
+    "imf": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": false,
+      "definition": ""
+    },
+    "multilateral": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "A group with representatives from three or more parties or nations."
+    },
+    "sovereign": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "A monarch; the ruler of a country."
+    },
+    "surveillance": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "Close observation of an individual or group; person or persons under suspicion."
+    },
+    "forums": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "A place for discussion."
+    },
+    "monetary": {
+      "first_seen": "Rodolphe Blavy",
+      "has_definition": true,
+      "definition": "Of, pertaining to, or consisting of money."
+    },
+    "eduardo": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ambassador": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "A minister of the highest rank sent to a foreign court to represent there his sovereign or country. (Sometimes called ambassador-in-residence)"
+    },
+    "ribeiro": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "baumgratz": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "viotti": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "month": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "A period into which a year is divided, historically based on the phases of the moon."
+    },
+    "nio": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "permanent": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "A chemical hair treatment imparting or removing curliness, whose effects typically last for a period of weeks; a perm."
+    },
+    "chef": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "The presiding cook in the kitchen of a large household."
+    },
+    "married": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "A married person."
+    },
+    "luiza": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "current": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "The generally unidirectional movement of a gas or fluid."
+    },
+    "guterres": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ant": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": true,
+      "definition": "Any of various insects in the family Formicidae in the order Hymenoptera, typically living in large colonies composed almost entirely of flightless females."
+    },
+    "diplomat": {
+      "first_seen": "Maria Luiza Ribeiro Viotti",
+      "has_definition": false,
+      "definition": ""
+    },
+    "report": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bureau": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tanzania": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pembamnazi": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "boundaries": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mnazi": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vianzi": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ward": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "forms": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "mkuranga": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "salaam": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pwani": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dar": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bordered": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pemba": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "shungubweni": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kigamboni": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kimbiji": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kisarawe": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wards": {
+      "first_seen": "Pembamnazi",
+      "has_definition": false,
+      "definition": ""
+    },
+    "baker": {
+      "first_seen": "Saint Francis de Sales Cathedral (Baker City, Oregon)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sales": {
+      "first_seen": "Saint Francis de Sales Cathedral (Baker City, Oregon)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "properties": {
+      "first_seen": "Saint Francis de Sales Cathedral (Baker City, Oregon)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "francis": {
+      "first_seen": "Saint Francis de Sales Cathedral (Baker City, Oregon)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rectory": {
+      "first_seen": "Saint Francis de Sales Cathedral (Baker City, Oregon)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "overseeing": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "distinct": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ilbo": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "multiplexes": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hll": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "positions": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "A place or location."
+    },
+    "entities": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "That which has a distinct existence as an individual unit. Often used for organisations which have no physical form."
+    },
+    "magazines": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "A non-academic periodical publication, generally consisting of sheets of paper folded in half and stapled at the fold."
+    },
+    "extend": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "To increase in extent."
+    },
+    "cdxo": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "divisions": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "The act or process of dividing anything."
+    },
+    "sll": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "transformation": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "The act of transforming or the state of being transformed."
+    },
+    "diverse": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "Consisting of many different elements; various."
+    },
+    "seven": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "The digit/figure 7 or an occurrence thereof."
+    },
+    "joongang": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "leads": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "A heavy, pliable, inelastic metal element, having a bright, bluish color, but easily tarnished; both malleable and ductile, though with little tenacity. It is easily fusible, forms alloys with other metals, and is an ingredient of solder and type metal. Atomic number 82, symbol Pb (from Latin plumbum)."
+    },
+    "encompass": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "To form a circle around; to encircle."
+    },
+    "megabox": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "phoenix": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": true,
+      "definition": "A mythological bird, said to be the only one of its kind, which lives for 500 years and then dies by burning to ashes on a pyre of its own making, ignited by the sun. It then arises anew from the ashes."
+    },
+    "jeong": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hotels": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "realm": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "holds": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "resorts": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "holdings": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "responsibilities": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "additionally": {
+      "first_seen": "Jeongdo Hong",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kyiv": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pinchuk": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": false,
+      "definition": ""
+    },
+    "billionaire": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": true,
+      "definition": "Somebody whose wealth is greater than one billion (109) dollars, or other currency."
+    },
+    "steel": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": true,
+      "definition": "An artificial metal produced from iron, harder and more elastic than elemental iron; used figuratively as a symbol of hardness."
+    },
+    "collection": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": true,
+      "definition": "A set of items or amount of material procured or gathered together."
+    },
+    "pinchukartcentre": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ukrainian": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": false,
+      "definition": ""
+    },
+    "contemporary": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": true,
+      "definition": "Someone or something living at the same time, or of roughly the same age as another."
+    },
+    "victor": {
+      "first_seen": "PinchukArtCentre",
+      "has_definition": true,
+      "definition": "The winner in a fight or contest."
+    },
+    "telomere": {
+      "first_seen": "TELO2",
+      "has_definition": true,
+      "definition": "Either of the sequences of DNA at each end of a eukaryotic chromosome."
+    },
+    "telo": {
+      "first_seen": "TELO2",
+      "has_definition": false,
+      "definition": ""
+    },
+    "regulation": {
+      "first_seen": "TELO2",
+      "has_definition": true,
+      "definition": "The act of regulating or the condition of being regulated."
+    },
+    "length": {
+      "first_seen": "TELO2",
+      "has_definition": true,
+      "definition": "The distance measured along the longest dimension of an object."
+    },
+    "showers": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "A brief fall of precipitation (spell of rain, or a similar fall of snow, sleet, or cascade)."
+    },
+    "saturday": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tri": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "Triathlon"
+    },
+    "constant": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "That which is permanent or invariable."
+    },
+    "stock": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "A store or supply."
+    },
+    "oval": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "An elongated round shape resembling an egg or ellipse."
+    },
+    "fontana": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "speedway": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "A form of motorcycle racing on flat (without camber) oval dirt tracks using motorcycles with neither brakes nor gears."
+    },
+    "postponed": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": true,
+      "definition": "To delay or put off an event, appointment etc."
+    },
+    "sunday": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "auto": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "casino": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "due": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "iteration": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "immediately": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pala": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rain": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nascar": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "xfinity": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "superspeedway": {
+      "first_seen": "2023 Production Alliance Group 300",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chowchilla": {
+      "first_seen": "Chowchilla",
+      "has_definition": false,
+      "definition": ""
+    },
+    "orthonychidae": {
+      "first_seen": "Chowchilla",
+      "has_definition": false,
+      "definition": ""
+    },
+    "almost": {
+      "first_seen": "Tata of Chasselay",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chasselay": {
+      "first_seen": "Tata of Chasselay",
+      "has_definition": false,
+      "definition": ""
+    },
+    "murdered": {
+      "first_seen": "Tata of Chasselay",
+      "has_definition": false,
+      "definition": ""
+    },
+    "graves": {
+      "first_seen": "Tata of Chasselay",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tata": {
+      "first_seen": "Tata of Chasselay",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aleutian": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hawaiian": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "northernmost": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "detroit": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ago": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chain": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seamounts": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "million": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "seamount": {
+      "first_seen": "Detroit Seamount",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gonzalo": {
+      "first_seen": "Gonzalo Fierro",
+      "has_definition": false,
+      "definition": ""
+    },
+    "caniull": {
+      "first_seen": "Gonzalo Fierro",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chilean": {
+      "first_seen": "Gonzalo Fierro",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fierro": {
+      "first_seen": "Gonzalo Fierro",
+      "has_definition": false,
+      "definition": ""
+    },
+    "critic": {
+      "first_seen": "Adolf M\u00fcllner",
+      "has_definition": true,
+      "definition": "A person who appraises the works of others."
+    },
+    "llner": {
+      "first_seen": "Adolf M\u00fcllner",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adolf": {
+      "first_seen": "Adolf M\u00fcllner",
+      "has_definition": false,
+      "definition": ""
+    },
+    "gottfried": {
+      "first_seen": "Adolf M\u00fcllner",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dramatic": {
+      "first_seen": "Adolf M\u00fcllner",
+      "has_definition": true,
+      "definition": "Of or relating to the drama."
+    },
+    "amandus": {
+      "first_seen": "Adolf M\u00fcllner",
+      "has_definition": false,
+      "definition": ""
+    },
+    "exist": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "(stative) to be; have existence; have being or reality"
+    },
+    "passed": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "To change place."
+    },
+    "roundabout": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "(Australia and sometimes United States) A road junction at which traffic streams circularly around a central island."
+    },
+    "gateway": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "An entrance capable of being blocked by use of a gate."
+    },
+    "traffic": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "Pedestrians or vehicles on roads, or the flux or passage thereof."
+    },
+    "dere": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "Hurt; harm; injury."
+    },
+    "crossed": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "To make or form a cross."
+    },
+    "remains": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "(chiefly in the plural) That which is left; relic; remainder."
+    },
+    "beneath": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "Below or underneath."
+    },
+    "portgate": {
+      "first_seen": "Portgate",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fortified": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "A fortified wine."
+    },
+    "hadrian": {
+      "first_seen": "Portgate",
+      "has_definition": false,
+      "definition": ""
+    },
+    "roman": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "One of the main three types used for the Latin alphabet (the others being italics and blackletter), in which the ascenders are mostly straight."
+    },
+    "gate": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "A doorlike structure outside a house."
+    },
+    "stagshaw": {
+      "first_seen": "Portgate",
+      "has_definition": false,
+      "definition": ""
+    },
+    "preceded": {
+      "first_seen": "Portgate",
+      "has_definition": true,
+      "definition": "To go before, go in front of."
+    },
+    "wisconsin": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": false,
+      "definition": ""
+    },
+    "democratic": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": true,
+      "definition": "Pertaining to democracy; favoring democracy, or constructed upon the principle of government by the people."
+    },
+    "grocer": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": true,
+      "definition": "A person who retails groceries (foodstuffs and household items) from a grocery."
+    },
+    "franzkowiak": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": false,
+      "definition": ""
+    },
+    "terms": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": true,
+      "definition": "That which limits the extent of anything; limit, extremity, bound, boundary."
+    },
+    "martin": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": true,
+      "definition": "Any of various passerine birds of the family Hirundinidae, which also includes swallows, that catch insects whilst flying."
+    },
+    "milwaukee": {
+      "first_seen": "Martin Franzkowiak",
+      "has_definition": false,
+      "definition": ""
+    },
+    "freemium": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "A product that is offered free of charge and supported by sales of a premium version."
+    },
+    "massively": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "In a massive manner, in a way that appears large, heavy or imposing."
+    },
+    "advertising": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "To give (especially public) notice of (something); to announce publicly."
+    },
+    "machine": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "A device that directs and controls energy, often in the form of movement or electricity, to produce a certain effect."
+    },
+    "apps": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "An application (program), especially a small one designed for a mobile device."
+    },
+    "grossing": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "To earn money, not including expenses."
+    },
+    "mobile": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "A kinetic sculpture or decorative arrangement made of items hanging so that they can move independently from each other."
+    },
+    "multiplayer": {
+      "first_seen": "Mobile Strike",
+      "has_definition": true,
+      "definition": "(games) The feature of a video game where multiple human players play simultaneously."
+    },
+    "online": {
+      "first_seen": "Mobile Strike",
+      "has_definition": false,
+      "definition": ""
+    },
+    "campaign": {
+      "first_seen": "Mobile Strike",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lica": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "accredited": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "uco": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cat": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "universidad": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "antioquia": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "oriente": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rionegro": {
+      "first_seen": "Universidad Cat\u00f3lica de Oriente",
+      "has_definition": false,
+      "definition": ""
+    },
+    "slovak": {
+      "first_seen": "Martin Obuch",
+      "has_definition": false,
+      "definition": ""
+    },
+    "obuch": {
+      "first_seen": "Martin Obuch",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bordeaux": {
+      "first_seen": "Martin Obuch",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ffhg": {
+      "first_seen": "Martin Obuch",
+      "has_definition": false,
+      "definition": ""
+    },
+    "defenceman": {
+      "first_seen": "Martin Obuch",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bunnerong": {
+      "first_seen": "Eastern Suburbs Memorial Park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "crematorium": {
+      "first_seen": "Eastern Suburbs Memorial Park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "matraville": {
+      "first_seen": "Eastern Suburbs Memorial Park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "botany": {
+      "first_seen": "Eastern Suburbs Memorial Park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "suburbs": {
+      "first_seen": "Eastern Suburbs Memorial Park",
+      "has_definition": false,
+      "definition": ""
+    },
+    "catalyzes": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chemical": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "oxidase": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "enzymology": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "catechol": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "reaction": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dimerizing": {
+      "first_seen": "Catechol oxidase (dimerizing)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wonderful": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "Tending to excite wonder; surprising, extraordinary."
+    },
+    "booklet": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "A small or thin book."
+    },
+    "stern": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "Having a hardness and severity of nature or manner."
+    },
+    "bedford": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adaptation": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "The process of adapting something or becoming adapted to a situation; adjustment, modification."
+    },
+    "greatest": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "Relatively large in scale, size, extent, number (i.e. having many parts or members) or duration (i.e. relatively long); very big."
+    },
+    "van": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "A covered vehicle used for carrying goods or people, usually roughly cuboid in shape, longer and higher than a car but smaller than a truck/lorry."
+    },
+    "doren": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rko": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pictures": {
+      "first_seen": "Bedford Falls (It's a Wonderful Life)",
+      "has_definition": true,
+      "definition": "A representation of anything (as a person, a landscape, a building) upon canvas, paper, or other surface, by drawing, painting, printing, photography, etc."
+    },
+    "lillehammer": {
+      "first_seen": "South Korea at the 2016 Winter Youth Olympics",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kobe": {
+      "first_seen": "Hyogo University of Health Sciences",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hyogo": {
+      "first_seen": "Hyogo University of Health Sciences",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dashboard": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "A panel under the windscreen of a motor car or aircraft, containing indicator dials, compartments, and sometimes controls."
+    },
+    "management": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "Administration; the use of limited resources combined with forecasting, planning, leadership and execution skills to achieve predetermined specific goals."
+    },
+    "android": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "A robot that is designed to look and act like a human being (not necessarily male)"
+    },
+    "client": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "A customer, a buyer or receiver of goods or services."
+    },
+    "tweetdeck": {
+      "first_seen": "TweetDeck",
+      "has_definition": false,
+      "definition": ""
+    },
+    "web": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "The World Wide Web."
+    },
+    "iphone": {
+      "first_seen": "TweetDeck",
+      "has_definition": false,
+      "definition": ""
+    },
+    "percentage": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "The amount, number or rate of something, regarded as part of a total of 100; a part of a whole."
+    },
+    "ranked": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "To place abreast, or in a line."
+    },
+    "integrated": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "To form into one whole; to make entire; to complete; to renew; to restore; to perfect."
+    },
+    "twitter": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "(sometimes proscribed) To tweet; to post an update to Twitter."
+    },
+    "app": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "An application (program), especially a small one designed for a mobile device."
+    },
+    "interface": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "The point of interconnection or contact between entities."
+    },
+    "tweets": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "The sound of a bird; any short high-pitched sound or whistle."
+    },
+    "proprietary": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "A proprietor or owner."
+    },
+    "clients": {
+      "first_seen": "TweetDeck",
+      "has_definition": true,
+      "definition": "A customer, a buyer or receiver of goods or services."
+    },
+    "accounts": {
+      "first_seen": "TweetDeck",
+      "has_definition": false,
+      "definition": ""
+    },
+    "posted": {
+      "first_seen": "TweetDeck",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fairest": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "brownlow": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "wines": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tied": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "patrick": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cripps": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "breaking": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "adjudged": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "richmond": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ollie": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dustin": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "presented": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "votes": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "afl": {
+      "first_seen": "2017 Brownlow Medal",
+      "has_definition": false,
+      "definition": ""
+    },
+    "huracanes": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "tdp": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "estadio": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "multi": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "serie": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rquez": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "leon": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nchez": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "cuautitl": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "fmf": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "premier": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "izcalli": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "liga": {
+      "first_seen": "Estadio Hugo S\u00e1nchez M\u00e1rquez",
+      "has_definition": false,
+      "definition": ""
+    },
+    "haroon": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "directions": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "urdu": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pakistani": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "zahir": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "devi": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sumita": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sangam": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "afsari": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "raihan": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rosy": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": true,
+      "definition": "Rose-coloured."
+    },
+    "pakistan": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "khalil": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "movie": {
+      "first_seen": "Sangam (1964 Urdu film)",
+      "has_definition": true,
+      "definition": "A recorded sequence of images displayed on a screen at a rate sufficiently fast to create the appearance of motion."
+    },
+    "scarab": {
+      "first_seen": "Heterorhina elegans",
+      "has_definition": true,
+      "definition": "A beetle of the species Scarabaeus sacer, sacred to the ancient Egyptians."
+    },
+    "elegans": {
+      "first_seen": "Heterorhina elegans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lanka": {
+      "first_seen": "Heterorhina elegans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sri": {
+      "first_seen": "Heterorhina elegans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "chafer": {
+      "first_seen": "Heterorhina elegans",
+      "has_definition": true,
+      "definition": "One who chafes."
+    },
+    "heterorhina": {
+      "first_seen": "Heterorhina elegans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ongoing": {
+      "first_seen": "2026\u201327 Ukrainian First League",
+      "has_definition": true,
+      "definition": "To be ongoing (occurring, happening); to last, proceed or continue."
+    },
+    "persha": {
+      "first_seen": "2026\u201327 Ukrainian First League",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pfl": {
+      "first_seen": "2026\u201327 Ukrainian First League",
+      "has_definition": false,
+      "definition": ""
+    },
+    "conducted": {
+      "first_seen": "2026\u201327 Ukrainian First League",
+      "has_definition": true,
+      "definition": "To lead, or guide; to escort."
+    },
+    "liha": {
+      "first_seen": "2026\u201327 Ukrainian First League",
+      "has_definition": false,
+      "definition": ""
+    },
+    "establishment": {
+      "first_seen": "2026\u201327 Ukrainian First League",
+      "has_definition": true,
+      "definition": "The act of establishing; a ratifying or ordaining; settlement; confirmation."
+    },
+    "qalandari": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "nagar": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "literature": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "The body of all written works."
+    },
+    "incident": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "An event or occurrence."
+    },
+    "lucknow": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "robbed": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "To steal from, especially using force or violence."
+    },
+    "sufi": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "revolutionaries": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "A revolutionist; a person who revolts."
+    },
+    "kakori": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "poetry": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "Literature composed in verse or language exhibiting conscious attention to patterns and rhythm."
+    },
+    "robbery": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "The act or practice of robbing."
+    },
+    "qadiriya": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "train": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "Elongated portion."
+    },
+    "panchayat": {
+      "first_seen": "Kakori",
+      "has_definition": true,
+      "definition": "A village council or local government."
+    },
+    "uttar": {
+      "first_seen": "Kakori",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kesme": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": false,
+      "definition": ""
+    },
+    "uzun": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": false,
+      "definition": ""
+    },
+    "eri": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": false,
+      "definition": ""
+    },
+    "milk": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": true,
+      "definition": "A white liquid produced by the mammary glands of female mammals to nourish their young. From certain animals, especially cows, it is also called dairy milk and is a common food for humans as a beverage or used to produce various dairy products such as butter, cheese, and yogurt."
+    },
+    "eggs": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": true,
+      "definition": "An approximately spherical or ellipsoidal body produced by birds, reptiles, insects and other animals, housing the embryo during its development."
+    },
+    "prepared": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": true,
+      "definition": "To make ready for a specific future purpose; to set up; to assemble or equip."
+    },
+    "turkish": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pasta": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": false,
+      "definition": ""
+    },
+    "flour": {
+      "first_seen": "Uzun eri\u015fte",
+      "has_definition": false,
+      "definition": ""
+    },
+    "christopher": {
+      "first_seen": "Kit Hesketh-Harvey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "hesketh": {
+      "first_seen": "Kit Hesketh-Harvey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "translator": {
+      "first_seen": "Kit Hesketh-Harvey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "composers": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sibling": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "elias": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "musicians": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "assi": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "songwriters": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "dramatists": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lyricist": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "playwrights": {
+      "first_seen": "Rahbani brothers",
+      "has_definition": false,
+      "definition": ""
+    },
+    "links": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "quebec": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "turcot": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "access": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "henri": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "autoroutes": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "expressway": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "philippe": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "freeway": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "champlain": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "interchange": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "owning": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "takes": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "carie": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "montreal": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "downtown": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "provides": {
+      "first_seen": "Turcot Interchange",
+      "has_definition": false,
+      "definition": ""
+    },
+    "ouhans": {
+      "first_seen": "Ouhans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "doubs": {
+      "first_seen": "Ouhans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "franche": {
+      "first_seen": "Ouhans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "loue": {
+      "first_seen": "Ouhans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "comt": {
+      "first_seen": "Ouhans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bourgogne": {
+      "first_seen": "Ouhans",
+      "has_definition": false,
+      "definition": ""
+    },
+    "aftermath": {
+      "first_seen": "Vergina",
+      "has_definition": true,
+      "definition": "A second mowing; the grass which grows after the first crop of hay in the same season."
+    },
+    "veroia": {
+      "first_seen": "Vergina",
+      "has_definition": false,
+      "definition": ""
+    },
+    "exchanges": {
+      "first_seen": "Vergina",
+      "has_definition": true,
+      "definition": "An act of exchanging or trading."
+    },
+    "greece": {
+      "first_seen": "Vergina",
+      "has_definition": false,
+      "definition": ""
+    },
+    "kallikratis": {
+      "first_seen": "Vergina",
+      "has_definition": false,
+      "definition": ""
+    },
+    "imathia": {
+      "first_seen": "Vergina",
+      "has_definition": false,
+      "definition": ""
+    },
+    "macedonia": {
+      "first_seen": "Vergina",
+      "has_definition": false,
+      "definition": ""
+    },
+    "vergina": {
+      "first_seen": "Vergina",
+      "has_definition": false,
+      "definition": ""
+    },
+    "treaty": {
+      "first_seen": "Vergina",
+      "has_definition": true,
+      "definition": "A binding agreement concluded by subjects of international law, namely states and international organizations."
+    },
+    "commons": {
+      "first_seen": "James Lowther (1753\u20131837)",
+      "has_definition": true,
+      "definition": "Mutual good, shared by more than one."
+    },
+    "colonel": {
+      "first_seen": "James Lowther (1753\u20131837)",
+      "has_definition": true,
+      "definition": "A commissioned officer in an armed military organization, typically the highest rank before flag officer ranks (generals). It is generally found in armies, air forces or naval infantry (marines)."
+    },
+    "tory": {
+      "first_seen": "James Lowther (1753\u20131837)",
+      "has_definition": true,
+      "definition": "(UK politics) A member or supporter of the Conservative Party, which evolved from Royalist politicians; historically associated with upholding the rights of the monarchy and the privileges of the established Church."
+    },
+    "lowther": {
+      "first_seen": "James Lowther (1753\u20131837)",
+      "has_definition": false,
+      "definition": ""
+    },
+    "sat": {
+      "first_seen": "James Lowther (1753\u20131837)",
+      "has_definition": true,
+      "definition": "(of a person) To be in a position in which the upper body is upright and supported by the buttocks."
+    },
+    "soldier": {
+      "first_seen": "James Lowther (1753\u20131837)",
+      "has_definition": true,
+      "definition": "A member of an army, of any rank."
+    },
+    "topped": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "To cover on the top or with a top."
+    },
+    "debuted": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "To formally introduce, as to the public"
+    },
+    "phoebe": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "Any of several birds of the genus Sayornis."
+    },
+    "rest": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "(of a person or animal) Relief from work or activity by sleeping; sleep."
+    },
+    "critical": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "A critical value, factor, etc."
+    },
+    "boygenius": {
+      "first_seen": "Boygenius",
+      "has_definition": false,
+      "definition": ""
+    },
+    "instant": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "A very short period of time; a moment."
+    },
+    "brit": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "To break in pieces; divide."
+    },
+    "dacus": {
+      "first_seen": "Boygenius",
+      "has_definition": false,
+      "definition": ""
+    },
+    "julien": {
+      "first_seen": "Boygenius",
+      "has_definition": false,
+      "definition": ""
+    },
+    "express": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "A mode of transportation, often a train, that travels quickly or directly."
+    },
+    "hiatus": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "A gap in a series, making it incomplete."
+    },
+    "labeled": {
+      "first_seen": "Boygenius",
+      "has_definition": true,
+      "definition": "To put a label (a ticket or sign) on (something)."
+    },
+    "bridgers": {
+      "first_seen": "Boygenius",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lucy": {
+      "first_seen": "Boygenius",
+      "has_definition": false,
+      "definition": ""
+    },
+    "pertenhall": {
+      "first_seen": "Church of St Peter, Pertenhall",
+      "has_definition": false,
+      "definition": ""
+    },
+    "bedfordshire": {
+      "first_seen": "Church of St Peter, Pertenhall",
+      "has_definition": false,
+      "definition": ""
+    },
+    "commanded": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "emrick": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "amphibious": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "rockey": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "lieutenant": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "jima": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "iwo": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "keller": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
+    },
+    "corps": {
+      "first_seen": "Keller E. Rockey",
+      "has_definition": false,
+      "definition": ""
     }
   },
-  "total_articles": 250,
-  "total_words": 3722,
-  "total_defined": 706
+  "total_articles": 300,
+  "total_words": 4204,
+  "total_defined": 882
 }

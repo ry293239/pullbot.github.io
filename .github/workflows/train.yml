@@ -13,19 +13,25 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+      
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+        
     - name: Install dependencies
       run: |
         pip install --upgrade pip
         pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml
+        
     - name: Scrape web
       run: python src/scrape.py
+      
     - name: Clean corpus
       run: python src/clean_corpus.py
+      
     - name: Build knowledge store
       run: python src/store.py build
+      
     - name: Train model
       run: |
         if [ -f data/processed/corpus.txt ]; then
@@ -49,6 +55,7 @@ jobs:
           echo "No corpus found"
           echo "TRAINED=false" >> $GITHUB_ENV
         fi
+      
     - name: Update version file
       run: |
         mkdir -p data/knowledge
@@ -80,6 +87,7 @@ jobs:
         ENDJSON
         echo "Version: ${NEW_VERSION}"
         echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
+        
     - name: Remove large files before push
       run: |
         rm -rf models/checkpoints/
@@ -87,13 +95,14 @@ jobs:
         rm -rf models/temp_quick/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
+        
     - name: Commit and push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git stash
-        git pull --rebase
-        git stash pop
+        git pull --rebase origin main
+        git stash pop || true
         git add data/ knowledge/ models/chunks/ models/last_train.json 2>/dev/null || true
         git add src/ config.yaml requirements.txt .github/ js/ index.html .gitignore 2>/dev/null || true
         git add data/knowledge/version.json 2>/dev/null || true
@@ -101,5 +110,5 @@ jobs:
           echo "No changes"
         else
           git commit -m "v${NEW_VERSION}: $(date -u +'%Y-%m-%d %H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB corpus"
-          git push
+          git push origin main
         fi

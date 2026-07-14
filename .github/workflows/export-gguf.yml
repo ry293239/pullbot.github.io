@@ -14,13 +14,13 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers numpy safetensors gguf sentencepiece
+      run: pip install torch transformers numpy safetensors gguf
     - name: Convert to GGUF
       run: |
         python -c "
         import os, json, torch, numpy as np
         from transformers import AutoModelForCausalLM, AutoTokenizer
-        from gguf import GGUFWriter, GGUFValueType
+        from gguf import GGUFWriter
         
         chunks_dir = 'models/chunks'
         
@@ -42,35 +42,27 @@ jobs:
         model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
         
         print('Converting to GGUF...')
-        
-        # Create GGUF writer
         writer = GGUFWriter('models/pullbot.gguf', 'gpt2')
         
-        # Add model architecture metadata
-        writer.add_architecture()
-        writer.add_context_length(1024)
-        writer.add_embedding_length(768)
-        writer.add_feed_forward_length(3072)
-        writer.add_head_count(12)
-        writer.add_layer_count(6)
-        writer.add_vocab_size(50257)
-        
-        # Add tokenizer
+        # Add vocab
         vocab = tokenizer.get_vocab()
         tokens = [''] * len(vocab)
         for word, idx in vocab.items():
             tokens[idx] = word
         writer.add_token_list(tokens)
         
-        # Add weights
+        # Add weights - skip quantized ones
         state_dict = model.state_dict()
+        count = 0
         for name, param in state_dict.items():
             if param.dtype == torch.qint8:
-                continue  # Skip quantized params
+                continue
             arr = param.cpu().numpy()
             writer.add_tensor(name, arr)
+            count += 1
         
         writer.close()
+        print(f'Added {count} tensors')
         
         size_mb = os.path.getsize('models/pullbot.gguf') / (1024*1024)
         print(f'GGUF model: {size_mb:.1f}MB')

@@ -16,11 +16,51 @@ jobs:
     - name: Install deps
       run: pip install torch transformers datasets onnx numpy accelerate safetensors pyyaml
     - name: Export ONNX
-      run: python src/model.py onnx
+      run: |
+        python -c "
+        import os, sys, json, torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        
+        # Load from chunks
+        chunks_dir = 'models/chunks'
+        print('Loading model...')
+        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
+        tokenizer.pad_token = tokenizer.eos_token
+        model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
+        model.eval()
+        model.to('cpu')
+        
+        print('Exporting ONNX...')
+        dummy_input = torch.randint(0, 50257, (1, 64))
+        dummy_mask = torch.ones(1, 64, dtype=torch.int64)
+        
+        torch.onnx.export(
+            model,
+            (dummy_input, dummy_mask),
+            'models/pullbot.onnx',
+            input_names=['input_ids', 'attention_mask'],
+            output_names=['logits'],
+            dynamic_axes={
+                'input_ids': {0: 'batch', 1: 'sequence'},
+                'attention_mask': {0: 'batch', 1: 'sequence'},
+                'logits': {0: 'batch', 1: 'sequence'}
+            },
+            opset_version=14,
+            do_constant_folding=True
+        )
+        
+        import os
+        size_mb = os.path.getsize('models/pullbot.onnx') / (1024*1024)
+        print(f'ONNX model created: {size_mb:.1f}MB')
+        "
     - name: Push ONNX model
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        git add models/pullbot.onnx
-        git diff --staged --quiet || git commit -m "📤 Exported ONNX model"
-        git push
+        if [ -f models/pullbot.onnx ]; then
+          git add models/pullbot.onnx
+          git commit -m "📤 Exported ONNX model" && git push || echo "No changes"
+        else
+          echo "ONNX file not found!"
+          exit 1
+        fi

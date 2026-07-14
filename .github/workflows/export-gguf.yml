@@ -14,49 +14,57 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers numpy safetensors sentencepiece
-    - name: Convert to GGUF
       run: |
-        # Clone llama.cpp for conversion script
+        pip install torch transformers numpy safetensors sentencepiece
         git clone --depth 1 https://github.com/ggerganov/llama.cpp
         pip install -r llama.cpp/requirements.txt
-        
+    - name: Reassemble model
+      run: |
         python -c "
-        import os, json, torch
-        from transformers import AutoModelForCausalLM, AutoTokenizer
+        import os, json
         
         chunks_dir = 'models/chunks'
-        
-        # Reassemble
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
+        
         weights_file = manifest.get('weights_filename', 'model.safetensors')
         reassembled = f'{chunks_dir}/{weights_file}'
+        
         if not os.path.exists(reassembled):
+            print(f'Reassembling {weights_file} from {manifest[\"num_chunks\"]} chunks...')
             with open(reassembled, 'wb') as out:
                 for chunk_path in manifest['chunks']:
                     with open(chunk_path, 'rb') as inc:
                         out.write(inc.read())
+            print(f'Done: {os.path.getsize(reassembled)/(1024*1024):.1f}MB')
+        else:
+            print(f'Already reassembled: {os.path.getsize(reassembled)/(1024*1024):.1f}MB')
         
-        # Save as single pytorch bin for conversion
-        print('Loading model...')
-        model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
-        print('Saving as single file...')
-        torch.save(model.state_dict(), 'models/pytorch_model.bin')
-        print('Saved pytorch_model.bin')
+        # Copy config files
+        import shutil
+        for cfg in ['config.json', 'tokenizer_config.json', 'vocab.json', 'merges.txt', 'tokenizer.json']:
+            src = f'{chunks_dir}/{cfg}'
+            if os.path.exists(src):
+                shutil.copy(src, f'models/{cfg}')
         "
-        
-        # Convert to GGUF
-        python llama.cpp/convert_hf_to_gguf.py models/ --outfile models/pullbot.gguf --outtype q4_k_m || echo "Trying alternative..."
+    - name: Convert to GGUF
+      run: |
+        python llama.cpp/convert_hf_to_gguf.py models/ \
+          --outfile models/pullbot.gguf \
+          --outtype q4_k_m 2>&1 || echo "Trying alternative..."
         
         if [ ! -f models/pullbot.gguf ]; then
-          python llama.cpp/convert.py models/ --outfile models/pullbot.gguf --outtype q4_k_m || true
+          echo "First attempt failed, trying with model name..."
+          python llama.cpp/convert_hf_to_gguf.py models/ \
+            --outfile models/pullbot.gguf \
+            --outtype f16 2>&1 || true
         fi
         
         if [ -f models/pullbot.gguf ]; then
-          echo "GGUF created: $(du -h models/pullbot.gguf | cut -f1)"
+          echo "✅ GGUF created: $(du -h models/pullbot.gguf | cut -f1)"
         else
-          echo "GGUF conversion failed, files in models/:"
+          echo "❌ Conversion failed"
+          echo "Files in models/:"
           ls -la models/
         fi
         

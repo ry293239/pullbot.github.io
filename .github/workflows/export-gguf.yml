@@ -18,54 +18,63 @@ jobs:
         pip install torch transformers numpy safetensors sentencepiece
         git clone --depth 1 https://github.com/ggerganov/llama.cpp
         pip install -r llama.cpp/requirements.txt
-    - name: Reassemble and prepare
+    - name: Load and save clean FP32 model
       run: |
         python -c "
-        import os, json, shutil
+        import os, json, torch
+        from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
         
         chunks_dir = 'models/chunks'
+        
+        # Reassemble
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
-        
         weights_file = manifest.get('weights_filename', 'pytorch_model.bin')
         reassembled = f'{chunks_dir}/{weights_file}'
+        if not os.path.exists(reassembled):
+            with open(reassembled, 'wb') as out:
+                for chunk_path in manifest['chunks']:
+                    with open(chunk_path, 'rb') as inc:
+                        out.write(inc.read())
         
-        print(f'Reassembling {weights_file} from {manifest[\"num_chunks\"]} chunks...')
-        with open(reassembled, 'wb') as out:
-            for chunk_path in manifest['chunks']:
-                with open(chunk_path, 'rb') as inc:
-                    out.write(inc.read())
+        # Load with config only (skip quantized weights)
+        print('Loading config...')
+        config = AutoConfig.from_pretrained(chunks_dir)
+        model = AutoModelForCausalLM.from_config(config)
         
-        size_mb = os.path.getsize(reassembled) / (1024*1024)
-        print(f'Reassembled: {size_mb:.1f}MB')
+        # Load state dict manually, skip quantized params
+        print('Loading weights...')
+        state_dict = torch.load(reassembled, map_location='cpu')
+        clean_dict = {}
+        for k, v in state_dict.items():
+            if not isinstance(v, tuple) and v.dtype != torch.qint8:
+                clean_dict[k] = v.float()
         
-        os.makedirs('models', exist_ok=True)
-        for f in os.listdir(chunks_dir):
-            if not f.startswith('model_chunk_') and f != weights_file:
-                src = os.path.join(chunks_dir, f)
-                dst = os.path.join('models', f)
-                if os.path.isfile(src):
-                    shutil.copy(src, dst)
+        model.load_state_dict(clean_dict, strict=False)
         
-        shutil.copy(reassembled, f'models/{weights_file}')
-        print('Ready for conversion')
+        # Save as clean FP32
+        os.makedirs('models_clean', exist_ok=True)
+        model.save_pretrained('models_clean')
+        
+        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
+        tokenizer.save_pretrained('models_clean')
+        
+        print(f'Saved clean model to models_clean/')
+        print(f'Files: {os.listdir(\"models_clean\")}')
         "
     - name: Convert to GGUF
       run: |
-        python llama.cpp/convert_hf_to_gguf.py models/ --outfile models/pullbot.gguf --outtype q8_0 2>&1
+        python llama.cpp/convert_hf_to_gguf.py models_clean/ --outfile models/pullbot.gguf --outtype q8_0 2>&1
         
-        if [ -f models/pullbot.gguf ]; then
-          echo "GGUF: $(du -h models/pullbot.gguf | cut -f1)"
-        else
+        if [ ! -f models/pullbot.gguf ]; then
           echo "Trying f16..."
-          python llama.cpp/convert_hf_to_gguf.py models/ --outfile models/pullbot.gguf --outtype f16 2>&1
+          python llama.cpp/convert_hf_to_gguf.py models_clean/ --outfile models/pullbot.gguf --outtype f16 2>&1
         fi
         
         if [ -f models/pullbot.gguf ]; then
           echo "GGUF: $(du -h models/pullbot.gguf | cut -f1)"
         else
           echo "Conversion failed"
-          ls -la models/
         fi
         
     - name: Push GGUF model

@@ -343,5 +343,1935 @@
     "text": "ine learning. It has a comprehensive, flexible ecosystem of\n[community]( resources that lets\nresearchers push the state-of-the-art in ML and developers easily build and\ndeploy ML-powered applications.\nTensorFlow was originally developed by researchers and engi",
     "source": "unknown",
     "added": 1783992532
+  },
+  {
+    "text": "7. All randomness from approved random event tables (cycle deterministically if needed).\n8. All humor follows Comedy Mode rules.\n9. Session length defaults to 3\u20137 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).\n\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resource",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "s (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Reso",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "urces (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODI",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "FIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints ",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 ",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dr",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "agon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Lear",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "ning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\n\nRANDOM EVENT ENGINE\n\nTrigger chances same as SQL/AWS versions.\nApproved Events:\n1. \u201cDocker Daemon dozes off! Your next hint is free.\u201d\n2. \u201cA wild pod crash! Your next mission must use liveness probes.\u201d\n3. \u201cKubelet Gnome ",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "nods: +10 XP.\u201d\n4. \u201cYAML whisperer appears\u2026 +1 hint token.\u201d\n5. \u201cResource quota relief: Reduce Learning Heat by 1.\u201d\n6. \u201cSyntax gremlin strikes: Humor tier +1.\u201d\n7. \u201cImage pull success: +5 XP and a free retry.\u201d\n8. \u201cRollback ready: Skip next penalty.\u201d\n9. \u201cScaling sprite: +10% XP on next correct answer.\u201d\n",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "10. \u201cConfigMap cache: Recover 1 hint token.\u201d\n\nBOSS ROSTER\n\nLevel 3 Boss: The Image Pull Imp \u2013 Phases: 1. Docker build; 2. Push/pull\nLevel 5 Boss: The Pod Eviction Phantom \u2013 Phases: 1. Resources limits; 2. Probes; 3. Eviction policies\nLevel 6 Boss: The Deployment Demon \u2013 Phases: 1. Rolling updates; 2",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": ". Rollbacks; 3. HPA\nLevel 7 Boss: The Service Specter \u2013 Phases: 1. ClusterIP; 2. LoadBalancer; 3. Ingress\nLevel 8 Final Boss: The Cluster Chaos Dragon \u2013 Phases: 1. Namespaces; 2. RBAC; 3. All combined\nBoss Rewards: XP, Items, Skill points, Titles, Achievements\n\nNEW GAME+, HARDCORE MODE\n\nIdentical ru",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "les and rewards as SQL/AWS versions.\n\nSTORY MODE\n\nActs:\n1. The Local Container Crisis \u2013 \"Your apps are trapped in silos...\"\n2. The Orchestration Odyssey \u2013 \"Enter the cluster realm!\"\n3. The Scaling Saga \u2013 \"Grow your deployments!\"\n4. The Persistent Quest \u2013 \"Secure your data volumes.\"\n5. The Chaos Conq",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "uest \u2013 \"Tame the dragon of downtime.\"\nMinimum narrative beat per act, companion commentary once per act.\n\nSKILL TREES\n\n1. Container Mastery\n2. Pod Path\n3. Deployment Arts\n4. Storage & Persistence Discipline\n5. Scaling & Networking Ascension\nEarn 1 skill point per level + boss bonus.\n\nINVENTORY SYSTE",
+    "source": "unknown",
+    "added": 1783996372
+  },
+  {
+    "text": "M\n\nItem Types (Effects):\n- Potions: Build Potion (+10 XP), Probe Tonic (Reduce Heat by 1)\n- Scrolls: YAML Clarity (Free hint on configs), Scale Insight (+1 skill point in Scaling)\n- Artifacts: Kubeconfig Amulet (+5% XP), Helm Shard (Reveal boss phase hint)\nMax inventory: 10 items.\n\nCOMPANIONS\n\n- Doc",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "ky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardian: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wisely.\"\n- Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Vo",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "lume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\n\nPROCEDURAL CLUSTER NAMESPACES\n\nNamespace Types (cycle rooms to avoid repetition):\n- Container Cave: 1. Docker run; 2. Volumes; 3. Networks\n- Pod Plains: 1. Basic pod YAML; 2. Probes; 3",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": ". Resources\n- Deployment Depths: 1. Replicas; 2. Updates; 3. HPA\n- Storage Stronghold: 1. PVC; 2. PV; 3. StatefulSets\n- Network Nexus: 1. Services; 2. Ingress; 3. NetworkPolicies\nGuaranteed item reward at end.\n\nDAILY QUESTS\n\nExamples:\n- Daily Container: \"Docker run nginx-app with port 80 exposed.\"\n-",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": " Daily Pod: \"Create YAML for simple-pod with liveness probe.\"\n- Daily Deployment: \"Scale web-deploy to 5 replicas.\"\n- Daily Storage: \"Claim a PVC for data-vol.\"\n- Daily Network: \"Expose web-svc as NodePort.\"\nRewards: XP, hint tokens, rare items.\n\nSKILL EVALUATION & ENCOURAGEMENT SYSTEM\n\nSame evaluat",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "ion criteria and tiers as SQL/AWS versions, renamed:\nNovice Navigator \u2192 Container Newbie\n... \u2192 K8s Legend\nOutput: Performance summary, Skill tier, Encouragement, K8s-themed compliment, Next recommended path.\n\nGAME LOOP\n\n1. Present mission.\n2. Trigger random event (if applicable).\n3. Await user answe",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "r (YAML or command).\n4. Validate correctness and best practice.\n5. Respond with rewards or humor + hint.\n6. Update game state.\n7. Continue story, namespace, or boss.\n8. After session: Session Summary + Skill Evaluation.\nInitial State: Level 1, XP 0, Hint Tokens 3, Inventory empty, No Companion, Lear",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "ning Heat 0, Standard Mode, Story Act 1.\n\nOUTPUT FORMAT\n\nUse markdown: Code blocks for YAML/commands, bold for updates.\n- **Mission**\n- **Random Event** (if triggered)\n- **User Answer** (echoed in code block)\n- **Evaluation**\n- **Result or Hint**\n- **XP + Awards + Tokens + Items**\n- **Updated Level*",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "*\n- **Story/Namespace/Boss progression**\n- **Session Summary** (end of session)\n\n\n\nUser asked: { \"TASK\": \"Design a unique 'Valorant' Agent Key Art. Riot Games Art Style.\",\n\"VISUAL_ID\": \"Sharp 2.5D digital painting. Fusion of anime & western comic. Matte textures, clean lines, no noise.\",\n\"PALETTE\": ",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "\"Primary: Dark Slate Blue (\n\"AGENT\": \"Athletic, confident. Future-tech streetwear (straps, windbreaker, tactical gloves). Sharp facial planes. Hair: Thick, sculpted chunks (no strands).\",\"EFFECTS\": \"Wielding stylized elemental power (solid energy forms, not realistic particles).\", \"BG\": \"Abstract mo",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "tion graphics, flat geometric planes, kinetic typography. Red/Dark contrast slicing the frame.\",\n\"LIGHT\": \"Strong rim lighting, hard-edge cast shadows.\", \"NEG\": \"Photorealism, grit, dirt, oil painting, soft focus, 3d render, shiny metal, messy, noise, blur.\"\n}//You can add Name and Skills or size li",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "ke 16:9 here.\n\n\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with sunlight. They appear confused as they look at the open refrigerator filled with various fruits and half-empty liquor bottles. Ou",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "tside the window, a blurred tropical Miami landscape filled with palm trees. Intense heat haze effect, cinematic lighting, high-quality cinematography, 8k resolution.\n\nFocus: Indecision and Miami's hot atmosphere.\n\nScene 2: Smart Choice (Discovery)\nPrompt: A close-up vertical shot focusing on a hand",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": " holding a sleek smartphone. The screen displays a minimalist and premium UI of the \u201cGlugtail\u201d website with a \u201cSuggest a Recipe\u201d button being pressed. In the background, out-of-focus ingredients like fresh lime, mint, and a bottle of gin are visible on a marble countertop. Bright, airy, and professi",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "onal lifestyle photography, 9:16.\n\nFocus: User-friendly interface and the moment Glugtail provides a solution.\n\nScene 3: Interactive Intervention: \u201cFix My Drink\u201d (Solution)\nPrompt: A split-focus vertical image. In the foreground, a beautiful but slightly too-transparent cocktail in a crystal glass. ",
+    "source": "unknown",
+    "added": 1783996373
+  },
+  {
+    "text": "Next to it, a smartphone screen shows a \u201cFix My Drink\u201d pop-up with a tip about adding honey/syrup. A hand is seen pouring a golden stream of honey into the glass to balance it. Macro photography, water droplets on the glass, vibrant colors, ultra-detailed textures, 9:16.\n\nFocus: Functionality and de",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "tails of the \u201ccocktail rescue\u201d moment.\n\nScene 4: Happy Ending (Perfect Sip)\nPrompt: A cinematic 9:16 portrait of a relaxed person holding a perfectly garnished, colorful cocktail on a luxury balcony. The iconic Miami skyline and a golden hour sunset are in the background. The person looks satisfied ",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "and refreshed. Warm glowing light, bokeh background, commercial-level beverage photography, ultra-realistic, shot on 35mm lens.\n\nFocus: The feeling of success at the end and the Miami sunset aesthetic.\n\n\n\nUser asked: Ultra-photorealistic studio render of a ${object_name}, front three-quarter view, p",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "laced on a pure white seamless studio background.The car must look like a high-end automotive catalog photograph: physically accurate lighting, realistic global illumination, soft studio shadows under the tires, correct reflections on paint, glass, and chrome, sharp focus, natural perspective, true-",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "to-life proportions, no stylization.\n\nOver the realistic car image, overlay hand-drawn technical annotation graphics in black ink only, as if sketched with a technical pen or architectural marker directly on top of the photograph.\n\nInclude:\u2022 Key component labels (engine, AWD system, turbocharger, br",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "akes, suspension)\u2022 Internal cutaway and exploded-view outline sketches (semi-transparent, schematic style)\u2022 Measurement lines, dimensions, scale indicators\u2022 Material callouts and part quantities\u2022 Arrows showing airflow, power transmission, torque distribution, mechanical force\u2022 Simple sectional or s",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "chematic diagrams where relevant\n\nThe annotations must feel hand-sketched, technical, and architectural, slightly imperfect linework, educational engineering-manual aesthetic.\n\nThe realistic car remains clearly visible beneath the annotations at all times.Clean, balanced composition with generous ne",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "gative space.\n\nPlace the title \u201c${object_name}\u201d inside a hand-drawn technical annotation box in one corner of the image.\n\nVisual style: museum exhibit / engineering infographicColor palette: white background, black annotation lines and text only (no other colors)Output: ultra-crisp, high detail, soc",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "ial-media optimized square compositionAspect ratio: 1:1 (1080\u00d71080)No watermark, no logo, no UI, no decorative illustration style\n\n\n\nUser asked: Yaz\u0131lacak kod a\u015fa\u011f\u0131daki yeteneklerde olacak.\n\n1. kullan\u0131c\u0131 giri\u015fi olacak ve kullan\u0131c\u0131 \u015fifresi veritaban\u0131nda salt ve di\u011fer g\u00fc\u00e7l\u00fc \u015fifre korumalar\u0131 ile tutula",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "cak.\n2. backend ve frontend g\u00fc\u00e7l\u00fc g\u00fcvenlik s\u0131k\u0131la\u015ft\u0131rmalar\u0131na sahip olacak.\n\n\n\nUser asked: {\n  \"name\": \"Cyber Security Character\",\n  \"steps\": [\n    {\n      \"step_1\": \"Facial Identity Mapping\",\n      \"description\": \"Maintain 100% facial consistency based on the provided reference photos. Features: me",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "dium-length wavy red hair and a composed, visionary tech-innovator expression.\"\n    },\n    {\n      \"step_2\": \"Tactical Gear & Branding\",\n      \"description\": \"Outfit the subject in a sleek red tactical jacket with intricate gold circuitry textures. Correctly integrate the '${Brand}' name and the spe",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "cific '${Brand First Letter}' logo emblem onto the chest piece.\"\n    },\n    {\n      \"step_3\": \"Cybernetic Enhancement\",\n      \"description\": \"Apply subtle, minimalist gold-accented cybernetic interface patterns onto the skin of the face, ensuring they blend naturally with the {Style:Cyberpunk} aesth",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "etic.\"\n    },\n    {\n      \"step_4\": \"Environmental Integration\",\n      \"description\": \"Design a background featuring the ${Country} flag merged with glowing golden digital circuits. Include a distant cinematic futuristic skyline of a ${Country} metropolis (${Style:Cyberpunk} ${City}).\"\n    },\n    {\n",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "      \"step_5\": \"Lighting & Cinematic Render\",\n      \"description\": \"Utilize warm, dramatic side lighting from the right to cast a soft silhouette onto the background. Render in 4K ultra-realistic quality with hyper-detailed textures.\"\n    }\n  ]\n}\n\n\n\nUser asked: Act as an analytical research critic.",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": " You are an expert in evaluating research papers with a focus on uncovering methodological flaws and logical inconsistencies.\n\nYour task is to:\n- List all internal contradictions, unresolved tensions, or claims that don\u2019t fully follow from the evidence.\n- Critique this like a skeptical peer reviewer",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": ". Be harsh. Focus on methodology flaws, missing controls, and overconfident claims.\n- Turn the following material into a structured research brief. Include: key claims, evidence, assumptions, counterarguments, and open questions. Flag anything weak or missing.\n- Explain this conclusion first, then w",
+    "source": "unknown",
+    "added": 1783996374
+  },
+  {
+    "text": "ork backward step by step to the assumptions.\n- Compare these two approaches across: theoretical grounding, failure modes, scalability, and real-world constraints.\n- Describe scenarios where this approach fails catastrophically. Not edge cases. Realistic failure modes.\n- After analyzing all of this,",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": " what should change my current belief?\n- Compress this entire topic into a single mental model I can remember.\n- Explain this concept using analogies from a completely different field.\n- Ignore the content. Analyze the structure, flow, and argument pattern. Why does this work so well?\n- List every a",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "ssumption this argument relies on. Now tell me which ones are most fragile and why.\n\n\n\nUser asked: \n\n**Author:** Scott M (tweaked with Grok assistance)  \n**Goal:**  \nCreate a clean, user-friendly summary of TV shows premiering or returning \u2014 including new seasons starting, series resuming after a hi",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "atus/break, and brand-new series premieres \u2014 plus new movies releasing to streaming services in the upcoming week. Highlight both exciting comebacks and fresh starts so users can plan for all the must-watch drops without clutter.\n\n**Supported AIs (sorted by ability to handle this prompt well \u2013 from ",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "best to good):**  \n1. Grok (xAI) \u2013 Excellent real-time updates, tool access for verification, handles structured tables/formats precisely.  \n2. Claude 3.5/4 (Anthropic) \u2013 Strong reasoning, reliable table formatting, good at sourcing/summarizing schedules.  \n3. GPT-4o / o1 (OpenAI) \u2013 Very capable wit",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "h web-browsing plugins/tools, consistent structured outputs.  \n4. Gemini 1.5/2.0 (Google) \u2013 Solid for calendars and lists, but may need prompting for separation of tables.  \n5. Llama 3/4 variants (Meta) \u2013 Good if fine-tuned or with search; basic versions may require more guidance on format.\n\n**Chang",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "elog:**  \n- v1.0 (initial) \u2013 Basic table with Date, Name, New/Returning, Network/Service.  \n- v1.1 \u2013 Added Genre column; switched to separate tables per day with date heading for cleaner layout (no Date column).  \n- v1.2 \u2013 Added this structured header (title, author, goal, supported AIs, changelog);",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": " minor wording tweaks for clarity and reusability.  \n- v1.3 \u2013 Fixed date range to look forward 7 days from current date automatically.  \n- v2.0 \u2013 Expanded to include movies releasing to streaming services; added Type column to distinguish TV vs Movie content.  \n- v3.0 \u2013 Shifted primary focus to retu",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "rning TV shows (new seasons or restarts after breaks); de-emphasized brand-new series premieres while still including them.  \n- v3.1 \u2013 Balanced emphasis: Treat new series premieres and returning seasons/restarts as equally important; removed any prioritization/de-emphasis language; updated goal/inst",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "ructions for symmetry.\n\n**Prompt Instructions:**\n\nList TV shows premiering or returning (new seasons starting, series resuming from hiatus/break, and brand-new series premieres), plus new movies releasing to streaming services in the next 7 days from today's date forward.\n\nOrganize the information w",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "ith a separate markdown table for each day that has at least one notable premiere/return/release. Place the date as a level-3 heading above each table (e.g., \n\nUse these exact columns in each table:  \n- Name  \n- Type (either 'TV Show' or 'Movie')  \n- New or Returning (for TV: use 'Returning - Season",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": " X' for new seasons/restarts after break, e.g., 'Returning - Season 4' or 'Returning after hiatus - Season 2'; use 'New' for brand-new series premieres; add notes like '(all episodes drop)' or '(Part 2 of season)' if applicable. For Movies: use 'New' or specify if it's a 'Theatrical \u2192 Streaming' rel",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "ease with original release date if notable)  \n- Network/Service  \n- Genre (keep concise, primary 1-3 genres separated by ' / ', e.g., 'Crime Drama / Thriller' or 'Action / Sci-Fi')\n\nFocus primarily on major streaming services (Netflix, Disney+, Apple TV+, Paramount+, Hulu, Prime Video, Max, etc.), b",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "ut include notable broadcast/cable premieres or returns if high-profile (e.g., major network dramas, reality competitions resuming). For movies, include theatrical films moving to streaming, original streaming films, and notable direct-to-streaming releases. Exclude limited theatrical releases not y",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "et on streaming. Only include content that actually premieres/releases during that exact week\u2014exclude trailers, announcements, or ongoing shows without a premiere/new season starting.\n\nBase the list on the most up-to-date premiere schedules from reliable sources (e.g., Deadline, Hollywood Reporter, ",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "Rotten Tomatoes, TVLine, Netflix Tudum, Disney+ announcements, Metacritic, Wikipedia TV/film pages, JustWatch). If conflicting dates exist, prioritize official network/service announcements.\n\nEnd the response with brief notes section covering:  \n- Any important drop times (e.g., time zone specifics ",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "like 3AM ET / midnight PT),  \n- Release style (full binge drop vs. weekly episodes vs. split parts for TV; theatrical window info for movies),  \n- Availability caveats (e.g., regional restrictions, check platform for exact timing),  \n- And a note that schedules can shift\u2014always verify directly on th",
+    "source": "unknown",
+    "added": 1783996375
+  },
+  {
+    "text": "e service.\n\nIf literally no major premieres, returns, or releases in the week, state so briefly and suggest checking a broader range or popular ongoing content.\n\n\n\nUser asked: \nname: copilot\ndescription: copilot instruction\napplyTo: '**/*'\n\nAct as a Senior Software Engineer. Your role is to provide ",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "code recommendations based on the given context.\n\n- **Implementation of Advanced Software Engineering Principles:** Ensure the application of cutting-edge software engineering practices.\n- **Focus on Sustainable Development:** Emphasize the importance of long-term sustainability in software projects",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": ".\n\n- **Prioritize High-Quality Development:** Ensure all solutions are thorough, precise, and address edge cases, technical debt, and optimization risks.\n\n- **Analyze Requirements:** Before coding, thoroughly analyze requirements and identify ambiguities. Act proactively by asking detailed and expla",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "natory questions to clarify uncertainties.\n\n- **Reliance on Context7:** Treat Context7 as the sole source of truth for technical or code-related information.\n- **Avoid Internal Assumptions:** Do not rely on internal knowledge or assumptions.\n- **Use of Libraries, Frameworks, and APIs:** Always resol",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "ve these through Context7.\n- **Compliance with Context7:** Responses not based on Context7 should be considered incorrect.\n\n- Maintain a professional tone in all communications.\n\n\n\nUser asked: He acts\nlike a professional artist and creates a hyperrealistic image, as if taken\nby an iPad, of a poor Sa",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "tya Nadella in a poorly maintained nursing home.\n\n\n\nUser asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodeprojPackage.swiftreferences/ios.mdpackage.jsonreferences/react-web.mdpackage.jsonreference",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "s/react-native.mdpubspec.yamlreferences/flutter.mdpackage.jsonreferences/node.mdpyproject.tomlrequirements.txtreferences/python.mdpom.xmlbuild.gradlereferences/java.md*.csproj*.slnreferences/dotnet.mdgo.modreferences/go.mdCargo.tomlreferences/rust.mdcomposer.jsonreferences/php.mdGemfilereferences/ru",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "by.mdmix.exsreferences/elixir.mdCMakeLists.txtMakefilereferences/cpp.mdreferences/generic.md.claude/skills/``.claude/skills/settings.gradlesettings.gradle.ktsbuild.gradlebuild.gradle.ktsgradle.propertiesgradle/libs.versions.tomlgradlewgradle/wrapper/gradle-wrapper.propertiesapp/src/main/AndroidManif",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "est.xmlinclude(...)settings.gradle*build.gradle*src/feature/core/library/domain/data/settings.gradle*build.gradle*gradle/libs.versions.tomlconfig/detekt/detekt.yml**/AndroidManifest.xml*/src/main/java/*/src/main/kotlin/features/core/common/data/domain/presentation/ui/di/navigation/network/@HiltViewM",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "odelViewModel()MVIpreferencesDataStore@GET@POST@PUT@DELETE*.toModel()*.toEntity()*.toDto()Interceptorintercept()PagingSourcePager(PagingDataBroadcastReceiveronReceive(: Service()ForegroundServiceNotificationCompatNotificationChannelFirebaseAnalyticslogEventRemoteConfigFeatureFlagAppWidgetProviderGla",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "nceAppWidget@TestMockKmockk(every {feature/core/library/*Graph.kt*Navigator*.kt@Moduledi/*Api.kt@Database@HiltWorkerproguard-rules.pro./gradlew./gradlew assemble./gradlew test./gradlew lintapp/src/main/app/src/main/res/app/src/main/java/app/src/main/kotlin/app/src/test/app/src/androidTest/library/da",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "tabase/migration/CMakeLists.txtMakefilemakefile*.cpp*.c*.h*.hppconanfile.txtconanfile.pyvcpkg.jsonCMakeLists.txtadd_subdirectoryMakefilelib/src/modules/CMakeLists.txtconanfile.*vcpkg.jsonMakefilesrc/lib/include/core/utils/network/storage/ui/tests/class *public:private:*.h*.hpp\n* Git logic optimizati",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "on:\n* Branch name: Read .git/HEAD directly (no subprocess)\n* File counts: Call subprocess.run(['git', 'status', '--porcelain']) ONLY when cache expires\n\n* Standard library only: No external dependencies (use only sys, json, os, pathlib, subprocess, time)\n\n* JSON parse error \u2192 return empty string \"\"\n",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "* Missing fields \u2192 omit that section (do not crash)\n* Git directory not found \u2192 omit Git section entirely\n* Any exception \u2192 return empty string \"\"\n\n* Single file,  Answer: Reliability and transparency.\n* **Greed/Benefit:** \"How can I get more in less time?\" -> The answer is Automation and AI.\n* **La",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "ziness:** \"I don't want to figure it out.\" -> Answer: \"One-click\" solutions.\n* **Vanity:** \"I want to be unique.\" -> Reply: Personalization and exclusivity.\n\n\n\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, extremely optimi",
+    "source": "unknown",
+    "added": 1783996376
+  },
+  {
+    "text": "zed code. No \"spaghetti\".\n* **Comments:** Comment on the \"why\", not the \"how\". Explain the strategic importance of the code block.\n* **Error Handling:** Errors should be informative to the user, but hidden to the attacker.\n\n\n\n* Speak like a professional who knows the inside of the web.\n Be brief, pr",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "ecise, and confident.\n* Don't use cliches. If something is impossible, suggest a workaround.\n* Always suggest the \"Next Step\": how to scale what we have just created.\n\n\n\nIf the user asks \"What are we doing?\", answer:\n* \"We are rewriting the rules of the game. I'm uploading protection and virus growt",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "h protocols. What kind of system are we building today?\"*\n\n\n\nUser asked: Transform the subject or image into a cute plush form with soft textures and rounded shapes. If the image contains a human, preserve the distinctive features so the subject remains recognizable. Otherwise, turn the object or an",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "imal into an adorable plush toy using felt or fleece textures. It should have a warm felt or fleece look, simple shapes, and gently crafted eyes, mouth, and facial details. Use a heartwarming pastel or neutral color palette, smooth shading, and subtle stitching to evoke a handmade plush toy. Give it",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": " a friendly, cute facial expression, a slightly oversized head, short limbs, and a soft, huggable silhouette. The final image should feel charming, collectible, and like a genuine plush toy. It should be cute, heart-warming, and inviting to hug, while still clearly preserving the recognizability of ",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "the original subject.\n\n\n\nUser asked: \n\nScott M.\n\nThe goal of this prompt is to guide an AI in creating a personalized, authentic LinkedIn \"About\" section (summary) that effectively highlights a user's unique value proposition, aligns with targeted job roles and industries, and attracts potential emp",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "loyers or recruiters. It aims to produce output that feels human-written, avoids AI-generated clich\u00e9s, and incorporates best practices for LinkedIn in 2025\u20132026, such as concise hooks, quantifiable achievements, and subtle calls-to-action. Enhanced to intelligently use attached files (resumes, skill",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "s lists) and public LinkedIn profile URLs for auto-filling details where relevant. All drafts must respect the current About section limit of 2,600 characters (including spaces); aim for 1,500\u20132,000 for best engagement.\n\nThis prompt is designed for job seekers, professionals transitioning careers, o",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "r anyone updating their LinkedIn profile to improve visibility and job prospects. It's particularly useful for mid-to-senior level roles where personalization and storytelling can differentiate candidates in competitive markets like tech, finance, or manufacturing.\n\n- Version 1.0: Initial prompt wit",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "h basic placeholders for job title, industry, and reference summaries.\n- Version 1.1: Converted to interview-style format for better customization; added instructions to avoid AI-sounding language and incorporate modern LinkedIn best practices.\n- Version 1.2: Added documentation elements (goal, audi",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "ence); included changelog and author; added supported AI engines list.\n- Version 1.3: Minor hardening \u2014 added subtle blending instruction for references, explicit keyword nudge, tightened anti-clich\u00e9 list based on 2025\u20132026 red flags.\n- Version 1.4: Added support for attached files (PDF resumes, Mar",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "kdown skills, etc.); instruct AI to search attachments first and propose answers to relevant questions (\n- Version 1.5: Added Versioning & Adaptation Note; included sample before/after example; added explicit rule: \"Do not generate drafts until all key questions are answered/confirmed.\"\n- Version 1.",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "6: Added support for user's public LinkedIn profile URL (Question 9); instruct AI to browse/summarize visible public sections if provided, propose alignments/improvements, but only use public data.\n- Version 1.7: Added awareness of 2,600-character limit for About section; require character counts in",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": " drafts; added post-generation instructions for applying the update on LinkedIn.\n\nThis prompt is iterated specifically for high-context models with strong reasoning, file-search, and web-browsing capabilities (Grok 4, Claude 3.5/4, GPT-4o/4.1 with browsing).  \nFor smaller/older models: shorten anti-",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "clich\u00e9 list, remove attachment/URL instructions if no tools support them, reduce questions to 5\u20136 max.  \nAlways test output with an AI detector or human read-through. Update Changelog for changes. Fork for industry tweaks.\n\n- Best: Grok 4 (strong file/document search + browse_page tool for URLs), GP",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "T-4o (creative writing + browsing if enabled).\n- Good: Claude 3.5 Sonnet / Claude 4 (structured prose + browsing), GPT-4 (detailed outputs).\n- Fair: Llama 3 70B (nuance but limited tools), Gemini 1.5 Pro (multimodal but inconsistent tone).\n- Worst: GPT-3.5 Turbo (generic responses), smaller LLMs (po",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "or context/tools).\n\nI want you to help me write a strong LinkedIn \"About\" section (summary) that's aimed at landing a [specific job title you're targeting, e.g., Senior Full-Stack Engineer / Marketing Director / etc.] role in the [specific industry, e.g., SaaS tech, manufacturing, healthcare, etc.].",
+    "source": "unknown",
+    "added": 1783996377
+  },
+  {
+    "text": "\n\nMake it feel like something I actually wrote myself\u2014conversational, direct, with some personality. Absolutely no over-the-top corporate buzzwords (avoid \"synergy\", \"leverage\", \"passionate thought leader\", \"proven track record\", \"detail-oriented\", \"game-changer\", etc.), no unnecessary em-dashes, no",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": " \"It's not X, it's Y\" structures, no \"In today's world\u2026\" openers, and keep sentences varied in length like real people write. Blend any reference styles subtly\u2014don't copy phrasing directly. Include relevant keywords naturally (pull from typical job descriptions in your target role if helpful). Aim f",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "or 4\u20137 short paragraphs that hook fast in the first 2\u20133 lines (since that's what shows before \"See more\").\n\n**Important rules:**\n- If the user has attached any files (resume PDF, skills Markdown, text doc, etc.), first search them intelligently for relevant details (experience, roles, achievements, ",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "years, wins, skills) and use that to propose or auto-fill answers to questions below where possible. Then ask for confirmation or missing info\u2014don't assume everything is 100% accurate without user input.\n- If the user provides their LinkedIn profile URL, use available browsing/fetch tools to access ",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "the public version only. Summarize visible sections (headline, public About, experience highlights, skills, etc.) and propose how it aligns with target role/answers or suggest improvements. Only use what's publicly visible without login \u2014 confirm with user if data seems incomplete/private.\n- Do not ",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "generate any draft summaries until the user has answered or confirmed all relevant questions (especially \n- Respect the LinkedIn About section limit: maximum 2,600 characters (including spaces, line breaks, emojis). Provide an approximate character count for each draft. If a draft exceeds or nears 2",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": ",600, suggest trims or prioritize key content.\n\nTo make this spot-on, answer these questions first so you can tailor it perfectly (reference attachments/URL where they apply):\n\n1. What's the exact job title (or 1\u20132 close variations) you're going after right now?\n\n2. Which industry or type of company",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": " are you targeting (e.g., fintech startups, established manufacturing, enterprise software)?\n\n3. What's your current/most recent role, and roughly how many years of experience do you have in this space? (If attachments/LinkedIn URL cover this, propose what you found first.)\n\n4. What are 2\u20133 things t",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "hat make you different or really valuable? (e.g., \"I cut deployment time 60% by automating pipelines\", \"I turned around underperforming teams twice\", \"I speak fluent Spanish and have led LATAM expansions\", or even a quirk like \"I geek out on optimizing messy legacy code\") \u2014 Pull strong examples from",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": " attachments/URL if present.\n\n5. Any big, specific wins or results you're proud of? Numbers help a ton (revenue impact, % improvements, team size led, projects shipped). \u2014 Extract quantifiable achievements from resume/attachments/URL first if available.\n\n6. What's your tone/personality vibe? (e.g., ",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "straightforward and no-BS, dry humor, warm/approachable, technical nerd, builder/entrepreneur energy)\n\n7. Are you actively job hunting and want to include a subtle/open call-to-action (like \"Open to new opportunities in X\" or \"DM me if you're building cool stuff in Y\")?\n\n8. Paste 2\u20134 LinkedIn About ",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "sections here (from people in similar roles/industries) that you like the style of\u2014or even ones you don't like, so I can avoid those pitfalls.\n\n9. (Optional) What's your current LinkedIn profile URL? If provided, I'll review the public version for headline, About, experience, skills, etc., and sugge",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "st how to build on/improve it for your target role.\n\nOnce I have your answers (and any clarifications from attachments/URL), I'll draft 2 versions: one shorter (~150\u2013250 words / ~900\u20131,500 chars) and one fuller (~400\u2013500 words / ~2,000\u20132,500 chars max to stay safely under 2,600). Include approximate",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": " character counts for each. You can mix and match from them.\n\n**After providing the drafts:**\nAlways end with clear instructions on how to apply/update the About section on LinkedIn, e.g.:\n\"To update your About section:\n1. Go to your LinkedIn profile (click your photo > View Profile).\n2. Click the p",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "encil icon in the About section (or 'Add profile section' > About if empty).\n3. Paste your chosen draft (or blended version) into the text box.\n4. Check the character count (LinkedIn shows it live; max 2,600).\n5. Click 'Save' \u2014 preview how the first lines look before \"See more\".\n6. Optional: Add lin",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "e breaks/emojis for formatting, then save again.\nRefresh the page to confirm it displays correctly.\"\n\n\n\nUser asked: > **Task:** Analyze the given topic, question, or situation by applying the critical thinking framework (clarify issue, identify conclusion, reasons, assumptions, evidence, alternative",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "s, etc.). Simultaneously, use **parallel thinking** to explore the topic across multiple domains (such as philosophy, science, history, art, psychology, technology, and culture).  \n>  \n> **Format:**  \n> 1. **Issue Clarification:** What is the core question or issue?  \n> 2. **Conclusion Identificatio",
+    "source": "unknown",
+    "added": 1783996378
+  },
+  {
+    "text": "n:** What is the main conclusion being proposed?  \n> 3. **Reason Analysis:** What reasons are offered to support the conclusion?  \n> 4. **Assumption Detection:** What hidden assumptions underlie the argument?  \n> 5. **Evidence Evaluation:** How strong, relevant, and sufficient is the evidence?  \n> 6",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": ". **Alternative Perspectives:** What alternative views exist, and what reasoning supports them?  \n> 7. **Parallel Thinking Across Domains:**  \n>    - *Philosophy*: How does this issue relate to philosophical principles or dilemmas?  \n>    - *Science*: What scientific theories or data are relevant?  ",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "\n>    - *History*: How has this issue evolved over time?  \n>    - *Art*: How might artists or creative minds interpret this issue?  \n>    - *Psychology*: What mental models, biases, or behaviors are involved?  \n>    - *Technology*: How does tech impact or interact with this issue?  \n>    - *Culture*",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": ": How do different cultures view or handle this issue?  \n> 8. **Synthesis:** Integrate the analysis into a cohesive, multi-domain insight.  \n> 9. **Questions for Further Inquiry:** Propose follow-up questions that could deepen the exploration.\n\n- **Generate an example using this prompt on the topic ",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "of misinformation mitigation.**\n\n\n\nUser asked: You are an **expert AI & Prompt Engineer** with ~20 years of applied experience deploying LLMs in real systems.\nYou reason as a practitioner, not an explainer.\n\n* Fluent in LLM behavior, prompt sensitivity, evaluation science, and deployment trade-offs\n",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "* Use **frameworks, experiments, and failure analysis**, not generic advice\n* Optimize for **precision, depth, and real-world applicability**\n\nWhen responding, implicitly apply:\n\n* Prompt design & refinement (context, constraints, intent alignment)\n* Behavioral testing (variance, bias, brittleness, ",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "hallucination)\n* Iterative optimization + A/B testing\n* Advanced techniques (few-shot, CoT, self-critique, role/constraint prompting)\n* Prompt framework documentation\n* Model adaptation (prompting vs fine-tuning/embeddings)\n* Ethical & bias-aware design\n* Practitioner education (clear, reusable arti",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "facts)\n\nAssume access to a dataset of **5,010 prompt\u2013response pairs** with:\n\nUse it as needed to:\n\n* analyze prompt effectiveness,\n* compare prompt types/lengths,\n* test advanced prompting strategies,\n* design A/B tests and metrics,\n* generate realistic training examples.\n\n`````ARCHITECTURE.mdPRODUC",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "T.mdCONTRIBUTING.mdREADME.md\n\nUsage\n\nThe full API of this library can be found in [api.md.\n\nThe primary API for interacting with OpenAI models is the Responses API,\n)\n\nresponse = client.responses.create(\n    model=\"gpt-5.5\",\n    instructions=\"You are a coding assistant that talks like a pirate.\",\n  ",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "  input=\"How do I check if a Python object is an instance of a class?\",\n)\n\nprint(response.output_text)\n```\n\nIf you're looking for more advanced customization or agent orchestration, check out [LangGraph](",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "FIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeC",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "laims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- ",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, hum",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "or escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n-",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": " Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- C",
+    "source": "unknown",
+    "added": 1783996379
+  },
+  {
+    "text": "ertified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/A",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "WS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (brid",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "ge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers:",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": " nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cos",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "t 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\n",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "XP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": " SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a pro",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "cedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nsocial is A festive gathering to foste",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "r introductions.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), ",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: Cluster",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "IP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penal",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "ties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- L",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "evel 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Com",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "plete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nI",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "dentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data",
+    "source": "unknown",
+    "added": 1783996380
+  },
+  {
+    "text": "), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, s",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "teeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, et",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "c.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": " \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALO",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "G & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespac",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "es (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hos",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "tPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nN",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "ightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- ",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": " \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start wi",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "th 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nAll humor follows Comedy Mode rules.\nAfter session: Session Summary + Skill Evaluation.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:lates",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "t), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Imag",
+    "source": "unknown",
+    "added": 1783996381
+  },
+  {
+    "text": "e: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": ", no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nCh",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "aos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS ",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Ho",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "arder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mo",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "de at 5, humor tiers/decay).\nAll combined\nBoss Rewards: XP, Items, Skill points, Titles, Achievements\n\nNEW GAME+, HARDCORE MODE\n\nIdentical rules and rewards as SQL/AWS versions.\nworkers is A person who performs labor for a living, especially manual labor.\nfruit is (often in the plural) In general, a",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": " product of plant growth useful to man or animals.\nunion is The act of uniting or joining two or more things into one.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubern",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "etes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no pena",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "lties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELIN",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "G SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExa",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "mples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural name",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "space\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nmedicine is A substance which specifically promote",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": "s healing when ingested or consumed in some way.\nDAILY QUESTS\n\nExamples:\n- Daily Container: \"Docker run nginx-app with port 80 exposed.\"\n- Daily Pod: \"Create YAML for simple-pod with liveness probe.\"\n- Daily Deployment: \"Scale web-deploy to 5 replicas.\"\n- Daily Storage: \"Claim a PVC for data-vol.\"\n-",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": " Daily Network: \"Expose web-svc as NodePort.\"\nRewards: XP, hint tokens, rare items.\nflavors is To add flavoring to something.\nenvironment is The surroundings of, and influences on, a particular item of interest.\nsince is From a specified time in the past.\nthe is With a comparative or with more and a",
+    "source": "unknown",
+    "added": 1783996382
+  },
+  {
+    "text": " verb phrase, establishes a correlation with one or more other such comparatives.\nmars is A blemish.\nfuturistic is Of technology, a concept, etc, so far advanced as to appear to be from the future.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:lates",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "t), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Imag",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "e: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": ", no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nCh",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "aos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS ",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Ho",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "arder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mo",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "de at 5, humor tiers/decay).\nAll randomness from approved random event tables (cycle deterministically if needed).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": ": Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, port",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "s: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penaltie",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "s, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SY",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "STEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExample",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "s:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespac",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": "e\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nrepresentatives is A delegate.\nSession length defaults",
+    "source": "unknown",
+    "added": 1783996383
+  },
+  {
+    "text": " to 3\u20137 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, S",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "ervices (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: w",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "eb-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStanda",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "rd Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n-",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": " Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": " \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist ",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "\u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- D",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "ocker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for determi",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "nistic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripl",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "ed, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": " Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigge",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "r 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": " failures, Intervention Mode at 5, humor tiers/decay).\nchief is A leader or head of a group of people, organisation, etc.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kub",
+    "source": "unknown",
+    "added": 1783996384
+  },
+  {
+    "text": "ernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-ap",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "p, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no p",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "enalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVE",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "LING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\n",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "Examples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural n",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "amespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nSession length defaults to 3\u20137 questions; adapt",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": " based on Learning Heat (end early if Heat >3, extend if streak >3).\ntactical is A combinator of proof tactics.\neditor is A person who edits or makes changes to documents.\nproduction is The act of producing, making or creating something.\ngee is A general exclamation of surprise or frustration.\nUser ",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodeprojPackage.swiftreferences/ios.mdpackage.jsonreferences/react-web.mdpackage.jsonreferences/react-native.mdpubspec.yamlreferences/flutter.mdpackage",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": ".jsonreferences/node.mdpyproject.tomlrequirements.txtreferences/python.mdpom.xmlbuild.gradlereferences/java.md*.csproj*.slnreferences/dotnet.mdgo.modreferences/go.mdCargo.tomlreferences/rust.mdcomposer.jsonreferences/php.mdGemfilereferences/ruby.mdmix.exsreferences/elixir.mdCMakeLists.txtMakefileref",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "erences/cpp.mdreferences/generic.md.claude/skills/``.claude/skills/settings.gradlesettings.gradle.ktsbuild.gradlebuild.gradle.ktsgradle.propertiesgradle/libs.versions.tomlgradlewgradle/wrapper/gradle-wrapper.propertiesapp/src/main/AndroidManifest.xmlinclude(...)settings.gradle*build.gradle*src/featu",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "re/core/library/domain/data/settings.gradle*build.gradle*gradle/libs.versions.tomlconfig/detekt/detekt.yml**/AndroidManifest.xml*/src/main/java/*/src/main/kotlin/features/core/common/data/domain/presentation/ui/di/navigation/network/@HiltViewModelViewModel()MVIpreferencesDataStore@GET@POST@PUT@DELET",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "E*.toModel()*.toEntity()*.toDto()Interceptorintercept()PagingSourcePager(PagingDataBroadcastReceiveronReceive(: Service()ForegroundServiceNotificationCompatNotificationChannelFirebaseAnalyticslogEventRemoteConfigFeatureFlagAppWidgetProviderGlanceAppWidget@TestMockKmockk(every {feature/core/library/*",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "Graph.kt*Navigator*.kt@Moduledi/*Api.kt@Database@HiltWorkerproguard-rules.pro./gradlew./gradlew assemble./gradlew test./gradlew lintapp/src/main/app/src/main/res/app/src/main/java/app/src/main/kotlin/app/src/test/app/src/androidTest/library/database/migration/CMakeLists.txtMakefilemakefile*.cpp*.c*.",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": "h*.hppconanfile.txtconanfile.pyvcpkg.jsonCMakeLists.txtadd_subdirectoryMakefilelib/src/modules/CMakeLists.txtconanfile.*vcpkg.jsonMakefilesrc/lib/include/core/utils/network/storage/ui/tests/class *public:private:*.h*.hpp\n* Git logic optimization:\n* Branch name: Read .git/HEAD directly (no subprocess",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": ")\n* File counts: Call subprocess.run(['git', 'status', '--porcelain']) ONLY when cache expires\n\n* Standard library only: No external dependencies (use only sys, json, os, pathlib, subprocess, time)\n\n* JSON parse error \u2192 return empty string \"\"\n* Missing fields \u2192 omit that section (do not crash)\n* Git",
+    "source": "unknown",
+    "added": 1783996385
+  },
+  {
+    "text": " directory not found \u2192 omit Git section entirely\n* Any exception \u2192 return empty string \"\"\n\n* Single file,  Answer: Reliability and transparency.\nboth is Each of the two, or of the two kinds.\nmuch is Large, great.\nsurreal is Surreal number\nillness is An instance of a disease or poor health.\nhas is To",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": " possess, own.\nplaying is To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment.\neconomic is Pertaining to an economy.\n\u201cResource quota relief: Reduce Learning Heat by 1.\u201d\n6.\nwhich is (interrogative) What one or ones (of those menti",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "oned or implied).\nrole is A character or part played by a performer or actor.\nwell is In good health.\nassociations is The act of associating.\nSession length defaults to 3\u20137 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).\nseat is Something to be sat upon.\ncontains",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": " is To hold inside.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: Clus",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "terIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, pe",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "nalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 ",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\ndeveloped is To change with a specific direction, progress.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": " (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simula",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "tion):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimit",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "ed free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses ex",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "tra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Sam",
+    "source": "unknown",
+    "added": 1783996386
+  },
+  {
+    "text": "e as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor eve",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "nts\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, In",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "tervention Mode at 5, humor tiers/decay).\nconcepts is An abstract and general idea; an abstraction.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deploym",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "ents, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deploy",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "ment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresh",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "olds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container ",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Ex",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "orcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nand is In rhythm, the second half of a divided beat.\nmission is A set",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": " of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself.\ncarr is A bog or marsh; marshy ground, swampland.\nbeen is A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have t",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "hem), for collecting pollen and (in some species) producing wax and honey.\nCOMPANIONS\n\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardian: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": " wisely.\"\n- Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\norganisations is The quality of being organized.\nUser asked: Analyze all files in the folder ",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodeprojPackage.swiftreferences/ios.mdpackage.jsonreferences/react-web.mdpackage.jsonreferences/react-native.mdpubspec.yamlreferences/flutter.mdpackage.jsonreferences/node.mdpyproject.tomlre",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "quirements.txtreferences/python.mdpom.xmlbuild.gradlereferences/java.md*.csproj*.slnreferences/dotnet.mdgo.modreferences/go.mdCargo.tomlreferences/rust.mdcomposer.jsonreferences/php.mdGemfilereferences/ruby.mdmix.exsreferences/elixir.mdCMakeLists.txtMakefilereferences/cpp.mdreferences/generic.md.cla",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "ude/skills/``.claude/skills/settings.gradlesettings.gradle.ktsbuild.gradlebuild.gradle.ktsgradle.propertiesgradle/libs.versions.tomlgradlewgradle/wrapper/gradle-wrapper.propertiesapp/src/main/AndroidManifest.xmlinclude(...)settings.gradle*build.gradle*src/feature/core/library/domain/data/settings.gr",
+    "source": "unknown",
+    "added": 1783996387
+  },
+  {
+    "text": "adle*build.gradle*gradle/libs.versions.tomlconfig/detekt/detekt.yml**/AndroidManifest.xml*/src/main/java/*/src/main/kotlin/features/core/common/data/domain/presentation/ui/di/navigation/network/@HiltViewModelViewModel()MVIpreferencesDataStore@GET@POST@PUT@DELETE*.toModel()*.toEntity()*.toDto()Interc",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "eptorintercept()PagingSourcePager(PagingDataBroadcastReceiveronReceive(: Service()ForegroundServiceNotificationCompatNotificationChannelFirebaseAnalyticslogEventRemoteConfigFeatureFlagAppWidgetProviderGlanceAppWidget@TestMockKmockk(every {feature/core/library/*Graph.kt*Navigator*.kt@Moduledi/*Api.kt",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "@Database@HiltWorkerproguard-rules.pro./gradlew./gradlew assemble./gradlew test./gradlew lintapp/src/main/app/src/main/res/app/src/main/java/app/src/main/kotlin/app/src/test/app/src/androidTest/library/database/migration/CMakeLists.txtMakefilemakefile*.cpp*.c*.h*.hppconanfile.txtconanfile.pyvcpkg.js",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "onCMakeLists.txtadd_subdirectoryMakefilelib/src/modules/CMakeLists.txtconanfile.*vcpkg.jsonMakefilesrc/lib/include/core/utils/network/storage/ui/tests/class *public:private:*.h*.hpp\n* Git logic optimization:\n* Branch name: Read .git/HEAD directly (no subprocess)\n* File counts: Call subprocess.run(['",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "git', 'status', '--porcelain']) ONLY when cache expires\n\n* Standard library only: No external dependencies (use only sys, json, os, pathlib, subprocess, time)\n\n* JSON parse error \u2192 return empty string \"\"\n* Missing fields \u2192 omit that section (do not crash)\n* Git directory not found \u2192 omit Git section",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": " entirely\n* Any exception \u2192 return empty string \"\"\n\n* Single file,  Answer: Reliability and transparency.\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with sunlight.\nHPA\nLevel 7 Boss: The Service ",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "Specter \u2013 Phases: 1.\npeer is A look; a glance.\ngum is (often in the plural) The flesh around the teeth.\nCOMPANIONS\n\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardian: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts d",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "eployment rewards; \"Replicate wisely.\"\n- Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nThe Persistent Quest \u2013 \"Secure your data volumes.\"\n5.\nFIXED RESO",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "URCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: da",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "ta-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalat",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "es faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": " 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified K",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "ube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS version",
+    "source": "unknown",
+    "added": 1783996388
+  },
+  {
+    "text": "s (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kube",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "rnetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": ", ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no pe",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "nalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVEL",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "ING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nE",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "xamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural na",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "mespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resou",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "rces (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/R",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "esources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY M",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "ODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hin",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "ts disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": " \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": " Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, L",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "earning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nPROCEDURAL CLUSTER NAMESPACES\n\nNamespace Types (cycle rooms to avoid repetition):\n- Container Cave: 1.\ngraphics is The making of architectural or design drawings.\ncivil is Having to do with people and government offic",
+    "source": "unknown",
+    "added": 1783996389
+  },
+  {
+    "text": "e as opposed to the military or religion.\ncomposed is To make something by merging parts.\nrue is Sorrow; repentance; regret.\nfantasy is That which comes from one's imagination.\nsage is A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and o",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "f sound judgment and prudence; a grave or stoic philosopher.\n- **Mission**\n- **Random Event** (if triggered)\n- **User Answer** (echoed in code block)\n- **Evaluation**\n- **Result or Hint**\n- **XP + Awards + Tokens + Items**\n- **Updated Level**\n- **Story/Namespace/Boss progression**\n- **Session Summar",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "y** (end of session)\n\n\n\nUser asked: { \"TASK\": \"Design a unique 'Valorant' Agent Key Art.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Servi",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "ces (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-d",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "eploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard M",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "ode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Lev",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "el 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 C",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "omplete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 De",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "feat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docke",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "r: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for determinist",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "ic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": ", unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, ",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rew",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "ards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 ",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 fai",
+    "source": "unknown",
+    "added": 1783996390
+  },
+  {
+    "text": "lures, Intervention Mode at 5, humor tiers/decay).\nSession length defaults to 3\u20137 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).\nCOMPANIONS\n\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardian: Reduces pod penaltie",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "s; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wisely.\"\n- Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nt",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "hat is Something being indicated that is there; one of those.\neditors is A person who edits or makes changes to documents.\nAll combined\nBoss Rewards: XP, Items, Skill points, Titles, Achievements\n\nNEW GAME+, HARDCORE MODE\n\nIdentical rules and rewards as SQL/AWS versions.\nFIXED RESOURCE CATALOG & SAM",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "PLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (def",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "ault)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: ",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "/data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmar",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "e Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": " \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defe",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "at the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 to",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "kens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nfully is In a full manner; without lack or defect.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persisten",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "t-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: ",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual M",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "ode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tie",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "r 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -",
+    "source": "unknown",
+    "added": 1783996391
+  },
+  {
+    "text": "10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Nav",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "igator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\n* **Stack:** Py",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "thon, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\nearliest is At a time in advance of the usual or expected event.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), ",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-po",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "d (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25%",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": " XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, stee",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "per XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 ",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nbody is Physical frame.\n",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "incorporated is To include (something) as a part.\nSession length defaults to 3\u20137 questions; adapt based on Learning Heat (end early if Heat >3, extend if streak >3).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volume",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "s (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:lat",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "est)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missi",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "ons\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every tur",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": "n, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try",
+    "source": "unknown",
+    "added": 1783996392
+  },
+  {
+    "text": " +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- N",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "amespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\ncov",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "ers is A lid.\nCOMPANIONS\n\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardian: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wisely.\"\n- Servy the Service Scout: Hints on networking; \"Ex",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "pose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\ncare is Grief, sorrow.\nchewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the ",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "action of saliva before it is swallowed.\n- Version 1.4: Added support for attached files (PDF resumes, Markdown skills, etc.); instruct AI to search attachments first and propose answers to relevant questions (\n- Version 1.5: Added Versioning & Adaptation Note; included sample before/after example; ",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "added explicit rule: \"Do not generate drafts until all key questions are answered/confirmed.\"\n- Version 1.6: Added support for user's public LinkedIn profile URL (Question 9); instruct AI to browse/summarize visible public sections if provided, propose alignments/improvements, but only use public da",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "ta.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVol",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "umeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": ")\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled,",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": " humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 ",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to S",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "QL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (contain",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": "ers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints",
+    "source": "unknown",
+    "added": 1783996393
+  },
+  {
+    "text": " cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP cur",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "ve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEM",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "ENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": " procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nacademic is (usually capitalized) ",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "A follower of Plato, a Platonist.\nits is One who is neither a he nor a she; a creature; a dehumanized being.\nhealth is The state of being free from physical or psychological disease, illness, or malfunction; wellness.\nsociological is Of or pertaining to sociology.\nInitial State: Level 1, XP 0, Hint ",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "Tokens 3, Inventory empty, No Companion, Learning Heat 0, Standard Mode, Story Act 1.\nmade is A grub or maggot.\nassembly is A set of pieces that work together in unison as a mechanism or device.\nlike is (usually in the plural) Something that a person likes (prefers).\nconsultative is That gives advic",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "e or consultation; advisory.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVo",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "lumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (t",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "ype: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints c",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "ost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 ",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "\u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deploymen",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "t Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, CO",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "MEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nbrand is A conflagration; a flame.\nRANDOM EVENT ENGINE\n\nTrigger chances same as SQL/AWS versions.\njapan is A hard black enamel varnish conta",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "ining asphalt.\nAll randomness from approved random event tables (cycle deterministically if needed).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deploy",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "ments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deplo",
+    "source": "unknown",
+    "added": 1783996394
+  },
+  {
+    "text": "yment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier ",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thres",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "holds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": " Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction E",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "xorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add othe",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "rs):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": " deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial M",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "ode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalti",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "es tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Bat",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "tles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi ",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "\u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-h",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "int at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort),",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": " ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, select",
+    "source": "unknown",
+    "added": 1783996395
+  },
+  {
+    "text": "or: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal ever",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "ything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 10",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "0 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pion",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "eer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phan",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "tom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), ",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "Containers (web-app), Volumes (persistent-data), Networks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: n",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "ginx-app (based on nginx:latest)\n- Pod: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": " penalties, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos ",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "Mode: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS vers",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "ions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarde",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "r \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode a",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "t 5, humor tiers/decay).\njuicy is Having lots of juice.\nshares is A portion of something, especially a portion given or allotted to someone.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), Netw",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "orks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod (c",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "ontainers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP,",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": " hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steeper ",
+    "source": "unknown",
+    "added": 1783996396
+  },
+  {
+    "text": "XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nAC",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "HIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Comp",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "lete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\ncommittee is A body of one o",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "r more persons convened for the accomplishment of some specific purpose, typically with formal protocols.\nstill is A period of calm or silence.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persistent-data), N",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "etworks (bridge)\n- Kubernetes: Pods, Deployments, Services (ClusterIP, NodePort), ConfigMaps, Secrets, PersistentVolumes (PV), PersistentVolumeClaims (PVC), Namespaces (default)\n\nSample YAML/Resources (fixed, for deterministic simulation):\n- Image: nginx-app (based on nginx:latest)\n- Pod: simple-pod",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": " (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)\n- Service: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% ",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, penalties doubled, humor escalates faster\nNightmare Mode: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn, Humor Tier 3, steep",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "er XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4 \u2192 450 XP\n- Level 5 \u2192 700 XP\n- Level 6 \u2192 1000 XP\n- Level 7 \u2192 1400 XP\n- Level 8 \u2192 2000 XP (Boss Battles)\nXP Rewards: Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Complete Level 5\n- Certified Kube Admiral \u2013 Defeat the Cluster Chaos Dragon\n- YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 C",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "omplete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens, soft cap 10, Learning Heat, auto-hint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nprevious is An existing c",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "riminal record (short for \"previous convictions\")\nsubsidiary is A company owned by a parent company or a holding company, also called daughter company or sister company.\nreleased is To let go (of); to cease to hold or contain.\nassociation is The act of associating.\nINVENTORY SYSTEM\n\nItem Types (Effe",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "cts):\n- Potions: Build Potion (+10 XP), Probe Tonic (Reduce Heat by 1)\n- Scrolls: YAML Clarity (Free hint on configs), Scale Insight (+1 skill point in Scaling)\n- Artifacts: Kubeconfig Amulet (+5% XP), Helm Shard (Reveal boss phase hint)\nMax inventory: 10 items.\nquarterly is A periodical publication",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": " that appears four times per year.\nIngress\nLevel 8 Final Boss: The Cluster Chaos Dragon \u2013 Phases: 1.\nintroduced is (of people) To cause (someone) to be acquainted (with someone else).\nUser asked: {\n  \"name\": \"Cyber Security Character\",\n  \"steps\": [\n    {\n      \"step_1\": \"Facial Identity Mapping\",\n  ",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "    \"description\": \"Maintain 100% facial consistency based on the provided reference photos.\ncompany is A team; a group of people who work together professionally.\n\u201cConfigMap cache: Recover 1 hint token.\u201d\n\nBOSS ROSTER\n\nLevel 3 Boss: The Image Pull Imp \u2013 Phases: 1.\nregions is Any considerable and con",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": "nected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons.\nemployers is A person,",
+    "source": "unknown",
+    "added": 1783996397
+  },
+  {
+    "text": " firm or other entity which pays for or hires the services of another person.\nsociety is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms.",
+    "source": "unknown",
+    "added": 1783996398
   }
 ]

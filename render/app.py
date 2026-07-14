@@ -1,6 +1,6 @@
 """
 Pullbot API - GGUF Mode
-Uses llama.cpp to run model with low RAM.
+Uses llama.cpp to run model in ~300MB RAM.
 """
 
 import os, json, requests, re, random
@@ -18,11 +18,18 @@ wordbank = None
 
 def download_model():
     url = f"{GITHUB}/models/pullbot.gguf"
-    r = requests.get(url)
+    print(f"Downloading GGUF model...")
+    r = requests.get(url, stream=True)
     if r.status_code == 200:
+        total = int(r.headers.get('content-length', 0))
+        downloaded = 0
         with open(MODEL_PATH, 'wb') as f:
-            f.write(r.content)
+            for chunk in r.iter_content(chunk_size=8192):
+                f.write(chunk)
+                downloaded += len(chunk)
+        print(f"Downloaded {downloaded/(1024*1024):.0f}MB")
         return True
+    print(f"Failed: {r.status_code}")
     return False
 
 def load_wordbank():
@@ -31,17 +38,21 @@ def load_wordbank():
         r = requests.get(f"{GITHUB}/data/wordbank.json", timeout=30)
         if r.status_code == 200:
             wordbank = r.json()
+            print(f"Loaded {wordbank.get('total_words', 0)} words")
     except:
         wordbank = None
 
 def setup():
     global llm
+    print("=" * 50)
     print("PULLBOT API - GGUF MODE")
+    print("=" * 50)
+    
     load_wordbank()
     
     if download_model():
         print(f"Loading GGUF model ({os.path.getsize(MODEL_PATH)/(1024*1024):.0f}MB)...")
-        llm = Llama(model_path=MODEL_PATH, n_ctx=256, n_threads=2)
+        llm = Llama(model_path=MODEL_PATH, n_ctx=256, n_threads=2, verbose=False)
         print("Ready!")
     else:
         print("No GGUF model. Vocab-only mode.")
@@ -65,7 +76,7 @@ def generate_response(question):
     # Try GGUF model
     if llm:
         try:
-            output = llm(f"Question: {q}\n\nAnswer:", max_tokens=60, temperature=0.8)
+            output = llm(f"Question: {q}\n\nAnswer:", max_tokens=60, temperature=0.8, top_p=0.9)
             response = output['choices'][0]['text'].strip()
             if response and len(response) > 3:
                 return {'question': question, 'response': response, 'source': 'model'}
@@ -84,11 +95,16 @@ def generate_response(question):
         if found:
             return {'question': question, 'response': ' | '.join(found[:5]), 'source': 'vocab'}
     
-    return {'question': question, 'response': "I'm learning...", 'source': 'fallback'}
+    return {'question': question, 'response': "I'm still learning...", 'source': 'fallback'}
 
 @app.route('/')
 def home():
-    return jsonify({'name': 'Pullbot API', 'status': 'online', 'model': 'gguf' if llm else 'vocab'})
+    return jsonify({
+        'name': 'Pullbot API',
+        'status': 'online',
+        'model': 'gguf' if llm else 'vocab',
+        'words': wordbank.get('total_words', 0) if wordbank else 0
+    })
 
 @app.route('/health')
 def health():

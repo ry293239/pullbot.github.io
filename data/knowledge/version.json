@@ -1,16 +1,8 @@
 {
-<<<<<<< Updated upstream
-  "version": "1.6",
-  "updated": "2026-07-15T09:17:57Z",
-  "knowledge_chunks": 718,
+  "version": "1.1",
+  "updated": "2026-07-15T10:19:05Z",
+  "knowledge_chunks": 953,
   "corpus_kb": 78,
-  "model_trained": false,
-=======
-  "version": "1.5",
-  "updated": "2026-07-15T09:42:50Z",
-  "knowledge_chunks": 690,
-  "corpus_kb": 69,
   "model_trained": true,
->>>>>>> Stashed changes
   "training_type": "full_fine_tune"
 }

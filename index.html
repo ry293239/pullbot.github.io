@@ -13,7 +13,6 @@
             --bg-sidebar: #081210;
             --bg-input: #152A23;
             --bg-bubble-bot: #1A3329;
-            --bg-bubble-user: #0D1A16;
             --text-primary: #E8F0EC;
             --text-secondary: #8AA89A;
             --accent: #2DD4A8;
@@ -28,17 +27,13 @@
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: var(--bg-primary);
             color: var(--text-primary);
-            height: 100dvh;
-            display: flex;
-            overflow: hidden;
-            position: fixed;
-            top: 0; left: 0; right: 0; bottom: 0;
+            height: 100dvh; display: flex; overflow: hidden;
+            position: fixed; top: 0; left: 0; right: 0; bottom: 0;
         }
 
         #loadingScreen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: var(--bg-primary);
-            display: flex; flex-direction: column;
+            background: var(--bg-primary); display: flex; flex-direction: column;
             justify-content: center; align-items: center;
             z-index: 9999; transition: opacity 0.6s ease;
         }
@@ -95,8 +90,7 @@
         .sidebar-btn {
             width: 100%; padding: 9px 12px; background: transparent;
             color: var(--text-secondary); border: none; border-radius: 8px;
-            cursor: pointer; font-size: 13px; text-align: left;
-            transition: all 0.2s; margin-bottom: 4px;
+            cursor: pointer; font-size: 13px; text-align: left; transition: all 0.2s; margin-bottom: 4px;
         }
         .sidebar-btn:hover { background: var(--bg-input); color: var(--text-primary); }
         .sidebar-btn.accent { color: var(--accent); }
@@ -115,11 +109,9 @@
             border: none; border-radius: 8px; cursor: pointer;
             font-size: 13px; font-weight: 600; transition: all 0.2s;
         }
-        .login-btn:hover { background: var(--accent-hover); box-shadow: 0 0 20px rgba(45, 212, 168, 0.3); }
-        .chat-container {
-            flex: 1; overflow-y: auto; padding: 20px;
-            display: flex; flex-direction: column; align-items: center;
-        }
+        .login-btn:hover { background: var(--accent-hover); }
+
+        .chat-container { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         .welcome-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; text-align: center; }
         .welcome-screen.hidden { display: none; }
         .welcome-icon { width: 80px; height: 80px; border-radius: 50%; margin-bottom: 24px; box-shadow: 0 0 30px rgba(45, 212, 168, 0.5); }
@@ -127,9 +119,8 @@
         .welcome-subtitle { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; }
         .suggestion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 600px; }
         .suggestion-card {
-            padding: 16px; background: var(--bg-bubble-bot);
-            border: 1px solid var(--border); border-radius: 12px;
-            cursor: pointer; transition: all 0.2s; font-size: 13px; text-align: left;
+            padding: 16px; background: var(--bg-bubble-bot); border: 1px solid var(--border);
+            border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 13px; text-align: left;
         }
         .suggestion-card:hover { border-color: var(--accent); background: rgba(45, 212, 168, 0.05); }
         .messages-container { width: 100%; max-width: 768px; margin: 0 auto; }
@@ -137,8 +128,7 @@
         .message-avatar {
             width: 32px; height: 32px; border-radius: 50%;
             display: flex; align-items: center; justify-content: center;
-            font-size: 16px; flex-shrink: 0; background: var(--bg-input);
-            overflow: hidden;
+            font-size: 16px; flex-shrink: 0; background: var(--bg-input); overflow: hidden;
         }
         .message-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .message-avatar.bot { background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(78, 230, 199, 0.1)); }
@@ -147,8 +137,7 @@
         .thinking-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
         .thinking-dots span {
             width: 8px; height: 8px; border-radius: 50%;
-            background: var(--accent);
-            animation: bounce 1.4s infinite ease-in-out;
+            background: var(--accent); animation: bounce 1.4s infinite ease-in-out;
         }
         .thinking-dots span:nth-child(1) { animation-delay: 0s; }
         .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
@@ -177,31 +166,33 @@
             font-size: 18px; display: flex; align-items: center; justify-content: center;
             transition: all 0.2s; flex-shrink: 0;
         }
-        .send-btn:hover { background: var(--accent-hover); box-shadow: 0 0 15px rgba(45, 212, 168, 0.4); }
+        .send-btn:hover { background: var(--accent-hover); }
         .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .input-footer { text-align: center; font-size: 11px; color: var(--text-secondary); margin-top: 8px; }
         .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
         .status-dot.online { background: var(--accent); }
         .status-dot.offline { background: #EF4444; }
 
-        /* Settings */
-        .settings-overlay {
+        .settings-overlay, .auth-overlay {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: rgba(0,0,0,0.6); z-index: 1000;
             display: flex; justify-content: center; align-items: center;
             opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
         }
-        .settings-overlay.active { opacity: 1; pointer-events: all; }
-        .settings-panel {
+        .settings-overlay.active, .auth-overlay.active { opacity: 1; pointer-events: all; }
+        .settings-panel, .auth-panel {
             background: var(--bg-sidebar); border-radius: 16px;
             padding: 24px; width: 380px; max-width: 90vw;
             border: 1px solid var(--border);
         }
-        .settings-panel h2 { font-size: 20px; margin-bottom: 20px; }
+        .settings-panel h2, .auth-panel h2 { font-size: 20px; margin-bottom: 20px; }
         .setting-group { margin-bottom: 18px; }
         .setting-group label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
         .setting-group input[type="range"] { width: 100%; accent-color: var(--accent); }
-        .setting-group select { width: 100%; padding: 8px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; }
+        .setting-group select, .setting-group input[type="text"], .setting-group input[type="password"] {
+            width: 100%; padding: 10px; background: var(--bg-input); color: var(--text-primary);
+            border: 1px solid var(--border); border-radius: 8px; margin-top: 6px;
+        }
         .setting-value { font-size: 12px; color: var(--accent); }
         .btn-primary {
             width: 100%; padding: 10px; background: var(--accent); color: var(--bg-primary);
@@ -210,6 +201,10 @@
         .btn-secondary {
             width: 100%; padding: 10px; background: transparent; color: var(--text-secondary);
             border: 1px solid var(--border); border-radius: 8px; cursor: pointer;
+        }
+        .btn-text {
+            width: 100%; padding: 8px; background: none; color: var(--accent);
+            border: none; cursor: pointer; font-size: 13px; margin-bottom: 8px;
         }
 
         ::-webkit-scrollbar { width: 5px; }
@@ -221,8 +216,7 @@
             background: var(--accent); color: var(--bg-primary);
             padding: 12px 20px; border-radius: 10px; font-size: 13px;
             font-weight: 600; z-index: 2000;
-            transform: translateY(100px); opacity: 0;
-            transition: all 0.3s ease;
+            transform: translateY(100px); opacity: 0; transition: all 0.3s ease;
         }
         .toast.show { transform: translateY(0); opacity: 1; }
 
@@ -264,14 +258,14 @@
 <div id="main">
     <div class="top-bar">
         <button class="hamburger" onclick="toggleSidebar()">☰</button>
-        <span class="top-bar-title"><img src="icon.png" alt="" onerror="this.style.display='none'">Pullbot</span>
-        <button class="login-btn" onclick="showToast('Login coming soon')">Log In</button>
+        <span class="top-bar-title"><img src="icon.png" alt="">Pullbot</span>
+        <button class="login-btn" onclick="openAuth()">Log In</button>
     </div>
     <div class="chat-container" id="chatContainer">
         <div class="welcome-screen" id="welcomeScreen">
             <img src="icon.png" alt="Pullbot" class="welcome-icon" onerror="this.style.display='none'">
             <div class="welcome-title">How can I help?</div>
-            <div class="welcome-subtitle">I learn from Wikipedia and dictionaries to build my vocabulary</div>
+            <div class="welcome-subtitle">I learn from Wikipedia and dictionaries</div>
             <div class="suggestion-grid">
                 <div class="suggestion-card" onclick="sendSuggestion('What is an algorithm?')">"What is an algorithm?"</div>
                 <div class="suggestion-card" onclick="sendSuggestion('Explain how computers work')">"Explain how computers work"</div>
@@ -312,13 +306,33 @@
     </div>
 </div>
 
+<!-- AUTH -->
+<div class="auth-overlay" id="authOverlay" onclick="closeAuth(event)">
+    <div class="auth-panel" onclick="event.stopPropagation()">
+        <h2 id="authTitle">Log In</h2>
+        <div class="setting-group">
+            <label>Username</label>
+            <input type="text" id="authUsername" placeholder="Enter username" autocomplete="off">
+        </div>
+        <div class="setting-group">
+            <label>Password</label>
+            <input type="password" id="authPassword" placeholder="Enter password">
+        </div>
+        <button class="btn-primary" onclick="handleAuth()">Log In</button>
+        <button class="btn-text" onclick="toggleAuthMode()">Don't have an account? Sign up</button>
+        <button class="btn-secondary" onclick="document.getElementById('authOverlay').classList.remove('active')">Cancel</button>
+    </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
+<script src="js/router.js"></script>
 <script>
 const API_URL = 'https://pullbot-api.onrender.com';
 let apiOnline = false;
 let chats = {};
 let currentChatId = null;
+let currentUser = JSON.parse(localStorage.getItem('pullbot_user') || 'null');
 
 function updateLoader(text, percent) {
     document.getElementById('loaderStatus').textContent = text;
@@ -331,6 +345,7 @@ async function init() {
     updateLoader('Ready!', 100);
     await new Promise(r => setTimeout(r, 500));
     document.getElementById('loadingScreen').classList.add('hidden');
+    updateUserUI();
 }
 
 async function checkAPIStatus() {
@@ -349,9 +364,9 @@ function cleanResponse(text) {
 async function askPullbot(question) {
     if (apiOnline) {
         try {
-            const r = await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);
-            if (r.ok) { const d = await r.json(); return cleanResponse(d.response) || "I couldn't process that."; }
-        } catch(e) { apiOnline = false; }
+            const response = await askPullbotRouter(question);
+            if (response) return cleanResponse(response);
+        } catch(e) {}
     }
     return getLocalResponse(question);
 }
@@ -360,9 +375,9 @@ function getLocalResponse(p) {
     const q = p.toLowerCase().trim();
     const m = q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
     if (m) { const a=parseFloat(m[1]),b=parseFloat(m[3]); let r; switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;} return `${a} ${m[2]} ${b} = ${r}`; }
-    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there! I'm Pullbot.";
-    if (q.includes('your name')||q.includes('who are you')) return "I'm Pullbot! I learn from Wikipedia.";
-    if (q.match(/^(thanks|thank you|thx|ty)\b/)) return "You're welcome!";
+    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there!";
+    if (q.includes('your name')) return "I'm Pullbot!";
+    if (q.match(/^(thanks|thank you)\b/)) return "You're welcome!";
     return "I'm thinking... try asking something else!";
 }
 
@@ -436,6 +451,39 @@ function closeSettings(event){if(!event||event.target===document.getElementById(
 function updateTempLabel(){const v=document.getElementById('settingTemp').value;const l={'0.1':'Very Precise','0.3':'Precise','0.5':'Focused','0.8':'Balanced','1.0':'Creative','1.2':'Very Creative','1.5':'Wild'};document.getElementById('tempLabel').textContent=v+' - '+(l[v]||'Custom');}
 function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
 function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;updateTempLabel();}}
+
+// Auth
+let authMode='login';
+function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
+function closeAuth(event){if(!event||event.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
+function toggleAuthMode(){
+    authMode=authMode==='login'?'signup':'login';
+    document.getElementById('authTitle').textContent=authMode==='login'?'Log In':'Sign Up';
+    document.querySelector('.auth-panel .btn-primary').textContent=authMode==='login'?'Log In':'Sign Up';
+    document.querySelector('.btn-text').textContent=authMode==='login'?"Don't have an account? Sign up":'Already have an account? Log in';
+}
+async function handleAuth(){
+    const username=document.getElementById('authUsername').value.trim().toLowerCase();
+    const password=document.getElementById('authPassword').value.trim();
+    if(!username||!password){showToast('Please fill in all fields');return;}
+    const endpoint=authMode==='login'?'/login':'/signup';
+    try{
+        const data=await userRequest(endpoint,{username,password});
+        if(data.success){
+            currentUser={username:data.username,token:data.token};
+            localStorage.setItem('pullbot_user',JSON.stringify(currentUser));
+            showToast(data.message);
+            document.getElementById('authOverlay').classList.remove('active');
+            updateUserUI();
+        }else{showToast(data.error||'Something went wrong');}
+    }catch(e){showToast('Cannot connect to server');}
+}
+function updateUserUI(){
+    const btn=document.querySelector('.login-btn');
+    if(currentUser){btn.textContent=currentUser.username;btn.onclick=logout;}
+    else{btn.textContent='Log In';btn.onclick=openAuth;}
+}
+function logout(){currentUser=null;localStorage.removeItem('pullbot_user');showToast('Logged out');updateUserUI();}
 
 window.addEventListener('DOMContentLoaded',init);
 </script>

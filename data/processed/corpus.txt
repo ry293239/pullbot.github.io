@@ -32787,3 +32787,4048 @@ A route in Flask connects a URL to a Python function. When someone visits that U
 =======
 TensorFlow was originally developed by researchers and engi
 >>>>>>> Stashed changes
+
+
+---
+
+Using these words: food (Any solid substance that can be consumed by living organisms, especially by eating, in order to sustain life.), shoulders (The part of an animal's body between the base of the neck and forearm socket.), euro (Person living or originating from Europe)
+Question: Describe food and euro
+Answer: food is Any solid substance that can be consumed by living organisms, especially by eating, in order to sustain life.. This relates to euro which means Person living or originating from Europe.
+
+---
+
+Using these words: blowout (A sudden puncturing of a pneumatic tyre/tire.), emission (Something which is emitted or sent out; issue.), kemp (Coarse, rough hair, wool, or fur; (in the plural) knotty hairs that will not felt.)
+Question: Explain how blowout relates to kemp
+Answer: blowout is A sudden puncturing of a pneumatic tyre/tire.. This relates to kemp which means Coarse, rough hair, wool, or fur; (in the plural) knotty hairs that will not felt..
+
+---
+
+Using these words: increase (An amount by which a quantity is increased.), dead ((with "the", a demonstrative, or a possessive) Those who have died.), system (A collection of organized things; a whole composed of relationships among its members.)
+Question: What is the connection between increase and dead?
+Answer: increase is An amount by which a quantity is increased.. This relates to system which means A collection of organized things; a whole composed of relationships among its members..
+
+---
+
+Using these words: patient (A person or animal who receives treatment from a doctor or other medically educated person.), amen (An instance of saying ‘amen’.), absorbed (To include so that it no longer has separate existence; to overwhelm; to cause to disappear as if by swallowing up; to incorporate; to assimilate; to take in and use up.)
+Question: What is the connection between patient and amen?
+Answer: patient is A person or animal who receives treatment from a doctor or other medically educated person.. This relates to absorbed which means To include so that it no longer has separate existence; to overwhelm; to cause to disappear as if by swallowing up; to incorporate; to assimilate; to take in and use up..
+
+---
+
+Using these words: encouraged (To mentally support; to motivate, give courage, hope or spirit.), role (A character or part played by a performer or actor.), cathedral (Relating to the throne or the see of a bishop.)
+Question: What is the connection between encouraged and role?
+Answer: encouraged is To mentally support; to motivate, give courage, hope or spirit.. This relates to cathedral which means Relating to the throne or the see of a bishop..
+
+---
+
+Using these words: measured (To ascertain the quantity of a unit of material via calculated comparison with respect to a standard.), comprises (To be made up of; to consist of (especially a comprehensive list of parts).), congregation (The act of congregating or collecting together.)
+Question: Describe measured and congregation
+Answer: measured is To ascertain the quantity of a unit of material via calculated comparison with respect to a standard.. This relates to congregation which means The act of congregating or collecting together..
+
+---
+
+Using these words: oval (An elongated round shape resembling an egg or ellipse.), capital (Already-produced durable goods available for use as a factor of production, such as steam shovels (equipment) and office buildings (structures).), fifteenth (The person or thing in the fifteenth position.)
+Question: Explain how oval relates to fifteenth
+Answer: oval is An elongated round shape resembling an egg or ellipse.. This relates to fifteenth which means The person or thing in the fifteenth position..
+
+---
+
+Using these words: automatic (A car with automatic transmission.), sultan (The holder of a secular office, formally subordinate to, but de facto the power behind the throne of, the caliph.), does ((auxiliary) A syntactic marker.)
+Question: Explain how automatic relates to does
+Answer: automatic is A car with automatic transmission.. This relates to does which means (auxiliary) A syntactic marker..
+
+---
+
+Using these words: rugged (Broken into sharp or irregular points; uneven; not smooth; rough.), passerine (Any bird of the order Passeriformes, which comprises more than half of all bird species.), license (A legal document giving official permission to do something; a permit.)
+Question: Explain how rugged relates to license
+Answer: rugged is Broken into sharp or irregular points; uneven; not smooth; rough.. This relates to license which means A legal document giving official permission to do something; a permit..
+
+---
+
+Using these words: loved ((usually transitive, sometimes intransitive, stative) To have a strong affection for (someone or something).), atheism ((narrowly) Belief that no deities exist (sometimes including rejection of other religious beliefs).), fourth ((not used in the plural) The person or thing in the fourth position.)
+Question: What is the connection between loved and atheism?
+Answer: loved is (usually transitive, sometimes intransitive, stative) To have a strong affection for (someone or something).. This relates to fourth which means (not used in the plural) The person or thing in the fourth position..
+
+---
+
+Using these words: concurrence (Agreement; concurring.), selection (A process by which heritable traits conferring survival and reproductive advantage to individuals, or related individuals, tend to be passed on to succeeding generations and become more frequent in a population, whereas other less favourable traits tend to become eliminated; the differential survival and reproduction of phenotypes.), federal (A law-enforcement official of the FBI; a federal agent.)
+Question: Describe concurrence and federal
+Answer: concurrence is Agreement; concurring.. This relates to federal which means A law-enforcement official of the FBI; a federal agent..
+
+---
+
+Using these words: patriarch (The highest form of bishop, in the ancient world having authority over other bishops in the province but now generally as an honorary title; in Roman Catholicism, considered a bishop second only to the Pope in rank.), marvel (That which causes wonder; a prodigy; a miracle.), sequel (The events, collectively, which follow a previously mentioned event; the aftermath.)
+Question: Explain how patriarch relates to sequel
+Answer: patriarch is The highest form of bishop, in the ancient world having authority over other bishops in the province but now generally as an honorary title; in Roman Catholicism, considered a bishop second only to the Pope in rank.. This relates to sequel which means The events, collectively, which follow a previously mentioned event; the aftermath..
+
+---
+
+Using these words: concluded (To end; to come to an end.), withdrew (To pull (something) back, aside, or away.), minted (To reproduce (coins), usually en masse, under licence.)
+Question: What is the connection between concluded and withdrew?
+Answer: concluded is To end; to come to an end.. This relates to minted which means To reproduce (coins), usually en masse, under licence..
+
+---
+
+Using these words: lifeboat (A boat especially designed for saving the lives of shipwrecked people or people in distress at sea (either launched from the shore with a crew, or else carried on board a larger ship)), storm (Any disturbed state of the atmosphere, especially as affecting the earth's surface, and strongly implying destructive or unpleasant weather.), unstaffed (Without staff, or workers.)
+Question: What is the connection between lifeboat and storm?
+Answer: lifeboat is A boat especially designed for saving the lives of shipwrecked people or people in distress at sea (either launched from the shore with a crew, or else carried on board a larger ship). This relates to unstaffed which means Without staff, or workers..
+
+---
+
+Using these words: poetry (Literature composed in verse or language exhibiting conscious attention to patterns and rhythm.), discrete (Separate; distinct; individual; non-continuous.), copyrighted (To obtain or secure a copyright for some literary or other artistic work.)
+Question: Explain how poetry relates to copyrighted
+Answer: poetry is Literature composed in verse or language exhibiting conscious attention to patterns and rhythm.. This relates to copyrighted which means To obtain or secure a copyright for some literary or other artistic work..
+
+---
+
+Using these words: publishing (To issue (something, such as printed work) for...), reorganized (To organize something again, or in a different manner), gained (To acquire possession of.)
+Question: Explain how publishing relates to gained
+Answer: publishing is To issue (something, such as printed work) for.... This relates to gained which means To acquire possession of..
+
+---
+
+Using these words: quincunx (An arrangement of five units in a pattern corresponding to the five-spot on dice, playing cards, or dominoes.), multiflora (The hardy rose Rosa multiflora), playback (The replaying of something previously recorded, especially sound or moving images.)
+Question: Explain how quincunx relates to playback
+Answer: quincunx is An arrangement of five units in a pattern corresponding to the five-spot on dice, playing cards, or dominoes.. This relates to playback which means The replaying of something previously recorded, especially sound or moving images..
+
+---
+
+Using these words: notable (A person or thing of distinction.), savory (A savory snack.), surreal (Surreal number)
+Question: Describe notable and surreal
+Answer: notable is A person or thing of distinction.. This relates to surreal which means Surreal number.
+
+---
+
+Using these words: woman (An adult female human.), legalization (The process of making something legal, the process to legalize, decriminalization.), hundred (A hundred-dollar bill, or any other note denominated 100 (e.g. a hundred euros).)
+Question: Explain how woman relates to hundred
+Answer: woman is An adult female human.. This relates to hundred which means A hundred-dollar bill, or any other note denominated 100 (e.g. a hundred euros)..
+
+---
+
+Using these words: requested (To ask for (something).), tweets (The sound of a bird; any short high-pitched sound or whistle.), martial (A person under the astrological influence of the planet Mars.)
+Question: Describe requested and martial
+Answer: requested is To ask for (something).. This relates to martial which means A person under the astrological influence of the planet Mars..
+
+---
+
+Using these words: intact (Left complete or whole; not touched, defiled, sullied or otherwise damaged), destroyed (To damage beyond use or repair.), ranks (A row of people or things organized in a grid pattern, often soldiers [the corresponding term for the perpendicular columns in such a pattern is "file"].)
+Question: What is the connection between intact and destroyed?
+Answer: intact is Left complete or whole; not touched, defiled, sullied or otherwise damaged. This relates to ranks which means A row of people or things organized in a grid pattern, often soldiers [the corresponding term for the perpendicular columns in such a pattern is "file"]..
+
+---
+
+Using these words: canal (An artificial waterway or artificially improved river used for travel, shipping, or irrigation.), establishment (The act of establishing; a ratifying or ordaining; settlement; confirmation.), registered (To enter in a register.)
+Question: Describe canal and registered
+Answer: canal is An artificial waterway or artificially improved river used for travel, shipping, or irrigation.. This relates to registered which means To enter in a register..
+
+---
+
+Using these words: monitors (Someone who watches over something; a person in charge of something or someone.), kill (The act of killing.), publishing (To issue (something, such as printed work) for...)
+Question: Describe monitors and publishing
+Answer: monitors is Someone who watches over something; a person in charge of something or someone.. This relates to publishing which means To issue (something, such as printed work) for....
+
+---
+
+Using these words: stations (A stopping place.), defence (The action of defending, of protecting from attack, danger or injury.), allegations (An assertion, especially an accusation, not necessarily based on facts.)
+Question: Explain how stations relates to allegations
+Answer: stations is A stopping place.. This relates to allegations which means An assertion, especially an accusation, not necessarily based on facts..
+
+---
+
+Using these words: linebacker (The defensive players who are in position behind the defensive linemen and in front of the safeties and cornerbacks and whose principal responsibilities are to tackle runners and to defend against shorter passes), bear (A large omnivorous mammal, related to the dog and raccoon, having shaggy hair, a very small tail, and flat feet; a member of family Ursidae.), borough (A fortified town.)
+Question: Explain how linebacker relates to borough
+Answer: linebacker is The defensive players who are in position behind the defensive linemen and in front of the safeties and cornerbacks and whose principal responsibilities are to tackle runners and to defend against shorter passes. This relates to borough which means A fortified town..
+
+---
+
+Using these words: defenseman (In ice hockey and lacrosse, a player position with a primary responsibility to prevent the opposing team from scoring goals; same as defender in many other ballgames.), component (A smaller, self-contained part of a larger entity. Often refers to a manufactured object that is part of a larger device.), grist (Grain that is to be ground in a mill.)
+Question: What is the connection between defenseman and component?
+Answer: defenseman is In ice hockey and lacrosse, a player position with a primary responsibility to prevent the opposing team from scoring goals; same as defender in many other ballgames.. This relates to grist which means Grain that is to be ground in a mill..
+
+---
+
+Using these words: bowl (A roughly hemispherical container used to hold, mix or present food, such as salad, fruit or soup, or other items.), sketch (A rapidly executed freehand drawing that is not intended as a finished work, often consisting of a multitude of overlapping lines.), posthumous (Born after the death of one's father.)
+Question: What is the connection between bowl and sketch?
+Answer: bowl is A roughly hemispherical container used to hold, mix or present food, such as salad, fruit or soup, or other items.. This relates to posthumous which means Born after the death of one's father..
+
+---
+
+Using these words: leads (A heavy, pliable, inelastic metal element, having a bright, bluish color, but easily tarnished; both malleable and ductile, though with little tenacity. It is easily fusible, forms alloys with other metals, and is an ingredient of solder and type metal. Atomic number 82, symbol Pb (from Latin plumbum).), vocalist (A singer; a person who likes to sing.), dominant (The fifth major tone of a musical scale (five major steps above the note in question); thus G is the dominant of C, A of D, and so on.)
+Question: What is the connection between leads and vocalist?
+Answer: leads is A heavy, pliable, inelastic metal element, having a bright, bluish color, but easily tarnished; both malleable and ductile, though with little tenacity. It is easily fusible, forms alloys with other metals, and is an ingredient of solder and type metal. Atomic number 82, symbol Pb (from Latin plumbum).. This relates to dominant which means The fifth major tone of a musical scale (five major steps above the note in question); thus G is the dominant of C, A of D, and so on..
+
+---
+
+Using these words: thrown (To change place.), formula (Any mathematical rule expressed symbolically.), flagships ((maritime) The ship occupied by the fleet's commander (usually an admiral); it denotes this by flying his flag.)
+Question: Describe thrown and flagships
+Answer: thrown is To change place.. This relates to flagships which means (maritime) The ship occupied by the fleet's commander (usually an admiral); it denotes this by flying his flag..
+
+---
+
+Using these words: estimated (To calculate roughly, often from imperfect data.), section (A cutting; a part cut out from the rest of something.), drowning (To die from suffocation while immersed in water or other fluid.)
+Question: What is the connection between estimated and section?
+Answer: estimated is To calculate roughly, often from imperfect data.. This relates to drowning which means To die from suffocation while immersed in water or other fluid..
+
+---
+
+Using these words: supreme (The highest point.), bury (A burrow.), playback (The replaying of something previously recorded, especially sound or moving images.)
+Question: Describe supreme and playback
+Answer: supreme is The highest point.. This relates to playback which means The replaying of something previously recorded, especially sound or moving images..
+
+---
+
+Using these words: differed (Not to have the same traits or characteristics; to be unalike or distinct.), perry (A fermented alcoholic beverage made from pears; somewhat analogous to cider.), racist (A person who believes in or supports racism; a person who believes that a particular race is superior to others.)
+Question: Explain how differed relates to racist
+Answer: differed is Not to have the same traits or characteristics; to be unalike or distinct.. This relates to racist which means A person who believes in or supports racism; a person who believes that a particular race is superior to others..
+
+---
+
+Using these words: nominal ((grammar) A noun or word group that functions as part of a noun phrase.), lesser (A thing that is of smaller size, value, importance etc.), elections (A process of choosing a leader, members of parliament, councillors or other representatives by popular vote.)
+Question: What is the connection between nominal and lesser?
+Answer: nominal is (grammar) A noun or word group that functions as part of a noun phrase.. This relates to elections which means A process of choosing a leader, members of parliament, councillors or other representatives by popular vote..
+
+---
+
+Using these words: playwright (A writer and creator of theatrical plays.), automotive (A shop or company that sells motor vehicle parts), nearby (Adjacent, near, close by)
+Question: Describe playwright and nearby
+Answer: playwright is A writer and creator of theatrical plays.. This relates to nearby which means Adjacent, near, close by.
+
+---
+
+Using these words: global (A globally scoped identifier.), chance (An opportunity or possibility.), bidding (To issue a command; to tell.)
+Question: Describe global and bidding
+Answer: global is A globally scoped identifier.. This relates to bidding which means To issue a command; to tell..
+
+---
+
+Using these words: deletion (An item that has been or will be deleted.), napalm (A highly flammable, viscous substance, designed to stick to the body while burning, used in warfare as an incendiary especially in wooded areas.), collaborated (To work together with others to achieve a common goal.)
+Question: Explain how deletion relates to collaborated
+Answer: deletion is An item that has been or will be deleted.. This relates to collaborated which means To work together with others to achieve a common goal..
+
+---
+
+Using these words: henry (In the International System of Units, the derived unit of electrical inductance; the inductance induced in a circuit by a rate of change of current of one ampere per second and a resulting electromotive force of one volt. Symbol: H), tehsil (An administrative division in India and Pakistan.), mask (A cover, or partial cover, for the face, used for disguise or protection.)
+Question: What is the connection between henry and tehsil?
+Answer: henry is In the International System of Units, the derived unit of electrical inductance; the inductance induced in a circuit by a rate of change of current of one ampere per second and a resulting electromotive force of one volt. Symbol: H. This relates to mask which means A cover, or partial cover, for the face, used for disguise or protection..
+
+---
+
+Using these words: equipment (The act of equipping, or the state of being equipped, as for a voyage or expedition.), gran ((usually affectionate) a grandmother), legalization (The process of making something legal, the process to legalize, decriminalization.)
+Question: Explain how equipment relates to legalization
+Answer: equipment is The act of equipping, or the state of being equipped, as for a voyage or expedition.. This relates to legalization which means The process of making something legal, the process to legalize, decriminalization..
+
+---
+
+Using these words: merchant (A person who traffics in commodities for profit.), marvel (That which causes wonder; a prodigy; a miracle.), alpha (The name of the first letter of the Greek alphabet (Α,  α), followed by beta. In the Latin alphabet it is the predecessor to A.)
+Question: What is the connection between merchant and marvel?
+Answer: merchant is A person who traffics in commodities for profit.. This relates to alpha which means The name of the first letter of the Greek alphabet (Α,  α), followed by beta. In the Latin alphabet it is the predecessor to A..
+
+---
+
+Using these words: surveillance (Close observation of an individual or group; person or persons under suspicion.), actors (A person who performs, plays a part in a theatrical play or film.), lifeboat (A boat especially designed for saving the lives of shipwrecked people or people in distress at sea (either launched from the shore with a crew, or else carried on board a larger ship))
+Question: Explain how surveillance relates to lifeboat
+Answer: surveillance is Close observation of an individual or group; person or persons under suspicion.. This relates to lifeboat which means A boat especially designed for saving the lives of shipwrecked people or people in distress at sea (either launched from the shore with a crew, or else carried on board a larger ship).
+
+---
+
+Using these words: xerox (A photocopy.), vela (A thin membrane, resembling a veil, such as:), circulated (To move in circles or through a circuit)
+Question: Explain how xerox relates to circulated
+Answer: xerox is A photocopy.. This relates to circulated which means To move in circles or through a circuit.
+
+---
+
+Using these words: positioned (To put into place.), topped (To cover on the top or with a top.), stratovolcanoes (A tall conical volcano, composed of layers (or strata) of hardened lava, tephra and ash.)
+Question: Describe positioned and stratovolcanoes
+Answer: positioned is To put into place.. This relates to stratovolcanoes which means A tall conical volcano, composed of layers (or strata) of hardened lava, tephra and ash..
+
+---
+
+Using these words: rooted (To grow roots; to enter the earth, as roots; to take root and begin to grow.), derived (To obtain or receive (something) from something else.), blowout (A sudden puncturing of a pneumatic tyre/tire.)
+Question: What is the connection between rooted and derived?
+Answer: rooted is To grow roots; to enter the earth, as roots; to take root and begin to grow.. This relates to blowout which means A sudden puncturing of a pneumatic tyre/tire..
+
+---
+
+Using these words: well (In good health.), sixteen (The cardinal number occurring after fifteen and before seventeen, represented in Arabic numerals as 16 and in Roman numerals as XVI.), milk (A white liquid produced by the mammary glands of female mammals to nourish their young. From certain animals, especially cows, it is also called dairy milk and is a common food for humans as a beverage or used to produce various dairy products such as butter, cheese, and yogurt.)
+Question: What is the connection between well and sixteen?
+Answer: well is In good health.. This relates to milk which means A white liquid produced by the mammary glands of female mammals to nourish their young. From certain animals, especially cows, it is also called dairy milk and is a common food for humans as a beverage or used to produce various dairy products such as butter, cheese, and yogurt..
+
+---
+
+Using these words: massively (In a massive manner, in a way that appears large, heavy or imposing.), indicates (To point out; to discover; to direct to a knowledge of; to show; to make known.), succulent (A succulent plant.)
+Question: Describe massively and succulent
+Answer: massively is In a massive manner, in a way that appears large, heavy or imposing.. This relates to succulent which means A succulent plant..
+
+---
+
+Using these words: hooks (A rod bent into a curved shape, typically with one end free and the other end secured to a rope or other attachment.), louvre (A type of turret on the roof of certain medieval buildings designed to allow ventilation or the admission of light.), brokers (A mediator between a buyer and seller.)
+Question: What is the connection between hooks and louvre?
+Answer: hooks is A rod bent into a curved shape, typically with one end free and the other end secured to a rope or other attachment.. This relates to brokers which means A mediator between a buyer and seller..
+
+---
+
+Using these words: claps (The act of striking the palms of the hands, or any two surfaces, together.), utility (The state or condition of being useful; usefulness.), pick (A tool used for digging; a pickaxe.)
+Question: What is the connection between claps and utility?
+Answer: claps is The act of striking the palms of the hands, or any two surfaces, together.. This relates to pick which means A tool used for digging; a pickaxe..
+
+---
+
+Using these words: concord (A state of agreement; harmony; union.), angels (An incorporeal and sometimes divine messenger from a deity, or other divine entity, often depicted in art as a youthful winged figure in flowing robes.), physicist (A person whose occupation specializes in the science of physics, especially at a professional level.)
+Question: Explain how concord relates to physicist
+Answer: concord is A state of agreement; harmony; union.. This relates to physicist which means A person whose occupation specializes in the science of physics, especially at a professional level..
+
+---
+
+Using these words: interests (The price paid for obtaining, or price received for providing, money or goods in a credit transaction, calculated as a fraction of the amount or value of what was borrowed.), rand (The border of an area of land, especially marshland.), alien (Any life form of extraterrestrial or extradimensional origin.)
+Question: What is the connection between interests and rand?
+Answer: interests is The price paid for obtaining, or price received for providing, money or goods in a credit transaction, calculated as a fraction of the amount or value of what was borrowed.. This relates to alien which means Any life form of extraterrestrial or extradimensional origin..
+
+---
+
+Using these words: biosynthesis (The synthesis of organic compounds within a living organism, especially the synthesis of large compounds from small ones.), midfielder (A player who operates behind the attackers and in front of the defence.), astronomer (One who studies astronomy, the stars or the physical universe; a scientist whose area of research is astronomy or astrophysics)
+Question: Describe biosynthesis and astronomer
+Answer: biosynthesis is The synthesis of organic compounds within a living organism, especially the synthesis of large compounds from small ones.. This relates to astronomer which means One who studies astronomy, the stars or the physical universe; a scientist whose area of research is astronomy or astrophysics.
+
+---
+
+Complete the phrase: q... → q what
+
+---
+
+Complete the phrase: what... → what is
+
+---
+
+Complete the phrase: is... → is a
+
+---
+
+Complete the phrase: what... → what does
+
+---
+
+Complete the phrase: mean... → mean a
+
+---
+
+Complete the phrase: q what... → q what does
+
+---
+
+Complete the phrase: question... → question what
+
+---
+
+Complete the phrase: question what... → question what is
+
+---
+
+Complete the phrase: is... → is the
+
+---
+
+Complete the phrase: question... → question define
+
+---
+
+Complete the phrase: these... → these words
+
+---
+
+Complete the phrase: relates... → relates to
+
+---
+
+Complete the phrase: of... → of the
+
+---
+
+Complete the phrase: is... → is to
+
+---
+
+Complete the phrase: which... → which means
+
+---
+
+Complete the phrase: using... → using these
+
+---
+
+Complete the phrase: this... → this relates
+
+---
+
+Complete the phrase: using these... → using these words
+
+---
+
+Complete the phrase: this relates... → this relates to
+
+---
+
+Complete the phrase: q what... → q what is
+
+---
+
+Complete the phrase: in... → in the
+
+---
+
+Complete the phrase: q... → q explain
+
+---
+
+Complete the phrase: q... → q define
+
+---
+
+Complete the phrase: in... → in simple
+
+---
+
+Complete the phrase: simple... → simple terms
+
+---
+
+Complete the phrase: terms... → terms a
+
+---
+
+Complete the phrase: in simple... → in simple terms
+
+---
+
+Complete the phrase: simple terms... → simple terms a
+
+---
+
+Complete the phrase: in simple terms... → in simple terms a
+
+---
+
+Complete the phrase: of... → of a
+
+---
+
+Q: What does flavors mean?
+A: flavors is To add flavoring to something..
+
+---
+
+Q: What does production mean?
+A: production is The act of producing, making or creating something..
+
+---
+
+Q: What does incorporated mean?
+A: incorporated is To include (something) as a part..
+
+---
+
+Q: What does since mean?
+A: since is From a specified time in the past..
+
+---
+
+Q: What does subsidiary mean?
+A: subsidiary is A company owned by a parent company or a holding company, also called daughter company or sister company..
+
+---
+
+Q: What does company mean?
+A: company is A team; a group of people who work together professionally..
+
+---
+
+Q: What does earliest mean?
+A: earliest is At a time in advance of the usual or expected event..
+
+---
+
+Q: What does juicy mean?
+A: juicy is Having lots of juice..
+
+---
+
+Q: What does brand mean?
+A: brand is A conflagration; a flame..
+
+---
+
+Q: What does chewing mean?
+A: chewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed..
+
+---
+
+Q: What does mars mean?
+A: mars is A blemish..
+
+---
+
+Q: What does introduced mean?
+A: introduced is (of people) To cause (someone) to be acquainted (with someone else)..
+
+---
+
+Q: What does fruit mean?
+A: fruit is (often in the plural) In general, a product of plant growth useful to man or animals..
+
+---
+
+Q: What does developed mean?
+A: developed is To change with a specific direction, progress..
+
+---
+
+Q: What does environment mean?
+A: environment is The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Q: What does mission mean?
+A: mission is A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself..
+
+---
+
+Q: What does graphics mean?
+A: graphics is The making of architectural or design drawings..
+
+---
+
+Q: What does playing mean?
+A: playing is To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Q: What does much mean?
+A: much is Large, great..
+
+---
+
+Q: What does fully mean?
+A: fully is In a full manner; without lack or defect..
+
+---
+
+Q: What does contains mean?
+A: contains is To hold inside..
+
+---
+
+Q: What does fantasy mean?
+A: fantasy is That which comes from one's imagination..
+
+---
+
+Q: What does surreal mean?
+A: surreal is Surreal number.
+
+---
+
+Q: What does released mean?
+A: released is To let go (of); to cease to hold or contain..
+
+---
+
+Q: What does japan mean?
+A: japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Q: What does both mean?
+A: both is Each of the two, or of the two kinds..
+
+---
+
+Q: What does futuristic mean?
+A: futuristic is Of technology, a concept, etc, so far advanced as to appear to be from the future..
+
+---
+
+Q: What does tactical mean?
+A: tactical is A combinator of proof tactics..
+
+---
+
+Q: What does well mean?
+A: well is In good health..
+
+---
+
+Q: What does role mean?
+A: role is A character or part played by a performer or actor..
+
+---
+
+Q: What does elements mean?
+A: elements is One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based..
+
+---
+
+Q: What does ones mean?
+A: ones is The digit or figure 1..
+
+---
+
+Q: What does game mean?
+A: game is A playful or competitive activity..
+
+---
+
+Q: What does published mean?
+A: published is To issue (something, such as printed work) for distribution and/or sale..
+
+---
+
+Q: What does front mean?
+A: front is The foremost side of something or the end that faces the direction it normally moves..
+
+---
+
+Q: What does united mean?
+A: united is To bring together as one..
+
+---
+
+Q: What does states mean?
+A: states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Q: What does census mean?
+A: census is An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals..
+
+---
+
+Q: What does population mean?
+A: population is The people living within a political or geographical boundary..
+
+---
+
+Q: What does time mean?
+A: time is The inevitable progression into the future with the passing of present and past events..
+
+---
+
+Q: What does borough mean?
+A: borough is A fortified town..
+
+---
+
+Q: What does county mean?
+A: county is The land ruled by a count or a countess..
+
+---
+
+Q: What does advisory mean?
+A: advisory is A warning..
+
+---
+
+Q: What does established mean?
+A: established is To make stable or firm; to confirm..
+
+---
+
+Q: What does building mean?
+A: building is The act or process by which something is built; construction..
+
+---
+
+Q: What does seat mean?
+A: seat is Something to be sat upon..
+
+---
+
+Q: What does unions mean?
+A: unions is The act of uniting or joining two or more things into one..
+
+---
+
+Q: What does committee mean?
+A: committee is A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols..
+
+---
+
+Q: What does composed mean?
+A: composed is To make something by merging parts..
+
+---
+
+Q: What does representatives mean?
+A: representatives is A delegate..
+
+---
+
+Q: What does associations mean?
+A: associations is The act of associating..
+
+---
+
+Q: What does union mean?
+A: union is The act of uniting or joining two or more things into one..
+
+---
+
+Q: What does society mean?
+A: society is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms..
+
+---
+
+Q: What does social mean?
+A: social is A festive gathering to foster introductions..
+
+---
+
+Q: What does consultative mean?
+A: consultative is That gives advice or consultation; advisory..
+
+---
+
+Q: What does economic mean?
+A: economic is Pertaining to an economy..
+
+---
+
+Q: What does employers mean?
+A: employers is A person, firm or other entity which pays for or hires the services of another person..
+
+---
+
+Q: What does assembly mean?
+A: assembly is A set of pieces that work together in unison as a mechanism or device..
+
+---
+
+Q: What does regions mean?
+A: regions is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Q: What does body mean?
+A: body is Physical frame..
+
+---
+
+Q: What does workers mean?
+A: workers is A person who performs labor for a living, especially manual labor..
+
+---
+
+Q: What does shares mean?
+A: shares is A portion of something, especially a portion given or allotted to someone..
+
+---
+
+Q: What does organisations mean?
+A: organisations is The quality of being organized..
+
+---
+
+Q: What does civil mean?
+A: civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Q: What does include mean?
+A: include is A piece of source code or other content....
+
+---
+
+Q: What does understanding mean?
+A: understanding is To grasp a concept fully and thoroughly, especially....
+
+---
+
+Q: What does organization mean?
+A: organization is The quality of being organized..
+
+---
+
+Q: What does behavior mean?
+A: behavior is Human conduct relative to social norms..
+
+---
+
+Q: What does reviewed mean?
+A: reviewed is To survey; to look broadly over..
+
+---
+
+Q: What does methods mean?
+A: methods is A process by which a task is completed;....
+
+---
+
+Q: What does publishing mean?
+A: publishing is To issue (something, such as printed work) for....
+
+---
+
+Q: What does application mean?
+A: application is The act of applying or laying on, in a literal sense.
+
+---
+
+Q: What does editor mean?
+A: editor is A person who edits or makes changes to documents..
+
+---
+
+Q: What does sociological mean?
+A: sociological is Of or pertaining to sociology..
+
+---
+
+Q: What does association mean?
+A: association is The act of associating..
+
+---
+
+Q: What does academic mean?
+A: academic is (usually capitalized) A follower of Plato, a Platonist..
+
+---
+
+Q: What does sage mean?
+A: sage is A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher..
+
+---
+
+Q: What does medicine mean?
+A: medicine is A substance which specifically promotes healing when ingested or consumed in some way..
+
+---
+
+Q: What does care mean?
+A: care is Grief, sorrow..
+
+---
+
+Q: What does chief mean?
+A: chief is A leader or head of a group of people, organisation, etc..
+
+---
+
+Q: What does health mean?
+A: health is The state of being free from physical or psychological disease, illness, or malfunction; wellness..
+
+---
+
+Q: What does covers mean?
+A: covers is A lid..
+
+---
+
+Q: What does illness mean?
+A: illness is An instance of a disease or poor health..
+
+---
+
+Q: What does concepts mean?
+A: concepts is An abstract and general idea; an abstraction..
+
+---
+
+Q: What does carr mean?
+A: carr is A bog or marsh; marshy ground, swampland..
+
+---
+
+Q: What does quarterly mean?
+A: quarterly is A periodical publication that appears four times per year..
+
+---
+
+Q: What does peer mean?
+A: peer is A look; a glance..
+
+---
+
+Q: What does previous mean?
+A: previous is An existing criminal record (short for "previous convictions").
+
+---
+
+Q: What does editors mean?
+A: editors is A person who edits or makes changes to documents..
+
+---
+
+Q: What does journal mean?
+A: journal is A diary or daily record of a person, organization, vessel etc.; daybook..
+
+---
+
+Q: What does debut mean?
+A: debut is A performer's first performance to the public, in sport, the arts or some other area..
+
+---
+
+Q: What does awaited mean?
+A: awaited is To wait for..
+
+---
+
+Q: What does professionally mean?
+A: professionally is As a professional; for one's paid career..
+
+---
+
+Q: What does singer mean?
+A: singer is A person who sings, often professionally..
+
+---
+
+Q: What does billboard mean?
+A: billboard is A very large outdoor sign, generally used for advertising..
+
+---
+
+Q: What does artists mean?
+A: artists is A person who creates art..
+
+---
+
+Q: What does titled mean?
+A: titled is To assign a title to; to entitle..
+
+---
+
+Q: What does collaborated mean?
+A: collaborated is To work together with others to achieve a common goal..
+
+---
+
+Q: What does known mean?
+A: known is To perceive the truth or factuality of; to be certain of or that..
+
+---
+
+Q: What does peaked mean?
+A: peaked is Having a peak or peaks..
+
+---
+
+Group these words: rooted, foreign, germans, sign, versions
+
+---
+
+Group these words: cages, manila, detonated, ruled, protest
+
+---
+
+Group these words: sixth, folds, fighting, styling, genuine
+
+---
+
+Group these words: deputies, rank, relatively, occupation, joins
+
+---
+
+Group these words: steam, offered, argyle, calderas, homicide
+
+---
+
+Group these words: receptor, contention, mature, prestige, union
+
+---
+
+Group these words: peggy, protestant, shares, soft, airport
+
+---
+
+Group these words: brokers, depot, districts, sectors, proposed
+
+---
+
+Group these words: earned, spanning, baseman, album, remains
+
+---
+
+Group these words: nawabs, sorcery, carbon, once, posthumous
+
+---
+
+Group these words: success, ongoing, documentary, reported, extended
+
+---
+
+Group these words: separated, behavior, surreal, learn, compilations
+
+---
+
+Group these words: imprint, utility, scream, cartwright, employers
+
+---
+
+Group these words: tunnels, awaited, shores, watercolours, fillies
+
+---
+
+Group these words: forecasting, cathedral, ravel, missing, professionally
+
+---
+
+Group these words: beside, read, interface, aftermath, unlimited
+
+---
+
+Group these words: understanding, coop, foreign, johnny, papa
+
+---
+
+Group these words: green, fallen, certify, johnny, cargo
+
+---
+
+Group these words: sport, violence, crustal, affects, regarded
+
+---
+
+Group these words: garibaldi, alien, guild, ruled, tania
+
+---
+
+Question: Define gee.
+Answer: A general exclamation of surprise or frustration.
+
+---
+
+Question: Describe "sign of the times" is a song by the american progressive metal band queensrÿche.
+Answer: "Sign of the Times" is a song by the American progressive metal band Queensrÿche.
+
+---
+
+Complete: china is... → china is The plant Smilax china, a liana of much of eastern Asia..
+
+---
+
+Question: What is his?
+Answer: his is Honorific alternative letter-case form of his, sometimes used when referring to God or another important figure who is understood from context..
+
+---
+
+Question: Define brand.
+Answer: A conflagration; a flame.
+
+---
+
+Question: What is quarterly?
+Answer: quarterly is A periodical publication that appears four times per year..
+
+---
+
+Complete: first is... → first is The person or thing in the first position..
+
+---
+
+Question: Define brian.
+Answer: 
+
+---
+
+Question: Define society.
+Answer: A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms.
+
+---
+
+Question: What is viral?
+Answer: viral is A video, image or text spread by "word of mouth" on the internet or by e-mail for humorous, political or marketing purposes..
+
+---
+
+Complete: professionally is... → professionally is As a professional; for one's paid career..
+
+---
+
+Question: Define unions.
+Answer: The act of uniting or joining two or more things into one.
+
+---
+
+Complete: company is... → company is A team; a group of people who work together professionally..
+
+---
+
+Complete: chief is... → chief is A leader or head of a group of people, organisation, etc..
+
+---
+
+Question: What is for?
+Answer: for is .
+
+---
+
+Question: Define company.
+Answer: A team; a group of people who work together professionally.
+
+---
+
+Complete: wang is... → wang is .
+
+---
+
+Complete: juicy is... → juicy is Having lots of juice..
+
+---
+
+Question: What is park?
+Answer: park is An area of land set aside for environment preservation or recreation..
+
+---
+
+Question: Define long.
+Answer: A long vowel.
+
+---
+
+Question: What is later?
+Answer: later is Near the end of a period of time..
+
+---
+
+Complete: eesc is... → eesc is .
+
+---
+
+Question: What is china?
+Answer: china is The plant Smilax china, a liana of much of eastern Asia..
+
+---
+
+Question: Define reviewed.
+Answer: To survey; to look broadly over.
+
+---
+
+Question: Define kelly.
+Answer: 
+
+---
+
+HTML elements are the building blocks of web pages. Each element has an opening tag, content, and a closing tag.
+
+---
+
+Complete: pennsylvania is... → pennsylvania is .
+
+---
+
+Question: Define many.
+Answer: A multitude; a great aggregate; a mass of people; the generality; the common herd.
+
+---
+
+Question: What are flask routes?
+Answer: A route in Flask connects a URL to a Python function. When someone visits that URL, the function runs and returns a response.
+
+---
+
+Complete: health is... → health is The state of being free from physical or psychological disease, illness, or malfunction; wellness..
+
+---
+
+Complete: where is... → where is The place in which something happens..
+
+---
+
+Question: What is jae?
+Answer: jae is .
+
+---
+
+Question: What is awaited?
+Answer: awaited is To wait for..
+
+---
+
+Complete: belliard is... → belliard is .
+
+---
+
+Complete: body is... → body is Physical frame..
+
+---
+
+Question: Define economic.
+Answer: Pertaining to an economy.
+
+---
+
+Question: What is would?
+Answer: would is Something that would happen, or would be the case, under different circumstances; a potentiality..
+
+---
+
+Question: Define futuristic.
+Answer: Of technology, a concept, etc, so far advanced as to appear to be from the future.
+
+---
+
+Question: Define august.
+Answer: Awe-inspiring, majestic, noble, venerable.
+
+---
+
+Question: Define editor.
+Answer: A person who edits or makes changes to documents.
+
+---
+
+Question: What is society?
+Answer: society is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms..
+
+---
+
+Question: Define ape.
+Answer: A primate of the clade Hominoidea, generally larger than monkeys and distinguished from them by having no tail.
+
+---
+
+Question: Define well.
+Answer: In good health.
+
+---
+
+Question: Define hughes.
+Answer: 
+
+---
+
+Question: What is soewarno?
+Answer: soewarno is .
+
+---
+
+Question: What is associations?
+Answer: associations is The act of associating..
+
+---
+
+Question: What is journal?
+Answer: journal is A diary or daily record of a person, organization, vessel etc.; daybook..
+
+---
+
+Question: Define states.
+Answer: A condition; a set of circumstances applying at any given time.
+
+---
+
+Question: What is union?
+Answer: union is The act of uniting or joining two or more things into one..
+
+---
+
+Question: What is incorporated?
+Answer: incorporated is To include (something) as a part..
+
+---
+
+Question: What is debut?
+Answer: debut is A performer's first performance to the public, in sport, the arts or some other area..
+
+---
+
+Question: What is pannonia savia or simply savia, also known as pannonia ripariensis, was a late roman province?
+Answer: Pannonia Savia or simply Savia, also known as Pannonia Ripariensis, was a Late Roman province.
+
+---
+
+Complete: kelly is... → kelly is .
+
+---
+
+Question: What is many?
+Answer: many is A multitude; a great aggregate; a mass of people; the generality; the common herd..
+
+---
+
+Question: What is front?
+Answer: front is The foremost side of something or the end that faces the direction it normally moves..
+
+---
+
+Question: What is carr?
+Answer: carr is A bog or marsh; marshy ground, swampland..
+
+---
+
+Question: Define illness.
+Answer: An instance of a disease or poor health.
+
+---
+
+Question: What is environment?
+Answer: environment is The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Question: Define korea.
+Answer: 
+
+---
+
+Question: What is umberson?
+Answer: umberson is .
+
+---
+
+Question: What is both?
+Answer: both is Each of the two, or of the two kinds..
+
+---
+
+Question: Define publishing.
+Answer: To issue (something, such as printed work) for...
+
+---
+
+Question: Define like.
+Answer: (usually in the plural) Something that a person likes (prefers).
+
+---
+
+Complete: bethany is... → bethany is .
+
+---
+
+Complete: wrigley is... → wrigley is .
+
+---
+
+Complete: concepts is... → concepts is An abstract and general idea; an abstraction..
+
+---
+
+Question: What are html elements?
+Answer: HTML elements are the building blocks of web pages. Each element has an opening tag, content, and a closing tag.
+
+---
+
+Question: Define wrigley.
+Answer: 
+
+---
+
+Question: What are css selectors?
+Answer: CSS selectors target HTML elements for styling. You can select by tag name, class, ID, or other attributes.
+
+---
+
+Complete: ape is... → ape is A primate of the clade Hominoidea, generally larger than monkeys and distinguished from them by having no tail..
+
+---
+
+Question: What is company?
+Answer: company is A team; a group of people who work together professionally..
+
+---
+
+Complete: many is... → many is A multitude; a great aggregate; a mass of people; the generality; the common herd..
+
+---
+
+Question: Define covers.
+Answer: A lid.
+
+---
+
+Question: Define health.
+Answer: The state of being free from physical or psychological disease, illness, or malfunction; wellness.
+
+---
+
+Question: What is introduced?
+Answer: introduced is (of people) To cause (someone) to be acquainted (with someone else)..
+
+---
+
+Complete: his is... → his is Honorific alternative letter-case form of his, sometimes used when referring to God or another important figure who is understood from context..
+
+---
+
+Question: What is consultative?
+Answer: consultative is That gives advice or consultation; advisory..
+
+---
+
+Complete: slump is... → slump is A heavy or helpless collapse; a slouching or drooping posture; a period of poor activity or performance, especially an extended period..
+
+---
+
+Question: Define include.
+Answer: A piece of source code or other content...
+
+---
+
+Question: Define behavior.
+Answer: Human conduct relative to social norms.
+
+---
+
+Question: What is organisations?
+Answer: organisations is The quality of being organized..
+
+---
+
+Question: Define civil.
+Answer: Having to do with people and government office as opposed to the military or religion.
+
+---
+
+Complete: billboard is... → billboard is A very large outdoor sign, generally used for advertising..
+
+---
+
+Question: What is wrigley?
+Answer: wrigley is .
+
+---
+
+Complete: via is... → via is A main road or highway, especially in ancient Rome. (Mainly used in set phrases, below.).
+
+---
+
+Question: What is care?
+Answer: care is Grief, sorrow..
+
+---
+
+Complete: subsidiary is... → subsidiary is A company owned by a parent company or a holding company, also called daughter company or sister company..
+
+---
+
+Complete: flavors is... → flavors is To add flavoring to something..
+
+---
+
+Question: Define concepts.
+Answer: An abstract and general idea; an abstraction.
+
+---
+
+Question: What is employers?
+Answer: employers is A person, firm or other entity which pays for or hires the services of another person..
+
+---
+
+Complete: release is... → release is The event of setting (someone or something) free (e.g. hostages, slaves, prisoners, caged animals, hooked or stuck mechanisms)..
+
+---
+
+Complete: chungha is... → chungha is .
+
+---
+
+Question: What is filipino?
+Answer: filipino is .
+
+---
+
+Question: What is richard?
+Answer: richard is .
+
+---
+
+Question: What is with?
+Answer: with is Along, together with others, in a group, etc..
+
+---
+
+Question: Define flavors.
+Answer: To add flavoring to something.
+
+---
+
+Question: What is singer?
+Answer: singer is A person who sings, often professionally..
+
+---
+
+Question: Define brussels.
+Answer: 
+
+---
+
+Question: Explain "sign of the times" is a song by the american progressive metal band queensrÿche.
+Answer: "Sign of the Times" is a song by the American progressive metal band Queensrÿche.
+
+---
+
+Complete: formerly is... → formerly is At some time in the past.
+
+---
+
+Complete: gee is... → gee is A general exclamation of surprise or frustration..
+
+---
+
+Complete: south is... → south is One of the four major compass points, specifically 180°, directed toward the South Pole, and conventionally downwards on a map, abbreviated as S..
+
+---
+
+Complete: wayne is... → wayne is .
+
+---
+
+Complete: park is... → park is An area of land set aside for environment preservation or recreation..
+
+---
+
+Complete: umberson is... → umberson is .
+
+---
+
+Question: What is surreal?
+Answer: surreal is Surreal number.
+
+---
+
+Complete: brussels is... → brussels is .
+
+---
+
+Question: Define tick.
+Answer: A tiny woodland arachnid of the suborder Ixodida.
+
+---
+
+Question: Define peaked.
+Answer: Having a peak or peaks.
+
+---
+
+Question: What is michael?
+Answer: michael is .
+
+---
+
+Question: Define sociological.
+Answer: Of or pertaining to sociology.
+
+---
+
+Question: Define fruit.
+Answer: (often in the plural) In general, a product of plant growth useful to man or animals.
+
+---
+
+Complete: include is... → include is A piece of source code or other content....
+
+---
+
+Question: Define moi.
+Answer: (often used questioningly to express mock surprise) Me.
+
+---
+
+Complete: making is... → making is The act of forming, causing, or constituting; workmanship; construction..
+
+---
+
+Complete: time is... → time is The inevitable progression into the future with the passing of present and past events..
+
+---
+
+Question: Define rue.
+Answer: Sorrow; repentance; regret.
+
+---
+
+Question: What is brand?
+Answer: brand is A conflagration; a flame..
+
+---
+
+Question: Define carpiano.
+Answer: 
+
+---
+
+Question: Define such.
+Answer: Something being indicated that is similar to something else.
+
+---
+
+Question: What is certified?
+Answer: certified is To attest to (a fact) as the truth..
+
+---
+
+Question: Define chewing.
+Answer: To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed.
+
+---
+
+Complete: seat is... → seat is Something to be sat upon..
+
+---
+
+Question: What is making?
+Answer: making is The act of forming, causing, or constituting; workmanship; construction..
+
+---
+
+Question: Define richard.
+Answer: 
+
+---
+
+CSS selectors target HTML elements for styling. You can select by tag name, class, ID, or other attributes.
+
+---
+
+Question: Define associations.
+Answer: The act of associating.
+
+---
+
+Question: What is "sign of the times" is a song by the american progressive metal band queensrÿche?
+Answer: "Sign of the Times" is a song by the American progressive metal band Queensrÿche.
+
+---
+
+Question: Define debra.
+Answer: 
+
+---
+
+Continue: "Sign of the Times" is a song by the American progressive metal band Queensrÿche. It was released as a single in support of their 1997 album Hear in the Now Frontier. → The topics of this song are of school violence prevention gone overboard, racial hatred, and corrupt politicians.
+
+---
+
+Question: Explain python lists.
+Answer: A list is an ordered collection of items in Python. Lists are mutable, meaning you can change them after creation.
+
+---
+
+Question: What is its?
+Answer: its is One who is neither a he nor a she; a creature; a dehumanized being..
+
+---
+
+Complete: awaited is... → awaited is To wait for..
+
+---
+
+Question: Define ones.
+Answer: The digit or figure 1.
+
+---
+
+Question: Define since.
+Answer: From a specified time in the past.
+
+---
+
+Complete: surreal is... → surreal is Surreal number.
+
+---
+
+Question: Define subsidiary.
+Answer: A company owned by a parent company or a holding company, also called daughter company or sister company.
+
+---
+
+Question: Explain python functions.
+Answer: A function is a reusable block of code that performs a specific task. Functions help organize code and avoid repetition.
+
+---
+
+Complete: peer is... → peer is A look; a glance..
+
+---
+
+Question: What is peer?
+Answer: peer is A look; a glance..
+
+---
+
+Question: What is titled?
+Answer: titled is To assign a title to; to entitle..
+
+---
+
+Question: What is released?
+Answer: released is To let go (of); to cease to hold or contain..
+
+---
+
+Complete: debut is... → debut is A performer's first performance to the public, in sport, the arts or some other area..
+
+---
+
+Question: What is mask?
+Answer: mask is A cover, or partial cover, for the face, used for disguise or protection..
+
+---
+
+Question: Define chungha.
+Answer: 
+
+---
+
+Question: Define collaborated.
+Answer: To work together with others to achieve a common goal.
+
+---
+
+Question: What is since?
+Answer: since is From a specified time in the past..
+
+---
+
+Question: Define application.
+Answer: The act of applying or laying on, in a literal sense
+
+---
+
+Question: Explain git commits.
+Answer: A commit in Git saves changes to your repository. Each commit has a unique hash and a message describing the changes.
+
+---
+
+Question: Define organisations.
+Answer: The quality of being organized.
+
+---
+
+Question: What is organization?
+Answer: organization is The quality of being organized..
+
+---
+
+Question: What is playing?
+Answer: playing is To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Question: Define census.
+Answer: An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals.
+
+---
+
+Question: Define professionally.
+Answer: As a professional; for one's paid career.
+
+---
+
+Question: What is eesc?
+Answer: eesc is .
+
+---
+
+Question: What is top?
+Answer: top is The highest or uppermost part of something..
+
+---
+
+Question: Define playstation.
+Answer: 
+
+---
+
+Complete: mars is... → mars is A blemish..
+
+---
+
+Complete: another is... → another is An additional one of the same kind..
+
+---
+
+Question: Define sailor.
+Answer: A person in the business of navigating ships or other vessels
+
+---
+
+Complete: imanuel is... → imanuel is .
+
+---
+
+Question: Define belliardstraat.
+Answer: 
+
+---
+
+Complete: tick is... → tick is A tiny woodland arachnid of the suborder Ixodida..
+
+---
+
+Question: What is body?
+Answer: body is Physical frame..
+
+---
+
+Question: Explain árstíðir is an icelandic classically influenced indie-folk rock/chamber pop band.
+Answer: Árstíðir is an Icelandic classically influenced indie-folk rock/chamber pop band.
+
+---
+
+Question: What is assembly?
+Answer: assembly is A set of pieces that work together in unison as a mechanism or device..
+
+---
+
+Question: What is tactical?
+Answer: tactical is A combinator of proof tactics..
+
+---
+
+Question: Define association.
+Answer: The act of associating.
+
+---
+
+Question: Define established.
+Answer: To make stable or firm; to confirm.
+
+---
+
+Question: Define march.
+Answer: A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies.
+
+---
+
+Question: What is workers?
+Answer: workers is A person who performs labor for a living, especially manual labor..
+
+---
+
+Question: What is population?
+Answer: population is The people living within a political or geographical boundary..
+
+---
+
+Question: What is and?
+Answer: and is In rhythm, the second half of a divided beat..
+
+---
+
+Complete: indonesian is... → indonesian is .
+
+---
+
+Question: Define from.
+Answer: Used to indicate source or provenance.
+
+---
+
+Question: What is developed?
+Answer: developed is To change with a specific direction, progress..
+
+---
+
+Complete: brightside is... → brightside is .
+
+---
+
+Question: Define care.
+Answer: Grief, sorrow.
+
+---
+
+Question: What is namco?
+Answer: namco is .
+
+---
+
+Question: What is korea?
+Answer: korea is .
+
+---
+
+Question: Define contains.
+Answer: To hold inside.
+
+---
+
+Question: Define riaa.
+Answer: 
+
+---
+
+Complete: carr is... → carr is A bog or marsh; marshy ground, swampland..
+
+---
+
+Question: What is behavior?
+Answer: behavior is Human conduct relative to social norms..
+
+---
+
+Question: What is rapper?
+Answer: rapper is One who, or that which, raps or knocks..
+
+---
+
+A commit in Git saves changes to your repository. Each commit has a unique hash and a message describing the changes.
+
+---
+
+Question: Define making.
+Answer: The act of forming, causing, or constituting; workmanship; construction.
+
+---
+
+Question: What is ape?
+Answer: ape is A primate of the clade Hominoidea, generally larger than monkeys and distinguished from them by having no tail..
+
+---
+
+Complete: volfoss is... → volfoss is .
+
+---
+
+Question: Explain javascript variables.
+Answer: Variables in JavaScript store data values. You can declare them with let, const, or var.
+
+---
+
+Question: Define bethany.
+Answer: 
+
+---
+
+Question: Define environment.
+Answer: The surroundings of, and influences on, a particular item of interest.
+
+---
+
+Question: What is shares?
+Answer: shares is A portion of something, especially a portion given or allotted to someone..
+
+---
+
+Question: What is ski?
+Answer: ski is One of a pair of long flat runners designed for gliding over snow or water.
+
+---
+
+Question: What is civil?
+Answer: civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Question: What is economic?
+Answer: economic is Pertaining to an economy..
+
+---
+
+A list is an ordered collection of items in Python. Lists are mutable, meaning you can change them after creation.
+
+---
+
+Question: Explain flask routes.
+Answer: A route in Flask connects a URL to a Python function. When someone visits that URL, the function runs and returns a response.
+
+---
+
+Complete: association is... → association is The act of associating..
+
+---
+
+Question: What is medicine?
+Answer: medicine is A substance which specifically promotes healing when ingested or consumed in some way..
+
+---
+
+Complete: advisory is... → advisory is A warning..
+
+---
+
+Complete: and is... → and is In rhythm, the second half of a divided beat..
+
+---
+
+Question: Define regions.
+Answer: Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons.
+
+---
+
+Continue: Drew is a city in Sunflower County, Mississippi, United States. → As of the 2020 census, Drew had a population of 1,852. Drew is in the vicinity of several plantations and the Mississippi State Penitentiary, a Mississippi Department of Corrections prison for men.
+
+---
+
+Complete: titled is... → titled is To assign a title to; to entitle..
+
+---
+
+Question: Define role.
+Answer: A character or part played by a performer or actor.
+
+---
+
+Complete: which is... → which is (interrogative) What one or ones (of those mentioned or implied)..
+
+---
+
+Question: What is county?
+Answer: county is The land ruled by a count or a countess..
+
+---
+
+Question: What is editor?
+Answer: editor is A person who edits or makes changes to documents..
+
+---
+
+Complete: riaa is... → riaa is .
+
+---
+
+Question: Define rapper.
+Answer: One who, or that which, raps or knocks.
+
+---
+
+Question: What is after?
+Answer: after is Later; second (of two); next, following, subsequent.
+
+---
+
+Question: Define eesc.
+Answer: 
+
+---
+
+Question: What is much?
+Answer: much is Large, great..
+
+---
+
+Question: What is belliard?
+Answer: belliard is .
+
+---
+
+Complete: both is... → both is Each of the two, or of the two kinds..
+
+---
+
+Question: Define american.
+Answer: 
+
+---
+
+Question: Define front.
+Answer: The foremost side of something or the end that faces the direction it normally moves.
+
+---
+
+Complete: composed is... → composed is To make something by merging parts..
+
+---
+
+Question: Define studio.
+Answer: An artist’s or photographer’s workshop or the room in which an artist works.
+
+---
+
+Complete: sage is... → sage is A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher..
+
+---
+
+Question: Define amy.
+Answer: 
+
+---
+
+Question: Define first.
+Answer: The person or thing in the first position.
+
+---
+
+Question: What is behalf?
+Answer: behalf is .
+
+---
+
+Complete: editor is... → editor is A person who edits or makes changes to documents..
+
+---
+
+Question: What is another?
+Answer: another is An additional one of the same kind..
+
+---
+
+Complete: featuring is... → featuring is To ascribe the greatest importance to something within a certain context..
+
+---
+
+Question: What is well?
+Answer: well is In good health..
+
+---
+
+Question: What is health?
+Answer: health is The state of being free from physical or psychological disease, illness, or malfunction; wellness..
+
+---
+
+Question: Define quarterly.
+Answer: A periodical publication that appears four times per year.
+
+---
+
+Complete: building is... → building is The act or process by which something is built; construction..
+
+---
+
+Question: What is pennsylvania?
+Answer: pennsylvania is .
+
+---
+
+Question: Define assembly.
+Answer: A set of pieces that work together in unison as a mechanism or device.
+
+---
+
+Question: Define playing.
+Answer: To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment.
+
+---
+
+Question: Describe pannonia savia or simply savia, also known as pannonia ripariensis, was a late roman province.
+Answer: Pannonia Savia or simply Savia, also known as Pannonia Ripariensis, was a Late Roman province.
+
+---
+
+Question: What is japan?
+Answer: japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Question: What is borough?
+Answer: borough is A fortified town..
+
+---
+
+Complete: illness is... → illness is An instance of a disease or poor health..
+
+---
+
+Question: Define methods.
+Answer: A process by which a task is completed;...
+
+---
+
+Question: Define consultative.
+Answer: That gives advice or consultation; advisory.
+
+---
+
+Question: Define pavalko.
+Answer: 
+
+---
+
+Complete: its is... → its is One who is neither a he nor a she; a creature; a dehumanized being..
+
+---
+
+Question: Define billboard.
+Answer: A very large outdoor sign, generally used for advertising.
+
+---
+
+Question: What is european?
+Answer: european is .
+
+---
+
+Question: What is elements?
+Answer: elements is One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based..
+
+---
+
+Question: Define where.
+Answer: The place in which something happens.
+
+---
+
+Question: Define singer.
+Answer: A person who sings, often professionally.
+
+---
+
+Complete: much is... → much is Large, great..
+
+---
+
+Complete: ski is... → ski is One of a pair of long flat runners designed for gliding over snow or water.
+
+---
+
+Question: What is united?
+Answer: united is To bring together as one..
+
+---
+
+Question: Define wang.
+Answer: 
+
+---
+
+Question: Define umberson.
+Answer: 
+
+---
+
+Question: What is amy?
+Answer: amy is .
+
+---
+
+Question: What is unions?
+Answer: unions is The act of uniting or joining two or more things into one..
+
+---
+
+Question: Tell me about árstíðir is an icelandic classically influenced indie-folk rock/chamber pop band.
+Answer: Árstíðir is an Icelandic classically influenced indie-folk rock/chamber pop band.
+
+---
+
+Question: What is juicy?
+Answer: juicy is Having lots of juice..
+
+---
+
+Question: What is gilbert?
+Answer: gilbert is .
+
+---
+
+Question: What is sage?
+Answer: sage is A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher..
+
+---
+
+Question: What is jacques?
+Answer: jacques is .
+
+---
+
+Continue: "Sign of the Times" is a song by the American progressive metal band Queensrÿche. → It was released as a single in support of their 1997 album Hear in the Now Frontier. The topics of this song are of school violence prevention gone overboard, racial hatred, and corrupt politicians.
+
+---
+
+Question: What is association?
+Answer: association is The act of associating..
+
+---
+
+Question: What is from?
+Answer: from is Used to indicate source or provenance..
+
+---
+
+Question: Define namco.
+Answer: 
+
+---
+
+Complete: covers is... → covers is A lid..
+
+---
+
+Question: What is pavalko?
+Answer: pavalko is .
+
+---
+
+Complete: gilbert is... → gilbert is .
+
+---
+
+Complete: committee is... → committee is A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols..
+
+---
+
+Question: What is contains?
+Answer: contains is To hold inside..
+
+---
+
+Complete: brian is... → brian is .
+
+---
+
+Complete: collaborated is... → collaborated is To work together with others to achieve a common goal..
+
+---
+
+Question: Define god.
+Answer: A being such as a monotheistic God: a single divine creator and ruler of the universe.
+
+---
+
+Question: What is futuristic?
+Answer: futuristic is Of technology, a concept, etc, so far advanced as to appear to be from the future..
+
+---
+
+Question: Define medicine.
+Answer: A substance which specifically promotes healing when ingested or consumed in some way.
+
+---
+
+Question: What is artists?
+Answer: artists is A person who creates art..
+
+---
+
+Complete: graphics is... → graphics is The making of architectural or design drawings..
+
+---
+
+Question: What is earliest?
+Answer: earliest is At a time in advance of the usual or expected event..
+
+---
+
+Question: What is slump?
+Answer: slump is A heavy or helpless collapse; a slouching or drooping posture; a period of poor activity or performance, especially an extended period..
+
+---
+
+Question: Define with.
+Answer: Along, together with others, in a group, etc.
+
+---
+
+Question: Define previous.
+Answer: An existing criminal record (short for "previous convictions")
+
+---
+
+Question: Define after.
+Answer: Later; second (of two); next, following, subsequent
+
+---
+
+Complete: assembly is... → assembly is A set of pieces that work together in unison as a mechanism or device..
+
+---
+
+Question: Define slump.
+Answer: A heavy or helpless collapse; a slouching or drooping posture; a period of poor activity or performance, especially an extended period.
+
+---
+
+Question: Tell me about predrag azdejković is a serbian lgbt human rights activist, journalist, writer, filmmaker and theater producer.
+Answer: Predrag Azdejković is a Serbian LGBT human rights activist, journalist, writer, filmmaker and theater producer.
+
+---
+
+Question: Define third.
+Answer: The person or thing in the third position.
+
+---
+
+Complete: playstation is... → playstation is .
+
+---
+
+Complete: korea is... → korea is .
+
+---
+
+Complete: understanding is... → understanding is To grasp a concept fully and thoroughly, especially....
+
+---
+
+Question: Explain predrag azdejković is a serbian lgbt human rights activist, journalist, writer, filmmaker and theater producer.
+Answer: Predrag Azdejković is a Serbian LGBT human rights activist, journalist, writer, filmmaker and theater producer.
+
+---
+
+Complete: deborah is... → deborah is .
+
+---
+
+Question: Define borough.
+Answer: A fortified town.
+
+---
+
+Complete: third is... → third is The person or thing in the third position..
+
+---
+
+Continue: Pannonia Savia or simply Savia, also known as Pannonia Ripariensis, was a Late Roman province. → It was formed in the year 295, during the Tetrarchy reform of Roman emperor Diocletian, and assigned to the civil diocese of Pannonia, which was attached in the fourth century to the Praetorian prefecture of Illyricum, and later to the Praetorian prefecture of Italy.
+
+---
+
+Complete: made is... → made is A grub or maggot..
+
+---
+
+Question: Tell me about "sign of the times" is a song by the american progressive metal band queensrÿche.
+Answer: "Sign of the Times" is a song by the American progressive metal band Queensrÿche.
+
+---
+
+Complete: fruit is... → fruit is (often in the plural) In general, a product of plant growth useful to man or animals..
+
+---
+
+Question: Define production.
+Answer: The act of producing, making or creating something.
+
+---
+
+Question: Define tactical.
+Answer: A combinator of proof tactics.
+
+---
+
+Question: What is dat?
+Answer: dat is (degree) To a given extent or degree..
+
+---
+
+Question: What is that?
+Answer: that is Something being indicated that is there; one of those..
+
+---
+
+Question: What is was?
+Answer: was is .
+
+---
+
+Complete: journal is... → journal is A diary or daily record of a person, organization, vessel etc.; daybook..
+
+---
+
+Complete: delors is... → delors is .
+
+---
+
+Question: Define formerly.
+Answer: At some time in the past
+
+---
+
+Question: What is understanding?
+Answer: understanding is To grasp a concept fully and thoroughly, especially....
+
+---
+
+Question: Define february.
+Answer: 
+
+---
+
+Question: What is burdette?
+Answer: burdette is .
+
+---
+
+Continue: Árstíðir is an Icelandic classically influenced indie-folk rock/chamber pop band. → The defining characteristic of this band is their vocal harmonies, as all members sing.
+
+---
+
+Complete: tactical is... → tactical is A combinator of proof tactics..
+
+---
+
+Complete: such is... → such is Something being indicated that is similar to something else..
+
+---
+
+Question: Define social.
+Answer: A festive gathering to foster introductions.
+
+---
+
+Question: Define which.
+Answer: (interrogative) What one or ones (of those mentioned or implied).
+
+---
+
+Question: What is playstation?
+Answer: playstation is .
+
+---
+
+Complete: debra is... → debra is .
+
+---
+
+Question: What is imanuel?
+Answer: imanuel is .
+
+---
+
+Question: Define fantasy.
+Answer: That which comes from one's imagination.
+
+---
+
+Question: Define southeast.
+Answer: The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE.
+
+---
+
+Question: Define viral.
+Answer: A video, image or text spread by "word of mouth" on the internet or by e-mail for humorous, political or marketing purposes.
+
+---
+
+Question: What is mars?
+Answer: mars is A blemish..
+
+---
+
+Question: Define released.
+Answer: To let go (of); to cease to hold or contain.
+
+---
+
+Question: Define time.
+Answer: The inevitable progression into the future with the passing of present and past events.
+
+---
+
+Question: Define pennsylvania.
+Answer: 
+
+---
+
+Question: What is god?
+Answer: god is A being such as a monotheistic God: a single divine creator and ruler of the universe..
+
+---
+
+Question: What is publishing?
+Answer: publishing is To issue (something, such as printed work) for....
+
+---
+
+Question: Define population.
+Answer: The people living within a political or geographical boundary.
+
+---
+
+Question: Define ski.
+Answer: One of a pair of long flat runners designed for gliding over snow or water
+
+---
+
+Question: Define fully.
+Answer: In a full manner; without lack or defect.
+
+---
+
+Complete: care is... → care is Grief, sorrow..
+
+---
+
+Question: Define chief.
+Answer: A leader or head of a group of people, organisation, etc.
+
+---
+
+Question: What is established?
+Answer: established is To make stable or firm; to confirm..
+
+---
+
+Complete: workers is... → workers is A person who performs labor for a living, especially manual labor..
+
+---
+
+Complete: ones is... → ones is The digit or figure 1..
+
+---
+
+Complete: artists is... → artists is A person who creates art..
+
+---
+
+Question: What is illness?
+Answer: illness is An instance of a disease or poor health..
+
+---
+
+Complete: quarterly is... → quarterly is A periodical publication that appears four times per year..
+
+---
+
+Complete: michael is... → michael is .
+
+---
+
+A function is a reusable block of code that performs a specific task. Functions help organize code and avoid repetition.
+
+---
+
+Complete: richard is... → richard is .
+
+---
+
+Complete: academic is... → academic is (usually capitalized) A follower of Plato, a Platonist..
+
+---
+
+Complete: march is... → march is A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies..
+
+---
+
+Complete: american is... → american is .
+
+---
+
+Complete: social is... → social is A festive gathering to foster introductions..
+
+---
+
+Question: What is indonesian?
+Answer: indonesian is .
+
+---
+
+Question: Define both.
+Answer: Each of the two, or of the two kinds.
+
+---
+
+Complete: zyrus is... → zyrus is .
+
+---
+
+Question: What is long?
+Answer: long is A long vowel..
+
+---
+
+Complete: pavalko is... → pavalko is .
+
+---
+
+Question: What is ones?
+Answer: ones is The digit or figure 1..
+
+---
+
+Question: Define juicy.
+Answer: Having lots of juice.
+
+---
+
+Question: What is mission?
+Answer: mission is A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself..
+
+---
+
+Question: Define imanuel.
+Answer: 
+
+---
+
+Question: What is belliardstraat?
+Answer: belliardstraat is .
+
+---
+
+Question: Tell me about pannonia savia or simply savia, also known as pannonia ripariensis, was a late roman province.
+Answer: Pannonia Savia or simply Savia, also known as Pannonia Ripariensis, was a Late Roman province.
+
+---
+
+Question: What is include?
+Answer: include is A piece of source code or other content....
+
+---
+
+Question: What is via?
+Answer: via is A main road or highway, especially in ancient Rome. (Mainly used in set phrases, below.).
+
+---
+
+Question: Define china.
+Answer: The plant Smilax china, a liana of much of eastern Asia.
+
+---
+
+Question: What are javascript variables?
+Answer: Variables in JavaScript store data values. You can declare them with let, const, or var.
+
+---
+
+Complete: contains is... → contains is To hold inside..
+
+---
+
+Question: Tell me about drew is a city in sunflower county, mississippi, united states.
+Answer: Drew is a city in Sunflower County, Mississippi, United States.
+
+---
+
+Complete: sailor is... → sailor is A person in the business of navigating ships or other vessels.
+
+---
+
+Complete: employers is... → employers is A person, firm or other entity which pays for or hires the services of another person..
+
+---
+
+Question: Define was.
+Answer: 
+
+---
+
+Complete: gum is... → gum is (often in the plural) The flesh around the teeth..
+
+---
+
+Question: What is billboard?
+Answer: billboard is A very large outdoor sign, generally used for advertising..
+
+---
+
+Complete: representatives is... → representatives is A delegate..
+
+---
+
+Complete: jackson is... → jackson is .
+
+---
+
+Question: What is concepts?
+Answer: concepts is An abstract and general idea; an abstraction..
+
+---
+
+Complete: earliest is... → earliest is At a time in advance of the usual or expected event..
+
+---
+
+Complete: established is... → established is To make stable or firm; to confirm..
+
+---
+
+Question: What is social?
+Answer: social is A festive gathering to foster introductions..
+
+---
+
+Question: What is fruit?
+Answer: fruit is (often in the plural) In general, a product of plant growth useful to man or animals..
+
+---
+
+Question: Define advisory.
+Answer: A warning.
+
+---
+
+Complete: mission is... → mission is A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself..
+
+---
+
+Question: Define mars.
+Answer: A blemish.
+
+---
+
+Complete: top is... → top is The highest or uppermost part of something..
+
+---
+
+Question: Explain css selectors.
+Answer: CSS selectors target HTML elements for styling. You can select by tag name, class, ID, or other attributes.
+
+---
+
+Complete: organisations is... → organisations is The quality of being organized..
+
+---
+
+Question: What are python lists?
+Answer: A list is an ordered collection of items in Python. Lists are mutable, meaning you can change them after creation.
+
+---
+
+Complete: amy is... → amy is .
+
+---
+
+Complete: behavior is... → behavior is Human conduct relative to social norms..
+
+---
+
+Question: What is release?
+Answer: release is The event of setting (someone or something) free (e.g. hostages, slaves, prisoners, caged animals, hooked or stuck mechanisms)..
+
+---
+
+Question: What is gum?
+Answer: gum is (often in the plural) The flesh around the teeth..
+
+---
+
+Question: What is been?
+Answer: been is A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey..
+
+---
+
+Complete: hughes is... → hughes is .
+
+---
+
+Question: What is collaborated?
+Answer: collaborated is To work together with others to achieve a common goal..
+
+---
+
+Question: Define county.
+Answer: The land ruled by a count or a countess.
+
+---
+
+Complete: southeast is... → southeast is The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE..
+
+---
+
+Question: Define titled.
+Answer: To assign a title to; to entitle.
+
+---
+
+Question: Define featuring.
+Answer: To ascribe the greatest importance to something within a certain context.
+
+---
+
+Question: Define artists.
+Answer: A person who creates art.
+
+---
+
+Complete: rising is... → rising is To move, or appear to move, physically upwards relative to the ground..
+
+---
+
+Question: Explain html elements.
+Answer: HTML elements are the building blocks of web pages. Each element has an opening tag, content, and a closing tag.
+
+---
+
+Question: Define building.
+Answer: The act or process by which something is built; construction.
+
+---
+
+Complete: behalf is... → behalf is .
+
+---
+
+Question: What is fully?
+Answer: fully is In a full manner; without lack or defect..
+
+---
+
+Complete: population is... → population is The people living within a political or geographical boundary..
+
+---
+
+Question: What is covers?
+Answer: covers is A lid..
+
+---
+
+Question: What is riaa?
+Answer: riaa is .
+
+---
+
+Question: Define seat.
+Answer: Something to be sat upon.
+
+---
+
+Question: What is rising?
+Answer: rising is To move, or appear to move, physically upwards relative to the ground..
+
+---
+
+Question: Define united.
+Answer: To bring together as one.
+
+---
+
+Question: Define release.
+Answer: The event of setting (someone or something) free (e.g. hostages, slaves, prisoners, caged animals, hooked or stuck mechanisms).
+
+---
+
+Question: What is eliza?
+Answer: eliza is .
+
+---
+
+Complete: released is... → released is To let go (of); to cease to hold or contain..
+
+---
+
+Question: What is has?
+Answer: has is To possess, own..
+
+---
+
+Question: What is moi?
+Answer: moi is (often used questioningly to express mock surprise) Me..
+
+---
+
+Question: What is made?
+Answer: made is A grub or maggot..
+
+---
+
+A route in Flask connects a URL to a Python function. When someone visits that URL, the function runs and returns a response.
+
+---
+
+Complete: futuristic is... → futuristic is Of technology, a concept, etc, so far advanced as to appear to be from the future..
+
+---
+
+Question: Define later.
+Answer: Near the end of a period of time.
+
+---
+
+Question: What is published?
+Answer: published is To issue (something, such as printed work) for distribution and/or sale..
+
+---
+
+Complete: peaked is... → peaked is Having a peak or peaks..
+
+---
+
+Complete: fully is... → fully is In a full manner; without lack or defect..
+
+---
+
+Question: Define rising.
+Answer: To move, or appear to move, physically upwards relative to the ground.
+
+---
+
+Complete: elements is... → elements is One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based..
+
+---
+
+Question: What is time?
+Answer: time is The inevitable progression into the future with the passing of present and past events..
+
+---
+
+Question: Define been.
+Answer: A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey.
+
+---
+
+Question: What is production?
+Answer: production is The act of producing, making or creating something..
+
+---
+
+Question: Define jackson.
+Answer: 
+
+---
+
+Question: Define burdette.
+Answer: 
+
+---
+
+Question: Define park.
+Answer: An area of land set aside for environment preservation or recreation.
+
+---
+
+Complete: sociological is... → sociological is Of or pertaining to sociology..
+
+---
+
+Complete: unions is... → unions is The act of uniting or joining two or more things into one..
+
+---
+
+Question: What is fantasy?
+Answer: fantasy is That which comes from one's imagination..
+
+---
+
+Complete: incorporated is... → incorporated is To include (something) as a part..
+
+---
+
+Complete: european is... → european is .
+
+---
+
+Complete: union is... → union is The act of uniting or joining two or more things into one..
+
+---
+
+Question: What is volfoss?
+Answer: volfoss is .
+
+---
+
+Complete: editors is... → editors is A person who edits or makes changes to documents..
+
+---
+
+Complete: production is... → production is The act of producing, making or creating something..
+
+---
+
+Question: What is representatives?
+Answer: representatives is A delegate..
+
+---
+
+Question: Describe árstíðir is an icelandic classically influenced indie-folk rock/chamber pop band.
+Answer: Árstíðir is an Icelandic classically influenced indie-folk rock/chamber pop band.
+
+---
+
+Complete: moi is... → moi is (often used questioningly to express mock surprise) Me..
+
+---
+
+Complete: front is... → front is The foremost side of something or the end that faces the direction it normally moves..
+
+---
+
+Question: Define developed.
+Answer: To change with a specific direction, progress.
+
+---
+
+Question: Define introduced.
+Answer: (of people) To cause (someone) to be acquainted (with someone else).
+
+---
+
+Complete: known is... → known is To perceive the truth or factuality of; to be certain of or that..
+
+---
+
+Question: Define michael.
+Answer: 
+
+---
+
+Question: Define much.
+Answer: Large, great.
+
+---
+
+Question: Define mask.
+Answer: A cover, or partial cover, for the face, used for disguise or protection.
+
+---
+
+Question: Define body.
+Answer: Physical frame.
+
+---
+
+Question: Define employers.
+Answer: A person, firm or other entity which pays for or hires the services of another person.
+
+---
+
+Question: What is american?
+Answer: american is .
+
+---
+
+Complete: introduced is... → introduced is (of people) To cause (someone) to be acquainted (with someone else)..
+
+---
+
+Complete: was is... → was is .
+
+---
+
+Question: What is carpiano?
+Answer: carpiano is .
+
+---
+
+Question: What is states?
+Answer: states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Question: Explain pannonia savia or simply savia, also known as pannonia ripariensis, was a late roman province.
+Answer: Pannonia Savia or simply Savia, also known as Pannonia Ripariensis, was a Late Roman province.
+
+---
+
+Complete: since is... → since is From a specified time in the past..
+
+---
+
+Question: Define gilbert.
+Answer: 
+
+---
+
+Question: What is january?
+Answer: january is .
+
+---
+
+Complete: later is... → later is Near the end of a period of time..
+
+---
+
+Question: What is such?
+Answer: such is Something being indicated that is similar to something else..
+
+---
+
+Question: What is predrag azdejković is a serbian lgbt human rights activist, journalist, writer, filmmaker and theater producer?
+Answer: Predrag Azdejković is a Serbian LGBT human rights activist, journalist, writer, filmmaker and theater producer.
+
+---
+
+Question: Define awaited.
+Answer: To wait for.
+
+---
+
+Complete: application is... → application is The act of applying or laying on, in a literal sense.
+
+---
+
+Question: What is role?
+Answer: role is A character or part played by a performer or actor..
+
+---
+
+Question: Define eliza.
+Answer: 
+
+---
+
+Complete: methods is... → methods is A process by which a task is completed;....
+
+---
+
+Question: What is committee?
+Answer: committee is A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols..
+
+---
+
+Question: Define single.
+Answer: A 45 RPM vinyl record with one song on side A and one on side B.
+
+---
+
+Question: What is professionally?
+Answer: professionally is As a professional; for one's paid career..
+
+---
+
+Question: Define would.
+Answer: Something that would happen, or would be the case, under different circumstances; a potentiality.
+
+---
+
+Question: What is still?
+Answer: still is A period of calm or silence..
+
+---
+
+Complete: rapper is... → rapper is One who, or that which, raps or knocks..
+
+---
+
+Question: What is regions?
+Answer: regions is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Complete: single is... → single is A 45 RPM vinyl record with one song on side A and one on side B..
+
+---
+
+Question: What is brightside?
+Answer: brightside is .
+
+---
+
+Question: What is formerly?
+Answer: formerly is At some time in the past.
+
+---
+
+Question: What is sociological?
+Answer: sociological is Of or pertaining to sociology..
+
+---
+
+Question: What is jackson?
+Answer: jackson is .
+
+---
+
+Question: Define made.
+Answer: A grub or maggot.
+
+---
+
+Question: Define published.
+Answer: To issue (something, such as printed work) for distribution and/or sale.
+
+---
+
+Complete: february is... → february is .
+
+---
+
+Question: Define wayne.
+Answer: 
+
+---
+
+Question: What is chewing?
+Answer: chewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed..
+
+---
+
+Question: What is studio?
+Answer: studio is An artist’s or photographer’s workshop or the room in which an artist works..
+
+---
+
+Complete: publishing is... → publishing is To issue (something, such as printed work) for....
+
+---
+
+Complete: fantasy is... → fantasy is That which comes from one's imagination..
+
+---
+
+Complete: county is... → county is The land ruled by a count or a countess..
+
+---
+
+Complete: census is... → census is An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals..
+
+---
+
+Question: Define workers.
+Answer: A person who performs labor for a living, especially manual labor.
+
+---
+
+Complete: like is... → like is (usually in the plural) Something that a person likes (prefers)..
+
+---
+
+Question: What is seat?
+Answer: seat is Something to be sat upon..
+
+---
+
+Question: Define mission.
+Answer: A set of tasks that fulfills a purpose or duty; an assignment set by an employer, or by oneself.
+
+---
+
+Question: Define academic.
+Answer: (usually capitalized) A follower of Plato, a Platonist.
+
+---
+
+Complete: game is... → game is A playful or competitive activity..
+
+---
+
+Question: What is census?
+Answer: census is An official count or enumeration of members of a population (not necessarily human), usually residents or citizens in a particular region, often done at regular intervals..
+
+---
+
+Complete: filipino is... → filipino is .
+
+---
+
+Complete: brand is... → brand is A conflagration; a flame..
+
+---
+
+Complete: jacques is... → jacques is .
+
+---
+
+Question: Define earliest.
+Answer: At a time in advance of the usual or expected event.
+
+---
+
+Question: Define deborah.
+Answer: 
+
+---
+
+Question: Define delors.
+Answer: 
+
+---
+
+A dictionary stores key-value pairs. Each key is unique and maps to a specific value, like a real dictionary maps words to definitions.
+
+---
+
+Question: What is deborah?
+Answer: deborah is .
+
+---
+
+Complete: still is... → still is A period of calm or silence..
+
+---
+
+Complete: with is... → with is Along, together with others, in a group, etc..
+
+---
+
+Complete: society is... → society is A long-standing group of people sharing cultural aspects such as language, dress, norms of behavior and artistic forms..
+
+---
+
+Question: What is previous?
+Answer: previous is An existing criminal record (short for "previous convictions").
+
+---
+
+Question: What is building?
+Answer: building is The act or process by which something is built; construction..
+
+---
+
+Question: What is where?
+Answer: where is The place in which something happens..
+
+---
+
+Question: Define committee.
+Answer: A body of one or more persons convened for the accomplishment of some specific purpose, typically with formal protocols.
+
+---
+
+Complete: united is... → united is To bring together as one..
+
+---
+
+Question: Define south.
+Answer: One of the four major compass points, specifically 180°, directed toward the South Pole, and conventionally downwards on a map, abbreviated as S.
+
+---
+
+Complete: kream is... → kream is .
+
+---
+
+Question: Define january.
+Answer: 
+
+---
+
+Complete: consultative is... → consultative is That gives advice or consultation; advisory..
+
+---
+
+Question: What is rue?
+Answer: rue is Sorrow; repentance; regret..
+
+---
+
+Complete: certified is... → certified is To attest to (a fact) as the truth..
+
+---
+
+Question: Define brightside.
+Answer: 
+
+---
+
+Question: What is graphics?
+Answer: graphics is The making of architectural or design drawings..
+
+---
+
+Question: What is chungha?
+Answer: chungha is .
+
+---
+
+Question: Define has.
+Answer: To possess, own.
+
+---
+
+Complete: january is... → january is .
+
+---
+
+Question: What is subsidiary?
+Answer: subsidiary is A company owned by a parent company or a holding company, also called daughter company or sister company..
+
+---
+
+Complete: carpiano is... → carpiano is .
+
+---
+
+Question: What is academic?
+Answer: academic is (usually capitalized) A follower of Plato, a Platonist..
+
+---
+
+Question: What is south?
+Answer: south is One of the four major compass points, specifically 180°, directed toward the South Pole, and conventionally downwards on a map, abbreviated as S..
+
+---
+
+Complete: reviewed is... → reviewed is To survey; to look broadly over..
+
+---
+
+Question: Define surreal.
+Answer: Surreal number
+
+---
+
+Question: Define still.
+Answer: A period of calm or silence.
+
+---
+
+Continue: Predrag Azdejković is a Serbian LGBT human rights activist, journalist, writer, filmmaker and theater producer. → Azdejković is the director of the Gay Lesbian Info Center, and was the director of the Merlinka festival, until he resigned following comments described as transphobic. He is also the editor in chief of Serbian only gay magazine Optimist, and producer of several short films and documentaries and award-winning plays dedicated to LGBT Serbians.
+
+---
+
+Question: Define dat.
+Answer: (degree) To a given extent or degree.
+
+---
+
+Complete: belliardstraat is... → belliardstraat is .
+
+---
+
+Complete: associations is... → associations is The act of associating..
+
+---
+
+Question: What is advisory?
+Answer: advisory is A warning..
+
+---
+
+Question: Define elements.
+Answer: One of the simplest or essential parts or principles of which anything consists, or upon which the constitution or fundamental powers of anything are based.
+
+---
+
+Variables in JavaScript store data values. You can declare them with let, const, or var.
+
+---
+
+Question: What is drew is a city in sunflower county, mississippi, united states?
+Answer: Drew is a city in Sunflower County, Mississippi, United States.
+
+---
+
+Question: Define and.
+Answer: In rhythm, the second half of a divided beat.
+
+---
+
+Question: Define sage.
+Answer: A wise person or spiritual teacher; someone of gravity and wisdom, especially, a teacher venerable for years, and of sound judgment and prudence; a grave or stoic philosopher.
+
+---
+
+Question: Describe predrag azdejković is a serbian lgbt human rights activist, journalist, writer, filmmaker and theater producer.
+Answer: Predrag Azdejković is a Serbian LGBT human rights activist, journalist, writer, filmmaker and theater producer.
+
+---
+
+Question: What is featuring?
+Answer: featuring is To ascribe the greatest importance to something within a certain context..
+
+---
+
+Question: Define japan.
+Answer: A hard black enamel varnish containing asphalt.
+
+---
+
+Question: Define european.
+Answer: 
+
+---
+
+Question: What is wang?
+Answer: wang is .
+
+---
+
+Question: Define belliard.
+Answer: 
+
+---
+
+Question: Define jae.
+Answer: 
+
+---
+
+Complete: playing is... → playing is To act in a manner such that one has fun; to engage in activities expressly for the purpose of recreation or entertainment..
+
+---
+
+Complete: published is... → published is To issue (something, such as printed work) for distribution and/or sale..
+
+---
+
+Complete: medicine is... → medicine is A substance which specifically promotes healing when ingested or consumed in some way..
+
+---
+
+Question: What are python functions?
+Answer: A function is a reusable block of code that performs a specific task. Functions help organize code and avoid repetition.
+
+---
+
+Complete: environment is... → environment is The surroundings of, and influences on, a particular item of interest..
+
+---
+
+Question: What is bethany?
+Answer: bethany is .
+
+---
+
+Question: What is tick?
+Answer: tick is A tiny woodland arachnid of the suborder Ixodida..
+
+---
+
+Complete: soewarno is... → soewarno is .
+
+---
+
+Complete: dat is... → dat is (degree) To a given extent or degree..
+
+---
+
+Question: What is single?
+Answer: single is A 45 RPM vinyl record with one song on side A and one on side B..
+
+---
+
+Complete: civil is... → civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Complete: for is... → for is .
+
+---
+
+Question: What is flavors?
+Answer: flavors is To add flavoring to something..
+
+---
+
+Question: Define via.
+Answer: A main road or highway, especially in ancient Rome. (Mainly used in set phrases, below.)
+
+---
+
+Complete: role is... → role is A character or part played by a performer or actor..
+
+---
+
+Question: What is zyrus?
+Answer: zyrus is .
+
+---
+
+Question: Define gum.
+Answer: (often in the plural) The flesh around the teeth.
+
+---
+
+Question: Define the.
+Answer: With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives.
+
+---
+
+Question: What is editors?
+Answer: editors is A person who edits or makes changes to documents..
+
+---
+
+Question: Define incorporated.
+Answer: To include (something) as a part.
+
+---
+
+Complete: mask is... → mask is A cover, or partial cover, for the face, used for disguise or protection..
+
+---
+
+Question: Define kream.
+Answer: 
+
+---
+
+Question: What is kream?
+Answer: kream is .
+
+---
+
+Question: Define journal.
+Answer: A diary or daily record of a person, organization, vessel etc.; daybook.
+
+---
+
+Question: What are git commits?
+Answer: A commit in Git saves changes to your repository. Each commit has a unique hash and a message describing the changes.
+
+---
+
+Question: Define certified.
+Answer: To attest to (a fact) as the truth.
+
+---
+
+Question: Explain python dictionaries.
+Answer: A dictionary stores key-value pairs. Each key is unique and maps to a specific value, like a real dictionary maps words to definitions.
+
+---
+
+Question: Define known.
+Answer: To perceive the truth or factuality of; to be certain of or that.
+
+---
+
+Complete: that is... → that is Something being indicated that is there; one of those..
+
+---
+
+Complete: namco is... → namco is .
+
+---
+
+Question: What is wayne?
+Answer: wayne is .
+
+---
+
+Complete: developed is... → developed is To change with a specific direction, progress..
+
+---
+
+Question: Define graphics.
+Answer: The making of architectural or design drawings.
+
+---
+
+Question: What is peaked?
+Answer: peaked is Having a peak or peaks..
+
+---
+
+Question: What is march?
+Answer: march is A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies..
+
+---
+
+Question: Define understanding.
+Answer: To grasp a concept fully and thoroughly, especially...
+
+---
+
+Question: What is kelly?
+Answer: kelly is .
+
+---
+
+Complete: would is... → would is Something that would happen, or would be the case, under different circumstances; a potentiality..
+
+---
+
+Question: What is delors?
+Answer: delors is .
+
+---
+
+Question: What is debra?
+Answer: debra is .
+
+---
+
+Complete: jae is... → jae is .
+
+---
+
+Complete: from is... → from is Used to indicate source or provenance..
+
+---
+
+Question: Define another.
+Answer: An additional one of the same kind.
+
+---
+
+Question: Define organization.
+Answer: The quality of being organized.
+
+---
+
+Complete: well is... → well is In good health..
+
+---
+
+Complete: august is... → august is Awe-inspiring, majestic, noble, venerable..
+
+---
+
+Question: What is methods?
+Answer: methods is A process by which a task is completed;....
+
+---
+
+Question: Explain drew is a city in sunflower county, mississippi, united states.
+Answer: Drew is a city in Sunflower County, Mississippi, United States.
+
+---
+
+Continue: Drew is a city in Sunflower County, Mississippi, United States. As of the 2020 census, Drew had a population of 1,852. → Drew is in the vicinity of several plantations and the Mississippi State Penitentiary, a Mississippi Department of Corrections prison for men. It is noted for being the site of several racist murders, including the lynching of Joe Pullen in 1923 and of Emmett Till in 1955.
+
+---
+
+Question: What are python dictionaries?
+Answer: A dictionary stores key-value pairs. Each key is unique and maps to a specific value, like a real dictionary maps words to definitions.
+
+---
+
+Complete: states is... → states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Question: Describe drew is a city in sunflower county, mississippi, united states.
+Answer: Drew is a city in Sunflower County, Mississippi, United States.
+
+---
+
+Question: Define its.
+Answer: One who is neither a he nor a she; a creature; a dehumanized being.
+
+---
+
+Question: What is first?
+Answer: first is The person or thing in the first position..
+
+---
+
+Question: Define for.
+Answer: 
+
+---
+
+Complete: japan is... → japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Question: What is brian?
+Answer: brian is .
+
+---
+
+Question: What is application?
+Answer: application is The act of applying or laying on, in a literal sense.
+
+---
+
+Complete: god is... → god is A being such as a monotheistic God: a single divine creator and ruler of the universe..
+
+---
+
+Complete: studio is... → studio is An artist’s or photographer’s workshop or the room in which an artist works..
+
+---
+
+Question: Define that.
+Answer: Something being indicated that is there; one of those.
+
+---
+
+Question: Define composed.
+Answer: To make something by merging parts.
+
+---
+
+Question: Define soewarno.
+Answer: 
+
+---
+
+Question: Define union.
+Answer: The act of uniting or joining two or more things into one.
+
+---
+
+Question: Define peer.
+Answer: A look; a glance.
+
+---
+
+Complete: burdette is... → burdette is .
+
+---
+
+Question: What is like?
+Answer: like is (usually in the plural) Something that a person likes (prefers)..
+
+---
+
+Question: What is august?
+Answer: august is Awe-inspiring, majestic, noble, venerable..
+
+---
+
+Complete: viral is... → viral is A video, image or text spread by "word of mouth" on the internet or by e-mail for humorous, political or marketing purposes..
+
+---
+
+Question: Define game.
+Answer: A playful or competitive activity.
+
+---
+
+Complete: the is... → the is With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives..
+
+---
+
+Complete: borough is... → borough is A fortified town..
+
+---
+
+Complete: rue is... → rue is Sorrow; repentance; regret..
+
+---
+
+Complete: economic is... → economic is Pertaining to an economy..
+
+---
+
+Complete: organization is... → organization is The quality of being organized..
+
+---
+
+Complete: regions is... → regions is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Question: What is composed?
+Answer: composed is To make something by merging parts..
+
+---
+
+Complete: long is... → long is A long vowel..
+
+---
+
+Question: Define volfoss.
+Answer: 
+
+---
+
+Complete: after is... → after is Later; second (of two); next, following, subsequent.
+
+---
+
+Question: What is southeast?
+Answer: southeast is The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE..
+
+---
+
+Question: What is known?
+Answer: known is To perceive the truth or factuality of; to be certain of or that..
+
+---
+
+Question: What is árstíðir is an icelandic classically influenced indie-folk rock/chamber pop band?
+Answer: Árstíðir is an Icelandic classically influenced indie-folk rock/chamber pop band.
+
+---
+
+Question: What is gee?
+Answer: gee is A general exclamation of surprise or frustration..
+
+---
+
+Question: Define representatives.
+Answer: A delegate.
+
+---
+
+Question: What is february?
+Answer: february is .
+
+---
+
+Question: Define editors.
+Answer: A person who edits or makes changes to documents.
+
+---
+
+Complete: previous is... → previous is An existing criminal record (short for "previous convictions").
+
+---
+
+Question: Define top.
+Answer: The highest or uppermost part of something.
+
+---
+
+Question: Define indonesian.
+Answer: 
+
+---
+
+Question: What is hughes?
+Answer: hughes is .
+
+---
+
+Question: Define carr.
+Answer: A bog or marsh; marshy ground, swampland.
+
+---
+
+Question: What is brussels?
+Answer: brussels is .
+
+---
+
+Question: Define shares.
+Answer: A portion of something, especially a portion given or allotted to someone.
+
+---
+
+Question: What is sailor?
+Answer: sailor is A person in the business of navigating ships or other vessels.
+
+---
+
+Question: What is reviewed?
+Answer: reviewed is To survey; to look broadly over..
+
+---
+
+Question: What is chief?
+Answer: chief is A leader or head of a group of people, organisation, etc..
+
+---
+
+Question: Define his.
+Answer: Honorific alternative letter-case form of his, sometimes used when referring to God or another important figure who is understood from context.
+
+---
+
+Complete: shares is... → shares is A portion of something, especially a portion given or allotted to someone..
+
+---
+
+Question: What is game?
+Answer: game is A playful or competitive activity..
+
+---
+
+Complete: eliza is... → eliza is .
+
+---
+
+Question: Define behalf.
+Answer: 
+
+---
+
+Question: What is which?
+Answer: which is (interrogative) What one or ones (of those mentioned or implied)..
+
+---
+
+Complete: been is... → been is A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey..
+
+---
+
+Question: Define filipino.
+Answer: 
+
+---
+
+Question: Define zyrus.
+Answer: 
+
+---
+
+Question: What is the?
+Answer: the is With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives..
+
+---
+
+Continue: Predrag Azdejković is a Serbian LGBT human rights activist, journalist, writer, filmmaker and theater producer. Azdejković is the director of the Gay Lesbian Info Center, and was the director of the Merlinka festival, until he resigned following comments described as transphobic. → He is also the editor in chief of Serbian only gay magazine Optimist, and producer of several short films and documentaries and award-winning plays dedicated to LGBT Serbians. He is a member of the Journalists' Association of Serbia.
+
+---
+
+Complete: singer is... → singer is A person who sings, often professionally..
+
+---
+
+Question: Define debut.
+Answer: A performer's first performance to the public, in sport, the arts or some other area.
+
+---
+
+Complete: chewing is... → chewing is To crush with the teeth by repeated closing and opening of the jaws; done to food to soften it and break it down by the action of saliva before it is swallowed..
+
+---
+
+Complete: has is... → has is To possess, own..
+
+---
+
+Question: What is third?
+Answer: third is The person or thing in the third position..
+
+---
+
+Question: Define jacques.
+Answer: 

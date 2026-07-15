@@ -1,9 +1,9 @@
 """
-Pullbot API - GGUF Mode
-Loads model from local file, wordbank from local or GitHub.
+Pullbot API - GGUF Mode + API Key Auth
+Loads model locally, verifies API keys against Back4App users.
 """
 
-import os, json, requests, re, random, hashlib
+import os, json, requests, re, random, hashlib, secrets
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from llama_cpp import Llama
@@ -28,9 +28,7 @@ def load_wordbank():
             defined = sum(1 for w in wordbank.get('words', {}).values() if isinstance(w, dict) and w.get('has_definition'))
             print(f"Loaded {wordbank.get('total_words', 0)} words, {defined} defined (local)")
             return
-        except:
-            pass
-    
+        except: pass
     try:
         r = requests.get(f"{GITHUB}/data/wordbank.json", timeout=30)
         if r.status_code == 200:
@@ -44,9 +42,7 @@ def setup():
     print("=" * 50)
     print("PULLBOT API - GGUF MODE")
     print("=" * 50)
-    
     load_wordbank()
-    
     if os.path.exists(MODEL_PATH):
         size_mb = os.path.getsize(MODEL_PATH) / (1024*1024)
         print(f"Loading GGUF model ({size_mb:.0f}MB)...")
@@ -54,16 +50,13 @@ def setup():
             llm = Llama(model_path=MODEL_PATH, n_ctx=256, n_threads=2, verbose=False)
             print("Ready!")
         except Exception as e:
-            print(f"Failed to load model: {e}")
+            print(f"Failed: {e}")
             llm = None
     else:
         print(f"Model not found at {MODEL_PATH}")
-        print("Vocab-only mode.")
 
 def generate_response(question):
     q = question.strip()
-    
-    # Math
     math_match = re.search(r'(\d+\.?\d*)\s*([+\-*/])\s*(\d+\.?\d*)', q)
     if math_match:
         a, op, b = float(math_match.group(1)), math_match.group(2), float(math_match.group(3))
@@ -75,8 +68,6 @@ def generate_response(question):
             if isinstance(result, float) and result == int(result): result = int(result)
             return {'question': question, 'response': f"{a} {op} {b} = {result}", 'source': 'math'}
         except: pass
-    
-    # Try GGUF model
     if llm:
         try:
             output = llm(f"Question: {q}\n\nAnswer:", max_tokens=60, temperature=0.8, top_p=0.9)
@@ -85,8 +76,6 @@ def generate_response(question):
                 return {'question': question, 'response': response, 'source': 'model'}
         except Exception as e:
             print(f"Model error: {e}")
-    
-    # Vocab fallback
     if wordbank:
         q_words = set(re.findall(r'\b[a-z]{3,}\b', q.lower()))
         found = []
@@ -97,59 +86,21 @@ def generate_response(question):
                     found.append(f"{word}: {info['definition']}")
         if found:
             return {'question': question, 'response': ' | '.join(found[:5]), 'source': 'vocab'}
-    
     return {'question': question, 'response': "I'm still learning...", 'source': 'fallback'}
 
-# ========== AUTH ==========
+def check_api_key(api_key):
+    """Verify API key from Back4App users"""
+    try:
+        r = requests.get(f"{GITHUB}/data/users.json")
+        if r.status_code == 200:
+            users = r.json().get('users', {})
+            for username, data in users.items():
+                if data.get('api_key') == api_key:
+                    return username
+    except: pass
+    return None
 
-def hash_password(password):
-    return hashlib.sha256(password.encode()).hexdigest()
-
-@app.route('/signup', methods=['POST'])
-def signup():
-    data = request.get_json() or {}
-    username = data.get('username', '').strip().lower()
-    password = data.get('password', '').strip()
-    
-    if not username or not password:
-        return jsonify({'success': False, 'error': 'Username and password required'}), 400
-    if len(username) < 3:
-        return jsonify({'success': False, 'error': 'Username too short'}), 400
-    if username in _memory_users.get('users', {}):
-        return jsonify({'success': False, 'error': 'Username taken'}), 409
-    
-    _memory_users['users'][username] = {
-        'password': hash_password(password),
-        'created': __import__('time').strftime('%Y-%m-%d'),
-        'chats': []
-    }
-    
-    return jsonify({
-        'success': True,
-        'username': username,
-        'token': hash_password(username + password)[:20],
-        'message': f'Welcome, {username}!'
-    })
-
-@app.route('/login', methods=['POST'])
-def login():
-    data = request.get_json() or {}
-    username = data.get('username', '').strip().lower()
-    password = data.get('password', '').strip()
-    
-    if username not in _memory_users.get('users', {}):
-        return jsonify({'success': False, 'error': 'User not found'}), 404
-    if _memory_users['users'][username]['password'] != hash_password(password):
-        return jsonify({'success': False, 'error': 'Wrong password'}), 401
-    
-    return jsonify({
-        'success': True,
-        'username': username,
-        'token': hash_password(username + password)[:20],
-        'message': f'Welcome back, {username}!'
-    })
-
-# ========== API ==========
+# ========== API ENDPOINTS ==========
 
 @app.route('/')
 def home():
@@ -174,6 +125,73 @@ def ask():
     q = request.args.get('q', '')
     if not q: return jsonify({'error': 'No question'}), 400
     return jsonify(generate_response(q))
+
+@app.route('/v1/chat', methods=['POST'])
+def api_chat():
+    """Public API endpoint - requires API key"""
+    api_key = request.headers.get('Authorization', '').replace('Bearer ', '')
+    if not api_key:
+        return jsonify({'error': 'API key required. Get yours at pullbot-ai.github.io'}), 401
+    
+    user = check_api_key(api_key)
+    if not user:
+        return jsonify({'error': 'Invalid API key'}), 401
+    
+    data = request.get_json() or {}
+    question = data.get('question', data.get('message', ''))
+    if not question:
+        return jsonify({'error': 'Question required'}), 400
+    
+    response = generate_response(question)
+    return jsonify({
+        'response': response['response'],
+        'model': 'pullbot-gguf',
+        'user': user
+    })
+
+# ========== AUTH (fallback) ==========
+
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    data = request.get_json() or {}
+    username = data.get('username', '').strip().lower()
+    password = data.get('password', '').strip()
+    if not username or not password:
+        return jsonify({'success': False, 'error': 'Username and password required'}), 400
+    if len(username) < 3:
+        return jsonify({'success': False, 'error': 'Username too short'}), 400
+    if username in _memory_users.get('users', {}):
+        return jsonify({'success': False, 'error': 'Username taken'}), 409
+    _memory_users['users'][username] = {
+        'password': hash_password(password),
+        'created': __import__('time').strftime('%Y-%m-%d'),
+        'chats': []
+    }
+    return jsonify({
+        'success': True,
+        'username': username,
+        'token': hash_password(username + password)[:20],
+        'message': f'Welcome, {username}!'
+    })
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json() or {}
+    username = data.get('username', '').strip().lower()
+    password = data.get('password', '').strip()
+    if username not in _memory_users.get('users', {}):
+        return jsonify({'success': False, 'error': 'User not found'}), 404
+    if _memory_users['users'][username]['password'] != hash_password(password):
+        return jsonify({'success': False, 'error': 'Wrong password'}), 401
+    return jsonify({
+        'success': True,
+        'username': username,
+        'token': hash_password(username + password)[:20],
+        'message': f'Welcome back, {username}!'
+    })
 
 setup()
 

@@ -24,6 +24,8 @@ jobs:
       run: python src/define_words.py 100
     - name: Smart training
       run: python src/smart_train.py
+    - name: Rich training data
+      run: python src/rich_scraper.py
     - name: Push
       run: |
         git config user.name "Pullbot"

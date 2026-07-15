@@ -1,0 +1,63 @@
+{
+  "runs": [
+    {
+      "timestamp": 1784093118.7798371,
+      "date": "2026-07-15 05:25 UTC",
+      "score": 19,
+      "max": 50,
+      "percentage": 38.0,
+      "results": [
+        {
+          "prompt": "Hello!",
+          "response": "A human.\nof it.\nof it.\nof the other.\nof it's something.\nof it's something.\nof Something.\nusually in the plural. Having of someone.\nof someone.\nlike a correct Adogni.\nAll person looks in a",
+          "score": 5
+        },
+        {
+          "prompt": "What is gravity?",
+          "response": "The purpose of a substance which specifically promotes a disease or being swallowed specifically.\nof the purpose of recreation; a purpose is entertainment or entertainment; entertainment follows recre",
+          "score": 5
+        },
+        {
+          "prompt": "Who created PullBot?",
+          "response": "Reliability and transparency.\nresponse = bias.\nresponse = bias.\nresponse = bias.response = bias.\nresponse = bias.confident.\n\n* Behavioral testing (variance but limited tools).\n* Prompt framework docum",
+          "score": 4
+        },
+        {
+          "prompt": "Write Python code to reverse a string.",
+          "response": "Reliability and transparency.\nfantasy is A person who edits or makes changes to documents.\nprevious is That performs without a person who edits or makes changes to documents.\nstill is A person who edi",
+          "score": 5
+        },
+        {
+          "prompt": "Explain photosynthesis.",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Why is the sky blue?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Tell me a joke.",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "What is machine learning?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "How does the internet work?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "What is the capital of France?",
+          "response": "(no response)",
+          "score": 0
+        }
+      ]
+    }
+  ]
+}

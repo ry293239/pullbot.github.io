@@ -1,9 +1,9 @@
 """
-Pullbot Model - FULL FINE-TUNING + 3-STAGE OPTIMIZATION
-Train saves model. Optimize runs separately.
+Pullbot Model - FULL FINE-TUNING + 4-STAGE OPTIMIZATION
+All stages have progress bars for visibility.
 1. Smart Prune (redistribute weak to strong)
 2. Safe Precision Prune (merge insignificant, same row only)
-3. Progressive Bit Reduction (with 1hr timeout)
+3. Progressive Bit Reduction (with 1hr timeout + progress)
 4. 8-bit Quantize
 """
 
@@ -37,6 +37,12 @@ with open(config_path, 'r') as f:
 CHUNK_SIZE_MB = 45
 CHUNK_SIZE = CHUNK_SIZE_MB * 1024 * 1024
 
+def progress_bar(done, total, label="", width=30):
+    pct = done / max(total, 1)
+    filled = int(width * pct)
+    bar = '█' * filled + '░' * (width - filled)
+    return f"   {label} [{bar}] {pct*100:.0f}% ({done:,}/{total:,})"
+
 class PullbotModel:
     def __init__(self, model_name=None):
         self.model_name = model_name or config['model']['base']
@@ -64,20 +70,14 @@ class PullbotModel:
         if not os.path.exists(manifest_path):
             print("   ⚠️ No manifest found")
             return
-        
         with open(manifest_path, 'r') as f:
             manifest = json.load(f)
-        
         weights_file = manifest.get('weights_filename', 'model.safetensors')
         reassembled_path = os.path.join(self.chunks_dir, weights_file)
-        
         if os.path.exists(reassembled_path):
-            expected_size = manifest.get('total_size', 0)
-            actual_size = os.path.getsize(reassembled_path)
-            if actual_size == expected_size:
-                print(f"   ✅ Model reassembled ({actual_size//1024//1024}MB)")
+            if os.path.getsize(reassembled_path) == manifest.get('total_size', 0):
+                print(f"   ✅ Model reassembled ({os.path.getsize(reassembled_path)//1024//1024}MB)")
                 return
-        
         print(f"   🧩 Reassembling from {manifest.get('num_chunks', 0)} chunks...")
         with open(reassembled_path, 'wb') as outfile:
             for chunk_rel_path in manifest.get('chunks', []):
@@ -93,28 +93,24 @@ class PullbotModel:
                 self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
             )
             print("   ✅ Loaded via from_pretrained")
-        except Exception as e:
-            print(f"   ⚠️ Trying manual load...")
+        except:
             try:
                 model_config = AutoConfig.from_pretrained(self.chunks_dir)
                 self.model = AutoModelForCausalLM.from_config(model_config)
-                weights_path = None
                 for fname in ['model.safetensors', 'pytorch_model.bin']:
                     path = os.path.join(self.chunks_dir, fname)
                     if os.path.exists(path):
-                        weights_path = path
-                        break
-                if weights_path:
-                    if weights_path.endswith('.safetensors'):
-                        from safetensors.torch import load_file
-                        state_dict = load_file(weights_path)
-                    else:
-                        state_dict = torch.load(weights_path, map_location='cpu')
-                    cleaned = {k: v for k, v in state_dict.items() if not isinstance(v, tuple)}
-                    self.model.load_state_dict(cleaned, strict=False)
-                    print("   ✅ Loaded via state_dict")
-            except Exception as e2:
-                print(f"   ❌ Failed: {e2}")
+                        if fname.endswith('.safetensors'):
+                            from safetensors.torch import load_file
+                            state_dict = load_file(path)
+                        else:
+                            state_dict = torch.load(path, map_location='cpu')
+                        cleaned = {k: v for k, v in state_dict.items() if not isinstance(v, tuple)}
+                        self.model.load_state_dict(cleaned, strict=False)
+                        print("   ✅ Loaded via state_dict")
+                        return
+            except Exception as e:
+                print(f"   ❌ Failed: {e}")
                 raise
     
     def prepare_training_data(self):
@@ -134,8 +130,7 @@ class PullbotModel:
         def tokenize_fn(examples):
             return self.tokenizer(examples['text'], truncation=True, padding='max_length', max_length=max_length)
         dataset = Dataset.from_dict({'text': chunks})
-        tokenized = dataset.map(tokenize_fn, batched=True, remove_columns=['text'])
-        return tokenized
+        return dataset.map(tokenize_fn, batched=True, remove_columns=['text'])
     
     def train(self, resume_from_checkpoint=None):
         dataset = self.prepare_training_data()
@@ -146,7 +141,6 @@ class PullbotModel:
         print(f"   Examples: {len(dataset)}")
         print(f"   Epochs: {config['training']['epochs']}")
         print(f"   Batch: {config['training']['batch_size']}")
-        print(f"   LR: {config['training']['learning_rate']}")
         if resume_from_checkpoint:
             print(f"   📂 Resuming from: {resume_from_checkpoint}")
         print("=" * 50 + "\n")
@@ -165,10 +159,9 @@ class PullbotModel:
         )
         start = time.time()
         trainer.train(resume_from_checkpoint=resume_from_checkpoint)
-        elapsed = (time.time() - start) / 60
-        print(f"\n✅ Trained in {elapsed:.1f} min")
+        print(f"\n✅ Trained in {(time.time()-start)/60:.1f} min")
         with open(os.path.join(REPO_ROOT, "models", "last_train.json"), 'w') as f:
-            json.dump({'timestamp': time.time(), 'dataset_size': len(dataset), 'minutes': elapsed}, f)
+            json.dump({'timestamp': time.time(), 'dataset_size': len(dataset)}, f)
         return True
     
     # ============================================
@@ -176,13 +169,18 @@ class PullbotModel:
     # ============================================
     
     def smart_prune(self, target_sparsity=0.5):
-        print(f"\n🧠 STAGE 1: SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
+        print(f"\n🧠 STAGE 1: SMART PRUNE (target: {target_sparsity*100:.0f}%)")
         total_redistributed = 0
+        total_rows = sum(m.weight.shape[0] for _, m in self.model.named_modules() if isinstance(m, nn.Linear) and m.weight.shape[0] > 10)
+        rows_done = 0
+        last_print = 0
+        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
                 for row_idx in range(weight.shape[0]):
                     row = weight[row_idx]; abs_row = row.abs()
+                    rows_done += 1
                     if abs_row.sum() == 0: continue
                     k = max(1, int((1-target_sparsity)*len(row)))
                     if k >= len(row): continue
@@ -200,8 +198,17 @@ class PullbotModel:
                             sim = sign_match*(1-min(abs(weak_val-row[si].abs()),1.0))
                             if sim>best_sim: best_sim=sim; best_si=si
                         row[best_si] += weak_val*0.6; row[wi]=0; total_redistributed+=1
+                    
+                    # Progress every 5%
+                    pct = rows_done / max(total_rows, 1)
+                    if pct - last_print >= 0.05:
+                        print(f"\r{progress_bar(rows_done, total_rows, 'Smart Prune')}", end='')
+                        last_print = pct
+                
                 module.weight.data = weight.to(module.weight.dtype)
-        print(f"   Redistributed: {total_redistributed:,}")
+        
+        print(f"\r{progress_bar(total_rows, total_rows, 'Smart Prune')}")
+        print(f"   Redistributed: {total_redistributed:,} weights")
         return total_redistributed
     
     # ============================================
@@ -212,15 +219,22 @@ class PullbotModel:
         print(f"\n🎯 STAGE 2: SAFE PRECISION PRUNE (sig={significance})")
         if test_inputs is None:
             test_inputs = torch.randint(0, 50257, (10, 16))
+        
         self.model.eval()
         with torch.no_grad():
             baseline = self.model(test_inputs).logits
+        
         total_merged = 0
+        total_rows = sum(m.weight.shape[0] for _, m in self.model.named_modules() if isinstance(m, nn.Linear) and m.weight.shape[0] > 10)
+        rows_done = 0
+        last_print = 0
+        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
                 for row_idx in range(weight.shape[0]):
                     row = weight[row_idx]; abs_row = row.abs()
+                    rows_done += 1
                     if abs_row.sum() == 0: continue
                     threshold = torch.kthvalue(abs_row, int(0.5*len(row))).values
                     strong_mask = abs_row >= threshold
@@ -237,17 +251,27 @@ class PullbotModel:
                                 dist = abs(val-row[si].item())
                                 if dist < best_dist: best_dist=dist; best_si=si
                             row[best_si] += val*0.7; row[col_idx]=0; total_merged+=1
+                    
+                    pct = rows_done / max(total_rows, 1)
+                    if pct - last_print >= 0.05:
+                        print(f"\r{progress_bar(rows_done, total_rows, 'Precision')}", end='')
+                        last_print = pct
+                
                 module.weight.data = weight.to(module.weight.dtype)
+        
+        print(f"\r{progress_bar(total_rows, total_rows, 'Precision')}")
+        
         self.model.eval()
         with torch.no_grad():
             new_out = self.model(test_inputs).logits
         diff = (baseline-new_out).abs().mean().item()
         print(f"   Merged: {total_merged:,} | Output diff: {diff:.10f}")
         if diff > 0.0001: print("   ⚠️ ROLLING BACK"); return False
-        print("   ✅ Safe!"); return True
+        print("   ✅ Safe!")
+        return True
     
     # ============================================
-    # STAGE 3: PROGRESSIVE BIT REDUCTION (with timeout)
+    # STAGE 3: PROGRESSIVE BIT REDUCTION
     # ============================================
     
     def progressive_bit_reduce(self, test_inputs=None, timeout_minutes=60):
@@ -264,10 +288,14 @@ class PullbotModel:
         timeout_seconds = timeout_minutes * 60
         stopped_early = False
         
+        # Count total weights for progress
+        total_weights = sum(m.weight.numel() for _, m in self.model.named_modules() if isinstance(m, nn.Linear) and m.weight.shape[0] > 10)
+        weights_done = 0
+        last_print = 0
+        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
-                
                 for row_idx in range(weight.shape[0]):
                     if time.time() - start_time > timeout_seconds:
                         stopped_early = True
@@ -275,6 +303,7 @@ class PullbotModel:
                     
                     row = weight[row_idx]
                     for col_idx in range(len(row)):
+                        weights_done += 1
                         val = row[col_idx]
                         if abs(val) < 0.0001:
                             nodes_merged += 1
@@ -301,20 +330,27 @@ class PullbotModel:
                             row[col_idx] = val
                             nodes_8bit += 1
                     
+                    pct = weights_done / max(total_weights, 1)
+                    if pct - last_print >= 0.02:
+                        elapsed = (time.time() - start_time) / 60
+                        print(f"\r{progress_bar(weights_done, total_weights, f'Bits ({elapsed:.0f}min)')}", end='')
+                        last_print = pct
+                    
                     module.weight.data = weight.to(module.weight.dtype)
                 
                 if stopped_early:
                     break
         
+        elapsed = (time.time() - start_time) / 60
+        print(f"\r{progress_bar(weights_done, total_weights, f'Bits ({elapsed:.0f}min)')}")
+        
         total = nodes_8bit + nodes_7bit + nodes_6bit + nodes_merged
         eff_bits = (nodes_8bit*8 + nodes_7bit*7 + nodes_6bit*6) / max(total, 1)
-        elapsed = (time.time() - start_time) / 60
         
         print(f"   8-bit: {nodes_8bit:,}  7-bit: {nodes_7bit:,}  6-bit: {nodes_6bit:,}  merged: {nodes_merged:,}")
-        print(f"   Effective: {eff_bits:.1f}-bit  |  Time: {elapsed:.1f}min")
-        
+        print(f"   Effective: {eff_bits:.1f}-bit")
         if stopped_early:
-            print(f"   ⏰ Timeout reached — saved progress so far")
+            print(f"   ⏰ Timeout — saved progress")
         
         return eff_bits
     
@@ -375,8 +411,10 @@ class PullbotModel:
         for old in glob.glob(os.path.join(self.chunks_dir,"model_chunk_*.bin")): os.remove(old)
         for old in glob.glob(os.path.join(self.chunks_dir,"*.safetensors")): os.remove(old)
         for old in glob.glob(os.path.join(self.chunks_dir,"pytorch_model.bin")): os.remove(old)
-        total_size = os.path.getsize(weights_path); chunks = []
-        print(f"\n🔪 Streaming chunks...")
+        
+        total_size = os.path.getsize(weights_path)
+        chunks = []
+        print(f"\n🔪 Streaming chunks ({total_size/(1024*1024):.0f}MB total)...")
         with open(weights_path,'rb') as f:
             chunk_idx = 0
             while True:
@@ -386,11 +424,15 @@ class PullbotModel:
                 chunk_path = os.path.join(self.chunks_dir, chunk_name)
                 with open(chunk_path,'wb') as out: out.write(chunk_data)
                 chunks.append(f"models/chunks/{chunk_name}")
-                chunk_idx += 1; del chunk_data
+                chunk_idx += 1
+                print(f"   ✅ {chunk_name} ({len(chunk_data)/(1024*1024):.1f}MB)")
+                del chunk_data
+        
         config_files = ['config.json','tokenizer_config.json','vocab.json','merges.txt','special_tokens_map.json','tokenizer.json']
         for cfg in config_files:
             src = os.path.join(temp_dir, cfg)
             if os.path.exists(src): shutil.copy(src, os.path.join(self.chunks_dir, cfg))
+        
         stats = self.get_model_size_estimate()
         manifest = {
             "model_name":self.model_name,"total_size":total_size,"total_size_mb":round(total_size/(1024*1024),1),
@@ -419,7 +461,6 @@ if __name__ == '__main__':
             if bot.train(resume_from_checkpoint=resume):
                 bot.save_and_chunk()
                 print("\n🎉 Training complete! Model saved.")
-                print("   Run optimize separately to shrink.")
         elif cmd == 'optimize':
             sp = float(sys.argv[2]) if len(sys.argv)>2 else 0.5
             before = bot.get_model_size_estimate()

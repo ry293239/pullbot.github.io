@@ -10,107 +10,53 @@
     <script src="https://unpkg.com/parse@5.0.0/dist/parse.min.js"></script>
     <style>
         :root {
-            --bg-primary: #0D1A16;
-            --bg-sidebar: #081210;
-            --bg-input: #152A23;
-            --bg-bubble-bot: #1A3329;
-            --text-primary: #E8F0EC;
-            --text-secondary: #8AA89A;
-            --accent: #2DD4A8;
-            --accent-hover: #3BE0B4;
-            --border: #1F3D30;
-            --cyan: #4EE6C7;
+            --bg-primary: #0D1A16; --bg-sidebar: #081210; --bg-input: #152A23;
+            --bg-bubble-bot: #1A3329; --text-primary: #E8F0EC; --text-secondary: #8AA89A;
+            --accent: #2DD4A8; --accent-hover: #3BE0B4; --border: #1F3D30; --cyan: #4EE6C7;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
             background: var(--bg-primary); color: var(--text-primary);
             height: 100dvh; display: flex; overflow: hidden;
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
         }
-
         #loadingScreen {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg-primary); display: flex; flex-direction: column;
-            justify-content: center; align-items: center;
-            z-index: 9999; transition: opacity 0.6s ease;
+            justify-content: center; align-items: center; z-index: 9999; transition: opacity 0.6s ease;
         }
         #loadingScreen.hidden { opacity: 0; pointer-events: none; }
-        .loader-icon {
-            width: 80px; height: 80px; margin-bottom: 24px;
-            border-radius: 50%; animation: pulse 2s ease-in-out infinite;
-            box-shadow: 0 0 30px rgba(45, 212, 168, 0.4);
-        }
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.08); opacity: 0.85; }
-        }
-        .loader-title {
-            font-size: 28px; font-weight: 700;
-            background: linear-gradient(135deg, var(--accent), var(--cyan));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-            margin-bottom: 8px;
-        }
+        .loader-icon { width: 80px; height: 80px; margin-bottom: 24px; border-radius: 50%; animation: pulse 2s ease-in-out infinite; box-shadow: 0 0 30px rgba(45, 212, 168, 0.4); }
+        @keyframes pulse { 0%,100%{transform:scale(1);opacity:1} 50%{transform:scale(1.08);opacity:.85} }
+        .loader-title { font-size: 28px; font-weight: 700; background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
         .loader-subtitle { font-size: 14px; color: var(--text-secondary); margin-bottom: 28px; }
         .loader-bar { width: 200px; height: 3px; background: var(--bg-input); border-radius: 2px; overflow: hidden; }
         .loader-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--cyan)); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
         .loader-status { font-size: 12px; color: var(--text-secondary); margin-top: 12px; }
-
-        #sidebar {
-            width: 260px; min-width: 260px; background: var(--bg-sidebar);
-            display: flex; flex-direction: column; flex-shrink: 0;
-            border-right: 1px solid var(--border); height: 100%;
-        }
+        #sidebar { width: 260px; min-width: 260px; background: var(--bg-sidebar); display: flex; flex-direction: column; flex-shrink: 0; border-right: 1px solid var(--border); height: 100%; }
         .sidebar-header { padding: 16px; border-bottom: 1px solid var(--border); }
         .sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
         .sidebar-logo img { width: 32px; height: 32px; border-radius: 50%; }
-        .sidebar-logo span {
-            font-weight: 700; font-size: 18px;
-            background: linear-gradient(135deg, var(--accent), var(--cyan));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
-        .new-chat-btn {
-            width: 100%; padding: 10px; background: transparent;
-            color: var(--accent); border: 1px solid var(--border);
-            border-radius: 8px; cursor: pointer; font-size: 13px; transition: all 0.2s;
-        }
+        .sidebar-logo span { font-weight: 700; font-size: 18px; background: linear-gradient(135deg, var(--accent), var(--cyan)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .new-chat-btn { width: 100%; padding: 10px; background: transparent; color: var(--accent); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13px; transition: all 0.2s; }
         .new-chat-btn:hover { background: rgba(45, 212, 168, 0.08); border-color: var(--accent); }
         .sidebar-section { padding: 14px 16px 6px; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
         .chat-list { flex: 1; overflow-y: auto; padding: 0 8px; }
-        .chat-list-item {
-            padding: 10px 12px; border-radius: 8px; cursor: pointer;
-            font-size: 13px; white-space: nowrap; overflow: hidden;
-            text-overflow: ellipsis; transition: background 0.2s; margin-bottom: 2px;
-        }
+        .chat-list-item { padding: 10px 12px; border-radius: 8px; cursor: pointer; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; transition: background 0.2s; margin-bottom: 2px; }
         .chat-list-item:hover { background: var(--bg-input); }
         .chat-list-item.active { background: rgba(45, 212, 168, 0.1); }
         .sidebar-footer { padding: 12px 16px; border-top: 1px solid var(--border); }
-        .sidebar-btn {
-            width: 100%; padding: 9px 12px; background: transparent;
-            color: var(--text-secondary); border: none; border-radius: 8px;
-            cursor: pointer; font-size: 13px; text-align: left; transition: all 0.2s; margin-bottom: 4px;
-        }
+        .sidebar-btn { width: 100%; padding: 9px 12px; background: transparent; color: var(--text-secondary); border: none; border-radius: 8px; cursor: pointer; font-size: 13px; text-align: left; transition: all 0.2s; margin-bottom: 4px; }
         .sidebar-btn:hover { background: var(--bg-input); color: var(--text-primary); }
         .sidebar-btn.accent { color: var(--accent); }
-
         #main { flex: 1; display: flex; flex-direction: column; min-width: 0; height: 100%; overflow: hidden; }
-        .top-bar {
-            padding: 12px 20px; display: flex; justify-content: space-between;
-            align-items: center; border-bottom: 1px solid var(--border);
-            background: var(--bg-primary); flex-shrink: 0;
-        }
+        .top-bar { padding: 12px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); background: var(--bg-primary); flex-shrink: 0; }
         .hamburger { background: none; border: none; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
         .top-bar-title { display: flex; align-items: center; gap: 8px; font-weight: 600; }
         .top-bar-title img { width: 24px; height: 24px; border-radius: 50%; }
-        .login-btn {
-            padding: 8px 16px; background: var(--accent); color: var(--bg-primary);
-            border: none; border-radius: 8px; cursor: pointer;
-            font-size: 13px; font-weight: 600; transition: all 0.2s;
-        }
+        .login-btn { padding: 8px 16px; background: var(--accent); color: var(--bg-primary); border: none; border-radius: 8px; cursor: pointer; font-size: 13px; font-weight: 600; transition: all 0.2s; }
         .login-btn:hover { background: var(--accent-hover); }
-
         .chat-container { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         .welcome-screen { display: flex; flex-direction: column; align-items: center; justify-content: center; flex: 1; text-align: center; }
         .welcome-screen.hidden { display: none; }
@@ -118,108 +64,50 @@
         .welcome-title { font-size: 32px; font-weight: 700; margin-bottom: 8px; }
         .welcome-subtitle { font-size: 15px; color: var(--text-secondary); margin-bottom: 32px; }
         .suggestion-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; max-width: 600px; }
-        .suggestion-card {
-            padding: 16px; background: var(--bg-bubble-bot); border: 1px solid var(--border);
-            border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 13px; text-align: left;
-        }
+        .suggestion-card { padding: 16px; background: var(--bg-bubble-bot); border: 1px solid var(--border); border-radius: 12px; cursor: pointer; transition: all 0.2s; font-size: 13px; text-align: left; }
         .suggestion-card:hover { border-color: var(--accent); background: rgba(45, 212, 168, 0.05); }
         .messages-container { width: 100%; max-width: 768px; margin: 0 auto; }
         .message { display: flex; padding: 20px 0; gap: 16px; }
-        .message-avatar {
-            width: 32px; height: 32px; border-radius: 50%;
-            display: flex; align-items: center; justify-content: center;
-            font-size: 16px; flex-shrink: 0; background: var(--bg-input); overflow: hidden;
-        }
+        .message-avatar { width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 16px; flex-shrink: 0; background: var(--bg-input); overflow: hidden; }
         .message-avatar img { width: 100%; height: 100%; object-fit: cover; }
         .message-avatar.bot { background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(78, 230, 199, 0.1)); }
         .message-content { line-height: 1.6; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
-
         .thinking-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
-        .thinking-dots span {
-            width: 8px; height: 8px; border-radius: 50%;
-            background: var(--accent); animation: bounce 1.4s infinite ease-in-out;
-        }
+        .thinking-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: bounce 1.4s infinite ease-in-out; }
         .thinking-dots span:nth-child(1) { animation-delay: 0s; }
         .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
         .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
-        @keyframes bounce {
-            0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
-            40% { transform: scale(1); opacity: 1; }
-        }
+        @keyframes bounce { 0%,80%,100%{transform:scale(0);opacity:.5} 40%{transform:scale(1);opacity:1} }
         .thinking-text { color: var(--text-secondary); font-style: italic; font-size: 13px; }
-
         .input-container { padding: 12px 16px; max-width: 768px; margin: 0 auto; width: 100%; flex-shrink: 0; }
-        .input-wrapper {
-            display: flex; gap: 10px; background: var(--bg-input);
-            border-radius: 14px; padding: 6px 6px 6px 18px;
-            border: 1px solid var(--border); transition: border-color 0.2s;
-        }
+        .input-wrapper { display: flex; gap: 10px; background: var(--bg-input); border-radius: 14px; padding: 6px 6px 6px 18px; border: 1px solid var(--border); transition: border-color 0.2s; }
         .input-wrapper:focus-within { border-color: var(--accent); box-shadow: 0 0 20px rgba(45, 212, 168, 0.1); }
-        .input-wrapper input {
-            flex: 1; background: none; border: none; color: var(--text-primary);
-            font-size: 14px; outline: none; padding: 8px 0;
-        }
+        .input-wrapper input { flex: 1; background: none; border: none; color: var(--text-primary); font-size: 14px; outline: none; padding: 8px 0; }
         .input-wrapper input::placeholder { color: var(--text-secondary); }
-        .send-btn {
-            background: var(--accent); border: none; color: var(--bg-primary);
-            width: 38px; height: 38px; border-radius: 50%; cursor: pointer;
-            font-size: 18px; display: flex; align-items: center; justify-content: center;
-            transition: all 0.2s; flex-shrink: 0;
-        }
+        .send-btn { background: var(--accent); border: none; color: var(--bg-primary); width: 38px; height: 38px; border-radius: 50%; cursor: pointer; font-size: 18px; display: flex; align-items: center; justify-content: center; transition: all 0.2s; flex-shrink: 0; }
         .send-btn:hover { background: var(--accent-hover); }
         .send-btn:disabled { opacity: 0.4; cursor: not-allowed; }
         .input-footer { text-align: center; font-size: 11px; color: var(--text-secondary); margin-top: 8px; }
         .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
         .status-dot.online { background: var(--accent); }
         .status-dot.offline { background: #EF4444; }
-
-        .settings-overlay, .auth-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background: rgba(0,0,0,0.6); z-index: 1000;
-            display: flex; justify-content: center; align-items: center;
-            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
-        }
-        .settings-overlay.active, .auth-overlay.active { opacity: 1; pointer-events: all; }
-        .settings-panel, .auth-panel {
-            background: var(--bg-sidebar); border-radius: 16px;
-            padding: 24px; width: 380px; max-width: 90vw;
-            border: 1px solid var(--border);
-        }
-        .settings-panel h2, .auth-panel h2 { font-size: 20px; margin-bottom: 20px; }
+        .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+        .overlay.active { opacity: 1; pointer-events: all; }
+        .panel { background: var(--bg-sidebar); border-radius: 16px; padding: 24px; width: 380px; max-width: 90vw; border: 1px solid var(--border); }
+        .panel h2 { font-size: 20px; margin-bottom: 20px; }
         .setting-group { margin-bottom: 18px; }
         .setting-group label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
         .setting-group input[type="range"] { width: 100%; accent-color: var(--accent); }
-        .setting-group select, .setting-group input[type="text"], .setting-group input[type="password"] {
-            width: 100%; padding: 10px; background: var(--bg-input); color: var(--text-primary);
-            border: 1px solid var(--border); border-radius: 8px; margin-top: 6px;
-        }
+        .setting-group select, .setting-group input[type="text"], .setting-group input[type="password"] { width: 100%; padding: 10px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; margin-top: 6px; }
         .setting-value { font-size: 12px; color: var(--accent); }
-        .btn-primary {
-            width: 100%; padding: 10px; background: var(--accent); color: var(--bg-primary);
-            border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 8px;
-        }
-        .btn-secondary {
-            width: 100%; padding: 10px; background: transparent; color: var(--text-secondary);
-            border: 1px solid var(--border); border-radius: 8px; cursor: pointer;
-        }
-        .btn-text {
-            width: 100%; padding: 8px; background: none; color: var(--accent);
-            border: none; cursor: pointer; font-size: 13px; margin-bottom: 8px;
-        }
-
+        .btn-primary { width: 100%; padding: 10px; background: var(--accent); color: var(--bg-primary); border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 8px; }
+        .btn-secondary { width: 100%; padding: 10px; background: transparent; color: var(--text-secondary); border: 1px solid var(--border); border-radius: 8px; cursor: pointer; }
+        .btn-text { width: 100%; padding: 8px; background: none; color: var(--accent); border: none; cursor: pointer; font-size: 13px; margin-bottom: 8px; }
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
         ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-        .toast {
-            position: fixed; bottom: 20px; right: 20px;
-            background: var(--accent); color: var(--bg-primary);
-            padding: 12px 20px; border-radius: 10px; font-size: 13px;
-            font-weight: 600; z-index: 2000;
-            transform: translateY(100px); opacity: 0; transition: all 0.3s ease;
-        }
+        .toast { position: fixed; bottom: 20px; right: 20px; background: var(--accent); color: var(--bg-primary); padding: 12px 20px; border-radius: 10px; font-size: 13px; font-weight: 600; z-index: 2000; transform: translateY(100px); opacity: 0; transition: all 0.3s ease; }
         .toast.show { transform: translateY(0); opacity: 1; }
-
         @media (max-width: 768px) {
             #sidebar { position: fixed; left: -280px; top: 0; bottom: 0; z-index: 100; transition: left 0.3s ease; }
             #sidebar.open { left: 0; }
@@ -240,17 +128,15 @@
 
 <div id="sidebar">
     <div class="sidebar-header">
-        <div class="sidebar-logo">
-            <img src="icon.png" alt="Pullbot" onerror="this.style.display='none'">
-            <span>Pullbot</span>
-        </div>
+        <div class="sidebar-logo"><img src="icon.png" alt="Pullbot" onerror="this.style.display='none'"><span>Pullbot</span></div>
         <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
     </div>
     <div class="sidebar-section">History</div>
     <div class="chat-list" id="chatList"></div>
     <div class="sidebar-footer">
         <button class="sidebar-btn" onclick="openSettings()">Settings</button>
-        <button class="sidebar-btn accent" onclick="checkAPIStatus()">Check Status</button>
+        <button class="sidebar-btn accent" onclick="getAPIKey()">API Key</button>
+        <button class="sidebar-btn" onclick="checkAPIStatus()">Check Status</button>
         <button class="sidebar-btn" onclick="window.open('https://github.com/pullbot-ai/pullbot-ai.github.io','_blank')">View on GitHub</button>
     </div>
 </div>
@@ -285,49 +171,39 @@
 </div>
 
 <!-- SETTINGS -->
-<div class="settings-overlay" id="settingsOverlay" onclick="closeSettings(event)">
-    <div class="settings-panel" onclick="event.stopPropagation()">
-        <h2>Settings</h2>
-        <div class="setting-group">
-            <label>Response Temperature</label>
-            <input type="range" min="0.1" max="1.5" step="0.1" value="0.8" id="settingTemp" oninput="updateTempLabel()">
-            <span class="setting-value" id="tempLabel">0.8 - Balanced</span>
-        </div>
-        <div class="setting-group">
-            <label>Max Response Length</label>
-            <select id="settingLength">
-                <option value="30">Short (30 tokens)</option>
-                <option value="60" selected>Medium (60 tokens)</option>
-                <option value="100">Long (100 tokens)</option>
-            </select>
-        </div>
-        <button class="btn-primary" onclick="saveSettings()">Save Settings</button>
-        <button class="btn-secondary" onclick="document.getElementById('settingsOverlay').classList.remove('active')">Cancel</button>
-    </div>
-</div>
+<div class="overlay" id="settingsOverlay" onclick="closeSettings(event)"><div class="panel" onclick="event.stopPropagation()">
+    <h2>Settings</h2>
+    <div class="setting-group"><label>Temperature</label><input type="range" min="0.1" max="1.5" step="0.1" value="0.8" id="settingTemp" oninput="updateTempLabel()"><span class="setting-value" id="tempLabel">0.8 - Balanced</span></div>
+    <div class="setting-group"><label>Max Length</label><select id="settingLength"><option value="30">Short</option><option value="60" selected>Medium</option><option value="100">Long</option></select></div>
+    <button class="btn-primary" onclick="saveSettings()">Save</button>
+    <button class="btn-secondary" onclick="document.getElementById('settingsOverlay').classList.remove('active')">Cancel</button>
+</div></div>
 
 <!-- AUTH -->
-<div class="auth-overlay" id="authOverlay" onclick="closeAuth(event)">
-    <div class="auth-panel" onclick="event.stopPropagation()">
-        <h2 id="authTitle">Log In</h2>
-        <div class="setting-group">
-            <label>Username</label>
-            <input type="text" id="authUsername" placeholder="Enter username" autocomplete="off">
-        </div>
-        <div class="setting-group">
-            <label>Password</label>
-            <input type="password" id="authPassword" placeholder="Enter password">
-        </div>
-        <button class="btn-primary" onclick="handleAuth()">Log In</button>
-        <button class="btn-text" onclick="toggleAuthMode()">Don't have an account? Sign up</button>
-        <button class="btn-secondary" onclick="document.getElementById('authOverlay').classList.remove('active')">Cancel</button>
-    </div>
-</div>
+<div class="overlay" id="authOverlay" onclick="closeAuth(event)"><div class="panel" onclick="event.stopPropagation()">
+    <h2 id="authTitle">Log In</h2>
+    <div class="setting-group"><label>Username</label><input type="text" id="authUsername" placeholder="Enter username" autocomplete="off"></div>
+    <div class="setting-group"><label>Password</label><input type="password" id="authPassword" placeholder="Enter password"></div>
+    <button class="btn-primary" onclick="handleAuth()">Log In</button>
+    <button class="btn-text" onclick="toggleAuthMode()">Don't have an account? Sign up</button>
+    <button class="btn-secondary" onclick="document.getElementById('authOverlay').classList.remove('active')">Cancel</button>
+</div></div>
+
+<!-- API KEY -->
+<div class="overlay" id="apiKeyOverlay" onclick="closeAPIKey(event)"><div class="panel" onclick="event.stopPropagation()">
+    <h2>Your API Key</h2>
+    <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">Use this to call Pullbot from your own apps</p>
+    <div class="setting-group"><label>API Key</label><input type="text" id="apiKeyDisplay" readonly onclick="this.select()" style="font-family:monospace;font-size:12px;"></div>
+    <button class="btn-primary" onclick="copyAPIKey()">Copy Key</button>
+    <button class="btn-secondary" onclick="regenerateAPIKey()">Regenerate</button>
+    <p style="color:var(--text-secondary);font-size:11px;margin-top:12px;">Usage: <span id="apiUsage">0</span> / 1000 requests</p>
+    <p style="color:var(--text-secondary);font-size:11px;margin-top:8px;"><code>curl -H "Authorization: Bearer YOUR_KEY" https://pullbot-api.onrender.com/v1/chat -d '{"question":"Hello"}'</code></p>
+    <button class="btn-text" onclick="document.getElementById('apiKeyOverlay').classList.remove('active')">Close</button>
+</div></div>
 
 <div class="toast" id="toast"></div>
 
 <script>
-// Initialize Parse
 Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS", "ow1W5OlXiE57XYiTa9Hyhj1v3gAM4niSiWGbVBQq");
 Parse.serverURL = "https://parseapi.back4app.com";
 
@@ -336,167 +212,48 @@ let apiOnline = false;
 let chats = {};
 let currentChatId = null;
 
-function updateLoader(text, percent) {
-    document.getElementById('loaderStatus').textContent = text;
-    document.getElementById('loaderFill').style.width = percent + '%';
-}
-
-async function init() {
-    updateLoader('Connecting...', 20);
-    await checkAPIStatus();
-    updateLoader('Ready!', 100);
-    await new Promise(r => setTimeout(r, 500));
-    document.getElementById('loadingScreen').classList.add('hidden');
-    updateUserUI();
-}
-
-async function checkAPIStatus() {
-    try { const r = await fetch(`${API_URL}/health`); if (r.ok) apiOnline = true; } catch(e) { apiOnline = false; }
-    const dot = document.getElementById('statusDot');
-    dot.className = 'status-dot ' + (apiOnline ? 'online' : 'offline');
-    document.getElementById('statusFooter').innerHTML = '<span class="status-dot ' + (apiOnline ? 'online' : 'offline') + '"></span>' + (apiOnline ? 'Pullbot API Online' : 'Pullbot API Offline');
-}
-
-function cleanResponse(text) {
-    if (!text) return text;
-    let c = text.replace(/response = bias\.?/gi, '').replace(/^[=\-*]{3,}$/gm, '').replace(/\n{3,}/g, '\n\n');
-    return c.trim() || text.trim();
-}
-
-async function askPullbot(question) {
-    if (apiOnline) {
-        try {
-            const r = await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);
-            if (r.ok) {
-                const data = await r.json();
-                return cleanResponse(data.response) || "I couldn't process that.";
-            }
-        } catch(e) { apiOnline = false; }
-    }
-    return getLocalResponse(question);
-}
-
-function getLocalResponse(p) {
-    const q = p.toLowerCase().trim();
-    const m = q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
-    if (m) { const a=parseFloat(m[1]),b=parseFloat(m[3]); let r; switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;} return `${a} ${m[2]} ${b} = ${r}`; }
-    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there!";
-    if (q.includes('your name')) return "I'm Pullbot!";
-    if (q.match(/^(thanks|thank you)\b/)) return "You're welcome!";
-    return "I'm thinking...";
-}
-
-function newChat() {
-    const id = 'chat_'+Date.now();
-    chats[id]={title:'New Chat',messages:[],created:Date.now()};
-    currentChatId=id; renderChatList(); renderMessages();
-    document.getElementById('welcomeScreen').classList.add('hidden');
-    document.getElementById('userInput').focus();
-}
+function updateLoader(t,p){document.getElementById('loaderStatus').textContent=t;document.getElementById('loaderFill').style.width=p+'%';}
+async function init(){updateLoader('Connecting...',20);await checkAPIStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
+async function checkAPIStatus(){try{const r=await fetch(`${API_URL}/health`);if(r.ok)apiOnline=true;}catch(e){apiOnline=false;}const dot=document.getElementById('statusDot');dot.className='status-dot '+(apiOnline?'online':'offline');document.getElementById('statusFooter').innerHTML='<span class="status-dot '+(apiOnline?'online':'offline')+'"></span>'+(apiOnline?'Pullbot API Online':'Pullbot API Offline');}
+function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
+async function askPullbot(q){if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(q)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"I couldn't process that.";}}catch(e){apiOnline=false;}}return getLocalResponse(q);}
+function getLocalResponse(p){const q=p.toLowerCase().trim();const m=q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);if(m){const a=parseFloat(m[1]),b=parseFloat(m[3]);let r;switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;}return`${a} ${m[2]} ${b} = ${r}`;}if(q.match(/^(hi|hello|hey|yo|sup)\b/))return"Hey there!";if(q.includes('your name'))return"I'm Pullbot!";if(q.match(/^(thanks|thank you)\b/))return"You're welcome!";return"I'm thinking...";}
+function newChat(){const id='chat_'+Date.now();chats[id]={title:'New Chat',messages:[],created:Date.now()};currentChatId=id;renderChatList();renderMessages();document.getElementById('welcomeScreen').classList.add('hidden');document.getElementById('userInput').focus();}
 function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
-function renderChatList(){
-    const c=document.getElementById('chatList');
-    const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);
-    c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');
-}
-function renderMessages(){
-    const c=document.getElementById('messagesContainer');
-    const w=document.getElementById('welcomeScreen');
-    if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}
-    w.classList.add('hidden');
-    c.innerHTML=chats[currentChatId].messages.map(msg=>{
-        const isUser=msg.role==='user';
-        const isThinking=msg.content==='<thinking>';
-        const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';
-        const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);
-        return `<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;
-    }).join('');
-    setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);
-}
-async function sendMessage(){
-    const input=document.getElementById('userInput');
-    const text=input.value.trim();
-    if(!text)return;
-    if(!currentChatId)newChat();
-    chats[currentChatId].messages.push({role:'user',content:text});
-    if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);
-    input.value='';renderMessages();renderChatList();
-    const thinkingId='thinking_'+Date.now();
-    chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});
-    renderMessages();
-    const thinkingEl=document.getElementById(thinkingId);
-    if(thinkingEl){
-        const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];
-        let pi=0;
-        const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);
-        const response=await askPullbot(text);
-        clearInterval(interval);
-        chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);
-        chats[currentChatId].messages.push({role:'assistant',content:response});
-    }else{
-        const response=await askPullbot(text);
-        chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');
-        chats[currentChatId].messages.push({role:'assistant',content:response});
-    }
-    renderMessages();
-}
+function renderChatList(){const c=document.getElementById('chatList');const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');}
+function renderMessages(){const c=document.getElementById('messagesContainer');const w=document.getElementById('welcomeScreen');if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}w.classList.add('hidden');c.innerHTML=chats[currentChatId].messages.map(msg=>{const isUser=msg.role==='user';const isThinking=msg.content==='<thinking>';const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);return`<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;}).join('');setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);}
+async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
 function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
 function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
-function showToast(m){
-    const t=document.getElementById('toast');t.textContent=m;
-    t.style.transform='translateY(0)';t.style.opacity='1';
-    setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},2500);
-}
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},2500);}
 function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
 
 // Settings
 function openSettings(){document.getElementById('settingsOverlay').classList.add('active');loadSettings();}
-function closeSettings(event){if(!event||event.target===document.getElementById('settingsOverlay')){document.getElementById('settingsOverlay').classList.remove('active');}}
+function closeSettings(e){if(!e||e.target===document.getElementById('settingsOverlay')){document.getElementById('settingsOverlay').classList.remove('active');}}
 function updateTempLabel(){const v=document.getElementById('settingTemp').value;const l={'0.1':'Very Precise','0.3':'Precise','0.5':'Focused','0.8':'Balanced','1.0':'Creative','1.2':'Very Creative','1.5':'Wild'};document.getElementById('tempLabel').textContent=v+' - '+(l[v]||'Custom');}
-function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
-function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;updateTempLabel();}}
+async function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));if(Parse.User.current()){try{await Parse.Cloud.run("saveSettings",{settings:s});}catch(e){}}showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
+async function loadSettings(){if(Parse.User.current()){try{const s=await Parse.Cloud.run("getSettings");document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;}catch(e){}}const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;}updateTempLabel();}
 
 // Auth
 let authMode='login';
 function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
-function closeAuth(event){if(!event||event.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
-function toggleAuthMode(){
-    authMode=authMode==='login'?'signup':'login';
-    document.getElementById('authTitle').textContent=authMode==='login'?'Log In':'Sign Up';
-    document.querySelector('.auth-panel .btn-primary').textContent=authMode==='login'?'Log In':'Sign Up';
-    document.querySelector('.btn-text').textContent=authMode==='login'?"Don't have an account? Sign up":'Already have an account? Log in';
-}
-async function handleAuth(){
-    const username=document.getElementById('authUsername').value.trim();
-    const password=document.getElementById('authPassword').value.trim();
-    if(!username||!password){showToast('Please fill in all fields');return;}
-    try{
-        if(authMode==='signup'){
-            const user=new Parse.User();
-            user.set('username',username);
-            user.set('password',password);
-            await user.signUp();
-            showToast('Account created! Welcome, '+username+'!');
-        }else{
-            await Parse.User.logIn(username,password);
-            showToast('Welcome back, '+username+'!');
-        }
-        document.getElementById('authOverlay').classList.remove('active');
-        updateUserUI();
-    }catch(e){showToast(e.message||'Something went wrong');}
-}
-function updateUserUI(){
-    const user=Parse.User.current();
-    const btn=document.querySelector('.login-btn');
-    if(user){btn.textContent=user.get('username');btn.onclick=logout;}
-    else{btn.textContent='Log In';btn.onclick=openAuth;}
-}
-async function logout(){
-    await Parse.User.logOut();
-    showToast('Logged out');
-    updateUserUI();
-}
+function closeAuth(e){if(!e||e.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
+function toggleAuthMode(){authMode=authMode==='login'?'signup':'login';document.getElementById('authTitle').textContent=authMode==='login'?'Log In':'Sign Up';document.querySelector('#authOverlay .btn-primary').textContent=authMode==='login'?'Log In':'Sign Up';document.querySelector('#authOverlay .btn-text').textContent=authMode==='login'?"Don't have an account? Sign up":'Already have an account? Log in';}
+async function handleAuth(){const u=document.getElementById('authUsername').value.trim();const p=document.getElementById('authPassword').value.trim();if(!u||!p){showToast('Please fill in all fields');return;}try{if(authMode==='signup'){const user=new Parse.User();user.set('username',u);user.set('password',p);await user.signUp();showToast('Account created! Welcome, '+u+'!');}else{await Parse.User.logIn(u,p);showToast('Welcome back, '+u+'!');}document.getElementById('authOverlay').classList.remove('active');updateUserUI();loadChatsFromCloud();}catch(e){showToast(e.message||'Something went wrong');}}
+function updateUserUI(){const user=Parse.User.current();const btn=document.querySelector('.login-btn');if(user){btn.textContent=user.get('username');btn.onclick=logout;}else{btn.textContent='Log In';btn.onclick=openAuth;}}
+async function logout(){await Parse.User.logOut();showToast('Logged out');updateUserUI();}
+
+// API Key
+async function getAPIKey(){if(!Parse.User.current()){showToast('Please log in first');return;}try{const r=await Parse.Cloud.run("getApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent=r.usage;document.getElementById('apiKeyOverlay').classList.add('active');}catch(e){showToast('Error loading API key');}}
+async function regenerateAPIKey(){try{const r=await Parse.Cloud.run("regenerateApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent='0';showToast('Key regenerated!');}catch(e){showToast('Error regenerating key');}}
+function copyAPIKey(){const inp=document.getElementById('apiKeyDisplay');inp.select();document.execCommand('copy');showToast('Copied!');}
+function closeAPIKey(e){if(!e||e.target===document.getElementById('apiKeyOverlay')){document.getElementById('apiKeyOverlay').classList.remove('active');}}
+
+// Chat Sync
+async function saveCurrentChat(){if(!Parse.User.current()||!currentChatId||!chats[currentChatId])return;try{await Parse.Cloud.run("saveChat",{title:chats[currentChatId].title,messages:chats[currentChatId].messages});}catch(e){}}
+async function loadChatsFromCloud(){if(!Parse.User.current())return;try{const cloudChats=await Parse.Cloud.run("getChats");cloudChats.forEach(c=>{if(!chats[c.id]){chats[c.id]={title:c.title,messages:c.messages,created:new Date(c.created).getTime()};}});renderChatList();}catch(e){}}
 
 window.addEventListener('DOMContentLoaded',init);
 </script>

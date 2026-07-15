@@ -9,7 +9,7 @@ on:
 jobs:
   optimize:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 65
     
     steps:
     - uses: actions/checkout@v4
@@ -19,6 +19,7 @@ jobs:
     - name: Install deps
       run: pip install torch transformers datasets accelerate safetensors numpy pyyaml
     - name: Run optimization
+      timeout-minutes: 55
       run: python src/optimize_pipeline.py
     - name: Remove large files
       run: |
@@ -33,5 +34,6 @@ jobs:
         git stash
         git pull --rebase origin main
         git stash pop || true
-        git add models/chunks/ models/last_train.json 2>/dev/null || true
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
+        git add models/chunks/ models/last_train.json data/ knowledge/ 2>/dev/null || true
         git diff --staged --quiet || git commit -m "✂️ Full optimization complete" && git push origin main || echo "No changes"

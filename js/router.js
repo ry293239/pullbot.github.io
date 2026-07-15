@@ -1,65 +1,62 @@
-// Pullbot DIY Load Balancer
-// Tries backends in order, caches which one is awake
+// ============================================
+// PULLBOT DIY LOAD BALANCER
+// Races backends, caches winner, auto-failover
+// ============================================
 
 const BACKENDS = [
     'https://pullbot-api.onrender.com',
-    // Add Back4App URL when ready
+];
+
+const USER_BACKENDS = [
+    'https://pullbot-users.back4app.io',  // When deployed
 ];
 
 let activeBackend = null;
+let activeUserBackend = null;
 let lastCheck = 0;
+let lastUserCheck = 0;
 
-async function getBestBackend() {
-    // If we found one recently, use it
-    if (activeBackend && (Date.now() - lastCheck) < 60000) {
-        return activeBackend;
+async function getBestBackend(list, cache, cacheTime) {
+    const cacheKey = list === BACKENDS ? 'activeBackend' : 'activeUserBackend';
+    const lastKey = list === BACKENDS ? 'lastCheck' : 'lastUserCheck';
+    
+    if (window[cacheKey] && (Date.now() - window[lastKey]) < 60000) {
+        return window[cacheKey];
     }
     
-    // Race all backends - first to respond wins
-    const promises = BACKENDS.map(async (url) => {
+    const checks = list.map(async (url) => {
         try {
-            const controller = new AbortController();
-            const timeout = setTimeout(() => controller.abort(), 3000);
-            
-            const r = await fetch(`${url}/health`, { signal: controller.signal });
-            clearTimeout(timeout);
-            
-            if (r.ok) {
-                return url;
-            }
+            const r = await fetch(`${url}/health`, { signal: AbortSignal.timeout(3000) });
+            if (r.ok) return url;
         } catch(e) {}
         return null;
     });
     
-    // Wait for first response
-    const results = await Promise.race([
-        Promise.any(promises),
-        new Promise(resolve => setTimeout(() => resolve(null), 3000))
-    ]);
+    const results = (await Promise.all(checks)).filter(r => r !== null);
     
-    if (results) {
-        activeBackend = results;
-        lastCheck = Date.now();
-        return results;
+    if (results.length > 0) {
+        window[cacheKey] = results[0];
+        window[lastKey] = Date.now();
+        return results[0];
     }
     
-    // All failed - try each one sequentially
-    for (const url of BACKENDS) {
+    // Try sequentially
+    for (const url of list) {
         try {
-            const r = await fetch(`${url}/health`, { signal: AbortSignal.timeout(2000) });
+            const r = await fetch(`${url}/health`, { signal: AbortSignal.timeout(5000) });
             if (r.ok) {
-                activeBackend = url;
-                lastCheck = Date.now();
+                window[cacheKey] = url;
+                window[lastKey] = Date.now();
                 return url;
             }
         } catch(e) {}
     }
     
-    return BACKENDS[0]; // Fallback to first
+    return list[0];
 }
 
 async function askPullbotRouter(question) {
-    const backend = await getBestBackend();
+    const backend = await getBestBackend(BACKENDS, 'activeBackend', 'lastCheck');
     
     try {
         const r = await fetch(`${backend}/ask?q=${encodeURIComponent(question)}`, {
@@ -67,24 +64,65 @@ async function askPullbotRouter(question) {
         });
         if (r.ok) {
             const data = await r.json();
-            return data.response || "No response";
+            return data.response;
         }
-    } catch(e) {
-        // Try next backend
-        for (const url of BACKENDS) {
-            if (url === backend) continue;
-            try {
-                const r = await fetch(`${url}/ask?q=${encodeURIComponent(question)}`, {
-                    signal: AbortSignal.timeout(30000)
-                });
-                if (r.ok) {
-                    const data = await r.json();
-                    activeBackend = url;
-                    return data.response || "No response";
-                }
-            } catch(e2) {}
-        }
+    } catch(e) {}
+    
+    // Fallback to other backends
+    for (const url of BACKENDS) {
+        if (url === backend) continue;
+        try {
+            const r = await fetch(`${url}/ask?q=${encodeURIComponent(question)}`, {
+                signal: AbortSignal.timeout(30000)
+            });
+            if (r.ok) {
+                const data = await r.json();
+                window.activeBackend = url;
+                window.lastCheck = Date.now();
+                return data.response;
+            }
+        } catch(e) {}
     }
     
-    return "All Pullbot servers are sleeping. Try again in a moment!";
+    return null;
+}
+
+async function userRequest(endpoint, body) {
+    const backend = await getBestBackend(USER_BACKENDS, 'activeUserBackend', 'lastUserCheck');
+    
+    try {
+        const r = await fetch(`${backend}${endpoint}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+            signal: AbortSignal.timeout(10000)
+        });
+        return await r.json();
+    } catch(e) {}
+    
+    // Fallback to local Render auth
+    try {
+        const r = await fetch(`${BACKENDS[0]}${endpoint}`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(body),
+            signal: AbortSignal.timeout(10000)
+        });
+        return await r.json();
+    } catch(e) {
+        return { success: false, error: 'Cannot connect to server' };
+    }
+}
+
+async function checkBackendStatus() {
+    const status = {};
+    for (const url of BACKENDS) {
+        try {
+            const r = await fetch(`${url}/health`, { signal: AbortSignal.timeout(2000) });
+            status[url] = r.ok ? 'online' : 'error';
+        } catch(e) {
+            status[url] = 'offline';
+        }
+    }
+    return status;
 }

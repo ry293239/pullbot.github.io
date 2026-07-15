@@ -62,7 +62,6 @@ jobs:
     - name: Save training progress
       if: always()
       run: |
-        echo "Saving training progress..."
         if [ -d models/checkpoints ]; then
           LATEST=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
           if [ -n "$LATEST" ]; then
@@ -76,21 +75,25 @@ jobs:
       run: |
         mkdir -p data/knowledge
         CHUNKS=0; CORPUS_KB=0
+        
         if [ -f knowledge/store.json ]; then
-          CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))")
+          python -c "import json; json.load(open('knowledge/store.json'))" 2>/dev/null && CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))") || CHUNKS=0
         fi
+        
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_KB=$(( $(wc -c < data/processed/corpus.txt) / 1024 ))
         fi
+        
+        CURRENT="1.0"
         if [ -f data/knowledge/version.json ]; then
-          CURRENT=$(python -c "import json; print(json.load(open('data/knowledge/version.json'))['version'])")
-          MAJOR=$(echo $CURRENT | cut -d. -f1)
-          MINOR=$(echo $CURRENT | cut -d. -f2)
-          NEW_MINOR=$((MINOR + 1))
-          NEW_VERSION="${MAJOR}.${NEW_MINOR}"
-        else
-          NEW_VERSION="1.1"
+          python -c "import json; json.load(open('data/knowledge/version.json'))" 2>/dev/null && CURRENT=$(python -c "import json; print(json.load(open('data/knowledge/version.json'))['version'])") || CURRENT="1.0"
         fi
+        
+        MAJOR=$(echo $CURRENT | cut -d. -f1)
+        MINOR=$(echo $CURRENT | cut -d. -f2)
+        NEW_MINOR=$((MINOR + 1))
+        NEW_VERSION="${MAJOR}.${NEW_MINOR}"
+        
         cat > data/knowledge/version.json << ENDJSON
         {
           "version": "${NEW_VERSION}",
@@ -120,6 +123,7 @@ jobs:
         git stash
         git pull --rebase origin main
         git stash pop || true
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
         git add data/ knowledge/ models/chunks/ models/checkpoints/ models/last_train.json 2>/dev/null || true
         git add src/ config.yaml requirements.txt .github/ js/ index.html .gitignore 2>/dev/null || true
         git add data/knowledge/version.json 2>/dev/null || true

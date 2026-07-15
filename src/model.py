@@ -1,11 +1,6 @@
 """
-Pullbot Model - QUALITY-OVER-QUANTITY PIPELINE
-1. Smart Prune: redistribute weak to strong
-2. Safe Precision Prune: merge insignificant digits (same row only)
-3. Progressive Bit Reduction: each node earns 8, 7, or 6 bits
-4. Shrink: remove dead neurons
-5. 8-bit Quantize: final compression
-Every remaining weight is max quality at minimum viable precision.
+Pullbot Model - FULL FINE-TUNING + SMART PRUNING + QUANTIZATION + ONNX
+Train saves model. Optimize runs separately.
 """
 
 import os
@@ -89,26 +84,11 @@ class PullbotModel:
         print(f"   ✅ Reassembled")
     
     def _load_model_safe(self):
-        manifest_path = os.path.join(self.chunks_dir, "manifest.json")
-        is_quantized = False
-        if os.path.exists(manifest_path):
-            with open(manifest_path) as f:
-                is_quantized = json.load(f).get('quantized', False)
-        
         try:
-            if is_quantized:
-                self.model = AutoModelForCausalLM.from_pretrained(
-                    self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
-                )
-                self.model = torch.quantization.quantize_dynamic(
-                    self.model, {torch.nn.Linear}, dtype=torch.qint8
-                )
-                print("   ✅ Loaded quantized model")
-            else:
-                self.model = AutoModelForCausalLM.from_pretrained(
-                    self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
-                )
-                print("   ✅ Loaded via from_pretrained")
+            self.model = AutoModelForCausalLM.from_pretrained(
+                self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
+            )
+            print("   ✅ Loaded via from_pretrained")
         except Exception as e:
             print(f"   ⚠️ Trying manual load...")
             try:
@@ -187,333 +167,54 @@ class PullbotModel:
             json.dump({'timestamp': time.time(), 'dataset_size': len(dataset), 'minutes': elapsed}, f)
         return True
     
-    # ============================================
-    # STAGE 1: SMART PRUNE
-    # ============================================
-    
     def smart_prune(self, target_sparsity=0.5):
-        """Redistribute weak weights to similar strong ones instead of deleting"""
-        print("\n" + "=" * 50)
-        print(f"🧠 STAGE 1: SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
-        print("=" * 50)
-        
+        print(f"\n🧠 SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
         total_redistributed = 0
-        total_weights = 0
-        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
-                total_weights += weight.numel()
-                
                 for row_idx in range(weight.shape[0]):
-                    row = weight[row_idx]
-                    abs_row = row.abs()
-                    if abs_row.sum() == 0:
-                        continue
-                    
-                    k = max(1, int((1 - target_sparsity) * len(row)))
-                    if k >= len(row):
-                        continue
-                    
-                    threshold = torch.kthvalue(abs_row, len(row) - k).values
+                    row = weight[row_idx]; abs_row = row.abs()
+                    if abs_row.sum() == 0: continue
+                    k = max(1, int((1-target_sparsity)*len(row)))
+                    if k >= len(row): continue
+                    threshold = torch.kthvalue(abs_row, len(row)-k).values
                     strong_mask = abs_row >= threshold
                     strong_idx = torch.where(strong_mask)[0]
                     weak_idx = torch.where(~strong_mask)[0]
-                    
-                    if len(strong_idx) == 0 or len(weak_idx) == 0:
-                        continue
-                    
+                    if len(strong_idx)==0 or len(weak_idx)==0: continue
                     for wi in weak_idx:
                         weak_val = row[wi]
-                        if abs(weak_val) < 0.00001:
-                            row[wi] = 0
-                            continue
-                        
-                        best_si = strong_idx[0]
-                        best_sim = -999
-                        for si in strong_idx[:min(20, len(strong_idx))]:
-                            sign_match = 1 if (weak_val * row[si]) > 0 else -1
-                            sim = sign_match * (1 - min(abs(weak_val - row[si].abs()), 1.0))
-                            if sim > best_sim:
-                                best_sim = sim
-                                best_si = si
-                        
-                        row[best_si] += weak_val * 0.6
-                        row[wi] = 0
-                        total_redistributed += 1
-                
+                        if abs(weak_val)<0.00001: row[wi]=0; continue
+                        best_si = strong_idx[0]; best_sim = -999
+                        for si in strong_idx[:min(20,len(strong_idx))]:
+                            sign_match = 1 if (weak_val*row[si])>0 else -1
+                            sim = sign_match*(1-min(abs(weak_val-row[si].abs()),1.0))
+                            if sim>best_sim: best_sim=sim; best_si=si
+                        row[best_si] += weak_val*0.6; row[wi]=0; total_redistributed+=1
                 module.weight.data = weight.to(module.weight.dtype)
-        
-        print(f"   Redistributed: {total_redistributed:,} / {total_weights:,}")
+        print(f"   Redistributed: {total_redistributed:,}")
         return total_redistributed
     
-    # ============================================
-    # STAGE 2: SAFE PRECISION PRUNE (same row only)
-    # ============================================
-    
-    def precision_prune_safe(self, significance=2, test_inputs=None):
-        """Merge insignificant weights into neighbors IN THE SAME ROW.
-        Same row = same downstream neuron = safe to merge."""
-        print("\n" + "=" * 50)
-        print(f"🎯 STAGE 2: SAFE PRECISION PRUNE (sig={significance})")
-        print("=" * 50)
-        
-        if test_inputs is None:
-            test_inputs = torch.randint(0, 50257, (10, 16))
-        
-        self.model.eval()
-        with torch.no_grad():
-            baseline = self.model(test_inputs).logits
-        
-        total_merged = 0
-        total_weights = 0
-        
-        for name, module in self.model.named_modules():
-            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
-                weight = module.weight.data.float()
-                total_weights += weight.numel()
-                
-                for row_idx in range(weight.shape[0]):
-                    row = weight[row_idx]
-                    abs_row = row.abs()
-                    if abs_row.sum() == 0:
-                        continue
-                    
-                    threshold = torch.kthvalue(abs_row, int(0.5 * len(row))).values
-                    strong_mask = abs_row >= threshold
-                    strong_idx = torch.where(strong_mask)[0]
-                    
-                    if len(strong_idx) < 2:
-                        continue
-                    
-                    for col_idx in range(len(row)):
-                        if strong_mask[col_idx]:
-                            continue
-                        
-                        val = row[col_idx]
-                        if abs(val) < 0.0001:
-                            row[col_idx] = 0
-                            continue
-                        
-                        rounded = round(val.item(), significance)
-                        if abs(val - rounded) < (10 ** -(significance + 1)):
-                            best_si = strong_idx[0]
-                            best_dist = float('inf')
-                            for si in strong_idx:
-                                dist = abs(val - row[si].item())
-                                if dist < best_dist:
-                                    best_dist = dist
-                                    best_si = si
-                            
-                            row[best_si] += val * 0.7
-                            row[col_idx] = 0
-                            total_merged += 1
-                
-                module.weight.data = weight.to(module.weight.dtype)
-        
-        # Verify
-        self.model.eval()
-        with torch.no_grad():
-            new_out = self.model(test_inputs).logits
-        diff = (baseline - new_out).abs().mean().item()
-        
-        print(f"   Merged: {total_merged:,}")
-        print(f"   Output diff: {diff:.10f}")
-        if diff > 0.0001:
-            print(f"   ⚠️ ROLLING BACK")
-            return False
-        print(f"   ✅ Safe!")
-        return True
-    
-    # ============================================
-    # STAGE 3: PROGRESSIVE BIT REDUCTION
-    # ============================================
-    
-    def progressive_bit_reduce(self, test_inputs=None):
-        """Each node finds minimum viable bit depth.
-        Try 7-bit. If output same → try 6-bit. Stop when output changes."""
-        print("\n" + "=" * 50)
-        print("📉 STAGE 3: PROGRESSIVE BIT REDUCTION")
-        print("=" * 50)
-        
-        if test_inputs is None:
-            test_inputs = torch.randint(0, 50257, (10, 16))
-        
-        self.model.eval()
-        with torch.no_grad():
-            baseline = self.model(test_inputs).logits
-        
-        nodes_8bit = nodes_7bit = nodes_6bit = nodes_merged = 0
-        
-        for name, module in self.model.named_modules():
-            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
-                weight = module.weight.data.float()
-                
-                for row_idx in range(weight.shape[0]):
-                    row = weight[row_idx]
-                    
-                    for col_idx in range(len(row)):
-                        val = row[col_idx]
-                        if abs(val) < 0.0001:
-                            nodes_merged += 1
-                            continue
-                        
-                        # Try 7-bit
-                        val_7bit = round(val.item() * 127) / 127
-                        row[col_idx] = val_7bit
-                        module.weight.data = weight.to(module.weight.dtype)
-                        new_out = self.model(test_inputs).logits
-                        diff = (baseline - new_out).abs().mean().item()
-                        
-                        if diff < 0.00000001:
-                            # Try 6-bit
-                            val_6bit = round(val.item() * 63) / 63
-                            row[col_idx] = val_6bit
-                            module.weight.data = weight.to(module.weight.dtype)
-                            new_out = self.model(test_inputs).logits
-                            diff = (baseline - new_out).abs().mean().item()
-                            
-                            if diff < 0.00000001:
-                                nodes_6bit += 1
-                            else:
-                                row[col_idx] = val_7bit
-                                nodes_7bit += 1
-                        else:
-                            row[col_idx] = val
-                            nodes_8bit += 1
-                    
-                    module.weight.data = weight.to(module.weight.dtype)
-        
-        total = nodes_8bit + nodes_7bit + nodes_6bit + nodes_merged
-        eff_bits = (nodes_8bit*8 + nodes_7bit*7 + nodes_6bit*6) / max(total, 1)
-        
-        print(f"   8-bit: {nodes_8bit:,} ({nodes_8bit/total*100:.0f}%)")
-        print(f"   7-bit: {nodes_7bit:,} ({nodes_7bit/total*100:.0f}%)")
-        print(f"   6-bit: {nodes_6bit:,} ({nodes_6bit/total*100:.0f}%)")
-        print(f"   Merged: {nodes_merged:,}")
-        print(f"   Effective: {eff_bits:.1f}-bit")
-        return eff_bits
-    
-    # ============================================
-    # STAGE 4: SHRINK
-    # ============================================
-    
-    def shrink_model(self):
-        """Remove neurons that are all zeros"""
-        print("\n" + "=" * 50)
-        print("✂️ STAGE 4: SHRINK")
-        print("=" * 50)
-        
-        total_before = sum(p.numel() for p in self.model.parameters())
-        
-        for name, module in list(self.model.named_modules()):
-            if isinstance(module, nn.Linear) and module.weight.shape[0] > 50:
-                weight = module.weight.data
-                active_rows = weight.abs().sum(dim=1) > 0.0001
-                
-                if active_rows.sum() == weight.shape[0]:
-                    continue
-                if active_rows.sum() < weight.shape[0] * 0.2:
-                    continue
-                
-                new_out = active_rows.sum().item()
-                new_linear = nn.Linear(weight.shape[1], new_out, bias=module.bias is not None)
-                new_linear.weight.data = weight[active_rows].clone()
-                if module.bias is not None:
-                    new_linear.bias.data = module.bias.data[active_rows].clone()
-                
-                parent_name = '.'.join(name.split('.')[:-1])
-                attr_name = name.split('.')[-1]
-                if parent_name:
-                    parent = dict(self.model.named_modules()).get(parent_name)
-                    if parent:
-                        setattr(parent, attr_name, new_linear)
-        
-        total_after = sum(p.numel() for p in self.model.parameters())
-        reduction = (1 - total_after/total_before) * 100
-        print(f"   {total_before:,} → {total_after:,} ({reduction:.1f}% smaller)")
-        return reduction
-    
-    # ============================================
-    # STAGE 5: 8-BIT QUANTIZE
-    # ============================================
-    
     def quantize_model(self):
-        print("\n" + "=" * 50)
-        print("🔧 STAGE 5: 8-BIT QUANTIZE")
-        print("=" * 50)
+        print("\n🔧 8-BIT QUANTIZE")
         try:
-            self.model = torch.quantization.quantize_dynamic(
-                self.model, {torch.nn.Linear}, dtype=torch.qint8
-            )
-            total_bytes = sum(p.numel() for p in self.model.parameters() if p.dtype == torch.qint8)
-            total_bytes += sum(p.numel() * 4 for p in self.model.parameters() if p.dtype != torch.qint8)
+            self.model = torch.quantization.quantize_dynamic(self.model, {torch.nn.Linear}, dtype=torch.qint8)
+            total_bytes = sum(p.numel() for p in self.model.parameters() if p.dtype==torch.qint8)
+            total_bytes += sum(p.numel()*4 for p in self.model.parameters() if p.dtype!=torch.qint8)
             print(f"   Size: {total_bytes/(1024*1024):.1f}MB")
             return total_bytes/(1024*1024)
         except Exception as e:
             print(f"   ⚠️ Failed: {e}")
             return None
     
-    # ============================================
-    # ONNX EXPORT
-    # ============================================
-    
-    def export_to_onnx(self, output_path=None):
-        if output_path is None:
-            output_path = os.path.join(REPO_ROOT, "models", "pullbot.onnx")
-        print("\n📤 EXPORTING TO ONNX")
-        try:
-            self.model.eval()
-            self.model.to('cpu')
-            dummy_input = torch.randint(0, 50257, (1, 64))
-            dummy_mask = torch.ones(1, 64)
-            torch.onnx.export(
-                self.model, (dummy_input, dummy_mask), output_path,
-                input_names=['input_ids', 'attention_mask'],
-                output_names=['logits'],
-                dynamic_axes={
-                    'input_ids': {0: 'batch', 1: 'sequence'},
-                    'attention_mask': {0: 'batch', 1: 'sequence'},
-                    'logits': {0: 'batch', 1: 'sequence'}
-                },
-                opset_version=14, do_constant_folding=True
-            )
-            print(f"   ✅ ONNX: {os.path.getsize(output_path)/(1024*1024):.1f}MB")
-            return output_path
-        except:
-            try:
-                dummy_input = torch.randint(0, 50257, (1, 64))
-                torch.onnx.export(
-                    self.model, dummy_input, output_path,
-                    input_names=['input_ids'], output_names=['logits'],
-                    dynamic_axes={'input_ids': {0: 'batch', 1: 'sequence'}},
-                    opset_version=14, do_constant_folding=True
-                )
-                print(f"   ✅ ONNX: {os.path.getsize(output_path)/(1024*1024):.1f}MB")
-                return output_path
-            except Exception as e:
-                print(f"   ❌ Failed: {e}")
-                return None
-    
-    # ============================================
-    # SIZE ESTIMATE
-    # ============================================
-    
     def get_model_size_estimate(self):
-        non_zero = sum((p != 0).sum().item() for p in self.model.parameters() if p.dim() >= 2)
+        non_zero = sum((p!=0).sum().item() for p in self.model.parameters() if p.dim()>=2)
         total = sum(p.numel() for p in self.model.parameters())
-        is_quantized = any(p.dtype == torch.qint8 for p in self.model.parameters())
+        is_quantized = any(p.dtype==torch.qint8 for p in self.model.parameters())
         bytes_per_param = 1 if is_quantized else 4
-        ram_mb = non_zero * bytes_per_param / (1024 * 1024) * 3
-        return {
-            'total_params': total, 'non_zero': non_zero,
-            'sparsity_pct': (1 - non_zero/total)*100 if total > 0 else 0,
-            'quantized': is_quantized, 'estimated_ram_mb': ram_mb
-        }
-    
-    # ============================================
-    # STREAMING SAVE & CHUNK
-    # ============================================
+        ram_mb = non_zero*bytes_per_param/(1024*1024)*3
+        return {'total_params':total,'non_zero':non_zero,'sparsity_pct':(1-non_zero/total)*100 if total>0 else 0,'quantized':is_quantized,'estimated_ram_mb':ram_mb}
     
     def save_and_chunk(self):
         print("\n💾 Saving model...")
@@ -524,71 +225,38 @@ class PullbotModel:
             self.model.save_pretrained(temp_dir)
         except:
             torch.save(self.model.state_dict(), os.path.join(temp_dir, "pytorch_model.bin"))
-            if hasattr(self.model, 'config'):
-                self.model.config.save_pretrained(temp_dir)
-        
+            if hasattr(self.model,'config'): self.model.config.save_pretrained(temp_dir)
         weights_path = None
-        for fname in ['model.safetensors', 'pytorch_model.bin']:
+        for fname in ['model.safetensors','pytorch_model.bin']:
             path = os.path.join(temp_dir, fname)
-            if os.path.exists(path):
-                weights_path = path
-                break
-        if not weights_path:
-            print("❌ No weights found!")
-            return False
-        
-        for old in glob.glob(os.path.join(self.chunks_dir, "model_chunk_*.bin")):
-            os.remove(old)
-        for old in glob.glob(os.path.join(self.chunks_dir, "*.safetensors")):
-            os.remove(old)
-        for old in glob.glob(os.path.join(self.chunks_dir, "pytorch_model.bin")):
-            os.remove(old)
-        
-        total_size = os.path.getsize(weights_path)
-        chunks = []
+            if os.path.exists(path): weights_path=path; break
+        if not weights_path: print("❌ No weights found!"); return False
+        for old in glob.glob(os.path.join(self.chunks_dir,"model_chunk_*.bin")): os.remove(old)
+        for old in glob.glob(os.path.join(self.chunks_dir,"*.safetensors")): os.remove(old)
+        for old in glob.glob(os.path.join(self.chunks_dir,"pytorch_model.bin")): os.remove(old)
+        total_size = os.path.getsize(weights_path); chunks = []
         print(f"\n🔪 Streaming chunks...")
-        with open(weights_path, 'rb') as f:
+        with open(weights_path,'rb') as f:
             chunk_idx = 0
             while True:
                 chunk_data = f.read(CHUNK_SIZE)
-                if not chunk_data:
-                    break
+                if not chunk_data: break
                 chunk_name = f"model_chunk_{chunk_idx:03d}.bin"
                 chunk_path = os.path.join(self.chunks_dir, chunk_name)
-                with open(chunk_path, 'wb') as out:
-                    out.write(chunk_data)
+                with open(chunk_path,'wb') as out: out.write(chunk_data)
                 chunks.append(f"models/chunks/{chunk_name}")
-                print(f"   ✅ {chunk_name} ({len(chunk_data)/(1024*1024):.1f}MB)")
-                chunk_idx += 1
-                del chunk_data
-        
-        config_files = ['config.json', 'tokenizer_config.json', 'vocab.json',
-                        'merges.txt', 'special_tokens_map.json', 'tokenizer.json']
+                chunk_idx += 1; del chunk_data
+        config_files = ['config.json','tokenizer_config.json','vocab.json','merges.txt','special_tokens_map.json','tokenizer.json']
         for cfg in config_files:
             src = os.path.join(temp_dir, cfg)
-            if os.path.exists(src):
-                shutil.copy(src, os.path.join(self.chunks_dir, cfg))
-        
+            if os.path.exists(src): shutil.copy(src, os.path.join(self.chunks_dir, cfg))
         stats = self.get_model_size_estimate()
-        manifest = {
-            "model_name": self.model_name, "total_size": total_size,
-            "total_size_mb": round(total_size/(1024*1024), 1),
-            "num_chunks": len(chunks), "chunks": chunks,
-            "weights_filename": os.path.basename(weights_path),
-            "fully_trained": True, "pruned": stats['sparsity_pct'] > 5,
-            "quantized": stats['quantized'], "sparsity_pct": stats['sparsity_pct'],
-            "estimated_ram_mb": stats['estimated_ram_mb'], "training_date": time.time()
-        }
-        with open(os.path.join(self.chunks_dir, "manifest.json"), 'w') as f:
-            json.dump(manifest, f, indent=2)
-        
+        manifest = {"model_name":self.model_name,"total_size":total_size,"total_size_mb":round(total_size/(1024*1024),1),"num_chunks":len(chunks),"chunks":chunks,"weights_filename":os.path.basename(weights_path),"fully_trained":True,"pruned":stats['sparsity_pct']>5,"quantized":stats['quantized'],"sparsity_pct":stats['sparsity_pct'],"estimated_ram_mb":stats['estimated_ram_mb'],"training_date":time.time()}
+        with open(os.path.join(self.chunks_dir,"manifest.json"),'w') as f: json.dump(manifest,f,indent=2)
         shutil.rmtree(temp_dir)
-        ckpt_dir = os.path.join(REPO_ROOT, "models", "checkpoints")
-        if os.path.exists(ckpt_dir):
-            shutil.rmtree(ckpt_dir)
-        
+        ckpt_dir = os.path.join(REPO_ROOT,"models","checkpoints")
+        if os.path.exists(ckpt_dir): shutil.rmtree(ckpt_dir)
         print(f"\n✅ Saved! {len(chunks)} chunks, {round(total_size/(1024*1024),1)}MB")
-        print(f"   Sparsity: {stats['sparsity_pct']:.1f}% | Quantized: {stats['quantized']} | RAM: {stats['estimated_ram_mb']:.0f}MB")
         return True
 
 if __name__ == '__main__':
@@ -596,63 +264,29 @@ if __name__ == '__main__':
     bot = PullbotModel()
     if len(sys.argv) > 1:
         cmd = sys.argv[1]
-        
         if cmd == 'train':
             resume = None
             if '--resume' in sys.argv:
                 idx = sys.argv.index('--resume')
-                if idx + 1 < len(sys.argv):
-                    resume = sys.argv[idx + 1]
+                if idx+1 < len(sys.argv): resume = sys.argv[idx+1]
             if bot.train(resume_from_checkpoint=resume):
-                before = bot.get_model_size_estimate()
-                print(f"\n📊 Before: {before['total_params']:,} params")
-                test_inputs = torch.randint(0, 50257, (10, 16))
-                bot.smart_prune(target_sparsity=0.5)
-                bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
-                bot.progressive_bit_reduce(test_inputs=test_inputs)
-                bot.shrink_model()
-                bot.quantize_model()
-                final = bot.get_model_size_estimate()
-                print(f"\n📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
                 bot.save_and_chunk()
-                bot.export_to_onnx()
-                print("\n🎉 FULL QUALITY PIPELINE COMPLETE!")
-        
+                print("\n🎉 Training complete! Model saved.")
         elif cmd == 'optimize':
-            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
-            before = bot.get_model_size_estimate()
-            print(f"\n📊 Before: {before['total_params']:,} params")
-            test_inputs = torch.randint(0, 50257, (10, 16))
+            sp = float(sys.argv[2]) if len(sys.argv)>2 else 0.5
+            print(f"\n✂️ Optimizing (sparsity: {sp*100:.0f}%)...")
             bot.smart_prune(target_sparsity=sp)
-            bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
-            bot.progressive_bit_reduce(test_inputs=test_inputs)
-            bot.shrink_model()
             bot.quantize_model()
             final = bot.get_model_size_estimate()
-            print(f"\n📊 After: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
+            print(f"   Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
             bot.save_and_chunk()
-            bot.export_to_onnx()
-        
-        elif cmd == 'smart-prune':
-            sp = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
-            bot.smart_prune(target_sparsity=sp)
-            bot.save_and_chunk()
-        
-        elif cmd == 'quantize':
-            bot.quantize_model()
-            bot.save_and_chunk()
-        
-        elif cmd == 'onnx':
-            bot.export_to_onnx()
-        
+            print("\n✅ Optimization complete!")
         elif cmd == 'size':
             s = bot.get_model_size_estimate()
             print(f"\n📊 {s['total_params']:,} params | Non-zero: {s['non_zero']:,} | Sparsity: {s['sparsity_pct']:.1f}% | RAM: {s['estimated_ram_mb']:.0f}MB")
-        
         elif cmd == 'chunk':
             bot.save_and_chunk()
-        
         else:
-            print("Commands: train, optimize [0.3-0.7], smart-prune, quantize, onnx, size, chunk")
+            print("Commands: train, optimize [0.3-0.7], size, chunk")
     else:
-        print("Commands: train, optimize [0.3-0.7], smart-prune, quantize, onnx, size, chunk")
+        print("Commands: train, optimize [0.3-0.7], size, chunk")

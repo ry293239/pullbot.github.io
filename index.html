@@ -7,6 +7,7 @@
     <link rel="icon" type="image/png" href="icon.png">
     <link rel="apple-touch-icon" href="icon.png">
     <meta property="og:image" content="https://pullbot-ai.github.io/icon.png">
+    <script src="https://unpkg.com/parse@5.0.0/dist/parse.min.js"></script>
     <style>
         :root {
             --bg-primary: #0D1A16;
@@ -25,8 +26,7 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
-            background: var(--bg-primary);
-            color: var(--text-primary);
+            background: var(--bg-primary); color: var(--text-primary);
             height: 100dvh; display: flex; overflow: hidden;
             position: fixed; top: 0; left: 0; right: 0; bottom: 0;
         }
@@ -328,11 +328,15 @@
 
 <script src="js/router.js"></script>
 <script>
+// Initialize Parse
+Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS", "ow1W5OlXiE57XYiTa9Hyhj1v3gAM4niSiWGbVBQq");
+Parse.serverURL = "https://parseapi.back4app.com";
+
 const API_URL = 'https://pullbot-api.onrender.com';
 let apiOnline = false;
 let chats = {};
 let currentChatId = null;
-let currentUser = JSON.parse(localStorage.getItem('pullbot_user') || 'null');
+let currentUser = Parse.User.current();
 
 function updateLoader(text, percent) {
     document.getElementById('loaderStatus').textContent = text;
@@ -378,7 +382,7 @@ function getLocalResponse(p) {
     if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there!";
     if (q.includes('your name')) return "I'm Pullbot!";
     if (q.match(/^(thanks|thank you)\b/)) return "You're welcome!";
-    return "I'm thinking... try asking something else!";
+    return "I'm thinking...";
 }
 
 function newChat() {
@@ -452,7 +456,7 @@ function updateTempLabel(){const v=document.getElementById('settingTemp').value;
 function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
 function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;updateTempLabel();}}
 
-// Auth
+// Auth (Back4App Parse)
 let authMode='login';
 function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
 function closeAuth(event){if(!event||event.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
@@ -463,27 +467,37 @@ function toggleAuthMode(){
     document.querySelector('.btn-text').textContent=authMode==='login'?"Don't have an account? Sign up":'Already have an account? Log in';
 }
 async function handleAuth(){
-    const username=document.getElementById('authUsername').value.trim().toLowerCase();
+    const username=document.getElementById('authUsername').value.trim();
     const password=document.getElementById('authPassword').value.trim();
     if(!username||!password){showToast('Please fill in all fields');return;}
-    const endpoint=authMode==='login'?'/login':'/signup';
     try{
-        const data=await userRequest(endpoint,{username,password});
-        if(data.success){
-            currentUser={username:data.username,token:data.token};
-            localStorage.setItem('pullbot_user',JSON.stringify(currentUser));
-            showToast(data.message);
-            document.getElementById('authOverlay').classList.remove('active');
-            updateUserUI();
-        }else{showToast(data.error||'Something went wrong');}
-    }catch(e){showToast('Cannot connect to server');}
+        if(authMode==='signup'){
+            const user=new Parse.User();
+            user.set('username',username);
+            user.set('password',password);
+            await user.signUp();
+            showToast('Account created! Welcome, '+username+'!');
+        }else{
+            await Parse.User.logIn(username,password);
+            showToast('Welcome back, '+username+'!');
+        }
+        currentUser=Parse.User.current();
+        document.getElementById('authOverlay').classList.remove('active');
+        updateUserUI();
+    }catch(e){showToast(e.message||'Something went wrong');}
 }
 function updateUserUI(){
+    const user=Parse.User.current();
     const btn=document.querySelector('.login-btn');
-    if(currentUser){btn.textContent=currentUser.username;btn.onclick=logout;}
+    if(user){btn.textContent=user.get('username');btn.onclick=logout;}
     else{btn.textContent='Log In';btn.onclick=openAuth;}
 }
-function logout(){currentUser=null;localStorage.removeItem('pullbot_user');showToast('Logged out');updateUserUI();}
+async function logout(){
+    await Parse.User.logOut();
+    currentUser=null;
+    showToast('Logged out');
+    updateUserUI();
+}
 
 window.addEventListener('DOMContentLoaded',init);
 </script>

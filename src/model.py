@@ -1,6 +1,10 @@
 """
-Pullbot Model - FULL FINE-TUNING + SMART PRUNING + QUANTIZATION + ONNX
-Train saves model. Optimize runs separately.
+Pullbot Model - FULL FINE-TUNING + 4-STAGE OPTIMIZATION
+Train saves model. Optimize runs separately with all 4 stages.
+1. Smart Prune (redistribute weak to strong)
+2. Safe Precision Prune (merge insignificant, same row only)
+3. Progressive Bit Reduction (each node earns 8/7/6 bits)
+4. 8-bit Quantize
 """
 
 import os
@@ -167,8 +171,12 @@ class PullbotModel:
             json.dump({'timestamp': time.time(), 'dataset_size': len(dataset), 'minutes': elapsed}, f)
         return True
     
+    # ============================================
+    # STAGE 1: SMART PRUNE
+    # ============================================
+    
     def smart_prune(self, target_sparsity=0.5):
-        print(f"\n🧠 SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
+        print(f"\n🧠 STAGE 1: SMART PRUNE (redistribute {target_sparsity*100:.0f}%)")
         total_redistributed = 0
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
@@ -196,17 +204,111 @@ class PullbotModel:
         print(f"   Redistributed: {total_redistributed:,}")
         return total_redistributed
     
+    # ============================================
+    # STAGE 2: SAFE PRECISION PRUNE
+    # ============================================
+    
+    def precision_prune_safe(self, significance=2, test_inputs=None):
+        print(f"\n🎯 STAGE 2: SAFE PRECISION PRUNE (sig={significance})")
+        if test_inputs is None:
+            test_inputs = torch.randint(0, 50257, (10, 16))
+        self.model.eval()
+        with torch.no_grad():
+            baseline = self.model(test_inputs).logits
+        total_merged = 0
+        for name, module in self.model.named_modules():
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
+                weight = module.weight.data.float()
+                for row_idx in range(weight.shape[0]):
+                    row = weight[row_idx]; abs_row = row.abs()
+                    if abs_row.sum() == 0: continue
+                    threshold = torch.kthvalue(abs_row, int(0.5*len(row))).values
+                    strong_mask = abs_row >= threshold
+                    strong_idx = torch.where(strong_mask)[0]
+                    if len(strong_idx) < 2: continue
+                    for col_idx in range(len(row)):
+                        if strong_mask[col_idx]: continue
+                        val = row[col_idx]
+                        if abs(val) < 0.0001: row[col_idx]=0; continue
+                        rounded = round(val.item(), significance)
+                        if abs(val-rounded) < (10**-(significance+1)):
+                            best_si = strong_idx[0]; best_dist = float('inf')
+                            for si in strong_idx:
+                                dist = abs(val-row[si].item())
+                                if dist < best_dist: best_dist=dist; best_si=si
+                            row[best_si] += val*0.7; row[col_idx]=0; total_merged+=1
+                module.weight.data = weight.to(module.weight.dtype)
+        self.model.eval()
+        with torch.no_grad():
+            new_out = self.model(test_inputs).logits
+        diff = (baseline-new_out).abs().mean().item()
+        print(f"   Merged: {total_merged:,} | Output diff: {diff:.10f}")
+        if diff > 0.0001: print("   ⚠️ ROLLING BACK"); return False
+        print("   ✅ Safe!"); return True
+    
+    # ============================================
+    # STAGE 3: PROGRESSIVE BIT REDUCTION
+    # ============================================
+    
+    def progressive_bit_reduce(self, test_inputs=None):
+        print(f"\n📉 STAGE 3: PROGRESSIVE BIT REDUCTION")
+        if test_inputs is None:
+            test_inputs = torch.randint(0, 50257, (10, 16))
+        self.model.eval()
+        with torch.no_grad():
+            baseline = self.model(test_inputs).logits
+        nodes_8bit=nodes_7bit=nodes_6bit=nodes_merged=0
+        for name, module in self.model.named_modules():
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
+                weight = module.weight.data.float()
+                for row_idx in range(weight.shape[0]):
+                    row = weight[row_idx]
+                    for col_idx in range(len(row)):
+                        val = row[col_idx]
+                        if abs(val)<0.0001: nodes_merged+=1; continue
+                        val_7bit = round(val.item()*127)/127
+                        row[col_idx]=val_7bit
+                        module.weight.data=weight.to(module.weight.dtype)
+                        new_out=self.model(test_inputs).logits
+                        diff=(baseline-new_out).abs().mean().item()
+                        if diff<0.00000001:
+                            val_6bit=round(val.item()*63)/63
+                            row[col_idx]=val_6bit
+                            module.weight.data=weight.to(module.weight.dtype)
+                            new_out=self.model(test_inputs).logits
+                            diff=(baseline-new_out).abs().mean().item()
+                            if diff<0.00000001: nodes_6bit+=1
+                            else: row[col_idx]=val_7bit; nodes_7bit+=1
+                        else: row[col_idx]=val; nodes_8bit+=1
+                    module.weight.data=weight.to(module.weight.dtype)
+        total=nodes_8bit+nodes_7bit+nodes_6bit+nodes_merged
+        eff_bits=(nodes_8bit*8+nodes_7bit*7+nodes_6bit*6)/max(total,1)
+        print(f"   8-bit:{nodes_8bit:,} 7-bit:{nodes_7bit:,} 6-bit:{nodes_6bit:,} merged:{nodes_merged:,}")
+        print(f"   Effective: {eff_bits:.1f}-bit")
+        return eff_bits
+    
+    # ============================================
+    # STAGE 4: 8-BIT QUANTIZE
+    # ============================================
+    
     def quantize_model(self):
-        print("\n🔧 8-BIT QUANTIZE")
+        print("\n🔧 STAGE 4: 8-BIT QUANTIZE")
         try:
-            self.model = torch.quantization.quantize_dynamic(self.model, {torch.nn.Linear}, dtype=torch.qint8)
+            self.model = torch.quantization.quantize_dynamic(
+                self.model, {torch.nn.Linear}, dtype=torch.qint8
+            )
             total_bytes = sum(p.numel() for p in self.model.parameters() if p.dtype==torch.qint8)
             total_bytes += sum(p.numel()*4 for p in self.model.parameters() if p.dtype!=torch.qint8)
-            print(f"   Size: {total_bytes/(1024*1024):.1f}MB")
-            return total_bytes/(1024*1024)
+            size_mb = total_bytes/(1024*1024)
+            print(f"   Size: {size_mb:.1f}MB")
+            return size_mb
         except Exception as e:
             print(f"   ⚠️ Failed: {e}")
             return None
+    
+    # ============================================
+    # SIZE ESTIMATE
+    # ============================================
     
     def get_model_size_estimate(self):
         non_zero = sum((p!=0).sum().item() for p in self.model.parameters() if p.dim()>=2)
@@ -214,7 +316,15 @@ class PullbotModel:
         is_quantized = any(p.dtype==torch.qint8 for p in self.model.parameters())
         bytes_per_param = 1 if is_quantized else 4
         ram_mb = non_zero*bytes_per_param/(1024*1024)*3
-        return {'total_params':total,'non_zero':non_zero,'sparsity_pct':(1-non_zero/total)*100 if total>0 else 0,'quantized':is_quantized,'estimated_ram_mb':ram_mb}
+        return {
+            'total_params':total, 'non_zero':non_zero,
+            'sparsity_pct':(1-non_zero/total)*100 if total>0 else 0,
+            'quantized':is_quantized, 'estimated_ram_mb':ram_mb
+        }
+    
+    # ============================================
+    # SAVE & CHUNK
+    # ============================================
     
     def save_and_chunk(self):
         print("\n💾 Saving model...")
@@ -251,12 +361,18 @@ class PullbotModel:
             src = os.path.join(temp_dir, cfg)
             if os.path.exists(src): shutil.copy(src, os.path.join(self.chunks_dir, cfg))
         stats = self.get_model_size_estimate()
-        manifest = {"model_name":self.model_name,"total_size":total_size,"total_size_mb":round(total_size/(1024*1024),1),"num_chunks":len(chunks),"chunks":chunks,"weights_filename":os.path.basename(weights_path),"fully_trained":True,"pruned":stats['sparsity_pct']>5,"quantized":stats['quantized'],"sparsity_pct":stats['sparsity_pct'],"estimated_ram_mb":stats['estimated_ram_mb'],"training_date":time.time()}
+        manifest = {
+            "model_name":self.model_name,"total_size":total_size,"total_size_mb":round(total_size/(1024*1024),1),
+            "num_chunks":len(chunks),"chunks":chunks,"weights_filename":os.path.basename(weights_path),
+            "fully_trained":True,"pruned":stats['sparsity_pct']>5,"quantized":stats['quantized'],
+            "sparsity_pct":stats['sparsity_pct'],"estimated_ram_mb":stats['estimated_ram_mb'],"training_date":time.time()
+        }
         with open(os.path.join(self.chunks_dir,"manifest.json"),'w') as f: json.dump(manifest,f,indent=2)
         shutil.rmtree(temp_dir)
         ckpt_dir = os.path.join(REPO_ROOT,"models","checkpoints")
         if os.path.exists(ckpt_dir): shutil.rmtree(ckpt_dir)
         print(f"\n✅ Saved! {len(chunks)} chunks, {round(total_size/(1024*1024),1)}MB")
+        print(f"   Sparsity: {stats['sparsity_pct']:.1f}% | Quantized: {stats['quantized']} | RAM: {stats['estimated_ram_mb']:.0f}MB")
         return True
 
 if __name__ == '__main__':
@@ -272,13 +388,19 @@ if __name__ == '__main__':
             if bot.train(resume_from_checkpoint=resume):
                 bot.save_and_chunk()
                 print("\n🎉 Training complete! Model saved.")
+                print("   Run optimize separately to shrink.")
         elif cmd == 'optimize':
             sp = float(sys.argv[2]) if len(sys.argv)>2 else 0.5
-            print(f"\n✂️ Optimizing (sparsity: {sp*100:.0f}%)...")
+            before = bot.get_model_size_estimate()
+            print(f"\n📊 Before: {before['total_params']:,} params, {before['estimated_ram_mb']:.0f}MB RAM")
+            test_inputs = torch.randint(0, 50257, (10, 16))
             bot.smart_prune(target_sparsity=sp)
+            bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
+            bot.progressive_bit_reduce(test_inputs=test_inputs)
             bot.quantize_model()
             final = bot.get_model_size_estimate()
-            print(f"   Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
+            print(f"\n📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
+            print(f"   Saved: {before['estimated_ram_mb']-.0f}MB")
             bot.save_and_chunk()
             print("\n✅ Optimization complete!")
         elif cmd == 'size':

@@ -37,21 +37,17 @@
             top: 0; left: 0; right: 0; bottom: 0;
         }
 
-        /* ========== LOADING SCREEN ========== */
         #loadingScreen {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: var(--bg-primary);
             display: flex; flex-direction: column;
             justify-content: center; align-items: center;
-            z-index: 9999;
-            transition: opacity 0.6s ease;
+            z-index: 9999; transition: opacity 0.6s ease;
         }
         #loadingScreen.hidden { opacity: 0; pointer-events: none; }
         .loader-icon {
             width: 80px; height: 80px; margin-bottom: 24px;
-            border-radius: 50%;
-            animation: pulse 2s ease-in-out infinite;
+            border-radius: 50%; animation: pulse 2s ease-in-out infinite;
             box-shadow: 0 0 30px rgba(45, 212, 168, 0.4);
         }
         @keyframes pulse {
@@ -69,13 +65,10 @@
         .loader-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--cyan)); border-radius: 2px; transition: width 0.4s ease; width: 0%; }
         .loader-status { font-size: 12px; color: var(--text-secondary); margin-top: 12px; }
 
-        /* ========== SIDEBAR ========== */
         #sidebar {
-            width: 260px; min-width: 260px;
-            background: var(--bg-sidebar);
+            width: 260px; min-width: 260px; background: var(--bg-sidebar);
             display: flex; flex-direction: column; flex-shrink: 0;
-            border-right: 1px solid var(--border);
-            height: 100%;
+            border-right: 1px solid var(--border); height: 100%;
         }
         .sidebar-header { padding: 16px; border-bottom: 1px solid var(--border); }
         .sidebar-logo { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
@@ -88,8 +81,7 @@
         .new-chat-btn {
             width: 100%; padding: 10px; background: transparent;
             color: var(--accent); border: 1px solid var(--border);
-            border-radius: 8px; cursor: pointer; font-size: 13px;
-            transition: all 0.2s;
+            border-radius: 8px; cursor: pointer; font-size: 13px; transition: all 0.2s;
         }
         .new-chat-btn:hover { background: rgba(45, 212, 168, 0.08); border-color: var(--accent); }
         .sidebar-section { padding: 14px 16px 6px; font-size: 11px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; }
@@ -111,11 +103,7 @@
         .sidebar-btn:hover { background: var(--bg-input); color: var(--text-primary); }
         .sidebar-btn.accent { color: var(--accent); }
 
-        /* ========== MAIN ========== */
-        #main {
-            flex: 1; display: flex; flex-direction: column;
-            min-width: 0; height: 100%; overflow: hidden;
-        }
+        #main { flex: 1; display: flex; flex-direction: column; min-width: 0; height: 100%; overflow: hidden; }
         .top-bar {
             padding: 12px 20px; display: flex; justify-content: space-between;
             align-items: center; border-bottom: 1px solid var(--border);
@@ -159,11 +147,23 @@
         .message-avatar.bot { background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(78, 230, 199, 0.1)); }
         .message-content { line-height: 1.6; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
 
-        /* ========== INPUT ========== */
-        .input-container {
-            padding: 12px 16px; max-width: 768px;
-            margin: 0 auto; width: 100%; flex-shrink: 0;
+        /* Thinking animation */
+        .thinking-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
+        .thinking-dots span {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--accent);
+            animation: bounce 1.4s infinite ease-in-out;
         }
+        .thinking-dots span:nth-child(1) { animation-delay: 0s; }
+        .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
+        .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+        @keyframes bounce {
+            0%, 80%, 100% { transform: scale(0); opacity: 0.5; }
+            40% { transform: scale(1); opacity: 1; }
+        }
+        .thinking-text { color: var(--text-secondary); font-style: italic; font-size: 13px; }
+
+        .input-container { padding: 12px 16px; max-width: 768px; margin: 0 auto; width: 100%; flex-shrink: 0; }
         .input-wrapper {
             display: flex; gap: 10px; background: var(--bg-input);
             border-radius: 14px; padding: 6px 6px 6px 18px;
@@ -212,7 +212,6 @@
 </head>
 <body>
 
-<!-- LOADING SCREEN -->
 <div id="loadingScreen">
     <img src="icon.png" alt="Pullbot" class="loader-icon" onerror="this.style.display='none'">
     <div class="loader-title">Pullbot</div>
@@ -221,7 +220,6 @@
     <div class="loader-status" id="loaderStatus">Connecting to Pullbot API...</div>
 </div>
 
-<!-- SIDEBAR -->
 <div id="sidebar">
     <div class="sidebar-header">
         <div class="sidebar-logo">
@@ -239,7 +237,6 @@
     </div>
 </div>
 
-<!-- MAIN -->
 <div id="main">
     <div class="top-bar">
         <button class="hamburger" onclick="toggleSidebar()">☰</button>
@@ -300,13 +297,27 @@ async function checkAPIStatus() {
     document.getElementById('statusFooter').innerHTML = '<span class="status-dot ' + (apiOnline ? 'online' : 'offline') + '"></span>' + (apiOnline ? 'Pullbot API Online' : 'Pullbot API Offline');
 }
 
+function cleanResponse(text) {
+    if (!text) return text;
+    let cleaned = text;
+    const patterns = [
+        /response = bias\.?/gi,
+        /^[=\-*]{3,}$/gm,
+        /\n{3,}/g,
+    ];
+    for (const p of patterns) {
+        cleaned = cleaned.replace(p, '');
+    }
+    return cleaned.trim() || text.trim();
+}
+
 async function askPullbot(question) {
     if (apiOnline) {
         try {
             const r = await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);
             if (r.ok) {
                 const data = await r.json();
-                return data.response || "I couldn't process that.";
+                return cleanResponse(data.response) || "I couldn't process that.";
             }
         } catch(e) { apiOnline = false; }
     }
@@ -365,8 +376,12 @@ function renderMessages() {
     welcome.classList.add('hidden');
     container.innerHTML = chats[currentChatId].messages.map(msg => {
         const isUser = msg.role === 'user';
+        const isThinking = msg.content === '<thinking>';
         const avatar = isUser ? '👤' : '<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';
-        return `<div class="message"><div class="message-avatar${isUser ? '' : ' bot'}">${avatar}</div><div class="message-content">${escapeHtml(msg.content)}</div></div>`;
+        const content = isThinking 
+            ? `<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`
+            : escapeHtml(msg.content);
+        return `<div class="message"><div class="message-avatar${isUser ? '' : ' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;
     }).join('');
     setTimeout(() => { document.getElementById('chatContainer').scrollTop = document.getElementById('chatContainer').scrollHeight; }, 100);
 }
@@ -376,14 +391,36 @@ async function sendMessage() {
     const text = input.value.trim();
     if (!text) return;
     if (!currentChatId) newChat();
+    
     chats[currentChatId].messages.push({ role: 'user', content: text });
     if (chats[currentChatId].messages.length === 1) chats[currentChatId].title = text.substring(0, 40);
     input.value = '';
     renderMessages(); renderChatList();
-    chats[currentChatId].messages.push({ role: 'assistant', content: 'Thinking...' });
+    
+    const thinkingId = 'thinking_' + Date.now();
+    chats[currentChatId].messages.push({ role: 'assistant', content: '<thinking>', id: thinkingId });
     renderMessages();
-    const response = await askPullbot(text);
-    chats[currentChatId].messages[chats[currentChatId].messages.length - 1].content = response;
+    
+    const thinkingEl = document.getElementById(thinkingId);
+    if (thinkingEl) {
+        const phrases = ["Pullbot is thinking", "Connecting neurons", "Searching vocabulary", "Forming response", "Almost there"];
+        let phraseIdx = 0;
+        const interval = setInterval(() => {
+            if (thinkingEl.querySelector('.thinking-text')) {
+                thinkingEl.querySelector('.thinking-text').textContent = phrases[phraseIdx % phrases.length];
+                phraseIdx++;
+            }
+        }, 800);
+        
+        const response = await askPullbot(text);
+        clearInterval(interval);
+        chats[currentChatId].messages = chats[currentChatId].messages.filter(m => m.id !== thinkingId);
+        chats[currentChatId].messages.push({ role: 'assistant', content: response });
+    } else {
+        const response = await askPullbot(text);
+        chats[currentChatId].messages = chats[currentChatId].messages.filter(m => m.content === '<thinking>');
+        chats[currentChatId].messages.push({ role: 'assistant', content: response });
+    }
     renderMessages();
 }
 

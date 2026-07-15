@@ -11,14 +11,12 @@
         :root {
             --bg-primary: #0D1A16;
             --bg-sidebar: #081210;
-            --bg-chat: #0D1A16;
             --bg-input: #152A23;
             --bg-bubble-bot: #1A3329;
             --bg-bubble-user: #0D1A16;
             --text-primary: #E8F0EC;
             --text-secondary: #8AA89A;
             --accent: #2DD4A8;
-            --accent-glow: #1DB88A;
             --accent-hover: #3BE0B4;
             --border: #1F3D30;
             --cyan: #4EE6C7;
@@ -110,7 +108,6 @@
             background: var(--bg-primary); flex-shrink: 0;
         }
         .hamburger { background: none; border: none; color: var(--text-secondary); font-size: 20px; cursor: pointer; }
-        .hamburger:hover { color: var(--text-primary); }
         .top-bar-title { display: flex; align-items: center; gap: 8px; font-weight: 600; }
         .top-bar-title img { width: 24px; height: 24px; border-radius: 50%; }
         .login-btn {
@@ -147,7 +144,6 @@
         .message-avatar.bot { background: linear-gradient(135deg, rgba(45, 212, 168, 0.2), rgba(78, 230, 199, 0.1)); }
         .message-content { line-height: 1.6; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
 
-        /* Thinking animation */
         .thinking-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
         .thinking-dots span {
             width: 8px; height: 8px; border-radius: 50%;
@@ -187,6 +183,34 @@
         .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
         .status-dot.online { background: var(--accent); }
         .status-dot.offline { background: #EF4444; }
+
+        /* Settings */
+        .settings-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.6); z-index: 1000;
+            display: flex; justify-content: center; align-items: center;
+            opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+        }
+        .settings-overlay.active { opacity: 1; pointer-events: all; }
+        .settings-panel {
+            background: var(--bg-sidebar); border-radius: 16px;
+            padding: 24px; width: 380px; max-width: 90vw;
+            border: 1px solid var(--border);
+        }
+        .settings-panel h2 { font-size: 20px; margin-bottom: 20px; }
+        .setting-group { margin-bottom: 18px; }
+        .setting-group label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+        .setting-group input[type="range"] { width: 100%; accent-color: var(--accent); }
+        .setting-group select { width: 100%; padding: 8px; background: var(--bg-input); color: var(--text-primary); border: 1px solid var(--border); border-radius: 8px; }
+        .setting-value { font-size: 12px; color: var(--accent); }
+        .btn-primary {
+            width: 100%; padding: 10px; background: var(--accent); color: var(--bg-primary);
+            border: none; border-radius: 8px; cursor: pointer; font-weight: 600; margin-bottom: 8px;
+        }
+        .btn-secondary {
+            width: 100%; padding: 10px; background: transparent; color: var(--text-secondary);
+            border: 1px solid var(--border); border-radius: 8px; cursor: pointer;
+        }
 
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: transparent; }
@@ -231,7 +255,7 @@
     <div class="sidebar-section">History</div>
     <div class="chat-list" id="chatList"></div>
     <div class="sidebar-footer">
-        <button class="sidebar-btn" onclick="showToast('Settings coming soon')">Settings</button>
+        <button class="sidebar-btn" onclick="openSettings()">Settings</button>
         <button class="sidebar-btn accent" onclick="checkAPIStatus()">Check Status</button>
         <button class="sidebar-btn" onclick="window.open('https://github.com/pullbot-ai/pullbot-ai.github.io','_blank')">View on GitHub</button>
     </div>
@@ -266,6 +290,28 @@
     </div>
 </div>
 
+<!-- SETTINGS -->
+<div class="settings-overlay" id="settingsOverlay" onclick="closeSettings(event)">
+    <div class="settings-panel" onclick="event.stopPropagation()">
+        <h2>Settings</h2>
+        <div class="setting-group">
+            <label>Response Temperature</label>
+            <input type="range" min="0.1" max="1.5" step="0.1" value="0.8" id="settingTemp" oninput="updateTempLabel()">
+            <span class="setting-value" id="tempLabel">0.8 - Balanced</span>
+        </div>
+        <div class="setting-group">
+            <label>Max Response Length</label>
+            <select id="settingLength">
+                <option value="30">Short (30 tokens)</option>
+                <option value="60" selected>Medium (60 tokens)</option>
+                <option value="100">Long (100 tokens)</option>
+            </select>
+        </div>
+        <button class="btn-primary" onclick="saveSettings()">Save Settings</button>
+        <button class="btn-secondary" onclick="document.getElementById('settingsOverlay').classList.remove('active')">Cancel</button>
+    </div>
+</div>
+
 <div class="toast" id="toast"></div>
 
 <script>
@@ -280,7 +326,7 @@ function updateLoader(text, percent) {
 }
 
 async function init() {
-    updateLoader('Connecting to Pullbot API...', 20);
+    updateLoader('Connecting...', 20);
     await checkAPIStatus();
     updateLoader('Ready!', 100);
     await new Promise(r => setTimeout(r, 500));
@@ -288,10 +334,7 @@ async function init() {
 }
 
 async function checkAPIStatus() {
-    try {
-        const r = await fetch(`${API_URL}/health`);
-        if (r.ok) { apiOnline = true; }
-    } catch(e) { apiOnline = false; }
+    try { const r = await fetch(`${API_URL}/health`); if (r.ok) apiOnline = true; } catch(e) { apiOnline = false; }
     const dot = document.getElementById('statusDot');
     dot.className = 'status-dot ' + (apiOnline ? 'online' : 'offline');
     document.getElementById('statusFooter').innerHTML = '<span class="status-dot ' + (apiOnline ? 'online' : 'offline') + '"></span>' + (apiOnline ? 'Pullbot API Online' : 'Pullbot API Offline');
@@ -299,143 +342,102 @@ async function checkAPIStatus() {
 
 function cleanResponse(text) {
     if (!text) return text;
-    let cleaned = text;
-    const patterns = [
-        /response = bias\.?/gi,
-        /^[=\-*]{3,}$/gm,
-        /\n{3,}/g,
-    ];
-    for (const p of patterns) {
-        cleaned = cleaned.replace(p, '');
-    }
-    return cleaned.trim() || text.trim();
+    let c = text.replace(/response = bias\.?/gi, '').replace(/^[=\-*]{3,}$/gm, '').replace(/\n{3,}/g, '\n\n');
+    return c.trim() || text.trim();
 }
 
 async function askPullbot(question) {
     if (apiOnline) {
         try {
             const r = await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);
-            if (r.ok) {
-                const data = await r.json();
-                return cleanResponse(data.response) || "I couldn't process that.";
-            }
+            if (r.ok) { const d = await r.json(); return cleanResponse(d.response) || "I couldn't process that."; }
         } catch(e) { apiOnline = false; }
     }
     return getLocalResponse(question);
 }
 
-function getLocalResponse(prompt) {
-    const q = prompt.toLowerCase().trim();
-    const mathMatch = q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
-    if (mathMatch) {
-        const a = parseFloat(mathMatch[1]), b = parseFloat(mathMatch[3]);
-        let r;
-        switch(mathMatch[2]) {
-            case '+': r = a + b; break;
-            case '-': r = a - b; break;
-            case '*': r = a * b; break;
-            case '/': r = b !== 0 ? a / b : 'undefined'; break;
-        }
-        return `${a} ${mathMatch[2]} ${b} = ${r}`;
-    }
-    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there! I'm Pullbot. What can I help with?";
-    if (q.includes('your name') || q.includes('who are you')) return "I'm Pullbot! I learn from Wikipedia and build my vocabulary every day.";
+function getLocalResponse(p) {
+    const q = p.toLowerCase().trim();
+    const m = q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
+    if (m) { const a=parseFloat(m[1]),b=parseFloat(m[3]); let r; switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;} return `${a} ${m[2]} ${b} = ${r}`; }
+    if (q.match(/^(hi|hello|hey|yo|sup)\b/)) return "Hey there! I'm Pullbot.";
+    if (q.includes('your name')||q.includes('who are you')) return "I'm Pullbot! I learn from Wikipedia.";
     if (q.match(/^(thanks|thank you|thx|ty)\b/)) return "You're welcome!";
-    if (q.match(/^(bye|goodbye|see you|cya)\b/)) return "See you! Come back anytime.";
-    return "I'm thinking... try asking me something else!";
+    return "I'm thinking... try asking something else!";
 }
 
 function newChat() {
-    const id = 'chat_' + Date.now();
-    chats[id] = { title: 'New Chat', messages: [], created: Date.now() };
-    currentChatId = id;
-    renderChatList(); renderMessages();
+    const id = 'chat_'+Date.now();
+    chats[id]={title:'New Chat',messages:[],created:Date.now()};
+    currentChatId=id; renderChatList(); renderMessages();
     document.getElementById('welcomeScreen').classList.add('hidden');
     document.getElementById('userInput').focus();
 }
-
-function switchChat(id) { currentChatId = id; renderChatList(); renderMessages(); }
-
-function renderChatList() {
-    const container = document.getElementById('chatList');
-    const ids = Object.keys(chats).sort((a,b) => chats[b].created - chats[a].created);
-    container.innerHTML = ids.map(id => {
-        const chat = chats[id];
-        return `<div class="chat-list-item${id === currentChatId ? ' active' : ''}" onclick="switchChat('${id}')">${escapeHtml(chat.title || 'New Chat')}</div>`;
-    }).join('');
+function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
+function renderChatList(){
+    const c=document.getElementById('chatList');
+    const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);
+    c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');
 }
-
-function renderMessages() {
-    const container = document.getElementById('messagesContainer');
-    const welcome = document.getElementById('welcomeScreen');
-    if (!currentChatId || !chats[currentChatId] || chats[currentChatId].messages.length === 0) {
-        container.innerHTML = '';
-        welcome.classList.remove('hidden');
-        return;
-    }
-    welcome.classList.add('hidden');
-    container.innerHTML = chats[currentChatId].messages.map(msg => {
-        const isUser = msg.role === 'user';
-        const isThinking = msg.content === '<thinking>';
-        const avatar = isUser ? '👤' : '<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';
-        const content = isThinking 
-            ? `<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`
-            : escapeHtml(msg.content);
-        return `<div class="message"><div class="message-avatar${isUser ? '' : ' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;
+function renderMessages(){
+    const c=document.getElementById('messagesContainer');
+    const w=document.getElementById('welcomeScreen');
+    if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}
+    w.classList.add('hidden');
+    c.innerHTML=chats[currentChatId].messages.map(msg=>{
+        const isUser=msg.role==='user';
+        const isThinking=msg.content==='<thinking>';
+        const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';
+        const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);
+        return `<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;
     }).join('');
-    setTimeout(() => { document.getElementById('chatContainer').scrollTop = document.getElementById('chatContainer').scrollHeight; }, 100);
+    setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);
 }
-
-async function sendMessage() {
-    const input = document.getElementById('userInput');
-    const text = input.value.trim();
-    if (!text) return;
-    if (!currentChatId) newChat();
-    
-    chats[currentChatId].messages.push({ role: 'user', content: text });
-    if (chats[currentChatId].messages.length === 1) chats[currentChatId].title = text.substring(0, 40);
-    input.value = '';
-    renderMessages(); renderChatList();
-    
-    const thinkingId = 'thinking_' + Date.now();
-    chats[currentChatId].messages.push({ role: 'assistant', content: '<thinking>', id: thinkingId });
+async function sendMessage(){
+    const input=document.getElementById('userInput');
+    const text=input.value.trim();
+    if(!text)return;
+    if(!currentChatId)newChat();
+    chats[currentChatId].messages.push({role:'user',content:text});
+    if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);
+    input.value='';renderMessages();renderChatList();
+    const thinkingId='thinking_'+Date.now();
+    chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});
     renderMessages();
-    
-    const thinkingEl = document.getElementById(thinkingId);
-    if (thinkingEl) {
-        const phrases = ["Pullbot is thinking", "Connecting neurons", "Searching vocabulary", "Forming response", "Almost there"];
-        let phraseIdx = 0;
-        const interval = setInterval(() => {
-            if (thinkingEl.querySelector('.thinking-text')) {
-                thinkingEl.querySelector('.thinking-text').textContent = phrases[phraseIdx % phrases.length];
-                phraseIdx++;
-            }
-        }, 800);
-        
-        const response = await askPullbot(text);
+    const thinkingEl=document.getElementById(thinkingId);
+    if(thinkingEl){
+        const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];
+        let pi=0;
+        const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);
+        const response=await askPullbot(text);
         clearInterval(interval);
-        chats[currentChatId].messages = chats[currentChatId].messages.filter(m => m.id !== thinkingId);
-        chats[currentChatId].messages.push({ role: 'assistant', content: response });
-    } else {
-        const response = await askPullbot(text);
-        chats[currentChatId].messages = chats[currentChatId].messages.filter(m => m.content === '<thinking>');
-        chats[currentChatId].messages.push({ role: 'assistant', content: response });
+        chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);
+        chats[currentChatId].messages.push({role:'assistant',content:response});
+    }else{
+        const response=await askPullbot(text);
+        chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');
+        chats[currentChatId].messages.push({role:'assistant',content:response});
     }
     renderMessages();
 }
-
-function sendSuggestion(text) { document.getElementById('userInput').value = text; sendMessage(); }
-function handleKeyPress(event) { if (event.key === 'Enter') sendMessage(); }
-function toggleSidebar() { document.getElementById('sidebar').classList.toggle('open'); }
-function showToast(message) {
-    const toast = document.getElementById('toast');
-    toast.textContent = message;
-    toast.style.transform = 'translateY(0)'; toast.style.opacity = '1';
-    setTimeout(() => { toast.style.transform = 'translateY(100px)'; toast.style.opacity = '0'; }, 2500);
+function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
+function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
+function showToast(m){
+    const t=document.getElementById('toast');t.textContent=m;
+    t.style.transform='translateY(0)';t.style.opacity='1';
+    setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},2500);
 }
-function escapeHtml(text) { const div = document.createElement('div'); div.textContent = text; return div.innerHTML; }
+function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
 
-window.addEventListener('DOMContentLoaded', init);
+// Settings
+function openSettings(){document.getElementById('settingsOverlay').classList.add('active');loadSettings();}
+function closeSettings(event){if(!event||event.target===document.getElementById('settingsOverlay')){document.getElementById('settingsOverlay').classList.remove('active');}}
+function updateTempLabel(){const v=document.getElementById('settingTemp').value;const l={'0.1':'Very Precise','0.3':'Precise','0.5':'Focused','0.8':'Balanced','1.0':'Creative','1.2':'Very Creative','1.5':'Wild'};document.getElementById('tempLabel').textContent=v+' - '+(l[v]||'Custom');}
+function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
+function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;updateTempLabel();}}
+
+window.addEventListener('DOMContentLoaded',init);
 </script>
 </body>
 </html>

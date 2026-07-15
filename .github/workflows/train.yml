@@ -13,10 +13,21 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+        
+    - name: Resolve any git conflicts
+      run: |
+        # Force resolve any leftover conflicts
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
+        git checkout --ours data/knowledge/version.json 2>/dev/null || true
+        git checkout --ours knowledge/store.json 2>/dev/null || true
+        git add -A
+        git diff --staged --quiet || git commit -m "Auto-resolve conflicts" || true
         
     - name: Install dependencies
       run: |
@@ -24,17 +35,19 @@ jobs:
         pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml
         
     - name: Scrape web
+      timeout-minutes: 5
       run: python src/scrape.py
       
     - name: Clean corpus
       run: python src/clean_corpus.py
       
     - name: Build knowledge store
+      timeout-minutes: 10
       run: python src/store.py build
       
     - name: Train model
       id: training
-      timeout-minutes: 320
+      timeout-minutes: 310
       continue-on-error: true
       run: |
         if [ -f data/processed/corpus.txt ]; then
@@ -120,10 +133,12 @@ jobs:
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
+        git checkout --ours knowledge/store.json 2>/dev/null || true
+        git checkout --ours data/knowledge/version.json 2>/dev/null || true
         git stash
         git pull --rebase origin main
         git stash pop || true
-        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
         git add data/ knowledge/ models/chunks/ models/checkpoints/ models/last_train.json 2>/dev/null || true
         git add src/ config.yaml requirements.txt .github/ js/ index.html .gitignore 2>/dev/null || true
         git add data/knowledge/version.json 2>/dev/null || true

@@ -1,0 +1,9 @@
+.git
+.github
+models/chunks
+data/raw
+data/processed
+data/quadratic
+__pycache__
+*.pyc
+node_modules

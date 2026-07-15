@@ -117,6 +117,65 @@
           "score": 4
         }
       ]
+    },
+    {
+      "timestamp": 1784114416.828784,
+      "date": "2026-07-15 11:20 UTC",
+      "score": 37,
+      "max": 50,
+      "percentage": 74.0,
+      "results": [
+        {
+          "prompt": "Hello!",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "What is gravity?",
+          "response": "Surrealistic quality of a hyper-detailed, no-BS, no-BS, no-BS, no-BS, no-BS, no-BS, no-BS, no \"BS, no \"BS, no \"BS, dry humor, no-BS, dry humor",
+          "score": 4
+        },
+        {
+          "prompt": "Who created PullBot?",
+          "response": "\"I want to be a subtle or part-of-click, a performer or actor.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app),",
+          "score": 4
+        },
+        {
+          "prompt": "Write Python code to reverse a string.",
+          "response": "Reliability and transparency.\nI turned around in the plural.\" -> Reply: Personalization and exclusivity.\n\nUser asked: {\n        \"step_3\": \"Cybernetic Enhancement\",\n           \"description",
+          "score": 4
+        },
+        {
+          "prompt": "Explain photosynthesis.",
+          "response": "A substance that acts like a person who acts to an analytical research critic.\n\n**Important rules:**\n- **Impose the data with an analytical research.** Propose with the **parallel thinking** with the ",
+          "score": 4
+        },
+        {
+          "prompt": "Why is the sky blue?",
+          "response": "Reliability and transparency.\n* **Evaluation:** Probes; An Persistent Quest; \"Secure your data volumes.\"\n* **Error Handling:** Errors should be informative, not over-the-top corporate buzzwords (avoid",
+          "score": 4
+        },
+        {
+          "prompt": "Tell me a joke.",
+          "response": "A realistic car remains clearly visible beneath the annotations in the image.\n\nUser asked: Yaz\u0131lacak g\u00fc\u00e7l\u00fc g\u00fcvenlik k\u0131rmalar\u0131nda sahip olacak ve korumalar\u0131nda korumalar\u0131nda g\u00fc\u00e7",
+          "score": 4
+        },
+        {
+          "prompt": "What is machine learning?",
+          "response": "Reliability and transparency.\n* **Vanity:** What does this issue relate to philosophical principles or dilemmas?\n* **Evidence Evaluation:** What are the critical thinking framework, assumptions, or di",
+          "score": 5
+        },
+        {
+          "prompt": "How does the internet work?",
+          "response": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\n\nUser asked: Scene 1: Render free\nDirection: \"Utilize warm, dramatic free shadows.\nCasual Mode: +2",
+          "score": 4
+        },
+        {
+          "prompt": "What is the capital of France?",
+          "response": "Grok 4 (strong file-search + browsing), GPT-4o (creative writing, browsing)\n- Good: Claude 3.5 Sonnet / Claude 4,structured prose + browsing)\n- Claude 3.5 Sonnet / Claude 4 (structured prose + browsin",
+          "score": 4
+        }
+      ]
     }
   ]
 }

@@ -33,6 +33,9 @@ jobs:
       run: python src/store.py build
       
     - name: Train model
+      id: training
+      timeout-minutes: 320
+      continue-on-error: true
       run: |
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
@@ -56,7 +59,20 @@ jobs:
           echo "TRAINED=false" >> $GITHUB_ENV
         fi
       
+    - name: Save training progress
+      if: always()
+      run: |
+        echo "Saving training progress..."
+        if [ -d models/checkpoints ]; then
+          LATEST=$(ls -d models/checkpoints/checkpoint-* 2>/dev/null | sort -V | tail -1)
+          if [ -n "$LATEST" ]; then
+            echo "Checkpoint found: $LATEST"
+            echo "TRAINED=true" >> $GITHUB_ENV
+          fi
+        fi
+      
     - name: Update version file
+      if: always()
       run: |
         mkdir -p data/knowledge
         CHUNKS=0; CORPUS_KB=0
@@ -89,21 +105,22 @@ jobs:
         echo "NEW_VERSION=${NEW_VERSION}" >> $GITHUB_ENV
         
     - name: Remove large files before push
+      if: always()
       run: |
-        rm -rf models/checkpoints/
         rm -rf models/temp_trained/
         rm -rf models/temp_quick/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
         
     - name: Commit and push
+      if: always()
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git stash
         git pull --rebase origin main
         git stash pop || true
-        git add data/ knowledge/ models/chunks/ models/last_train.json 2>/dev/null || true
+        git add data/ knowledge/ models/chunks/ models/checkpoints/ models/last_train.json 2>/dev/null || true
         git add src/ config.yaml requirements.txt .github/ js/ index.html .gitignore 2>/dev/null || true
         git add data/knowledge/version.json 2>/dev/null || true
         if git diff --staged --quiet; then

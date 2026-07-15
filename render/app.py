@@ -1,9 +1,9 @@
 """
 Pullbot API - GGUF Mode
-Downloads GGUF model from GitHub, runs with llama.cpp.
+Loads model from local file, wordbank from local or GitHub.
 """
 
-import os, json, requests, re, random
+import os, json, requests, re, random, hashlib
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 from llama_cpp import Llama
@@ -12,60 +12,31 @@ app = Flask(__name__)
 CORS(app)
 
 GITHUB = "https://raw.githubusercontent.com/pullbot-ai/pullbot-ai.github.io/main"
-MODEL_PATH = "/tmp/pullbot.gguf"
+MODEL_PATH = os.path.join(os.path.dirname(__file__), "..", "models", "pullbot.gguf")
+WORD_BANK_PATH = os.path.join(os.path.dirname(__file__), "..", "data", "wordbank.json")
+
 llm = None
 wordbank = None
-
-def download_model():
-    url = f"{GITHUB}/models/pullbot.gguf"
-    print(f"Downloading GGUF model...")
-    
-    # Delete old partial download
-    if os.path.exists(MODEL_PATH):
-        os.remove(MODEL_PATH)
-    
-    try:
-        r = requests.get(url, stream=True, timeout=120)
-        if r.status_code == 200:
-            total = int(r.headers.get('content-length', 0))
-            print(f"Expected size: {total/(1024*1024):.0f}MB")
-            
-            downloaded = 0
-            with open(MODEL_PATH, 'wb') as f:
-                for chunk in r.iter_content(chunk_size=65536):
-                    if chunk:
-                        f.write(chunk)
-                        downloaded += len(chunk)
-            
-            actual = os.path.getsize(MODEL_PATH)
-            print(f"Downloaded: {actual/(1024*1024):.0f}MB")
-            
-            if actual < 10 * 1024 * 1024:
-                print(f"ERROR: File too small ({actual} bytes)")
-                return False
-            
-            if total > 0 and actual < total * 0.9:
-                print(f"ERROR: Incomplete download ({actual} < {total})")
-                return False
-            
-            return True
-        
-        print(f"Failed: HTTP {r.status_code}")
-        return False
-    except Exception as e:
-        print(f"Download error: {e}")
-        return False
+_memory_users = {"users": {}}
 
 def load_wordbank():
     global wordbank
+    if os.path.exists(WORD_BANK_PATH):
+        try:
+            with open(WORD_BANK_PATH) as f:
+                wordbank = json.load(f)
+            defined = sum(1 for w in wordbank.get('words', {}).values() if isinstance(w, dict) and w.get('has_definition'))
+            print(f"Loaded {wordbank.get('total_words', 0)} words, {defined} defined (local)")
+            return
+        except:
+            pass
+    
     try:
         r = requests.get(f"{GITHUB}/data/wordbank.json", timeout=30)
         if r.status_code == 200:
             wordbank = r.json()
-            defined = sum(1 for w in wordbank.get('words', {}).values() if isinstance(w, dict) and w.get('has_definition'))
-            print(f"Loaded {wordbank.get('total_words', 0)} words, {defined} defined")
-    except Exception as e:
-        print(f"Wordbank failed: {e}")
+            print(f"Loaded wordbank from GitHub")
+    except:
         wordbank = None
 
 def setup():
@@ -76,7 +47,7 @@ def setup():
     
     load_wordbank()
     
-    if download_model():
+    if os.path.exists(MODEL_PATH):
         size_mb = os.path.getsize(MODEL_PATH) / (1024*1024)
         print(f"Loading GGUF model ({size_mb:.0f}MB)...")
         try:
@@ -86,7 +57,8 @@ def setup():
             print(f"Failed to load model: {e}")
             llm = None
     else:
-        print("No GGUF model. Vocab-only mode.")
+        print(f"Model not found at {MODEL_PATH}")
+        print("Vocab-only mode.")
 
 def generate_response(question):
     q = question.strip()
@@ -128,6 +100,57 @@ def generate_response(question):
     
     return {'question': question, 'response': "I'm still learning...", 'source': 'fallback'}
 
+# ========== AUTH ==========
+
+def hash_password(password):
+    return hashlib.sha256(password.encode()).hexdigest()
+
+@app.route('/signup', methods=['POST'])
+def signup():
+    data = request.get_json() or {}
+    username = data.get('username', '').strip().lower()
+    password = data.get('password', '').strip()
+    
+    if not username or not password:
+        return jsonify({'success': False, 'error': 'Username and password required'}), 400
+    if len(username) < 3:
+        return jsonify({'success': False, 'error': 'Username too short'}), 400
+    if username in _memory_users.get('users', {}):
+        return jsonify({'success': False, 'error': 'Username taken'}), 409
+    
+    _memory_users['users'][username] = {
+        'password': hash_password(password),
+        'created': __import__('time').strftime('%Y-%m-%d'),
+        'chats': []
+    }
+    
+    return jsonify({
+        'success': True,
+        'username': username,
+        'token': hash_password(username + password)[:20],
+        'message': f'Welcome, {username}!'
+    })
+
+@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json() or {}
+    username = data.get('username', '').strip().lower()
+    password = data.get('password', '').strip()
+    
+    if username not in _memory_users.get('users', {}):
+        return jsonify({'success': False, 'error': 'User not found'}), 404
+    if _memory_users['users'][username]['password'] != hash_password(password):
+        return jsonify({'success': False, 'error': 'Wrong password'}), 401
+    
+    return jsonify({
+        'success': True,
+        'username': username,
+        'token': hash_password(username + password)[:20],
+        'message': f'Welcome back, {username}!'
+    })
+
+# ========== API ==========
+
 @app.route('/')
 def home():
     defined = 0
@@ -138,7 +161,8 @@ def home():
         'status': 'online',
         'model': 'gguf' if llm else 'vocab',
         'words': wordbank.get('total_words', 0) if wordbank else 0,
-        'defined': defined
+        'defined': defined,
+        'users': len(_memory_users.get('users', {}))
     })
 
 @app.route('/health')

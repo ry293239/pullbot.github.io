@@ -326,7 +326,6 @@
 
 <div class="toast" id="toast"></div>
 
-<script src="js/router.js"></script>
 <script>
 // Initialize Parse
 Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS", "ow1W5OlXiE57XYiTa9Hyhj1v3gAM4niSiWGbVBQq");
@@ -336,7 +335,6 @@ const API_URL = 'https://pullbot-api.onrender.com';
 let apiOnline = false;
 let chats = {};
 let currentChatId = null;
-let currentUser = Parse.User.current();
 
 function updateLoader(text, percent) {
     document.getElementById('loaderStatus').textContent = text;
@@ -368,9 +366,12 @@ function cleanResponse(text) {
 async function askPullbot(question) {
     if (apiOnline) {
         try {
-            const response = await askPullbotRouter(question);
-            if (response) return cleanResponse(response);
-        } catch(e) {}
+            const r = await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);
+            if (r.ok) {
+                const data = await r.json();
+                return cleanResponse(data.response) || "I couldn't process that.";
+            }
+        } catch(e) { apiOnline = false; }
     }
     return getLocalResponse(question);
 }
@@ -456,7 +457,7 @@ function updateTempLabel(){const v=document.getElementById('settingTemp').value;
 function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
 function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;updateTempLabel();}}
 
-// Auth (Back4App Parse)
+// Auth
 let authMode='login';
 function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
 function closeAuth(event){if(!event||event.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
@@ -481,7 +482,6 @@ async function handleAuth(){
             await Parse.User.logIn(username,password);
             showToast('Welcome back, '+username+'!');
         }
-        currentUser=Parse.User.current();
         document.getElementById('authOverlay').classList.remove('active');
         updateUserUI();
     }catch(e){showToast(e.message||'Something went wrong');}
@@ -494,7 +494,6 @@ function updateUserUI(){
 }
 async function logout(){
     await Parse.User.logOut();
-    currentUser=null;
     showToast('Logged out');
     updateUserUI();
 }

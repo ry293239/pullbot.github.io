@@ -1,9 +1,9 @@
 """
-Pullbot Model - FULL FINE-TUNING + 4-STAGE OPTIMIZATION
-Train saves model. Optimize runs separately with all 4 stages.
+Pullbot Model - FULL FINE-TUNING + 3-STAGE OPTIMIZATION
+Train saves model. Optimize runs separately.
 1. Smart Prune (redistribute weak to strong)
 2. Safe Precision Prune (merge insignificant, same row only)
-3. Progressive Bit Reduction (each node earns 8/7/6 bits)
+3. Progressive Bit Reduction (with 1hr timeout)
 4. 8-bit Quantize
 """
 
@@ -247,44 +247,75 @@ class PullbotModel:
         print("   ✅ Safe!"); return True
     
     # ============================================
-    # STAGE 3: PROGRESSIVE BIT REDUCTION
+    # STAGE 3: PROGRESSIVE BIT REDUCTION (with timeout)
     # ============================================
     
-    def progressive_bit_reduce(self, test_inputs=None):
-        print(f"\n📉 STAGE 3: PROGRESSIVE BIT REDUCTION")
+    def progressive_bit_reduce(self, test_inputs=None, timeout_minutes=60):
+        print(f"\n📉 STAGE 3: PROGRESSIVE BIT REDUCTION (timeout: {timeout_minutes}min)")
         if test_inputs is None:
             test_inputs = torch.randint(0, 50257, (10, 16))
+        
         self.model.eval()
         with torch.no_grad():
             baseline = self.model(test_inputs).logits
-        nodes_8bit=nodes_7bit=nodes_6bit=nodes_merged=0
+        
+        nodes_8bit = nodes_7bit = nodes_6bit = nodes_merged = 0
+        start_time = time.time()
+        timeout_seconds = timeout_minutes * 60
+        stopped_early = False
+        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
+                
                 for row_idx in range(weight.shape[0]):
+                    if time.time() - start_time > timeout_seconds:
+                        stopped_early = True
+                        break
+                    
                     row = weight[row_idx]
                     for col_idx in range(len(row)):
                         val = row[col_idx]
-                        if abs(val)<0.0001: nodes_merged+=1; continue
-                        val_7bit = round(val.item()*127)/127
-                        row[col_idx]=val_7bit
-                        module.weight.data=weight.to(module.weight.dtype)
-                        new_out=self.model(test_inputs).logits
-                        diff=(baseline-new_out).abs().mean().item()
-                        if diff<0.00000001:
-                            val_6bit=round(val.item()*63)/63
-                            row[col_idx]=val_6bit
-                            module.weight.data=weight.to(module.weight.dtype)
-                            new_out=self.model(test_inputs).logits
-                            diff=(baseline-new_out).abs().mean().item()
-                            if diff<0.00000001: nodes_6bit+=1
-                            else: row[col_idx]=val_7bit; nodes_7bit+=1
-                        else: row[col_idx]=val; nodes_8bit+=1
-                    module.weight.data=weight.to(module.weight.dtype)
-        total=nodes_8bit+nodes_7bit+nodes_6bit+nodes_merged
-        eff_bits=(nodes_8bit*8+nodes_7bit*7+nodes_6bit*6)/max(total,1)
-        print(f"   8-bit:{nodes_8bit:,} 7-bit:{nodes_7bit:,} 6-bit:{nodes_6bit:,} merged:{nodes_merged:,}")
-        print(f"   Effective: {eff_bits:.1f}-bit")
+                        if abs(val) < 0.0001:
+                            nodes_merged += 1
+                            continue
+                        
+                        val_7bit = round(val.item() * 127) / 127
+                        row[col_idx] = val_7bit
+                        module.weight.data = weight.to(module.weight.dtype)
+                        new_out = self.model(test_inputs).logits
+                        diff = (baseline - new_out).abs().mean().item()
+                        
+                        if diff < 0.00000001:
+                            val_6bit = round(val.item() * 63) / 63
+                            row[col_idx] = val_6bit
+                            module.weight.data = weight.to(module.weight.dtype)
+                            new_out = self.model(test_inputs).logits
+                            diff = (baseline - new_out).abs().mean().item()
+                            if diff < 0.00000001:
+                                nodes_6bit += 1
+                            else:
+                                row[col_idx] = val_7bit
+                                nodes_7bit += 1
+                        else:
+                            row[col_idx] = val
+                            nodes_8bit += 1
+                    
+                    module.weight.data = weight.to(module.weight.dtype)
+                
+                if stopped_early:
+                    break
+        
+        total = nodes_8bit + nodes_7bit + nodes_6bit + nodes_merged
+        eff_bits = (nodes_8bit*8 + nodes_7bit*7 + nodes_6bit*6) / max(total, 1)
+        elapsed = (time.time() - start_time) / 60
+        
+        print(f"   8-bit: {nodes_8bit:,}  7-bit: {nodes_7bit:,}  6-bit: {nodes_6bit:,}  merged: {nodes_merged:,}")
+        print(f"   Effective: {eff_bits:.1f}-bit  |  Time: {elapsed:.1f}min")
+        
+        if stopped_early:
+            print(f"   ⏰ Timeout reached — saved progress so far")
+        
         return eff_bits
     
     # ============================================
@@ -396,7 +427,7 @@ if __name__ == '__main__':
             test_inputs = torch.randint(0, 50257, (10, 16))
             bot.smart_prune(target_sparsity=sp)
             bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
-            bot.progressive_bit_reduce(test_inputs=test_inputs)
+            bot.progressive_bit_reduce(test_inputs=test_inputs, timeout_minutes=60)
             bot.quantize_model()
             final = bot.get_model_size_estimate()
             reduction = before['estimated_ram_mb'] - final['estimated_ram_mb']

@@ -3,7 +3,7 @@
 # ============================================
 
 model:
-  type: "tiny"
+  type: "distilgpt2"
   base: "distilgpt2"
   max_length: 256
   temperature: 0.8
@@ -13,18 +13,18 @@ model:
 
 training:
   chunk_minutes: 280
-  learning_rate: 0.001
-  batch_size: 8
-  max_examples: 5000
-  epochs: 1
+  learning_rate: 0.0005  # Lower LR for better convergence
+  batch_size: 4           # Smaller batch for CPU
+  max_examples: 8000      # More examples per run
+  epochs: 1               # 1 epoch per cycle, more cycles
 
 scrape:
   sources:
     - github_trending
     - wikipedia_random
-  github_readmes: 5
-  wikipedia_articles: 10
-  max_chars: 500000
+  github_readmes: 3       # Less GitHub, more Wikipedia
+  wikipedia_articles: 15  # More articles
+  max_chars: 800000       # Bigger corpus cap
 
 knowledge:
   chunk_size: 300
@@ -39,9 +39,29 @@ evolve:
   min_length: 20
 
 personality:
-  intro: "Hey! I'm Pullbot. I scrape the web to learn. Ask me anything!"
-  style: "concise"
+  intro: "Hey! I'm Pullbot. I learn from Wikipedia. Ask me anything!"
+  style: "qa"             # Q&A style responses
   max_response_len: 200
+
+# ============================================
+# TRAINING DATA RATIOS
+# ============================================
+data_mix:
+  qa_pairs: 40            # Question-Answer format
+  continuations: 30        # Complete-the-sentence
+  raw_text: 20             # Wikipedia paragraphs
+  vocabulary: 10           # Word definitions
+
+# ============================================
+# GENERATION SETTINGS
+# ============================================
+generation:
+  prompt_template: "Question: {question}\nAnswer:"
+  max_tokens: 60
+  temperature: 0.8
+  top_p: 0.9
+  top_k: 50
+  repetition_penalty: 1.1
 
 repo:
   data_dir: "data"

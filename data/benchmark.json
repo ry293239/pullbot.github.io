@@ -1,0 +1,36 @@
+{
+  "prompts": [
+    "Hello!",
+    "What is gravity?",
+    "Who created PullBot?",
+    "Write Python code to reverse a string.",
+    "Explain photosynthesis.",
+    "Why is the sky blue?",
+    "Tell me a joke.",
+    "What is machine learning?",
+    "How does the internet work?",
+    "What is the capital of France?",
+    "Define algorithm.",
+    "What is 15 * 7?",
+    "Explain quantum computing.",
+    "Who was Albert Einstein?",
+    "What is DNA?",
+    "How do computers work?",
+    "What is climate change?",
+    "Write a haiku about AI.",
+    "Explain the water cycle.",
+    "What is blockchain?",
+    "How do airplanes fly?",
+    "What is the meaning of life?",
+    "Explain evolution.",
+    "What is a black hole?",
+    "How does electricity work?"
+  ],
+  "scoring": {
+    "coherent": 1,
+    "relevant": 1,
+    "informative": 1,
+    "no_repetition": 1,
+    "grammatical": 1
+  }
+}

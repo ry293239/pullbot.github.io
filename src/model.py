@@ -399,8 +399,9 @@ if __name__ == '__main__':
             bot.progressive_bit_reduce(test_inputs=test_inputs)
             bot.quantize_model()
             final = bot.get_model_size_estimate()
+            reduction = before['estimated_ram_mb'] - final['estimated_ram_mb']
             print(f"\n📊 Final: {final['total_params']:,} params, {final['estimated_ram_mb']:.0f}MB RAM")
-            print(f"   Saved: {before['estimated_ram_mb']-.0f}MB")
+            print(f"   Saved: {reduction:.0f}MB")
             bot.save_and_chunk()
             print("\n✅ Optimization complete!")
         elif cmd == 'size':

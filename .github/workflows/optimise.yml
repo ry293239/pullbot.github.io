@@ -18,8 +18,56 @@ jobs:
         python-version: '3.10'
     - name: Install deps
       run: pip install torch transformers datasets accelerate safetensors numpy pyyaml
-    - name: Optimize model
-      run: python src/model.py optimize 0.5
+    - name: Full optimization pipeline
+      run: |
+        python -c "
+        import os, sys, json, torch, time
+        SCRIPT_DIR = os.path.dirname(os.path.abspath('src/model.py'))
+        REPO_ROOT = '.'
+        sys.path.insert(0, 'src')
+        from model import PullbotModel
+        
+        print('='*50)
+        print('🔧 FULL OPTIMIZATION PIPELINE')
+        print('='*50)
+        
+        bot = PullbotModel()
+        before = bot.get_model_size_estimate()
+        print(f'Before: {before[\"total_params\"]:,} params, {before[\"estimated_ram_mb\"]:.0f}MB RAM')
+        
+        # Stage 1: Smart Prune (redistribute weak to strong)
+        print('\n--- Stage 1: Smart Prune ---')
+        bot.smart_prune(target_sparsity=0.5)
+        s1 = bot.get_model_size_estimate()
+        print(f'After: {s1[\"total_params\"]:,} params, {s1[\"estimated_ram_mb\"]:.0f}MB RAM')
+        
+        # Stage 2: Precision Prune (merge insignificant digits, same row only)
+        print('\n--- Stage 2: Safe Precision Prune ---')
+        test_inputs = torch.randint(0, 50257, (10, 16))
+        bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
+        s2 = bot.get_model_size_estimate()
+        print(f'After: {s2[\"total_params\"]:,} params, {s2[\"estimated_ram_mb\"]:.0f}MB RAM')
+        
+        # Stage 3: Progressive Bit Reduction (each node earns 8/7/6 bits)
+        print('\n--- Stage 3: Progressive Bit Reduction ---')
+        bot.progressive_bit_reduce(test_inputs=test_inputs)
+        s3 = bot.get_model_size_estimate()
+        print(f'After: {s3[\"total_params\"]:,} params, {s3[\"estimated_ram_mb\"]:.0f}MB RAM')
+        
+        # Stage 4: 8-bit Quantize
+        print('\n--- Stage 4: 8-bit Quantize ---')
+        bot.quantize_model()
+        final = bot.get_model_size_estimate()
+        print(f'Final: {final[\"total_params\"]:,} params, {final[\"estimated_ram_mb\"]:.0f}MB RAM')
+        
+        # Save
+        bot.save_and_chunk()
+        
+        reduction = before['estimated_ram_mb'] - final['estimated_ram_mb']
+        print(f'\n✅ Optimization complete!')
+        print(f'   RAM: {before[\"estimated_ram_mb\"]:.0f}MB → {final[\"estimated_ram_mb\"]:.0f}MB (saved {reduction:.0f}MB)')
+        print(f'   Sparsity: {before[\"sparsity_pct\"]:.1f}% → {final[\"sparsity_pct\"]:.1f}%')
+        "
     - name: Remove large files
       run: |
         rm -rf models/checkpoints/
@@ -34,4 +82,4 @@ jobs:
         git pull --rebase origin main
         git stash pop || true
         git add models/chunks/ models/last_train.json 2>/dev/null || true
-        git diff --staged --quiet || git commit -m "✂️ Optimized model" && git push origin main || echo "No changes"
+        git diff --staged --quiet || git commit -m "✂️ Full optimization: smart+precision+bits+quantize" && git push origin main || echo "No changes"

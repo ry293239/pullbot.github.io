@@ -1,4 +1,3 @@
-
 name: Quick Train
 
 on:
@@ -7,44 +6,66 @@ on:
 jobs:
   quick-train:
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 45
     
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
       
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
         
+    - name: Resolve conflicts
+      run: |
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
+        git checkout --ours knowledge/store.json 2>/dev/null || true
+        git checkout --ours data/knowledge/version.json 2>/dev/null || true
+        git add -A
+        git diff --staged --quiet || git commit -m "Auto-resolve conflicts" || true
+        
     - name: Install dependencies
-      run: pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml
+      run: pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml safetensors
         
     - name: Scrape fresh data
+      timeout-minutes: 5
       run: python src/scrape.py
       
     - name: Clean corpus
       run: python src/clean_corpus.py
       
+    - name: Rich training data
+      run: python src/rich_scraper.py
+      
+    - name: Smart training
+      run: python src/smart_train.py
+      
+    - name: Generate synthetic Q&A (GitHub Models)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python src/generate_synthetic_qa.py gpt-4o 2>/dev/null || echo "Synthetic Q&A skipped (no token)"
+      
     - name: Nuke old knowledge store
       run: |
-        echo "Deleting old knowledge store..."
-        rm -f knowledge/store.json
         echo "[]" > knowledge/store.json
-        echo "Knowledge store reset to empty"
+        echo "Knowledge store reset"
       
     - name: Build clean knowledge
+      timeout-minutes: 10
       run: python src/store.py build
       
-    - name: Quick train
+    - name: Quick train model
+      timeout-minutes: 15
       run: |
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
           echo "Corpus size: $CORPUS_SIZE chars"
           if [ "$CORPUS_SIZE" -gt 500 ]; then
-            python src/model.py optimize 0.7
+            python src/model.py optimize 0.5
             echo "TRAINED=true" >> $GITHUB_ENV
           else
-            echo "Corpus too small, skipping training"
+            echo "Corpus too small"
             echo "TRAINED=false" >> $GITHUB_ENV
           fi
         else
@@ -55,25 +76,24 @@ jobs:
     - name: Update version
       run: |
         mkdir -p data/knowledge
-        CHUNKS=0
-        CORPUS_KB=0
+        CHUNKS=0; CORPUS_KB=0
         if [ -f knowledge/store.json ]; then
-          CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))")
+          python -c "import json; json.load(open('knowledge/store.json'))" 2>/dev/null && CHUNKS=$(python -c "import json; print(len(json.load(open('knowledge/store.json'))))") || CHUNKS=0
         fi
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_KB=$(( $(wc -c < data/processed/corpus.txt) / 1024 ))
         fi
         cat > data/knowledge/version.json << ENDJSON
         {
-          "version": "2.0-vocab",
+          "version": "2.0-synthetic",
           "updated": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
           "knowledge_chunks": ${CHUNKS},
           "corpus_kb": ${CORPUS_KB},
           "model_trained": $( [ "$TRAINED" = "true" ] && echo "true" || echo "false" ),
-          "training_type": "vocabulary_optimized"
+          "training_type": "quick_synthetic"
         }
         ENDJSON
-        echo "Version: 2.0-vocab"
+        echo "Version: 2.0-synthetic"
         
     - name: Remove large files
       run: |
@@ -86,14 +106,16 @@ jobs:
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        git add data/ knowledge/ models/chunks/ models/pullbot.onnx models/pullbot.bin models/last_train.json 2>/dev/null || true
-        git add src/ config.yaml requirements.txt .github/ 2>/dev/null || true
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
+        git checkout --ours knowledge/store.json 2>/dev/null || true
+        git stash
+        git pull --rebase origin main
+        git stash pop || true
+        git add data/ knowledge/ models/chunks/ models/last_train.json 2>/dev/null || true
+        git add src/ config.yaml .github/ 2>/dev/null || true
         if git diff --staged --quiet; then
           echo "No changes"
         else
-          git commit -m "Quick train: vocabulary corpus + clean knowledge + optimized model"
-          for i in 1 2 3; do
-            git pull --rebase && git push && break
-            sleep 5
-          done
+          git commit -m "⚡ Quick train: rich data + synthetic Q&A + optimized model"
+          git push origin main
         fi

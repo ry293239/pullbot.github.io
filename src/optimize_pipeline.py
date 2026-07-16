@@ -1,6 +1,6 @@
 """
-Full 4-Stage Optimization Pipeline
-Runs smart prune → precision prune → progressive bits → quantize
+Full Optimization Pipeline
+Smart Prune → Precision Prune → Progressive Bits (recently changed weights) → Quantize
 """
 
 import os, sys, torch, time
@@ -12,7 +12,7 @@ sys.path.insert(0, SCRIPT_DIR)
 from model import PullbotModel
 
 print('='*50)
-print('🔧 FULL OPTIMIZATION PIPELINE')
+print('🔧 OPTIMIZATION PIPELINE')
 print('='*50)
 
 bot = PullbotModel()
@@ -32,9 +32,9 @@ bot.precision_prune_safe(significance=2, test_inputs=test_inputs)
 s2 = bot.get_model_size_estimate()
 print(f'After: {s2["total_params"]:,} params, {s2["estimated_ram_mb"]:.0f}MB RAM')
 
-# Stage 3: Progressive Bit Reduction
-print('\n--- Stage 3: Progressive Bit Reduction ---')
-bot.progressive_bit_reduce(test_inputs=test_inputs)
+# Stage 3: Progressive Bit Reduction (only on weights changed by prune + extra margin)
+print('\n--- Stage 3: Progressive Bits (changed weights only) ---')
+bot.progressive_bit_reduce_changed(test_inputs=test_inputs, timeout_minutes=25)
 s3 = bot.get_model_size_estimate()
 print(f'After: {s3["total_params"]:,} params, {s3["estimated_ram_mb"]:.0f}MB RAM')
 
@@ -44,7 +44,6 @@ bot.quantize_model()
 final = bot.get_model_size_estimate()
 print(f'Final: {final["total_params"]:,} params, {final["estimated_ram_mb"]:.0f}MB RAM')
 
-# Save
 bot.save_and_chunk()
 
 reduction = before['estimated_ram_mb'] - final['estimated_ram_mb']

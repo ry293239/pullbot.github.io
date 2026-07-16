@@ -21,72 +21,46 @@ jobs:
         echo "🔍 WATCHDOG BETA - $(date)"
         echo "=========================================="
         
-        # Workflows to monitor with their ping counterparts
-        # Format: "workflow_file:ping_workflow:description"
-        WORKFLOWS="train.yml:Ping Pullbot:Train,mass-scrape.yml:Mass Scrape Ping:Mass Scrape,quick-train.yml:Quick Train Ping:Quick Train"
-        
-        for ENTRY in $WORKFLOWS; do
-          WF=$(echo $ENTRY | cut -d: -f1)
-          PING=$(echo $ENTRY | cut -d: -f2)
-          DESC=$(echo $ENTRY | cut -d: -f3)
+        check_workflow() {
+          local WF_FILE=$1
+          local WF_NAME=$2
+          local PING_FILE=$3
           
-          # Check last 3 runs
           RESULT=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$WF/runs?per_page=3" 2>/dev/null)
+            "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$WF_FILE/runs?per_page=3")
           
-          LAST_STATUS=$(echo "$RESULT" | python3 -c "
+          STATUS=$(echo "$RESULT" | python3 -c "
           import sys, json
           data = json.load(sys.stdin)
           runs = data.get('workflow_runs', [])
           statuses = [r.get('status') for r in runs]
-          # Check if any are running or queued
           if 'in_progress' in statuses or 'queued' in statuses:
               print('active')
           elif runs and runs[0].get('conclusion') == 'success':
               print('healthy')
-          else:
+          elif runs and runs[0].get('conclusion') == 'failure':
               print('dead')
-          " 2>/dev/null || echo "error")
+          else:
+              print('unknown')
+          ")
           
-          echo "   $DESC: $LAST_STATUS"
+          echo "   $WF_NAME: $STATUS"
           
-          # If dead, trigger the ping to revive it
-          if [ "$LAST_STATUS" = "dead" ]; then
-            echo "   ⚡ Reviving $DESC..."
-            
-            PING_FILE=$(echo "$PING" | tr ' ' '-' | tr '[:upper:]' '[:lower:]')
-            
+          if [ "$STATUS" = "dead" ]; then
+            echo "   ⚡ Reviving $WF_NAME..."
             curl -s -X POST \
               -H "Authorization: token $GITHUB_TOKEN" \
               -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$PING_FILE.yml/dispatches" \
-              -d "{\"ref\":\"main\"}" 2>/dev/null
-            
-            echo "   ✅ Ping sent to $PING"
-            echo "   ⏰ $DESC should start within seconds"
+              "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$PING_FILE/dispatches" \
+              -d '{"ref":"main"}'
+            echo "   ✅ Ping sent"
           fi
-        done
+        }
         
-        # Also check Optimize
-        echo ""
-        echo "   Checking Optimize..."
-        OPT_RESULT=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-          "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/optimise.yml/runs?per_page=3" 2>/dev/null)
-        
-        OPT_STATUS=$(echo "$OPT_RESULT" | python3 -c "
-        import sys, json
-        data = json.load(sys.stdin)
-        runs = data.get('workflow_runs', [])
-        statuses = [r.get('status') for r in runs]
-        if 'in_progress' in statuses or 'queued' in statuses:
-            print('active')
-        elif runs:
-            print('ok')
-        else:
-            print('dead')
-        " 2>/dev/null || echo "error")
-        
-        echo "   Optimize: $OPT_STATUS"
+        check_workflow "train.yml" "Train" "ping.yml"
+        check_workflow "mass-scrape.yml" "Mass Scrape" "mass-scrape-ping.yml"
+        check_workflow "quick-train.yml" "Quick Train" "quick-train-ping.yml"
+        check_workflow "optimise.yml" "Optimize" "ping.yml"
         
         echo "=========================================="
         echo "✅ Watchdog Beta complete"

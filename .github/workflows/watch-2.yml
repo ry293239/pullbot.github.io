@@ -1,0 +1,70 @@
+name: Watchdog Beta
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '*/10 * * * *'
+  workflow_run:
+    workflows: ["Watchdog Alpha"]
+    types: [completed]
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    
+    steps:
+    - name: Check all Pullbot workflows
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        echo "🔍 WATCHDOG BETA - $(date)"
+        echo "=========================================="
+        
+        WORKFLOWS="train.yml mass-scrape.yml quick-train.yml optimise.yml"
+        ALL_OK=true
+        
+        for WF in $WORKFLOWS; do
+          WF_NAME=$(echo $WF | sed 's/.yml//' | tr '-' ' ')
+          
+          RESULT=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
+            "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$WF/runs?per_page=3" 2>/dev/null)
+          
+          LAST_CONCLUSION=$(echo "$RESULT" | python3 -c "
+          import sys, json
+          try:
+              data = json.load(sys.stdin)
+              runs = data.get('workflow_runs', [])
+              for r in runs:
+                  if r.get('status') == 'completed':
+                      print(r.get('conclusion', 'unknown'))
+                      break
+              print('unknown')
+          except:
+              print('error')
+          " 2>/dev/null || echo "error")
+          
+          case "$LAST_CONCLUSION" in
+            "success")
+              echo "✅ $WF_NAME: healthy"
+              ;;
+            "failure")
+              echo "❌ $WF_NAME: last run FAILED"
+              ALL_OK=false
+              ;;
+            *)
+              echo "⚠️  $WF_NAME: $LAST_CONCLUSION"
+              ;;
+          esac
+        done
+        
+        if [ "$ALL_OK" = "true" ]; then
+          echo ""
+          echo "🎉 All workflows healthy!"
+        else
+          echo ""
+          echo "⚠️  Some workflows need attention"
+        fi
+        
+        echo "=========================================="
+        echo "✅ Watchdog Beta complete"

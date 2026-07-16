@@ -45,12 +45,7 @@ jobs:
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: python src/generate_synthetic_qa.py gpt-4o 2>/dev/null || echo "Synthetic Q&A skipped (no token)"
-      
-    - name: Nuke old knowledge store
-      run: |
-        echo "[]" > knowledge/store.json
-        echo "Knowledge store reset"
-      
+    
     - name: Build clean knowledge
       timeout-minutes: 10
       run: python src/store.py build

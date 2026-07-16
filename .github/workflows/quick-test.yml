@@ -6,7 +6,7 @@ on:
 jobs:
   quick-train:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 60
     
     steps:
     - uses: actions/checkout@v4
@@ -19,57 +19,98 @@ jobs:
         
     - name: Resolve conflicts
       run: |
+        echo "===== RESOLVING CONFLICTS ====="
         git checkout --ours data/processed/corpus.txt 2>/dev/null || true
         git checkout --ours knowledge/store.json 2>/dev/null || true
         git checkout --ours data/knowledge/version.json 2>/dev/null || true
         git add -A
         git diff --staged --quiet || git commit -m "Auto-resolve conflicts" || true
+        echo "Conflicts resolved"
         
     - name: Install dependencies
-      run: pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml safetensors
+      run: |
+        echo "===== INSTALLING DEPS ====="
+        pip install --upgrade pip
+        pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml safetensors
+        echo "Dependencies installed"
         
     - name: Scrape fresh data
       timeout-minutes: 5
-      run: python src/scrape.py
+      run: |
+        echo "===== SCRAPING ====="
+        python src/scrape.py
+        echo "Scraping complete"
       
     - name: Clean corpus
-      run: python src/clean_corpus.py
+      run: |
+        echo "===== CLEANING CORPUS ====="
+        python src/clean_corpus.py
+        echo "Cleaning complete"
       
     - name: Rich training data
-      run: python src/rich_scraper.py
+      run: |
+        echo "===== RICH TRAINING DATA ====="
+        python src/rich_scraper.py
+        echo "Rich data complete"
       
     - name: Smart training
-      run: python src/smart_train.py
+      run: |
+        echo "===== SMART TRAINING ====="
+        python src/smart_train.py
+        echo "Smart training complete"
       
     - name: Generate synthetic Q&A (GitHub Models)
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: python src/generate_synthetic_qa.py gpt-4o 2>/dev/null || echo "Synthetic Q&A skipped (no token)"
-    
+      run: |
+        echo "===== SYNTHETIC Q&A ====="
+        python src/generate_synthetic_qa.py gpt-4o 2>/dev/null || echo "Synthetic Q&A skipped (no token or API unavailable)"
+        echo "Synthetic Q&A complete"
+      
     - name: Build clean knowledge
       timeout-minutes: 10
-      run: python src/store.py build
+      run: |
+        echo "===== BUILDING KNOWLEDGE ====="
+        python src/store.py build
+        echo "Knowledge build complete"
       
     - name: Quick train model
-      timeout-minutes: 15
+      timeout-minutes: 25
       run: |
+        echo "===== TRAINING START ====="
+        echo "Time: $(date)"
+        
         if [ -f data/processed/corpus.txt ]; then
           CORPUS_SIZE=$(wc -c < data/processed/corpus.txt)
           echo "Corpus size: $CORPUS_SIZE chars"
+          
           if [ "$CORPUS_SIZE" -gt 500 ]; then
-            python src/model.py optimize 0.5
-            echo "TRAINED=true" >> $GITHUB_ENV
+            echo "Starting training..."
+            python src/model.py train 2>&1 | while IFS= read -r line; do
+              echo "  [TRAIN] $line"
+            done
+            TRAIN_EXIT=${PIPESTATUS[0]}
+            echo "Training exit code: $TRAIN_EXIT"
+            
+            if [ $TRAIN_EXIT -eq 0 ]; then
+              echo "TRAINED=true" >> $GITHUB_ENV
+              echo "===== TRAINING COMPLETE ====="
+            else
+              echo "Training failed with code $TRAIN_EXIT"
+              echo "TRAINED=false" >> $GITHUB_ENV
+            fi
           else
-            echo "Corpus too small"
+            echo "ERROR: Corpus too small (need >500, got $CORPUS_SIZE)"
             echo "TRAINED=false" >> $GITHUB_ENV
           fi
         else
-          echo "No corpus found"
+          echo "ERROR: No corpus file found!"
           echo "TRAINED=false" >> $GITHUB_ENV
         fi
       
     - name: Update version
       run: |
+        echo "===== UPDATING VERSION ====="
         mkdir -p data/knowledge
         CHUNKS=0; CORPUS_KB=0
         if [ -f knowledge/store.json ]; then
@@ -80,15 +121,15 @@ jobs:
         fi
         cat > data/knowledge/version.json << ENDJSON
         {
-          "version": "2.0-synthetic",
+          "version": "2.0-quick",
           "updated": "$(date -u +'%Y-%m-%dT%H:%M:%SZ')",
           "knowledge_chunks": ${CHUNKS},
           "corpus_kb": ${CORPUS_KB},
           "model_trained": $( [ "$TRAINED" = "true" ] && echo "true" || echo "false" ),
-          "training_type": "quick_synthetic"
+          "training_type": "quick_train"
         }
         ENDJSON
-        echo "Version: 2.0-synthetic"
+        echo "Version: 2.0-quick | Chunks: ${CHUNKS} | Corpus: ${CORPUS_KB}KB | Trained: ${TRAINED:-false}"
         
     - name: Remove large files
       run: |
@@ -96,9 +137,11 @@ jobs:
         rm -rf models/temp_trained/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
+        echo "Large files removed"
         
     - name: Commit and push
       run: |
+        echo "===== COMMITTING ====="
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git checkout --ours data/processed/corpus.txt 2>/dev/null || true
@@ -109,8 +152,9 @@ jobs:
         git add data/ knowledge/ models/chunks/ models/last_train.json 2>/dev/null || true
         git add src/ config.yaml .github/ 2>/dev/null || true
         if git diff --staged --quiet; then
-          echo "No changes"
+          echo "No changes to commit"
         else
-          git commit -m "⚡ Quick train: rich data + synthetic Q&A + optimized model"
+          git commit -m "⚡ Quick train: $(date -u +'%H:%M UTC') | ${CHUNKS} chunks | ${CORPUS_KB}KB"
           git push origin main
+          echo "Pushed!"
         fi

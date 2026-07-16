@@ -1,6 +1,6 @@
 """
 Generate high-quality Q&A training data using GitHub Models (free).
-Uses GPT-4o or Llama 3.1 to create perfect training examples for Pullbot.
+Uses GPT-4o or Llama 3.1 to create training examples AND grade Pullbot's answers.
 """
 
 import os, sys, json, time, requests, random, re
@@ -10,6 +10,7 @@ REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
 GITHUB_MODELS_URL = "https://models.inference.ai.azure.com"
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
+PULLBOT_API = "https://pullbot-api.onrender.com"
 
 def generate_qa(topic, model="gpt-4o"):
     """Use GitHub Models to generate Q&A pairs about a topic"""
@@ -44,11 +45,8 @@ Keep questions varied: one definition, one explanation, one example."""
         
         if r.status_code == 200:
             text = r.json()["choices"][0]["message"]["content"]
-            
-            # Parse Q&A pairs from the response
             qa_pairs = []
             current_q = None
-            
             for line in text.split('\n'):
                 line = line.strip()
                 if line.startswith('Q:') or line.startswith('Question:'):
@@ -60,16 +58,11 @@ Keep questions varied: one definition, one explanation, one example."""
                         qa_pairs.append(current_q)
                     qa_pairs.append(line)
                     current_q = None
-            
             if current_q:
                 qa_pairs.append(current_q)
-            
             return qa_pairs
-        else:
-            print(f"   API status: {r.status_code}")
     except Exception as e:
         print(f"   Error: {e}")
-    
     return []
 
 def generate_continuation(topic, model="gpt-4o"):
@@ -84,10 +77,7 @@ def generate_continuation(topic, model="gpt-4o"):
     
     prompt = f"""Create 2 sentence completion examples about "{topic}".
 Format each as:
-Complete: [first half of sentence]... → [full sentence]
-
-Example:
-Complete: Machine learning is a field of... → Machine learning is a field of artificial intelligence that enables computers to learn from data."""
+Complete: [first half of sentence]... → [full sentence]"""
 
     try:
         r = requests.post(
@@ -101,131 +91,168 @@ Complete: Machine learning is a field of... → Machine learning is a field of a
             },
             timeout=30
         )
+        if r.status_code == 200:
+            text = r.json()["choices"][0]["message"]["content"]
+            return [l.strip() for l in text.split('\n') if l.strip().startswith('Complete:')]
+    except:
+        pass
+    return []
+
+def grade_pullbot_answer(question, pullbot_answer, model="gpt-4o"):
+    """Use GitHub Models to grade Pullbot's response and suggest improvements"""
+    if not GITHUB_TOKEN or not pullbot_answer:
+        return None
+    
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Content-Type": "application/json"
+    }
+    
+    prompt = f"""Grade this AI response on a scale of 1-5.
+
+Question: {question}
+AI Response: {pullbot_answer}
+
+Return ONLY a JSON object (no other text):
+{{"score": <1-5>, "feedback": "<one sentence>", "improved": "<better version>"}}"""
+
+    try:
+        r = requests.post(
+            f"{GITHUB_MODELS_URL}/chat/completions",
+            headers=headers,
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.3,
+                "max_tokens": 250
+            },
+            timeout=30
+        )
         
         if r.status_code == 200:
             text = r.json()["choices"][0]["message"]["content"]
-            lines = [l.strip() for l in text.split('\n') if l.strip().startswith('Complete:')]
-            return lines
+            # Try to parse JSON
+            try:
+                # Find JSON in response
+                json_match = re.search(r'\{[^}]+\}', text)
+                if json_match:
+                    return json.loads(json_match.group())
+            except:
+                pass
+    except Exception as e:
+        print(f"   Grade error: {e}")
+    return None
+
+def ask_pullbot(question):
+    """Get Pullbot's current answer for a question"""
+    try:
+        r = requests.get(f"{PULLBOT_API}/ask?q={question}", timeout=60)
+        if r.status_code == 200:
+            return r.json().get('response', '')
     except:
         pass
-    
-    return []
+    return ""
 
-def generate_from_wordbank(model="gpt-4o", max_topics=20):
-    """Generate Q&A and continuations for words in the wordbank"""
+def generate_and_grade(model="gpt-4o", max_topics=10):
+    """Generate Q&A, test Pullbot, grade responses, save improvements"""
     print("=" * 50)
-    print(f"🤖 SYNTHETIC Q&A GENERATOR (via GitHub Models)")
+    print(f"🤖 SYNTHETIC Q&A + GRADING (via GitHub Models)")
     print(f"   Model: {model}")
     print("=" * 50)
     
     if not GITHUB_TOKEN:
-        print("❌ No GITHUB_TOKEN set. Skipping synthetic generation.")
-        return []
+        print("❌ No GITHUB_TOKEN set")
+        return
     
     wordbank_path = os.path.join(REPO_ROOT, 'data', 'wordbank.json')
-    if not os.path.exists(wordbank_path):
-        print("❌ No wordbank found")
-        return []
+    topics = []
     
-    with open(wordbank_path) as f:
-        bank = json.load(f)
+    if os.path.exists(wordbank_path):
+        with open(wordbank_path) as f:
+            bank = json.load(f)
+        defined = [
+            word for word, info in bank['words'].items()
+            if isinstance(info, dict) and info.get('has_definition')
+        ]
+        random.shuffle(defined)
+        topics = defined[:max_topics]
     
-    # Get defined words
-    defined = [
-        word for word, info in bank['words'].items()
-        if isinstance(info, dict) and info.get('has_definition')
-    ]
-    
-    # Shuffle and pick random topics
-    random.shuffle(defined)
-    topics = defined[:max_topics]
+    if not topics:
+        topics = ["machine learning", "artificial intelligence", "python programming",
+                  "climate change", "solar system", "quantum physics", "natural selection"]
     
     all_qa = []
-    qa_count = 0
+    grades = []
     
     for i, word in enumerate(topics):
-        print(f"   {i+1}/{len(topics)}: {word}")
+        print(f"\n   {i+1}/{len(topics)}: {word}")
         
-        # Generate Q&A
+        # Generate perfect Q&A
         qa = generate_qa(word, model)
         if qa:
+            # Extract first question
+            for line in qa:
+                if line.startswith('Q:'):
+                    question = line.replace('Q:', '').strip()
+                    
+                    # Ask Pullbot the same question
+                    print(f"      Asking Pullbot: {question[:60]}...")
+                    pullbot_answer = ask_pullbot(question)
+                    
+                    if pullbot_answer:
+                        # Grade Pullbot's answer
+                        print(f"      Grading response...")
+                        grade = grade_pullbot_answer(question, pullbot_answer, model)
+                        
+                        if grade:
+                            score = grade.get('score', 0)
+                            improved = grade.get('improved', '')
+                            feedback = grade.get('feedback', '')
+                            
+                            print(f"      Score: {score}/5 | {feedback}")
+                            grades.append({
+                                'question': question,
+                                'pullbot_answer': pullbot_answer[:200],
+                                'score': score,
+                                'feedback': feedback,
+                                'improved': improved
+                            })
+                            
+                            # Add the improved version to training data
+                            if improved and score < 4:
+                                all_qa.append(f"Q: {question}")
+                                all_qa.append(f"A: {improved}")
+                    
+                    break  # Only test first question per topic
+            
+            # Add all generated Q&A to training data
             all_qa.extend(qa)
-            qa_count += len(qa)
         
-        # Generate continuations
-        cont = generate_continuation(word, model)
-        if cont:
-            all_qa.extend(cont)
-        
-        # Progress
-        if (i + 1) % 5 == 0:
-            print(f"      Progress: {qa_count} lines generated")
-        
-        time.sleep(0.5)  # Rate limit
+        time.sleep(1)
     
-    # Save to corpus
+    # Save grades
+    if grades:
+        grades_path = os.path.join(REPO_ROOT, 'data', 'pullbot_grades.json')
+        existing = []
+        if os.path.exists(grades_path):
+            with open(grades_path) as f:
+                existing = json.load(f)
+        existing.extend(grades)
+        with open(grades_path, 'w') as f:
+            json.dump(existing, f, indent=2)
+        
+        avg = sum(g['score'] for g in grades) / len(grades)
+        print(f"\n📊 Average score: {avg:.1f}/5 across {len(grades)} tests")
+    
+    # Save training data
     if all_qa:
         corpus_path = os.path.join(REPO_ROOT, 'data', 'processed', 'corpus.txt')
         os.makedirs(os.path.dirname(corpus_path), exist_ok=True)
-        
         text = '\n'.join(all_qa)
         with open(corpus_path, 'a') as f:
             f.write('\n\n---\n\n' + text)
-        
-        print(f"\n✅ Added {len(all_qa)} synthetic training lines to corpus")
-        
-        # Show samples
-        print("\n--- Sample outputs ---")
-        for line in all_qa[:6]:
-            print(f"   {line[:100]}")
-    
-    return all_qa
-
-def generate_from_topics(topics, model="gpt-4o"):
-    """Generate Q&A from a list of topics"""
-    print("=" * 50)
-    print(f"🤖 SYNTHETIC Q&A FROM TOPICS")
-    print(f"   Topics: {len(topics)} | Model: {model}")
-    print("=" * 50)
-    
-    if not GITHUB_TOKEN:
-        print("❌ No GITHUB_TOKEN set")
-        return []
-    
-    all_qa = []
-    
-    for i, topic in enumerate(topics):
-        print(f"   {i+1}/{len(topics)}: {topic}")
-        qa = generate_qa(topic, model)
-        if qa:
-            all_qa.extend(qa)
-        time.sleep(0.5)
-    
-    if all_qa:
-        corpus_path = os.path.join(REPO_ROOT, 'data', 'processed', 'corpus.txt')
-        os.makedirs(os.path.dirname(corpus_path), exist_ok=True)
-        
-        text = '\n'.join(all_qa)
-        with open(corpus_path, 'a') as f:
-            f.write('\n\n---\n\n' + text)
-        
-        print(f"\n✅ Added {len(all_qa)} lines to corpus")
-    
-    return all_qa
+        print(f"✅ Added {len(all_qa)} lines to corpus")
 
 if __name__ == '__main__':
     model = sys.argv[1] if len(sys.argv) > 1 else "gpt-4o"
-    
-    # Try wordbank first, then fall back to hardcoded topics
-    result = generate_from_wordbank(model=model)
-    
-    if not result:
-        # Fallback topics if wordbank is empty
-        fallback_topics = [
-            "machine learning", "artificial intelligence", "python programming",
-            "climate change", "solar system", "human brain",
-            "world war 2", "renaissance art", "quantum physics",
-            "natural selection", "internet technology", "ancient egypt"
-        ]
-        print("\n⚠️ No wordbank results, using fallback topics...")
-        generate_from_topics(fallback_topics, model=model)
+    generate_and_grade(model=model)

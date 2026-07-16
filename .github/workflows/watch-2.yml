@@ -14,53 +14,13 @@ jobs:
     timeout-minutes: 5
     
     steps:
-    - name: Check and revive workflows
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install deps
+      run: pip install requests
+    - name: Run watchdog
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        echo "🔍 WATCHDOG BETA - $(date)"
-        echo "=========================================="
-        
-        check_workflow() {
-          local WF_FILE=$1
-          local WF_NAME=$2
-          local PING_FILE=$3
-          
-          RESULT=$(curl -s -H "Authorization: token $GITHUB_TOKEN" \
-            "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$WF_FILE/runs?per_page=3")
-          
-          STATUS=$(echo "$RESULT" | python3 -c "
-          import sys, json
-          data = json.load(sys.stdin)
-          runs = data.get('workflow_runs', [])
-          statuses = [r.get('status') for r in runs]
-          if 'in_progress' in statuses or 'queued' in statuses:
-              print('active')
-          elif runs and runs[0].get('conclusion') == 'success':
-              print('healthy')
-          elif runs and runs[0].get('conclusion') == 'failure':
-              print('dead')
-          else:
-              print('unknown')
-          ")
-          
-          echo "   $WF_NAME: $STATUS"
-          
-          if [ "$STATUS" = "dead" ]; then
-            echo "   ⚡ Reviving $WF_NAME..."
-            curl -s -X POST \
-              -H "Authorization: token $GITHUB_TOKEN" \
-              -H "Accept: application/vnd.github+json" \
-              "https://api.github.com/repos/pullbot-ai/pullbot-ai.github.io/actions/workflows/$PING_FILE/dispatches" \
-              -d '{"ref":"main"}'
-            echo "   ✅ Ping sent"
-          fi
-        }
-        
-        check_workflow "train.yml" "Train" "ping.yml"
-        check_workflow "mass-scrape.yml" "Mass Scrape" "mass-scrape-ping.yml"
-        check_workflow "quick-train.yml" "Quick Train" "quick-train-ping.yml"
-        check_workflow "optimise.yml" "Optimize" "ping.yml"
-        
-        echo "=========================================="
-        echo "✅ Watchdog Beta complete"
+      run: python src/watchdog.py

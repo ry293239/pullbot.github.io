@@ -9,7 +9,7 @@ on:
 jobs:
   optimize:
     runs-on: ubuntu-latest
-    timeout-minutes: 65
+    timeout-minutes: 90
     
     steps:
     - uses: actions/checkout@v4
@@ -17,10 +17,45 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers datasets accelerate safetensors numpy pyyaml
+      run: pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
     - name: Run optimization
-      timeout-minutes: 55
+      timeout-minutes: 60
       run: python src/optimize_pipeline.py
+    - name: Export GGUF
+      timeout-minutes: 15
+      run: |
+        python -c "
+        import os, json, torch, shutil
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        
+        chunks_dir = 'models/chunks'
+        with open(f'{chunks_dir}/manifest.json') as f:
+            manifest = json.load(f)
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled = f'{chunks_dir}/{weights_file}'
+        if not os.path.exists(reassembled):
+            with open(reassembled, 'wb') as out:
+                for chunk_path in manifest['chunks']:
+                    with open(chunk_path, 'rb') as inc:
+                        out.write(inc.read())
+        
+        os.makedirs('models_clean', exist_ok=True)
+        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
+        tokenizer.save_pretrained('models_clean')
+        model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
+        model.save_pretrained('models_clean')
+        
+        import subprocess
+        result = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'q8_0'], capture_output=True, text=True)
+        print(result.stdout)
+        if result.returncode != 0:
+            print(result.stderr)
+            result = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'f16'], capture_output=True, text=True)
+        shutil.rmtree('models_clean')
+        
+        if os.path.exists('models/pullbot.gguf'):
+            print(f'GGUF exported: {os.path.getsize(\"models/pullbot.gguf\")/(1024*1024):.0f}MB')
+        "
     - name: Remove large files
       run: |
         rm -rf models/checkpoints/
@@ -35,5 +70,5 @@ jobs:
         git pull --rebase origin main
         git stash pop || true
         git checkout --ours data/processed/corpus.txt 2>/dev/null || true
-        git add models/chunks/ models/last_train.json data/ knowledge/ 2>/dev/null || true
-        git diff --staged --quiet || git commit -m "✂️ Full optimization complete" && git push origin main || echo "No changes"
+        git add models/chunks/ models/pullbot.gguf models/last_train.json data/ knowledge/ 2>/dev/null || true
+        git diff --staged --quiet || git commit -m "✂️ Optimized + GGUF exported" && git push origin main || echo "No changes"

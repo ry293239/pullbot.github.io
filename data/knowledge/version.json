@@ -1,8 +1,8 @@
 {
   "version": "2.0-quick",
-  "updated": "2026-07-16T10:41:55Z",
-  "knowledge_chunks": 1887,
-  "corpus_kb": 185,
+  "updated": "2026-07-17T10:12:41Z",
+  "knowledge_chunks": 1871,
+  "corpus_kb": 182,
   "model_trained": true,
   "training_type": "quick_train"
 }

@@ -87,30 +87,48 @@ class PullbotModel:
         print(f"   ✅ Reassembled")
     
     def _load_model_safe(self):
+        print("   Attempting from_pretrained...")
         try:
             self.model = AutoModelForCausalLM.from_pretrained(
                 self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
             )
             print("   ✅ Loaded via from_pretrained")
-        except:
-            try:
-                model_config = AutoConfig.from_pretrained(self.chunks_dir)
-                self.model = AutoModelForCausalLM.from_config(model_config)
-                for fname in ['model.safetensors', 'pytorch_model.bin']:
-                    path = os.path.join(self.chunks_dir, fname)
-                    if os.path.exists(path):
-                        if fname.endswith('.safetensors'):
-                            from safetensors.torch import load_file
-                            state_dict = load_file(path)
+            return
+        except Exception as e:
+            print(f"   ⚠️ from_pretrained failed: {e}")
+        
+        print("   Attempting manual state_dict load...")
+        try:
+            model_config = AutoConfig.from_pretrained(self.chunks_dir)
+            self.model = AutoModelForCausalLM.from_config(model_config)
+            
+            for fname in ['model.safetensors', 'pytorch_model.bin']:
+                path = os.path.join(self.chunks_dir, fname)
+                if os.path.exists(path):
+                    print(f"   Loading {fname} ({os.path.getsize(path)//1024//1024}MB)...")
+                    if fname.endswith('.safetensors'):
+                        from safetensors.torch import load_file
+                        state_dict = load_file(path)
+                    else:
+                        state_dict = torch.load(path, map_location='cpu')
+                    
+                    cleaned = {}
+                    skipped = 0
+                    for k, v in state_dict.items():
+                        if isinstance(v, torch.Tensor) and not v.is_quantized:
+                            cleaned[k] = v.float()
                         else:
-                            state_dict = torch.load(path, map_location='cpu')
-                        cleaned = {k: v for k, v in state_dict.items() if not isinstance(v, tuple)}
-                        self.model.load_state_dict(cleaned, strict=False)
-                        print("   ✅ Loaded via state_dict")
-                        return
-            except Exception as e:
-                print(f"   ❌ Failed: {e}")
-                raise
+                            skipped += 1
+                    
+                    print(f"   Kept {len(cleaned)} tensors, skipped {skipped} quantized")
+                    self.model.load_state_dict(cleaned, strict=False)
+                    print("   ✅ Loaded via state_dict")
+                    return
+            
+            print("   ❌ No weights file found in chunks")
+        except Exception as e2:
+            print(f"   ❌ Manual load failed: {e2}")
+            raise
     
     def prepare_training_data(self):
         corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")

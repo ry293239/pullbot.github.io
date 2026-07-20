@@ -20,19 +20,18 @@ jobs:
       with:
         python-version: '3.10'
         
-    - name: Resolve any git conflicts
+    - name: Resolve conflicts
       run: |
-        # Force resolve any leftover conflicts
         git checkout --ours data/processed/corpus.txt 2>/dev/null || true
-        git checkout --ours data/knowledge/version.json 2>/dev/null || true
         git checkout --ours knowledge/store.json 2>/dev/null || true
+        git checkout --ours data/knowledge/version.json 2>/dev/null || true
         git add -A
         git diff --staged --quiet || git commit -m "Auto-resolve conflicts" || true
         
     - name: Install dependencies
       run: |
         pip install --upgrade pip
-        pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml
+        pip install torch transformers datasets accelerate requests beautifulsoup4 numpy pyyaml safetensors
         
     - name: Scrape web
       timeout-minutes: 5
@@ -40,6 +39,17 @@ jobs:
       
     - name: Clean corpus
       run: python src/clean_corpus.py
+      
+    - name: Rich training data
+      run: python src/rich_scraper.py
+      
+    - name: Smart training
+      run: python src/smart_train.py
+      
+    - name: Generate synthetic Q&A (GitHub Models)
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: python src/generate_synthetic_qa.py gpt-4o 2>/dev/null || echo "Synthetic Q&A skipped"
       
     - name: Build knowledge store
       timeout-minutes: 10

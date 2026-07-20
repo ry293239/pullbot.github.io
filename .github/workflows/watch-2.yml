@@ -9,7 +9,7 @@ on:
 
 jobs:
   respond:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-arm
     timeout-minutes: 5
     permissions:
       contents: write
@@ -36,7 +36,13 @@ jobs:
       uses: actions/cache@v4
       with:
         path: ~/.cache/pip
-        key: pip-poll
+        key: pip-arm-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: pip-arm-${{ runner.os }}-
+    - name: Cache GGUF model
+      uses: actions/cache@v4
+      with:
+        path: models/pullbot.gguf
+        key: gguf-model-${{ hashFiles('models/pullbot.gguf') }}
     - name: Install deps
       run: pip install llama-cpp-python
     - name: Generate response and clear files

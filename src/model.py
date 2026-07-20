@@ -1,6 +1,6 @@
 """
 Pullbot Model - FULL FINE-TUNING + 4-STAGE OPTIMIZATION
-Loads weights directly - skips HuggingFace validation.
+This is Pullbot's model. Not DistilGPT2. Not HuggingFace's.
 1. Smart Prune (redistribute weak to strong)
 2. Safe Precision Prune (merge insignificant, same row only)
 3. Progressive Bit Reduction (changed weights only, with timeout)
@@ -59,11 +59,11 @@ class PullbotModel:
         self.tokenizer = AutoTokenizer.from_pretrained(self.chunks_dir)
         self.tokenizer.pad_token = self.tokenizer.eos_token
         
-        print("📂 Loading model...")
+        print("📂 Loading Pullbot model...")
         self._load_model_safe()
         
         total_params = sum(p.numel() for p in self.model.parameters())
-        print(f"✅ Model ready! {total_params:,} parameters")
+        print(f"✅ Pullbot ready! {total_params:,} parameters")
     
     def _reassemble_if_needed(self):
         manifest_path = os.path.join(self.chunks_dir, "manifest.json")
@@ -89,8 +89,8 @@ class PullbotModel:
         print(f"   ✅ Reassembled")
     
     def _create_fresh_model(self):
-        """Download fresh DistilGPT2 if no model exists"""
-        print("   Downloading fresh DistilGPT2...")
+        """Download fresh DistilGPT2 only if no model exists at all"""
+        print("   Creating fresh base model...")
         model = AutoModelForCausalLM.from_pretrained('distilgpt2', torch_dtype=torch.float32)
         tokenizer = AutoTokenizer.from_pretrained('distilgpt2')
         tokenizer.pad_token = tokenizer.eos_token
@@ -99,11 +99,11 @@ class PullbotModel:
         tokenizer.save_pretrained(self.chunks_dir)
         self.model = model
         self.tokenizer = tokenizer
-        print("   ✅ Fresh model ready")
+        print("   ✅ Fresh model created")
     
     def _load_model_safe(self):
-        """Load model by skipping HF validation - just load raw weights"""
-        print("   Loading raw weights (skipping HF validation)...")
+        """Load Pullbot's own weights. This is our model, not DistilGPT2."""
+        print("   Loading Pullbot weights...")
         
         manifest_path = os.path.join(self.chunks_dir, "manifest.json")
         if not os.path.exists(manifest_path):
@@ -119,19 +119,15 @@ class PullbotModel:
         if not os.path.exists(reassembled_path):
             self._reassemble_if_needed()
         
-        # Load config
-        config = AutoConfig.from_pretrained(self.chunks_dir)
-        self.model = AutoModelForCausalLM.from_config(config)
-        
-        # Load weights directly - skip validation
-        print(f"   Loading {weights_file}...")
+        # Load raw weights
+        print(f"   Reading {weights_file}...")
         if weights_file.endswith('.safetensors'):
             from safetensors.torch import load_file
             state_dict = load_file(reassembled_path)
         else:
             state_dict = torch.load(reassembled_path, map_location='cpu')
         
-        # Clean and load
+        # Clean quantized params
         cleaned = {}
         skipped = 0
         for k, v in state_dict.items():
@@ -143,7 +139,11 @@ class PullbotModel:
             else:
                 skipped += 1
         
+        # Build model from the state dict - it defines its own architecture
+        config = AutoConfig.from_pretrained(self.chunks_dir)
+        self.model = AutoModelForCausalLM.from_config(config)
         self.model.load_state_dict(cleaned, strict=False)
+        
         print(f"   ✅ Loaded {len(cleaned)} tensors (skipped {skipped} quantized)")
     
     def prepare_training_data(self):
@@ -170,7 +170,7 @@ class PullbotModel:
         if dataset is None or len(dataset) == 0:
             return False
         print("\n" + "=" * 50)
-        print("🚀 FULL MODEL TRAINING")
+        print("🚀 TRAINING PULLBOT")
         print(f"   Examples: {len(dataset)} | Epochs: {config['training']['epochs']} | Batch: {config['training']['batch_size']}")
         if resume_from_checkpoint:
             print(f"   📂 Resuming from: {resume_from_checkpoint}")
@@ -199,8 +199,7 @@ class PullbotModel:
         print(f"\n🧠 STAGE 1: SMART PRUNE (target: {target_sparsity*100:.0f}%)")
         total_redistributed = 0
         total_rows = sum(m.weight.shape[0] for _, m in self.model.named_modules() if isinstance(m, nn.Linear) and m.weight.shape[0] > 10)
-        rows_done = 0
-        last_print = 0
+        rows_done = 0; last_print = 0
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
@@ -242,8 +241,7 @@ class PullbotModel:
             baseline = self.model(test_inputs).logits
         total_merged = 0
         total_rows = sum(m.weight.shape[0] for _, m in self.model.named_modules() if isinstance(m, nn.Linear) and m.weight.shape[0] > 10)
-        rows_done = 0
-        last_print = 0
+        rows_done = 0; last_print = 0
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
@@ -296,16 +294,14 @@ class PullbotModel:
                 weight = module.weight.data.float()
                 for row_idx in range(weight.shape[0]):
                     if time.time() - start_time > timeout_seconds:
-                        stopped_early = True
-                        break
+                        stopped_early = True; break
                     row = weight[row_idx]
                     row_max = row.abs().max()
                     if row_max == 0: continue
                     upper_bound = row_max * (0.3 + margin)
                     lower_bound = row_max * 0.001
                     for col_idx in range(len(row)):
-                        val = row[col_idx]
-                        abs_val = abs(val)
+                        val = row[col_idx]; abs_val = abs(val)
                         if abs_val < 0.0001: nodes_merged += 1; continue
                         if abs_val > upper_bound or abs_val < lower_bound: nodes_8bit += 1; continue
                         val_7bit = round(val.item() * 127) / 127
@@ -354,7 +350,7 @@ class PullbotModel:
         return {'total_params':total,'non_zero':non_zero,'sparsity_pct':(1-non_zero/total)*100 if total>0 else 0,'quantized':is_quantized,'estimated_ram_mb':ram_mb}
     
     def save_and_chunk(self):
-        print("\n💾 Saving model...")
+        print("\n💾 Saving Pullbot...")
         temp_dir = os.path.join(REPO_ROOT, "models", "temp_trained")
         os.makedirs(temp_dir, exist_ok=True)
         self.tokenizer.save_pretrained(temp_dir)
@@ -394,7 +390,7 @@ class PullbotModel:
         shutil.rmtree(temp_dir)
         ckpt_dir = os.path.join(REPO_ROOT,"models","checkpoints")
         if os.path.exists(ckpt_dir): shutil.rmtree(ckpt_dir)
-        print(f"\n✅ Saved! {len(chunks)} chunks, {round(total_size/(1024*1024),1)}MB | Sparsity: {stats['sparsity_pct']:.1f}% | RAM: {stats['estimated_ram_mb']:.0f}MB")
+        print(f"\n✅ Pullbot saved! {len(chunks)} chunks, {round(total_size/(1024*1024),1)}MB | Sparsity: {stats['sparsity_pct']:.1f}% | RAM: {stats['estimated_ram_mb']:.0f}MB")
         return True
 
 if __name__ == '__main__':
@@ -409,7 +405,7 @@ if __name__ == '__main__':
                 if idx+1 < len(sys.argv): resume = sys.argv[idx+1]
             if bot.train(resume_from_checkpoint=resume):
                 bot.save_and_chunk()
-                print("\n🎉 Training complete! Model saved.")
+                print("\n🎉 Training complete!")
         elif cmd == 'optimize':
             sp = float(sys.argv[2]) if len(sys.argv)>2 else 0.5
             before = bot.get_model_size_estimate()

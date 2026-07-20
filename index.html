@@ -90,7 +90,6 @@
         .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
         .status-dot.online { background: var(--accent); }
         .status-dot.offline { background: #EF4444; }
-        .status-dot.actions { background: #F59E0B; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .overlay.active { opacity: 1; pointer-events: all; }
         .panel { background: var(--bg-sidebar); border-radius: 16px; padding: 24px; width: 380px; max-width: 90vw; border: 1px solid var(--border); }
@@ -170,7 +169,6 @@
     </div>
 </div>
 
-<!-- SETTINGS -->
 <div class="overlay" id="settingsOverlay" onclick="closeSettings(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Settings</h2>
     <div class="setting-group"><label>Temperature</label><input type="range" min="0.1" max="1.5" step="0.1" value="0.8" id="settingTemp" oninput="updateTempLabel()"><span class="setting-value" id="tempLabel">0.8 - Balanced</span></div>
@@ -178,8 +176,6 @@
     <button class="btn-primary" onclick="saveSettings()">Save</button>
     <button class="btn-secondary" onclick="document.getElementById('settingsOverlay').classList.remove('active')">Cancel</button>
 </div></div>
-
-<!-- AUTH -->
 <div class="overlay" id="authOverlay" onclick="closeAuth(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2 id="authTitle">Log In</h2>
     <div class="setting-group"><label>Username</label><input type="text" id="authUsername" placeholder="Enter username" autocomplete="off"></div>
@@ -188,8 +184,6 @@
     <button class="btn-text" onclick="toggleAuthMode()">Don't have an account? Sign up</button>
     <button class="btn-secondary" onclick="document.getElementById('authOverlay').classList.remove('active')">Cancel</button>
 </div></div>
-
-<!-- API KEY -->
 <div class="overlay" id="apiKeyOverlay" onclick="closeAPIKey(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Your API Key</h2>
     <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">Use this to call Pullbot from anywhere</p>
@@ -199,59 +193,56 @@
     <p style="color:var(--text-secondary);font-size:11px;margin-top:12px;">Usage: <span id="apiUsage">0</span> / 1000</p>
     <button class="btn-text" onclick="document.getElementById('apiKeyOverlay').classList.remove('active')">Close</button>
 </div></div>
-
 <div class="toast" id="toast"></div>
 
 <script>
-Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS", "ow1W5OlXiE57XYiTa9Hyhj1v3gAM4niSiWGbVBQq");
-Parse.serverURL = "https://parseapi.back4app.com";
-
-const API_URL = 'https://pullbot-api.onrender.com';
-const GH_REPO = 'pullbot-ai/pullbot-ai.github.io';
-let apiOnline = false;
-let chats = {};
-let currentChatId = null;
-
+Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS","ow1W5OlXiE57XYiTa9Hyhj1v3gAM4niSiWGbVBQq");
+Parse.serverURL="https://parseapi.back4app.com";
+const API_URL='https://pullbot-api.onrender.com';
+const GH_REPO='pullbot-ai/pullbot-ai.github.io';
+let apiOnline=false,chats={},currentChatId=null;
 function updateLoader(t,p){document.getElementById('loaderStatus').textContent=t;document.getElementById('loaderFill').style.width=p+'%';}
 async function init(){updateLoader('Connecting...',20);await refreshStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
-
-async function refreshStatus(){
-    try{const r=await fetch(`${API_URL}/health`);apiOnline=r.ok;}catch(e){apiOnline=false;}
-    updateStatusDot();
-}
-function updateStatusDot(){
-    const dot=document.getElementById('statusDot');
-    if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot Online';}
-    else{dot.className='status-dot offline';document.getElementById('statusFooter').innerHTML='<span class="status-dot offline"></span>Pullbot Offline';}
-}
+async function refreshStatus(){try{const r=await fetch(`${API_URL}/health`);apiOnline=r.ok;}catch(e){apiOnline=false;}updateStatusDot();}
+function updateStatusDot(){const dot=document.getElementById('statusDot');if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot Online';}else{dot.className='status-dot offline';document.getElementById('statusFooter').innerHTML='<span class="status-dot offline"></span>Pullbot Offline';}}
 function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
 
-async function askPullbotActions(question){
+async function askPullbotPoll(question){
     const requestId=Date.now();
     try{
-        await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/ask.yml/dispatches`,{
-            method:'POST',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
-            body:JSON.stringify({ref:'main',inputs:{question}})
-        });
+        const getRes=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`);
+        const getData=await getRes.json();
+        const sha=getData.sha||'';
+        const content=btoa(JSON.stringify({question,timestamp:requestId}));
+        await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`,{method:'PUT',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},body:JSON.stringify({message:'New question',content,sha,branch:'main'})});
     }catch(e){return null;}
-    for(let i=0;i<45;i++){
-        await new Promise(r=>setTimeout(r,2000));
-        const cb=Date.now()+'_'+Math.random();
-        try{
-            const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${cb}`,{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
-            if(r.ok){const d=await r.json();if(d.response&&d.timestamp>(requestId/1000-10))return d.response;}
-        }catch(e){}
-    }
+    for(let i=0;i<45;i++){await new Promise(r=>setTimeout(r,2000));const cb=Date.now()+'_'+Math.random();try{const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${cb}`,{cache:'no-store',headers:{'Cache-Control':'no-cache'}});if(r.ok){const d=await r.json();if(d.response&&d.timestamp>(requestId/1000-10)){await clearPollFiles();return d.response;}}}catch(e){}}
+    await clearPollFiles();
     return null;
+}
+
+async function clearPollFiles(){
+    try{
+        const getRes=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`);
+        const getData=await getRes.json();
+        const sha=getData.sha||'';
+        const content=btoa('{"question":""}');
+        await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`,{method:'PUT',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},body:JSON.stringify({message:'Clear pending',content,sha,branch:'main'})});
+    }catch(e){}
+    try{
+        const getRes=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/response.json`);
+        const getData=await getRes.json();
+        const sha=getData.sha||'';
+        const content=btoa('{"question":"","response":"","timestamp":0}');
+        await fetch(`https://api.github.com/repos/${GH_REPO}/contents/response.json`,{method:'PUT',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},body:JSON.stringify({message:'Clear response',content,sha,branch:'main'})});
+    }catch(e){}
 }
 
 async function askPullbot(q){
     const precoded=getPrecodedResponse(q);
     if(precoded)return precoded;
-    // Try Actions first
-    const actionsRes=await askPullbotActions(q);
-    if(actionsRes)return cleanResponse(actionsRes);
-    // Fallback to Render
+    const pollRes=await askPullbotPoll(q);
+    if(pollRes)return cleanResponse(pollRes);
     if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(q)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"...";}}catch(e){apiOnline=false;}}
     return getLocalResponse(q);
 }
@@ -263,7 +254,6 @@ function getLocalResponse(p){
     if(m){const a=parseFloat(m[1]),b=parseFloat(m[3]);let r;switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;}return`${a} ${m[2]} ${b} = ${r}`;}
     return"I'm thinking...";
 }
-
 function newChat(){const id='chat_'+Date.now();chats[id]={title:'New Chat',messages:[],created:Date.now()};currentChatId=id;renderChatList();renderMessages();document.getElementById('welcomeScreen').classList.add('hidden');document.getElementById('userInput').focus();}
 function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
 function renderChatList(){const c=document.getElementById('chatList');const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');}
@@ -272,19 +262,14 @@ async function sendMessage(){const input=document.getElementById('userInput');co
 function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
 function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
-
 async function checkStatus(){await refreshStatus();let p=[];if(apiOnline){p.push('✅ API: Online');}else{p.push('❌ API: Offline');}if(Parse.User.current()){p.push('👤 Logged in');}else{p.push('👤 Not logged in');}showToast(p.join(' | '));}
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},3000);}
 function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
-
-// Settings
 function openSettings(){document.getElementById('settingsOverlay').classList.add('active');loadSettings();}
 function closeSettings(e){if(!e||e.target===document.getElementById('settingsOverlay')){document.getElementById('settingsOverlay').classList.remove('active');}}
 function updateTempLabel(){const v=document.getElementById('settingTemp').value;const l={'0.1':'Very Precise','0.3':'Precise','0.5':'Focused','0.8':'Balanced','1.0':'Creative','1.2':'Very Creative','1.5':'Wild'};document.getElementById('tempLabel').textContent=v+' - '+(l[v]||'Custom');}
 async function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Saved!');document.getElementById('settingsOverlay').classList.remove('active');}
 function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;}updateTempLabel();}
-
-// Auth
 let authMode='login';
 function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
 function closeAuth(e){if(!e||e.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
@@ -292,17 +277,12 @@ function toggleAuthMode(){authMode=authMode==='login'?'signup':'login';document.
 async function handleAuth(){const u=document.getElementById('authUsername').value.trim();const p=document.getElementById('authPassword').value.trim();if(!u||!p){showToast('Fill all fields');return;}try{if(authMode==='signup'){const user=new Parse.User();user.set('username',u);user.set('password',p);await user.signUp();showToast('Account created!');}else{await Parse.User.logIn(u,p);showToast('Welcome back!');}document.getElementById('authOverlay').classList.remove('active');updateUserUI();loadChatsFromCloud();}catch(e){showToast(e.message||'Error');}}
 function updateUserUI(){const user=Parse.User.current();const btn=document.querySelector('.login-btn');if(user){btn.textContent=user.get('username');btn.onclick=logout;}else{btn.textContent='Log In';btn.onclick=openAuth;}}
 async function logout(){await Parse.User.logOut();showToast('Logged out');updateUserUI();}
-
-// API Key
 async function getAPIKey(){if(!Parse.User.current()){showToast('Please log in first');return;}try{const r=await Parse.Cloud.run("getApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent=r.usage;document.getElementById('apiKeyOverlay').classList.add('active');}catch(e){showToast('Error');}}
 async function regenerateAPIKey(){try{const r=await Parse.Cloud.run("regenerateApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent='0';showToast('Regenerated!');}catch(e){showToast('Error');}}
 function copyAPIKey(){const inp=document.getElementById('apiKeyDisplay');inp.select();document.execCommand('copy');showToast('Copied!');}
 function closeAPIKey(e){if(!e||e.target===document.getElementById('apiKeyOverlay')){document.getElementById('apiKeyOverlay').classList.remove('active');}}
-
-// Chat Sync
 async function saveCurrentChat(){if(!Parse.User.current()||!currentChatId||!chats[currentChatId])return;try{await Parse.Cloud.run("saveChat",{title:chats[currentChatId].title,messages:chats[currentChatId].messages});}catch(e){}}
 async function loadChatsFromCloud(){if(!Parse.User.current())return;try{const cloudChats=await Parse.Cloud.run("getChats");cloudChats.forEach(c=>{if(!chats[c.id]){chats[c.id]={title:c.title,messages:c.messages,created:new Date(c.created).getTime()};}});renderChatList();}catch(e){}}
-
 window.addEventListener('DOMContentLoaded',init);
 </script>
 </body>

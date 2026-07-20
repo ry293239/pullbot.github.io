@@ -884,6 +884,65 @@
           "score": 4
         }
       ]
+    },
+    {
+      "timestamp": 1784546687.198072,
+      "date": "2026-07-20 11:24 UTC",
+      "score": 0,
+      "max": 50,
+      "percentage": 0.0,
+      "results": [
+        {
+          "prompt": "Hello!",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "What is gravity?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Who created PullBot?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Write Python code to reverse a string.",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Explain photosynthesis.",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Why is the sky blue?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "Tell me a joke.",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "What is machine learning?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "How does the internet work?",
+          "response": "(no response)",
+          "score": 0
+        },
+        {
+          "prompt": "What is the capital of France?",
+          "response": "(no response)",
+          "score": 0
+        }
+      ]
     }
   ]
 }

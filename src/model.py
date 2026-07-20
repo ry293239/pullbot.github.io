@@ -89,7 +89,6 @@ class PullbotModel:
         print(f"   ✅ Reassembled")
     
     def _create_fresh_model(self):
-        """Download fresh DistilGPT2 only if no model exists at all"""
         print("   Creating fresh base model...")
         model = AutoModelForCausalLM.from_pretrained('distilgpt2', torch_dtype=torch.float32)
         tokenizer = AutoTokenizer.from_pretrained('distilgpt2')
@@ -125,7 +124,7 @@ class PullbotModel:
             from safetensors.torch import load_file
             state_dict = load_file(reassembled_path)
         else:
-            state_dict = torch.load(reassembled_path, map_location='cpu')
+            state_dict = torch.load(reassembled_path, map_location='cpu', weights_only=False)
         
         # Clean quantized params
         cleaned = {}

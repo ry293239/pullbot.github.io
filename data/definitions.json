@@ -10483,5 +10483,345 @@
     "word": "tapes",
     "definition": "Flexible material in a roll with a sticky surface on one or both sides; adhesive tape.",
     "first_seen": "PXL2000"
+  },
+  {
+    "word": "bogey",
+    "definition": "One who robs others in a lawless area, especially as part of a group.",
+    "first_seen": "Kenneth J. Alford"
+  },
+  {
+    "word": "bandmaster",
+    "definition": "The conductor of a musical ensemble, especially a brass or military band.",
+    "first_seen": "Kenneth J. Alford"
+  },
+  {
+    "word": "marches",
+    "definition": "A formal, rhythmic way of walking, used especially by soldiers, bands and in ceremonies.",
+    "first_seen": "Kenneth J. Alford"
+  },
+  {
+    "word": "skull",
+    "definition": "The main bones of the head considered as a unit; including the cranium, facial bones, and mandible.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "defects",
+    "definition": "A fault or malfunction.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "surgical",
+    "definition": "Of, relating to, used in, or resulting from surgery.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "complication",
+    "definition": "The act or process of complicating.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "widened",
+    "definition": "To become wide or wider.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "outcomes",
+    "definition": "That which is produced or occurs as a result of an event or process.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "congenital",
+    "definition": "(of a trait or a disease) Present since birth.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "leaks",
+    "definition": "A crack, crevice, fissure, or hole which admits water or other fluid, or lets it escape.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "treats",
+    "definition": "An entertainment, outing, food, drink, or other indulgence provided by someone for the enjoyment of others.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "otorhinolaryngology",
+    "definition": "Otolaryngology.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "challenges",
+    "definition": "A confrontation; a dare.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "addressing",
+    "definition": "To prepare oneself.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "cerebrospinal",
+    "definition": "Of or pertaining to brain or spine (particularly the spinal cord).",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "improvements",
+    "definition": "The act of improving; advancement or growth; a bettering",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "visualisation",
+    "definition": "The act of visualizing, or something visualized.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "indications",
+    "definition": "Act of pointing out or indicating.",
+    "first_seen": "Skull base surgery"
+  },
+  {
+    "word": "anxiolytic",
+    "definition": "A drug prescribed for the treatment of symptoms of anxiety.",
+    "first_seen": "ZK-93423"
+  },
+  {
+    "word": "capabilities",
+    "definition": "The power or ability to generate an outcome",
+    "first_seen": "Microsoft Band"
+  },
+  {
+    "word": "smartphones",
+    "definition": "A mobile phone with more advanced features and greater computing capacity than a featurephone.",
+    "first_seen": "Microsoft Band"
+  },
+  {
+    "word": "smartwatch",
+    "definition": "A wristwatch with electronic functionality beyond timekeeping.",
+    "first_seen": "Microsoft Band"
+  },
+  {
+    "word": "mate",
+    "definition": "A fellow, comrade, colleague, partner or someone with whom something is shared, e.g. shipmate, classmate.",
+    "first_seen": "Willst du mit mir gehn"
+  },
+  {
+    "word": "rot",
+    "definition": "The process of becoming rotten; putrefaction.",
+    "first_seen": "Willst du mit mir gehn"
+  },
+  {
+    "word": "turret",
+    "definition": "A little tower, frequently a merely ornamental structure at one of the corners of a building or castle.",
+    "first_seen": "HSwMS Folke"
+  },
+  {
+    "word": "compartment",
+    "definition": "A room, or section, or chamber",
+    "first_seen": "1987 Belize Air International C-97 Mexico City crash"
+  },
+  {
+    "word": "physicians",
+    "definition": "A practitioner of physic, i.e. a specialist in internal medicine, especially as opposed to a surgeon; a practitioner who treats with medication rather than with surgery.",
+    "first_seen": "Horatio Storer"
+  },
+  {
+    "word": "criminalizing",
+    "definition": "To make (something) a crime; to make illegal under criminal law; to ban.",
+    "first_seen": "Horatio Storer"
+  },
+  {
+    "word": "crusade",
+    "definition": "Any of the military expeditions undertaken by the Christians of Europe in the 11th to 13th centuries to reconquer the Levant from the Muslims.",
+    "first_seen": "Horatio Storer"
+  },
+  {
+    "word": "destroying",
+    "definition": "To damage beyond use or repair.",
+    "first_seen": "El Paso, Elsewhere"
+  },
+  {
+    "word": "retro",
+    "definition": "Past fashions or trends.",
+    "first_seen": "El Paso, Elsewhere"
+  },
+  {
+    "word": "tries",
+    "definition": "An ordered tree data structure that is used to store an associative array where the keys are usually strings.",
+    "first_seen": "El Paso, Elsewhere"
+  },
+  {
+    "word": "scaffold",
+    "definition": "A structure made of scaffolding for workers to stand on while working on a building.",
+    "first_seen": "El Paso, Elsewhere"
+  },
+  {
+    "word": "server",
+    "definition": "A program that provides services to other programs or devices, either in the same computer or over a computer network.",
+    "first_seen": "Windows Server 2012 R2"
+  },
+  {
+    "word": "codenamed",
+    "definition": "To give a codename to.",
+    "first_seen": "Windows Server 2012 R2"
+  },
+  {
+    "word": "fruit",
+    "definition": "(often in the plural) In general, a product of plant growth useful to man or animals.",
+    "first_seen": "Leptospermum obovatum"
+  },
+  {
+    "word": "shoots",
+    "definition": "The emerging stem and embryonic leaves of a new plant.",
+    "first_seen": "Leptospermum obovatum"
+  },
+  {
+    "word": "dies",
+    "definition": "To stop living; to become dead; to undergo death.",
+    "first_seen": "Leptospermum obovatum"
+  },
+  {
+    "word": "narrower",
+    "definition": "Having a small width; not wide; having opposite edges or sides that are close, especially by comparison to length or depth.",
+    "first_seen": "Leptospermum obovatum"
+  },
+  {
+    "word": "probate",
+    "definition": "The legal process of verifying the legality of a will.",
+    "first_seen": "Robert J. Dunne"
+  },
+  {
+    "word": "sap",
+    "definition": "The juice of plants of any kind, especially the ascending and descending juices or circulating fluid essential to nutrition.",
+    "first_seen": "Lobiopa undulata"
+  },
+  {
+    "word": "fic",
+    "definition": "A fictional story set within a preexisting fandom; a fanfic.",
+    "first_seen": "Floro MK-9"
+  },
+  {
+    "word": "imported",
+    "definition": "To bring (something) in from a foreign country, especially for sale or trade.",
+    "first_seen": "Floro MK-9"
+  },
+  {
+    "word": "nerites",
+    "definition": "Any snail of the genus Nerita, or more generally, of the family Neritidae.",
+    "first_seen": "Theodoxus altenai"
+  },
+  {
+    "word": "chromodynamics",
+    "definition": "The study of the relationship between those quarks that possess the quantum property of color, and exchange gluons; more fully quantum chromodynamics.",
+    "first_seen": "Catalina Curceanu"
+  },
+  {
+    "word": "researches",
+    "definition": "Diligent inquiry or examination to seek or revise facts, principles, theories, applications, etc.; laborious or continued search after truth.",
+    "first_seen": "Catalina Curceanu"
+  },
+  {
+    "word": "ours",
+    "definition": "That which belongs to us; the possessive case of we, used without a following noun.",
+    "first_seen": "Zagreb is OURS"
+  },
+  {
+    "word": "amour",
+    "definition": "Love, affection.",
+    "first_seen": "Paris (Marc Lavoine album)"
+  },
+  {
+    "word": "secondes",
+    "definition": "The second defensive position, with the sword hand held at waist height, with the hand held in a prone position and the tip of the sword below the level of the guard.",
+    "first_seen": "Paris (Marc Lavoine album)"
+  },
+  {
+    "word": "gal",
+    "definition": "A unit of volume, equivalent to eight pints",
+    "first_seen": "Paris (Marc Lavoine album)"
+  },
+  {
+    "word": "camping",
+    "definition": "To live in a tent or similar temporary accommodation.",
+    "first_seen": "Walupt Lake"
+  },
+  {
+    "word": "deepest",
+    "definition": "(of a physical distance) Extending far away from a point of reference, especially downwards.",
+    "first_seen": "Walupt Lake"
+  },
+  {
+    "word": "settings",
+    "definition": "The time, place and circumstance in which something (such as a story or picture) is set; context; scenario.",
+    "first_seen": "Dennis Malone Carter"
+  },
+  {
+    "word": "aspen",
+    "definition": "Pertaining to the asp or aspen tree.",
+    "first_seen": "Halcro"
+  },
+  {
+    "word": "biome",
+    "definition": "Any major regional biological community such as that of forest or desert",
+    "first_seen": "Halcro"
+  },
+  {
+    "word": "pulsar",
+    "definition": "A rotating neutron star that emits radio pulses periodically",
+    "first_seen": "Nissan Sylphy"
+  },
+  {
+    "word": "nameplates",
+    "definition": "A plate or plaque inscribed with a name.",
+    "first_seen": "Nissan Sylphy"
+  },
+  {
+    "word": "myopia",
+    "definition": "A disorder of the vision where distant objects appear blurred because the eye focuses their images in front of the retina instead of on it.",
+    "first_seen": "NDUFAF7"
+  },
+  {
+    "word": "deficiency",
+    "definition": "Inadequacy or incompleteness.",
+    "first_seen": "NDUFAF7"
+  },
+  {
+    "word": "mitochondrial",
+    "definition": "Of, or relating to mitochondria.",
+    "first_seen": "NDUFAF7"
+  },
+  {
+    "word": "orf",
+    "definition": "Cattle.",
+    "first_seen": "NDUFAF7"
+  },
+  {
+    "word": "arginine",
+    "definition": "An amino acid found in animal foods that plays an important role in several physiological processes.",
+    "first_seen": "NDUFAF7"
+  },
+  {
+    "word": "feudal",
+    "definition": "Of, or relating to feudalism.",
+    "first_seen": "Clonbeith Castle"
+  },
+  {
+    "word": "sideroad",
+    "definition": "A lesser road leading off a main road.",
+    "first_seen": "Clonbeith Castle"
+  },
+  {
+    "word": "commands",
+    "definition": "An order to do something.",
+    "first_seen": "George F. Close"
+  },
+  {
+    "word": "figural",
+    "definition": "Representing by means of a figure; emblematic.",
+    "first_seen": "Jean-Jules-Antoine Lecomte du Nou\u00ff"
+  },
+  {
+    "word": "thematic",
+    "definition": "A postage stamp that is part of a thematic collection.",
+    "first_seen": "Jean-Jules-Antoine Lecomte du Nou\u00ff"
   }
 ]

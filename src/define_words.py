@@ -2,9 +2,10 @@
 Definition Lookup - Rich Vocabulary Builder
 Stores definitions with examples, related words, and generated questions.
 Creates multiple training examples per word.
+Atomic saves with corruption prevention.
 """
 
-import os, sys, json, time, requests, random
+import os, sys, json, time, requests, random, shutil, re
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
@@ -12,14 +13,63 @@ WORD_BANK_PATH = os.path.join(REPO_ROOT, 'data', 'wordbank.json')
 
 def load_wordbank():
     if os.path.exists(WORD_BANK_PATH):
-        with open(WORD_BANK_PATH, 'r') as f:
-            return json.load(f)
+        try:
+            with open(WORD_BANK_PATH, 'r') as f:
+                return json.load(f)
+        except:
+            print("⚠️ Wordbank corrupted, attempting repair...")
+            from fix_wordbank import fix_wordbank
+            fix_wordbank()
+            if os.path.exists(WORD_BANK_PATH):
+                with open(WORD_BANK_PATH, 'r') as f:
+                    return json.load(f)
     return {"words": {}, "total_articles": 0, "total_words": 0, "total_defined": 0}
 
 def save_wordbank(bank):
-    os.makedirs(os.path.dirname(WORD_BANK_PATH), exist_ok=True)
-    with open(WORD_BANK_PATH, 'w') as f:
-        json.dump(bank, f, indent=2)
+    """Save with corruption prevention - atomic write with backup"""
+    if not isinstance(bank, dict):
+        print("❌ ERROR: Wordbank is not a dict! Not saving.")
+        return
+    if 'words' not in bank:
+        print("❌ ERROR: Wordbank missing 'words' key! Not saving.")
+        return
+    
+    # Backup before overwriting
+    if os.path.exists(WORD_BANK_PATH):
+        backup = WORD_BANK_PATH + '.backup'
+        try:
+            shutil.copy(WORD_BANK_PATH, backup)
+        except:
+            pass
+    
+    # Write to temp file first (atomic write)
+    temp_path = WORD_BANK_PATH + '.tmp'
+    os.makedirs(os.path.dirname(temp_path), exist_ok=True)
+    
+    try:
+        with open(temp_path, 'w') as f:
+            json.dump(bank, f, indent=2)
+        
+        # Verify temp file is valid JSON
+        with open(temp_path) as f:
+            json.load(f)
+        
+        # Atomic rename
+        if os.path.exists(WORD_BANK_PATH):
+            os.remove(WORD_BANK_PATH)
+        os.rename(temp_path, WORD_BANK_PATH)
+        
+        total = len(bank.get('words', {}))
+        defined = bank.get('total_defined', 0)
+        print(f"💾 Wordbank saved safely ({total:,} words, {defined:,} defined)")
+    except json.JSONDecodeError:
+        print("❌ ERROR: Temp file corrupted! Not saving.")
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
+    except Exception as e:
+        print(f"❌ ERROR saving wordbank: {e}")
+        if os.path.exists(temp_path):
+            os.remove(temp_path)
 
 def lookup_word(word):
     """Look up definition for a single word"""
@@ -63,20 +113,24 @@ def find_related_words(word, bank, max_related=5):
     if word not in bank['words']:
         return []
     
-    current_def = bank['words'][word].get('definition', '')
+    info = bank['words'][word]
+    if not isinstance(info, dict):
+        return []
+    
+    current_def = info.get('definition', '')
     if not current_def:
         return []
     
     related = []
     current_words = set(current_def.lower().split())
     
-    for other_word, info in bank['words'].items():
+    for other_word, other_info in bank['words'].items():
         if other_word == word:
             continue
-        if not isinstance(info, dict):
+        if not isinstance(other_info, dict):
             continue
         
-        other_def = info.get('definition', '')
+        other_def = other_info.get('definition', '')
         if not other_def:
             continue
         

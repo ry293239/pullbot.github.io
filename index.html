@@ -74,9 +74,7 @@
         .message-content { line-height: 1.6; font-size: 14px; white-space: pre-wrap; word-wrap: break-word; }
         .thinking-dots { display: inline-flex; gap: 4px; padding: 4px 0; }
         .thinking-dots span { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); animation: bounce 1.4s infinite ease-in-out; }
-        .thinking-dots span:nth-child(1) { animation-delay: 0s; }
-        .thinking-dots span:nth-child(2) { animation-delay: 0.2s; }
-        .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
+        .thinking-dots span:nth-child(1) { animation-delay: 0s; } .thinking-dots span:nth-child(2) { animation-delay: 0.2s; } .thinking-dots span:nth-child(3) { animation-delay: 0.4s; }
         @keyframes bounce { 0%,80%,100%{transform:scale(0);opacity:.5} 40%{transform:scale(1);opacity:1} }
         .thinking-text { color: var(--text-secondary); font-style: italic; font-size: 13px; }
         .input-container { padding: 12px 16px; max-width: 768px; margin: 0 auto; width: 100%; flex-shrink: 0; }
@@ -91,6 +89,7 @@
         .status-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; margin-right: 6px; }
         .status-dot.online { background: var(--accent); }
         .status-dot.offline { background: #EF4444; }
+        .status-dot.actions { background: #F59E0B; }
         .overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
         .overlay.active { opacity: 1; pointer-events: all; }
         .panel { background: var(--bg-sidebar); border-radius: 16px; padding: 24px; width: 380px; max-width: 90vw; border: 1px solid var(--border); }
@@ -123,12 +122,12 @@
     <div class="loader-title">Pullbot</div>
     <div class="loader-subtitle">AI That Learns From The Web</div>
     <div class="loader-bar"><div class="loader-bar-fill" id="loaderFill"></div></div>
-    <div class="loader-status" id="loaderStatus">Connecting to Pullbot API...</div>
+    <div class="loader-status" id="loaderStatus">Connecting to Pullbot...</div>
 </div>
 
 <div id="sidebar">
     <div class="sidebar-header">
-        <div class="sidebar-logo"><img src="icon.png" alt="Pullbot" onerror="this.style.display='none'"><span>Pullbot</span></div>
+        <div class="sidebar-logo"><img src="icon.png" alt="Pullbot"><span>Pullbot</span></div>
         <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
     </div>
     <div class="sidebar-section">History</div>
@@ -149,7 +148,7 @@
     </div>
     <div class="chat-container" id="chatContainer">
         <div class="welcome-screen" id="welcomeScreen">
-            <img src="icon.png" alt="Pullbot" class="welcome-icon" onerror="this.style.display='none'">
+            <img src="icon.png" alt="Pullbot" class="welcome-icon">
             <div class="welcome-title">How can I help?</div>
             <div class="welcome-subtitle">I learn from Wikipedia and dictionaries</div>
             <div class="suggestion-grid">
@@ -192,12 +191,11 @@
 <!-- API KEY -->
 <div class="overlay" id="apiKeyOverlay" onclick="closeAPIKey(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Your API Key</h2>
-    <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">Use this to call Pullbot from your own apps</p>
+    <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">Use this to call Pullbot from anywhere</p>
     <div class="setting-group"><label>API Key</label><input type="text" id="apiKeyDisplay" readonly onclick="this.select()" style="font-family:monospace;font-size:12px;"></div>
     <button class="btn-primary" onclick="copyAPIKey()">Copy Key</button>
     <button class="btn-secondary" onclick="regenerateAPIKey()">Regenerate</button>
-    <p style="color:var(--text-secondary);font-size:11px;margin-top:12px;">Usage: <span id="apiUsage">0</span> / 1000 requests</p>
-    <p style="color:var(--text-secondary);font-size:11px;margin-top:8px;"><code>curl -H "Authorization: Bearer YOUR_KEY" https://pullbot-api.onrender.com/v1/chat -d '{"question":"Hello"}'</code></p>
+    <p style="color:var(--text-secondary);font-size:11px;margin-top:12px;">Usage: <span id="apiUsage">0</span> / 1000</p>
     <button class="btn-text" onclick="document.getElementById('apiKeyOverlay').classList.remove('active')">Close</button>
 </div></div>
 
@@ -208,21 +206,62 @@ Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS", "ow1W5OlXiE57XYiTa9
 Parse.serverURL = "https://parseapi.back4app.com";
 
 const API_URL = 'https://pullbot-api.onrender.com';
+const GH_REPO = 'pullbot-ai/pullbot-ai.github.io';
 let apiOnline = false;
+let usingActions = false;
 let chats = {};
 let currentChatId = null;
 
 function updateLoader(t,p){document.getElementById('loaderStatus').textContent=t;document.getElementById('loaderFill').style.width=p+'%';}
 async function init(){updateLoader('Connecting...',20);await checkAPIStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
-async function checkAPIStatus(){try{const r=await fetch(`${API_URL}/health`);if(r.ok)apiOnline=true;}catch(e){apiOnline=false;}const dot=document.getElementById('statusDot');dot.className='status-dot '+(apiOnline?'online':'offline');document.getElementById('statusFooter').innerHTML='<span class="status-dot '+(apiOnline?'online':'offline')+'"></span>'+(apiOnline?'Pullbot API Online':'Pullbot API Offline');}
+
+async function checkAPIStatus(){
+    try{const r=await fetch(`${API_URL}/health`);if(r.ok)apiOnline=true;}catch(e){apiOnline=false;}
+    usingActions = true;
+    const dot=document.getElementById('statusDot');
+    if(usingActions){dot.className='status-dot actions';document.getElementById('statusFooter').innerHTML='<span class="status-dot actions"></span>GitHub Actions Mode';}
+    else if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot API Online';}
+    else{dot.className='status-dot offline';document.getElementById('statusFooter').innerHTML='<span class="status-dot offline"></span>Pullbot Offline';}
+}
+
 function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
-async function askPullbot(q){if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(q)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"I couldn't process that.";}}catch(e){apiOnline=false;}}return getLocalResponse(q);}
-function getLocalResponse(p){const q=p.toLowerCase().trim();const m=q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);if(m){const a=parseFloat(m[1]),b=parseFloat(m[3]);let r;switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;}return`${a} ${m[2]} ${b} = ${r}`;}if(q.match(/^(hi|hello|hey|yo|sup)\b/))return"Hey there!";if(q.includes('your name'))return"I'm Pullbot!";if(q.match(/^(thanks|thank you)\b/))return"You're welcome!";return"I'm thinking...";}
+
+async function askPullbotActions(question){
+    try{
+        await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/ask.yml/dispatches`,{
+            method:'POST',
+            headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
+            body:JSON.stringify({ref:'main',inputs:{question}})
+        });
+    }catch(e){return null;}
+    for(let i=0;i<30;i++){await new Promise(r=>setTimeout(r,2000));try{const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${Date.now()}`);if(r.ok){const d=await r.json();if(d.question===question)return d.response;}}catch(e){}}
+    return null;
+}
+
+async function askPullbot(question){
+    // Try GitHub Actions first (real model, 7GB RAM)
+    const actionsResponse = await askPullbotActions(question);
+    if(actionsResponse) return cleanResponse(actionsResponse);
+    // Fall back to Render API
+    if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"I couldn't process that.";}}catch(e){apiOnline=false;}}
+    return getLocalResponse(question);
+}
+
+function getLocalResponse(p){
+    const q=p.toLowerCase().trim();
+    const m=q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
+    if(m){const a=parseFloat(m[1]),b=parseFloat(m[3]);let r;switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;}return`${a} ${m[2]} ${b} = ${r}`;}
+    if(q.match(/^(hi|hello|hey|yo|sup)\b/))return"Hey there! I'm Pullbot.";
+    if(q.includes('your name'))return"I'm Pullbot! I learn from Wikipedia.";
+    if(q.match(/^(thanks|thank you)\b/))return"You're welcome!";
+    return"I'm thinking... try asking me something else!";
+}
+
 function newChat(){const id='chat_'+Date.now();chats[id]={title:'New Chat',messages:[],created:Date.now()};currentChatId=id;renderChatList();renderMessages();document.getElementById('welcomeScreen').classList.add('hidden');document.getElementById('userInput').focus();}
 function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
 function renderChatList(){const c=document.getElementById('chatList');const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');}
-function renderMessages(){const c=document.getElementById('messagesContainer');const w=document.getElementById('welcomeScreen');if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}w.classList.add('hidden');c.innerHTML=chats[currentChatId].messages.map(msg=>{const isUser=msg.role==='user';const isThinking=msg.content==='<thinking>';const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot" onerror="this.parentElement.textContent=\'🤖\'">';const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);return`<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;}).join('');setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);}
-async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
+function renderMessages(){const c=document.getElementById('messagesContainer');const w=document.getElementById('welcomeScreen');if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}w.classList.add('hidden');c.innerHTML=chats[currentChatId].messages.map(msg=>{const isUser=msg.role==='user';const isThinking=msg.content==='<thinking>';const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot">';const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);return`<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;}).join('');setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);}
+async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Loading model...","Connecting neurons","Generating response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},1000);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
 function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
 function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
@@ -241,13 +280,13 @@ let authMode='login';
 function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
 function closeAuth(e){if(!e||e.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
 function toggleAuthMode(){authMode=authMode==='login'?'signup':'login';document.getElementById('authTitle').textContent=authMode==='login'?'Log In':'Sign Up';document.querySelector('#authOverlay .btn-primary').textContent=authMode==='login'?'Log In':'Sign Up';document.querySelector('#authOverlay .btn-text').textContent=authMode==='login'?"Don't have an account? Sign up":'Already have an account? Log in';}
-async function handleAuth(){const u=document.getElementById('authUsername').value.trim();const p=document.getElementById('authPassword').value.trim();if(!u||!p){showToast('Please fill in all fields');return;}try{if(authMode==='signup'){const user=new Parse.User();user.set('username',u);user.set('password',p);await user.signUp();showToast('Account created! Welcome, '+u+'!');}else{await Parse.User.logIn(u,p);showToast('Welcome back, '+u+'!');}document.getElementById('authOverlay').classList.remove('active');updateUserUI();loadChatsFromCloud();}catch(e){showToast(e.message||'Something went wrong');}}
+async function handleAuth(){const u=document.getElementById('authUsername').value.trim();const p=document.getElementById('authPassword').value.trim();if(!u||!p){showToast('Please fill in all fields');return;}try{if(authMode==='signup'){const user=new Parse.User();user.set('username',u);user.set('password',p);await user.signUp();showToast('Account created!');}else{await Parse.User.logIn(u,p);showToast('Welcome back!');}document.getElementById('authOverlay').classList.remove('active');updateUserUI();loadChatsFromCloud();}catch(e){showToast(e.message||'Error');}}
 function updateUserUI(){const user=Parse.User.current();const btn=document.querySelector('.login-btn');if(user){btn.textContent=user.get('username');btn.onclick=logout;}else{btn.textContent='Log In';btn.onclick=openAuth;}}
 async function logout(){await Parse.User.logOut();showToast('Logged out');updateUserUI();}
 
 // API Key
 async function getAPIKey(){if(!Parse.User.current()){showToast('Please log in first');return;}try{const r=await Parse.Cloud.run("getApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent=r.usage;document.getElementById('apiKeyOverlay').classList.add('active');}catch(e){showToast('Error loading API key');}}
-async function regenerateAPIKey(){try{const r=await Parse.Cloud.run("regenerateApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent='0';showToast('Key regenerated!');}catch(e){showToast('Error regenerating key');}}
+async function regenerateAPIKey(){try{const r=await Parse.Cloud.run("regenerateApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent='0';showToast('Key regenerated!');}catch(e){showToast('Error');}}
 function copyAPIKey(){const inp=document.getElementById('apiKeyDisplay');inp.select();document.execCommand('copy');showToast('Copied!');}
 function closeAPIKey(e){if(!e||e.target===document.getElementById('apiKeyOverlay')){document.getElementById('apiKeyOverlay').classList.remove('active');}}
 

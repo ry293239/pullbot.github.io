@@ -209,6 +209,8 @@ Parse.serverURL = "https://parseapi.back4app.com";
 const API_URL = 'https://pullbot-api.onrender.com';
 const GH_REPO = 'pullbot-ai/pullbot-ai.github.io';
 let apiOnline = false;
+let chats = {};
+let currentChatId = null;
 
 function updateLoader(t,p){document.getElementById('loaderStatus').textContent=t;document.getElementById('loaderFill').style.width=p+'%';}
 async function init(){updateLoader('Connecting...',20);await refreshStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
@@ -217,23 +219,42 @@ async function refreshStatus(){
     try{const r=await fetch(`${API_URL}/health`);apiOnline=r.ok;}catch(e){apiOnline=false;}
     updateStatusDot();
 }
-
 function updateStatusDot(){
     const dot=document.getElementById('statusDot');
     if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot Online';}
     else{dot.className='status-dot offline';document.getElementById('statusFooter').innerHTML='<span class="status-dot offline"></span>Pullbot Offline';}
 }
-
 function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
-function getChatContext(cid){if(!cid||!chats[cid])return'';return chats[cid].messages.slice(-10).map(m=>`${m.role==='user'?'User':'Pullbot'}: ${m.content}`).join('\n');}
+
+async function askPullbotActions(question){
+    const requestId=Date.now();
+    try{
+        await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/ask.yml/dispatches`,{
+            method:'POST',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
+            body:JSON.stringify({ref:'main',inputs:{question}})
+        });
+    }catch(e){return null;}
+    for(let i=0;i<45;i++){
+        await new Promise(r=>setTimeout(r,2000));
+        const cb=Date.now()+'_'+Math.random();
+        try{
+            const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${cb}`,{cache:'no-store',headers:{'Cache-Control':'no-cache'}});
+            if(r.ok){const d=await r.json();if(d.response&&d.timestamp>(requestId/1000-10))return d.response;}
+        }catch(e){}
+    }
+    return null;
+}
 
 async function askPullbot(q){
     const precoded=getPrecodedResponse(q);
     if(precoded)return precoded;
+    // Try Actions first
+    const actionsRes=await askPullbotActions(q);
+    if(actionsRes)return cleanResponse(actionsRes);
+    // Fallback to Render
     if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(q)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"...";}}catch(e){apiOnline=false;}}
     return getLocalResponse(q);
 }
-
 function getLocalResponse(p){
     const q=p.toLowerCase().trim();
     const precoded=getPrecodedResponse(q);
@@ -247,19 +268,12 @@ function newChat(){const id='chat_'+Date.now();chats[id]={title:'New Chat',messa
 function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
 function renderChatList(){const c=document.getElementById('chatList');const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');}
 function renderMessages(){const c=document.getElementById('messagesContainer');const w=document.getElementById('welcomeScreen');if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}w.classList.add('hidden');c.innerHTML=chats[currentChatId].messages.map(msg=>{const isUser=msg.role==='user';const isThinking=msg.content==='<thinking>';const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot">';const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);return`<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;}).join('');setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);}
-async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
+async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Loading model...","Connecting neurons","Generating response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},1000);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
 function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
 function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
 
-async function checkStatus(){
-    await refreshStatus();
-    let parts=[];
-    if(apiOnline){parts.push('✅ API: Online');}else{parts.push('❌ API: Offline');}
-    if(Parse.User.current()){parts.push('👤 Logged in');}else{parts.push('👤 Not logged in');}
-    showToast(parts.join(' | '));
-}
-
+async function checkStatus(){await refreshStatus();let p=[];if(apiOnline){p.push('✅ API: Online');}else{p.push('❌ API: Offline');}if(Parse.User.current()){p.push('👤 Logged in');}else{p.push('👤 Not logged in');}showToast(p.join(' | '));}
 function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},3000);}
 function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
 
@@ -289,8 +303,6 @@ function closeAPIKey(e){if(!e||e.target===document.getElementById('apiKeyOverlay
 async function saveCurrentChat(){if(!Parse.User.current()||!currentChatId||!chats[currentChatId])return;try{await Parse.Cloud.run("saveChat",{title:chats[currentChatId].title,messages:chats[currentChatId].messages});}catch(e){}}
 async function loadChatsFromCloud(){if(!Parse.User.current())return;try{const cloudChats=await Parse.Cloud.run("getChats");cloudChats.forEach(c=>{if(!chats[c.id]){chats[c.id]={title:c.title,messages:c.messages,created:new Date(c.created).getTime()};}});renderChatList();}catch(e){}}
 
-let chats={};
-let currentChatId=null;
 window.addEventListener('DOMContentLoaded',init);
 </script>
 </body>

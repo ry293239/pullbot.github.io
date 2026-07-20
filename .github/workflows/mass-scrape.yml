@@ -9,7 +9,7 @@ on:
 jobs:
   scrape:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
     
     steps:
     - uses: actions/checkout@v4
@@ -18,14 +18,16 @@ jobs:
         python-version: '3.10'
     - name: Install deps
       run: pip install requests
+    - name: Fix corrupted files
+      run: python src/fix_wordbank.py
     - name: Mass scrape
       run: python src/mass_scrape_wikipedia.py 50
     - name: Define words
       run: python src/define_words.py 100
-    - name: Smart training
-      run: python src/smart_train.py
     - name: Rich training data
       run: python src/rich_scraper.py
+    - name: Smart training
+      run: python src/smart_train.py
     - name: Push
       run: |
         git config user.name "Pullbot"
@@ -34,5 +36,5 @@ jobs:
         git pull --rebase origin main
         git stash pop || true
         git add data/wordbank.json data/processed/corpus.txt
-        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +training"
+        git diff --staged --quiet || git commit -m "📚 Mass scrape: +words +rich +training"
         git push origin main

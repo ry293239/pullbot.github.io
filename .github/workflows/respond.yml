@@ -15,8 +15,27 @@ jobs:
       contents: write
     steps:
     - uses: actions/checkout@v4
+    
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+        
+    - name: Cache pip packages
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: pip-${{ runner.os }}-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: pip-${{ runner.os }}-
+        
     - name: Install deps
       run: pip install llama-cpp-python
+      
+    - name: Cache model
+      uses: actions/cache@v4
+      with:
+        path: models/pullbot.gguf
+        key: model-${{ hashFiles('models/pullbot.gguf') }}
+        
     - name: Generate response
       run: |
         python -c "
@@ -24,11 +43,11 @@ jobs:
         import json, time
         llm = Llama(model_path='models/pullbot.gguf', n_ctx=256, n_threads=2, verbose=False)
         question = '''${{ github.event.inputs.question }}'''
-        output = llm(f'Question: {question}\n\nAnswer:', max_tokens=60, temperature=0.8, top_p=0.9)
+        output = llm(f'Question: {question}\n\nAnswer:', max_tokens=60, temperature=0.8)
         response = output['choices'][0]['text'].strip()
         with open('response.json','w') as f:
             json.dump({'question':question,'response':response,'timestamp':time.time()}, f)
-        print(f'Q: {question}\nA: {response}')
+        print(f'A: {response}')
         "
     - name: Push response
       run: |

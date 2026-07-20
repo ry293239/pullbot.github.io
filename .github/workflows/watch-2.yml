@@ -1,26 +1,57 @@
-name: Watchdog Beta
+name: Poll 2
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/10 * * * *'
-  workflow_run:
-    workflows: ["Watchdog Alpha"]
-    types: [completed]
+    inputs:
+      question:
+        description: 'Question'
+        required: true
 
 jobs:
-  watch:
+  respond:
     runs-on: ubuntu-latest
     timeout-minutes: 5
-    
+    permissions:
+      contents: write
+      actions: write
     steps:
     - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
+    - name: Cache pip
+      uses: actions/cache@v4
+      with:
+        path: ~/.cache/pip
+        key: pip-poll
     - name: Install deps
-      run: pip install requests
-    - name: Run watchdog
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: python src/watchdog.py
+      run: pip install llama-cpp-python
+    - name: Generate response
+      run: |
+        python3 -c "
+        from llama_cpp import Llama
+        import json, time
+        llm = Llama(model_path='models/pullbot.gguf', n_ctx=256, n_threads=2, verbose=False)
+        question = '''${{ github.event.inputs.question }}'''
+        output = llm(f'Question: {question}\n\nAnswer:', max_tokens=60, temperature=0.8)
+        response = output['choices'][0]['text'].strip()
+        with open('response.json','w') as f:
+            json.dump({'question':question,'response':response,'timestamp':time.time()}, f)
+        with open('pending.json','w') as f:
+            json.dump({'question':''}, f)
+        print(f'A: {response}')
+        "
+    - name: Push and trigger Poll 1
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git add response.json pending.json
+        git diff --staged --quiet || git commit -m "💬 Response" && git push || echo "No changes"
+        curl -s -X POST \
+          -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+          -H "Accept: application/vnd.github+json" \
+          -H "X-GitHub-Api-Version: 2022-11-28" \
+          "https://api.github.com/repos/${{ github.repository }}/actions/workflows/poll1.yml/dispatches" \
+          -d '{"ref":"main"}'

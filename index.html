@@ -136,7 +136,7 @@
     <div class="sidebar-footer">
         <button class="sidebar-btn" onclick="openSettings()">Settings</button>
         <button class="sidebar-btn accent" onclick="getAPIKey()">API Key</button>
-        <button class="sidebar-btn" onclick="checkAPIStatus()">Check Status</button>
+        <button class="sidebar-btn" onclick="checkStatus()">Check Status</button>
         <button class="sidebar-btn" onclick="window.open('https://github.com/pullbot-ai/pullbot-ai.github.io','_blank')">View on GitHub</button>
     </div>
 </div>
@@ -166,10 +166,11 @@
             <input type="text" id="userInput" placeholder="Ask Pullbot anything..." onkeypress="handleKeyPress(event)" autocomplete="off">
             <button class="send-btn" id="sendBtn" onclick="sendMessage()">↗</button>
         </div>
-        <div class="input-footer" id="statusFooter"><span class="status-dot" id="statusDot"></span>Checking API...</div>
+        <div class="input-footer" id="statusFooter"><span class="status-dot" id="statusDot"></span>Checking...</div>
     </div>
 </div>
 
+<!-- SETTINGS -->
 <div class="overlay" id="settingsOverlay" onclick="closeSettings(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Settings</h2>
     <div class="setting-group"><label>Temperature</label><input type="range" min="0.1" max="1.5" step="0.1" value="0.8" id="settingTemp" oninput="updateTempLabel()"><span class="setting-value" id="tempLabel">0.8 - Balanced</span></div>
@@ -178,6 +179,7 @@
     <button class="btn-secondary" onclick="document.getElementById('settingsOverlay').classList.remove('active')">Cancel</button>
 </div></div>
 
+<!-- AUTH -->
 <div class="overlay" id="authOverlay" onclick="closeAuth(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2 id="authTitle">Log In</h2>
     <div class="setting-group"><label>Username</label><input type="text" id="authUsername" placeholder="Enter username" autocomplete="off"></div>
@@ -187,6 +189,7 @@
     <button class="btn-secondary" onclick="document.getElementById('authOverlay').classList.remove('active')">Cancel</button>
 </div></div>
 
+<!-- API KEY -->
 <div class="overlay" id="apiKeyOverlay" onclick="closeAPIKey(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Your API Key</h2>
     <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">Use this to call Pullbot from anywhere</p>
@@ -206,56 +209,29 @@ Parse.serverURL = "https://parseapi.back4app.com";
 const API_URL = 'https://pullbot-api.onrender.com';
 const GH_REPO = 'pullbot-ai/pullbot-ai.github.io';
 let apiOnline = false;
-let usingActions = true;
-let chats = {};
-let currentChatId = null;
 
 function updateLoader(t,p){document.getElementById('loaderStatus').textContent=t;document.getElementById('loaderFill').style.width=p+'%';}
-async function init(){updateLoader('Connecting...',20);await checkAPIStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
+async function init(){updateLoader('Connecting...',20);await refreshStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
 
-async function checkAPIStatus(){
-    try{const r=await fetch(`${API_URL}/health`);if(r.ok)apiOnline=true;}catch(e){apiOnline=false;}
+async function refreshStatus(){
+    try{const r=await fetch(`${API_URL}/health`);apiOnline=r.ok;}catch(e){apiOnline=false;}
+    updateStatusDot();
+}
+
+function updateStatusDot(){
     const dot=document.getElementById('statusDot');
-    if(usingActions){dot.className='status-dot actions';document.getElementById('statusFooter').innerHTML='<span class="status-dot actions"></span>GitHub Actions Mode';}
-    else if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot API Online';}
+    if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot Online';}
     else{dot.className='status-dot offline';document.getElementById('statusFooter').innerHTML='<span class="status-dot offline"></span>Pullbot Offline';}
 }
 
 function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
+function getChatContext(cid){if(!cid||!chats[cid])return'';return chats[cid].messages.slice(-10).map(m=>`${m.role==='user'?'User':'Pullbot'}: ${m.content}`).join('\n');}
 
-function getChatContext(currentId){
-    if(!currentId||!chats[currentId])return'';
-    const msgs=chats[currentId].messages.slice(-10);
-    return msgs.map(m=>`${m.role==='user'?'User':'Pullbot'}: ${m.content}`).join('\n');
-}
-
-async function askPullbotActions(question,context){
-    const fullQuestion=context?`Previous conversation:\n${context}\n\nNew question: ${question}`:question;
-    try{
-        await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/ask.yml/dispatches`,{
-            method:'POST',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
-            body:JSON.stringify({ref:'main',inputs:{question:fullQuestion.substring(0,500)}})
-        });
-    }catch(e){return null;}
-    for(let i=0;i<30;i++){await new Promise(r=>setTimeout(r,2000));try{const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${Date.now()}`);if(r.ok){const d=await r.json();return d.response;}}catch(e){}}
-    return null;
-}
-
-async function askPullbot(question){
-    // Check pre-coded responses first
-    const precoded=getPrecodedResponse(question);
+async function askPullbot(q){
+    const precoded=getPrecodedResponse(q);
     if(precoded)return precoded;
-    
-    // Get chat context
-    const context=getChatContext(currentChatId);
-    
-    // Try GitHub Actions with context
-    const actionsResponse=await askPullbotActions(question,context);
-    if(actionsResponse)return cleanResponse(actionsResponse);
-    
-    // Fall back to Render
-    if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"I couldn't process that.";}}catch(e){apiOnline=false;}}
-    return getLocalResponse(question);
+    if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(q)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"...";}}catch(e){apiOnline=false;}}
+    return getLocalResponse(q);
 }
 
 function getLocalResponse(p){
@@ -264,39 +240,48 @@ function getLocalResponse(p){
     if(precoded)return precoded;
     const m=q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
     if(m){const a=parseFloat(m[1]),b=parseFloat(m[3]);let r;switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;}return`${a} ${m[2]} ${b} = ${r}`;}
-    return"I'm thinking... try asking me something else!";
+    return"I'm thinking...";
 }
 
 function newChat(){const id='chat_'+Date.now();chats[id]={title:'New Chat',messages:[],created:Date.now()};currentChatId=id;renderChatList();renderMessages();document.getElementById('welcomeScreen').classList.add('hidden');document.getElementById('userInput').focus();}
 function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
 function renderChatList(){const c=document.getElementById('chatList');const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');}
 function renderMessages(){const c=document.getElementById('messagesContainer');const w=document.getElementById('welcomeScreen');if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}w.classList.add('hidden');c.innerHTML=chats[currentChatId].messages.map(msg=>{const isUser=msg.role==='user';const isThinking=msg.content==='<thinking>';const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot">';const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);return`<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;}).join('');setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);}
-async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Loading model...","Connecting neurons","Generating response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},1000);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
+async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
 function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
 function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}
-function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},2500);}
+
+async function checkStatus(){
+    await refreshStatus();
+    let parts=[];
+    if(apiOnline){parts.push('✅ API: Online');}else{parts.push('❌ API: Offline');}
+    if(Parse.User.current()){parts.push('👤 Logged in');}else{parts.push('👤 Not logged in');}
+    showToast(parts.join(' | '));
+}
+
+function showToast(m){const t=document.getElementById('toast');t.textContent=m;t.style.transform='translateY(0)';t.style.opacity='1';setTimeout(()=>{t.style.transform='translateY(100px)';t.style.opacity='0';},3000);}
 function escapeHtml(t){const d=document.createElement('div');d.textContent=t;return d.innerHTML;}
 
 // Settings
 function openSettings(){document.getElementById('settingsOverlay').classList.add('active');loadSettings();}
 function closeSettings(e){if(!e||e.target===document.getElementById('settingsOverlay')){document.getElementById('settingsOverlay').classList.remove('active');}}
 function updateTempLabel(){const v=document.getElementById('settingTemp').value;const l={'0.1':'Very Precise','0.3':'Precise','0.5':'Focused','0.8':'Balanced','1.0':'Creative','1.2':'Very Creative','1.5':'Wild'};document.getElementById('tempLabel').textContent=v+' - '+(l[v]||'Custom');}
-async function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));if(Parse.User.current()){try{await Parse.Cloud.run("saveSettings",{settings:s});}catch(e){}}showToast('Settings saved!');document.getElementById('settingsOverlay').classList.remove('active');}
-async function loadSettings(){if(Parse.User.current()){try{const s=await Parse.Cloud.run("getSettings");document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;}catch(e){}}const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;}updateTempLabel();}
+async function saveSettings(){const s={temperature:document.getElementById('settingTemp').value,maxLength:document.getElementById('settingLength').value};localStorage.setItem('pullbot_settings',JSON.stringify(s));showToast('Saved!');document.getElementById('settingsOverlay').classList.remove('active');}
+function loadSettings(){const saved=localStorage.getItem('pullbot_settings');if(saved){const s=JSON.parse(saved);document.getElementById('settingTemp').value=s.temperature||0.8;document.getElementById('settingLength').value=s.maxLength||60;}updateTempLabel();}
 
 // Auth
 let authMode='login';
 function openAuth(){document.getElementById('authOverlay').classList.add('active');document.getElementById('authUsername').focus();}
 function closeAuth(e){if(!e||e.target===document.getElementById('authOverlay')){document.getElementById('authOverlay').classList.remove('active');}}
 function toggleAuthMode(){authMode=authMode==='login'?'signup':'login';document.getElementById('authTitle').textContent=authMode==='login'?'Log In':'Sign Up';document.querySelector('#authOverlay .btn-primary').textContent=authMode==='login'?'Log In':'Sign Up';document.querySelector('#authOverlay .btn-text').textContent=authMode==='login'?"Don't have an account? Sign up":'Already have an account? Log in';}
-async function handleAuth(){const u=document.getElementById('authUsername').value.trim();const p=document.getElementById('authPassword').value.trim();if(!u||!p){showToast('Please fill in all fields');return;}try{if(authMode==='signup'){const user=new Parse.User();user.set('username',u);user.set('password',p);await user.signUp();showToast('Account created!');}else{await Parse.User.logIn(u,p);showToast('Welcome back!');}document.getElementById('authOverlay').classList.remove('active');updateUserUI();loadChatsFromCloud();}catch(e){showToast(e.message||'Error');}}
+async function handleAuth(){const u=document.getElementById('authUsername').value.trim();const p=document.getElementById('authPassword').value.trim();if(!u||!p){showToast('Fill all fields');return;}try{if(authMode==='signup'){const user=new Parse.User();user.set('username',u);user.set('password',p);await user.signUp();showToast('Account created!');}else{await Parse.User.logIn(u,p);showToast('Welcome back!');}document.getElementById('authOverlay').classList.remove('active');updateUserUI();loadChatsFromCloud();}catch(e){showToast(e.message||'Error');}}
 function updateUserUI(){const user=Parse.User.current();const btn=document.querySelector('.login-btn');if(user){btn.textContent=user.get('username');btn.onclick=logout;}else{btn.textContent='Log In';btn.onclick=openAuth;}}
 async function logout(){await Parse.User.logOut();showToast('Logged out');updateUserUI();}
 
 // API Key
-async function getAPIKey(){if(!Parse.User.current()){showToast('Please log in first');return;}try{const r=await Parse.Cloud.run("getApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent=r.usage;document.getElementById('apiKeyOverlay').classList.add('active');}catch(e){showToast('Error loading API key');}}
-async function regenerateAPIKey(){try{const r=await Parse.Cloud.run("regenerateApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent='0';showToast('Key regenerated!');}catch(e){showToast('Error');}}
+async function getAPIKey(){if(!Parse.User.current()){showToast('Please log in first');return;}try{const r=await Parse.Cloud.run("getApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent=r.usage;document.getElementById('apiKeyOverlay').classList.add('active');}catch(e){showToast('Error');}}
+async function regenerateAPIKey(){try{const r=await Parse.Cloud.run("regenerateApiKey");document.getElementById('apiKeyDisplay').value=r.apiKey;document.getElementById('apiUsage').textContent='0';showToast('Regenerated!');}catch(e){showToast('Error');}}
 function copyAPIKey(){const inp=document.getElementById('apiKeyDisplay');inp.select();document.execCommand('copy');showToast('Copied!');}
 function closeAPIKey(e){if(!e||e.target===document.getElementById('apiKeyOverlay')){document.getElementById('apiKeyOverlay').classList.remove('active');}}
 
@@ -304,6 +289,8 @@ function closeAPIKey(e){if(!e||e.target===document.getElementById('apiKeyOverlay
 async function saveCurrentChat(){if(!Parse.User.current()||!currentChatId||!chats[currentChatId])return;try{await Parse.Cloud.run("saveChat",{title:chats[currentChatId].title,messages:chats[currentChatId].messages});}catch(e){}}
 async function loadChatsFromCloud(){if(!Parse.User.current())return;try{const cloudChats=await Parse.Cloud.run("getChats");cloudChats.forEach(c=>{if(!chats[c.id]){chats[c.id]={title:c.title,messages:c.messages,created:new Date(c.created).getTime()};}});renderChatList();}catch(e){}}
 
+let chats={};
+let currentChatId=null;
 window.addEventListener('DOMContentLoaded',init);
 </script>
 </body>

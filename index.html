@@ -8,6 +8,7 @@
     <link rel="apple-touch-icon" href="icon.png">
     <meta property="og:image" content="https://pullbot-ai.github.io/icon.png">
     <script src="https://unpkg.com/parse@5.0.0/dist/parse.min.js"></script>
+    <script src="js/responses.js"></script>
     <style>
         :root {
             --bg-primary: #0D1A16; --bg-sidebar: #081210; --bg-input: #152A23;
@@ -169,7 +170,6 @@
     </div>
 </div>
 
-<!-- SETTINGS -->
 <div class="overlay" id="settingsOverlay" onclick="closeSettings(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Settings</h2>
     <div class="setting-group"><label>Temperature</label><input type="range" min="0.1" max="1.5" step="0.1" value="0.8" id="settingTemp" oninput="updateTempLabel()"><span class="setting-value" id="tempLabel">0.8 - Balanced</span></div>
@@ -178,7 +178,6 @@
     <button class="btn-secondary" onclick="document.getElementById('settingsOverlay').classList.remove('active')">Cancel</button>
 </div></div>
 
-<!-- AUTH -->
 <div class="overlay" id="authOverlay" onclick="closeAuth(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2 id="authTitle">Log In</h2>
     <div class="setting-group"><label>Username</label><input type="text" id="authUsername" placeholder="Enter username" autocomplete="off"></div>
@@ -188,7 +187,6 @@
     <button class="btn-secondary" onclick="document.getElementById('authOverlay').classList.remove('active')">Cancel</button>
 </div></div>
 
-<!-- API KEY -->
 <div class="overlay" id="apiKeyOverlay" onclick="closeAPIKey(event)"><div class="panel" onclick="event.stopPropagation()">
     <h2>Your API Key</h2>
     <p style="color:var(--text-secondary);font-size:13px;margin-bottom:16px;">Use this to call Pullbot from anywhere</p>
@@ -208,7 +206,7 @@ Parse.serverURL = "https://parseapi.back4app.com";
 const API_URL = 'https://pullbot-api.onrender.com';
 const GH_REPO = 'pullbot-ai/pullbot-ai.github.io';
 let apiOnline = false;
-let usingActions = false;
+let usingActions = true;
 let chats = {};
 let currentChatId = null;
 
@@ -217,7 +215,6 @@ async function init(){updateLoader('Connecting...',20);await checkAPIStatus();up
 
 async function checkAPIStatus(){
     try{const r=await fetch(`${API_URL}/health`);if(r.ok)apiOnline=true;}catch(e){apiOnline=false;}
-    usingActions = true;
     const dot=document.getElementById('statusDot');
     if(usingActions){dot.className='status-dot actions';document.getElementById('statusFooter').innerHTML='<span class="status-dot actions"></span>GitHub Actions Mode';}
     else if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot API Online';}
@@ -226,34 +223,47 @@ async function checkAPIStatus(){
 
 function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
 
-async function askPullbotActions(question){
+function getChatContext(currentId){
+    if(!currentId||!chats[currentId])return'';
+    const msgs=chats[currentId].messages.slice(-10);
+    return msgs.map(m=>`${m.role==='user'?'User':'Pullbot'}: ${m.content}`).join('\n');
+}
+
+async function askPullbotActions(question,context){
+    const fullQuestion=context?`Previous conversation:\n${context}\n\nNew question: ${question}`:question;
     try{
         await fetch(`https://api.github.com/repos/${GH_REPO}/actions/workflows/ask.yml/dispatches`,{
-            method:'POST',
-            headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
-            body:JSON.stringify({ref:'main',inputs:{question}})
+            method:'POST',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},
+            body:JSON.stringify({ref:'main',inputs:{question:fullQuestion.substring(0,500)}})
         });
     }catch(e){return null;}
-    for(let i=0;i<30;i++){await new Promise(r=>setTimeout(r,2000));try{const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${Date.now()}`);if(r.ok){const d=await r.json();if(d.question===question)return d.response;}}catch(e){}}
+    for(let i=0;i<30;i++){await new Promise(r=>setTimeout(r,2000));try{const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${Date.now()}`);if(r.ok){const d=await r.json();return d.response;}}catch(e){}}
     return null;
 }
 
 async function askPullbot(question){
-    // Try GitHub Actions first (real model, 7GB RAM)
-    const actionsResponse = await askPullbotActions(question);
-    if(actionsResponse) return cleanResponse(actionsResponse);
-    // Fall back to Render API
+    // Check pre-coded responses first
+    const precoded=getPrecodedResponse(question);
+    if(precoded)return precoded;
+    
+    // Get chat context
+    const context=getChatContext(currentChatId);
+    
+    // Try GitHub Actions with context
+    const actionsResponse=await askPullbotActions(question,context);
+    if(actionsResponse)return cleanResponse(actionsResponse);
+    
+    // Fall back to Render
     if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(question)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"I couldn't process that.";}}catch(e){apiOnline=false;}}
     return getLocalResponse(question);
 }
 
 function getLocalResponse(p){
     const q=p.toLowerCase().trim();
+    const precoded=getPrecodedResponse(q);
+    if(precoded)return precoded;
     const m=q.match(/(\d+\.?\d*)\s*([+\-*\/])\s*(\d+\.?\d*)/);
     if(m){const a=parseFloat(m[1]),b=parseFloat(m[3]);let r;switch(m[2]){case'+':r=a+b;break;case'-':r=a-b;break;case'*':r=a*b;break;case'/':r=b!==0?a/b:'undefined';break;}return`${a} ${m[2]} ${b} = ${r}`;}
-    if(q.match(/^(hi|hello|hey|yo|sup)\b/))return"Hey there! I'm Pullbot.";
-    if(q.includes('your name'))return"I'm Pullbot! I learn from Wikipedia.";
-    if(q.match(/^(thanks|thank you)\b/))return"You're welcome!";
     return"I'm thinking... try asking me something else!";
 }
 

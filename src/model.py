@@ -1,5 +1,6 @@
 """
 Pullbot Model - FULL FINE-TUNING + 4-STAGE OPTIMIZATION
+Loads weights directly - skips HuggingFace validation.
 1. Smart Prune (redistribute weak to strong)
 2. Safe Precision Prune (merge insignificant, same row only)
 3. Progressive Bit Reduction (changed weights only, with timeout)
@@ -67,7 +68,8 @@ class PullbotModel:
     def _reassemble_if_needed(self):
         manifest_path = os.path.join(self.chunks_dir, "manifest.json")
         if not os.path.exists(manifest_path):
-            print("   ⚠️ No manifest found")
+            print("   ⚠️ No manifest found, creating fresh model")
+            self._create_fresh_model()
             return
         with open(manifest_path, 'r') as f:
             manifest = json.load(f)
@@ -86,49 +88,63 @@ class PullbotModel:
                         outfile.write(infile.read())
         print(f"   ✅ Reassembled")
     
+    def _create_fresh_model(self):
+        """Download fresh DistilGPT2 if no model exists"""
+        print("   Downloading fresh DistilGPT2...")
+        model = AutoModelForCausalLM.from_pretrained('distilgpt2', torch_dtype=torch.float32)
+        tokenizer = AutoTokenizer.from_pretrained('distilgpt2')
+        tokenizer.pad_token = tokenizer.eos_token
+        os.makedirs(self.chunks_dir, exist_ok=True)
+        model.save_pretrained(self.chunks_dir)
+        tokenizer.save_pretrained(self.chunks_dir)
+        self.model = model
+        self.tokenizer = tokenizer
+        print("   ✅ Fresh model ready")
+    
     def _load_model_safe(self):
-        print("   Attempting from_pretrained...")
-        try:
-            self.model = AutoModelForCausalLM.from_pretrained(
-                self.chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True
-            )
-            print("   ✅ Loaded via from_pretrained")
-            return
-        except Exception as e:
-            print(f"   ⚠️ from_pretrained failed: {e}")
+        """Load model by skipping HF validation - just load raw weights"""
+        print("   Loading raw weights (skipping HF validation)...")
         
-        print("   Attempting manual state_dict load...")
-        try:
-            model_config = AutoConfig.from_pretrained(self.chunks_dir)
-            self.model = AutoModelForCausalLM.from_config(model_config)
-            
-            for fname in ['model.safetensors', 'pytorch_model.bin']:
-                path = os.path.join(self.chunks_dir, fname)
-                if os.path.exists(path):
-                    print(f"   Loading {fname} ({os.path.getsize(path)//1024//1024}MB)...")
-                    if fname.endswith('.safetensors'):
-                        from safetensors.torch import load_file
-                        state_dict = load_file(path)
-                    else:
-                        state_dict = torch.load(path, map_location='cpu')
-                    
-                    cleaned = {}
-                    skipped = 0
-                    for k, v in state_dict.items():
-                        if isinstance(v, torch.Tensor) and not v.is_quantized:
-                            cleaned[k] = v.float()
-                        else:
-                            skipped += 1
-                    
-                    print(f"   Kept {len(cleaned)} tensors, skipped {skipped} quantized")
-                    self.model.load_state_dict(cleaned, strict=False)
-                    print("   ✅ Loaded via state_dict")
-                    return
-            
-            print("   ❌ No weights file found in chunks")
-        except Exception as e2:
-            print(f"   ❌ Manual load failed: {e2}")
-            raise
+        manifest_path = os.path.join(self.chunks_dir, "manifest.json")
+        if not os.path.exists(manifest_path):
+            self._create_fresh_model()
+            return
+        
+        with open(manifest_path, 'r') as f:
+            manifest = json.load(f)
+        
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled_path = os.path.join(self.chunks_dir, weights_file)
+        
+        if not os.path.exists(reassembled_path):
+            self._reassemble_if_needed()
+        
+        # Load config
+        config = AutoConfig.from_pretrained(self.chunks_dir)
+        self.model = AutoModelForCausalLM.from_config(config)
+        
+        # Load weights directly - skip validation
+        print(f"   Loading {weights_file}...")
+        if weights_file.endswith('.safetensors'):
+            from safetensors.torch import load_file
+            state_dict = load_file(reassembled_path)
+        else:
+            state_dict = torch.load(reassembled_path, map_location='cpu')
+        
+        # Clean and load
+        cleaned = {}
+        skipped = 0
+        for k, v in state_dict.items():
+            if isinstance(v, torch.Tensor):
+                if v.is_quantized:
+                    skipped += 1
+                    continue
+                cleaned[k] = v.float()
+            else:
+                skipped += 1
+        
+        self.model.load_state_dict(cleaned, strict=False)
+        print(f"   ✅ Loaded {len(cleaned)} tensors (skipped {skipped} quantized)")
     
     def prepare_training_data(self):
         corpus_path = os.path.join(REPO_ROOT, "data", "processed", "corpus.txt")
@@ -179,17 +195,12 @@ class PullbotModel:
             json.dump({'timestamp': time.time(), 'dataset_size': len(dataset)}, f)
         return True
     
-    # ============================================
-    # STAGE 1: SMART PRUNE
-    # ============================================
-    
     def smart_prune(self, target_sparsity=0.5):
         print(f"\n🧠 STAGE 1: SMART PRUNE (target: {target_sparsity*100:.0f}%)")
         total_redistributed = 0
         total_rows = sum(m.weight.shape[0] for _, m in self.model.named_modules() if isinstance(m, nn.Linear) and m.weight.shape[0] > 10)
         rows_done = 0
         last_print = 0
-        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
@@ -221,10 +232,6 @@ class PullbotModel:
         print(f"\r{progress_bar(total_rows, total_rows, 'Smart Prune')}")
         print(f"   Redistributed: {total_redistributed:,} weights")
         return total_redistributed
-    
-    # ============================================
-    # STAGE 2: SAFE PRECISION PRUNE
-    # ============================================
     
     def precision_prune_safe(self, significance=2, test_inputs=None):
         print(f"\n🎯 STAGE 2: SAFE PRECISION PRUNE (sig={significance})")
@@ -273,10 +280,6 @@ class PullbotModel:
         if diff > 0.0001: print("   ⚠️ ROLLING BACK"); return False
         print("   ✅ Safe!"); return True
     
-    # ============================================
-    # STAGE 3: PROGRESSIVE BITS (CHANGED WEIGHTS ONLY)
-    # ============================================
-    
     def progressive_bit_reduce_changed(self, test_inputs=None, timeout_minutes=25, margin=0.1):
         print(f"\n📉 STAGE 3: PROGRESSIVE BITS (changed weights, timeout: {timeout_minutes}min)")
         if test_inputs is None:
@@ -288,7 +291,6 @@ class PullbotModel:
         start_time = time.time()
         timeout_seconds = timeout_minutes * 60
         stopped_early = False
-        
         for name, module in self.model.named_modules():
             if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
                 weight = module.weight.data.float()
@@ -322,7 +324,6 @@ class PullbotModel:
                         else: row[col_idx] = val; nodes_8bit += 1
                     module.weight.data = weight.to(module.weight.dtype)
                 if stopped_early: break
-        
         elapsed = (time.time() - start_time) / 60
         total = nodes_8bit + nodes_7bit + nodes_6bit + nodes_merged
         eff_bits = (nodes_8bit*8 + nodes_7bit*7 + nodes_6bit*6) / max(total, 1)
@@ -330,10 +331,6 @@ class PullbotModel:
         print(f"   Effective: {eff_bits:.1f}-bit  |  Time: {elapsed:.1f}min")
         if stopped_early: print(f"   ⏰ Timeout — saved progress")
         return eff_bits
-    
-    # ============================================
-    # STAGE 4: 8-BIT QUANTIZE
-    # ============================================
     
     def quantize_model(self):
         print("\n🔧 STAGE 4: 8-BIT QUANTIZE")

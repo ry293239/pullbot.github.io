@@ -199,50 +199,17 @@
 Parse.initialize("pb9XsaagxIlSUQHOwalQmYmGURYTjwNIgqTR5ijS","ow1W5OlXiE57XYiTa9Hyhj1v3gAM4niSiWGbVBQq");
 Parse.serverURL="https://parseapi.back4app.com";
 const API_URL='https://pullbot-api.onrender.com';
-const GH_REPO='pullbot-ai/pullbot-ai.github.io';
 let apiOnline=false,chats={},currentChatId=null;
+
 function updateLoader(t,p){document.getElementById('loaderStatus').textContent=t;document.getElementById('loaderFill').style.width=p+'%';}
 async function init(){updateLoader('Connecting...',20);await refreshStatus();updateLoader('Ready!',100);await new Promise(r=>setTimeout(r,500));document.getElementById('loadingScreen').classList.add('hidden');updateUserUI();loadChatsFromCloud();}
 async function refreshStatus(){try{const r=await fetch(`${API_URL}/health`);apiOnline=r.ok;}catch(e){apiOnline=false;}updateStatusDot();}
 function updateStatusDot(){const dot=document.getElementById('statusDot');if(apiOnline){dot.className='status-dot online';document.getElementById('statusFooter').innerHTML='<span class="status-dot online"></span>Pullbot Online';}else{dot.className='status-dot offline';document.getElementById('statusFooter').innerHTML='<span class="status-dot offline"></span>Pullbot Offline';}}
-function cleanResponse(t){if(!t)return t;let c=t.replace(/response = bias\.?/gi,'').replace(/^[=\-*]{3,}$/gm,'').replace(/\n{3,}/g,'\n\n');return c.trim()||t.trim();}
-
-async function askPullbotPoll(question){
-    const requestId=Date.now();
-    try{
-        const getRes=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`);
-        const getData=await getRes.json();
-        const sha=getData.sha||'';
-        const content=btoa(JSON.stringify({question,timestamp:requestId}));
-        await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`,{method:'PUT',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},body:JSON.stringify({message:'New question',content,sha,branch:'main'})});
-    }catch(e){return null;}
-    for(let i=0;i<45;i++){await new Promise(r=>setTimeout(r,2000));const cb=Date.now()+'_'+Math.random();try{const r=await fetch(`https://raw.githubusercontent.com/${GH_REPO}/main/response.json?t=${cb}`,{cache:'no-store',headers:{'Cache-Control':'no-cache'}});if(r.ok){const d=await r.json();if(d.response&&d.timestamp>(requestId/1000-10)){await clearPollFiles();return d.response;}}}catch(e){}}
-    await clearPollFiles();
-    return null;
-}
-
-async function clearPollFiles(){
-    try{
-        const getRes=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`);
-        const getData=await getRes.json();
-        const sha=getData.sha||'';
-        const content=btoa('{"question":""}');
-        await fetch(`https://api.github.com/repos/${GH_REPO}/contents/pending.json`,{method:'PUT',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},body:JSON.stringify({message:'Clear pending',content,sha,branch:'main'})});
-    }catch(e){}
-    try{
-        const getRes=await fetch(`https://api.github.com/repos/${GH_REPO}/contents/response.json`);
-        const getData=await getRes.json();
-        const sha=getData.sha||'';
-        const content=btoa('{"question":"","response":"","timestamp":0}');
-        await fetch(`https://api.github.com/repos/${GH_REPO}/contents/response.json`,{method:'PUT',headers:{'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'},body:JSON.stringify({message:'Clear response',content,sha,branch:'main'})});
-    }catch(e){}
-}
+function cleanResponse(t){if(!t)return t;return t.trim()||t;}
 
 async function askPullbot(q){
     const precoded=getPrecodedResponse(q);
     if(precoded)return precoded;
-    const pollRes=await askPullbotPoll(q);
-    if(pollRes)return cleanResponse(pollRes);
     if(apiOnline){try{const r=await fetch(`${API_URL}/ask?q=${encodeURIComponent(q)}`);if(r.ok){const d=await r.json();return cleanResponse(d.response)||"...";}}catch(e){apiOnline=false;}}
     return getLocalResponse(q);
 }
@@ -258,7 +225,7 @@ function newChat(){const id='chat_'+Date.now();chats[id]={title:'New Chat',messa
 function switchChat(id){currentChatId=id;renderChatList();renderMessages();}
 function renderChatList(){const c=document.getElementById('chatList');const ids=Object.keys(chats).sort((a,b)=>chats[b].created-chats[a].created);c.innerHTML=ids.map(id=>`<div class="chat-list-item${id===currentChatId?' active':''}" onclick="switchChat('${id}')">${escapeHtml(chats[id].title||'New Chat')}</div>`).join('');}
 function renderMessages(){const c=document.getElementById('messagesContainer');const w=document.getElementById('welcomeScreen');if(!currentChatId||!chats[currentChatId]||chats[currentChatId].messages.length===0){c.innerHTML='';w.classList.remove('hidden');return;}w.classList.add('hidden');c.innerHTML=chats[currentChatId].messages.map(msg=>{const isUser=msg.role==='user';const isThinking=msg.content==='<thinking>';const avatar=isUser?'👤':'<img src="icon.png" alt="Pullbot">';const content=isThinking?`<div id="${msg.id}"><span class="thinking-dots"><span></span><span></span><span></span></span> <span class="thinking-text">Pullbot is thinking</span></div>`:escapeHtml(msg.content);return`<div class="message"><div class="message-avatar${isUser?'':' bot'}">${avatar}</div><div class="message-content">${content}</div></div>`;}).join('');setTimeout(()=>{document.getElementById('chatContainer').scrollTop=document.getElementById('chatContainer').scrollHeight;},100);}
-async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Loading model...","Connecting neurons","Generating response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},1000);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
+async function sendMessage(){const input=document.getElementById('userInput');const text=input.value.trim();if(!text)return;if(!currentChatId)newChat();chats[currentChatId].messages.push({role:'user',content:text});if(chats[currentChatId].messages.length===1)chats[currentChatId].title=text.substring(0,40);input.value='';renderMessages();renderChatList();const thinkingId='thinking_'+Date.now();chats[currentChatId].messages.push({role:'assistant',content:'<thinking>',id:thinkingId});renderMessages();const thinkingEl=document.getElementById(thinkingId);if(thinkingEl){const phrases=["Pullbot is thinking","Connecting neurons","Searching vocabulary","Forming response","Almost there"];let pi=0;const interval=setInterval(()=>{if(thinkingEl.querySelector('.thinking-text')){thinkingEl.querySelector('.thinking-text').textContent=phrases[pi%phrases.length];pi++;}},800);const response=await askPullbot(text);clearInterval(interval);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.id!==thinkingId);chats[currentChatId].messages.push({role:'assistant',content:response});}else{const response=await askPullbot(text);chats[currentChatId].messages=chats[currentChatId].messages.filter(m=>m.content==='<thinking>');chats[currentChatId].messages.push({role:'assistant',content:response});}renderMessages();saveCurrentChat();}
 function sendSuggestion(text){document.getElementById('userInput').value=text;sendMessage();}
 function handleKeyPress(event){if(event.key==='Enter')sendMessage();}
 function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');}

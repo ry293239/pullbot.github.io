@@ -348,5 +348,68 @@
     "score": 1,
     "feedback": "The response is completely irrelevant to the question about chalicotheres.",
     "improved": "Chalicotheres were an extinct group of herbivorous mammals related to horses, rhinoceroses, and tapirs, known for their unique clawed forelimbs and long limbs."
+  },
+  {
+    "question": "What does \"clocking\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n**Prompt Instructions:**\n\nList TV shows premiering or returning or returning \u2014 but including returning seasons or restarts after breaks); de-emphasized brand-new series p",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and does not address the meaning of 'clocking.'",
+    "improved": "Clocking can refer to tracking or measuring time, or in certain contexts, it can mean noticing or recognizing something."
+  },
+  {
+    "question": "What is a bat?",
+    "pullbot_answer": "A mental model which which cultures or approaches an issue?\n- How has the field of an issue?\n- What does this issue relate to philosophical principles or dilemmas?\n- What reasoning supports this issue",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and fails to answer the question about what a bat is.",
+    "improved": "A bat is a flying mammal known for its ability to navigate using echolocation and is found in various habitats around the world."
+  },
+  {
+    "question": "What does \"exemplifies\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos-Direction: Reduce shadows from the background, a minimalist 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Mia",
+    "score": 1,
+    "feedback": "The response is completely unrelated to the question and lacks coherence.",
+    "improved": "To 'exemplify' means to serve as a typical example of something or to illustrate by example."
+  },
+  {
+    "question": "What is Morbihan?",
+    "pullbot_answer": "A purpose is to guide an agent and to a purpose or agent.\nintroduced with the purpose of firm or cultural reasons.\n\nwhich is A person who edits or makes changes to documents, but incorporates a medium",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not answer the question about Morbihan.",
+    "improved": "Morbihan is a department in the Brittany region of France, known for its coastal landscapes and historical sites."
+  },
+  {
+    "question": "Who was Steichen?",
+    "pullbot_answer": "A minority of a minority.\npresentation is The ground is a minority of a minority gathering to the portion of cultural reasons.\ncritique this issue?\n\nAct as an analytical research critic. You are an ex",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Steichen.",
+    "improved": "Steichen was Edward Steichen, a renowned photographer, painter, and curator known for his contributions to modern photography and his work as the director of the photography department at the Museum of Modern Art (MoMA)."
+  },
+  {
+    "question": "What does \"witts\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Implementation of Advanced Softwar Image:** What are the current \"Valorantiary is The Responses is Loyalty Bonus +5 XP after 3 sessions.\n* **Generate an example using",
+    "score": 1,
+    "feedback": "The response is nonsensical, irrelevant, and does not address the question.",
+    "improved": "The word 'witts' appears to be a misspelling of 'wits,' which refers to mental sharpness or intelligence."
+  },
+  {
+    "question": "What is Mercedes?",
+    "pullbot_answer": "\"Maintain a professional tone in all communications.\n\n\n* **Implementation of Advanced Softwar Context7:** Integrate the data into a cohesive, multi-domain insight.\n* **Compliance with Context7:** Resp",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Mercedes.",
+    "improved": "Mercedes is a German automotive brand known for manufacturing luxury vehicles, buses, and trucks."
+  },
+  {
+    "question": "Who is Miyavi?",
+    "pullbot_answer": "A body, a person who edits or makes changes to documents.\nof the plural; a correct person.\nof people, people, and people.\nprevious is Having a corp record is a person that has played for years, especi",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Miyavi.",
+    "improved": "Miyavi is a Japanese musician, guitarist, and actor known for his unique slap guitar style and contributions to the visual kei movement."
+  },
+  {
+    "question": "What is a laughingthrush?",
+    "pullbot_answer": "Handles storage events; a set by fun.\ncritique this such an interest, a group of a purpose or duty; to assemble a set by a set by pieces that incorporates a competitive view in the competitive markets",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about a laughingthrush.",
+    "improved": "A laughingthrush is a type of bird belonging to the family Leiothrichidae, known for its melodious calls and social behavior."
   }
 ]

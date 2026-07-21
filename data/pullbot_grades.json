@@ -103,5 +103,75 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question meaningfully.",
     "improved": "I'm sorry, I couldn't find any information about 'sayje.' Could you provide more context or clarify the term?"
+  },
+  {
+    "question": "What does \"grounded\" mean?",
+    "pullbot_answer": "2. What reasons are offered?\n>     - *Reason Analysis:** What does this issue relate to philosophical principles or dilemmas?\n>   - *History*: How has this issue relate to philosophical principles or ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about the meaning of 'grounded.'",
+    "improved": "The term 'grounded' can have multiple meanings, such as being well-balanced and practical, being restricted to a location as a punishment, or being based on a solid foundation or principle, depending on the context."
+  },
+  {
+    "question": "What is hospitality?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos & Companion)\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with",
+    "score": 1,
+    "feedback": "The response is overly vague and does not address the question about hospitality.",
+    "improved": "Hospitality refers to the friendly and generous reception and entertainment of guests, visitors, or strangers."
+  },
+  {
+    "question": "What is BYD?",
+    "pullbot_answer": "Reliability and transparency.\nBOSS ROSTER\n\nLevel 8 Boss: The Service Specter \u2013 Phases: 1.\nLevel 7 Boss: The Service Specter \u2013 Phases: 1.\nCOMPANIONS\n- Docky the Image Builder: +5 XP on Docker",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question about BYD.",
+    "improved": "BYD is a Chinese multinational company known for manufacturing electric vehicles, batteries, and renewable energy solutions."
+  },
+  {
+    "question": "What does the term \"fails\" mean?",
+    "pullbot_answer": "A general is The economy is the limit of more of technical are considered incorrect?\n\nUser asked: Scene 1: Chaos\nDirection: Redotical Chaos\nStyle: A vertical 9:16 ultra-realistic shot of a disillusion",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "The term 'fails' generally refers to a lack of success or the inability to achieve a desired outcome."
+  },
+  {
+    "question": "What is Peccioli?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami sunset aesthetic.\n\nScene 2: Smar",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and lacks coherence.",
+    "improved": "Peccioli is a small town in Tuscany, Italy, known for its scenic beauty, cultural heritage, and innovative sustainability projects."
+  },
+  {
+    "question": "Who is Hughes?",
+    "pullbot_answer": "Personalization & exclusivity.\n\nUser asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodepro",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question or provide relevant information.",
+    "improved": "Hughes could refer to a person, company, or entity. Could you provide more context for clarification?"
+  },
+  {
+    "question": "Who is Winnie?",
+    "pullbot_answer": "\"How or more hint on the honey.\nof the plural: The gravity is The plural. The quality of the success of the military or gin are still too-transparent.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resump",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "Winnie is commonly associated with Winnie the Pooh, a fictional bear character created by A. A. Milne, known for his love of honey and adventures with his friends in the Hundred Acre Wood."
+  },
+  {
+    "question": "Who was Mirabai?",
+    "pullbot_answer": "Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Comple",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about Mirabai.",
+    "improved": "Mirabai was a 16th-century Indian poet and devotee of Lord Krishna, known for her devotional songs and poetry in praise of Krishna."
+  },
+  {
+    "question": "Who was Cervantes?",
+    "pullbot_answer": "'YAML' or \"Create a unique 'Movie')\n- **New' \u2014 preview how a user's 'The 'New' or specify if it's a 'New' or specify if it's a 'New' or specify if 'Theatrical \u2192 Streaming' release of original",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical to the question asked.",
+    "improved": "Miguel de Cervantes was a Spanish writer best known for his novel 'Don Quixote,' considered one of the greatest works of literature."
+  },
+  {
+    "question": "What does \"roader\" mean?",
+    "pullbot_answer": "Reliability and transparency.\nechoeditors is To be relevant.\nDAILY QUESTS\n\nExamples:\n- Daily Container: \"Create unique 'Movie')\n- Daily Pod: \"Create YAML fint Hoarder \u2013 Reach 10 hint tokens\n- Namespac",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the meaning of 'roader' at all.",
+    "improved": "The term 'roader' is not commonly used in English, but it could refer to someone who travels frequently on roads or a term used in specific contexts; more information is needed for clarification."
   }
 ]

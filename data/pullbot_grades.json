@@ -278,5 +278,75 @@
     "score": 1,
     "feedback": "The response is nonsensical and does not address the question.",
     "improved": "I'm sorry, I couldn't find any information on 'treoes'. Could you clarify or provide more context?"
+  },
+  {
+    "question": "What is Papineau?",
+    "pullbot_answer": "Genre (keep concise, primary value proposition, address edge cases, and targeted markets such as competitive markets, such as tech, finance, and manufacturing.\n\n* **Prioritize High-Quality Development",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Papineau.",
+    "improved": "Papineau could refer to a location, such as a neighborhood in Montreal, Canada, or a surname; additional context is needed to clarify."
+  },
+  {
+    "question": "Who is Raegan?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: \"Utilize warm-up vertical shot on a relaxed cocktail on a relaxed person standing in a modern Miami kitchen filled with a soft s",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and lacks coherence.",
+    "improved": "Raegan could refer to a person, such as a first name, or potentially a misspelling of Reagan, which could reference former U.S. President Ronald Reagan. Could you clarify the context?"
+  },
+  {
+    "question": "What is barbecue?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Transform the subject or image into a cute plush toy using felt or fleece textures.\n\nYour task is to:\n- Analyze all files in the folder named '${main_fold",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about barbecue.",
+    "improved": "Barbecue is a method of cooking food, typically meat, over an open flame or hot coals, often accompanied by a smoky flavor and various sauces."
+  },
+  {
+    "question": "What is Wexford?",
+    "pullbot_answer": "Aced or exploded.\nof-watch is The eventside is The realm of recreation; a festive gathering; a festive festive correlation and festive festive correlation.\n\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore ",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "Wexford is a county in Ireland, known for its scenic coastline, historical landmarks, and vibrant culture."
+  },
+  {
+    "question": "What is an amoeba?",
+    "pullbot_answer": "A mental model.\nI want to handle this mental model (reference attachments/URL from URLs), GPT-4o/4 (structured prose + browsing), simple-crisp.\n- Claude 3.5 Sonnet / Claude 4 (structured prose + brows",
+    "score": 1,
+    "feedback": "The response is incorrect and does not define an amoeba accurately.",
+    "improved": "An amoeba is a single-celled organism that moves and feeds by extending its cytoplasm, commonly found in water and soil."
+  },
+  {
+    "question": "What is \"cinar\"?",
+    "pullbot_answer": "Reliability and transparency.\nfantasy is The act of a place of wisdom.\nearliest is The purpose of associating or associating events.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add oth",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not address the question.",
+    "improved": "Cinar is a term that can refer to a type of tree, such as the sycamore or plane tree, depending on the context."
+  },
+  {
+    "question": "What is a wicket in cricket?",
+    "pullbot_answer": "\"Expose with a country or a district; a district; a broad sense or a broad sense or imagination.\"\n\"Rules: One active, Loyalty Bonus +5 XP after 3 sessions.\ncritique is In a person who performs labor, ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about a wicket in cricket.",
+    "improved": "A wicket in cricket refers to either the set of stumps and bails at each end of the pitch or the act of dismissing a batsman during the game."
+  },
+  {
+    "question": "What is Gucci?",
+    "pullbot_answer": "Automation and Phases: 1.\nSolution: A.\nSolution: A.\nSolution: A realistic grave and stoic philosopher.\nAll combined\nBoss Rewards: XP, Items, Skill points, Persistent Quest, Persistent Quest\n\nExamples:",
+    "score": 1,
+    "feedback": "The response is nonsensical and completely unrelated to the question.",
+    "improved": "Gucci is a luxury fashion brand based in Italy, known for its high-end clothing, accessories, and leather goods."
+  },
+  {
+    "question": "What does \"androgenic\" mean?",
+    "pullbot_answer": "Reliability and transparency.\nresponse = transparency.\nresponse = bias.\nresponse = bias.\nresponse = bias.\nresponse = bias.response.\nresponse = bias.confident.\n> \n> 9. **Random Event** (if triggered)\n>",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "Androgenic refers to the development of male characteristics or the effects of male hormones, such as testosterone."
+  },
+  {
+    "question": "What are chalicotheres?",
+    "pullbot_answer": "Reliability and transparency.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/Tensor",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about chalicotheres.",
+    "improved": "Chalicotheres were an extinct group of herbivorous mammals related to horses, rhinoceroses, and tapirs, known for their unique clawed forelimbs and long limbs."
   }
 ]

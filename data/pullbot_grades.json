@@ -173,5 +173,40 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the meaning of 'roader' at all.",
     "improved": "The term 'roader' is not commonly used in English, but it could refer to someone who travels frequently on roads or a term used in specific contexts; more information is needed for clarification."
+  },
+  {
+    "question": "What is a critique?",
+    "pullbot_answer": "what: (Singlish) Used to contradict an underlying assumption held by the interlocutor.",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and does not define 'critique'.",
+    "improved": "A critique is an evaluation or analysis of something, often highlighting strengths and weaknesses."
+  },
+  {
+    "question": "Who is Conor?",
+    "pullbot_answer": "who: ",
+    "score": 1,
+    "feedback": "The response is incomplete and does not provide any meaningful information about Conor.",
+    "improved": "Conor could refer to a person, such as Conor McGregor, the mixed martial artist, or someone else depending on the context. Could you provide more details?"
+  },
+  {
+    "question": "What is a hippo?",
+    "pullbot_answer": "what: (Singlish) Used to contradict an underlying assumption held by the interlocutor.",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question.",
+    "improved": "A hippo, short for hippopotamus, is a large, mostly herbivorous mammal native to sub-Saharan Africa, known for its barrel-shaped body and semi-aquatic lifestyle."
+  },
+  {
+    "question": "What is hindlin?",
+    "pullbot_answer": "what: (Singlish) Used to contradict an underlying assumption held by the interlocutor.",
+    "score": 2,
+    "feedback": "The response is vague and lacks sufficient explanation or context about 'hindlin'.",
+    "improved": "Hindlin is not a widely recognized term; could you clarify or provide more context for its meaning?"
+  },
+  {
+    "question": "Who were the Mughals?",
+    "pullbot_answer": "who:  | were:  | the: With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives.",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "The Mughals were a Muslim dynasty of Turko-Mongol origin that ruled large parts of the Indian subcontinent from the early 16th to the mid-19th century."
   }
 ]

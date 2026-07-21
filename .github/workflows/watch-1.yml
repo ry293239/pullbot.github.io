@@ -2,8 +2,6 @@ name: Poll 1
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: '*/1 * * * *'
   workflow_run:
     workflows: ["Poll 2"]
     types: [completed]

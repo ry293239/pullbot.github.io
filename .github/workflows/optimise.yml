@@ -17,13 +17,22 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
+      run: |
+        set -x
+        pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
+        echo "Deps installed"
     - name: Run optimization
       timeout-minutes: 60
-      run: python src/model.py optimize 0.5
+      run: |
+        set -x
+        echo "Starting optimization..."
+        python src/model.py optimize 0.5
+        echo "Exit code: $?"
     - name: Export GGUF
       timeout-minutes: 15
       run: |
+        set -x
+        echo "Starting GGUF export..."
         python -c "
         import os, json, torch, shutil
         from transformers import AutoModelForCausalLM, AutoTokenizer
@@ -56,14 +65,17 @@ jobs:
         if os.path.exists('models/pullbot.gguf'):
             print(f'GGUF exported: {os.path.getsize(\"models/pullbot.gguf\")/(1024*1024):.0f}MB')
         "
+        echo "GGUF exit code: $?"
     - name: Remove large files
       run: |
         rm -rf models/checkpoints/
         rm -rf models/temp_trained/
         rm -f models/chunks/model.safetensors
         rm -f models/chunks/pytorch_model.bin
+        echo "Cleaned up"
     - name: Push
       run: |
+        set -x
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git checkout --ours data/processed/corpus.txt 2>/dev/null || true

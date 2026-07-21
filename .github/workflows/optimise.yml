@@ -3,7 +3,7 @@ name: Optimize Model
 on:
   workflow_dispatch:
   workflow_run:
-    workflows: ["Ping Pullbot"]
+    workflows: ["Train Pullbot"]
     types: [completed]
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       run: pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
     - name: Run optimization
       timeout-minutes: 60
-      run: python src/optimize_pipeline.py
+      run: python src/model.py optimize 0.5
     - name: Export GGUF
       timeout-minutes: 15
       run: |
@@ -66,9 +66,6 @@ jobs:
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        git stash
-        git pull --rebase origin main
-        git stash pop || true
         git checkout --ours data/processed/corpus.txt 2>/dev/null || true
-        git add models/chunks/ models/pullbot.gguf models/last_train.json data/ knowledge/ 2>/dev/null || true
+        git add -A
         git diff --staged --quiet || git commit -m "✂️ Optimized + GGUF exported" && git push origin main || echo "No changes"

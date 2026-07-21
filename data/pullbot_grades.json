@@ -68,5 +68,40 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question.",
     "improved": "BrightSide is a popular YouTube channel that shares educational and entertaining content on a variety of topics."
+  },
+  {
+    "question": "What is Geipel?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\norganisations is The active, Loyalty Bonus +5 XP after 3 sessions.\nchewing is The active, Loyalty ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Geipel.",
+    "improved": "Geipel could refer to a surname, a specific brand, or an organization; more context is needed to provide an accurate answer."
+  },
+  {
+    "question": "What is Atari?",
+    "pullbot_answer": "Surrealistic quality.\n* **Random Event:** What's the topic of the specific topic or question?\n* **Random Event:** What are YAML or the next 6\u20137 questions that could deepen the exploration.\n\nUser asked",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Atari.",
+    "improved": "Atari is a pioneering video game company known for creating iconic arcade games and home consoles, such as Pong and the Atari 2600."
+  },
+  {
+    "question": "What is a region?",
+    "pullbot_answer": "The modern car remains a modern Miami sunset aesthetic. The image contains the glass, a cinematic 9:16 ultra-realistic shot of the intricate gold-media optimized studio image. The image contains a mod",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question.",
+    "improved": "A region is an area of land that is defined by certain characteristics, such as geography, culture, or administrative boundaries."
+  },
+  {
+    "question": "What is a Uzi?",
+    "pullbot_answer": "A substance or part of a substance which specifically promotes healing or healing parts or convictions.\nassociations is The act of associating; associating or associating oriting or associating extent",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about what a Uzi is.",
+    "improved": "A Uzi is a compact submachine gun that originated in Israel and is commonly used by military and law enforcement."
+  },
+  {
+    "question": "What is \"sayje\"?",
+    "pullbot_answer": "Handles storage events; a person looks satisfied.\nassociation is Having lots.\nassociation is The active, ingested negative person.\nbody is Something that performs or consumed.\nbody is Something that c",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "I'm sorry, I couldn't find any information about 'sayje.' Could you provide more context or clarify the term?"
   }
 ]

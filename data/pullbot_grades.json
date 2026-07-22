@@ -628,5 +628,26 @@
     "score": 1,
     "feedback": "The response is entirely irrelevant to the question asked.",
     "improved": "Lymphoma is a type of cancer that affects the lymphatic system, which is part of the body's immune system."
+  },
+  {
+    "question": "Who or what is Vitantonio?",
+    "pullbot_answer": "3.\n\napplyTo: Random event every turn, Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n- Level 2 \u2192 100 XP\n- Level 3 \u2192 250 XP\n- Level 4",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "Vitantonio is a brand known for kitchen appliances, such as waffle makers and blenders."
+  },
+  {
+    "question": "What is Dichistius?",
+    "pullbot_answer": "A logical, an abstraction.\n\nUser asked: Transform the subject image into a cute plush form with a cute facial expression. Give it a friendly, cute facial expression. Warm glowing light, bokeh backgrou",
+    "score": 1,
+    "feedback": "The response is incorrect and nonsensical, failing to address the question about Dichistius.",
+    "improved": "Dichistius is a genus of marine fish commonly known as galjoen or black bream, found along the southern African coast."
+  },
+  {
+    "question": "What does \"chinensis\" mean?",
+    "pullbot_answer": "Surrealistic, hyper-detailed textures.\n\nUser asked: Scene 1: Chaos-Direction: \n- Interactive Intervention: 'Fix My Drink'\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS",
+    "score": 1,
+    "feedback": "The response is entirely irrelevant to the question and does not address the meaning of 'chinensis.'",
+    "improved": "Chinensis is a Latin term often used in scientific names to mean 'of China' or 'Chinese.'"
   }
 ]

@@ -558,5 +558,75 @@
     "score": 1,
     "feedback": "The response is nonsensical and unrelated to the question.",
     "improved": "A pikeperch is a type of freshwater fish belonging to the genus Sander, commonly found in Europe and Asia."
+  },
+  {
+    "question": "What is torul?",
+    "pullbot_answer": "No \"Cybernetic Enhancement\",\n* **Updated Level**\n* **Story/Namespace/Boss progression**\n* **Session Summary**\n* **Session Summary** (end of session)\n* **Session Summary** (end of session)\n* **Task:** ",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question about 'torul.'",
+    "improved": "Torul is a genus of yeast-like fungi, often associated with fermentation or spoilage in certain environments."
+  },
+  {
+    "question": "What does \"ERD\" stand for?",
+    "pullbot_answer": "Reliability and transparency.\npresentation is The act of producing a producing or making of an economy.\nassociation is The act of associating or associating.\nCOMPANIONS\n- Docky the Image Builder: +5 X",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "ERD stands for Entity-Relationship Diagram, which is a visual representation of entities and their relationships in a database."
+  },
+  {
+    "question": "What is gouache?",
+    "pullbot_answer": "Surreal research.\nI turned around a data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\n\nTutorial Mode: +50% XP, unlimited free hints, no penalties, simplified missions\nCasual Mode: +25% XP,",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "Gouache is a type of paint that is similar to watercolor but is more opaque and has a matte finish."
+  },
+  {
+    "question": "What does \"PWHL\" stand for?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\n\nUser asked: Scene 2: Render +1 XP (quarter view, white background, cinematic lighting, warm, shar",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and does not address the question about what 'PWHL' stands for.",
+    "improved": "PWHL stands for 'Professional Women's Hockey League.'"
+  },
+  {
+    "question": "What does \"irreversibly\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Evaluation:** Probes; not the next mission.\n* **Result:** Responses must change as the next 2\u20133 questions that could deepen the exploration.\n\nUser asked: Analyze all ",
+    "score": 1,
+    "feedback": "The response is completely unrelated to the question and fails to define 'irreversibly.'",
+    "improved": "'Irreversibly' means something that cannot be undone or changed back to its original state."
+  },
+  {
+    "question": "What is Shimabashi?",
+    "pullbot_answer": "Reliability and transparency.\nthe-world is The Daily Network: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalt",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "Shimabashi is not a widely recognized term; please provide more context or clarify if it's a name, place, or concept."
+  },
+  {
+    "question": "Who is Martin McDonagh?",
+    "pullbot_answer": "\"How XP on a living or consumed with the purpose of oneself.\n\nA purpose is to change the evidence by this space.\n\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Ima",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question.",
+    "improved": "Martin McDonagh is an acclaimed playwright, screenwriter, and filmmaker known for works such as 'The Pillowman,' 'In Bruges,' and 'Three Billboards Outside Ebbing, Missouri.'"
+  },
+  {
+    "question": "Who was Alexander Fleming?",
+    "pullbot_answer": "Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nchewi",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about Alexander Fleming.",
+    "improved": "Alexander Fleming was a Scottish bacteriologist best known for discovering penicillin in 1928."
+  },
+  {
+    "question": "What is alebtong?",
+    "pullbot_answer": "A mental model.\nI want to be considered incorrect.\nDAILY QUESTS\n\nExamples:\n- Daily Container: \"Create YAML for TV shows without a premiering or returning season.\n- Daily Network: \"Expose web-svc as No",
+    "score": 1,
+    "feedback": "The response is incorrect and unrelated to the question.",
+    "improved": "Alebtong is a district in northern Uganda."
+  },
+  {
+    "question": "What is lymphoma?",
+    "pullbot_answer": "Personalization and storytelling can differentiate candidates with competitive markets like tech, finance, or manufacturing.\n\n- **Focus:: The medium-term sustainability with care!\"\n- **Prioritize: Adv",
+    "score": 1,
+    "feedback": "The response is entirely irrelevant to the question asked.",
+    "improved": "Lymphoma is a type of cancer that affects the lymphatic system, which is part of the body's immune system."
   }
 ]

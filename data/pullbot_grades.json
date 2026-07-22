@@ -481,5 +481,12 @@
     "score": 1,
     "feedback": "The response is incoherent and fails to define 'endeavored' correctly.",
     "improved": "To 'endeavor' means to try hard to achieve or accomplish something."
+  },
+  {
+    "question": "What is an anemone?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with sunlight. Wa",
+    "score": 1,
+    "feedback": "The AI response is completely irrelevant to the question about an anemone.",
+    "improved": "An anemone is a type of marine animal related to corals and jellyfish, or a flowering plant in the buttercup family."
   }
 ]

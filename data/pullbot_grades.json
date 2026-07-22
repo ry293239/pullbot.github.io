@@ -411,5 +411,68 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question about a laughingthrush.",
     "improved": "A laughingthrush is a type of bird belonging to the family Leiothrichidae, known for its melodious calls and social behavior."
+  },
+  {
+    "question": "What is eucalyptus?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos-Direction: Redotical Chaos)\ndescription: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitch",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about eucalyptus.",
+    "improved": "Eucalyptus is a type of tree or shrub known for its aromatic leaves, often used in essential oils and native to Australia."
+  },
+  {
+    "question": "Who is Brenciu?",
+    "pullbot_answer": "A substance which influences or influences on this substance.\nassociation is The substance which influencesi or influences on the substance.\nrepresentatives is The extent of a substance or cultural im",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "Brenciu is likely a reference to Horia Brenciu, a Romanian singer, actor, and television host."
+  },
+  {
+    "question": "What is Pooley?",
+    "pullbot_answer": "\"I want to be unique.\"\n* **Prioritize High-Quality Development:** Emphasized the importance of long-term sustainability with software projects.\n\n* **Prioritize High-Quality Development:** Ensure the a",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Pooley.",
+    "improved": "Pooley could refer to a surname, a place, or a specific context; could you clarify what you mean by 'Pooley'?"
+  },
+  {
+    "question": "What is an epoch?",
+    "pullbot_answer": "A purpose or duty or duty is to hold by the concept using a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS ver",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about what an epoch is.",
+    "improved": "An epoch is a unit of time used in various contexts, such as machine learning to represent one complete pass through a dataset during training, or in computing to refer to a specific starting point for measuring time."
+  },
+  {
+    "question": "What is Calvinia?",
+    "pullbot_answer": "A grave or stoic philosopher.\n\nBOSS ROSTER\n\nLevel 1 Boss: The Image Pull Imp \u2013 Phases: 1.\nLevel 2 Boss: The Image Pull Imp \u2013 Phases: 1.\nLevel 4 Boss: The Service Specter \u2013 Phases: 2.",
+    "score": 1,
+    "feedback": "The response is entirely incorrect and unrelated to the question.",
+    "improved": "Calvinia is a town in the Northern Cape province of South Africa, known for its sheep farming and rich history."
+  },
+  {
+    "question": "What is Banshikunda?",
+    "pullbot_answer": "\"How strong or detailed?\nresponse = web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\nTutorial Mode: +50% XP, unlimited free",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "Banshikunda is not a commonly known term; it might refer to a specific place, person, or concept. Could you provide more context or clarify?"
+  },
+  {
+    "question": "What does \"sangui\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami sunset aesthetic. The person looks ",
+    "score": 1,
+    "feedback": "The AI response is completely incorrect as 'sangui' does not mean 'reliability and transparency.'",
+    "improved": "The word 'sangui' is derived from the Latin root 'sanguis,' meaning 'blood,' and is often associated with vitality or passion in certain contexts."
+  },
+  {
+    "question": "What is Tuffy?",
+    "pullbot_answer": "Grok (strong file-search)\npresentation: web-svc (type: ClusterIP, ports: 80)\n- Volume: data-vol (hostPath: /data)\n\nDIFFICULTY MODIFIERS\nTutorial Mode: +50% XP",
+    "score": 1,
+    "feedback": "The response is irrelevant and does not address the question about Tuffy.",
+    "improved": "Tuffy is the mascot of California State University, Fullerton, representing an elephant."
+  },
+  {
+    "question": "What are taurates?",
+    "pullbot_answer": "A country; a sea or a disease.\nassociations is To cause or engage with some broad reference to the health of the military and spiritual entity.\nusually is The actor of the object or marsh.\nsocial is T",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "Taurates are a class of chemical compounds derived from taurine, commonly used in personal care products like shampoos and body washes as mild surfactants."
   }
 ]

@@ -1,11 +1,80 @@
-    - name: Run optimization
-      timeout-minutes: 60
+name: Optimize Model
+
+on:
+  workflow_dispatch:
+  workflow_run:
+    workflows: ["Train Pullbot"]
+    types: [completed]
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    
+    steps:
+    - uses: actions/checkout@v4
+    - uses: actions/setup-python@v5
+      with:
+        python-version: '3.10'
+    - name: Install deps
       run: |
-        set -x
-        echo "Python version:"
+        pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
+        echo "Deps installed"
+    - name: Test import
+      run: |
         python --version
-        echo "Testing import..."
-        python -c "from model import PullbotModel; print('Import OK')" 2>&1
-        echo "Running optimize..."
-        python src/model.py optimize 0.5 2>&1
+        python -c "from model import PullbotModel; print('Import OK')"
+    - name: Run optimization
+      timeout-minutes: 55
+      run: |
+        python src/model.py optimize 0.5
         echo "Exit code: $?"
+    - name: Export GGUF
+      timeout-minutes: 15
+      run: |
+        python -c "
+        import os, json, torch, shutil
+        from transformers import AutoModelForCausalLM, AutoTokenizer
+        
+        chunks_dir = 'models/chunks'
+        with open(f'{chunks_dir}/manifest.json') as f:
+            manifest = json.load(f)
+        weights_file = manifest.get('weights_filename', 'model.safetensors')
+        reassembled = f'{chunks_dir}/{weights_file}'
+        if not os.path.exists(reassembled):
+            with open(reassembled, 'wb') as out:
+                for chunk_path in manifest['chunks']:
+                    with open(chunk_path, 'rb') as inc:
+                        out.write(inc.read())
+        
+        os.makedirs('models_clean', exist_ok=True)
+        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
+        tokenizer.save_pretrained('models_clean')
+        model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
+        model.save_pretrained('models_clean')
+        
+        import subprocess
+        result = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'q8_0'], capture_output=True, text=True)
+        print(result.stdout)
+        if result.returncode != 0:
+            print(result.stderr)
+            result = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'f16'], capture_output=True, text=True)
+        shutil.rmtree('models_clean')
+        
+        if os.path.exists('models/pullbot.gguf'):
+            print(f'GGUF exported: {os.path.getsize(\"models/pullbot.gguf\")/(1024*1024):.0f}MB')
+        "
+    - name: Remove large files
+      run: |
+        rm -rf models/checkpoints/
+        rm -rf models/temp_trained/
+        rm -f models/chunks/model.safetensors
+        rm -f models/chunks/pytorch_model.bin
+    - name: Push
+      run: |
+        git config user.name "Pullbot"
+        git config user.email "pullbot@bot.dev"
+        git checkout --ours data/wordbank.json 2>/dev/null || true
+        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
+        git add -A
+        git diff --staged --quiet || git commit -m "✂️ Optimized + GGUF exported" && git push origin main || echo "No changes"

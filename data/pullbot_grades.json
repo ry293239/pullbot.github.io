@@ -474,5 +474,12 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question.",
     "improved": "Taurates are a class of chemical compounds derived from taurine, commonly used in personal care products like shampoos and body washes as mild surfactants."
+  },
+  {
+    "question": "What does \"endeavored\" mean?",
+    "pullbot_answer": "Servy the purpose of a purpose or duty.\nassociation is The purpose of associating with a purpose or duty.\ncritique is A purpose or duty.\nassociation is To engage with activities especially the purpose",
+    "score": 1,
+    "feedback": "The response is incoherent and fails to define 'endeavored' correctly.",
+    "improved": "To 'endeavor' means to try hard to achieve or accomplish something."
   }
 ]

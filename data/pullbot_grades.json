@@ -488,5 +488,75 @@
     "score": 1,
     "feedback": "The AI response is completely irrelevant to the question about an anemone.",
     "improved": "An anemone is a type of marine animal related to corals and jellyfish, or a flowering plant in the buttercup family."
+  },
+  {
+    "question": "What is DeepMind?",
+    "pullbot_answer": "Personalization and exclusivity.\ntense question: Reliability and transparency.\ntense question: Analyze the given topic with the critical thinking framework so far advanced prompting and reasoning.\napp",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about DeepMind.",
+    "improved": "DeepMind is a leading artificial intelligence research company, known for developing advanced AI systems and contributing to scientific breakthroughs in areas like healthcare and reinforcement learning."
+  },
+  {
+    "question": "What is \"Shalit\"?",
+    "pullbot_answer": "Reliability and transparency.\npresentation Note: Always require more professionals transitioning careers or anyone updating their LinkedIn profile to confirm the About section limit of About section l",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "Shalit could refer to a surname, a specific individual, or an organization; more context is needed to provide an accurate answer."
+  },
+  {
+    "question": "What does \"LEC\" stand for?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos (Direction: 1.\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with ",
+    "score": 1,
+    "feedback": "The response is completely incorrect and unrelated to the question.",
+    "improved": "LEC can stand for 'Local Exchange Carrier,' 'Lecture,' or other context-specific terms."
+  },
+  {
+    "question": "What does \"tailler\" mean in French?",
+    "pullbot_answer": "A substance or part.\nUser asked: Scene 1: Chaos (Direction: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wisely.\"\n- Servy the Servic",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical.",
+    "improved": "The French word 'tailler' means 'to cut' or 'to carve.'"
+  },
+  {
+    "question": "What is a samara?",
+    "pullbot_answer": "Aced but slightly pressed and slightly oversized head, a human, or a slightly oversized head, a slightly oversized head, and a heartwarming pastel or neutral color palette. Use a heartwarming pastel o",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about what a samara is.",
+    "improved": "A samara is a type of winged fruit produced by certain trees, such as maples, that helps with seed dispersal by wind."
+  },
+  {
+    "question": "Who was Gao Shun?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlesettings.gradlereferences/android.md*.xcodepro",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical to the question asked.",
+    "improved": "Gao Shun was a Chinese military general serving under the warlord L\u00fc Bu during the late Eastern Han dynasty of China."
+  },
+  {
+    "question": "What are galleries?",
+    "pullbot_answer": "Scene 1: Chaos-5.\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with sunlight.\n\nScene 2: A close-up vertical shot on the ico",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about galleries.",
+    "improved": "Galleries are spaces, often physical or virtual, where artworks, photographs, or other creative works are displayed for public viewing or sale."
+  },
+  {
+    "question": "What is Eyring theory?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with sunlight.\n\nR",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about Eyring theory.",
+    "improved": "Eyring theory, also known as transition state theory, is a model in chemistry that explains the rates of chemical reactions by considering the formation of a high-energy transition state between reactants and products."
+  },
+  {
+    "question": "Who was Mumtaz?",
+    "pullbot_answer": "Aced or disillusioned young person standing in a modern Miami sunset aesthetic.\nof the tires, correct reflections on the glass. Warm glowing light, bokeh background, natural perspective, true-to-life ",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question.",
+    "improved": "Mumtaz Mahal was the wife of Mughal Emperor Shah Jahan, and she is best known as the inspiration for the Taj Mahal, a mausoleum built in her memory."
+  },
+  {
+    "question": "What is a pikeperch?",
+    "pullbot_answer": "A great-to-life proportions, no stylization.\n\nUser asked: Scene 1: Chaos\nDirection: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wis",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "A pikeperch is a type of freshwater fish belonging to the genus Sander, commonly found in Europe and Asia."
   }
 ]

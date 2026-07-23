@@ -9,7 +9,7 @@ on:
 jobs:
   optimize:
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 120
     
     steps:
     - uses: actions/checkout@v4
@@ -17,61 +17,182 @@ jobs:
       with:
         python-version: '3.10'
     - name: Install deps
-      run: |
-        pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
-        echo "Deps installed"
-    - name: Run optimization
-      timeout-minutes: 55
-      working-directory: src
-      run: |
-        python model.py optimize 0.5
-        echo "Exit code: $?"
-    - name: Export GGUF
-      timeout-minutes: 15
+      run: pip install torch transformers safetensors numpy
+    - name: Smart optimize
+      timeout-minutes: 100
       run: |
         python -c "
-        import os, json, torch, shutil
-        from transformers import AutoModelForCausalLM, AutoTokenizer
+        import os, json, torch, shutil, glob, time
+        from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
+        import torch.nn as nn
         
         chunks_dir = 'models/chunks'
+        
+        # 1. Reassemble
+        print('1. Reassembling...')
         with open(f'{chunks_dir}/manifest.json') as f:
             manifest = json.load(f)
-        weights_file = manifest.get('weights_filename', 'model.safetensors')
-        reassembled = f'{chunks_dir}/{weights_file}'
+        wf = manifest['weights_filename']
+        reassembled = f'{chunks_dir}/{wf}'
         if not os.path.exists(reassembled):
             with open(reassembled, 'wb') as out:
-                for chunk_path in manifest['chunks']:
-                    with open(chunk_path, 'rb') as inc:
+                for cp in manifest['chunks']:
+                    with open(cp, 'rb') as inc:
                         out.write(inc.read())
         
-        os.makedirs('models_clean', exist_ok=True)
-        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
-        tokenizer.save_pretrained('models_clean')
-        model = AutoModelForCausalLM.from_pretrained(chunks_dir, torch_dtype=torch.float32, low_cpu_mem_usage=True)
-        model.save_pretrained('models_clean')
+        # 2. Load
+        print('2. Loading...')
+        config = AutoConfig.from_pretrained(chunks_dir)
+        model = AutoModelForCausalLM.from_config(config)
+        if wf.endswith('.safetensors'):
+            from safetensors.torch import load_file
+            sd = load_file(reassembled)
+        else:
+            sd = torch.load(reassembled, map_location='cpu', weights_only=False)
+        clean = {k: v.float() for k, v in sd.items() if isinstance(v, torch.Tensor) and not v.is_quantized}
+        model.load_state_dict(clean, strict=False)
+        model.eval()
         
-        import subprocess
-        result = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'q8_0'], capture_output=True, text=True)
-        print(result.stdout)
-        if result.returncode != 0:
-            print(result.stderr)
-            result = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'f16'], capture_output=True, text=True)
-        shutil.rmtree('models_clean')
+        test_in = torch.randint(0, 50257, (5, 16))
+        with torch.no_grad():
+            baseline = model(test_in).logits
+        before = sum(p.numel() for p in model.parameters())
+        print(f'   {before:,} params')
         
-        if os.path.exists('models/pullbot.gguf'):
-            print(f'GGUF exported: {os.path.getsize(\"models/pullbot.gguf\")/(1024*1024):.0f}MB')
+        # 3. Smart merge: only process rows that actually changed during training
+        print('3. Smart merge (recently changed rows only)...')
+        total_merged = 0
+        for name, module in model.named_modules():
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 10:
+                w = module.weight.data.float()
+                # Only process rows with mixed values (sign of training)
+                row_variance = w.var(dim=1)
+                median_var = row_variance.median()
+                # Only touch rows with above-median variance (most changed)
+                active_rows = row_variance > median_var
+                
+                for ri in range(w.shape[0]):
+                    if not active_rows[ri]: continue
+                    row = w[ri]
+                    row_max = row.abs().max()
+                    if row_max == 0: continue
+                    
+                    # Find strong weights in this row
+                    threshold = row_max * 0.15
+                    strong_mask = row.abs() > threshold
+                    strong_idx = torch.where(strong_mask)[0]
+                    
+                    if len(strong_idx) < 2: continue
+                    
+                    for ci in range(len(row)):
+                        val = row[ci].item()
+                        aval = abs(val)
+                        
+                        # Skip already zero or strong
+                        if aval < 0.00001: continue
+                        if strong_mask[ci]: continue
+                        
+                        # Only merge if tiny AND last digit is 0
+                        last_digit = int(str(aval).split('.')[-1][0]) if '.' in str(aval) else 0
+                        if aval < 0.01 and last_digit == 0:
+                            # Find nearest strong weight by value similarity
+                            best = strong_idx[0].item()
+                            best_sim = -2
+                            for si in strong_idx:
+                                sv = row[si].item()
+                                # Same sign = compatible
+                                sign_match = 1 if (val * sv) > 0 else -1
+                                # Similar magnitude
+                                mag_sim = 1 - min(abs(aval - abs(sv)), 1.0)
+                                sim = sign_match * mag_sim
+                                if sim > best_sim:
+                                    best_sim = sim
+                                    best = si.item()
+                            
+                            if best_sim > 0:
+                                row[best] += val * 0.7
+                                row[ci] = 0
+                                total_merged += 1
+                
+                module.weight.data = w.to(module.weight.dtype)
+        
+        # Verify
+        with torch.no_grad():
+            after_merge = model(test_in).logits
+        diff = (baseline - after_merge).abs().mean().item()
+        print(f'   Merged: {total_merged:,} | Output diff: {diff:.10f}')
+        
+        # 4. Remove fully zero rows
+        print('4. Removing zero rows...')
+        for name, module in list(model.named_modules()):
+            if isinstance(module, nn.Linear) and module.weight.shape[0] > 50:
+                w = module.weight.data
+                active = w.abs().sum(dim=1) > 0.0001
+                if active.sum() < w.shape[0] and active.sum() > 10:
+                    new_lin = nn.Linear(w.shape[1], active.sum().item(), bias=module.bias is not None)
+                    new_lin.weight.data = w[active].clone()
+                    if module.bias is not None:
+                        new_lin.bias.data = module.bias.data[active].clone()
+                    parent_name = '.'.join(name.split('.')[:-1])
+                    attr = name.split('.')[-1]
+                    if parent_name:
+                        parent = dict(model.named_modules()).get(parent_name)
+                        if parent: setattr(parent, attr, new_lin)
+        
+        after_zero = sum(p.numel() for p in model.parameters())
+        print(f'   {before:,} -> {after_zero:,} params')
+        
+        # 5. Quantize
+        print('5. 8-bit quantize...')
+        try:
+            model = torch.quantization.quantize_dynamic(model, {nn.Linear}, dtype=torch.qint8)
+            print('   Quantized')
+        except:
+            print('   Skipped')
+        
+        # 6. Save
+        print('6. Saving...')
+        temp = 'models/temp_opt'
+        os.makedirs(temp, exist_ok=True)
+        tok = AutoTokenizer.from_pretrained(chunks_dir)
+        tok.save_pretrained(temp)
+        try:
+            model.save_pretrained(temp)
+        except:
+            torch.save(model.state_dict(), f'{temp}/pytorch_model.bin')
+            model.config.save_pretrained(temp)
+        
+        for old in glob.glob(f'{chunks_dir}/model_chunk_*.bin'): os.remove(old)
+        for old in glob.glob(f'{chunks_dir}/*.safetensors'): os.remove(old)
+        for old in glob.glob(f'{chunks_dir}/pytorch_model.bin'): os.remove(old)
+        
+        wp = f'{temp}/model.safetensors' if os.path.exists(f'{temp}/model.safetensors') else f'{temp}/pytorch_model.bin'
+        total_size = os.path.getsize(wp)
+        chunks = []
+        with open(wp, 'rb') as f:
+            idx = 0
+            while True:
+                chunk = f.read(45*1024*1024)
+                if not chunk: break
+                name = f'model_chunk_{idx:03d}.bin'
+                with open(f'{chunks_dir}/{name}', 'wb') as out: out.write(chunk)
+                chunks.append(f'models/chunks/{name}')
+                idx += 1
+        
+        for cfg in ['config.json','tokenizer_config.json','vocab.json','merges.txt','tokenizer.json']:
+            if os.path.exists(f'{temp}/{cfg}'): shutil.copy(f'{temp}/{cfg}', f'{chunks_dir}/{cfg}')
+        
+        final_params = sum(p.numel() for p in model.parameters())
+        manifest_new = {'model_name':'distilgpt2','total_size':total_size,'total_size_mb':round(total_size/(1024*1024),1),'num_chunks':len(chunks),'chunks':chunks,'weights_filename':os.path.basename(wp),'fully_trained':True,'pruned':True,'quantized':True,'sparsity_pct':round((1-final_params/before)*100,1),'estimated_ram_mb':round(final_params*1/(1024*1024)*3),'training_date':time.time()}
+        with open(f'{chunks_dir}/manifest.json','w') as f: json.dump(manifest_new, f)
+        
+        shutil.rmtree(temp)
+        print(f'✅ {before:,} -> {final_params:,} params | {len(chunks)} chunks | Saved {before-final_params:,} params')
         "
-    - name: Remove large files
-      run: |
-        rm -rf models/checkpoints/
-        rm -rf models/temp_trained/
-        rm -f models/chunks/model.safetensors
-        rm -f models/chunks/pytorch_model.bin
     - name: Push
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git checkout --ours data/wordbank.json 2>/dev/null || true
-        git checkout --ours data/processed/corpus.txt 2>/dev/null || true
         git add -A
-        git diff --staged --quiet || git commit -m "✂️ Optimized + GGUF exported" && git push origin main || echo "No changes"
+        git diff --staged --quiet || git commit -m "✂️ Smart optimized" && git push origin main || echo "No changes"

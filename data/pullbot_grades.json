@@ -971,5 +971,19 @@
     "score": 1,
     "feedback": "The response is completely irrelevant to the question and does not address the query about 'Donnell' at all.",
     "improved": "Donnell could refer to a person's name, a surname, or potentially something else depending on the context. Could you provide more details?"
+  },
+  {
+    "question": "What is a towler?",
+    "pullbot_answer": "Something I actually wrote myself\u2014written by an o.g., Senior Full-Stack Engineer / Marketing Director / etc.] role in a Senior Sofeconfig Amulet: The Level 1, Pod Pioneer \u2013 Phases: 1.\nFIXED RESOURCE C",
+    "score": 1,
+    "feedback": "The response is incoherent and does not answer the question.",
+    "improved": "A towler is not a commonly recognized term, but it could refer to a surname or a misspelling of 'towel' or 'tower.' Could you clarify the context?"
+  },
+  {
+    "question": "What is salt?",
+    "pullbot_answer": "Personalization and exclusivity.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n\n* **Style:** Modular and clean, no \"spaghetti\".\n* **Style:** Modular",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and lacks coherence.",
+    "improved": "Salt is a mineral composed primarily of sodium chloride (NaCl), commonly used for seasoning and preserving food."
   }
 ]

@@ -64456,3 +64456,4135 @@ Group these words: regional, morgan, thrash, educator, academia
 ---
 
 Group these words: director, symphony, sitcoms, character, awards
+
+---
+
+Question: Define mie.
+Answer: 
+
+---
+
+Question: What is house?
+Answer: house is .
+
+---
+
+Question: Tell me about ncaa ruled that the 2020 season, which was heavily disrupted by the covid-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+Answer: The NCAA ruled that the 2020 season, which was heavily disrupted by the COVID-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+
+---
+
+Question: What is city?
+Answer: city is A large settlement, bigger than a town; sometimes with a specific legal definition, depending on the place..
+
+---
+
+Complete: district is... → district is An administrative division of an area..
+
+---
+
+Question: What is obeys?
+Answer: obeys is To do as ordered by (a person, institution etc), to act according to the bidding of..
+
+---
+
+Question: Define orchestral.
+Answer: An orchestral performance.
+
+---
+
+Question: What is germany?
+Answer: germany is .
+
+---
+
+Complete: historic is... → historic is .
+
+---
+
+Question: Define bovie.
+Answer: 
+
+---
+
+Question: Define centuries.
+Answer: A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100.
+
+---
+
+Question: What is wide?
+Answer: wide is A ball that passes so far from the batsman that the umpire deems it unplayable; the arm signal used by an umpire to signal a wide; the extra run added to the batting side's score.
+
+---
+
+Complete: was is... → was is .
+
+---
+
+Question: What is singapore?
+Answer: singapore is .
+
+---
+
+Question: What is award?
+Answer: award is A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted..
+
+---
+
+Question: What is built?
+Answer: built is To form (something) by combining materials or parts..
+
+---
+
+Question: Define greek.
+Answer: 
+
+---
+
+Question: What is largest?
+Answer: largest is Of considerable or relatively great size or extent..
+
+---
+
+Complete: hdb is... → hdb is .
+
+---
+
+Complete: parallel is... → parallel is .
+
+---
+
+Complete: north is... → north is One of the four major compass points, specifically 0°, directed toward the North Pole, and conventionally upwards on a map, abbreviated as N..
+
+---
+
+Question: Define aga.
+Answer: An honorific for high officials used in Turkey and certain Muslim countries.
+
+---
+
+Complete: designed is... → designed is To plan and carry out (a picture, work of art, construction etc.)..
+
+---
+
+Question: What is sangi?
+Answer: sangi is .
+
+---
+
+Complete: son is... → son is .
+
+---
+
+Question: Define three.
+Answer: The digit/figure 3.
+
+---
+
+Complete: locally is... → locally is .
+
+---
+
+Question: What is chemist?
+Answer: chemist is A person who specializes in the science of chemistry, especially at a professional level..
+
+---
+
+Complete: begins is... → begins is To start, to initiate or take the first step into something..
+
+---
+
+Question: Define lasiopetaleae.
+Answer: 
+
+---
+
+Continue: A harem or harim is a domestic space that is reserved for the women of the house, especially in a Muslim family. → A harem may house a man's wife or wives, their pre-pubescent male sons, unmarried daughters, female domestic servants, and other unmarried female relatives. In the past, during the era of slavery in the Muslim world, harems also housed enslaved concubines.
+
+---
+
+Question: What is species?
+Answer: species is Type or kind. (Compare race.).
+
+---
+
+Complete: full is... → full is .
+
+---
+
+Question: Define german.
+Answer: A near relative.
+
+---
+
+CSS selectors target HTML elements for styling. You can select by tag name, class, ID, or other attributes.
+
+---
+
+Question: What is seven?
+Answer: seven is The digit/figure 7 or an occurrence thereof..
+
+---
+
+Complete: found is... → found is To encounter or discover by accident; to happen upon..
+
+---
+
+Complete: central is... → central is Being in the centre..
+
+---
+
+Question: Define been.
+Answer: A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey.
+
+---
+
+Question: Define fairfield.
+Answer: 
+
+---
+
+Question: What is war?
+Answer: war is .
+
+---
+
+Question: What is full?
+Answer: full is .
+
+---
+
+Question: Define the.
+Answer: With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives.
+
+---
+
+Complete: replaces is... → replaces is To restore to a former place, position, condition, etc.; to put back.
+
+---
+
+Complete: william is... → william is .
+
+---
+
+Question: What is operator?
+Answer: operator is One who operates..
+
+---
+
+Question: What is loew?
+Answer: loew is .
+
+---
+
+Complete: subfamily is... → subfamily is A taxonomic category ranking between a family and a genus; formerly called a tribe.
+
+---
+
+Question: Define masovian.
+Answer: 
+
+---
+
+Question: What is ncaa did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons?
+Answer: The NCAA did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+
+---
+
+Question: Define first.
+Answer: The person or thing in the first position.
+
+---
+
+Complete: species is... → species is Type or kind. (Compare race.).
+
+---
+
+Question: Define osice.
+Answer: 
+
+---
+
+Question: Define central.
+Answer: Being in the centre.
+
+---
+
+Question: Define gamespace.
+Answer: 
+
+---
+
+Complete: house is... → house is .
+
+---
+
+Question: What is has?
+Answer: has is To possess, own..
+
+---
+
+Question: What is mszanna?
+Answer: mszanna is .
+
+---
+
+Question: What is byttnerioideae?
+Answer: byttnerioideae is .
+
+---
+
+Question: Define cinema.
+Answer: A movie theatre, a movie house
+
+---
+
+Complete: level is... → level is A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Question: Explain html elements.
+Answer: HTML elements are the building blocks of web pages. Each element has an opening tag, content, and a closing tag.
+
+---
+
+Continue: A harem or harim is a domestic space that is reserved for the women of the house, especially in a Muslim family. A harem may house a man's wife or wives, their pre-pubescent male sons, unmarried daughters, female domestic servants, and other unmarried female relatives. → In the past, during the era of slavery in the Muslim world, harems also housed enslaved concubines. In former times, some harems were guarded by eunuchs who were allowed inside.
+
+---
+
+Question: What is commands?
+Answer: commands is An order to do something..
+
+---
+
+Question: Define same.
+Answer: Not different or other; not another or others; not different as regards self; selfsame; identical.
+
+---
+
+A list is an ordered collection of items in Python. Lists are mutable, meaning you can change them after creation.
+
+---
+
+Question: Define singapore.
+Answer: 
+
+---
+
+Question: What is composes?
+Answer: composes is To make something by merging parts..
+
+---
+
+Complete: board is... → board is A relatively long, wide and thin piece of any material, usually wood or similar, often for use in construction or furniture-making..
+
+---
+
+Complete: family is... → family is A group of people who are closely related to one another (by blood, marriage or adoption); kin; for example, a set of parents and their children; an immediate family..
+
+---
+
+Question: What is governor?
+Answer: governor is .
+
+---
+
+Complete: gamespace is... → gamespace is .
+
+---
+
+Complete: significant is... → significant is .
+
+---
+
+Complete: khan is... → khan is A ruler over various Turkish, Tatar and Mongol peoples in the Middle Ages..
+
+---
+
+Complete: late is... → late is A shift (scheduled work period) that takes place late in the day or at night..
+
+---
+
+Question: Define junction.
+Answer: The act of joining, or the state of being joined.
+
+---
+
+Question: Define obeys.
+Answer: To do as ordered by (a person, institution etc), to act according to the bidding of.
+
+---
+
+Question: What is register?
+Answer: register is .
+
+---
+
+Question: Define prefecture.
+Answer: The office or position of a prefect.
+
+---
+
+Complete: awards is... → awards is A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted..
+
+---
+
+Question: Define son.
+Answer: 
+
+---
+
+Complete: lumber is... → lumber is .
+
+---
+
+Question: What is including?
+Answer: including is To bring into a group, class, set, or total as a (new) part or member..
+
+---
+
+Question: Define century.
+Answer: A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100.
+
+---
+
+Question: Define comprises.
+Answer: To be made up of; to consist of (especially a comprehensive list of parts).
+
+---
+
+Complete: poland is... → poland is .
+
+---
+
+Complete: little is... → little is A small amount..
+
+---
+
+Complete: bovie is... → bovie is .
+
+---
+
+Question: Define won.
+Answer: To conquer, defeat.
+
+---
+
+Complete: emirate is... → emirate is A country ruled by an emir..
+
+---
+
+Question: What is plant?
+Answer: plant is An organism that is not an animal, especially an organism capable of photosynthesis. Typically a small or herbaceous organism of this kind, rather than a tree..
+
+---
+
+Question: What is maine?
+Answer: maine is .
+
+---
+
+Question: What is summit?
+Answer: summit is .
+
+---
+
+Complete: mie is... → mie is .
+
+---
+
+Question: What is curryhills?
+Answer: curryhills is .
+
+---
+
+Complete: electric is... → electric is (usually with definite article) Electricity; the electricity supply..
+
+---
+
+Complete: diplothemium is... → diplothemium is .
+
+---
+
+Complete: malvaceae is... → malvaceae is .
+
+---
+
+Question: What is voivodeship?
+Answer: voivodeship is .
+
+---
+
+Question: What is beetle?
+Answer: beetle is A small car, the Volkswagen Beetle (original version made 1938–2003, similar models made 1997–2010 and since 2011).
+
+---
+
+Question: What is italianate?
+Answer: italianate is .
+
+---
+
+Complete: the is... → the is With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives..
+
+---
+
+Question: What is located?
+Answer: located is To place; to set in a particular spot or position..
+
+---
+
+Question: What is been?
+Answer: been is A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey..
+
+---
+
+Question: What is invented?
+Answer: invented is To design a new process or mechanism..
+
+---
+
+Complete: private is... → private is A soldier of the lowest rank in the army..
+
+---
+
+Question: Define olszanka.
+Answer: 
+
+---
+
+Question: Define plays.
+Answer: Activity for amusement only, especially among the young.
+
+---
+
+Complete: olszanka is... → olszanka is .
+
+---
+
+Question: What is player?
+Answer: player is One that plays.
+
+---
+
+Question: What is home?
+Answer: home is .
+
+---
+
+Complete: cinema is... → cinema is A movie theatre, a movie house.
+
+---
+
+Question: What is level?
+Answer: level is A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Question: What is beginning with the southeastern conference in 1992, fbs conferences introduced championship games, which have always counted toward official single-season and career statistics?
+Answer: Beginning with the Southeastern Conference in 1992, FBS conferences introduced championship games, which have always counted toward official single-season and career statistics.
+
+---
+
+Complete: first is... → first is The person or thing in the first position..
+
+---
+
+Complete: for is... → for is .
+
+---
+
+Question: What is early?
+Answer: early is A shift (scheduled work period) that takes place early in the day..
+
+---
+
+Question: Explain bowl games were not included in single-season or career statistics until 2002.
+Answer: Bowl games were not included in single-season or career statistics until 2002.
+
+---
+
+Question: Define player.
+Answer: One that plays
+
+---
+
+Complete: orchestral is... → orchestral is An orchestral performance..
+
+---
+
+Question: What is schmittberger?
+Answer: schmittberger is .
+
+---
+
+Question: Define william.
+Answer: 
+
+---
+
+Question: Explain 13 most beautiful...songs for andy warhol's screen tests (2010) is the third studio album by dean & britta.
+Answer: 13 Most Beautiful...Songs for Andy Warhol's Screen Tests (2010) is the third studio album by Dean & Britta.
+
+---
+
+Question: Tell me about bowl games were not included in single-season or career statistics until 2002.
+Answer: Bowl games were not included in single-season or career statistics until 2002.
+
+---
+
+Complete: aman is... → aman is .
+
+---
+
+Complete: singapore is... → singapore is .
+
+---
+
+Complete: population is... → population is The people living within a political or geographical boundary..
+
+---
+
+Question: Define dublin.
+Answer: 
+
+---
+
+Complete: chessboards is... → chessboards is The square board used in the game of chess, subdivided into eight rows of eight squares each, the squares in each row and column being of alternating colours..
+
+---
+
+Complete: located is... → located is To place; to set in a particular spot or position..
+
+---
+
+Question: What is century?
+Answer: century is A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100..
+
+---
+
+Question: Describe ncaa did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+Answer: The NCAA did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+
+---
+
+Question: What is abecassis?
+Answer: abecassis is .
+
+---
+
+Question: What is from?
+Answer: from is Used to indicate source or provenance..
+
+---
+
+Complete: brazil is... → brazil is A red-orange dye obtained from brazil wood..
+
+---
+
+Complete: masjid is... → masjid is A mosque..
+
+---
+
+Question: What is orchestral?
+Answer: orchestral is An orchestral performance..
+
+---
+
+Complete: including is... → including is To bring into a group, class, set, or total as a (new) part or member..
+
+---
+
+Complete: wayne is... → wayne is .
+
+---
+
+Question: What is founded?
+Answer: founded is To start (an institution or organization)..
+
+---
+
+Question: What is eryck?
+Answer: eryck is .
+
+---
+
+Complete: electronic is... → electronic is : Of or pertaining to an electron or electrons..
+
+---
+
+Question: Define sangi.
+Answer: 
+
+---
+
+Question: What is darul?
+Answer: darul is .
+
+---
+
+Question: What is his?
+Answer: his is .
+
+---
+
+Question: Define eastern.
+Answer: Of, facing, situated in, or related to the east.
+
+---
+
+Question: What is ireland?
+Answer: ireland is .
+
+---
+
+Question: Define passenger.
+Answer: One who rides or travels in a vehicle, but who does not operate it and is not a member of the crew.
+
+---
+
+Question: What is rules?
+Answer: rules is A regulation, law, guideline..
+
+---
+
+Question: Describe harem or harim is a domestic space that is reserved for the women of the house, especially in a muslim family.
+Answer: A harem or harim is a domestic space that is reserved for the women of the house, especially in a Muslim family.
+
+---
+
+Question: What is electronic?
+Answer: electronic is : Of or pertaining to an electron or electrons..
+
+---
+
+Complete: seven is... → seven is The digit/figure 7 or an occurrence thereof..
+
+---
+
+Complete: passenger is... → passenger is One who rides or travels in a vehicle, but who does not operate it and is not a member of the crew..
+
+---
+
+Question: Define family.
+Answer: A group of people who are closely related to one another (by blood, marriage or adoption); kin; for example, a set of parents and their children; an immediate family.
+
+---
+
+Question: Define dimensional.
+Answer: 
+
+---
+
+Question: What is ncaa division i fbs passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage?
+Answer: The NCAA Division I FBS passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+
+---
+
+Question: Define music.
+Answer: A series of sounds organized in time, employing melody, harmony, tempo etc. usually to convey a mood.
+
+---
+
+Question: What is olszanka?
+Answer: olszanka is .
+
+---
+
+Question: What is malvaceae?
+Answer: malvaceae is .
+
+---
+
+Complete: guitar is... → guitar is A stringed musical instrument, of European origin, usually with a fretted fingerboard and six strings, played with the fingers or a plectrum (guitar pick)..
+
+---
+
+Question: Define emirate.
+Answer: A country ruled by an emir.
+
+---
+
+Complete: baron is... → baron is .
+
+---
+
+Question: Define lumber.
+Answer: 
+
+---
+
+Question: What is than?
+Answer: than is At that time; then..
+
+---
+
+Complete: register is... → register is .
+
+---
+
+Complete: abu is... → abu is .
+
+---
+
+Question: What is historic?
+Answer: historic is .
+
+---
+
+Complete: his is... → his is .
+
+---
+
+Question: Define also.
+Answer: 
+
+---
+
+Complete: sangi is... → sangi is .
+
+---
+
+Question: What is awards?
+Answer: awards is A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted..
+
+---
+
+Complete: kildare is... → kildare is .
+
+---
+
+Question: What is the?
+Answer: the is With a comparative or with more and a verb phrase, establishes a correlation with one or more other such comparatives..
+
+---
+
+Complete: maine is... → maine is .
+
+---
+
+Complete: war is... → war is .
+
+---
+
+Question: Explain python functions.
+Answer: A function is a reusable block of code that performs a specific task. Functions help organize code and avoid repetition.
+
+---
+
+Question: What is revival?
+Answer: revival is .
+
+---
+
+Question: Define for.
+Answer: 
+
+---
+
+Question: What is guitar?
+Answer: guitar is A stringed musical instrument, of European origin, usually with a fretted fingerboard and six strings, played with the fingers or a plectrum (guitar pick)..
+
+---
+
+Question: Explain ncaa did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+Answer: The NCAA did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+
+---
+
+Question: Explain ncaa division i fbs passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+Answer: The NCAA Division I FBS passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+
+---
+
+Question: Explain flask routes.
+Answer: A route in Flask connects a URL to a Python function. When someone visits that URL, the function runs and returns a response.
+
+---
+
+Question: What is american?
+Answer: american is .
+
+---
+
+Complete: platinum is... → platinum is The chemical element with atomic number 78 and symbol Pt; a dense, malleable, ductile, highly unreactive, silverish-white transition metal of great value..
+
+---
+
+Question: Define empty.
+Answer: (usually plural) A container, especially a bottle, whose contents have been used up, leaving it empty.
+
+---
+
+Complete: region is... → region is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Question: Define significant.
+Answer: 
+
+---
+
+Question: Define largest.
+Answer: Of considerable or relatively great size or extent.
+
+---
+
+Question: Define khan.
+Answer: A ruler over various Turkish, Tatar and Mongol peoples in the Middle Ages.
+
+---
+
+Question: Explain beginning with the southeastern conference in 1992, fbs conferences introduced championship games, which have always counted toward official single-season and career statistics.
+Answer: Beginning with the Southeastern Conference in 1992, FBS conferences introduced championship games, which have always counted toward official single-season and career statistics.
+
+---
+
+Question: What is prosperous?
+Answer: prosperous is Characterized by success.
+
+---
+
+Question: What are javascript variables?
+Answer: Variables in JavaScript store data values. You can declare them with let, const, or var.
+
+---
+
+Complete: states is... → states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Question: Define operator.
+Answer: One who operates.
+
+---
+
+Question: What is lumber?
+Answer: lumber is .
+
+---
+
+Complete: range is... → range is A line or series of mountains, buildings, etc..
+
+---
+
+Question: Define rules.
+Answer: A regulation, law, guideline.
+
+---
+
+Complete: distinctive is... → distinctive is .
+
+---
+
+Question: Define electronic.
+Answer: : Of or pertaining to an electron or electrons.
+
+---
+
+Question: Define theater.
+Answer: A place or building, consisting of a stage and seating, in which an audience gathers to watch plays, musical performances, public ceremonies, and so on.
+
+---
+
+Complete: housing is... → housing is To keep within a structure or container..
+
+---
+
+Complete: plays is... → plays is Activity for amusement only, especially among the young..
+
+---
+
+Question: Explain ncaa ruled that the 2020 season, which was heavily disrupted by the covid-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+Answer: The NCAA ruled that the 2020 season, which was heavily disrupted by the COVID-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+
+---
+
+Question: Define north.
+Answer: One of the four major compass points, specifically 0°, directed toward the North Pole, and conventionally upwards on a map, abbreviated as N.
+
+---
+
+Question: Define little.
+Answer: A small amount.
+
+---
+
+Question: What is united?
+Answer: united is To bring together as one..
+
+---
+
+Complete: example is... → example is .
+
+---
+
+Question: Define range.
+Answer: A line or series of mountains, buildings, etc.
+
+---
+
+Question: Define eryck.
+Answer: 
+
+---
+
+Question: What is abu?
+Answer: abu is .
+
+---
+
+Question: Describe 13 most beautiful...songs for andy warhol's screen tests (2010) is the third studio album by dean & britta.
+Answer: 13 Most Beautiful...Songs for Andy Warhol's Screen Tests (2010) is the third studio album by Dean & Britta.
+
+---
+
+Question: Define replaces.
+Answer: To restore to a former place, position, condition, etc.; to put back
+
+---
+
+Question: What is flowering?
+Answer: flowering is To put forth blooms..
+
+---
+
+Question: What are python functions?
+Answer: A function is a reusable block of code that performs a specific task. Functions help organize code and avoid repetition.
+
+---
+
+Question: Define within.
+Answer: In the context of which the present document or ruling is made.
+
+---
+
+Complete: governor is... → governor is .
+
+---
+
+Question: Define from.
+Answer: Used to indicate source or provenance.
+
+---
+
+Question: What is won?
+Answer: won is To conquer, defeat..
+
+---
+
+Question: Define house.
+Answer: 
+
+---
+
+Complete: musician is... → musician is A composer, conductor, or performer of music; specifically, a person who sings and/or plays a musical instrument as a hobby, an occupation, or a profession..
+
+---
+
+Complete: about is... → about is Moving around; astir..
+
+---
+
+Question: What is brazil?
+Answer: brazil is A red-orange dye obtained from brazil wood..
+
+---
+
+Complete: beetle is... → beetle is A small car, the Volkswagen Beetle (original version made 1938–2003, similar models made 1997–2010 and since 2011).
+
+---
+
+Question: What is fairfield?
+Answer: fairfield is .
+
+---
+
+Complete: active is... → active is A person or thing that is acting or capable of acting..
+
+---
+
+Question: Define each.
+Answer: 
+
+---
+
+A function is a reusable block of code that performs a specific task. Functions help organize code and avoid repetition.
+
+---
+
+Question: What are css selectors?
+Answer: CSS selectors target HTML elements for styling. You can select by tag name, class, ID, or other attributes.
+
+---
+
+Question: What is states?
+Answer: states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Question: Define east.
+Answer: One of the four principal compass points, specifically 90°, conventionally directed to the right on maps; the direction of the rising sun at an equinox. Abbreviated as E.
+
+---
+
+Question: Tell me about helen jewel gray is an australian former swimmer.
+Answer: Helen Jewel Gray is an Australian former swimmer.
+
+---
+
+Complete: japan is... → japan is A hard black enamel varnish containing asphalt..
+
+---
+
+A route in Flask connects a URL to a Python function. When someone visits that URL, the function runs and returns a response.
+
+---
+
+Complete: chrysomelidae is... → chrysomelidae is .
+
+---
+
+Question: What is national?
+Answer: national is A subject of a nation..
+
+---
+
+Question: Define move.
+Answer: The act of moving; a movement.
+
+---
+
+Question: What is oasis?
+Answer: oasis is A spring of fresh water, surrounded by a fertile region of vegetation, in a desert..
+
+---
+
+Complete: styling is... → styling is .
+
+---
+
+Complete: certified is... → certified is To attest to (a fact) as the truth..
+
+---
+
+Question: What is variant?
+Answer: variant is Something that is slightly different from a type or norm..
+
+---
+
+Question: Define located.
+Answer: To place; to set in a particular spot or position.
+
+---
+
+Question: What is station?
+Answer: station is A stopping place..
+
+---
+
+Continue: 13 Most Beautiful...Songs for Andy Warhol's Screen Tests (2010) is the third studio album by Dean & Britta. It was commissioned by the Pittsburgh Cultural Trust and The Andy Warhol Museum in Pittsburgh, Pennsylvania, and was written to accompany a collection of screen tests filmed in the 1960s by Andy Warhol featuring stars from The Factory including Lou Reed, Nico, and Edie Sedgwick. → The album consists of 21 tracks, including several remixes, and is heavily influenced by the sound of the Velvet Underground.
+
+---
+
+Continue: The NCAA Division I FBS passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage. → These lists are disproportionately represented by more recent players for several structural and historical reasons:Since 1955, the length of the regular season has expanded from 10 games to 11 and later to 12 games, with some programs now playing additional postseason games, including conference championship games, bowl games, and the College Football Playoff.
+
+---
+
+Question: What is county?
+Answer: county is The land ruled by a count or a countess..
+
+---
+
+Question: Define maine.
+Answer: 
+
+---
+
+Question: Define flowering.
+Answer: To put forth blooms.
+
+---
+
+Question: What is theater?
+Answer: theater is A place or building, consisting of a stage and seating, in which an audience gathers to watch plays, musical performances, public ceremonies, and so on..
+
+---
+
+Complete: than is... → than is At that time; then..
+
+---
+
+Complete: eryck is... → eryck is .
+
+---
+
+Question: What is aman?
+Answer: aman is .
+
+---
+
+Complete: regional is... → regional is An entity or event with scope limited to a single region..
+
+---
+
+Complete: american is... → american is .
+
+---
+
+Question: Define designed.
+Answer: To plan and carry out (a picture, work of art, construction etc.).
+
+---
+
+Question: Define side.
+Answer: 
+
+---
+
+Question: Tell me about beginning with the southeastern conference in 1992, fbs conferences introduced championship games, which have always counted toward official single-season and career statistics.
+Answer: Beginning with the Southeastern Conference in 1992, FBS conferences introduced championship games, which have always counted toward official single-season and career statistics.
+
+---
+
+Question: What is active?
+Answer: active is A person or thing that is acting or capable of acting..
+
+---
+
+Question: What is each?
+Answer: each is .
+
+---
+
+Question: Tell me about the bird and the bee is an american indie pop musical duo from los angeles, consisting of inara george and greg kurstin.
+Answer: the bird and the bee is an American indie pop musical duo from Los Angeles, consisting of Inara George and Greg Kurstin.
+
+---
+
+Question: What is region?
+Answer: region is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Question: Define historic.
+Answer: 
+
+---
+
+Question: What is village?
+Answer: village is A rural habitation of size between a hamlet and a town..
+
+---
+
+Question: Define population.
+Answer: The people living within a political or geographical boundary.
+
+---
+
+Question: Explain helen jewel gray is an australian former swimmer.
+Answer: Helen Jewel Gray is an Australian former swimmer.
+
+---
+
+Question: What is mosque?
+Answer: mosque is A place of worship for Muslims, often having at least one minaret; a masjid..
+
+---
+
+Question: What is helen jewel gray is an australian former swimmer?
+Answer: Helen Jewel Gray is an Australian former swimmer.
+
+---
+
+Question: Define dhabi.
+Answer: 
+
+---
+
+Question: Define listed.
+Answer: 
+
+---
+
+Question: What is german?
+Answer: german is A near relative..
+
+---
+
+Question: Define city.
+Answer: A large settlement, bigger than a town; sometimes with a specific legal definition, depending on the place.
+
+---
+
+Question: What is place?
+Answer: place is (physical) An area; somewhere within an area..
+
+---
+
+Question: What is same?
+Answer: same is Not different or other; not another or others; not different as regards self; selfsame; identical..
+
+---
+
+Question: What is family?
+Answer: family is A group of people who are closely related to one another (by blood, marriage or adoption); kin; for example, a set of parents and their children; an immediate family..
+
+---
+
+Question: Define arab.
+Answer: 
+
+---
+
+Question: Define level.
+Answer: A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference.
+
+---
+
+Question: Define guitar.
+Answer: A stringed musical instrument, of European origin, usually with a fretted fingerboard and six strings, played with the fingers or a plectrum (guitar pick).
+
+---
+
+Question: What is dublin?
+Answer: dublin is .
+
+---
+
+Question: What is junction?
+Answer: junction is The act of joining, or the state of being joined..
+
+---
+
+Question: What is centuries?
+Answer: centuries is A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100..
+
+---
+
+Question: What is comprises?
+Answer: comprises is To be made up of; to consist of (especially a comprehensive list of parts)..
+
+---
+
+Complete: composes is... → composes is To make something by merging parts..
+
+---
+
+Question: What is town?
+Answer: town is A settlement; an area with residential districts, shops and amenities, and its own local government; especially one larger than a village and smaller than a city..
+
+---
+
+Question: Tell me about ncaa did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+Answer: The NCAA did not permit freshmen to compete in varsity football until 1972, preventing earlier players from accumulating statistics over four full seasons.
+
+---
+
+Question: What is for?
+Answer: for is .
+
+---
+
+Continue: the bird and the bee is an American indie pop musical duo from Los Angeles, consisting of Inara George and Greg Kurstin. → Kurstin is a nine-time Grammy Award–winning producer and multi-instrumentalist who has worked with artists including Sia, Adele, Beck, Kendrick Lamar, and the Foo Fighters. George and Kurstin met while the two were working on her debut album and they decided to collaborate on a jazz-influenced electropop project.
+
+---
+
+Question: Define board.
+Answer: A relatively long, wide and thin piece of any material, usually wood or similar, often for use in construction or furniture-making.
+
+---
+
+Complete: operator is... → operator is One who operates..
+
+---
+
+Question: What is locally?
+Answer: locally is .
+
+---
+
+HTML elements are the building blocks of web pages. Each element has an opening tag, content, and a closing tag.
+
+---
+
+Question: What is greek?
+Answer: greek is .
+
+---
+
+Question: What is street?
+Answer: street is A paved part of road, usually in a village or a town..
+
+---
+
+Question: What are html elements?
+Answer: HTML elements are the building blocks of web pages. Each element has an opening tag, content, and a closing tag.
+
+---
+
+Question: What is ncaa ruled that the 2020 season, which was heavily disrupted by the covid-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season?
+Answer: The NCAA ruled that the 2020 season, which was heavily disrupted by the COVID-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+
+---
+
+Complete: century is... → century is A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100..
+
+---
+
+Question: What is its?
+Answer: its is One who is neither a he nor a she; a creature; a dehumanized being..
+
+---
+
+Question: Define chamber.
+Answer: A room or set of rooms, particularly:
+
+---
+
+Question: What is bovie?
+Answer: bovie is .
+
+---
+
+Question: What is three?
+Answer: three is The digit/figure 3..
+
+---
+
+Question: What is japan?
+Answer: japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Question: What is years?
+Answer: years is A solar year, the time it takes the Earth to complete one revolution of the Sun (between 365.24 and 365.26 days depending on the point of reference)..
+
+---
+
+Question: Define diplothemium.
+Answer: 
+
+---
+
+Question: What is development?
+Answer: development is The process of developing; growth, directed change..
+
+---
+
+Complete: largest is... → largest is Of considerable or relatively great size or extent..
+
+---
+
+Question: What is passenger?
+Answer: passenger is One who rides or travels in a vehicle, but who does not operate it and is not a member of the crew..
+
+---
+
+Question: What is also?
+Answer: also is .
+
+---
+
+Complete: city is... → city is A large settlement, bigger than a town; sometimes with a specific legal definition, depending on the place..
+
+---
+
+Complete: oscar is... → oscar is Astronotus ocellatus, a cichlid fish, native to South America, sometimes kept in aquariums..
+
+---
+
+Question: What is lasiopetaleae?
+Answer: lasiopetaleae is .
+
+---
+
+Complete: music is... → music is A series of sounds organized in time, employing melody, harmony, tempo etc. usually to convey a mood..
+
+---
+
+Question: Explain python lists.
+Answer: A list is an ordered collection of items in Python. Lists are mutable, meaning you can change them after creation.
+
+---
+
+Complete: revival is... → revival is .
+
+---
+
+Question: What is armies?
+Answer: armies is A large, highly organized military force, concerned mainly with ground (rather than air or naval) operations..
+
+---
+
+Complete: each is... → each is .
+
+---
+
+Question: Define seven.
+Answer: The digit/figure 7 or an occurrence thereof.
+
+---
+
+Question: What is move?
+Answer: move is The act of moving; a movement..
+
+---
+
+Question: What is parallel?
+Answer: parallel is .
+
+---
+
+Question: What is tribe?
+Answer: tribe is A socially, ethnically, or politically cohesive group of people..
+
+---
+
+Complete: aga is... → aga is An honorific for high officials used in Turkey and certain Muslim countries..
+
+---
+
+Question: What is found?
+Answer: found is To encounter or discover by accident; to happen upon..
+
+---
+
+Complete: national is... → national is A subject of a nation..
+
+---
+
+Question: Define railway.
+Answer: A transport system using rails used to move passengers or goods.
+
+---
+
+A dictionary stores key-value pairs. Each key is unique and maps to a specific value, like a real dictionary maps words to definitions.
+
+---
+
+Complete: been is... → been is A flying insect, of the clade Anthophila within the hymenopteran superfamily Apoidea, known for its organised societies (though only a minority have them), for collecting pollen and (in some species) producing wax and honey..
+
+---
+
+Question: Define variant.
+Answer: Something that is slightly different from a type or norm.
+
+---
+
+Complete: levels is... → levels is A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Question: What is older?
+Answer: older is Of an object, concept, relationship, etc., having existed for a relatively long period of time..
+
+---
+
+Question: Define kildare.
+Answer: 
+
+---
+
+Question: What is late?
+Answer: late is A shift (scheduled work period) that takes place late in the day or at night..
+
+---
+
+Question: What is north?
+Answer: north is One of the four major compass points, specifically 0°, directed toward the North Pole, and conventionally upwards on a map, abbreviated as N..
+
+---
+
+Question: Define states.
+Answer: A condition; a set of circumstances applying at any given time.
+
+---
+
+Question: What is townland?
+Answer: townland is A geographical unit of land smaller than a parish..
+
+---
+
+Question: What is operated?
+Answer: operated is To perform a work or labour; to exert power or strength, physical or mechanical; to act..
+
+---
+
+Complete: centuries is... → centuries is A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100..
+
+---
+
+Question: What is private?
+Answer: private is A soldier of the lowest rank in the army..
+
+---
+
+Question: What is architecture?
+Answer: architecture is The art and science of designing and managing the construction of buildings and other structures, particularly if they are well proportioned and decorated..
+
+---
+
+Question: Define darul.
+Answer: 
+
+---
+
+Question: What is regional?
+Answer: regional is An entity or event with scope limited to a single region..
+
+---
+
+Complete: abecassis is... → abecassis is .
+
+---
+
+Question: Define full.
+Answer: 
+
+---
+
+Complete: dimensional is... → dimensional is .
+
+---
+
+Complete: chamber is... → chamber is A room or set of rooms, particularly:.
+
+---
+
+Complete: dhabi is... → dhabi is .
+
+---
+
+Question: What is administrative?
+Answer: administrative is Of or relating to administering or administration..
+
+---
+
+Complete: seldon is... → seldon is .
+
+---
+
+Complete: summit is... → summit is .
+
+---
+
+Question: What is dhabi?
+Answer: dhabi is .
+
+---
+
+Question: What is making?
+Answer: making is The act of forming, causing, or constituting; workmanship; construction..
+
+---
+
+Complete: dublin is... → dublin is .
+
+---
+
+Question: What is levels?
+Answer: levels is A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Complete: making is... → making is The act of forming, causing, or constituting; workmanship; construction..
+
+---
+
+Question: Define oasis.
+Answer: A spring of fresh water, surrounded by a fertile region of vegetation, in a desert.
+
+---
+
+Question: Tell me about ncaa division i fbs passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+Answer: The NCAA Division I FBS passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+
+---
+
+Complete: early is... → early is A shift (scheduled work period) that takes place early in the day..
+
+---
+
+Complete: won is... → won is To conquer, defeat..
+
+---
+
+Question: What is was?
+Answer: was is .
+
+---
+
+Question: What is begins?
+Answer: begins is To start, to initiate or take the first step into something..
+
+---
+
+Complete: this is... → this is .
+
+---
+
+Question: What is listed?
+Answer: listed is .
+
+---
+
+Question: Define general.
+Answer: A general fact or proposition; a generality.
+
+---
+
+Complete: situated is... → situated is To place on or into a physical location..
+
+---
+
+Question: Define housing.
+Answer: To keep within a structure or container.
+
+---
+
+Question: What is harem or harim is a domestic space that is reserved for the women of the house, especially in a muslim family?
+Answer: A harem or harim is a domestic space that is reserved for the women of the house, especially in a Muslim family.
+
+---
+
+Complete: player is... → player is One that plays.
+
+---
+
+Question: What is mie?
+Answer: mie is .
+
+---
+
+Question: Define connor.
+Answer: 
+
+---
+
+Question: Define revival.
+Answer: 
+
+---
+
+Question: Define than.
+Answer: At that time; then.
+
+---
+
+Question: Tell me about harem or harim is a domestic space that is reserved for the women of the house, especially in a muslim family.
+Answer: A harem or harim is a domestic space that is reserved for the women of the house, especially in a Muslim family.
+
+---
+
+Complete: rory is... → rory is .
+
+---
+
+Question: What is emirate?
+Answer: emirate is A country ruled by an emir..
+
+---
+
+Complete: theater is... → theater is A place or building, consisting of a stage and seating, in which an audience gathers to watch plays, musical performances, public ceremonies, and so on..
+
+---
+
+Question: Define distinctive.
+Answer: 
+
+---
+
+Continue: 13 Most Beautiful...Songs for Andy Warhol's Screen Tests (2010) is the third studio album by Dean & Britta. → It was commissioned by the Pittsburgh Cultural Trust and The Andy Warhol Museum in Pittsburgh, Pennsylvania, and was written to accompany a collection of screen tests filmed in the 1960s by Andy Warhol featuring stars from The Factory including Lou Reed, Nico, and Edie Sedgwick. The album consists of 21 tracks, including several remixes, and is heavily influenced by the sound of the Velvet Underground.
+
+---
+
+Question: Define wayne.
+Answer: 
+
+---
+
+Question: What is cephaloleia?
+Answer: cephaloleia is .
+
+---
+
+Question: What is khan?
+Answer: khan is A ruler over various Turkish, Tatar and Mongol peoples in the Middle Ages..
+
+---
+
+Question: Define agricultural.
+Answer: A product or commodity from agriculture.
+
+---
+
+Question: What is own?
+Answer: own is Belonging to; possessed; proper to. Often marks a possessive determiner as reflexive, referring back to the subject of the clause or sentence..
+
+---
+
+Complete: architecture is... → architecture is The art and science of designing and managing the construction of buildings and other structures, particularly if they are well proportioned and decorated..
+
+---
+
+Complete: prosperous is... → prosperous is Characterized by success.
+
+---
+
+Question: Define own.
+Answer: Belonging to; possessed; proper to. Often marks a possessive determiner as reflexive, referring back to the subject of the clause or sentence.
+
+---
+
+Complete: united is... → united is To bring together as one..
+
+---
+
+Question: What is dimensional?
+Answer: dimensional is .
+
+---
+
+Question: What is general?
+Answer: general is A general fact or proposition; a generality..
+
+---
+
+Question: What is son?
+Answer: son is .
+
+---
+
+Question: Define development.
+Answer: The process of developing; growth, directed change.
+
+---
+
+Question: What is board?
+Answer: board is A relatively long, wide and thin piece of any material, usually wood or similar, often for use in construction or furniture-making..
+
+---
+
+Complete: own is... → own is Belonging to; possessed; proper to. Often marks a possessive determiner as reflexive, referring back to the subject of the clause or sentence..
+
+---
+
+Question: What are python lists?
+Answer: A list is an ordered collection of items in Python. Lists are mutable, meaning you can change them after creation.
+
+---
+
+Question: What is gamespace?
+Answer: gamespace is .
+
+---
+
+Question: Define situated.
+Answer: To place on or into a physical location.
+
+---
+
+Complete: geylang is... → geylang is .
+
+---
+
+Question: Explain javascript variables.
+Answer: Variables in JavaScript store data values. You can declare them with let, const, or var.
+
+---
+
+Complete: award is... → award is A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted..
+
+---
+
+Complete: invented is... → invented is To design a new process or mechanism..
+
+---
+
+Question: Define oscar.
+Answer: Astronotus ocellatus, a cichlid fish, native to South America, sometimes kept in aquariums.
+
+---
+
+Question: Define active.
+Answer: A person or thing that is acting or capable of acting.
+
+---
+
+Question: Define chessboards.
+Answer: The square board used in the game of chess, subdivided into eight rows of eight squares each, the squares in each row and column being of alternating colours.
+
+---
+
+Question: What is significant?
+Answer: significant is .
+
+---
+
+Question: Define byttnerioideae.
+Answer: 
+
+---
+
+Question: Define mszanna.
+Answer: 
+
+---
+
+Complete: older is... → older is Of an object, concept, relationship, etc., having existed for a relatively long period of time..
+
+---
+
+Question: Define built.
+Answer: To form (something) by combining materials or parts.
+
+---
+
+Question: Define tribe.
+Answer: A socially, ethnically, or politically cohesive group of people.
+
+---
+
+Question: What is little?
+Answer: little is A small amount..
+
+---
+
+Complete: junction is... → junction is The act of joining, or the state of being joined..
+
+---
+
+Question: Define chess.
+Answer: 
+
+---
+
+Complete: fairfield is... → fairfield is .
+
+---
+
+Complete: emirates is... → emirates is A country ruled by an emir..
+
+---
+
+Question: What is gmina?
+Answer: gmina is .
+
+---
+
+Question: Define found.
+Answer: To encounter or discover by accident; to happen upon.
+
+---
+
+Question: What is and?
+Answer: and is In rhythm, the second half of a divided beat..
+
+---
+
+Question: What is the bird and the bee is an american indie pop musical duo from los angeles, consisting of inara george and greg kurstin?
+Answer: the bird and the bee is an American indie pop musical duo from Los Angeles, consisting of Inara George and Greg Kurstin.
+
+---
+
+Complete: schmittberger is... → schmittberger is .
+
+---
+
+Question: Define region.
+Answer: Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons.
+
+---
+
+Complete: east is... → east is One of the four principal compass points, specifically 90°, conventionally directed to the right on maps; the direction of the rising sun at an equinox. Abbreviated as E..
+
+---
+
+Complete: wide is... → wide is A ball that passes so far from the batsman that the umpire deems it unplayable; the arm signal used by an umpire to signal a wide; the extra run added to the batting side's score.
+
+---
+
+Question: Define commands.
+Answer: An order to do something.
+
+---
+
+Question: Define chrysomelidae.
+Answer: 
+
+---
+
+Question: Define begins.
+Answer: To start, to initiate or take the first step into something.
+
+---
+
+Complete: ireland is... → ireland is .
+
+---
+
+Question: Define styling.
+Answer: 
+
+---
+
+Question: What is emirates?
+Answer: emirates is A country ruled by an emir..
+
+---
+
+Question: Define governor.
+Answer: 
+
+---
+
+Question: Define abu.
+Answer: 
+
+---
+
+Question: Define county.
+Answer: The land ruled by a count or a countess.
+
+---
+
+Question: What is osice?
+Answer: osice is .
+
+---
+
+Question: Define japan.
+Answer: A hard black enamel varnish containing asphalt.
+
+---
+
+Question: Define regional.
+Answer: An entity or event with scope limited to a single region.
+
+---
+
+Complete: composer is... → composer is One who composes; an author..
+
+---
+
+Complete: loew is... → loew is .
+
+---
+
+Question: Define place.
+Answer: (physical) An area; somewhere within an area.
+
+---
+
+Question: What is range?
+Answer: range is A line or series of mountains, buildings, etc..
+
+---
+
+Complete: byttnerioideae is... → byttnerioideae is .
+
+---
+
+Complete: station is... → station is A stopping place..
+
+---
+
+Complete: flowering is... → flowering is To put forth blooms..
+
+---
+
+Question: Define voivodeship.
+Answer: 
+
+---
+
+Complete: lasiopetaleae is... → lasiopetaleae is .
+
+---
+
+Question: What is baron?
+Answer: baron is .
+
+---
+
+Question: Define brazil.
+Answer: A red-orange dye obtained from brazil wood.
+
+---
+
+Question: Define operated.
+Answer: To perform a work or labour; to exert power or strength, physical or mechanical; to act.
+
+---
+
+Complete: italianate is... → italianate is .
+
+---
+
+Complete: years is... → years is A solar year, the time it takes the Earth to complete one revolution of the Sun (between 365.24 and 365.26 days depending on the point of reference)..
+
+---
+
+Question: Define aman.
+Answer: 
+
+---
+
+Complete: term is... → term is .
+
+---
+
+Question: Define was.
+Answer: 
+
+---
+
+Question: Describe beginning with the southeastern conference in 1992, fbs conferences introduced championship games, which have always counted toward official single-season and career statistics.
+Answer: Beginning with the Southeastern Conference in 1992, FBS conferences introduced championship games, which have always counted toward official single-season and career statistics.
+
+---
+
+Question: Explain the bird and the bee is an american indie pop musical duo from los angeles, consisting of inara george and greg kurstin.
+Answer: the bird and the bee is an American indie pop musical duo from Los Angeles, consisting of Inara George and Greg Kurstin.
+
+---
+
+Question: What is situated?
+Answer: situated is To place on or into a physical location..
+
+---
+
+Complete: ain is... → ain is .
+
+---
+
+Question: Define architecture.
+Answer: The art and science of designing and managing the construction of buildings and other structures, particularly if they are well proportioned and decorated.
+
+---
+
+Complete: variant is... → variant is Something that is slightly different from a type or norm..
+
+---
+
+Question: What is prefecture?
+Answer: prefecture is The office or position of a prefect..
+
+---
+
+Question: Define composer.
+Answer: One who composes; an author.
+
+---
+
+Question: What is term?
+Answer: term is .
+
+---
+
+Complete: empty is... → empty is (usually plural) A container, especially a bottle, whose contents have been used up, leaving it empty..
+
+---
+
+Question: What is masjid?
+Answer: masjid is A mosque..
+
+---
+
+Question: Define term.
+Answer: 
+
+---
+
+Question: What is masovian?
+Answer: masovian is .
+
+---
+
+Question: What is agricultural?
+Answer: agricultural is A product or commodity from agriculture..
+
+---
+
+Complete: town is... → town is A settlement; an area with residential districts, shops and amenities, and its own local government; especially one larger than a village and smaller than a city..
+
+---
+
+Question: Define founded.
+Answer: To start (an institution or organization).
+
+---
+
+Question: Tell me about 13 most beautiful...songs for andy warhol's screen tests (2010) is the third studio album by dean & britta.
+Answer: 13 Most Beautiful...Songs for Andy Warhol's Screen Tests (2010) is the third studio album by Dean & Britta.
+
+---
+
+Question: What is distinctive?
+Answer: distinctive is .
+
+---
+
+Question: What is chess?
+Answer: chess is .
+
+---
+
+Question: What is chessboards?
+Answer: chessboards is The square board used in the game of chess, subdivided into eight rows of eight squares each, the squares in each row and column being of alternating colours..
+
+---
+
+Question: Explain git commits.
+Answer: A commit in Git saves changes to your repository. Each commit has a unique hash and a message describing the changes.
+
+---
+
+Question: Define register.
+Answer: 
+
+---
+
+Question: Explain css selectors.
+Answer: CSS selectors target HTML elements for styling. You can select by tag name, class, ID, or other attributes.
+
+---
+
+Complete: osice is... → osice is .
+
+---
+
+Question: What is district?
+Answer: district is An administrative division of an area..
+
+---
+
+Question: Define district.
+Answer: An administrative division of an area.
+
+---
+
+Question: Define ireland.
+Answer: 
+
+---
+
+Complete: listed is... → listed is .
+
+---
+
+Question: What is composer?
+Answer: composer is One who composes; an author..
+
+---
+
+Question: Define emirates.
+Answer: A country ruled by an emir.
+
+---
+
+Question: Define composes.
+Answer: To make something by merging parts.
+
+---
+
+Question: Define example.
+Answer: 
+
+---
+
+Complete: different is... → different is The different ideal..
+
+---
+
+Complete: prefecture is... → prefecture is The office or position of a prefect..
+
+---
+
+Question: Define early.
+Answer: A shift (scheduled work period) that takes place early in the day.
+
+---
+
+Question: Define town.
+Answer: A settlement; an area with residential districts, shops and amenities, and its own local government; especially one larger than a village and smaller than a city.
+
+---
+
+Question: What is places?
+Answer: places is .
+
+---
+
+Complete: founded is... → founded is To start (an institution or organization)..
+
+---
+
+Question: What is bowl games were not included in single-season or career statistics until 2002?
+Answer: Bowl games were not included in single-season or career statistics until 2002.
+
+---
+
+Question: What is rory?
+Answer: rory is .
+
+---
+
+Complete: railway is... → railway is A transport system using rails used to move passengers or goods..
+
+---
+
+Question: Define schmittberger.
+Answer: 
+
+---
+
+Complete: arab is... → arab is .
+
+---
+
+Question: Define chemist.
+Answer: A person who specializes in the science of chemistry, especially at a professional level.
+
+---
+
+Question: Define two.
+Answer: The digit/figure 2.
+
+---
+
+Question: What is empty?
+Answer: empty is (usually plural) A container, especially a bottle, whose contents have been used up, leaving it empty..
+
+---
+
+Question: What is styling?
+Answer: styling is .
+
+---
+
+Question: Define this.
+Answer: 
+
+---
+
+Complete: operated is... → operated is To perform a work or labour; to exert power or strength, physical or mechanical; to act..
+
+---
+
+Complete: worlds is... → worlds is (with "the") Human collective existence; existence in general..
+
+---
+
+Question: What is chamber?
+Answer: chamber is A room or set of rooms, particularly:.
+
+---
+
+Question: What is musician?
+Answer: musician is A composer, conductor, or performer of music; specifically, a person who sings and/or plays a musical instrument as a hobby, an occupation, or a profession..
+
+---
+
+Question: What is housing?
+Answer: housing is To keep within a structure or container..
+
+---
+
+Complete: eastern is... → eastern is Of, facing, situated in, or related to the east..
+
+---
+
+Question: Define awards.
+Answer: A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted.
+
+---
+
+Question: What is designed?
+Answer: designed is To plan and carry out (a picture, work of art, construction etc.)..
+
+---
+
+Question: Define loew.
+Answer: 
+
+---
+
+Complete: village is... → village is A rural habitation of size between a hamlet and a town..
+
+---
+
+Question: Describe the bird and the bee is an american indie pop musical duo from los angeles, consisting of inara george and greg kurstin.
+Answer: the bird and the bee is an American indie pop musical duo from Los Angeles, consisting of Inara George and Greg Kurstin.
+
+---
+
+Question: Define cephaloleia.
+Answer: 
+
+---
+
+Question: What is architects?
+Answer: architects is A professional who designs buildings or other structures, or who prepares plans and superintends construction..
+
+---
+
+Question: What is example?
+Answer: example is .
+
+---
+
+Question: Define abecassis.
+Answer: 
+
+---
+
+Complete: mszanna is... → mszanna is .
+
+---
+
+Question: What is william?
+Answer: william is .
+
+---
+
+Question: What is railway?
+Answer: railway is A transport system using rails used to move passengers or goods..
+
+---
+
+Complete: mosque is... → mosque is A place of worship for Muslims, often having at least one minaret; a masjid..
+
+---
+
+Question: What is about?
+Answer: about is Moving around; astir..
+
+---
+
+Question: Define national.
+Answer: A subject of a nation.
+
+---
+
+Continue: Helen Jewel Gray is an Australian former swimmer. → She competed in the women's 200 metre freestyle at the 1972 Summer Olympics. She was from Townsville in Queensland.
+
+---
+
+Question: Define village.
+Answer: A rural habitation of size between a hamlet and a town.
+
+---
+
+Question: What is roads?
+Answer: roads is A way used for travelling between places, originally one wide enough to allow foot passengers and horses to travel, now (US) usually one surfaced with asphalt or concrete and designed to accommodate many vehicles travelling in both directions. In the UK both senses are heard: a country road is the same as a country lane..
+
+---
+
+Question: Define older.
+Answer: Of an object, concept, relationship, etc., having existed for a relatively long period of time.
+
+---
+
+Question: What is central?
+Answer: central is Being in the centre..
+
+---
+
+Complete: german is... → german is A near relative..
+
+---
+
+Complete: oasis is... → oasis is A spring of fresh water, surrounded by a fertile region of vegetation, in a desert..
+
+---
+
+Question: Define places.
+Answer: 
+
+---
+
+Complete: place is... → place is (physical) An area; somewhere within an area..
+
+---
+
+Question: Define malvaceae.
+Answer: 
+
+---
+
+Question: Define parallel.
+Answer: 
+
+---
+
+Question: Define making.
+Answer: The act of forming, causing, or constituting; workmanship; construction.
+
+---
+
+Question: Define levels.
+Answer: A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference.
+
+---
+
+Complete: greek is... → greek is .
+
+---
+
+Complete: county is... → county is The land ruled by a count or a countess..
+
+---
+
+Question: Define subfamily.
+Answer: A taxonomic category ranking between a family and a genus; formerly called a tribe
+
+---
+
+Question: Define late.
+Answer: A shift (scheduled work period) that takes place late in the day or at night.
+
+---
+
+Complete: commands is... → commands is An order to do something..
+
+---
+
+Question: Define hdb.
+Answer: 
+
+---
+
+Complete: tribe is... → tribe is A socially, ethnically, or politically cohesive group of people..
+
+---
+
+Question: What is population?
+Answer: population is The people living within a political or geographical boundary..
+
+---
+
+Question: What is electric?
+Answer: electric is (usually with definite article) Electricity; the electricity supply..
+
+---
+
+Question: Define germany.
+Answer: 
+
+---
+
+Variables in JavaScript store data values. You can declare them with let, const, or var.
+
+---
+
+Question: What is different?
+Answer: different is The different ideal..
+
+---
+
+Continue: Bowl games were not included in single-season or career statistics until 2002. → As a result, many pre-2002 players are underrepresented; for example, Ty Detmer would have 16,206 passing yards and 127 passing touchdowns if bowl statistics were included, which would improve his rank in both categories.
+
+---
+
+Question: What is seldon?
+Answer: seldon is .
+
+---
+
+Question: What is two?
+Answer: two is The digit/figure 2..
+
+---
+
+Question: Describe bowl games were not included in single-season or career statistics until 2002.
+Answer: Bowl games were not included in single-season or career statistics until 2002.
+
+---
+
+Question: Define summit.
+Answer: 
+
+---
+
+Question: Define seldon.
+Answer: 
+
+---
+
+Question: Define species.
+Answer: Type or kind. (Compare race.)
+
+---
+
+Question: Define station.
+Answer: A stopping place.
+
+---
+
+Question: What are python dictionaries?
+Answer: A dictionary stores key-value pairs. Each key is unique and maps to a specific value, like a real dictionary maps words to definitions.
+
+---
+
+Complete: move is... → move is The act of moving; a movement..
+
+---
+
+Question: Define baron.
+Answer: 
+
+---
+
+Question: Define war.
+Answer: 
+
+---
+
+Question: Describe ncaa division i fbs passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+Answer: The NCAA Division I FBS passing leaders comprise the career, single-season, and single-game leaders in passing yards, touchdowns, passer efficiency, completions, and completion percentage.
+
+---
+
+Question: What is connor?
+Answer: connor is .
+
+---
+
+Complete: darul is... → darul is .
+
+---
+
+Question: What are git commits?
+Answer: A commit in Git saves changes to your repository. Each commit has a unique hash and a message describing the changes.
+
+---
+
+Complete: three is... → three is The digit/figure 3..
+
+---
+
+Question: Define its.
+Answer: One who is neither a he nor a she; a creature; a dehumanized being.
+
+---
+
+Question: What is cinema?
+Answer: cinema is A movie theatre, a movie house.
+
+---
+
+Question: Define united.
+Answer: To bring together as one.
+
+---
+
+Question: What are flask routes?
+Answer: A route in Flask connects a URL to a Python function. When someone visits that URL, the function runs and returns a response.
+
+---
+
+Question: What is platinum?
+Answer: platinum is The chemical element with atomic number 78 and symbol Pt; a dense, malleable, ductile, highly unreactive, silverish-white transition metal of great value..
+
+---
+
+Question: Define invented.
+Answer: To design a new process or mechanism.
+
+---
+
+Question: What is wayne?
+Answer: wayne is .
+
+---
+
+Question: Define award.
+Answer: A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted.
+
+---
+
+Question: What is eastern?
+Answer: eastern is Of, facing, situated in, or related to the east..
+
+---
+
+Question: Define prominent.
+Answer: 
+
+---
+
+Question: What is 13 most beautiful...songs for andy warhol's screen tests (2010) is the third studio album by dean & britta?
+Answer: 13 Most Beautiful...Songs for Andy Warhol's Screen Tests (2010) is the third studio album by Dean & Britta.
+
+---
+
+Question: What is subfamily?
+Answer: subfamily is A taxonomic category ranking between a family and a genus; formerly called a tribe.
+
+---
+
+Complete: gmina is... → gmina is .
+
+---
+
+Question: What is hdb?
+Answer: hdb is .
+
+---
+
+Question: What is aga?
+Answer: aga is An honorific for high officials used in Turkey and certain Muslim countries..
+
+---
+
+Question: Define wide.
+Answer: A ball that passes so far from the batsman that the umpire deems it unplayable; the arm signal used by an umpire to signal a wide; the extra run added to the batting side's score
+
+---
+
+Question: Describe ncaa ruled that the 2020 season, which was heavily disrupted by the covid-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+Answer: The NCAA ruled that the 2020 season, which was heavily disrupted by the COVID-19 pandemic, would not count against a player’s athletic eligibility, effectively granting an additional year of eligibility to players active that season.
+
+---
+
+Question: What is side?
+Answer: side is .
+
+---
+
+Complete: chess is... → chess is .
+
+---
+
+Question: Define geylang.
+Answer: 
+
+---
+
+Question: Define prosperous.
+Answer: Characterized by success
+
+---
+
+Complete: cephaloleia is... → cephaloleia is .
+
+---
+
+Complete: places is... → places is .
+
+---
+
+Question: Explain python dictionaries.
+Answer: A dictionary stores key-value pairs. Each key is unique and maps to a specific value, like a real dictionary maps words to definitions.
+
+---
+
+Question: What is poland?
+Answer: poland is .
+
+---
+
+Question: Define private.
+Answer: A soldier of the lowest rank in the army.
+
+---
+
+Question: Define street.
+Answer: A paved part of road, usually in a village or a town.
+
+---
+
+Complete: chemist is... → chemist is A person who specializes in the science of chemistry, especially at a professional level..
+
+---
+
+Complete: home is... → home is .
+
+---
+
+Complete: agricultural is... → agricultural is A product or commodity from agriculture..
+
+---
+
+Question: What is first?
+Answer: first is The person or thing in the first position..
+
+---
+
+Question: Define and.
+Answer: In rhythm, the second half of a divided beat.
+
+---
+
+Question: Define worlds.
+Answer: (with "the") Human collective existence; existence in general.
+
+---
+
+Question: Describe helen jewel gray is an australian former swimmer.
+Answer: Helen Jewel Gray is an Australian former swimmer.
+
+---
+
+Question: What is certified?
+Answer: certified is To attest to (a fact) as the truth..
+
+---
+
+Question: What is oscar?
+Answer: oscar is Astronotus ocellatus, a cichlid fish, native to South America, sometimes kept in aquariums..
+
+---
+
+Complete: roads is... → roads is A way used for travelling between places, originally one wide enough to allow foot passengers and horses to travel, now (US) usually one surfaced with asphalt or concrete and designed to accommodate many vehicles travelling in both directions. In the UK both senses are heard: a country road is the same as a country lane..
+
+---
+
+Complete: plant is... → plant is An organism that is not an animal, especially an organism capable of photosynthesis. Typically a small or herbaceous organism of this kind, rather than a tree..
+
+---
+
+Question: Define electric.
+Answer: (usually with definite article) Electricity; the electricity supply.
+
+---
+
+Question: Define beetle.
+Answer: A small car, the Volkswagen Beetle (original version made 1938–2003, similar models made 1997–2010 and since 2011)
+
+---
+
+Question: What is music?
+Answer: music is A series of sounds organized in time, employing melody, harmony, tempo etc. usually to convey a mood..
+
+---
+
+Complete: side is... → side is .
+
+---
+
+Complete: within is... → within is In the context of which the present document or ruling is made..
+
+---
+
+Question: Define certified.
+Answer: To attest to (a fact) as the truth.
+
+---
+
+Complete: from is... → from is Used to indicate source or provenance..
+
+---
+
+Complete: street is... → street is A paved part of road, usually in a village or a town..
+
+---
+
+Question: Define ain.
+Answer: 
+
+---
+
+Question: Define locally.
+Answer: 
+
+---
+
+Question: Define musician.
+Answer: A composer, conductor, or performer of music; specifically, a person who sings and/or plays a musical instrument as a hobby, an occupation, or a profession.
+
+---
+
+Complete: voivodeship is... → voivodeship is .
+
+---
+
+Complete: administrative is... → administrative is Of or relating to administering or administration..
+
+---
+
+Complete: and is... → and is In rhythm, the second half of a divided beat..
+
+---
+
+Complete: two is... → two is The digit/figure 2..
+
+---
+
+Complete: masovian is... → masovian is .
+
+---
+
+Complete: its is... → its is One who is neither a he nor a she; a creature; a dehumanized being..
+
+---
+
+Complete: architects is... → architects is A professional who designs buildings or other structures, or who prepares plans and superintends construction..
+
+---
+
+Continue: the bird and the bee is an American indie pop musical duo from Los Angeles, consisting of Inara George and Greg Kurstin. Kurstin is a nine-time Grammy Award–winning producer and multi-instrumentalist who has worked with artists including Sia, Adele, Beck, Kendrick Lamar, and the Foo Fighters. → George and Kurstin met while the two were working on her debut album and they decided to collaborate on a jazz-influenced electropop project. Their debut EP, Again and Again and Again and Again, was released on October 31, 2006, followed by their self-titled debut album on January 23, 2007.
+
+---
+
+Question: What is within?
+Answer: within is In the context of which the present document or ruling is made..
+
+---
+
+Question: Define italianate.
+Answer: 
+
+---
+
+Question: What is this?
+Answer: this is .
+
+---
+
+Complete: comprises is... → comprises is To be made up of; to consist of (especially a comprehensive list of parts)..
+
+---
+
+Question: What is replaces?
+Answer: replaces is To restore to a former place, position, condition, etc.; to put back.
+
+---
+
+Question: Explain harem or harim is a domestic space that is reserved for the women of the house, especially in a muslim family.
+Answer: A harem or harim is a domestic space that is reserved for the women of the house, especially in a Muslim family.
+
+---
+
+Question: Define architects.
+Answer: A professional who designs buildings or other structures, or who prepares plans and superintends construction.
+
+---
+
+Question: Define gmina.
+Answer: 
+
+---
+
+Question: What is plays?
+Answer: plays is Activity for amusement only, especially among the young..
+
+---
+
+Question: Define different.
+Answer: The different ideal.
+
+---
+
+Complete: also is... → also is .
+
+---
+
+Question: Define townland.
+Answer: A geographical unit of land smaller than a parish.
+
+---
+
+A commit in Git saves changes to your repository. Each commit has a unique hash and a message describing the changes.
+
+---
+
+Complete: prominent is... → prominent is .
+
+---
+
+Question: What is civil?
+Answer: civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Complete: development is... → development is The process of developing; growth, directed change..
+
+---
+
+Question: Define armies.
+Answer: A large, highly organized military force, concerned mainly with ground (rather than air or naval) operations.
+
+---
+
+Question: Define civil.
+Answer: Having to do with people and government office as opposed to the military or religion.
+
+---
+
+Question: What is kildare?
+Answer: kildare is .
+
+---
+
+Complete: connor is... → connor is .
+
+---
+
+Question: Define platinum.
+Answer: The chemical element with atomic number 78 and symbol Pt; a dense, malleable, ductile, highly unreactive, silverish-white transition metal of great value.
+
+---
+
+Question: What is chrysomelidae?
+Answer: chrysomelidae is .
+
+---
+
+Complete: armies is... → armies is A large, highly organized military force, concerned mainly with ground (rather than air or naval) operations..
+
+---
+
+Question: Define curryhills.
+Answer: 
+
+---
+
+Complete: general is... → general is A general fact or proposition; a generality..
+
+---
+
+Question: What is worlds?
+Answer: worlds is (with "the") Human collective existence; existence in general..
+
+---
+
+Question: What is east?
+Answer: east is One of the four principal compass points, specifically 90°, conventionally directed to the right on maps; the direction of the rising sun at an equinox. Abbreviated as E..
+
+---
+
+Complete: built is... → built is To form (something) by combining materials or parts..
+
+---
+
+Complete: same is... → same is Not different or other; not another or others; not different as regards self; selfsame; identical..
+
+---
+
+Question: Define american.
+Answer: 
+
+---
+
+Question: What is prominent?
+Answer: prominent is .
+
+---
+
+Question: What is diplothemium?
+Answer: diplothemium is .
+
+---
+
+Question: Define poland.
+Answer: 
+
+---
+
+Question: What is ain?
+Answer: ain is .
+
+---
+
+Question: Define rory.
+Answer: 
+
+---
+
+Question: What is arab?
+Answer: arab is .
+
+---
+
+Complete: curryhills is... → curryhills is .
+
+---
+
+Question: Define mosque.
+Answer: A place of worship for Muslims, often having at least one minaret; a masjid.
+
+---
+
+Complete: germany is... → germany is .
+
+---
+
+Question: Define home.
+Answer: 
+
+---
+
+Question: Define including.
+Answer: To bring into a group, class, set, or total as a (new) part or member.
+
+---
+
+Question: Define administrative.
+Answer: Of or relating to administering or administration.
+
+---
+
+Complete: has is... → has is To possess, own..
+
+---
+
+Question: Define years.
+Answer: A solar year, the time it takes the Earth to complete one revolution of the Sun (between 365.24 and 365.26 days depending on the point of reference).
+
+---
+
+Complete: obeys is... → obeys is To do as ordered by (a person, institution etc), to act according to the bidding of..
+
+---
+
+Complete: townland is... → townland is A geographical unit of land smaller than a parish..
+
+---
+
+Question: Define masjid.
+Answer: A mosque.
+
+---
+
+Question: Define about.
+Answer: Moving around; astir.
+
+---
+
+Question: Define has.
+Answer: To possess, own.
+
+---
+
+Question: What is geylang?
+Answer: geylang is .
+
+---
+
+Complete: civil is... → civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Continue: Helen Jewel Gray is an Australian former swimmer. She competed in the women's 200 metre freestyle at the 1972 Summer Olympics. → She was from Townsville in Queensland.
+
+---
+
+Complete: rules is... → rules is A regulation, law, guideline..
+
+---
+
+Question: Define plant.
+Answer: An organism that is not an animal, especially an organism capable of photosynthesis. Typically a small or herbaceous organism of this kind, rather than a tree.
+
+---
+
+Question: Define his.
+Answer: 
+
+---
+
+Question: Define roads.
+Answer: A way used for travelling between places, originally one wide enough to allow foot passengers and horses to travel, now (US) usually one surfaced with asphalt or concrete and designed to accommodate many vehicles travelling in both directions. In the UK both senses are heard: a country road is the same as a country lane.
+
+---
+
+Using these words: quidditch (A fictional ball game played between two teams of seven players riding flying broomsticks, using four balls and six elevated ring-shaped goals.), misuse (An incorrect, improper or unlawful use of something.), duke (The male ruler of a duchy (female equivalent: duchess).)
+Question: What is the connection between quidditch and misuse?
+Answer: quidditch is A fictional ball game played between two teams of seven players riding flying broomsticks, using four balls and six elevated ring-shaped goals.. This relates to duke which means The male ruler of a duchy (female equivalent: duchess)..
+
+---
+
+Using these words: supposedly (As a matter of supposition; in the beliefs or according to the claims of some people.), composer (One who composes; an author.), least (Something of the smallest possible extent; an indivisible unit.)
+Question: Describe supposedly and least
+Answer: supposedly is As a matter of supposition; in the beliefs or according to the claims of some people.. This relates to least which means Something of the smallest possible extent; an indivisible unit..
+
+---
+
+Using these words: painters (An artist who paints pictures.), knight (A young servant or follower; a trained military attendant in service of a lord.), empty ((usually plural) A container, especially a bottle, whose contents have been used up, leaving it empty.)
+Question: Describe painters and empty
+Answer: painters is An artist who paints pictures.. This relates to empty which means (usually plural) A container, especially a bottle, whose contents have been used up, leaving it empty..
+
+---
+
+Using these words: significance (The extent to which something matters; importance), german (A near relative.), disturbed (To confuse a quiet, constant state or a calm, continuous flow, in particular: thoughts, actions or liquids.)
+Question: What is the connection between significance and german?
+Answer: significance is The extent to which something matters; importance. This relates to disturbed which means To confuse a quiet, constant state or a calm, continuous flow, in particular: thoughts, actions or liquids..
+
+---
+
+Using these words: cabinet (A storage closet either separate from, or built into, a wall.), sharks (A scaleless, predatory fish of the superorder Selachimorpha, with a cartilaginous skeleton and 5 to 7 gill slits on each side of its head.), divides (A thing that divides.)
+Question: What is the connection between cabinet and sharks?
+Answer: cabinet is A storage closet either separate from, or built into, a wall.. This relates to divides which means A thing that divides..
+
+---
+
+Using these words: methyl (The univalent hydrocarbon radical, CH3-, formally derived from methane by the loss of a hydrogen atom; a compound or part of a compound formed by the attachment of such a radical.), pageant (A competition in which participants compete for a determination that one is the most physically attractive.), assault (A violent onset or attack with physical means, for example blows, weapons, etc.)
+Question: Explain how methyl relates to assault
+Answer: methyl is The univalent hydrocarbon radical, CH3-, formally derived from methane by the loss of a hydrogen atom; a compound or part of a compound formed by the attachment of such a radical.. This relates to assault which means A violent onset or attack with physical means, for example blows, weapons, etc..
+
+---
+
+Using these words: statistics (A mathematical science concerned with data collection, presentation, analysis, and interpretation.), compounds (An enclosure within which workers, prisoners, or soldiers are confined), broke (To separate into two or more pieces, to fracture or crack, by a process that cannot easily be reversed for reassembly.)
+Question: What is the connection between statistics and compounds?
+Answer: statistics is A mathematical science concerned with data collection, presentation, analysis, and interpretation.. This relates to broke which means To separate into two or more pieces, to fracture or crack, by a process that cannot easily be reversed for reassembly..
+
+---
+
+Using these words: franco (The currency issued between 1805 and 1808 of Lucca in Tuscany, Italy.), unreactive (Not reactive; relatively inert.), agriculture (The art or science of cultivating the ground, including the harvesting of crops, and the rearing and management of livestock)
+Question: What is the connection between franco and unreactive?
+Answer: franco is The currency issued between 1805 and 1808 of Lucca in Tuscany, Italy.. This relates to agriculture which means The art or science of cultivating the ground, including the harvesting of crops, and the rearing and management of livestock.
+
+---
+
+Using these words: catalysts (A substance that increases the rate of a chemical reaction without being consumed in the process.), structure (A cohesive whole built up of distinct parts.), level (A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference.)
+Question: Explain how catalysts relates to level
+Answer: catalysts is A substance that increases the rate of a chemical reaction without being consumed in the process.. This relates to level which means A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Using these words: platform (A raised stage from which speeches are made and on which musical and other performances are made.), picture (A representation of anything (as a person, a landscape, a building) upon canvas, paper, or other surface, by drawing, painting, printing, photography, etc.), airborne (Military infantry intended to be transported by air and delivered to the battlefield by parachute or helicopter.)
+Question: Explain how platform relates to airborne
+Answer: platform is A raised stage from which speeches are made and on which musical and other performances are made.. This relates to airborne which means Military infantry intended to be transported by air and delivered to the battlefield by parachute or helicopter..
+
+---
+
+Using these words: unit (A particular, minute unit of mass, defined differently for different substances, but so that varying substances of the same general type have the property that one international unit of the one has the same effect on the human body as one international unit of the other.), applies (To lay or place; to put (one thing to another)), dated (To note the time or place of writing or executing; to express in an instrument the time of its execution.)
+Question: Describe unit and dated
+Answer: unit is A particular, minute unit of mass, defined differently for different substances, but so that varying substances of the same general type have the property that one international unit of the one has the same effect on the human body as one international unit of the other.. This relates to dated which means To note the time or place of writing or executing; to express in an instrument the time of its execution..
+
+---
+
+Using these words: names (Any nounal word or phrase which indicates a particular person, place, class, or thing.), breeding (Propagation of offspring through sexual reproduction.), expanded (To change (something) from a smaller form and/or size to a larger one; to spread out or lay open.)
+Question: Describe names and expanded
+Answer: names is Any nounal word or phrase which indicates a particular person, place, class, or thing.. This relates to expanded which means To change (something) from a smaller form and/or size to a larger one; to spread out or lay open..
+
+---
+
+Using these words: combines (A combine harvester), hostel (A commercial overnight lodging place, with dormitory accommodation and shared facilities, especially a youth hostel), honoured (To think of highly, to respect highly; to show respect for; to recognise the importance or spiritual value of)
+Question: Describe combines and honoured
+Answer: combines is A combine harvester. This relates to honoured which means To think of highly, to respect highly; to show respect for; to recognise the importance or spiritual value of.
+
+---
+
+Using these words: psychiatry (The branch of medicine that subjectively diagnoses, treats, and studies mental disorders and behavioural conditions.), accommodate (To render fit, suitable, or correspondent; to adapt.), translates (In Euclidean spaces: a set of points obtained by adding a given fixed vector to each point of a given set.)
+Question: Explain how psychiatry relates to translates
+Answer: psychiatry is The branch of medicine that subjectively diagnoses, treats, and studies mental disorders and behavioural conditions.. This relates to translates which means In Euclidean spaces: a set of points obtained by adding a given fixed vector to each point of a given set..
+
+---
+
+Using these words: intelligent (Of high or especially quick cognitive capacity, bright.), chaparral (A region of shrubs, typically dry in the summer and rainy in the winter. The coast of the Mediterranean is such a region.), aside (An incidental remark made quietly so as to be heard by the person to whom it is said and not by any others in the vicinity.)
+Question: Explain how intelligent relates to aside
+Answer: intelligent is Of high or especially quick cognitive capacity, bright.. This relates to aside which means An incidental remark made quietly so as to be heard by the person to whom it is said and not by any others in the vicinity..
+
+---
+
+Using these words: managed (To direct or be in charge of.), royal (A royal person; a member of a royal family.), publisher (One who publishes, especially books.)
+Question: What is the connection between managed and royal?
+Answer: managed is To direct or be in charge of.. This relates to publisher which means One who publishes, especially books..
+
+---
+
+Using these words: feast (A very large meal, often of a ceremonial nature.), spirit (The soul of a person or other creature. What moves through experience into self-definition as souls purpose.), dock (Any of the genus Rumex of coarse weedy plants with small green flowers related to buckwheat, especially common dock, and used as potherbs and in folk medicine, especially in curing nettle rash.)
+Question: What is the connection between feast and spirit?
+Answer: feast is A very large meal, often of a ceremonial nature.. This relates to dock which means Any of the genus Rumex of coarse weedy plants with small green flowers related to buckwheat, especially common dock, and used as potherbs and in folk medicine, especially in curing nettle rash..
+
+---
+
+Using these words: comparative ((grammar) A construction showing a relative quality, in English usually formed by adding more or appending -er. For example, the comparative of green is greener; of evil, more evil.), maintained (To support (someone), to back up or assist (someone) in an action.), chihuahua (The smallest breed of dog in the world, originating in Mexico and having large erect ears.)
+Question: What is the connection between comparative and maintained?
+Answer: comparative is (grammar) A construction showing a relative quality, in English usually formed by adding more or appending -er. For example, the comparative of green is greener; of evil, more evil.. This relates to chihuahua which means The smallest breed of dog in the world, originating in Mexico and having large erect ears..
+
+---
+
+Using these words: bluegrass (Kentucky bluegrass, Poa pratensis.), combines (A combine harvester), marked (Having a visible or identifying mark.)
+Question: What is the connection between bluegrass and combines?
+Answer: bluegrass is Kentucky bluegrass, Poa pratensis.. This relates to marked which means Having a visible or identifying mark..
+
+---
+
+Using these words: failed (To be unsuccessful.), called ((heading) To use one's voice.), dairy ((also dairy products or dairy produce) Products produced from milk.)
+Question: Explain how failed relates to dairy
+Answer: failed is To be unsuccessful.. This relates to dairy which means (also dairy products or dairy produce) Products produced from milk..
+
+---
+
+Using these words: bells (A percussive instrument made of metal or other hard material, typically but not always in the shape of an inverted cup with a flared rim, which resonates when struck.), sculpture (A three dimensional work of art created by shaping malleable objects and letting them harden or by chipping away pieces from a rock (sculpting).), descending (To pass from a higher to a lower place; to move downwards; to come or go down in any way, for example by falling, flowing, walking, climbing etc.)
+Question: Describe bells and descending
+Answer: bells is A percussive instrument made of metal or other hard material, typically but not always in the shape of an inverted cup with a flared rim, which resonates when struck.. This relates to descending which means To pass from a higher to a lower place; to move downwards; to come or go down in any way, for example by falling, flowing, walking, climbing etc..
+
+---
+
+Using these words: interdisciplinary (Of or pertaining to multiple distinct academic disciplines or fields of study.), themed (To give a theme to.), cayman (Any of the relatively small crocodilians of genus Caiman, within family Alligatoridae.)
+Question: Explain how interdisciplinary relates to cayman
+Answer: interdisciplinary is Of or pertaining to multiple distinct academic disciplines or fields of study.. This relates to cayman which means Any of the relatively small crocodilians of genus Caiman, within family Alligatoridae..
+
+---
+
+Using these words: major (A military rank between captain and lieutenant colonel.), courts (An enclosed space; a courtyard; an uncovered area shut in by the walls of a building, or by different buildings; also, a space opening from a street and nearly surrounded by houses; a blind alley.), corrupted (To make corrupt; to change from good to bad; to draw away from the right path; to deprave; to pervert.)
+Question: Describe major and corrupted
+Answer: major is A military rank between captain and lieutenant colonel.. This relates to corrupted which means To make corrupt; to change from good to bad; to draw away from the right path; to deprave; to pervert..
+
+---
+
+Using these words: modifications (The form of existence belonging to a particular object, entity etc.; a mode of being.), puri (A type of unleavened bread from India and Pakistan, usually deep-fried.), neurology (The branch of medicine that deals with the disorders of nervous system including the brain and spinal cord of the central nervous system and the nerves, muscles, and neuromuscular junction of the peripheral nervous system.)
+Question: Describe modifications and neurology
+Answer: modifications is The form of existence belonging to a particular object, entity etc.; a mode of being.. This relates to neurology which means The branch of medicine that deals with the disorders of nervous system including the brain and spinal cord of the central nervous system and the nerves, muscles, and neuromuscular junction of the peripheral nervous system..
+
+---
+
+Using these words: early (A shift (scheduled work period) that takes place early in the day.), eastwards (Eastward.), database ((general) A collection of (usually) organized information in a regular structure, usually but not necessarily in a machine-readable format accessible by a computer.)
+Question: Describe early and database
+Answer: early is A shift (scheduled work period) that takes place early in the day.. This relates to database which means (general) A collection of (usually) organized information in a regular structure, usually but not necessarily in a machine-readable format accessible by a computer..
+
+---
+
+Using these words: popular (A person who is popular, especially at a school.), finned (To cut the fins from a fish, shark, etc.), shan (Unfair, harsh)
+Question: Describe popular and shan
+Answer: popular is A person who is popular, especially at a school.. This relates to shan which means Unfair, harsh.
+
+---
+
+Using these words: core (The central part of fruit, containing the kernels or seeds.), shareholder (One who owns shares of stock in a corporation.), galloway (A kind of small horse.)
+Question: Describe core and galloway
+Answer: core is The central part of fruit, containing the kernels or seeds.. This relates to galloway which means A kind of small horse..
+
+---
+
+Using these words: trek (A journey by ox wagon.), adaptations (The process of adapting something or becoming adapted to a situation; adjustment, modification.), patching (To mend by sewing on a piece or pieces of cloth, leather, or the like)
+Question: What is the connection between trek and adaptations?
+Answer: trek is A journey by ox wagon.. This relates to patching which means To mend by sewing on a piece or pieces of cloth, leather, or the like.
+
+---
+
+Using these words: disputed (To contend in argument; to argue against something maintained, upheld, or claimed, by another), butterfly (A flying insect of the order Lepidoptera, distinguished from moths by their diurnal activity and generally brighter colouring.), inheritance (The passing of title to an estate upon death.)
+Question: Explain how disputed relates to inheritance
+Answer: disputed is To contend in argument; to argue against something maintained, upheld, or claimed, by another. This relates to inheritance which means The passing of title to an estate upon death..
+
+---
+
+Using these words: woolen (An item of clothing made from wool), fraction (A part of a whole, especially a comparatively small part.), prescient (Exhibiting or possessing prescience: having knowledge of, or seemingly able to correctly predict, events before they take place.)
+Question: What is the connection between woolen and fraction?
+Answer: woolen is An item of clothing made from wool. This relates to prescient which means Exhibiting or possessing prescience: having knowledge of, or seemingly able to correctly predict, events before they take place..
+
+---
+
+Using these words: symphonic (Characteristic of a symphony), gubernatorial (Of or pertaining to a governor.), shore (Land adjoining a non-flowing body of water, such as an ocean, lake or pond.)
+Question: Describe symphonic and shore
+Answer: symphonic is Characteristic of a symphony. This relates to shore which means Land adjoining a non-flowing body of water, such as an ocean, lake or pond..
+
+---
+
+Using these words: statehood (The property of being a state.), pipeline (A conduit made of pipes used to convey water, gas or petroleum etc.), cannon (A complete assembly, consisting of an artillery tube and a breech mechanism, firing mechanism or base cap, which is a component of a gun, howitzer or mortar. It may include muzzle appendages.)
+Question: Describe statehood and cannon
+Answer: statehood is The property of being a state.. This relates to cannon which means A complete assembly, consisting of an artillery tube and a breech mechanism, firing mechanism or base cap, which is a component of a gun, howitzer or mortar. It may include muzzle appendages..
+
+---
+
+Using these words: works ((heading) Employment.), bring ((ditransitive) To transport toward somebody/somewhere.), southeast (The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE.)
+Question: What is the connection between works and bring?
+Answer: works is (heading) Employment.. This relates to southeast which means The direction of the cardinal compass point halfway between south and east, specifically 135°, abbreviated as SE..
+
+---
+
+Using these words: platinum (The chemical element with atomic number 78 and symbol Pt; a dense, malleable, ductile, highly unreactive, silverish-white transition metal of great value.), papas (Dad, daddy, father; a familiar or old-fashioned term of address to one’s father.), portions (An allocated amount.)
+Question: What is the connection between platinum and papas?
+Answer: platinum is The chemical element with atomic number 78 and symbol Pt; a dense, malleable, ductile, highly unreactive, silverish-white transition metal of great value.. This relates to portions which means An allocated amount..
+
+---
+
+Using these words: sheik (The leader of an Arab village, family or small tribe.), formation (Something possessing structure or form.), hanged (To be or remain suspended.)
+Question: Describe sheik and hanged
+Answer: sheik is The leader of an Arab village, family or small tribe.. This relates to hanged which means To be or remain suspended..
+
+---
+
+Using these words: possible (A possible one.), tracking (To continue over time.), herbert ((punk subculture) A working-class youth.)
+Question: Describe possible and herbert
+Answer: possible is A possible one.. This relates to herbert which means (punk subculture) A working-class youth..
+
+---
+
+Using these words: palette (A thin board on which a painter lays and mixes colours.), lift (An act of lifting or raising.), formula (Any mathematical rule expressed symbolically.)
+Question: Explain how palette relates to formula
+Answer: palette is A thin board on which a painter lays and mixes colours.. This relates to formula which means Any mathematical rule expressed symbolically..
+
+---
+
+Using these words: amphibious (Capable of functioning on land or in water.), trait (An identifying characteristic, habit or trend.), readily (Without unwillingness or hesitation; showing readiness.)
+Question: What is the connection between amphibious and trait?
+Answer: amphibious is Capable of functioning on land or in water.. This relates to readily which means Without unwillingness or hesitation; showing readiness..
+
+---
+
+Using these words: policy (A principle of behaviour, conduct etc. thought to be desirable or necessary, especially as formally expressed by a government or other authoritative body.), camellia (Any plant of the genus Camellia, shrubs and small trees native to Asia; Camellia japonica is the most popular as a garden plant; Camellia sinensis is the tea plant.), customer (A patron, a client; one who purchases or receives a product or service from a business or merchant, or intends to do so.)
+Question: Explain how policy relates to customer
+Answer: policy is A principle of behaviour, conduct etc. thought to be desirable or necessary, especially as formally expressed by a government or other authoritative body.. This relates to customer which means A patron, a client; one who purchases or receives a product or service from a business or merchant, or intends to do so..
+
+---
+
+Using these words: graduate (A person who is recognized by a university as having completed the requirements of a degree studied at the institution.), trying (To attempt; to endeavour. Followed by infinitive.), japan (A hard black enamel varnish containing asphalt.)
+Question: What is the connection between graduate and trying?
+Answer: graduate is A person who is recognized by a university as having completed the requirements of a degree studied at the institution.. This relates to japan which means A hard black enamel varnish containing asphalt..
+
+---
+
+Using these words: canna (Any member of the genus Canna of tropical plants with large leaves and often showy flowers.), small (Any part of something that is smaller or slimmer than the rest, now usually with anatomical reference to the back.), partridge (Any bird of a number of genera in the family Phasianidae, notably in the genera Perdix and Alectoris.)
+Question: Explain how canna relates to partridge
+Answer: canna is Any member of the genus Canna of tropical plants with large leaves and often showy flowers.. This relates to partridge which means Any bird of a number of genera in the family Phasianidae, notably in the genera Perdix and Alectoris..
+
+---
+
+Using these words: sailor (A person in the business of navigating ships or other vessels), ballad (A kind of narrative poem, adapted for recitation or singing; especially, a sentimental or romantic poem in short stanzas.), desire (Someone or something wished for.)
+Question: What is the connection between sailor and ballad?
+Answer: sailor is A person in the business of navigating ships or other vessels. This relates to desire which means Someone or something wished for..
+
+---
+
+Using these words: quasar (An extragalactic object, starlike in appearance, that is among the most luminous and (putatively) the most distant objects in the universe.), captured (To take control of; to seize by force or stratagem.), dauphin (The eldest son of the king of France. Under the Valois and Bourbon dynasties, the Dauphin of France, generally shortened to Dauphin, was heir apparent to the throne of France. The title derived from the main title of the Dauphin, Dauphin of Viennois.)
+Question: Describe quasar and dauphin
+Answer: quasar is An extragalactic object, starlike in appearance, that is among the most luminous and (putatively) the most distant objects in the universe.. This relates to dauphin which means The eldest son of the king of France. Under the Valois and Bourbon dynasties, the Dauphin of France, generally shortened to Dauphin, was heir apparent to the throne of France. The title derived from the main title of the Dauphin, Dauphin of Viennois..
+
+---
+
+Using these words: premiership (The office of a premier or prime minister.), designs (A specification of an object or process, referring to requirements to be satisfied and thus conditions to be met for them to solve a problem.), ornamental (An ornamental plant.)
+Question: Explain how premiership relates to ornamental
+Answer: premiership is The office of a premier or prime minister.. This relates to ornamental which means An ornamental plant..
+
+---
+
+Using these words: deprecating (To belittle or express disapproval of.), heiress (A woman who has a right of inheritance or who stands to inherit.), weakened (To make weaker or less strong.)
+Question: What is the connection between deprecating and heiress?
+Answer: deprecating is To belittle or express disapproval of.. This relates to weakened which means To make weaker or less strong..
+
+---
+
+Using these words: nominations (An act or instance of nominating.), merry (Jolly and full of high spirits.), murdered (To deliberately kill (a person or persons) without justification, especially with malice aforethought.)
+Question: Explain how nominations relates to murdered
+Answer: nominations is An act or instance of nominating.. This relates to murdered which means To deliberately kill (a person or persons) without justification, especially with malice aforethought..
+
+---
+
+Using these words: naughty (Mischievous; tending to misbehave or act badly (especially of a child).), featured (To ascribe the greatest importance to something within a certain context.), topped (To cover on the top or with a top.)
+Question: Describe naughty and topped
+Answer: naughty is Mischievous; tending to misbehave or act badly (especially of a child).. This relates to topped which means To cover on the top or with a top..
+
+---
+
+Using these words: dojos (The ring, made of compacted clay, in which a sumo wrestling match is held.), poster (A picture of a celebrity, an event etc., intended to be attached to a wall.), widow (A woman whose spouse has died (and who has not remarried); feminine of widower.)
+Question: Describe dojos and widow
+Answer: dojos is The ring, made of compacted clay, in which a sumo wrestling match is held.. This relates to widow which means A woman whose spouse has died (and who has not remarried); feminine of widower..
+
+---
+
+Using these words: hunt (The act of hunting.), ultimate (The most basic or fundamental of a set of things), timothy (Phleum pratense, timothy-grass, native to Europe, but introduced widely and naturalized in US.)
+Question: What is the connection between hunt and ultimate?
+Answer: hunt is The act of hunting.. This relates to timothy which means Phleum pratense, timothy-grass, native to Europe, but introduced widely and naturalized in US..
+
+---
+
+Using these words: bronze (A naturally occurring or man-made alloy of copper, usually in combination with tin, but also with one or more other metals.), sound (Healthy.), luxury (Very wealthy and comfortable surroundings.)
+Question: What is the connection between bronze and sound?
+Answer: bronze is A naturally occurring or man-made alloy of copper, usually in combination with tin, but also with one or more other metals.. This relates to luxury which means Very wealthy and comfortable surroundings..
+
+---
+
+Complete the phrase: question... → question what
+
+---
+
+Complete the phrase: what... → what is
+
+---
+
+Complete the phrase: question what... → question what is
+
+---
+
+Complete the phrase: question... → question define
+
+---
+
+Complete the phrase: is... → is a
+
+---
+
+Complete the phrase: is... → is question
+
+---
+
+Complete the phrase: q... → q what
+
+---
+
+Complete the phrase: what... → what does
+
+---
+
+Complete the phrase: mean... → mean a
+
+---
+
+Complete the phrase: q what... → q what does
+
+---
+
+Complete the phrase: is... → is the
+
+---
+
+Complete the phrase: answer... → answer question
+
+---
+
+Complete the phrase: these... → these words
+
+---
+
+Complete the phrase: relates... → relates to
+
+---
+
+Complete the phrase: is question... → is question what
+
+---
+
+Complete the phrase: in... → in the
+
+---
+
+Complete the phrase: is... → is to
+
+---
+
+Complete the phrase: is... → is complete
+
+---
+
+Complete the phrase: is question what... → is question what is
+
+---
+
+Complete the phrase: of... → of the
+
+---
+
+Complete the phrase: answer... → answer a
+
+---
+
+Complete the phrase: is question... → is question define
+
+---
+
+Complete the phrase: using... → using these
+
+---
+
+Complete the phrase: this... → this relates
+
+---
+
+Complete the phrase: which... → which means
+
+---
+
+Complete the phrase: using these... → using these words
+
+---
+
+Complete the phrase: this relates... → this relates to
+
+---
+
+Complete the phrase: of... → of a
+
+---
+
+Complete the phrase: in... → in a
+
+---
+
+Complete the phrase: answer question... → answer question define
+
+---
+
+Q: What does flowering mean?
+A: flowering is To put forth blooms..
+
+---
+
+Q: What does subfamily mean?
+A: subfamily is A taxonomic category ranking between a family and a genus; formerly called a tribe.
+
+---
+
+Q: What does tribe mean?
+A: tribe is A socially, ethnically, or politically cohesive group of people..
+
+---
+
+Q: What does plant mean?
+A: plant is An organism that is not an animal, especially an organism capable of photosynthesis. Typically a small or herbaceous organism of this kind, rather than a tree..
+
+---
+
+Q: What does family mean?
+A: family is A group of people who are closely related to one another (by blood, marriage or adoption); kin; for example, a set of parents and their children; an immediate family..
+
+---
+
+Q: What does late mean?
+A: late is A shift (scheduled work period) that takes place late in the day or at night..
+
+---
+
+Q: What does county mean?
+A: county is The land ruled by a count or a countess..
+
+---
+
+Q: What does north mean?
+A: north is One of the four major compass points, specifically 0°, directed toward the North Pole, and conventionally upwards on a map, abbreviated as N..
+
+---
+
+Q: What does junction mean?
+A: junction is The act of joining, or the state of being joined..
+
+---
+
+Q: What does population mean?
+A: population is The people living within a political or geographical boundary..
+
+---
+
+Q: What does townland mean?
+A: townland is A geographical unit of land smaller than a parish..
+
+---
+
+Q: What does making mean?
+A: making is The act of forming, causing, or constituting; workmanship; construction..
+
+---
+
+Q: What does century mean?
+A: century is A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100..
+
+---
+
+Q: What does largest mean?
+A: largest is Of considerable or relatively great size or extent..
+
+---
+
+Q: What does within mean?
+A: within is In the context of which the present document or ruling is made..
+
+---
+
+Q: What does roads mean?
+A: roads is A way used for travelling between places, originally one wide enough to allow foot passengers and horses to travel, now (US) usually one surfaced with asphalt or concrete and designed to accommodate many vehicles travelling in both directions. In the UK both senses are heard: a country road is the same as a country lane..
+
+---
+
+Q: What does prosperous mean?
+A: prosperous is Characterized by success.
+
+---
+
+Q: What does regional mean?
+A: regional is An entity or event with scope limited to a single region..
+
+---
+
+Q: What does founded mean?
+A: founded is To start (an institution or organization)..
+
+---
+
+Q: What does town mean?
+A: town is A settlement; an area with residential districts, shops and amenities, and its own local government; especially one larger than a village and smaller than a city..
+
+---
+
+Q: What does beetle mean?
+A: beetle is A small car, the Volkswagen Beetle (original version made 1938–2003, similar models made 1997–2010 and since 2011).
+
+---
+
+Q: What does brazil mean?
+A: brazil is A red-orange dye obtained from brazil wood..
+
+---
+
+Q: What does species mean?
+A: species is Type or kind. (Compare race.).
+
+---
+
+Q: What does found mean?
+A: found is To encounter or discover by accident; to happen upon..
+
+---
+
+Q: What does railway mean?
+A: railway is A transport system using rails used to move passengers or goods..
+
+---
+
+Q: What does operator mean?
+A: operator is One who operates..
+
+---
+
+Q: What does japan mean?
+A: japan is A hard black enamel varnish containing asphalt..
+
+---
+
+Q: What does station mean?
+A: station is A stopping place..
+
+---
+
+Q: What does private mean?
+A: private is A soldier of the lowest rank in the army..
+
+---
+
+Q: What does operated mean?
+A: operated is To perform a work or labour; to exert power or strength, physical or mechanical; to act..
+
+---
+
+Q: What does located mean?
+A: located is To place; to set in a particular spot or position..
+
+---
+
+Q: What does prefecture mean?
+A: prefecture is The office or position of a prefect..
+
+---
+
+Q: What does passenger mean?
+A: passenger is One who rides or travels in a vehicle, but who does not operate it and is not a member of the crew..
+
+---
+
+Q: What does centuries mean?
+A: centuries is A period of 100 consecutive years; often specifically a numbered period with conventional start and end dates, e.g., the twentieth century, which stretches from (strictly) 1901 through 2000, or (informally) 1900 through 1999. The first century AD was from 1 to 100..
+
+---
+
+Q: What does active mean?
+A: active is A person or thing that is acting or capable of acting..
+
+---
+
+Q: What does chemist mean?
+A: chemist is A person who specializes in the science of chemistry, especially at a professional level..
+
+---
+
+Q: What does states mean?
+A: states is A condition; a set of circumstances applying at any given time..
+
+---
+
+Q: What does agricultural mean?
+A: agricultural is A product or commodity from agriculture..
+
+---
+
+Q: What does oscar mean?
+A: oscar is Astronotus ocellatus, a cichlid fish, native to South America, sometimes kept in aquariums..
+
+---
+
+Q: What does german mean?
+A: german is A near relative..
+
+---
+
+Q: What does early mean?
+A: early is A shift (scheduled work period) that takes place early in the day..
+
+---
+
+Q: What does united mean?
+A: united is To bring together as one..
+
+---
+
+Q: What does chamber mean?
+A: chamber is A room or set of rooms, particularly:.
+
+---
+
+Q: What does electric mean?
+A: electric is (usually with definite article) Electricity; the electricity supply..
+
+---
+
+Q: What does music mean?
+A: music is A series of sounds organized in time, employing melody, harmony, tempo etc. usually to convey a mood..
+
+---
+
+Q: What does electronic mean?
+A: electronic is : Of or pertaining to an electron or electrons..
+
+---
+
+Q: What does musician mean?
+A: musician is A composer, conductor, or performer of music; specifically, a person who sings and/or plays a musical instrument as a hobby, an occupation, or a profession..
+
+---
+
+Q: What does range mean?
+A: range is A line or series of mountains, buildings, etc..
+
+---
+
+Q: What does plays mean?
+A: plays is Activity for amusement only, especially among the young..
+
+---
+
+Q: What does wide mean?
+A: wide is A ball that passes so far from the batsman that the umpire deems it unplayable; the arm signal used by an umpire to signal a wide; the extra run added to the batting side's score.
+
+---
+
+Q: What does street mean?
+A: street is A paved part of road, usually in a village or a town..
+
+---
+
+Q: What does composer mean?
+A: composer is One who composes; an author..
+
+---
+
+Q: What does composes mean?
+A: composes is To make something by merging parts..
+
+---
+
+Q: What does guitar mean?
+A: guitar is A stringed musical instrument, of European origin, usually with a fretted fingerboard and six strings, played with the fingers or a plectrum (guitar pick)..
+
+---
+
+Q: What does including mean?
+A: including is To bring into a group, class, set, or total as a (new) part or member..
+
+---
+
+Q: What does theater mean?
+A: theater is A place or building, consisting of a stage and seating, in which an audience gathers to watch plays, musical performances, public ceremonies, and so on..
+
+---
+
+Q: What does orchestral mean?
+A: orchestral is An orchestral performance..
+
+---
+
+Q: What does player mean?
+A: player is One that plays.
+
+---
+
+Q: What does cinema mean?
+A: cinema is A movie theatre, a movie house.
+
+---
+
+Q: What does architecture mean?
+A: architecture is The art and science of designing and managing the construction of buildings and other structures, particularly if they are well proportioned and decorated..
+
+---
+
+Q: What does housing mean?
+A: housing is To keep within a structure or container..
+
+---
+
+Q: What does place mean?
+A: place is (physical) An area; somewhere within an area..
+
+---
+
+Q: What does masjid mean?
+A: masjid is A mosque..
+
+---
+
+Q: What does board mean?
+A: board is A relatively long, wide and thin piece of any material, usually wood or similar, often for use in construction or furniture-making..
+
+---
+
+Q: What does designed mean?
+A: designed is To plan and carry out (a picture, work of art, construction etc.)..
+
+---
+
+Q: What does situated mean?
+A: situated is To place on or into a physical location..
+
+---
+
+Q: What does awards mean?
+A: awards is A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted..
+
+---
+
+Q: What does khan mean?
+A: khan is A ruler over various Turkish, Tatar and Mongol peoples in the Middle Ages..
+
+---
+
+Q: What does architects mean?
+A: architects is A professional who designs buildings or other structures, or who prepares plans and superintends construction..
+
+---
+
+Q: What does award mean?
+A: award is A judgment, sentence, or final decision. Specifically: The decision of arbitrators in a case submitted..
+
+---
+
+Q: What does east mean?
+A: east is One of the four principal compass points, specifically 90°, conventionally directed to the right on maps; the direction of the rising sun at an equinox. Abbreviated as E..
+
+---
+
+Q: What does replaces mean?
+A: replaces is To restore to a former place, position, condition, etc.; to put back.
+
+---
+
+Q: What does older mean?
+A: older is Of an object, concept, relationship, etc., having existed for a relatively long period of time..
+
+---
+
+Q: What does mosque mean?
+A: mosque is A place of worship for Muslims, often having at least one minaret; a masjid..
+
+---
+
+Q: What does same mean?
+A: same is Not different or other; not another or others; not different as regards self; selfsame; identical..
+
+---
+
+Q: What does built mean?
+A: built is To form (something) by combining materials or parts..
+
+---
+
+Q: What does development mean?
+A: development is The process of developing; growth, directed change..
+
+---
+
+Q: What does region mean?
+A: region is Any considerable and connected part of a space or surface; specifically, a tract of land or sea of considerable but indefinite extent; a country; a district; in a broad sense, a place without special reference to location or extent but viewed as an entity for geographical, social or cultural reasons..
+
+---
+
+Q: What does emirates mean?
+A: emirates is A country ruled by an emir..
+
+---
+
+Q: What does oasis mean?
+A: oasis is A spring of fresh water, surrounded by a fertile region of vegetation, in a desert..
+
+---
+
+Q: What does city mean?
+A: city is A large settlement, bigger than a town; sometimes with a specific legal definition, depending on the place..
+
+---
+
+Q: What does eastern mean?
+A: eastern is Of, facing, situated in, or related to the east..
+
+---
+
+Q: What does emirate mean?
+A: emirate is A country ruled by an emir..
+
+---
+
+Q: What does central mean?
+A: central is Being in the centre..
+
+---
+
+Q: What does village mean?
+A: village is A rural habitation of size between a hamlet and a town..
+
+---
+
+Q: What does administrative mean?
+A: administrative is Of or relating to administering or administration..
+
+---
+
+Q: What does district mean?
+A: district is An administrative division of an area..
+
+---
+
+Q: What does civil mean?
+A: civil is Having to do with people and government office as opposed to the military or religion..
+
+---
+
+Q: What does general mean?
+A: general is A general fact or proposition; a generality..
+
+---
+
+Q: What does three mean?
+A: three is The digit/figure 3..
+
+---
+
+Q: What does national mean?
+A: national is A subject of a nation..
+
+---
+
+Q: What does levels mean?
+A: levels is A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Q: What does begins mean?
+A: begins is To start, to initiate or take the first step into something..
+
+---
+
+Q: What does different mean?
+A: different is The different ideal..
+
+---
+
+Q: What does comprises mean?
+A: comprises is To be made up of; to consist of (especially a comprehensive list of parts)..
+
+---
+
+Q: What does rules mean?
+A: rules is A regulation, law, guideline..
+
+---
+
+Q: What does chessboards mean?
+A: chessboards is The square board used in the game of chess, subdivided into eight rows of eight squares each, the squares in each row and column being of alternating colours..
+
+---
+
+Q: What does invented mean?
+A: invented is To design a new process or mechanism..
+
+---
+
+Q: What does level mean?
+A: level is A tool for finding whether a surface is level, or for creating a horizontal or vertical line of reference..
+
+---
+
+Q: What does move mean?
+A: move is The act of moving; a movement..
+
+---
+
+Group these words: anchorage, metro, connects, rest, carl
+
+---
+
+Group these words: obnoxious, fields, usurper, beacon, semiotician
+
+---
+
+Group these words: expropriated, warriors, earnings, strings, sheathing
+
+---
+
+Group these words: completion, length, turboprop, tall, takin
+
+---
+
+Group these words: campaigns, shape, united, rower, worlds
+
+---
+
+Group these words: carrying, peoples, region, morning, born
+
+---
+
+Group these words: isolated, lasted, pipit, spending, featured
+
+---
+
+Group these words: conservation, active, color, institution, beetle
+
+---
+
+Group these words: merges, hydrocarbon, anatomy, stereoisomers, galore
+
+---
+
+Group these words: stench, reported, watershed, associated, mandatory
+
+---
+
+Group these words: cadre, professor, schoolgirls, defendants, quidditch
+
+---
+
+Group these words: season, channel, mnemonic, airborne, lewis
+
+---
+
+Group these words: resting, dated, traveled, lastly, modifications
+
+---
+
+Group these words: authorizing, beat, similarity, trek, analysis
+
+---
+
+Group these words: dinner, northwest, southeast, estimate, rice
+
+---
+
+Group these words: assembly, merging, start, racetrack, designs
+
+---
+
+Group these words: intense, sides, psychotic, maintained, widespread
+
+---
+
+Group these words: formula, teleost, foothills, carl, bell
+
+---
+
+Group these words: fiercely, screening, gear, golfer, paint
+
+---
+
+Group these words: object, golfer, cigarettes, senator, lengths

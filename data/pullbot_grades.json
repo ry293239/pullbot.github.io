@@ -838,5 +838,68 @@
     "score": 1,
     "feedback": "The response is nonsensical and does not address the question.",
     "improved": "Severe means very intense, serious, or extreme in nature or degree."
+  },
+  {
+    "question": "What is the Danian?",
+    "pullbot_answer": "Personalization and exclusivity.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, clean, optimized anti-class *public:private",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and lacks coherence.",
+    "improved": "The Danian is a geological age in the Paleocene epoch, spanning from approximately 66 to 61.6 million years ago."
+  },
+  {
+    "question": "What is a thorn?",
+    "pullbot_answer": "A mental model that aligns specifically on the given topic?\n> 7. **Reason Analysis:** What reasons are offered to support the conclusion? \n> 6. **Alternative Perspectives:** What alternative views exi",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question asked.",
+    "improved": "A thorn is a sharp, pointed structure found on plants, typically serving as a defense mechanism against herbivores."
+  },
+  {
+    "question": "What does \"nam\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos-Style: Reduces pod penalties; \"Nodes are my domain!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nCOMPANIONS\n- Docky the Image Bui",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question asked.",
+    "improved": "The term 'nam' can have different meanings depending on the context; it could refer to Vietnam, a name, or be shorthand for something else."
+  },
+  {
+    "question": "What is Delaware?",
+    "pullbot_answer": "Personalization and exclusivity.\n- **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n\n* JSON parse error \u2192 return empty string \"\"\n* Missing fields \u2192 omit tha",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question.",
+    "improved": "Delaware is a state in the United States, known for being the first state to ratify the U.S. Constitution and for its business-friendly laws."
+  },
+  {
+    "question": "What does \"housed\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n- **Random Event:** What does these risks relate to philosophical principles or dilemmas?\n- **Stack:** Python, JavaScript, Neural Networks (PyTorch/TensorFlow), Crypto-li",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question asked.",
+    "improved": "The term 'housed' means to provide shelter or accommodation for someone or something."
+  },
+  {
+    "question": "What is groff?",
+    "pullbot_answer": "Personalization and exclusivity.\nconversational is A disease or entertainment.\nprevious is The act of entertainment; a blend of a disease or entertainment.\nillness is A person who edits or makes chang",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about 'groff'.",
+    "improved": "Groff is a typesetting system that processes plain text input files and produces formatted output, commonly used for creating documents and man pages in Unix-like operating systems."
+  },
+  {
+    "question": "What does \"commonly\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n> 8. **Random Event**\nend A session with the **Implementation of Advanced Softwar Context7** in the design of the Responses API.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCor",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical in relation to the question.",
+    "improved": "Commonly means something that happens often or is frequently encountered or done."
+  },
+  {
+    "question": "What is a volva?",
+    "pullbot_answer": "\"How do you regret?\"\nof.\nof the Duke \u2013 The Duke of a Duke of Level 1, Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom",
+    "score": 1,
+    "feedback": "The response is nonsensical and completely unrelated to the question.",
+    "improved": "A volva is a membranous sac or cup-like structure at the base of certain mushrooms, often found in species like Amanita."
+  },
+  {
+    "question": "What is Sericomyia?",
+    "pullbot_answer": "Reliability and transparency.\n**Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, no \"spaghetti\".\n\n* **Comments:** Comment on the ",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and does not address what Sericomyia is.",
+    "improved": "Sericomyia is a genus of hoverflies in the family Syrphidae, known for their mimicry of bees and wasps."
   }
 ]

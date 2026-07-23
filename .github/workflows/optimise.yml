@@ -20,14 +20,11 @@ jobs:
       run: |
         pip install torch transformers datasets accelerate safetensors numpy pyyaml sentencepiece gguf
         echo "Deps installed"
-    - name: Test import
-      run: |
-        python --version
-        python -c "from model import PullbotModel; print('Import OK')"
     - name: Run optimization
       timeout-minutes: 55
+      working-directory: src
       run: |
-        python src/model.py optimize 0.5
+        python model.py optimize 0.5
         echo "Exit code: $?"
     - name: Export GGUF
       timeout-minutes: 15

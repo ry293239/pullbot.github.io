@@ -670,5 +670,40 @@
     "score": 1,
     "feedback": "The response is completely irrelevant and nonsensical.",
     "improved": "Elbigenalp is a municipality in the district of Reutte in the Austrian state of Tyrol, known for its scenic beauty and traditional woodcarving craftsmanship."
+  },
+  {
+    "question": "What is \"wilchta\"?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md${topic:\n``build.gradlereferences/android.md*.xcodeprojPackage.sw",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and does not address the question or provide any meaningful information.",
+    "improved": "I'm sorry, I couldn't find any information about 'wilchta.' Could you provide more context or clarify your question?"
+  },
+  {
+    "question": "What does \"RVNS\" stand for?",
+    "pullbot_answer": "A purpose or part of associating or associating events.\npresentation is A periodical publication that performs the usual or expected event.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never ",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not address the question.",
+    "improved": "RVNS could stand for various things depending on the context, but without additional context, its specific meaning is unclear."
+  },
+  {
+    "question": "What is a mausoleum?",
+    "pullbot_answer": "A body, a person who edits or makes changes to documents.\nchewing is To cause it together by a substance.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (ngi",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not answer the question.",
+    "improved": "A mausoleum is a large, stately building or structure that houses tombs or burial chambers for the deceased."
+  },
+  {
+    "question": "What is Stenhouse?",
+    "pullbot_answer": "A period or animal.\nof a person who edits or makes changes to documents.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app),",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not answer the question about 'Stenhouse.'",
+    "improved": "Stenhouse could refer to various things, such as a surname, a company, or a specific concept depending on the context. Could you provide more details?"
+  },
+  {
+    "question": "What does RISC stand for?",
+    "pullbot_answer": "A wise person who edits or makes changes to documents.\nassume access to a dataset of 3,600 tokens; to confirm with a Senior Sofuities: The Service Specter \u2013 Phases: 1.\nFIXED RESOURCE CATALOG & SAMPLE ",
+    "score": 1,
+    "feedback": "The response is completely incorrect and unrelated to the question.",
+    "improved": "RISC stands for Reduced Instruction Set Computer."
   }
 ]

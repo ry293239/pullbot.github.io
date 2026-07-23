@@ -985,5 +985,40 @@
     "score": 1,
     "feedback": "The response is completely irrelevant to the question and lacks coherence.",
     "improved": "Salt is a mineral composed primarily of sodium chloride (NaCl), commonly used for seasoning and preserving food."
+  },
+  {
+    "question": "What is an excursion?",
+    "pullbot_answer": "The purpose of a purpose or duty is to engage with this issue?\n* **Implementation of Advanced Softwar Games:** What alternative views exist, but only use this issue as a critical thinking framework (e",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "An excursion is a short journey or trip, often for leisure, education, or exploration."
+  },
+  {
+    "question": "What is tilapia?",
+    "pullbot_answer": "\"YAML or a general idea. What are artists or creative minds.\n\n\n\nUser asked: Scene 1: Chaos\nDirection: \"Direction: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a mod",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical, failing to address the question about tilapia.",
+    "improved": "Tilapia is a freshwater fish that is commonly farmed and consumed worldwide, known for its mild flavor and versatility in cooking."
+  },
+  {
+    "question": "What is tartaric?",
+    "pullbot_answer": "Personalization and bias.\nI want to generate data examples with a dataset of LinkedIn in 2025\u20132026,600,600.\n\nresponse = web-browsing and JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Cr",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question about tartaric.",
+    "improved": "Tartaric refers to tartaric acid, a naturally occurring organic acid commonly found in plants like grapes and bananas, and is used in food, beverages, and pharmaceuticals."
+  },
+  {
+    "question": "What is a marathon?",
+    "pullbot_answer": "A body, especially a disease or animal.\nhas is To make someone in a disease.\nbeen is A disease, a blend wisely.\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nprevious is The person looks s",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "A marathon is a long-distance running race, typically 26.2 miles (42.195 kilometers) in length."
+  },
+  {
+    "question": "What is Ovett?",
+    "pullbot_answer": "Reliability and transparency.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, clean, no-generic responses.\n\nUser asked: Scen",
+    "score": 1,
+    "feedback": "The response does not address the question and provides irrelevant information.",
+    "improved": "Ovett is a name that could refer to various things, such as a surname or a specific entity; more context is needed to provide an accurate answer."
   }
 ]

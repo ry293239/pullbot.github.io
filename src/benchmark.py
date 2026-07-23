@@ -1,6 +1,6 @@
 """
 Pullbot Benchmark - AI Graded
-Uses GPT-4o (via GitHub Models) to grade responses.
+Triggers GitHub Actions responder, polls for response, grades with GPT-4o.
 """
 
 import os, sys, json, time, requests, re
@@ -8,7 +8,7 @@ import os, sys, json, time, requests, re
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 
-API_URL = "https://pullbot-api.onrender.com"
+GH_REPO = "pullbot-ai/pullbot-ai.github.io"
 BENCHMARK_PATH = os.path.join(REPO_ROOT, "data", "benchmark.json")
 SCORES_PATH = os.path.join(REPO_ROOT, "data", "benchmark_scores.json")
 GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
@@ -28,13 +28,38 @@ def save_scores(scores):
     with open(SCORES_PATH, 'w') as f:
         json.dump(scores, f, indent=2)
 
-def test_prompt(prompt):
+def ask_github(question):
+    """Trigger GitHub responder and poll for response"""
+    # Trigger the workflow
     try:
-        r = requests.get(f"{API_URL}/ask?q={prompt}", timeout=90)
-        if r.status_code == 200:
-            return r.json().get('response', '')
+        requests.post(
+            f"https://api.github.com/repos/{GH_REPO}/actions/workflows/respond.yml/dispatches",
+            headers={
+                "Authorization": f"Bearer {GITHUB_TOKEN}",
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28"
+            },
+            json={"ref": "main", "inputs": {"question": question}},
+            timeout=10
+        )
     except:
-        pass
+        return ""
+    
+    # Poll for response
+    for i in range(30):
+        time.sleep(10)
+        try:
+            r = requests.get(
+                f"https://raw.githubusercontent.com/{GH_REPO}/main/response.json?t={time.time()}",
+                headers={"Cache-Control": "no-cache"}
+            )
+            if r.status_code == 200:
+                data = r.json()
+                if data.get('question') == question and data.get('response'):
+                    return data['response']
+        except:
+            pass
+    
     return ""
 
 def ai_grade(question, response):
@@ -78,15 +103,12 @@ Score (1=terrible, 3=ok, 5=excellent):"""
 
 def run_benchmark():
     print("=" * 50)
-    print("🧪 PULLBOT BENCHMARK (AI-Graded)")
+    print("🧪 PULLBOT BENCHMARK (GitHub Actions + AI Graded)")
     print("=" * 50)
     
-    print("Waking up Render...")
-    try:
-        requests.get(f"{API_URL}/health", timeout=30)
-    except:
-        pass
-    time.sleep(5)
+    if not GITHUB_TOKEN:
+        print("❌ No GITHUB_TOKEN set")
+        return
     
     benchmark = load_benchmark()
     scores = load_scores()
@@ -98,12 +120,15 @@ def run_benchmark():
     
     for i, prompt in enumerate(prompts):
         print(f"   {i+1}/{len(prompts)}: {prompt[:60]}...")
-        response = test_prompt(prompt)
+        print(f"      Triggering responder...")
+        response = ask_github(prompt)
         
-        if GITHUB_TOKEN:
+        if response:
+            print(f"      Response: {response[:100]}...")
             score = ai_grade(prompt, response)
             print(f"      AI Score: {score}/5")
         else:
+            print(f"      No response")
             score = 0
         
         total_score += score
@@ -112,9 +137,6 @@ def run_benchmark():
             'response': response[:200] if response else '(no response)',
             'score': score
         })
-        
-        if i < len(prompts) - 1:
-            time.sleep(3)
     
     percentage = (total_score / max_score) * 100 if max_score > 0 else 0
     

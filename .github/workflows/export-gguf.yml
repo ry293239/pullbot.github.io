@@ -1,4 +1,4 @@
-name: Export GGUF Model
+name: Export GGUF
 
 on:
   workflow_dispatch:
@@ -6,84 +6,46 @@ on:
 jobs:
   export:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
-    
+    timeout-minutes: 20
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
     - name: Install deps
-      run: |
-        pip install torch transformers numpy safetensors sentencepiece
-        git clone --depth 1 https://github.com/ggerganov/llama.cpp
-        pip install -r llama.cpp/requirements.txt
-    - name: Reassemble and dequantize model
+      run: pip install torch transformers safetensors sentencepiece gguf
+    - name: Reassemble and convert
       run: |
         python -c "
-        import os, json, torch
-        from transformers import AutoModelForCausalLM, AutoTokenizer, AutoConfig
+        import os, json, torch, shutil
+        from transformers import AutoModelForCausalLM, AutoTokenizer
         
-        chunks_dir = 'models/chunks'
-        
-        # Reassemble from chunks
-        with open(f'{chunks_dir}/manifest.json') as f:
-            manifest = json.load(f)
-        weights_file = manifest.get('weights_filename', 'pytorch_model.bin')
-        reassembled = f'{chunks_dir}/{weights_file}'
-        if not os.path.exists(reassembled):
-            print(f'Reassembling {weights_file}...')
-            with open(reassembled, 'wb') as out:
-                for chunk_path in manifest['chunks']:
-                    with open(chunk_path, 'rb') as inc:
+        cd = 'models/chunks'
+        with open(f'{cd}/manifest.json') as f:
+            m = json.load(f)
+        wf = m['weights_filename']
+        if not os.path.exists(f'{cd}/{wf}'):
+            with open(f'{cd}/{wf}', 'wb') as out:
+                for cp in m['chunks']:
+                    with open(cp, 'rb') as inc:
                         out.write(inc.read())
         
-        print('Loading config...')
-        config = AutoConfig.from_pretrained(chunks_dir)
-        model = AutoModelForCausalLM.from_config(config)
-        
-        print('Loading state dict...')
-        state_dict = torch.load(reassembled, map_location='cpu')
-        clean_dict = {}
-        skipped = 0
-        for k, v in state_dict.items():
-            # Only keep non-quantized tensors
-            if isinstance(v, torch.Tensor) and not v.is_quantized:
-                clean_dict[k] = v.float()
-            else:
-                skipped += 1
-                print(f'  Skipping {k} (quantized or non-tensor)')
-        
-        print(f'Skipped {skipped} quantized entries, kept {len(clean_dict)} tensors')
-        model.load_state_dict(clean_dict, strict=False)
-        
-        # Save clean FP32 model
         os.makedirs('models_clean', exist_ok=True)
+        tok = AutoTokenizer.from_pretrained(cd)
+        tok.save_pretrained('models_clean')
+        model = AutoModelForCausalLM.from_pretrained(cd, torch_dtype=torch.float32, low_cpu_mem_usage=True)
         model.save_pretrained('models_clean')
-        tokenizer = AutoTokenizer.from_pretrained(chunks_dir)
-        tokenizer.save_pretrained('models_clean')
-        print(f'Clean model saved to models_clean/')
+        
+        import subprocess
+        r = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'q8_0'], capture_output=True, text=True)
+        if r.returncode != 0:
+            r = subprocess.run(['python', 'llama.cpp/convert_hf_to_gguf.py', 'models_clean/', '--outfile', 'models/pullbot.gguf', '--outtype', 'f16'], capture_output=True, text=True)
+        shutil.rmtree('models_clean')
+        print(f'GGUF: {os.path.getsize(\"models/pullbot.gguf\")/(1024*1024):.0f}MB' if os.path.exists('models/pullbot.gguf') else 'Failed')
         "
-    - name: Convert to GGUF
-      run: |
-        python llama.cpp/convert_hf_to_gguf.py models_clean/ --outfile models/pullbot.gguf --outtype q8_0 2>&1
-        
-        if [ ! -f models/pullbot.gguf ]; then
-          echo "q8_0 failed, trying f16..."
-          python llama.cpp/convert_hf_to_gguf.py models_clean/ --outfile models/pullbot.gguf --outtype f16 2>&1
-        fi
-        
-        if [ -f models/pullbot.gguf ]; then
-          echo "GGUF created: $(du -h models/pullbot.gguf | cut -f1)"
-        else
-          echo "Conversion failed"
-        fi
-        
-    - name: Push GGUF model
+    - name: Push GGUF
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
-        if [ -f models/pullbot.gguf ]; then
-          git add models/pullbot.gguf
-          git commit -m "📤 Exported GGUF model" && git push || echo "No changes"
-        fi
+        git add models/pullbot.gguf
+        git diff --staged --quiet || git commit -m "📤 GGUF exported" && git push || echo "No changes"

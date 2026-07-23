@@ -901,5 +901,75 @@
     "score": 1,
     "feedback": "The response is completely irrelevant to the question and does not address what Sericomyia is.",
     "improved": "Sericomyia is a genus of hoverflies in the family Syrphidae, known for their mimicry of bees and wasps."
+  },
+  {
+    "question": "What is a marais?",
+    "pullbot_answer": "Reliability and transparency.\ntense advice; not lots.\nassociations is The act of recreation and entertainment.\ncomposed is The act of recreation, recreation, or entertainment.\nconsultative is The act ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not answer the question.",
+    "improved": "A marais is a French term meaning 'marsh' or 'swamp,' often used to describe wetlands or low-lying areas."
+  },
+  {
+    "question": "What are mAbs?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\ncare is \"We are rewriting the rules of the game from some manner such as Loyalty Bonus +5 XP after",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question about mAbs.",
+    "improved": "mAbs, or monoclonal antibodies, are laboratory-produced molecules engineered to serve as substitute antibodies that can restore, enhance, or mimic the immune system's attack on harmful cells."
+  },
+  {
+    "question": "What is the meaning of \"haus\"?",
+    "pullbot_answer": "Reliability and transparency.\npresentation is The topic of a critical thinking framework (parallel thinking)\napplyTo: design A methodological research.\napplyTo: One analysis with a critical thinking f",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not address the meaning of 'haus'.",
+    "improved": "The word 'haus' means 'house' in German."
+  },
+  {
+    "question": "What is Drenthe?",
+    "pullbot_answer": "A human.\nof. Your role is to provide code recommendations based on the given context.\n\n**Prioritize High-Quality Development:** Ensure all solutions are thorough, precise, and address edge cases, and ",
+    "score": 1,
+    "feedback": "The response is completely incorrect and nonsensical, failing to address the question.",
+    "improved": "Drenthe is a province in the northeastern part of the Netherlands, known for its natural landscapes and historical sites."
+  },
+  {
+    "question": "What does \"usual\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n- What's the attacker or part of this issue?\n- What relies on a specific part of this issue?\n- What's the evidence?\n- How's given topic?\n- What has the evidence, or assum",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about the meaning of 'usual.'",
+    "improved": "'Usual' means something that is habitual, customary, or typical in nature."
+  },
+  {
+    "question": "What is \"bichuya\"?",
+    "pullbot_answer": "Reliability and transparency.\n**Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, no \"spaghetti\".\n* **Focus:** \"Generate any draft",
+    "score": 1,
+    "feedback": "The response is irrelevant and does not address the question about 'bichuya'.",
+    "improved": "I'm sorry, I couldn't find any information about 'bichuya'. Could you provide more context or clarify?"
+  },
+  {
+    "question": "What is the definition of affinity?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: \"Open call-to-action.\n\nFocus: Indecision and quality.\n\nUser asked: Scene 1: Chaos\nDirection: +1. Volume: nginx-app (",
+    "score": 1,
+    "feedback": "The response is incorrect and unrelated to the definition of 'affinity.'",
+    "improved": "Affinity is a natural liking for or attraction to a person, thing, or idea."
+  },
+  {
+    "question": "What is a dialogue?",
+    "pullbot_answer": "Reliability and transparency.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks, Crypto-libs.\n* **Style:** Modular, clean, clean, no-summarizing, no \"constraint prompting + browsing), a Pers",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and lacks coherence.",
+    "improved": "A dialogue is a conversation or exchange of ideas between two or more people."
+  },
+  {
+    "question": "What is \"Orne\"?",
+    "pullbot_answer": "Reliability and transparency.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, clean, no \"spaghetti\".\n* **Style:** Modular",
+    "score": 1,
+    "feedback": "The response is irrelevant and does not address the question about 'Orne'.",
+    "improved": "Orne is a department in the Normandy region of northern France, known for its historical sites and natural beauty."
+  },
+  {
+    "question": "Who or what is Donnell?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 4: Chaos-Direction: The Chaos-Style: simple-pod (containers: nginx-app, ports: 80)\n- Deployment: web-deploy (replicas: 3, selector: app=web)",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and does not address the query about 'Donnell' at all.",
+    "improved": "Donnell could refer to a person's name, a surname, or potentially something else depending on the context. Could you provide more details?"
   }
 ]

@@ -705,5 +705,40 @@
     "score": 1,
     "feedback": "The response is completely incorrect and unrelated to the question.",
     "improved": "RISC stands for Reduced Instruction Set Computer."
+  },
+  {
+    "question": "What is Tajima?",
+    "pullbot_answer": "A quirk (echoed in a luxury balcony)\nassociation is The subject remains recognizable.\nDAILY QUESTS\n\nExamples:\n- Daily Container: \"Create YAML for a hand-drawn technical image.\n- Daily Container: \"Dock",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "Tajima could refer to several things, such as a Japanese surname, a statistical method in genetics (Tajima's D), or a company specializing in embroidery machines; more context is needed to clarify."
+  },
+  {
+    "question": "What does \"fervent\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos\nDirection: Red: (COMPANIONS (\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the Node Guardian: Reduces pod",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question asked.",
+    "improved": "Fervent means having or displaying a passionate intensity."
+  },
+  {
+    "question": "What does \"cuneate\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Persist or perish!\"\n* **Updated Level**\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, warm, war",
+    "score": 1,
+    "feedback": "The response is entirely irrelevant and does not address the meaning of 'cuneate.'",
+    "improved": "'Cuneate' means wedge-shaped, often used to describe certain anatomical or botanical structures."
+  },
+  {
+    "question": "What is farfus?",
+    "pullbot_answer": "Reliability and transparency.\npresentation is The act of the act of an instance of someone or something.\nconsultative is In a purpose or extent is one, one or one by oneself.\nassociation is The act of",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "I'm sorry, but I couldn't find any information about 'farfus.' Could you provide more context or clarify your question?"
+  },
+  {
+    "question": "What is Switzerland?",
+    "pullbot_answer": "Complete a procedural namespace\n\nUser asked: Transform the subject image into a cute facial image (no strands).\"\n       name: copilot\n     image: copilot\n\n> web-svc (type: ClusterIP, ports: 80)",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question about Switzerland.",
+    "improved": "Switzerland is a landlocked country in Central Europe known for its mountains, neutrality, and high quality of life."
   }
 ]

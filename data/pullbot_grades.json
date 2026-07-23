@@ -782,5 +782,12 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question meaningfully.",
     "improved": "Closer can mean 'nearer in space or time' or 'more intimate or connected,' depending on the context."
+  },
+  {
+    "question": "What is the definition of \"notice\"?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nhint at 3 failures, Intervention Mode at 5, humor tiers/decay).\nstill is A group of a group of peo",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not define 'notice' at all.",
+    "improved": "Notice is defined as the act of observing or paying attention to something, or a written or verbal announcement or warning."
   }
 ]

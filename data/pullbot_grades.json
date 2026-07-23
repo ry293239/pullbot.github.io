@@ -789,5 +789,54 @@
     "score": 1,
     "feedback": "The response is nonsensical and does not define 'notice' at all.",
     "improved": "Notice is defined as the act of observing or paying attention to something, or a written or verbal announcement or warning."
+  },
+  {
+    "question": "What is fuel?",
+    "pullbot_answer": "Reliability and transparency.\nassume access to the tables (cycle rooms).\n* Use **frameworks, experiments, and failure analysis** to avoid repetition.\n\n* Use **frameworks, experiments, and failure anal",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about fuel.",
+    "improved": "Fuel is a substance that is burned or consumed to produce energy, typically used to power engines or generate heat."
+  },
+  {
+    "question": "Who is Tina?",
+    "pullbot_answer": "\"How do I do not generate any draft summaries until the key questions are answered or could a conclusion?\n\nUser asked: Analyze all files in the folder named '${main_folder}${path_to_folder}secrets.md$",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question asked.",
+    "improved": "Tina could refer to a person, a fictional character, or a specific context. Could you provide more details to clarify?"
+  },
+  {
+    "question": "What does \"aerial\" mean?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: Interactive Interactive Intervention: \"Fix My Drink (Fix My Drink!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\npre",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "An 'aerial' refers to something related to the air or taking place in the air, such as aerial photography or aerial acrobatics."
+  },
+  {
+    "question": "Who is the Joker?",
+    "pullbot_answer": "\"YAML Yogi \u2013 Trigger 5 humor events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nSession length defaults to 3\u20137 questions; adapt based on Learning Heat (end early if ",
+    "score": 1,
+    "feedback": "The response is nonsensical and completely unrelated to the question.",
+    "improved": "The Joker is a fictional supervillain appearing in DC Comics, known as Batman's archenemy and characterized by his chaotic and psychopathic nature."
+  },
+  {
+    "question": "What are laws?",
+    "pullbot_answer": "What do I issue?\n> 6. **Prioritize High-Quality Development:** What do you actively follow-up opportunities in the next 7 days from today's date forward.\n\nOrganize the information with a separate mark",
+    "score": 1,
+    "feedback": "The response is nonsensical, irrelevant, and does not address the question about laws.",
+    "improved": "Laws are rules and regulations established by a governing authority to maintain order, protect rights, and ensure justice within a society."
+  },
+  {
+    "question": "What is \"ara\"?",
+    "pullbot_answer": "Personalization and exclusivity.\nI want to include a unique value proposition with strong reasoning, aligns with targeted job roles, e.g., Senior Full-Stack Engineer / Marketing Director\n\nI want to in",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about 'ara'.",
+    "improved": "Ara can refer to multiple things, such as a genus of macaws, a constellation in the southern sky, or a given name in various cultures."
+  },
+  {
+    "question": "What does \"severe\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n- **Random Event:** What do \n- **Random Event** (if triggered)\n- **Result Persistent Quest:** What are the results being relevant?\n- **Parallel Thinking Across Domains:**",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "Severe means very intense, serious, or extreme in nature or degree."
   }
 ]

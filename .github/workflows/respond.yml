@@ -23,27 +23,49 @@ jobs:
         key: pip-llama
     - name: Install deps
       run: pip install llama-cpp-python
-    - name: Reassemble model from chunks
+    - name: Reassemble model
       run: |
         python -c "
         import json, os
-        with open('models/chunks/manifest.json') as f:
-            manifest = json.load(f)
-        wf = manifest['weights_filename']
-        if not os.path.exists(f'models/chunks/{wf}'):
+        cd = 'models/chunks'
+        with open(f'{cd}/manifest.json') as f:
+            m = json.load(f)
+        wf = m['weights_filename']
+        if not os.path.exists(f'{cd}/{wf}'):
             print(f'Reassembling {wf}...')
-            with open(f'models/chunks/{wf}', 'wb') as out:
-                for cp in manifest['chunks']:
+            with open(f'{cd}/{wf}', 'wb') as out:
+                for cp in m['chunks']:
                     with open(cp, 'rb') as inc:
                         out.write(inc.read())
             print('Done')
+        else:
+            print(f'Already reassembled: {os.path.getsize(f\"{cd}/{wf}\")//1024//1024}MB')
         "
     - name: Generate response
       run: |
         python -c "
         from llama_cpp import Llama
-        import json, time
-        llm = Llama(model_path='models/chunks/pytorch_model.bin', n_ctx=256, n_threads=2, verbose=False)
+        import json, time, os, glob
+        
+        # Find the model file
+        cd = 'models/chunks'
+        candidates = glob.glob(f'{cd}/*.bin') + glob.glob(f'{cd}/*.safetensors')
+        # Filter to the reassembled weights file
+        model_path = None
+        for c in candidates:
+            name = os.path.basename(c)
+            if name.startswith('model_chunk'): continue
+            if name in ['pytorch_model.bin', 'model.safetensors']:
+                model_path = c
+                break
+        if not model_path:
+            # Try manifest
+            with open(f'{cd}/manifest.json') as f:
+                m = json.load(f)
+            model_path = f'{cd}/{m[\"weights_filename\"]}'
+        
+        print(f'Loading: {model_path}')
+        llm = Llama(model_path=model_path, n_ctx=256, n_threads=2, verbose=False)
         q = '''${{ github.event.inputs.question }}'''
         out = llm(f'Question: {q}\n\nAnswer:', max_tokens=60, temperature=0.8)
         resp = out['choices'][0]['text'].strip()
@@ -56,4 +78,10 @@ jobs:
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add response.json
-        git diff --staged --quiet || git commit -m "💬 Response" && git push || echo "No changes"
+        if git diff --staged --quiet; then
+          echo "No changes"
+        else
+          git commit -m "💬 Response"
+          git push origin main
+          echo "Pushed!"
+        fi

@@ -1,6 +1,6 @@
 """
-Pullbot Benchmark
-Tests model against fixed prompts. Better scoring rewards actual answers.
+Pullbot Benchmark - AI Graded
+Uses GPT-4o (via GitHub Models) to grade responses.
 """
 
 import os, sys, json, time, requests, re
@@ -11,6 +11,7 @@ REPO_ROOT = os.path.dirname(SCRIPT_DIR)
 API_URL = "https://pullbot-api.onrender.com"
 BENCHMARK_PATH = os.path.join(REPO_ROOT, "data", "benchmark.json")
 SCORES_PATH = os.path.join(REPO_ROOT, "data", "benchmark_scores.json")
+GITHUB_TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
 def load_benchmark():
     with open(BENCHMARK_PATH) as f:
@@ -36,42 +37,48 @@ def test_prompt(prompt):
         pass
     return ""
 
-def score_response(response, prompt):
-    """Better scoring: rewards actual answers, penalizes fragments"""
-    score = 0
-    
-    if not response or len(response) < 5:
+def ai_grade(question, response):
+    """Use GitHub Models to grade the response"""
+    if not GITHUB_TOKEN or not response:
         return 0
     
-    # 1. Complete sentence (ends with punctuation)
-    if response.rstrip()[-1] in '.!?':
-        score += 1
+    headers = {
+        "Authorization": f"Bearer {GITHUB_TOKEN}",
+        "Content-Type": "application/json"
+    }
     
-    # 2. Has substance (more than a few words)
-    words = response.split()
-    if len(words) > 5:
-        score += 1
-    
-    # 3. No fragment patterns like "of the... of it..."
-    if not re.search(r'\bof \w+\.\s*\bof \w+', response):
-        score += 1
-    
-    # 4. Contains content words (not just filler)
-    filler = {'the', 'of', 'it', 'and', 'a', 'an', 'in', 'on', 'at', 'to', 'for', 'is', 'was', 'are', 'this', 'that', 'with', 'from', 'they', 'have', 'been'}
-    content_words = [w for w in words if w.lower() not in filler and len(w) > 2]
-    if len(content_words) >= 2:
-        score += 1
-    
-    # 5. Not just repeating itself
-    unique_words = len(set(w.lower() for w in words))
-    if unique_words > len(words) * 0.4:
-        score += 1
-    
-    return score
+    prompt = f"""Grade this AI response from 1-5. Only return the number.
+
+Question: {question}
+AI Response: {response}
+
+Score (1=terrible, 3=ok, 5=excellent):"""
+
+    try:
+        r = requests.post(
+            "https://models.inference.ai.azure.com/chat/completions",
+            headers=headers,
+            json={
+                "model": "gpt-4o",
+                "messages": [{"role": "user", "content": prompt}],
+                "temperature": 0.1,
+                "max_tokens": 5
+            },
+            timeout=30
+        )
+        if r.status_code == 200:
+            text = r.json()["choices"][0]["message"]["content"]
+            nums = re.findall(r'\d+', text)
+            if nums:
+                score = int(nums[0])
+                return max(1, min(5, score))
+    except:
+        pass
+    return 0
 
 def run_benchmark():
     print("=" * 50)
-    print("🧪 PULLBOT BENCHMARK")
+    print("🧪 PULLBOT BENCHMARK (AI-Graded)")
     print("=" * 50)
     
     print("Waking up Render...")
@@ -92,21 +99,22 @@ def run_benchmark():
     for i, prompt in enumerate(prompts):
         print(f"   {i+1}/{len(prompts)}: {prompt[:60]}...")
         response = test_prompt(prompt)
-        score = score_response(response, prompt)
-        total_score += score
         
+        if GITHUB_TOKEN:
+            score = ai_grade(prompt, response)
+            print(f"      AI Score: {score}/5")
+        else:
+            score = 0
+        
+        total_score += score
         results.append({
             'prompt': prompt,
             'response': response[:200] if response else '(no response)',
             'score': score
         })
         
-        print(f"      Score: {score}/5")
-        if response:
-            print(f"      Response: {response[:100]}...")
-        
         if i < len(prompts) - 1:
-            time.sleep(5)
+            time.sleep(3)
     
     percentage = (total_score / max_score) * 100 if max_score > 0 else 0
     
@@ -122,7 +130,7 @@ def run_benchmark():
     scores['runs'] = scores['runs'][-30:]
     save_scores(scores)
     
-    print(f"\n✅ Score: {total_score}/{max_score} ({percentage:.1f}%)")
+    print(f"\n✅ AI Score: {total_score}/{max_score} ({percentage:.1f}%)")
     
     if len(scores['runs']) >= 2:
         prev = scores['runs'][-2]['percentage']

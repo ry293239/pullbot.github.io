@@ -1,1 +1,22 @@
-{"model_name": "distilgpt2", "total_size": 366277108, "total_size_mb": 349.3, "num_chunks": 8, "chunks": ["models/chunks/model_chunk_000.bin", "models/chunks/model_chunk_001.bin", "models/chunks/model_chunk_002.bin", "models/chunks/model_chunk_003.bin", "models/chunks/model_chunk_004.bin", "models/chunks/model_chunk_005.bin", "models/chunks/model_chunk_006.bin", "models/chunks/model_chunk_007.bin"], "weights_filename": "pytorch_model.bin", "fully_trained": true, "pruned": true, "quantized": true, "sparsity_pct": 0.0, "estimated_ram_mb": 234, "training_date": 1784793071.168525}
+{
+  "model_name": "distilgpt2",
+  "total_size": 327657928,
+  "total_size_mb": 312.5,
+  "num_chunks": 7,
+  "chunks": [
+    "models/chunks/model_chunk_000.bin",
+    "models/chunks/model_chunk_001.bin",
+    "models/chunks/model_chunk_002.bin",
+    "models/chunks/model_chunk_003.bin",
+    "models/chunks/model_chunk_004.bin",
+    "models/chunks/model_chunk_005.bin",
+    "models/chunks/model_chunk_006.bin"
+  ],
+  "weights_filename": "model.safetensors",
+  "fully_trained": true,
+  "pruned": false,
+  "quantized": false,
+  "sparsity_pct": 0.07500679749101735,
+  "estimated_ram_mb": 936.7119140625,
+  "training_date": 1784795310.9121518
+}

@@ -740,5 +740,26 @@
     "score": 1,
     "feedback": "The response is nonsensical and does not address the question about Switzerland.",
     "improved": "Switzerland is a landlocked country in Central Europe known for its mountains, neutrality, and high quality of life."
+  },
+  {
+    "question": "What does \"ventral\" mean?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nPROCEDURAL CLUSTER NAMESPACESTS\n\nNamespace Types (cycle rooms to avoid repetition):\n- Container Ca",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question.",
+    "improved": "The term 'ventral' refers to the underside or abdominal side of an organism or structure, often used in anatomical contexts."
+  },
+  {
+    "question": "What is \"selys\"?",
+    "pullbot_answer": "Reliability and transparency.\nfantasy is The act of associating with some sense of a correlation or entertainment.\nconsultative is The act of a blend of cultural reasons, roles, or reference summaries",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "I'm sorry, I couldn't find any information about 'selys.' Could you provide more context or clarify your question?"
+  },
+  {
+    "question": "What does \"Wallachian\" mean?",
+    "pullbot_answer": "Surrealistic quality, no-BS, no-BS, simplified missions\nCasual Mode: +25% XP, hints cost 0, no penalties, Humor Tier 1\nStandard Mode (default): Normal everything\nHard Mode: -20% XP, hints cost 2, pena",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "Wallachian refers to something related to Wallachia, a historical and geographical region of Romania."
   }
 ]

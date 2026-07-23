@@ -761,5 +761,26 @@
     "score": 1,
     "feedback": "The response is nonsensical and unrelated to the question.",
     "improved": "Wallachian refers to something related to Wallachia, a historical and geographical region of Romania."
+  },
+  {
+    "question": "What is a cup?",
+    "pullbot_answer": "\"How do you want to?\"\nof.\nof theORY is Theory is Something that you don't like.\nof. What's theory is the future is a future leader or philosopher.\nbeen is A wise person, swampland.\nbeen is A leader or",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "A cup is a small, open container typically used for drinking liquids."
+  },
+  {
+    "question": "What are norms?",
+    "pullbot_answer": "A person who edits or makes changes to documents.\nof people or roles that you're proud of.\nassociations is The act of associating.\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\ncare is is S",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and fails to define norms.",
+    "improved": "Norms are shared expectations or rules within a group or society that guide behavior and establish standards for what is considered acceptable."
+  },
+  {
+    "question": "What does \"closer\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Evaluation:** Empose with context.\n* **Random Event:** What impact or handle these issue? \n> **Avoid Internal Assumptions:** What are exposed, and handle this issue w",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "Closer can mean 'nearer in space or time' or 'more intimate or connected,' depending on the context."
   }
 ]

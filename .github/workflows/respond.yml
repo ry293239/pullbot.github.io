@@ -10,55 +10,50 @@ on:
 jobs:
   respond:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
-    permissions:
-      contents: write
+    timeout-minutes: 10
     steps:
     - uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
-    
     - uses: actions/setup-python@v5
       with:
         python-version: '3.10'
-        
     - name: Cache pip
       uses: actions/cache@v4
       with:
         path: ~/.cache/pip
-        key: pip-${{ runner.os }}-llama
-        
+        key: pip-llama
     - name: Install deps
       run: pip install llama-cpp-python
-      
+    - name: Reassemble model from chunks
+      run: |
+        python -c "
+        import json, os
+        with open('models/chunks/manifest.json') as f:
+            manifest = json.load(f)
+        wf = manifest['weights_filename']
+        if not os.path.exists(f'models/chunks/{wf}'):
+            print(f'Reassembling {wf}...')
+            with open(f'models/chunks/{wf}', 'wb') as out:
+                for cp in manifest['chunks']:
+                    with open(cp, 'rb') as inc:
+                        out.write(inc.read())
+            print('Done')
+        "
     - name: Generate response
       run: |
         python -c "
         from llama_cpp import Llama
         import json, time
-        print('Loading model...')
-        llm = Llama(model_path='models/pullbot.gguf', n_ctx=256, n_threads=2, verbose=False)
-        question = '''${{ github.event.inputs.question }}'''
-        print(f'Q: {question}')
-        output = llm(f'Question: {question}\n\nAnswer:', max_tokens=60, temperature=0.8, top_p=0.9)
-        response = output['choices'][0]['text'].strip()
-        print(f'A: {response}')
-        result = {
-            'question': question,
-            'response': response,
-            'timestamp': time.time(),
-            'id': str(int(time.time() * 1000))
-        }
-        with open('response.json', 'w') as f:
-            json.dump(result, f)
-        print('Saved!')
+        llm = Llama(model_path='models/chunks/pytorch_model.bin', n_ctx=256, n_threads=2, verbose=False)
+        q = '''${{ github.event.inputs.question }}'''
+        out = llm(f'Question: {q}\n\nAnswer:', max_tokens=60, temperature=0.8)
+        resp = out['choices'][0]['text'].strip()
+        with open('response.json','w') as f:
+            json.dump({'question':q,'response':resp,'time':time.time()}, f)
+        print(resp)
         "
     - name: Push response
       run: |
         git config user.name "Pullbot"
         git config user.email "pullbot@bot.dev"
         git add response.json
-        git diff --staged --quiet || git commit -m "💬 Response $(date +%s)"
-        git pull --rebase origin main
-        git push origin main
-        echo "Pushed! Response should be live in 5 seconds."
+        git diff --staged --quiet || git commit -m "💬 Response" && git push || echo "No changes"

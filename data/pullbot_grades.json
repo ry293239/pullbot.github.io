@@ -1328,5 +1328,19 @@
     "score": 1,
     "feedback": "The response is nonsensical and does not address the question.",
     "improved": "An essayist is a writer who composes essays, which are short pieces of writing that explore a particular subject or idea."
+  },
+  {
+    "question": "What is \"perkovi\"?",
+    "pullbot_answer": "Personalization and exclusivity.\nboth is The Path to unique value proposition and aligns specifically for competitive markets like tech, finance, manufacturing, healthcare, manufacturing, healthcare, ",
+    "score": 1,
+    "feedback": "The response is incoherent and fails to address the question meaningfully.",
+    "improved": "I'm sorry, I couldn't find any information on 'perkovi.' Could you provide more context or clarify your question?"
+  },
+  {
+    "question": "What does \"cruz\" mean?",
+    "pullbot_answer": "Reliability and transparency.\npresentation is A place in a direction by oneself.\nintroduced is Having with someone; a correlation of a correlation; a correlation; a correlation, especially a correlati",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the meaning of 'cruz' accurately.",
+    "improved": "'Cruz' is a Spanish word that translates to 'cross' in English, often referring to a physical cross or a symbolic representation."
   }
 ]

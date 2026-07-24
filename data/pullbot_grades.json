@@ -1363,5 +1363,75 @@
     "score": 1,
     "feedback": "The response is completely irrelevant to the question and nonsensical.",
     "improved": "Sunday is the day of the week between Saturday and Monday, often considered a day of rest or worship in many cultures."
+  },
+  {
+    "question": "What is Machu?",
+    "pullbot_answer": "Servy the purpose of a purpose or duty.\nassume access to the data.\nearliest is The extent of the duty of duty of duty, associating or associating societies.\nassociation is A duty or duty; a duty or du",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about Machu.",
+    "improved": "Machu is likely referring to Machu Picchu, an ancient Incan city located in the Andes Mountains of Peru, known for its archaeological significance and stunning views."
+  },
+  {
+    "question": "What does \"pays\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Random Event:** What are the attacker or or part.\n* **Random Event:** What do these or even ones you don't like? \n* **Format:** What are the topic this prompt? \n* **R",
+    "score": 1,
+    "feedback": "The response is nonsensical, irrelevant, and does not address the question.",
+    "improved": "The word 'pays' can mean 'countries' in French or refer to the act of giving money in exchange for goods or services in English."
+  },
+  {
+    "question": "What does \"belonging\" mean?",
+    "pullbot_answer": "Personalization and bias.\n\nUser asked: Scene 4: Chaos\nDirection: \"Reduce YAML events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\n\nCOMPANIONS\n- Docky the Image",
+    "score": 1,
+    "feedback": "The AI's response is irrelevant and nonsensical in relation to the question about 'belonging.'",
+    "improved": "Belonging means feeling accepted, included, and connected to a group or place."
+  },
+  {
+    "question": "What is Portland?",
+    "pullbot_answer": "A specific direction, and a place in a group of people to cause.\n\nof is the background is a decorative typography of a blend naturally with the specific people in a background, a blend naturally with ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not answer the question meaningfully.",
+    "improved": "Portland is a city in the United States, with notable locations in Oregon and Maine."
+  },
+  {
+    "question": "What does \"Arthurian\" refer to?",
+    "pullbot_answer": "Reliability and transparency.\nresponse = path\n\n* **parallel thinking**\n* **Parallel Thinking*: How does this issue relate to philosophical principles or dilemmas?\n\n\n* **Stack:** Python, JavaScript/Typ",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question asked.",
+    "improved": "Arthurian refers to anything related to King Arthur, a legendary figure in British folklore, and the stories surrounding him and his knights of the Round Table."
+  },
+  {
+    "question": "What is Goodhue?",
+    "pullbot_answer": "Reliability and transparency.\n\nB **Evaluation:** Probes. The company of the act of a person or company.\nearliest is The act of an act of joining one or associating.\nFIXED RESOURCE CATALOG & SAMPLE YAM",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "Goodhue could refer to a surname, a location (such as Goodhue County in Minnesota), or something else depending on the context; please provide more details for clarification."
+  },
+  {
+    "question": "What is an engine?",
+    "pullbot_answer": "A disease or a disease or a disease.\nassociations is The act of associating disease; a disease or cultural reasons.\noffamily is Something which influences or influences on the species.\nunion is The ac",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "An engine is a machine designed to convert energy into mechanical motion, commonly used in vehicles, machinery, and other devices."
+  },
+  {
+    "question": "What is a bastion?",
+    "pullbot_answer": "What reasoning supports this conclusion?\n> 6. **Parallel Thinking Across Domains:**   \n> 7. **Alternative Perspectives:** What alternative views exist, but inconsistent tone.\n> 6. **Parallel Thinking ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about the definition of a bastion.",
+    "improved": "A bastion is a projecting part of a fortification, typically at an angle to the wall, allowing defensive fire in multiple directions."
+  },
+  {
+    "question": "What is tin?",
+    "pullbot_answer": "Reliability and transparency.\n\nUser asked: Scene 1: Chaos, Chaos-Direction: A vertical 9:16 ultra-realistic shot focusing on a hyper-detailed image.\n\nFocus: The true-to-life proportions: The schematic",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about tin.",
+    "improved": "Tin is a chemical element with the symbol Sn and atomic number 50, commonly used in alloys and coatings."
+  },
+  {
+    "question": "Who is Martina?",
+    "pullbot_answer": "A human or a animal.\ncare is A person who performs a mental model.\nchewing is An analytical research critic.\nconsultative is The object or animal remains clearly visible beneath the schematic diagrams",
+    "score": 1,
+    "feedback": "The response is incoherent, nonsensical, and does not address the question.",
+    "improved": "Martina could refer to a person's name, but without additional context, it's unclear who or what is being referred to."
   }
 ]

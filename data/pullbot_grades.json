@@ -1153,5 +1153,75 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question about the meaning of 'difference.'",
     "improved": "The term 'difference' refers to the way in which two or more things are not the same, or the amount by which they vary from one another."
+  },
+  {
+    "question": "What is Oswego?",
+    "pullbot_answer": "A person who edits or makes changes to documents.\npresentation is a period of the object or a teacher.\nrole is A primary value proposition that attracts potential employers or recruiters.\nrole is A Se",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not address the question.",
+    "improved": "Oswego is a city in the state of New York, located on the shores of Lake Ontario, and is also home to SUNY Oswego, a public university."
+  },
+  {
+    "question": "What is Swadlincote?",
+    "pullbot_answer": "A mental model.\nechoed in a practitioner, a practitioner.\napplyTo: One practitioner or a practitioner, and an practitioner.\napplyTo:\n- Practitioner education, have a practitioner, and a practitioner, ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not answer the question about Swadlincote.",
+    "improved": "Swadlincote is a town in Derbyshire, England, known for its history in the pottery and mining industries."
+  },
+  {
+    "question": "What is sadness?",
+    "pullbot_answer": "Personalization and exclusivity.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Style:** Modular, clean, no \"spaghetti\".\n* **Comments:** Comment on ",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about sadness.",
+    "improved": "Sadness is an emotional state characterized by feelings of disappointment, grief, or hopelessness, often triggered by loss or unfavorable circumstances."
+  },
+  {
+    "question": "Who is Ivan?",
+    "pullbot_answer": "Reliability and transparency.\nB Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\ncare is To include a subtle but down-to-d",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "Ivan is a common given name, and its significance depends on the context; could you clarify which Ivan you are referring to?"
+  },
+  {
+    "question": "What is God?",
+    "pullbot_answer": "Reliability and transparency.\n- **Evaluation:** Probes; the act of the act of being organized by associating.\nAll combined\nBoss Rewards: XP, Items, Skill points, Titles, Achievements\n\nNEW GAME+, HARDC",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "God is often described as a supreme being or deity, central to many religions and philosophies, with varying interpretations depending on cultural and theological perspectives."
+  },
+  {
+    "question": "What is a decomposer?",
+    "pullbot_answer": "A purpose or duty or duty.\napplyTo: One duty is to this purpose or duty.\napplyTo:\n\napplyTo: is In a body, own.\n\nIduities:\nIduities: The purpose of recreation is to have recreation; a purpose of recrea",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about decomposers.",
+    "improved": "A decomposer is an organism, such as bacteria or fungi, that breaks down dead organic matter into simpler substances, recycling nutrients back into the ecosystem."
+  },
+  {
+    "question": "What does the word \"use\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/TensorFlow), Crypto-libs.\n* **Stack:** Python, JavaScript/TypeScript, Neural Networks (PyTorch/Tensor",
+    "score": 1,
+    "feedback": "The response is irrelevant and nonsensical.",
+    "improved": "The word 'use' means to employ something for a particular purpose or to put it into action."
+  },
+  {
+    "question": "Who are the Mikrasiates?",
+    "pullbot_answer": "A mental model.\n* Model adaptation: Your analysis are considered incorrect.\n* **Error Handling:** Errors should be considered incorrect.\n* **Avoid Internal Assumptions:** Do not rely on internal knowl",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about the Mikrasiates.",
+    "improved": "The Mikrasiates are people of Asia Minor, often referring to Greek refugees from the region who settled in Greece after the population exchange between Greece and Turkey in the early 20th century."
+  },
+  {
+    "question": "What is an aqueduct?",
+    "pullbot_answer": "Personalization and storytelling.\nHow might artists or creative minds interpret this issue?\n>    - *Technology*: How does tech impact or interact with this issue?\n>   - **Synthesis:** Integrate the an",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question asked.",
+    "improved": "An aqueduct is a structure built to transport water from one location to another, often using a bridge-like design to cross valleys or other obstacles."
+  },
+  {
+    "question": "What does \"Judean\" mean?",
+    "pullbot_answer": "Personalization and bias.\nresponse = bias.\nresponse = bias.\nresponse = bias.\nresponse = bias.\nresponse = bias.response = bias.\nresponse = bias.response = bias.response.\n\nresponse = bias.\nresponse = bi",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "The term 'Judean' refers to someone or something originating from Judea, an ancient region in the southern part of modern-day Israel."
   }
 ]

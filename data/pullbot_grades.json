@@ -1132,5 +1132,26 @@
     "score": 1,
     "feedback": "The response is nonsensical and unrelated to the question.",
     "improved": "Whitish means having a pale or light color, resembling white."
+  },
+  {
+    "question": "What is Yhuna?",
+    "pullbot_answer": "Servy the purpose of recreation and entertainment.\nassociation is The purpose of recreation or entertainment; a purpose of recreation; entertainment follows recreation and entertainment.\nRules: One ac",
+    "score": 1,
+    "feedback": "The response is incoherent, lacks clarity, and does not address the question meaningfully.",
+    "improved": "Yhuna is not a commonly recognized term; could you provide more context or clarify what you mean by Yhuna?"
+  },
+  {
+    "question": "What is a nickname?",
+    "pullbot_answer": "He likes a New-Iome Admiral \u2013 Your current LinkedIn profile URL?\n\nUser asked: Scene 1: Chaos\nDirection: Red: Reduces pod penalties; \"Nodes are my domain!\"\nRules: One active, Loyalty Bonus +5 XP after ",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question or context provided.",
+    "improved": "A nickname is a familiar or humorous name given to a person or thing instead of or as well as the real name."
+  },
+  {
+    "question": "What is the meaning of \"difference\"?",
+    "pullbot_answer": "Reliability and transparency.\n> 8. **Evaluation:** \"I have your current LinkedIn profile URL? I'll review the public version for headline, About, experience, skills, etc.); instruct AI to search attac",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about the meaning of 'difference.'",
+    "improved": "The term 'difference' refers to the way in which two or more things are not the same, or the amount by which they vary from one another."
   }
 ]

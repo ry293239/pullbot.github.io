@@ -1118,5 +1118,19 @@
     "score": 1,
     "feedback": "The response is nonsensical and unrelated to the question.",
     "improved": "Bartosz is a character from the Netflix series 'Dark,' where he plays a significant role in the time travel narrative."
+  },
+  {
+    "question": "What does the term \"official\" mean?",
+    "pullbot_answer": "Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PENALTY, COMEDY MODE\n\nIdentical to SQL/AWS versions (start with 3 tokens,",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "The term 'official' refers to something that is formally recognized, authorized, or sanctioned by a governing body or authority."
+  },
+  {
+    "question": "What does \"whitish\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n> 6. **Random Event** (if triggered)\n5. **Random Event** (if triggered)\n6. **Random Event**\n7. **Random Event**\n4. **Random Event**\n5. **Random Event**\n5. **",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "Whitish means having a pale or light color, resembling white."
   }
 ]

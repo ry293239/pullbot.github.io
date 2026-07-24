@@ -1237,5 +1237,26 @@
     "score": 1,
     "feedback": "The response is incorrect and unrelated to the question.",
     "improved": "Karolak could refer to a surname, a specific person, or something else; more context is needed to provide an accurate answer."
+  },
+  {
+    "question": "What is vomit?",
+    "pullbot_answer": "Reliability and transparency.\nUser asked: Scene 1: Chaos & Chaos.\nDirection: Redotion & Network Chaos.\nCOMPANIONS\n- Docky the Image Builder: +5 XP on Docker missions; \"Build it strong!\"\n- Kubelet the ",
+    "score": 1,
+    "feedback": "The response is entirely irrelevant to the question and incoherent.",
+    "improved": "Vomit, also known as emesis, is the forceful expulsion of stomach contents through the mouth, typically caused by nausea or illness."
+  },
+  {
+    "question": "What are nuggets?",
+    "pullbot_answer": "Reliability and transparency.\n* **Random Event:** What do you do you impact or situation to avoid or handle this issue?\n* **Avoid Internal Assumptions:** Do not rely on internal knowledge or assumptio",
+    "score": 1,
+    "feedback": "The response is irrelevant and does not address the user's question.",
+    "improved": "Nuggets are small, bite-sized pieces of food, often made of chicken or other ingredients. To transform the subject into a cute toy, imagine a plush toy shaped like a nugget with adorable eyes and a smile."
+  },
+  {
+    "question": "What is Valentino?",
+    "pullbot_answer": "A beautiful, beautiful and a beautiful but slightly too-transparent cocktail in a crystal glass. In the glass, a blurred tropical Miami landscape.\n\nScene 4: Render: Render: Render: nginx-app with port",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not answer the question about Valentino.",
+    "improved": "Valentino is a luxury fashion brand known for its high-end clothing, accessories, and fragrances."
   }
 ]

@@ -1258,5 +1258,75 @@
     "score": 1,
     "feedback": "The response is incoherent, irrelevant, and does not answer the question about Valentino.",
     "improved": "Valentino is a luxury fashion brand known for its high-end clothing, accessories, and fragrances."
+  },
+  {
+    "question": "What is Volutidae?",
+    "pullbot_answer": "Same as SQL/AWS versions (Correct +50, First-try +75, Hint -10, etc.)\n\nACHIEVEMENTS SYSTEM\n\nExamples:\n- Container Creator \u2013 Complete Level 1\n- Pod Pioneer \u2013 Complete Level 2\n- Deployment Duke \u2013 Comple",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical to the question.",
+    "improved": "Volutidae is a family of marine gastropod mollusks, commonly known as volutes, which are characterized by their distinctively patterned and elongated shells."
+  },
+  {
+    "question": "What is a murder?",
+    "pullbot_answer": "The purpose of the purpose of to provide that is specifically, especially the purpose of recreation or entertainment.\n\nAll combined\nBoss Rewards: XP, Items, Skill points, Titles, Achievements\n\nXP & LE",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "Murder is the unlawful killing of one person by another, typically with intent."
+  },
+  {
+    "question": "What is the definition of \"heads\" in the context of a coin?",
+    "pullbot_answer": "What issue? What do this issue relate to philosophical principles or dilemmas? \n>  \n>    - *Reason Analysis:** What reasons are offered to support the conclusion? \n>  - **Reason Analysis:** What reaso",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question.",
+    "improved": "In the context of a coin, 'heads' refers to the side of the coin that typically features a portrait or emblem, often of a person or national symbol."
+  },
+  {
+    "question": "What is a marsupial?",
+    "pullbot_answer": "A grave or stoic philosopher.\n\nUser asked: Scene 2: Render: The Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nUser asked: Analyze",
+    "score": 1,
+    "feedback": "The response is completely incorrect and unrelated to the question.",
+    "improved": "A marsupial is a type of mammal that carries and nurses its young in a pouch."
+  },
+  {
+    "question": "What is a bull?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\n\nPROCEDURAL CLUSTER NAMESPACES\n\nNamespace Types (cycle rooms to avoid repetition):\n- Container Cav",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not answer the question about what a bull is.",
+    "improved": "A bull is an adult male bovine, often associated with cattle, known for its strength and role in breeding."
+  },
+  {
+    "question": "What is a tornado?",
+    "pullbot_answer": "A psychological disease.\nof people, animal, or animal.\nof people.\n\n\nof people, organisation, and organisation, which makes or owned.\nof people.\nsomeone is A teacher of consultation, consultation, and ",
+    "score": 1,
+    "feedback": "The response is incoherent, irrelevant, and does not answer the question.",
+    "improved": "A tornado is a rapidly rotating column of air that extends from a thunderstorm to the ground, capable of causing significant damage."
+  },
+  {
+    "question": "What does \"sucesso\" mean?",
+    "pullbot_answer": "A person who edits or makes changes to documents.\n\nUser asked: Scene 1: Chaos / Chaos\nDirection: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen",
+    "score": 1,
+    "feedback": "The response is completely incorrect as 'sucesso' means 'success' in Portuguese.",
+    "improved": "Sucesso means 'success' in Portuguese."
+  },
+  {
+    "question": "What is a demonstrator?",
+    "pullbot_answer": "\"I want to be a specific research critic. What does you issue? \n> 6. **Impose with a critical thinking framework (coversational, but direct, thinking framework, and a framework for applying the given ",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question asked.",
+    "improved": "A demonstrator is a person or object that demonstrates or shows how something works, or it can refer to someone participating in a public protest to express their views."
+  },
+  {
+    "question": "What is a \"marknad\"?",
+    "pullbot_answer": "'Claim a data-description' to the subject or an image.\npresentation is A 'Valorant' Agent Key Art of a skeptical peer reviewer.\nfiction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RETRY PE",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about 'marknad'.",
+    "improved": "'Marknad' is a Swedish word that translates to 'market' in English, referring to a place or system where goods and services are exchanged."
+  },
+  {
+    "question": "What is an essayist?",
+    "pullbot_answer": "A personality or part of a part; a part of a part; a part of a part of a part or part like a part or part indicated a part of one part; a part for one part, a part which appears or appears or appears ",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question.",
+    "improved": "An essayist is a writer who composes essays, which are short pieces of writing that explore a particular subject or idea."
   }
 ]

@@ -1097,5 +1097,26 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the question asked.",
     "improved": "Bhargava is a common name in India and could refer to a person, a surname, or a historical figure. Could you provide more context about who or what you are referring to?"
+  },
+  {
+    "question": "What does \"dioicus\" mean?",
+    "pullbot_answer": "Surrealistic or hyper-detailed textures.\"\n> 6. **Prompt Instructions:** Integrate the image into a hyper-detailed, high-detailed, and high-detailed textures.\n\nUser asked: Scene 1 \u2192Direction:\nDirection",
+    "score": 1,
+    "feedback": "The response is completely incorrect and unrelated to the meaning of 'dioicus.'",
+    "improved": "Dioicus refers to a species in which individual organisms are either male or female, meaning the sexes are separate."
+  },
+  {
+    "question": "What is Allbirds?",
+    "pullbot_answer": "\"Create a unique 'Valorant' Agent Key Art & Loyalty Bonus +5 XP after 5 sessions.\n\nAll combined; Humor Tier 3, steeper XP curve\n\nXP & LEVELING SYSTEM\n\nXP Thresholds:\n- Level 1 \u2192 0 XP\n-",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question about Allbirds.",
+    "improved": "Allbirds is a company that designs and sells eco-friendly footwear and apparel, known for using sustainable materials like wool and eucalyptus fibers."
+  },
+  {
+    "question": "Who is Bartosz?",
+    "pullbot_answer": "Surrealistic quality.\nLevel 6 Boss: The Service Specter \u2013 Phases: 1.\nLevel 7 Boss: The Service Specter \u2013 Phases: 1.\nLevel 6 Boss: The Service Specter \u2013 Phases: 1.\nLevel 7 Boss: The Service Specter \u2013",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question.",
+    "improved": "Bartosz is a character from the Netflix series 'Dark,' where he plays a significant role in the time travel narrative."
   }
 ]

@@ -1090,5 +1090,12 @@
     "score": 1,
     "feedback": "The response is incoherent and unrelated to the question about Sheridan.",
     "improved": "Sheridan could refer to several things, such as a surname, a city in the United States, or the playwright Richard Brinsley Sheridan. Could you clarify the context?"
+  },
+  {
+    "question": "Who is Bhargava?",
+    "pullbot_answer": "\"Maintain a professional tone with strong reasoning and incorporate modern LinkedIn (specific job roles, roles, and industries, but only attachments/LinkedIn URL cover this).\n- Any big, no-BS, Focus (",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question asked.",
+    "improved": "Bhargava is a common name in India and could refer to a person, a surname, or a historical figure. Could you provide more context about who or what you are referring to?"
   }
 ]

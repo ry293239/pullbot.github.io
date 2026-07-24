@@ -31,51 +31,57 @@ jobs:
         with open(f'{cd}/manifest.json') as f:
             m = json.load(f)
         wf = m['weights_filename']
+        print(f'Manifest: {wf}, chunks: {len(m[\"chunks\"])}')
         if not os.path.exists(f'{cd}/{wf}'):
+            print(f'Reassembling {wf}...')
             with open(f'{cd}/{wf}', 'wb') as out:
                 for cp in m['chunks']:
                     with open(cp, 'rb') as inc:
                         out.write(inc.read())
+            print(f'Done: {os.path.getsize(f\"{cd}/{wf}\")//1024//1024}MB')
+        else:
+            print(f'Already exists: {os.path.getsize(f\"{cd}/{wf}\")//1024//1024}MB')
         "
     - name: Search web and generate
       run: |
         python -c "
         from llama_cpp import Llama
-        import json, time, os, glob, requests, re
+        import json, time, os, glob, requests
         
         question = '''${{ github.event.inputs.question }}'''
         
-        # Search Wikipedia for context
+        # Search Wikipedia
         context = ''
         try:
-            search_url = f'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={question}&format=json'
-            r = requests.get(search_url, timeout=10)
+            r = requests.get(f'https://en.wikipedia.org/w/api.php?action=query&list=search&srsearch={question}&format=json', timeout=10)
             if r.status_code == 200:
-                results = r.json().get('query', {}).get('search', [])
+                results = r.json().get('query',{}).get('search',[])
                 if results:
-                    # Get first result summary
-                    page_id = results[0]['pageid']
-                    summary_url = f'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&pageids={page_id}&format=json'
-                    sr = requests.get(summary_url, timeout=10)
+                    pid = results[0]['pageid']
+                    sr = requests.get(f'https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exintro=true&explaintext=true&pageids={pid}&format=json', timeout=10)
                     if sr.status_code == 200:
-                        pages = sr.json().get('query', {}).get('pages', {})
-                        for p in pages.values():
-                            context = p.get('extract', '')[:500]
+                        for p in sr.json().get('query',{}).get('pages',{}).values():
+                            context = p.get('extract','')[:500]
                             break
-            if context:
-                print(f'Found context: {len(context)} chars')
-        except Exception as e:
-            print(f'Search skipped: {e}')
+            if context: print(f'Context: {len(context)} chars')
+        except Exception as e: print(f'Search: {e}')
         
-        # Load model
+        # Find model file
         cd = 'models/chunks'
         with open(f'{cd}/manifest.json') as f:
             m = json.load(f)
-        model_path = f'{cd}/{m[\"weights_filename\"]}'
+        wf = m['weights_filename']
+        model_path = f'{cd}/{wf}'
         
+        if not os.path.exists(model_path):
+            print(f'ERROR: {model_path} not found!')
+            files = os.listdir(cd)
+            print(f'Files: {files}')
+            exit(1)
+        
+        print(f'Loading: {model_path} ({os.path.getsize(model_path)//1024//1024}MB)')
         llm = Llama(model_path=model_path, n_ctx=256, n_threads=2, verbose=False)
         
-        # Generate with context
         if context:
             prompt = f'Context: {context}\n\nQuestion: {question}\n\nAnswer:'
         else:
@@ -84,14 +90,8 @@ jobs:
         out = llm(prompt, max_tokens=80, temperature=0.8)
         resp = out['choices'][0]['text'].strip()
         
-        result = {
-            'question': question,
-            'response': resp,
-            'searched': bool(context),
-            'time': time.time()
-        }
         with open('response.json','w') as f:
-            json.dump(result, f)
+            json.dump({'question':question,'response':resp,'searched':bool(context),'time':time.time()}, f)
         print(f'Response: {resp[:200]}')
         "
     - name: Push response
@@ -102,7 +102,7 @@ jobs:
         if git diff --staged --quiet; then
           echo "No changes"
         else
-          git commit -m "💬 Response (web search)"
+          git commit -m "💬 Response"
           git push origin main
           echo "Pushed!"
         fi

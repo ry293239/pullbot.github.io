@@ -1223,5 +1223,19 @@
     "score": 1,
     "feedback": "The response is nonsensical and does not address the question.",
     "improved": "The term 'Judean' refers to someone or something originating from Judea, an ancient region in the southern part of modern-day Israel."
+  },
+  {
+    "question": "What is Exeter?",
+    "pullbot_answer": "A body, which is someone or part of a purpose or duty.\nof Having done to someone.\nassociations is To hold or contain.\nassociations is A purpose is to change or hold a token.\ncomposed is To handle this",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "Exeter is a city in Devon, England, known for its historic cathedral and Roman history."
+  },
+  {
+    "question": "What is Karolak?",
+    "pullbot_answer": "what: (Singlish) Used to contradict an underlying assumption held by the interlocutor.",
+    "score": 1,
+    "feedback": "The response is incorrect and unrelated to the question.",
+    "improved": "Karolak could refer to a surname, a specific person, or something else; more context is needed to provide an accurate answer."
   }
 ]

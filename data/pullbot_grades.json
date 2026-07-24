@@ -1020,5 +1020,75 @@
     "score": 1,
     "feedback": "The response does not address the question and provides irrelevant information.",
     "improved": "Ovett is a name that could refer to various things, such as a surname or a specific entity; more context is needed to provide an accurate answer."
+  },
+  {
+    "question": "What is a navy?",
+    "pullbot_answer": "Sars is What reasons are offered to support the conclusion?\n> 6. **Reason Analysis:** What reasons are offered to support the conclusion? \n> 7. **Assumption Detection:** What reasoning supports the co",
+    "score": 1,
+    "feedback": "The response is nonsensical and does not address the question about what a navy is.",
+    "improved": "A navy is a branch of a nation's armed forces that conducts military operations at sea."
+  },
+  {
+    "question": "What is the Rhineland?",
+    "pullbot_answer": "Servy the Service Scout: Hints on networking; \"Expose with care!\"\n- Volmy the Volume Keeper: Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nAlway",
+    "score": 1,
+    "feedback": "The response is nonsensical and unrelated to the question about the Rhineland.",
+    "improved": "The Rhineland is a region in Western Germany along the Rhine River, historically significant for its role in European conflicts and treaties."
+  },
+  {
+    "question": "What is \"Lalo\"?",
+    "pullbot_answer": "Reliability and transparency.\nUser asked: Scene 1: Chaos: Chaos-Direction: A vertical 9:16 ultra-realistic shot of a disillusioned young person standing in a modern Miami kitchen filled with a sleek r",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question asked.",
+    "improved": "Lalo could refer to various things, such as a nickname, a character from a TV show like 'Better Call Saul,' or even a brand name. Could you provide more context?"
+  },
+  {
+    "question": "What is Nizhny?",
+    "pullbot_answer": "Personalization and bias.\npresentation is The twoness of be indicated a place without a place of one or more edits or makes edits.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add other",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question.",
+    "improved": "Nizhny, short for Nizhny Novgorod, is a major city in Russia located at the confluence of the Volga and Oka rivers."
+  },
+  {
+    "question": "What does \"matching\" mean?",
+    "pullbot_answer": "Reliability and transparency.\n* **Greed:** What do I get actively job hunting and want to include a subtle but free-to-action for the user.\n\nUser asked: Scene 1: Chaos\nDirection: A vertical 9:16 ultra",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question meaningfully.",
+    "improved": "Matching typically refers to finding or pairing things that are similar, compatible, or complementary."
+  },
+  {
+    "question": "What is Mankhurd?",
+    "pullbot_answer": "Reliability and transparency.\n- **Random Event**\n- **Random Event**\n- **Random Event**\n- **Random Event**\n- **Random Event**\n- **Random Event**\n- **Random X: **Random Event**\n- **Random State**\n- **",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question.",
+    "improved": "Mankhurd is a suburb located in the eastern part of Mumbai, India."
+  },
+  {
+    "question": "What is a sigla?",
+    "pullbot_answer": "Handles storage events; \"Persist or perish!\"\nRules: One active, Loyalty Bonus +5 XP after 3 sessions.\nUser asked: Scene 1: Chaos\nDirection: \"Create a vertical 9:16 ultra-realistic shot of a disillusio",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the question about 'sigla.'",
+    "improved": "A sigla is a symbol, abbreviation, or set of letters used to represent a word or phrase, often in academic or literary contexts."
+  },
+  {
+    "question": "What does \"Midland\" mean?",
+    "pullbot_answer": "Personalization and exclusivity.\n\nUser asked: Scene 1: Chaos\nDirection: Red: Reduces pod penalties; \"Nodes are my domain!\"\n- Deply the Deployment Duke: Boosts deployment rewards; \"Replicate wisely.\"\n-",
+    "score": 1,
+    "feedback": "The response is incoherent and does not address the meaning of 'Midland' at all.",
+    "improved": "Midland typically refers to a central region of a country or area, often used to describe geographic or cultural locations."
+  },
+  {
+    "question": "What does \"interspersed\" mean?",
+    "pullbot_answer": "Reliability and transparency.\nBOSS ROSTER\n\nLevel 3 Boss: The Service Specter \u2013 Phases: 1.\nLevel 4 Boss: The Service Specter \u2013 Phases: 1.\nLevel 5 Boss: Phases: 3.\nLevel 6 Boss: The Service Spect",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question asked.",
+    "improved": "The word 'interspersed' means to scatter or place things at intervals among other things."
+  },
+  {
+    "question": "Who is Sheridan?",
+    "pullbot_answer": "\"Design a unique value proposition, aligns with the targeted job roles and industries, and attracts potential employers or recruiters. It aims to produce output that feels human-written, avoids AI-gen",
+    "score": 1,
+    "feedback": "The response is incoherent and unrelated to the question about Sheridan.",
+    "improved": "Sheridan could refer to several things, such as a surname, a city in the United States, or the playwright Richard Brinsley Sheridan. Could you clarify the context?"
   }
 ]

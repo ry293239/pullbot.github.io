@@ -1342,5 +1342,26 @@
     "score": 1,
     "feedback": "The response is incoherent and does not address the meaning of 'cruz' accurately.",
     "improved": "'Cruz' is a Spanish word that translates to 'cross' in English, often referring to a physical cross or a symbolic representation."
+  },
+  {
+    "question": "What is Disneyland?",
+    "pullbot_answer": "\"YAML Yogi \u2013 Trigger 5 humor events\n- Hint Hoarder \u2013 Reach 10 hint tokens\n- Namespace Navigator \u2013 Complete a procedural namespace\n- Eviction Exorcist \u2013 Defeat the Pod Eviction Phantom\n\nHINT TOKEN, RET",
+    "score": 1,
+    "feedback": "The response is completely irrelevant and nonsensical to the question asked.",
+    "improved": "Disneyland is a world-famous theme park located in Anaheim, California, known for its attractions, entertainment, and association with Disney characters and stories."
+  },
+  {
+    "question": "What is Xfinity?",
+    "pullbot_answer": "A person who edits or makes changes to documents.\n\nUser asked: Scene 1 \u2192Direction: Chaos.\nDirection: -40% XP, hints disabled, penalties tripled, bosses extra phases\nChaos Mode: Random event every turn",
+    "score": 1,
+    "feedback": "The response is completely incorrect and unrelated to the question.",
+    "improved": "Xfinity is a brand name for Comcast's cable television, internet, and phone services."
+  },
+  {
+    "question": "What is Sunday?",
+    "pullbot_answer": "\"Art is a person who edits or makes changes to documents.\nFIXED RESOURCE CATALOG & SAMPLE YAML\n\nCore Resources (never add others):\n- Docker: Images (nginx:latest), Containers (web-app), Volumes (persi",
+    "score": 1,
+    "feedback": "The response is completely irrelevant to the question and nonsensical.",
+    "improved": "Sunday is the day of the week between Saturday and Monday, often considered a day of rest or worship in many cultures."
   }
 ]
